@@ -680,8 +680,8 @@ To continue our symbolization, then, we must choose some different variable for 
 $$\forall x\bigl[Fxg \eif\exists z(Dz \eand Oxz)\bigr]$$
 This adequately symbolizes sentence \ref{dog4}.
 
-Sentence \ref{dog5} can be paraphrased as `For any x that is a dog owner, there is a dog owner who is a friend of x'. Using our stepping-stone tactic, this becomes 
-$$\forall x\bigl[\mbox{$x$ is a dog owner}\eif\exists y(\mbox{$y$ is a dog owner}\eand Fyx)\bigr]$$
+Sentence \ref{dog5} can be paraphrased as `For any x that is a dog owner, there is a dog owner who x is a friend of'. Using our stepping-stone tactic, this becomes 
+$$\forall x\bigl[\mbox{$x$ is a dog owner}\eif\exists y(\mbox{$y$ is a dog owner}\eand Fxy)\bigr]$$
 Completing the symbolization, we end up with
 $$\forall x\bigl[\exists z(Dz \eand Oxz)\eif\exists y\bigl(\exists z(Dz \eand Oyz)\eand Fyx\bigr)\bigr]$$
 Note that we have used the same letter, `$z$', in both the antecedent and the consequent of the conditional, but that these are governed by two different quantifiers. This is ok: there is no clash here, because it is clear which quantifier that variable falls under. We might graphically represent the scope of the quantifiers thus:
@@ -1083,7 +1083,7 @@ It might be tempting to add a predicate to our symbolization key, to symbolize t
 \problempart Explain why:
 	\begin{ebullet}
 		\item   `$\exists x \forall y(Ay \eiff x= y)$' is a good symbolization of `there is exactly one apple'.
-		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall z(Az \eiff (x= z \eor y = z)\bigr]$' is a good symbolization of `there are exactly two apples'.
+		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall z(Az \eiff (x= z \eor y = z))\bigr]$' is a good symbolization of `there are exactly two apples'.
 	\end{ebullet}		
 
 
