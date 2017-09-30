@@ -6,34 +6,31 @@ In formulating our natural deduction system, we treated certain rules of natural
 
 \section{Alternative disjunction elimination}
 Some systems take DS as their basic rule for disjunction elimination. Such systems can then treat the $\eor$E rule as a derived rule. For they might offer the following proof scheme: 
-	\begin{proof}
-		\have[m]{ab}{\meta{A}\eor\meta{B}}
-		\open
-			\hypo[i]{a}{\meta{A}} {}
-			\have[j]{c1}{\meta{C}}
-		\close
-		\open
-			\hypo[k]{b}{\meta{B}}{}
-			\have[l]{c2}{\meta{C}}
-		\close
-		\have[n]{aic}{\meta{A} \eif \meta{C}}\ci{a-c1}
-		\have{bic}{\meta{B} \eif \meta{C}}\ci{b-c2}
-		\open
-			\hypo{c}{\meta{C}}
-			\have{c1}{\meta{C}}\by{R}{c}
-		\close
-		\open
-		\hypo{nc}{\enot \meta{C}}
-		\open
-			\hypo{a1}{\meta{A}}
-			\have{c2}{\meta{C}}\ce{aic, a1}
-			\have{nc1}{\ered}\ri{c2, nc}
-		\close
-		\have{na}{\enot\meta{A}}\ni{a1-nc1}
-		\have{b}{\meta{B}}\ds{ab, na}
-		\have{c3}{\meta{C}}\ce{bic, b}
-	\close
-	\have{con}{\meta{C}}\tnd{c-c1, nc-c3}
+\begin{proof}
+  \have[m]{ab}{\meta{A}\eor\meta{B}}
+  \open
+    \hypo[i]{a}{\meta{A}} {}
+    \have[j]{c1}{\meta{C}}
+  \close
+  \open
+    \hypo[k]{b}{\meta{B}}{}
+    \have[l]{c2}{\meta{C}}
+  \close
+  \have[n]{aic}{\meta{A} \eif \meta{C}}\ci{a-c1}
+  \have{bic}{\meta{B} \eif \meta{C}}\ci{b-c2}
+  \open
+    \hypo{nc}{\enot\meta{C}}
+    \open
+      \hypo{a2}{\meta{A}}
+      \have{c3}{\meta{C}}\ce{a2,aic}
+      \have{bot1}{\ered}\ri{nc,c3}
+    \close
+    \have{na}{\enot\meta{A}}\ni{a2-bot1}
+    \have{b2}{\meta{B}}\ds{ab,na}
+    \have{c4}{\meta{C}}\ce{b2,bic}
+    \have{bot2}{\ered}\ri{nc,c4}
+  \close
+  \have{con}{\meta{C}}\ip{nc-bot2}
 \end{proof}
 So why did we choose to take $\eor$E as basic, rather than DS?\footnote{P.D.\ Magnus's original version of this book went the other way.} Our reasoning is that DS involves the use of `$\enot$' in the statement of the rule. It is in some sense `cleaner' for our disjunction elimination rule to avoid mentioning \emph{other} connectives. 
 
@@ -48,7 +45,7 @@ Some systems take the following rule as their basic negation introduction rule:
 	\close
 	\have[\ ]{}{\enot\meta{A}}\by{$\enot$I*}{a-nb}
 \end{proof}
-and the following as their basic negation elimination rule:
+and a corresponding version of the rule we called IP as their basic negation elimination rule:
 \begin{proof}
 	\open
 		\hypo[m]{na}{\enot\meta{A}}
@@ -57,13 +54,17 @@ and the following as their basic negation elimination rule:
 	\close
 	\have[\ ]{a}{\meta{A}}\by{$\enot$E*}{na-nb}
 \end{proof}
-Using these two rules, we could have derived all of the rules governing negation and contradiction that we have taken as basic (i.e.\ $\ered$I, $\ered$E, $\enot$I and TND). Indeed, we could have avoided all use of the symbol `$\ered$' altogether. Negation would have had a single introduction and elimination rule, and would have behaved much more like the other connectives.
+Using these two rules, we could we could have avoided all use of the symbol `$\ered$' altogether.\footnote{Again, P.D.\ Magnus's original version of this book went the other way.} The resulting system would have had fewer rules than ours.
 
-The resulting system would have had fewer rules than ours. So why did we chose to separate out contradiction, and to use an explicit rule TND?\footnote{Again, P.D.\ Magnus's original version of this book went the other way.}
+Another way to deal with negation is to use either TND or DNE as a basic rule and introduce IP as a derived rule. Typically, in such a system the rules are given different names, too. E.g., sometimes what we call $\enot$E is called $\ered$I, and what we call EFQ is called $\ered$E.\footnote{The version of this book due to Tim Button goes this route and replaces IP with TND.}
 
-Our first reason is that adding the symbol `$\ered$' to our natural deduction system makes proofs considerably easier to work with.
+So why did we chose our rules for negation and contradiction? 
 
-Our second reason is that a lot of fascinating philosophical discussion has focussed on the acceptability or otherwise of \emph{tertium non datur} (i.e.\ TND) and \emph{ex falso quodlibet} (i.e.\ $\ered$E). By treating these as separate rules in the proof system, we will be  in a better position to engage with that philosophical discussion. In particular: having invoked these rules explicitly, it will be much easier for us to know what a system which lacked these rules would look like.
+Our first reason is that adding the symbol `$\ered$' to our natural deduction system makes proofs considerably easier to work with. For instance, in our system it's always clear what the conclusion of a subproof is: the sentence on the last line, e.g.\ $\ered$ in IP or $\enot$I. In $\enot$I* and $\enot$E*, subproofs have two conclusions, so you can't check at one glance if an application of them is correct. 
+
+Our second reason is that a lot of fascinating philosophical discussion has focussed on the acceptability or otherwise of indirect proof IP (equivalently, \emph{tertium non datur}, i.e.\ TND, or double negation elimination DNE) and \emph{ex contradictione quodlibet} (i.e.\ ECQ). By treating these as separate rules in the proof system, you will be  in a better position to engage with that philosophical discussion. In particular: having invoked these rules explicitly, it would be much easier for us to know what a system which lacked these rules would look like.
+
+This discussion, and in fact the vast majority of mathematical study on applications of natural deduction proofs beyond introductory courses, makes reference to a different version of natural deduction. This version was invented by Gerhard Gentzen in 1935 as refined by Dag Prawitz in 1965. Our set of basic rules coincides with theirs. In other words, the rules we use are those that are standard in philosophical and mathematical discussion of natural deduction proofs outside of introductory courses.
 
 
 
