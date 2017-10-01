@@ -146,38 +146,37 @@ One way to say `there are exactly $n$ Fs' is to conjoin two of the symbolization
 	\have[\ ]{b}{\meta{B}} \ce{ab,a}
 \end{proof}
 
-\subsection*{Contradiction}
-
-\begin{proof}
-\have[m]{a}{\meta{A}}
-\have[n]{na}{\enot\meta{A}}
-\have[ ]{bot}{\ered}\ri{a, na}
-
-\have[m]{bot}{\ered}
-\\\have[ ]{}{\meta{A}}\re{bot}
-\end{proof}
-
 \subsection*{Negation}
+
 \begin{proof}
 \open
 	\hypo[i]{a}{\meta{A}}
 	\have[j]{nb}{\ered}
 \close
 \have[\ ]{na}{\enot\meta{A}}\ni{a-nb}
+
+\have[m]{a}{\meta{A}}
+\\ \have[n]{na}{\enot\meta{A}}
+\have[ ]{bot}{\ered}\ri{a, na}
 \end{proof}
 
-\subsection*{Tertium non datur}
-	\begin{proof}
-		\open
-			\hypo[i]{a}{\meta{A}}
-			\have[j]{c1}{\meta{B}}
-		\close
-		\open
-			\hypo[k]{b}{\enot\meta{A}}
-			\have[l]{c2}{\meta{B}}
-		\close
-		\have[\ ]{ab}{\meta{B}}\tnd{a-c1,b-c2}
-	\end{proof}
+\subsection*{Indirect proof}
+
+\begin{proof}
+\open
+	\hypo[i]{a}{\enot\meta{A}}
+	\have[j]{nb}{\ered}
+\close
+\have[\ ]{na}{\meta{A}}\ip{a-nb}
+\end{proof}
+
+
+\subsection*{Ex contradictione quodlibet}
+
+\begin{proof}
+\have[m]{bot}{\ered}
+\\\have[ ]{}{\meta{A}}\re{bot}
+\end{proof}
 
 \subsection*{Disjunction}
 
@@ -258,7 +257,21 @@ One way to say `there are exactly $n$ Fs' is to conjoin two of the symbolization
 		\have[m]{dna}{\enot \enot \meta{A}}
 		\have[ ]{a}{\meta{A}}\dne{dna}
 	\end{proof}
-	
+
+
+\subsection*{Tertium non datur}
+	\begin{proof}
+		\open
+			\hypo[i]{a}{\meta{A}}
+			\have[j]{c1}{\meta{B}}
+		\close
+		\open
+			\hypo[k]{b}{\enot\meta{A}}
+			\have[l]{c2}{\meta{B}}
+		\close
+		\have[\ ]{ab}{\meta{B}}\tnd{a-c1,b-c2}
+	\end{proof}
+
 %
 %\subsection*{Hypothetical Syllogism}
 %
