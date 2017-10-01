@@ -550,14 +550,16 @@ Using $\enot$I, we were able to give a proof of $\enot\enot\meta{D}$ from $\meta
 		\have{con}{D}\ip{nd-ndr}
 	\end{proof}
 
-We need one last rule. It is a kind of elimination rule for `$\ered$', and known as \emph{ex falso quod libet}, or better \emph{ex contradictione quod libet}. This means `anything follows from a contradiction', and the idea is precisely that: if we obtained a contradiction, symbolized by `$\ered$', then we can infer whatever we like. How can this be motivated, as a rule of argumentation? Well, consider the English rhetorical device `\ldots and if \emph{that's} true, I'll eat my hat'. Since contradictions simply cannot be true, if one \emph{is} true then not only will I eat my hat, I'll have it too.\footnote{Thanks to Adam Caulton for this.} Here is the formal rule:
+We need one last rule. It is a kind of elimination rule for `$\ered$', and known as \emph{explosion}.\footnote{The latin name for this principle is\emph{ex contradictione quod libet}, ``from contradiction, anything.''} If we obtain a contradiction, symbolized by `$\ered$', then we can infer whatever we like. How can this be motivated, as a rule of argumentation? Well, consider the English rhetorical device `\ldots and if \emph{that's} true, I'll eat my hat'. Since contradictions simply cannot be true, if one \emph{is} true then not only will I eat my hat, I'll have it too.\footnote{Thanks to Adam Caulton for this.} Here is the formal rule:
 \factoidbox{\begin{proof}
 \have[m]{bot}{\ered}
 \have[ ]{}{\meta{A}}\re{bot}
 \end{proof}}
 Note that \meta{A} can be \emph{any} sentence whatsoever.
 
-The ECQ rule is a bit odd. It looks like \meta{A} arrives in our proof like a bunny out of a hat. When trying to find proofs, it is very tempting to try to use it: but of course, you can only apply it when you already have~$\ered$!  And you get $\ered$ only when your assumptions are contradictory.  Still, isn't it odd that from a contradiction anything whatsoever should follow? Not according to our notion of entailment and validity. For \meta{A} entails \meta{B} iff there is no valuation of the atomic sentences which makes \meta{A} true and \meta{B} false. Now $\ered$ is a contradiction---it is never true, whatever the valuation of the atomic sentences. Since there is no valuation which makes $\ered$ true, there of course is also no valuation that makes $\ered$ true and \meta{B} false! So according to our definition of entailment, $\ered \entails \meta{B}$, whatever \meta{B} is. A contradiction entails anything.\footnote{There are some logicians who don't buy this. They think that if \meta{A} entails \meta{B}, there must be some \emph{relevant connection} between \meta{A} and \meta{B}---and there isn't one between $\ered$ and some arbitrary sentence~\meta{B}. So these logicians develop other, ``relevant'' logics in which you aren't allowed the EFQ rule.}
+The explosion rule is a bit odd. It looks like \meta{A} arrives in our proof like a bunny out of a hat. When trying to find proofs, it is very tempting to try to use it everywhere, since it seems so powerful. Resist this temptation: you can only apply it when you already have~$\ered$!  And you get $\ered$ only when your assumptions are contradictory.
+
+Still, isn't it odd that from a contradiction anything whatsoever should follow? Not according to our notion of entailment and validity. For \meta{A} entails \meta{B} iff there is no valuation of the atomic sentences which makes \meta{A} true and \meta{B} false at the same time. Now $\ered$ is a contradiction---it is never true, whatever the valuation of the atomic sentences. Since there is no valuation which makes $\ered$ true, there of course is also no valuation that makes $\ered$ true and \meta{B} false! So according to our definition of entailment, $\ered \entails \meta{B}$, whatever \meta{B} is. A contradiction entails anything.\footnote{There are some logicians who don't buy this. They think that if \meta{A} entails \meta{B}, there must be some \emph{relevant connection} between \meta{A} and \meta{B}---and there isn't one between $\ered$ and some arbitrary sentence~\meta{B}. So these logicians develop other, ``relevant'' logics in which you aren't allowed the explosion rule.}
 
 \emph{These are all of the basic rules for the proof system for TFL.}
 
@@ -566,17 +568,18 @@ The ECQ rule is a bit odd. It looks like \meta{A} arrives in our proof like a bu
 \problempart
 The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \begin{proof}
-\hypo{abc}{\enot L \eif (A \eand L)}
+\hypo{abc}{(\enot L \land A) \eor L}
 \open
-	\hypo{nl}{\enot L}
-	\have{a}{A}\ce{abc, nl}
+\hypo{nla}{\enot L \eand A}
+\have{nl}{\enot L}\ae{nl}
+	\have{a}{A}\ae{nl}
 \close
 \open
 	\hypo{l}{L}
 	\have{red}{\ered}\ri{l, nl}
 	\have{a2}{A}\re{red}
 \close
-\have{con}{A}\tnd{nl-a, l-a2}
+\have{con}{A}\oe{abc, nla-a, l-a2}
 \end{proof}
 
 \begin{proof}
@@ -714,7 +717,7 @@ The justification for this is that, in natural language, double-negations tend t
 
 That said, you should be aware that context and emphasis can prevent them from doing so. Consider: `Jane is not \emph{not} happy'. Arguably, one cannot infer `Jane is happy', since the first sentence should be understood as meaning the same as  `Jane is not \emph{un}happy'. This is compatible with `Jane is in a state of profound indifference'. As usual, moving to TFL forces us to sacrifice certain nuances of English expressions.
 
-\section{Tertium non datur}
+\section{Excluded middle}
 
 Suppose that we can show that if it's sunny outside, then Bill will have brought an umbrella (for fear of burning). Suppose we can also show that, if it's not sunny outside, then Bill will have brought an umbrella (for fear of rain). Well, there is no third way for the weather to be. So, \emph{whatever the weather}, Bill will have brought an umbrella. 
 
@@ -730,7 +733,7 @@ This line of thinking motivates the following rule:
 		\close
 		\have[\ ]{ab}{\meta{B}}\tnd{a-c1,b-c2}
 	\end{proof}}
-The rule is sometimes called \emph{tertium non datur}, which means `no third way'. There can be as many lines as you like between $i$ and $j$, and as many lines as you like between $k$ and $l$. Moreover, the subproofs can come in any order, and the second subproof does not need to come immediately after the first.
+The rule is sometimes called the law of \emph{excluded middle}, since it encapsulates the idea that \meta{A} can be true or $\enot \meta{A}$ may be true, but there is no middle way where neither is true.\footnote{You may sometimes find logicians or philosophers talking about ``tertium non datur.'' That's the same principle as excluded middle; it means ``no third way.'' Logicians who have qualms about indirect proof also have qualms about LEM.} There can be as many lines as you like between $i$ and $j$, and as many lines as you like between $k$ and $l$. Moreover, the subproofs can come in any order, and the second subproof does not need to come immediately after the first.
 
 To see the rule in action, consider:
 	$$P \therefore (P \eand D) \eor (P \eand \enot D)$$
@@ -1054,8 +1057,8 @@ Consider the following deduction scheme:
 \end{proof}
 Again,  we can derive the DNE rule from the \emph{basic} rules of \S\ref{s:BasicTFL}.
 
-\section{Derivation of Tertium non datur}
-Suppose you want to prove something using the TND rule, i.e., you have in your proof
+\section{Derivation of Excluded middle}
+Suppose you want to prove something using the LEM rule, i.e., you have in your proof
 \begin{proof}
   \open
   \hypo[m]{a}{\meta{A}}
@@ -1066,7 +1069,7 @@ Suppose you want to prove something using the TND rule, i.e., you have in your p
   \have[l]{bbb}{\meta{B}}
   \close
 \end{proof}
-You now want, on line $l+1$, to prove $\meta{B}$. The rule TND from \S\ref{s:Further} would allow you to do it. But can do this with the \emph{basic} rules of \S\ref{s:BasicTFL}?
+You now want, on line $l+1$, to prove $\meta{B}$. The rule LEM from \S\ref{s:Further} would allow you to do it. But can do this with the \emph{basic} rules of \S\ref{s:BasicTFL}?
 
 One option is to first prove $\meta{A} \eor \enot\meta{A}$, and then apply $\eor$E, i.e.\ proof by cases:
 \begin{proof}
@@ -1169,7 +1172,7 @@ give a proof that \emph{uses only the basic rules}.
 \
 
 \problempart
-Show that if you had TND as a basic rule, you could justify IP as a derived rule. That is, suppose you had the proof
+Show that if you had LEM as a basic rule, you could justify IP as a derived rule. That is, suppose you had the proof:
 \begin{proof}
   \open
   \hypo[m]{a}{\enot\meta{A}}
@@ -1182,7 +1185,7 @@ How could you use it to prove \meta{A} without using IP but with using TND as we
 \
 
 \problempart
-Give a proof of the first De Morgan rule, but using only the basic rules, in particular, \emph{without using TND}. (Of course, you can combine the proof using TND with the proof \emph{of} TND. Try to find a proof directly.)
+Give a proof of the first De Morgan rule, but using only the basic rules, in particular, \emph{without using LEM}. (Of course, you can combine the proof using LEM with the proof \emph{of}~LEM. Try to find a proof directly.)
 
 \chapter{Soundness and completeness}
 \label{sec:soundness_and_completeness}

@@ -56,13 +56,13 @@ and a corresponding version of the rule we called IP as their basic negation eli
 \end{proof}
 Using these two rules, we could we could have avoided all use of the symbol `$\ered$' altogether.\footnote{Again, P.D.\ Magnus's original version of this book went the other way.} The resulting system would have had fewer rules than ours.
 
-Another way to deal with negation is to use either TND or DNE as a basic rule and introduce IP as a derived rule. Typically, in such a system the rules are given different names, too. E.g., sometimes what we call $\enot$E is called $\ered$I, and what we call EFQ is called $\ered$E.\footnote{The version of this book due to Tim Button goes this route and replaces IP with TND.}
+Another way to deal with negation is to use either LEM or DNE as a basic rule and introduce IP as a derived rule. Typically, in such a system the rules are given different names, too. E.g., sometimes what we call $\enot$E is called $\ered$I, and what we call X is called $\ered$E.\footnote{The version of this book due to Tim Button goes this route and replaces IP with LEM, which he calls TND, for ``tertium non datur.''}
 
 So why did we chose our rules for negation and contradiction? 
 
 Our first reason is that adding the symbol `$\ered$' to our natural deduction system makes proofs considerably easier to work with. For instance, in our system it's always clear what the conclusion of a subproof is: the sentence on the last line, e.g.\ $\ered$ in IP or $\enot$I. In $\enot$I* and $\enot$E*, subproofs have two conclusions, so you can't check at one glance if an application of them is correct. 
 
-Our second reason is that a lot of fascinating philosophical discussion has focussed on the acceptability or otherwise of indirect proof IP (equivalently, \emph{tertium non datur}, i.e.\ TND, or double negation elimination DNE) and \emph{ex contradictione quodlibet} (i.e.\ ECQ). By treating these as separate rules in the proof system, you will be  in a better position to engage with that philosophical discussion. In particular: having invoked these rules explicitly, it would be much easier for us to know what a system which lacked these rules would look like.
+Our second reason is that a lot of fascinating philosophical discussion has focussed on the acceptability or otherwise of indirect proof IP (equivalently, excluded middle, i.e.\ LEM, or double negation elimination DNE) and explosion (i.e.\ X). By treating these as separate rules in the proof system, you will be  in a better position to engage with that philosophical discussion. In particular: having invoked these rules explicitly, it would be much easier for us to know what a system which lacked these rules would look like.
 
 This discussion, and in fact the vast majority of mathematical study on applications of natural deduction proofs beyond introductory courses, makes reference to a different version of natural deduction. This version was invented by Gerhard Gentzen in 1935 as refined by Dag Prawitz in 1965. Our set of basic rules coincides with theirs. In other words, the rules we use are those that are standard in philosophical and mathematical discussion of natural deduction proofs outside of introductory courses.
 
@@ -85,8 +85,7 @@ This is not yet permitted, since in this new system, we do not have the $\exists
 		\have{nAc}{\enot\meta{A}(\ldots \meta{c} \ldots \meta{c}\ldots)}\Ae{Ana}
 		\have{red}{\ered}\ri{a, nAc}
 	\close
-	\have{nnEa}{\enot \enot \exists \meta{x} \meta{A}(\ldots \meta{x} \ldots \meta{c}\ldots)}\ni{nEna-red}
-	\have{end}{\exists\meta{x} \meta{A}(\ldots \meta{x} \ldots \meta{c}\ldots)}\dne{nnEa}
+	\have{nnEa}{\exists \meta{x} \meta{A}(\ldots \meta{x} \ldots \meta{c}\ldots)}\ip{nEna-red}
 \end{proof}\noindent
 To derive the $\exists$E rule is rather more subtle. This is because the $\exists$E rule has an important constraint (as, indeed, does the $\forall$I rule), and we need to make sure that we are respecting it. So, suppose we are in a situation where we \emph{want} to do the following:
 \begin{proof}
@@ -113,8 +112,7 @@ To derive the $\exists$E rule is rather more subtle. This is because the $\exist
 		\have{nEA}{\enot \exists \meta{x} \meta{A}(\ldots \meta{x} \ldots \meta{x}\ldots)}\cq{AxnA}
 		\have{red2}{\ered}\ri{ExA, nEA}
 	\close
-	\have{nnB}{\enot\enot\meta{B}}\ni{nB-red2}
-	\have{end}{\meta{B}}\dne{nnB}
+	\have{nnB}{\meta{B}}\ip{nB-red2}
 \end{proof}\noindent
 We are permitted to use $\forall$I on line $k+3$ because $\meta{c}$ does not occur in any  undischarged assumptions or in $\meta{B}$. The entries on lines $k+4$ and $k+1$ contradict each other, because $\meta{c}$ does not occur in $\exists \meta{x} \meta{A}(\ldots \meta{x} \ldots \meta{x} \ldots)$.
 
@@ -124,4 +122,4 @@ So, why did we start with all of the quantifier rules as basic, and then derive 
 
 Our first reason is that it seems more intuitive to treat the quantifiers as on a par with one another, giving them their own basic rules for introduction and elimination. 
 
-Our second reason relates to the discussion of alternative negation rules. In the derivations of the rules of $\exists$I and $\exists$E that we have offered in this section, we invoked DNE. This is a derived rule, whose derivation essentially depends upon the use of TND. But, as we mentioned earlier, TND is a contentious rule. So, if we want to move to a system which abandons TND, but which still allows us to use existential quantifiers, we will want to take the introduction and elimination rules for the quantifiers as basic, and take the CQ rules as derived. (Indeed, in a system without TND, we will be \emph{unable} to derive the CQ rule which moves from $\enot \forall \meta{x} \meta{A}$ to $\exists \meta{x} \enot \meta{A}$.)
+Our second reason relates to the discussion of alternative negation rules. In the derivations of the rules of $\exists$I and $\exists$E that we have offered in this section, we invoked~IP.  But, as we mentioned earlier, IP is a contentious rule. So, if we want to move to a system which abandons IP, but which still allows us to use existential quantifiers, we will want to take the introduction and elimination rules for the quantifiers as basic, and take the CQ rules as derived. (Indeed, in a system without IP, LEM, and DNE, we will be \emph{unable} to derive the CQ rule which moves from $\enot \forall \meta{x} \meta{A}$ to $\exists \meta{x} \enot \meta{A}$.)
