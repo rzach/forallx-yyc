@@ -13,21 +13,23 @@
 The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \begin{multicols}{2}
 \begin{proof}
-\hypo{abc}{\enot L \eif (A \eand L)}
+\hypo{abc}{(\enot L \land A) \eor L}
 \open
-	\hypo{nl}{\enot L}
-	\have{a}{A}\ce{abc, nl}
+\hypo{nla}{\enot L \eand A}
+\have{nl}{\enot L}\ae{nl}
+        \have{a}{A}\ae{abc}
 \close
 \open
-	\hypo{l}{L}
-	\have{red}{\ered}\ri{l, nl}
-	\have{a2}{A}\re{red}
+        \hypo{l}{L}
+        \have{red}{\ered}\ri{l, nl}
+        \have{a2}{A}\re{red}
 \close
-\have{con}{A}\tnd{nl-a, l-a2}
+\have{con}{A}\oe{abc, nla-a, l-a2}
 \end{proof}
 \vfill
-\noindent\myanswer{$\eif$E on line 3 should yield `$A \eand L$'.  `$A$' could then be obtained by $\eand$E. 
-\\$\ered$I on line 5 illicitly refers to a line from a closed subproof (line 2).}
+\noindent\myanswer{$\eand$E on line 5 can't be applied to line~1, since it is not of the form $\meta{A} \eand \meta{B}$.  `$A$' could be obtained by $\eand$E, but from line~2.}
+
+\myanswer{$\ered$I on line 5 illicitly refers to a line from a closed subproof (line~3).}
 \hfill
 \columnbreak
 \begin{proof}
@@ -38,12 +40,14 @@ The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \have{d}{D}\ce{bc, bcd}
 \end{proof}
 \vfill
-\noindent\myanswer{$\eand$E on line 3 should yield `$B \eand C$'.  `$B$' could then be obtained by $\eand$E again.\\
-The citation for line 5 is the wrong way round: it should be `$\eif$E 2, 4'.}
+\noindent\myanswer{$\eand$E on line 3 should yield `$B \eand C$'.  `$B$' could then be obtained by $\eand$E again.}
+
+\myanswer{The citation for line 5 is the wrong way round: it should be `$\eif$E 2, 4'.}
 \end{multicols}
 
 \problempart
 The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into \textit{bona fide} proofs. Additionally, write down the argument that corresponds to each proof.
+\newpage
 \begin{multicols}{2}
 \begin{proof}
 \hypo{ps}{P \eand S}
@@ -54,6 +58,8 @@ The following three proofs are missing their citations (rule and line numbers). 
 \have{re}{R \eor E}\oi{r}
 \end{proof}
 \\\myanswer{Corresponding argument: \\$P \eand S, S \eif R \therefore R \eor E$}
+
+\bigskip
 
 \begin{proof}
 \hypo{ad}{A \eif D}
@@ -66,7 +72,9 @@ The following three proofs are missing their citations (rule and line numbers). 
 \have{conc}{(A \eand B) \eif (D \eor E)}\ci{ab-de}
 \end{proof}
 \\\myanswer{Corresponding argument: \\$A \eif D \therefore (A \eand B) \eif (D \eor E)$}
-\pagebreak
+
+\columnbreak
+
 \begin{proof}
 \hypo{nlcjol}{\enot L \eif (J \eor L)}
 \hypo{nl}{\enot L}
@@ -128,7 +136,6 @@ Give a proof for each of the following arguments:
 \have{con}{(A \eand B) \eif C}\ci{ab-c}
 \end{proof}}
 
-\newpage
 \item $K\eand L \therefore K\eiff L$
 \myanswer{\begin{proof}
 \hypo{kl}{K \eand L}

@@ -544,7 +544,7 @@ As in the case of TFL, we first introduced some rules for FOL as basic (in \S\re
 		\open
 			\hypo{c}{Ac}%\by{for $\exists$E}{}
 			\have{nc}{\enot Ac}\Ae{An}
-			\have{red}{\ered}\ri{c,nc}
+			\have{red}{\ered}\ne{nc,c}
 		\close
 		\have{red2}{\ered}\Ee{E,c-red}
 	\close
@@ -559,7 +559,7 @@ Here is a justification of the third CQ rule:
 		\open
 			\hypo{nac}{\enot Ac}%\by{for $\exists$E}{}
 			\have{a}{Ac}\Ae{Aa}
-			\have{con}{\ered}\ri{a,nac}
+			\have{con}{\ered}\ne{nac,a}
 		\close
 		\have{con1}{\ered}\Ee{nEna, nac-con}
 	\close

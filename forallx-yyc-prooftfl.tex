@@ -495,9 +495,9 @@ Negation is closely connected with \emph{contradiction}.
 An effective form of argument is to argue your opponent into contradicting themselves. At that point, you have them on the ropes. They have to give up at least one of their assumptions. We are going to make use of this idea in our proof system, by adding a new symbol, `$\ered$', to our proofs. This should be read as something like `contradiction!'\ or `reductio!'\ or `but that's absurd!'  The rule for introducing this symbol is that we can use it whenever we explicitly contradict ourselves, i.e.\ whenever we find both a sentence and its negation appearing in our proof:
 \factoidbox{
 \begin{proof}
-\have[m]{a}{\meta{A}}
-\have[n]{na}{\enot\meta{A}}
-\have[ ]{bot}{\ered}\ri{a, na}
+  \have[m]{na}{\enot\meta{A}}
+  \have[n]{a}{\meta{A}}
+  \have[ ]{bot}{\ered}\ne{na, a}
 \end{proof}}
 It does not matter what order the sentence and its negation appear in, and they do not need to appear on adjacent lines. However, we always cite the sentence first, followed by its negation.
 
@@ -525,7 +525,7 @@ There can be as many lines between $i$ and $j$ as you like. To see this in pract
 		\hypo{d}{D}
 		\open
 			\hypo{nd}{\enot D}
-			\have{ndr}{\ered}\ri{d, nd}
+			\have{ndr}{\ered}\ne{nd, d}
 		\close
 		\have{con}{\enot\enot D}\ni{nd-ndr}
 	\end{proof}
@@ -545,7 +545,7 @@ Using $\enot$I, we were able to give a proof of $\enot\enot\meta{D}$ from $\meta
 		\hypo{d}{\enot\enot D}
 		\open
 			\hypo{nd}{\enot D}
-			\have{ndr}{\ered}\ri{d, nd}
+			\have{ndr}{\ered}\ne{d, nd}
 		\close
 		\have{con}{D}\ip{nd-ndr}
 	\end{proof}
@@ -572,11 +572,11 @@ The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \open
 \hypo{nla}{\enot L \eand A}
 \have{nl}{\enot L}\ae{nl}
-	\have{a}{A}\ae{nl}
+	\have{a}{A}\ae{abc}
 \close
 \open
 	\hypo{l}{L}
-	\have{red}{\ered}\ri{l, nl}
+	\have{red}{\ered}\ne{nl, l}
 	\have{a2}{A}\re{red}
 \close
 \have{con}{A}\oe{abc, nla-a, l-a2}
@@ -624,7 +624,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 \close
 \open
 	\hypo{l}{L}
-	\have{red}{\ered}%\ri{l, nl}
+	\have{red}{\ered}%\ne{nl, l}
 	\have{j3}{J}%\re{red}
 \close
 \have{conc}{J}%\oe{jol, j-j2, l-j3}
@@ -868,7 +868,7 @@ description={A sentence that can be proved without any premises}
 			\hypo{con}{A \eand \enot A}
 			\have{a}{A}\ae{con}
 			\have{na}{\enot A}\ae{con}
-			\have{red}{\ered}\ri{a, na}
+			\have{red}{\ered}\ne{na, a}
 		\close
 		\have{lnc}{\enot (A \eand \enot A)}\ni{con-red}
 	\end{proof}
@@ -1014,7 +1014,7 @@ You now want, on line $k$, to prove $\meta{B}$. You can do this with the rule of
 		\have[n]{na}{\enot \meta{A}}
 		\open
 			\hypo[k]{a}{\meta{A}}
-			\have{red}{\ered}\ri{a, na}
+			\have{red}{\ered}\ne{na, a}
 			\have{b1}{\meta{B}}\re{red}
 		\close
 		\open
@@ -1039,7 +1039,7 @@ You now want, on line $k$, to prove $\enot \meta{A}$. You can do this with the r
 		\open
 		\hypo[k]{a}{\meta{A}}
 		\have{b}{\meta{B}}\ce{ab, a}
-		\have{nb1}{\ered}\ri{b, nb}
+		\have{nb1}{\ered}\ne{nb, b}
 		\close
 	\have{no}{\enot\meta{A}}\ni{a-nb1}
 \end{proof}
@@ -1051,7 +1051,7 @@ Consider the following deduction scheme:
 	\have[m]{m}{\enot \enot \meta{A}}
 	\open
 		\hypo[k]{a}{\enot\meta{A}}
-		\have{a1}{\ered}\ri{m, a}
+		\have{a1}{\ered}\ne{m, a}
 	\close
 	\have{con}{\meta{A}}\ip{a-a1}
 \end{proof}
@@ -1094,16 +1094,16 @@ Here is another way that is a bit more complicated than the ones before. What yo
   \open
   \hypo[m+1]{a}{\meta{A}}
   \have[n+1]{aaa}{\meta{B}}
-  \have[n+2]{aaaa}{\ered}\ri{a, aaa}
+  \have[n+2]{aaaa}{\ered}\ne{nb, aaa}
   \close
   \open
   \hypo[k+2]{b}{\enot\meta{A}}
   \have[l+2]{bbb}{\meta{B}}
-  \have[l+3]{bbbb}{\ered}\ri{b, bbb}
+  \have[l+3]{bbbb}{\ered}\ne{b, bbb}
   \close
   \have[l+4]{na}{\lnot\meta{A}}\ni{a-aaaa}
   \have[l+5]{nna}{\lnot\lnot\meta{A}}\ni{b-bbbb}
-  \have[l+6]{bot}{\ered}\ri{na, nna}
+  \have[l+6]{bot}{\ered}\ne{nna, na}
   \close
   \have[l+7]{B}{\meta{B}}\ip{nb-bot}
 \end{proof}
@@ -1119,7 +1119,7 @@ Here is a demonstration of how we could derive the first De Morgan rule:
 			\open
 				\hypo{b}{\meta{B}}
 				\have{ab}{\meta{A} \eand \meta{B}}\ai{a,b}
-				\have{nab1}{\ered}\ri{ab, nab}
+				\have{nab1}{\ered}\ne{nab, ab}
 			\close
 			\have{nb}{\enot \meta{B}}\ni{b-nab1}
 			\have{dis}{\enot\meta{A} \eor \enot \meta{B}}\oi{nb}
@@ -1139,11 +1139,11 @@ Here is a demonstration of how we could derive the second De Morgan rule:
 			\have{b}{\meta{B}}\ae{ab}
 			\open
 				\hypo{na}{\enot \meta{A}}
-				\have{c1}{\ered}\ri{a, na}
+				\have{c1}{\ered}\ne{na, a}
 			\close
 			\open
 				\hypo{nb}{\enot \meta{B}}
-				\have{c2}{\ered}\ri{b, nb}
+				\have{c2}{\ered}\ne{nb, b}
 			\close
 			\have{con2}{\ered}\oe{nab, na-c1, nb-c2}
 		\close

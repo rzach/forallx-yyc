@@ -23,12 +23,12 @@ Some systems take DS as their basic rule for disjunction elimination. Such syste
     \open
       \hypo{a2}{\meta{A}}
       \have{c3}{\meta{C}}\ce{a2,aic}
-      \have{bot1}{\ered}\ri{nc,c3}
+      \have{bot1}{\ered}\ne{nc,c3}
     \close
     \have{na}{\enot\meta{A}}\ni{a2-bot1}
     \have{b2}{\meta{B}}\ds{ab,na}
     \have{c4}{\meta{C}}\ce{b2,bic}
-    \have{bot2}{\ered}\ri{nc,c4}
+    \have{bot2}{\ered}\ne{nc,c4}
   \close
   \have{con}{\meta{C}}\ip{nc-bot2}
 \end{proof}
@@ -83,7 +83,7 @@ This is not yet permitted, since in this new system, we do not have the $\exists
 		\hypo{nEna}{\enot \exists \meta{x} \meta{A}(\ldots \meta{x} \ldots \meta{c}\ldots)}
 		\have{Ana}{\forall \meta{x} \enot \meta{A}(\ldots \meta{x} \ldots \meta{c}\ldots)}\cq{nEna}
 		\have{nAc}{\enot\meta{A}(\ldots \meta{c} \ldots \meta{c}\ldots)}\Ae{Ana}
-		\have{red}{\ered}\ri{a, nAc}
+		\have{red}{\ered}\ne{nAc, a}
 	\close
 	\have{nnEa}{\exists \meta{x} \meta{A}(\ldots \meta{x} \ldots \meta{c}\ldots)}\ip{nEna-red}
 \end{proof}\noindent
@@ -110,7 +110,7 @@ To derive the $\exists$E rule is rather more subtle. This is because the $\exist
 		\have{nAc}{\enot \meta{A}(\ldots \meta{c} \ldots \meta{c}\ldots)}\mt{condi, nB}
 		\have{AxnA}{\forall \meta{x} \enot \meta{A}(\ldots \meta{x} \ldots \meta{x}\ldots)}\by{$\forall$I}{nAc}
 		\have{nEA}{\enot \exists \meta{x} \meta{A}(\ldots \meta{x} \ldots \meta{x}\ldots)}\cq{AxnA}
-		\have{red2}{\ered}\ri{ExA, nEA}
+		\have{red2}{\ered}\ne{nEA, ExA}
 	\close
 	\have{nnB}{\meta{B}}\ip{nB-red2}
 \end{proof}\noindent
