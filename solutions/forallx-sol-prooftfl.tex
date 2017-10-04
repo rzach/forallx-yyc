@@ -199,7 +199,7 @@ Give a proof for each of the following arguments:
 \have{con}{G \eor H}\tnd{f-gh, nf-gh1}
 \end{proof}}
 
-\newpage\item $(Z\eand K) \eor (K\eand M), K \eif D \therefore D$
+\item $(Z\eand K) \eor (K\eand M), K \eif D \therefore D$
 \myanswer{\begin{proof}
 \hypo{zkkm}{(Z \eand K) \eor (K \eand M)}
 \hypo{kd}{K \eif D}
@@ -234,6 +234,7 @@ Give a proof for each of the following arguments:
 \have{con}{Q \eor E}\oe{qr, q-qe, r-qe1}
 \end{proof}}
 
+\newpage
 \item $S\eiff T \therefore S\eiff (T\eor S)$
 \myanswer{\begin{proof}
 \hypo{st}{S \eiff T}
@@ -257,7 +258,7 @@ Give a proof for each of the following arguments:
 \close
 \have{con}{S \eiff (T \eor S)}\bi{s-ts, ts1-s4}
 \end{proof}}
-\newpage
+
 \item $\enot (P \eif Q) \therefore \enot Q$
 \myanswer{\begin{proof}
 \hypo{npq}{\enot (P \eif Q)}
@@ -278,11 +279,6 @@ Give a proof for each of the following arguments:
 \myanswer{\begin{proof}
 \hypo{npq}{\enot (P \eif Q)}
 \open
-	\hypo{p}{P}
-	\have{pp}{P \eand P}\ai{p,p}
-	\have{p1}{P}\ae{pp}
-\close
-\open
 	\hypo{np}{\enot P}
 	\open
 		\hypo{p2}{P}
@@ -291,9 +287,8 @@ Give a proof for each of the following arguments:
 	\close
 	\have{pq}{P \eif Q}\ci{p2-q}
 	\have{red1}{\ered}\ri{pq, npq}
-	\have{p3}{P}\re{red1}
 \close
-\have{con}{P}\tnd{p-p1, np-p3}
+\have{con}{P}\ip{np-red1}
 \end{proof}}
 \end{earg}
 
@@ -365,7 +360,6 @@ Give a proof for each of these arguments:
 \have{eg}{E \eand G}\ai{e, g}
 \end{proof}}
 
-\newpage
 \item $M\eor(N\eif M) \therefore \enot M \eif \enot N$
 \myanswer{\begin{proof}
 \hypo{mnm}{M \eor (N \eif M)}
@@ -443,6 +437,7 @@ Show that each of the following sentences is a theorem:
 \have{con}{N \eor \enot N}\tnd{n-nnn, nn-nnn1}
 \end{proof}}
 
+\newpage
 \item $J \eiff [J\eor (L\eand\enot L)]$
 \myanswer{\begin{proof}
 \open
@@ -467,7 +462,7 @@ Show that each of the following sentences is a theorem:
 \close
 \have{con}{J \eiff [J\eor (L\eand\enot L)]}\bi{j1-jlnl1, jlnl2-j5}
 \end{proof}}
-\newpage\item $((A \eif B) \eif A) \eif A$ 
+\item $((A \eif B) \eif A) \eif A$ 
 \myanswer{\begin{proof}
 \open
 	\hypo{aba}{(A \eif B) \eif A}
@@ -482,8 +477,7 @@ Show that each of the following sentences is a theorem:
 		\have{ab}{A \eif B}\ci{a-b}
 		\have{red1}{\ered}\ri{ab, nab}
 	\close
-	\have{nna}{\enot \enot A}\ni{na}
-	\have{a2}{A}\dne{nna}
+	\have{a2}{A}\ip{aba-red1}
 \close
 \have{con}{((A \eif B) \eif A) \eif A}\ci{aba-a2}
 \end{proof}}
@@ -519,13 +513,12 @@ Provide proofs to show each of the following:
 	\have{nM}{\enot M}\ce{nNnM, nN}
 	\have{red}{\ered}\ri{M, nM}
 \close
-\have{nnN}{\enot \enot N}\ni{nN-red}
-\have{N}{N}\dne{nnN}
+\have{N}{N}\ip{nN-red}
 \have{NM}{N \eand M}\ai{N, M}
 \have{con}{(N \eand M) \eor \enot M}\oi{NM}	
 \end{proof}}
 
-\newpage
+
 \item $(Z\eand K)\eiff(Y\eand M), D\eand(D\eif M) \proves Y\eif Z$
 \myanswer{\begin{proof}
 \hypo{zkym}{(Z \eand K) \eiff (Y \eand M)}
@@ -541,6 +534,8 @@ Provide proofs to show each of the following:
 \close
 \have{yz}{Y \eif Z}\ci{y-z}
 \end{proof}}
+
+
 \item $(W \eor X) \eor (Y \eor Z), X\eif Y, \enot Z \proves W\eor Y$
 \myanswer{\begin{proof}
 \hypo{wxyz}{(W \eor X) \eor (Y \eor Z)}
@@ -750,8 +745,7 @@ Show that each of the following pairs of sentences are provably equivalent: %TB:
 		\have{gh}{G \eiff H}\bi{g-h, h1-g1}
 		\have{red2}{\ered}\ri{gh, ngh}
 	\close
-	\have{nnh}{\enot\enot H}\ni{nh-red2}
-	\have{h2}{H}\dne{nnh}
+	\have{h2}{H}\ip{nh-red2}
 \close
 \open
 	\hypo{h3}{H}
