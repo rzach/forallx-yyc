@@ -187,16 +187,19 @@ Give a proof for each of the following arguments:
 \hypo{nfg}{\enot F \eif G}
 \hypo{fh}{F \eif H}
 \open
-	\hypo{f}{F}
-	\have{h}{H}\ce{fh, f}
-	\have{gh}{G \eor H}\oi{h}
-\close
-\open
-	\hypo{nf}{\enot F}
-	\have{g}{G}\ce{nfg, nf}
-	\have{gh1}{G \eor H}\oi{g}
-\close
-\have{con}{G \eor H}\tnd{f-gh, nf-gh1}
+        \hypo{ncon}{\enot (G \eor H)}
+        \open
+                \hypo{f}{F}
+                \have{h}{H}\ce{fh, f}
+                \have{gh1}{G \eor H}\oi{h}
+                \have{bot1}{\ered}\ri{ncon, gh1}
+        \close
+        \have{nf}{\enot F}\ni{f-bot1}
+        \have{g}{G}\ce{nfg,nf}
+        \have{gh2}{G \eor H}\oi{g}
+        \have{bot2}{\ered}\ri{ncon, gh2}
+\close        
+\have{con}{G \eor H}\ip{ncon-bot2}
 \end{proof}}
 
 \item $(Z\eand K) \eor (K\eand M), K \eif D \therefore D$
