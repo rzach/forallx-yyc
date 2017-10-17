@@ -496,17 +496,20 @@ Provide proofs to show each of the following:
 \item $C\eif(E\eand G), \enot C \eif G \proves G$
 \myanswer{\begin{proof}
 \hypo{ceg}{C \eif (E \eand G)}
-\hypo{ncG}{\enot C \eif G}
+\hypo{ncg}{\enot C \eif G}
 \open
-	\hypo{c}{C}
-	\have{eg}{E \eand G}\ce{ceg, c}
-	\have{g}{G}\ae{eg}
+        \hypo{ng}{\enot G}
+        \open
+                \hypo{c}{C}
+                \have{eg}{E \eand G}\ce{ceg, c}
+                \have{g1}{G}\ae{eg}
+                \have{bot1}{\ered}\ri{ng, g1}
+        \close
+        \have{nc}{\enot C}\ni{c-bot1}
+        \have{g2}{G}\ce{ncg, nc}
+        \have{bot2}{\ered}\ri{ng, g2}
 \close
-\open
-	\hypo{nc}{\enot C}
-	\have{g1}{G}\ce{ncG, nc}
-\close
-\have{g2}{G}\tnd{c-g, nc-g1}
+\have{con}{G}\ip{ng-bot2}
 \end{proof}}
 
 \item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
