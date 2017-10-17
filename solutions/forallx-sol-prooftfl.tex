@@ -430,14 +430,17 @@ Show that each of the following sentences is a theorem:
 \item $N \eor \enot N$
 \myanswer{\begin{proof}
 \open
-	\hypo{n}{N}
-	\have{nnn}{N \eor \enot N}\oi{n}
+        \hypo{ncon}{\enot (N \eor \enot N)}
+        \open
+                \hypo{n}{N}
+                \have{nnn1}{N \eor \enot N}\oi{n}
+                \have{bot1}{\ered}\ri{ncon, nnn1}
+        \close
+        \have{nn}{\enot N}\ni{n-bot1}
+        \have{nnn2}{N \eor \enot N}\oi{nn}
+        \have{bot2}{\ered}\ri{ncon, nnn2}
 \close
-\open
-	\hypo{nn}{\enot N}
-	\have{nnn1}{N \eor \enot N}\oi{nn}
-\close
-\have{con}{N \eor \enot N}\tnd{n-nnn, nn-nnn1}
+\have{con}{N \eor \enot N}\ip{ncon-bot2}
 \end{proof}}
 
 \newpage
