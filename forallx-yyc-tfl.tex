@@ -50,7 +50,7 @@ This valid argument has a structure which we might represent thus:
 	\end{earg}
 These examples illustrate an important idea, which we might describe as \emph{validity in virtue of form}. The validity of the arguments just considered has nothing very much to do with the meanings of English expressions like `Jenny is miserable', `Dipan is an avid reader of Tolstoy', or `Jim acted in lots of plays'. If it has to do with meanings at all, it is with the meanings of phrases like `and', `or', `not,' and `if\ldots, then\ldots'. 
 
-In this chapter, we are going to develop a formal language which allows us to symbolize many arguments in such a way as to show that they are valid in virtue of their form. That language will be \emph{truth-functional logic}, or TFL.
+In Parts \ref{ch.TFL}--\ref{ch.NDTFL}, we are going to develop a formal language which allows us to symbolize many arguments in such a way as to show that they are valid in virtue of their form. That language will be \emph{truth-functional logic}, or TFL.
 
 \section{Validity for special reasons}
 There are plenty of arguments that are valid, but not for reasons relating to their form. Take an example:
@@ -83,12 +83,12 @@ We started isolating the form of an argument, in \S\ref{s:ValidityInVirtueOfForm
 
 Our artificial language, TFL, pursues this idea absolutely ruthlessly. We start with some \emph{atomic sentences}. These will be the basic building blocks out of which more complex sentences are built. We will use uppercase Roman letters for atomic sentences of TFL. There are only twenty-six letters of the alphabet, but there is no limit to the number of atomic sentences that we might want to consider. By adding subscripts to letters, we obtain new atomic sentences. So, here are five different atomic sentences of TFL:
 	$$A, P, P_1, P_2, A_{234}$$
-We will use atomic sentence to represent, or \emph{symbolize}, certain English sentences. To do this, we provide a \define{symbolization key}, such as the following:
+We will use atomic sentences to represent, or \emph{symbolize}, certain English sentences. To do this, we provide a \define{symbolization key}, such as the following:
 	\begin{ekey}
 		\item[A] It is raining outside
 		\item[C] Jenny is miserable
 	\end{ekey}
-In doing this, we are not fixing this symbolization \emph{once and for all}. We are just saying that, for the time being, we will think of the atomic sentence of TFL, `$A$', as symbolizing the English sentence `It is raining outside', and the atomic sentence of TFL, `$C$', as symbolizing the English sentence `Jenny is miserable. Later, when we are dealing with different sentences or different arguments, we can provide a new symbolization key; as it might be:
+In doing this, we are not fixing this symbolization \emph{once and for all}. We are just saying that, for the time being, we will think of the atomic sentence of TFL, `$A$', as symbolizing the English sentence `It is raining outside', and the atomic sentence of TFL, `$C$', as symbolizing the English sentence `Jenny is miserable'. Later, when we are dealing with different sentences or different arguments, we can provide a new symbolization key; as it might be:
 	\begin{ekey}
 		\item[A] Jenny is an anarcho-syndicalist
 		\item[C] Dipan is an avid reader of Tolstoy
@@ -147,7 +147,7 @@ In order to symbolize sentence \ref{not1}, we will need an atomic sentence. We m
 	\begin{ekey}
 		\item[B] Mary is in Barcelona.
 	\end{ekey}
-Since sentence \ref{not2} is obviously related to the sentence \ref{not1}, we will not want to symbolize it with a completely different sentence. Roughly, sentence \ref{not2} means something like `It is not the case that B'. In order to symbolize this, we need a symbol for negation. We will use `\enot'. Now we can symbolize sentence \ref{not2} with `$\enot B$'.
+Since sentence \ref{not2} is obviously related to sentence \ref{not1}, we will not want to symbolize it with a completely different sentence. Roughly, sentence \ref{not2} means something like `It is not the case that B'. In order to symbolize this, we need a symbol for negation. We will use `\enot'. Now we can symbolize sentence \ref{not2} with `$\enot B$'.
 
 Sentence \ref{not3} also contains the word `not', and it is obviously equivalent to sentence \ref{not2}. As such, we can also symbolize it with `$\enot B$'.
 \factoidbox{
