@@ -593,12 +593,12 @@ Brackets &( , )\\
 We define an \define{expression of TFL} as any string of symbols of TFL. Take any of the symbols of TFL and write them down, in any order, and you have an expression of TFL.
 
 
-\section{Sentences}
+\section{Sentences}\label{s:Sentences}
 Of course, many expressions of TFL will be total gibberish. We want to know when an expression of TFL amounts to a \emph{sentence}. 
 
 Obviously, individual atomic sentences like `$A$' and `$G_{13}$' should count as sentences. We can form further sentences out of these by using the various connectives. Using negation, we can get `$\enot A$' and `$\enot G_{13}$'. Using conjunction, we can get `$(A \eand G_{13})$', `$(G_{13} \eand A)$', `$(A \eand A)$', and `$(G_{13} \eand G_{13})$'. We could also apply negation repeatedly to get sentences like `$\enot \enot A$' or apply negation along with conjunction to get sentences like `$\enot(A \eand G_{13})$' and `$\enot(G_{13} \eand \enot G_{13})$'. The possible combinations are endless, even starting with just these two sentence letters, and there are infinitely many sentence letters. So there is no point in trying to list all the sentences one by one.
 
-Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: Given any sentence \meta{A} of TFL, $\enot\meta{A}$ is a sentence of TFL. (Why the funny fonts? We return to this in \S\ref{s:UseMention}.)
+Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: Given any sentence \meta{A} of TFL, $\enot\meta{A}$ is a sentence of TFL. (Why the funny fonts? We return to this in \S\ref{s:Metavariables}.)
 
 We can say similar things for each of the other connectives. For instance, if \meta{A} and \meta{B} are sentences of TFL, then $(\meta{A}\eand\meta{B})$ is a sentence of TFL. Providing clauses like this for all of the connectives, we arrive at the following formal definition for a \define{sentence of TFL}:
 	\factoidbox{\label{TFLsentences}
@@ -701,7 +701,7 @@ $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
 
 
 \chapter{Use and mention}\label{s:UseMention}
-In this chapter, we have talked a lot \emph{about} sentences. So we should pause to explain an important, and very general, point.
+In this Part, we have talked a lot \emph{about} sentences. So we should pause to explain an important, and very general, point.
 
 \section{Quotation conventions}
 Consider these two sentences:
@@ -769,8 +769,8 @@ Equally, what we meant to say above is just:
 The general point is that, whenever we want to talk in English about some specific expression of TFL, we need to indicate that we are \emph{mentioning} the expression, rather than \emph{using} it. We can either deploy quotation marks, or we can adopt some similar convention, such as  placing it centrally in the page. 
 
 
-\section{Metavariables}
-However, we do not just want to talk about \emph{specific} expressions of TFL. We also want to be able to talk about \emph{any arbitrary} sentence of TFL. Indeed, we had to do this in \S\ref{s:TFLSentences}, when we presented the recursive definition of a sentence of TFL. We used uppercase script letters to do this, namely:
+\section{Metavariables}\label{s:Metavariables}
+However, we do not just want to talk about \emph{specific} expressions of TFL. We also want to be able to talk about \emph{any arbitrary} sentence of TFL. Indeed, we had to do this in \S\ref{s:Sentences}, when we presented the recursive definition of a sentence of TFL. We used uppercase script letters to do this, namely:
 	$$\meta{A}, \meta{B}, \meta{C}, \meta{D}, \ldots$$
 These symbols do not belong to TFL. Rather, they are part of our (augmented) metalanguage that we use to talk about \emph{any} expression of TFL. To repeat the second clause of the recursive definition of a sentence of TFL, we said:
 	\begin{earg}
