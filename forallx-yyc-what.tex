@@ -13,9 +13,9 @@ In everyday language, we sometimes use the word `argument' to talk about bellige
 
 An argument, as we will understand it, is something more like this:
 	\begin{earg}\label{argButlerGardner}
-		\item[] Either the butler or the gardner did it.
+		\item[] Either the butler or the gardener did it.
 		\item[] The butler didn't do it.
-		\item[\therefore] The gardner did it.
+		\item[\therefore] The gardener did it.
 	\end{earg}
 We here have a series of sentences. The three dots on the third line of the argument are read `therefore.' They indicate that the final sentence expresses the \emph{conclusion} of the argument. The two sentences before that are the \emph{premises} of the argument. If you believe the premises, and you think the conclusion follows from the premises---that the argument, as we will say, is valid---then this (perhaps) provides you with a reason to believe the conclusion. 
 
@@ -31,13 +31,13 @@ This argument has one premise followed by a conclusion.
 
 Many arguments start with premises, and end with a conclusion, but not all of them. The argument with which this section began might equally have been presented with the conclusion at the beginning, like so:
 	\begin{quote}
-		The gardner did it. After all, it was either the butler or the
-		gardner. And the gardner didn't do it. 
+		The gardener did it. After all, it was either the butler or the
+		gardener. And the gardener didn't do it. 
 	\end{quote}
 Equally, it might have been presented with the conclusion in the middle:
 	\begin{quote}
-		The butler didn't do it. Accordingly, it was the gardner,
-		given that it was either the gardner or the butler.
+		The butler didn't do it. Accordingly, it was the gardener,
+		given that it was either the gardener or the butler.
 	\end{quote}
 When approaching an argument, we want to know whether or not the conclusion follows from the premises. So the first thing to do is to separate out the conclusion from the premises. As a guide, these words are often used to indicate an argument's conclusion:
 	\begin{center}
@@ -134,11 +134,11 @@ This notion of consequence is one of the primary things logic is concerned with.
 
 What about the main argument discussed in \S\ref{s:Arguments}? 
 \begin{earg}
-	\item[] Either the butler or the gardner did it.
+	\item[] Either the butler or the gardener did it.
 	\item[] The butler didn't do it.
-	\item[\therefore] The gardner did it.
+	\item[\therefore] The gardener did it.
 \end{earg}
-We don't have any context for what the sentences in this argument refer to. Perhaps you suspect that ``did it'' here means ``was the perpetrator'' of some unspecified crime. You might imagine that the argument occurs in a mystery novel or TV show, perhaps spoken by a detective working through the evidence. But even without having any of this information, you probably agree that the argument is a good one in the sense that whatever the premises refer to, if they are both true, the conclusion cannot but be true as well. If the first premise is true, i.e., it's true that ``the butler did it or the gardner did it,'' then at least one of them ``did it,'' whatever that means. And if the second premise is true, then the butler did not ``do it.'' That leaves only one option: ``the gardner did it'' must be true. Here, the conclusion follows from the premises. We call arguments that have this property \define{valid}.
+We don't have any context for what the sentences in this argument refer to. Perhaps you suspect that ``did it'' here means ``was the perpetrator'' of some unspecified crime. You might imagine that the argument occurs in a mystery novel or TV show, perhaps spoken by a detective working through the evidence. But even without having any of this information, you probably agree that the argument is a good one in the sense that whatever the premises refer to, if they are both true, the conclusion cannot but be true as well. If the first premise is true, i.e., it's true that ``the butler did it or the gardener did it,'' then at least one of them ``did it,'' whatever that means. And if the second premise is true, then the butler did not ``do it.'' That leaves only one option: ``the gardener did it'' must be true. Here, the conclusion follows from the premises. We call arguments that have this property \define{valid}.
 
 By way of contrast, consider the following argument:
 \begin{earg}\label{argMaidDriver}
@@ -150,15 +150,15 @@ We still have no idea what is being talked about here. But, again, you probably 
 
 \section{Cases and types of validity}
 
-How did we determine that the second argument is invalid? We pointed to a case in which the premises are true and in which the conclusion is not.  This was the scenario where driver and maid didn't do it, but some third person did.  Let's call such a case a \define{counterexample} to the argument. If there is a counterexample to an argument, the conclusion cannot be a consequence of the premises. For the conclusion to be a consequence of the premises, the truth of the premises must guarantee the truth of the conclusion. If there is a counterexample, the truth of the premises does not guarantee the truth of the conclusion.
+How did we determine that the second argument is invalid? We pointed to a case in which the premises are true and in which the conclusion is not.  This was the scenario where neither the driver nor the maid did it, but some third person did.  Let's call such a case a \define{counterexample} to the argument. If there is a counterexample to an argument, the conclusion cannot be a consequence of the premises. For the conclusion to be a consequence of the premises, the truth of the premises must guarantee the truth of the conclusion. If there is a counterexample, the truth of the premises does not guarantee the truth of the conclusion.
 
-As logicians, we want to be able to determine when the conclusion of an argument follows from the premises. And the conclusion is a consequence of the premises if there is no counterexample, a case where the premises are all true but the conclusion is not. This motivates a definition:
+As logicians, we want to be able to determine when the conclusion of an argument follows from the premises. And the conclusion is a consequence of the premises if there is no counterexample---no case where the premises are all true but the conclusion is not. This motivates a definition:
 
 	\factoidbox{
 		A sentence $A$ is a \define{consequence} of sentences $B_1$, \dots, $B_n$ if and only if there is no case where $B_1$, \dots, $B_n$ are all true and $A$ is not true. (We then also say that $A$ \define{follows from} $B_1$, \dots, $B_n$ or that $B_1$, \dots, $B_n$ \define{entail}~$A$.)
 	}
 
-This ``definition'' is incomplete: it does not tell us what a ``case'' is or what it means to be ``true in a case.''  So far we've only seen an example: a hypothetical scenario involving three people, a driver, a maid, and some third person, and in this scenario the driver and maid didn't do it but the third person did. In this scenario, as described, the driver didn't do it, and so it is a case in which the sentence ``the driver did it'' is not true. The premises of our second argument are true but the conclusion is not true: the scenario is a counterexample.
+This ``definition'' is incomplete: it does not tell us what a ``case'' is or what it means to be ``true in a case.''  So far we've only seen an example: a hypothetical scenario involving three people. Of the three people in the scenario---a driver, a maid, and some third person---the driver and maid didn't do it, but the third person did. In this scenario, as described, the driver didn't do it, and so it is a case in which the sentence ``the driver did it'' is not true. The premises of our second argument are true, but the conclusion is not true: the scenario is a counterexample.
 
 We said that arguments where the conclusion is a consequence of the premises are called valid, and those where the conclusion isn't a consequence of the premises are invalid. Since we now have at least a first stab at a definition of ``consequence,'' we'll record this: 
 
@@ -179,10 +179,10 @@ description={A property of arguments where there conclusion is a consequence of 
 \newglossaryentry{invalid}
 {
 name=invalid,
-description={A property of arguments that holds when the conclusion is not a conseqeucne of the premises; the opposite of \gls{valid}}
+description={A property of arguments that holds when the conclusion is not a consequence of the premises; the opposite of \gls{valid}}
 }
 
-Logicians are in the business of making the notion of ``case'' more precise, and investigating which arguments are valid when ``case'' is made precise in one way or another. If we take ``case'' to mean ``hypothetical scenario'' like the counterexample to the second argument, it's clear that the first argument counts as valid. If we imagine a scenario in which either the butler or the gardner did it, and also the butler didn't do it, we are automatically imagining a scenario in which the gardner did it. So any hypothetical scenario in which the premises of our first argument are true automatically makes the conclusion of our first argument true. This makes the first argument valid. 
+Logicians are in the business of making the notion of ``case'' more precise, and investigating which arguments are valid when ``case'' is made precise in one way or another. If we take ``case'' to mean ``hypothetical scenario'' like the counterexample to the second argument, it's clear that the first argument counts as valid. If we imagine a scenario in which either the butler or the gardener did it, and also the butler didn't do it, we are automatically imagining a scenario in which the gardener did it. So any hypothetical scenario in which the premises of our first argument are true automatically makes the conclusion of our first argument true. This makes the first argument valid. 
 
 Making ``case'' more specific by interpreting it as ``hypothetical scenario'' is an advance. But it is not the end of the story.  The first problem is that we don't know what to count as a hypothetical scenario. Are they limited by the laws of physics? By what is conceivable, in a very general sense?  What answers we give to these questions determine which arguments we count as valid.
 
