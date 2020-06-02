@@ -182,7 +182,7 @@ name=invalid,
 description={A property of arguments that holds when the conclusion is not a conseqeucne of the premises; the opposite of \gls{valid}}
 }
 
-Logicians are in the business of making the notion of ``case'' more precise, and investigating which arguments are valid when ``case'' is made precise in one way or another. If we take ``case'' to mean ``hypothetical scenario'' like the counterexample to the second argument, it's clear that the first argument counts as valid. If we imagine a scenario in which either the butler or the gardner did it, and also the butler didn't do it, we are automatically imagining a scenario in which the gardner did it. So any hypothetical scenario in which the premises of our first argument are true automatically makes the conclusion of our first arument true. This makes the first argument valid. 
+Logicians are in the business of making the notion of ``case'' more precise, and investigating which arguments are valid when ``case'' is made precise in one way or another. If we take ``case'' to mean ``hypothetical scenario'' like the counterexample to the second argument, it's clear that the first argument counts as valid. If we imagine a scenario in which either the butler or the gardner did it, and also the butler didn't do it, we are automatically imagining a scenario in which the gardner did it. So any hypothetical scenario in which the premises of our first argument are true automatically makes the conclusion of our first argument true. This makes the first argument valid. 
 
 Making ``case'' more specific by interpreting it as ``hypothetical scenario'' is an advance. But it is not the end of the story.  The first problem is that we don't know what to count as a hypothetical scenario. Are they limited by the laws of physics? By what is conceivable, in a very general sense?  What answers we give to these questions determine which arguments we count as valid.
 
@@ -195,29 +195,29 @@ A counterexample to this argument would be a scenario in which the \emph{Rocinan
 
 Suppose the answer to the second question is ``yes,'' and consider another argument:
 	\begin{earg}
-		\item[] Priya is an opthalmologist.
+		\item[] Priya is an ophthalmologist.
 		\item[\therefore] Priya is an eye doctor.
 	\end{earg}
-If we're allowing only conceivable scenarios, this is also a valid argument. If you imagine Priya being an opthalmologist, you thereby imagine Priya being an eye doctor. That's just what ``opthalmologist'' and ``eye doctor'' mean.  A scenario where Priya is an opthalmologist but not an eye doctor is ruled out by the conceptual connection between these words.
+If we're allowing only conceivable scenarios, this is also a valid argument. If you imagine Priya being an ophthalmologist, you thereby imagine Priya being an eye doctor. That's just what ``ophthalmologist'' and ``eye doctor'' mean.  A scenario where Priya is an ophthalmologist but not an eye doctor is ruled out by the conceptual connection between these words.
 
 Depending on what kinds of cases we consider as potential counterexamples, then, we arrive at different notions of consequence and validity. We might call an argument \define{nomologically valid} if there are no counterexamples that don't violate the laws of nature, and an argument \define{conceptually valid} if there are no counterexamples that don't violate conceptual connections between words.
-For both of these notions of validity, aspects of the world (e.g., what the laws of nature are) and aspects of the meaning of the sentences in the argument (e.g., that ``opthalmologist'' just means a kind of eye doctor) figure into whether an argument is valid.
+For both of these notions of validity, aspects of the world (e.g., what the laws of nature are) and aspects of the meaning of the sentences in the argument (e.g., that ``ophthalmologist'' just means a kind of eye doctor) figure into whether an argument is valid.
 
 \section{Formal validity}
 
 One distinguishing feature of \emph{logical} consequence, however, is that it should not depend on the content of the premises and conclusion, but only on their logical form. In other words, as logicians we want to develop a theory that can make finer-grained distinctions still. For instance, both
 \begin{earg}
-	\item[] Either Priya is an opthalmologist or a dentist.
+	\item[] Either Priya is an ophthalmologist or a dentist.
 	\item[] Priya isn't a dentist.
 	\item[\therefore] Priya is an eye doctor.
 \end{earg}
 and
 \begin{earg}
-	\item[] Either Priya is an opthalmologist or a dentist.
+	\item[] Either Priya is an ophthalmologist or a dentist.
 	\item[] Priya isn't a dentist.
-	\item[\therefore] Priya is an opthalmologist.
+	\item[\therefore] Priya is an ophthalmologist.
 \end{earg}
-are valid arguments. But while the validity of the first depends on the content (i.e., the meaning of ``opthalmologist'' and ``eye doctor''), the second does not. The second argument is \define{formally valid}. We can describe the ``form'' of this argument as a pattern, something like this:
+are valid arguments. But while the validity of the first depends on the content (i.e., the meaning of ``ophthalmologist'' and ``eye doctor''), the second does not. The second argument is \define{formally valid}. We can describe the ``form'' of this argument as a pattern, something like this:
 \begin{earg}
 	\item[] Either $A$ is an $X$ or a $Y$.
 	\item[] $A$ isn't a $Y$.
@@ -229,7 +229,7 @@ Here, $A$, $X$, and $Y$ are placeholders for appropriate expressions that, when 
 	\item[] Mei isn't a botanist.
 	\item[\therefore] Mei is a mathematician.
 \end{earg}
-is an argument of the same form, but the first argument above is not: we would have to replace $Y$ by different expressions (once by ``opthalmologist'' and once by ``eye doctor'') to obtain it from the pattern.
+is an argument of the same form, but the first argument above is not: we would have to replace $Y$ by different expressions (once by ``ophthalmologist'' and once by ``eye doctor'') to obtain it from the pattern.
 
 Moreover, the first argument is not formally valid. \emph{Its} form is this:
 \begin{earg}
@@ -237,7 +237,7 @@ Moreover, the first argument is not formally valid. \emph{Its} form is this:
 	\item[] $A$ isn't a $Y$.
 	\item[\therefore] $A$ is a $Z$.
 \end{earg}
-In this pattern we can replace $X$ by ``opthalmologist'' and $Z$ by ``eye doctor'' to obtain the original argument.  But here is another argument of the same form:
+In this pattern we can replace $X$ by ``ophthalmologist'' and $Z$ by ``eye doctor'' to obtain the original argument.  But here is another argument of the same form:
 \begin{earg}
 	\item[] Either Mei is a mathematician or a botanist.
 	\item[] Mei isn't a botanist.
@@ -245,9 +245,10 @@ In this pattern we can replace $X$ by ``opthalmologist'' and $Z$ by ``eye doctor
 \end{earg}
 This argmuent is clearly not valid, since we can imagine a mathematician named Mei who is not an acrobat.
 
-Our strategy as logicians will be to come up with a notion of ``case'' on which an argument turns out to be valid if it is formally valid. Clearly such a notion of ``case'' will have to violate not just some laws of nature but some laws of English. Since the first argument is invalid in this sense, we must allow as counterexample a case where Priya is an opthalmologist but not an eye doctor.  That case is not a conceivable situation: it is ruled out by the meanings of ``opthalmologist'' and ``eye doctor.''
+Our strategy as logicians will be to come up with a notion of ``case'' on which an argument turns out to be valid if it is formally valid. Clearly such a notion of ``case'' will have to violate not just some laws of nature but some laws of English. Since the first argument is invalid in this sense, we must allow as counterexample a case where Priya is an ophthalmologist but not an eye doctor.  That case is not a conceivable situation: it is ruled out by the meanings of ``ophthalmologist'' and ``eye doctor.''
 
-When we consider cases of various kinds in order to evaluate the validity of an argument, we will make a few assumptions. The first assumption is that every case makes every sentence true or not true---at least, every sentence in the argument under consideration. That means first of all that any imagined scenario which leaves it undetermined if a sentence in our argument is true will not be considered as a potential counterexample. For instance, a scenario where Priya is a dentist but not an opthalmologist will count as a case to be considered in the first few arguments in this section, but not as a case to be considered in the last two: it doesn't tell us if Mei is a mathematician, a botanist, or an acrobat. If a case doesn't make a sentence true, we say it makes it \define{false}. We'll thus assume that cases make sentences true or false but never both.\footnote{Even if these assumtions seem common-sensical to you, they are controversial among philosophers of logic. First of all, there are logicians who want to consider cases where sentences are neither true nor false, but have some kind of intermediate level of truth. More controversially, some philosophers think we should allow for the possibility of sentences to be both true and false at the same time. There are systems of logic in which sentences can be neither true nor false, or both, but we will not discuss them in this book.}
+When we consider cases of various kinds in order to evaluate the validity of an argument, we will make a few assumptions. The first assumption is that every case makes every sentence true or not true---at least, every sentence in the argument under consideration. That means first of all that any imagined scenario which leaves it undetermined if a sentence in our argument is true will not be considered as a potential counterexample. For instance, a scenario where Priya is a dentist but not an ophthalmologist will count as a case to be considered in the first few arguments in this section, but not as a case to be considered in the last two: it doesn't tell us if Mei is a mathematician, a botanist, or an acrobat. If a case doesn't make a sentence true, we say it makes it \define{false}. We'll thus assume that cases make sentences true or false but never both.\footnote{Even if these assumptions seem common-sensical to you, they are controversial among philos
+ers of logic. First of all, there are logicians who want to consider cases where sentences are neither true nor false, but have some kind of intermediate level of truth. More controversially, some philosophers think we should allow for the possibility of sentences to be both true and false at the same time. There are systems of logic in which sentences can be neither true nor false, or both, but we will not discuss them in this book.}
 
 \section{Sound arguments}
 
