@@ -1,4 +1,4 @@
-%!TEX root = forallxsol.tex
+%!TEX root = forallxyyc-solutions.tex
 %\part{Interpretations}
 %\label{ch.semantics}
 %\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
@@ -103,9 +103,51 @@ Determine whether each of the following sentences is true or false in that inter
 \label{pr.Contingent}
 Show that each of the following is neither a validity nor a contradiction:
 \begin{earg}
-\item \leftsolutions\ $\atom{D}{a} \eand \atom{D}{b}$
+\item $\atom{D}{a} \eand \atom{D}{b}$
+
+\myanswer{The sentence is true in this model:
+\begin{ekey}
+	\item[\text{domain}] Stan
+	\item[D(x)] Stan
+	\item[a] Stan
+	\item[b] Stan
+\end{ekey}
+And it is false in this model:
+\begin{ekey}
+	\item[\text{domain}] Stan
+	\item[D(x)] % $\emptyset$
+	\item[a] Stan
+	\item[b] Stan
+\end{ekey}}
 \item \leftsolutions\ $\exists x\,\atom{T}{x,h}$
-\item \leftsolutions\ $\atom{P}{m} \eand \enot\forall x\,\atom{P}{x}$
+
+\myanswer{The sentence is true in this model:
+\begin{ekey}
+	\item[\text{domain}] Stan
+	\item[T(x,y)] \ntuple{Stan, Stan}
+	\item[h] Stan
+\end{ekey}
+And it is false in this model:
+\begin{ekey}
+	\item[\text{domain}] Stan
+	\item[T(x,y)] % $\emptyset$
+	\item[h] Stan
+\end{ekey}}
+
+\item $\atom{P}{m} \eand \enot\forall x\,\atom{P}{x}$
+
+\myanswer{	The sentence is true in this model:
+\begin{ekey}
+	\item[\text{domain}] Stan, Ollie
+	\item[P(x)] Stan
+	\item[m] Stan
+\end{ekey}
+And it is false in this model:
+\begin{ekey}
+	\item[\text{domain}] Stan
+	\item[P(x)] % $\emptyset$
+	\item[m] Stan
+\end{ekey}}
 \item $\forall z\, \atom{J}{z} \eiff \exists y\,\atom{J}{y}$
 \item $\forall x (\atom{W}{x,m,n} \eor \exists y\atom{L}{x,y})$
 \item $\exists x (\atom{G}{x} \eif \forall y\,\atom{M}{y})$
@@ -118,14 +160,76 @@ Show that each of the following is neither a validity nor a contradiction:
 Show that the following pairs of sentences are not logically equivalent.
 \begin{earg}
 \item $\atom{J}{a}$, $\atom{K}{a}$
+
+\myanswer{Making the first sentence true and the second false:
+\begin{ekey}
+	\item[\text{domain}] $0$
+	\item[J(x)] $0$
+	\item[K(x)] % $\emptyset$
+	\item[a] $0$
+\end{ekey}}
 \item $\exists x\,\atom{J}{x}$, $\atom{J}{m}$
+
+\myanswer{Making the first sentence true and the second false:
+\begin{ekey}
+	\item[\text{domain}] $0$, $1$
+	\item[J(x)] $0$
+	\item[m] $1$
+\end{ekey}}
 \item $\forall x\,\atom{R}{x,x}$, $\exists x\,\atom{R}{x,x}$
+
+\myanswer{Making the first sentence false and the second true:
+\begin{ekey}
+	\item[\text{domain}] $0$, $1$
+	\item[R(x,y)] \ntuple{$0$,$0$}
+\end{ekey}}
 \item $\exists x\,\atom{P}{x} \eif \atom{Q}{c}$, $\exists x (\atom{P}{x} \eif \atom{Q}{c})$
+
+\myanswer{Making the first sentence false and the second true:
+\begin{ekey}
+	\item[\text{domain}] $0$, $1$
+	\item[P(x)] $0$
+	\item[Q(x)] % $\emptyset$
+	\item[c] $0$
+\end{ekey}}
 \item $\forall x(\atom{P}{x} \eif \enot \atom{Q}{x})$, $\exists x(\atom{P}{x} \eand \enot \atom{Q}{x})$
+
+\myanswer{Making the first sentence true and the second false:
+\begin{ekey}
+	\item[\text{domain}] $0$
+	\item[P(x)] % $\emptyset$
+	\item[Q(x)] % $\emptyset$
+\end{ekey}}
 \item $\exists x(\atom{P}{x} \eand \atom{Q}{x})$, $\exists x(\atom{P}{x} \eif \atom{Q}{x})$
+
+\myanswer{Making the first sentence false and the second true:
+\begin{ekey}
+	\item[\text{domain}] $0$
+	\item[P(x)] % $\emptyset$
+	\item[Q(x)] $0$
+\end{ekey}}
 \item $\forall x(\atom{P}{x}\eif \atom{Q}{x})$, $\forall x(\atom{P}{x} \eand \atom{Q}{x})$
+
+\myanswer{Making the first sentence true and the second false:
+\begin{ekey}
+	\item[\text{domain}] $0$
+	\item[P(x)] % $\emptyset$
+	\item[Q(x)] $0$
+\end{ekey}}
 \item $\forall x\exists y\,\atom{R}{x,y}$, $\exists x\forall y\,\atom{R}{x,y}$
+
+\myanswer{Making the first sentence true and the second false:
+\begin{ekey}
+	\item[\text{domain}] $0$, $1$
+	\item[R(x,y)] \ntuple{$0$, $1$}, \ntuple{$1$, $0$}
+\end{ekey}}
 \item $\forall x\exists y\,\atom{R}{x,y}$, $\forall x\exists y\,\atom{R}{y,x}$
+
+\myanswer{Making the first sentence false and the second true:
+\begin{ekey}
+	\item[\text{domain}] $0$, $1$
+	\item[R(x,y)] \ntuple{$0$, $0$}, \ntuple{$0$, $1$}
+\end{ekey}}
 \end{earg}
 
 
@@ -143,7 +247,17 @@ Show that the following sentences are jointly satisfiable:
 \item $\exists z(\atom{N}{z} \eand \atom{O}{z,z}), \forall x\forall y(\atom{O}{x,y} \eif \atom{O}{y,x})$
 \item $\enot \exists x \forall y\,\atom{R}{x,y}, \forall x \exists y\,\atom{R}{x,y}$
 \item $\enot \atom{R}{a,a}$, $\forall x (x=a \eor \atom{R}{x,a})$
+
+\myanswer{The sentences are both true in this interpretation:
+\begin{ekey}
+	\item[\text{domain}] Harry, Sally
+	\item[R(x,y)]\ntuple{Sally, Harry}
+	\item[a] Harry
+	\end{ekey}}
 \item $\forall x\forall y\forall z[(x=y \eor y=z )\eor x=z]$, $\exists x\exists y\ \enot x= y$
+
+\myanswer{There are no predicates or constants, so we only need to give a domain.
+Any domain with 2 elements will do.}
 \item $\exists x\exists y((\atom{Z}{x} \eand \atom{Z}{y} )\eand x=y)$, $\enot \atom{Z}{d}$, $d=e$
 \end{earg}
 
