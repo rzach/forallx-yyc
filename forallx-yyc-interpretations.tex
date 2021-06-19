@@ -16,8 +16,8 @@ Recall that TFL is a truth-functional language. Its connectives are all truth-fu
 	\end{ebullet}
 And we emphasised in \S\ref{s:TruthFunctionality} that TFL cannot handle differences in meaning that go beyond mere differences in truth value. 
 
-
 \section{Symbolizing versus translating}
+
 FOL has some similar limitations. It gets beyond mere truth values, since it enables us to split up sentences into terms, predicates and quantifiers. This enables us to consider what is \emph{true of} some particular object, or of some or all objects. \emph{But that's it}.
 
 To unpack this a bit, consider this symbolization key: 
@@ -32,13 +32,15 @@ So, in particular:
 	\begin{ebullet}
 		\item `$\atom{C}{x}$' is to be true of exactly those things which teach Logic III in Calgary (whatever those things might be).
 	\end{ebullet}
-This is an indirect way of stipulating which things a predicate is true of. Alternatively, we can stipulate predicate extensions directly. For example, we can stipulate that `$\atom{C}{x}$' is to be true of Richard Zach, and Richard Zach alone. As it happens, this direct stipulation would have the same effect as the indirect stipulation, since Richard, and Richard alone, teaches Logic~III in Calgary. Note, however, that the English predicates `\blank\ is Richard Zach' and `\blank\ teaches Logic III in Calgary' have very different meanings!
+This is an indirect way of stipulating which things a predicate is true of.
+
+Alternatively, we can stipulate predicate extensions directly. For example, we can stipulate that `$\atom{C}{x}$' is to be true of Richard Zach, and Richard Zach alone. As it happens, this direct stipulation would have the same effect as the indirect stipulation, since Richard, and Richard alone, teaches Logic~III in Calgary. Note, however, that the English predicates `\blank\ is Richard Zach' and `\blank\ teaches Logic III in Calgary' have very different meanings!
 
 The point is that FOL has no resources for dealing with nuances of meaning. When we interpret FOL, all we are considering is what the predicates are true of, regardless of whether we specify these things directly or indirectly. The things a predicate is true of are known as the \define{extension} of that predicate. We say that FOL is an \define{extensional language} because FOL does not represent differences of meaning between predicates that have the same extension.    
 
 This is why we speak of \emph{symbolizing} English sentences in FOL. It is doubtful that we are \emph{translating} English into FOL, for translation should preserve meaning. 
 
-\section{A word on extensions}
+\section{Extensions}\label{sec:extensions}
 We can stipulate directly what predicates are to be true of. And our stipulations can be as arbitrary as we like. For example, we could stipulate that `$\atom{H}{x}$' should be true of, and only of, the following objects:
 	\begin{center}
 		Justin Trudeau\\
@@ -51,13 +53,17 @@ Armed with this interpretation of `$\atom{H}{x}$', suppose we now add to our sym
 		\item[a] Angela Merkel
 		\item[p] the number $\pi$
 	\end{ekey}
-Then `$\atom{H}{j}$' and `$\atom{H}{p}$' will both be true, on this interpretation, but `$\atom{H}{a}$' will be false, since Angela Merkel was not among the stipulated objects. 
+Then `$\atom{H}{j}$' and `$\atom{H}{p}$' will both be true, on this interpretation, but `$\atom{H}{a}$' will be false, since Angela Merkel was not among the stipulated objects.
 
 This process of explicit stipulation is sometimes described as stipulating the \emph{extension} of a predicate. Note that, in the stipulation we just gave, the objects we listed have nothing particularly in common. This doesn't matter. Logic doesn't care about what we humans (at a particular moment) think `naturally go together'; to logic, all objects are on an equal footing.
 
+Any well-defined collection of objects is a potential extension of a one-place predicate.  The example above shows one way of stipulating the extension of `$\atom{H}{x}$' by \emph{enumeration}, i.e., we simply list the objects in the extension of~`$\atom{H}{x}$'. We can also stipulate the extension, as we have also already seen, by giving an English predicate, such as `\gap{x} teaches Logic~III at Calgary' or `\gap{x} is an even integer between $3$ and $9$'. The latter would specify an extension consisting of, and only of, $4$, $6$, and~$8$.
+
+Note that some predicates of English, such as `\gap{x} is a round square', are not true of anything.  In this case we say the extension of the predicate is \emph{empty}.  We do allow empty extensions, and we can stipulate that the extension of a `$H(x)$' is to be empty simply by not listing any members. (It may be odd to consider collections of no things, but logic is odd this way sometimes.)
+
 
 \section{Many-place predicates}
-All of this is quite easy to understand when it comes to one-place predicates, but it gets messier when we consider two-place predicates. Consider a symbolization key like:
+All of this is quite easy to understand when it comes to one-place predicates, but it gets messier when we deal with two-place predicates. Consider a symbolization key like:
 	\begin{ekey}
 		\item[\atom{L}{x,y}] \gap{x} loves \gap{y}
 	\end{ekey}
@@ -69,7 +75,7 @@ So, in particular:
 	\begin{earg}
 		\item[\textbullet] `$\atom{L}{x,y}$' is to be true of x and y (in that order) iff x loves y. 
 	\end{earg}
-It is important that we insist upon the order here, since love---famously---is not always reciprocated. (Note that `$x$' and `$y$' on the right here are symbols of augmented English, and that they are being \emph{used}. By contrast, `$x$' and `$y$' in `$\atom{L}{x,y}$' are symbols of FOL, and they are being \emph{mentioned}.)
+It is important that we insist upon the order here, since love---famously---is not always reciprocated. (Note that `x' and `y' on the right here are symbols of augmented English, and that they are being \emph{used}. By contrast, `$x$' and `$y$' in `$\atom{L}{x,y}$' are symbols of FOL, and they are being \emph{mentioned}.)
 
 That is an indirect stipulation. What about a direct stipulation? This is also tricky. If we \emph{simply} list objects that fall under `$\atom{L}{x,y}$', we will not know whether they are the lover or the beloved (or both). We have to find a way to include the order in our explicit stipulation. 
 
@@ -116,13 +122,24 @@ Suppose `$A$' is a one-place predicate; then `$\atom{A}{a}$' is false and `$\ato
 
 \section{Interpretations}
 We defined a \define{valuation} in TFL as any assignment of truth and falsity to sentence letters. In FOL, we are going to define an \define{interpretation} as consisting of four things:
-	\begin{ebullet}	
+	\begin{ebullet}
 		\item the specification of a domain
 		\item for each sentence letter we care to consider, a truth value
-		\item for each name that we care to consider, an assignment of exactly one object within the domain 
+		\item for each name that we care to consider, an assignment of exactly one object within the domain
 		\item for each predicate that we care to consider (apart from `$=$'), a specification of what things (in what order) the predicate is to be true of. (We don't need to specify an interpretation of `$=$', since it has a \emph{fixed} interpretation.)
 	\end{ebullet}
-The symbolization keys that we considered in Part~\ref{ch.FOL} consequently give us one very convenient way to present an interpretation. We will continue to use them in this chapter.
+The symbolization keys that we considered in Part~\ref{ch.FOL} consequently give us one very convenient way to present an interpretation. We will continue to use them in this chapter. Following the discussion of \S\ref{sec:extensions}, we now also allow extensions specified by enumerations on the right side, e.g.,
+\begin{ekey}
+	\item[\text{domain}] heads of state, numbers
+	\item[\atom{H}{x}] Justin Trudeau, Angela Merkel, $\pi$
+\end{ekey}
+is a perfectly good way of specifying an interpretation, as is
+\begin{ekey}
+	\item[\text{domain}] $0$, $1$, $2$
+	\item[\atom{L}{x,y}] \ntuple{$0$,$1$}, \ntuple{$0$, $2$}, \ntuple{$1$, $2$}
+\end{ekey}
+We could have specified the same extension (on this particular domain) by giving the English predicate `\gap{x} is less than \gap{y}'.
+
 
 \newglossaryentry{interpretation}{
   name = {interpretation},
@@ -132,10 +149,10 @@ The symbolization keys that we considered in Part~\ref{ch.FOL} consequently give
 However, it is sometimes also convenient to present an interpretation \emph{diagrammatically}. To illustrate (literally): suppose we want to consider just a single two-place predicate, `$\atom{R}{x,y}$'. Then we can represent it just by drawing an arrow between two objects, and stipulate that `$\atom{R}{x,y}$' is to hold of $x$ and $y$ just in case there is an arrow running from $x$ to $y$ in our diagram. As an example, we might offer:
 \begin{center}
 \begin{tikzpicture}
-\node (atom1) at (0,2) {1};
-\node (atom2) at (2,2) {2};
-\node (atom3) at (2,0) {3};
-\node (atom4) at (0,0) {4};
+\node (atom1) at (0,2) {$1$};
+\node (atom2) at (2,2) {$2$};
+\node (atom3) at (2,0) {$3$};
+\node (atom4) at (0,0) {$4$};
 \draw[->, thick] (atom1)--(atom2);
 \draw[->, thick] (atom2)--(atom3);
 \draw[->, thick] (atom3)--(atom4);
@@ -145,35 +162,37 @@ However, it is sometimes also convenient to present an interpretation \emph{diag
 \end{center}
 This diagram could be used to describe an interpretation whose domain is the first four positive whole numbers, and which interprets `$\atom{R}{x,y}$' as being true of and only of:
 	\begin{center}
-		\ntuple{1, 2}, 
-		\ntuple{2, 3}, 
-		\ntuple{3, 4}, 
-		\ntuple{4, 1}, 
-		\ntuple{1, 3}
+		\ntuple{$1$, $2$}, 
+		\ntuple{$2$, $3$}, 
+		\ntuple{$3$, $4$}, 
+		\ntuple{$4$, $1$}, 
+		\ntuple{$1$, $3$}
 	\end{center}
 Equally we might offer this diagram:
 
 \begin{center}
 \begin{tikzpicture}
-\node (atom1) at (0,2) {1};
-\node (atom2) at (2,2) {2};
-\node (atom3) at (2,0) {3};
-\node (atom4) at (0,0) {4};
+\node (atom1) at (0,2) {$1$};
+\node (atom2) at (2,2) {$2$};
+\node (atom3) at (2,0) {$3$};
+\node (atom4) at (0,0) {$4$};
 \draw[->, thick] (atom3)--(atom4);
 \draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3); 
 \draw[->, thick] (atom3)+(0.15,-0.15) arc (-150:150:.3); 
 \draw[<->, thick] (atom1) -- (atom3);
 \end{tikzpicture}
 \end{center}
-for an interpretation with the same domain, which takes the extension of `$\atom{R}{x,y}$' as:
-	\begin{center}
-		\ntuple{1, 3}, 
-		\ntuple{3, 1}, 
-		\ntuple{3, 4}, 
-		\ntuple{1, 1},
-		\ntuple{3, 3}
-	\end{center}
-If we wanted, we could make our diagrams more complex. For example, we could add names as labels for particular objects. Equally, to symbolize the extension of a one-place predicate, we might simply draw a ring around some particular objects and stipulate that the thus encircled objects (and only them) are to fall under the predicate `$\atom{H}{x}$', say. 
+
+The interpretation specified by this diagram can also be given by listing what's in the domain and in the extension of~`$\atom{R}{x,y}$':
+	\begin{ekey}
+	\item[\text{domain}] $1$, $2$, $3$, $4$
+	\item[R(x,y)] \ntuple{$1$, $3$}, 
+		\ntuple{$3$, $1$}, 
+		\ntuple{$3$, $4$}, 
+		\ntuple{$1$, $1$},
+		\ntuple{$3$, $3$}
+	\end{ekey}
+If we wanted, we could make our diagrams more complex. For example, we could add names as labels for particular objects. Equally, to symbolize the extension of a one-place predicate, we might simply draw a circle around some particular objects and stipulate that the thus encircled objects (and only them) are to fall under the predicate `$\atom{H}{x}$', say. To specify multiple predicates we could use colored (or dashed, dotted) lines for arrows and circles.
 
 
 \chapter{Truth in FOL}\label{s:TruthFOL}
@@ -386,11 +405,11 @@ Determine whether each of the following sentences is true or false in that inter
 Following the diagram conventions introduced at the end of \S\ref{s:Interpretations}, consider the following interpretation:	
 \begin{center}
 \begin{tikzpicture}
-\node (atom1) at (0,2) {1};
-\node (atom2) at (2,2) {2};
-\node (atom4) at (0,0) {3};
-\node (atom5) at (2,0) {4};
-\node (atom6) at (4,0) {5};
+\node (atom1) at (0,2) {$1$};
+\node (atom2) at (2,2) {$2$};
+\node (atom4) at (0,0) {$3$};
+\node (atom5) at (2,0) {$4$};
+\node (atom6) at (4,0) {$5$};
 \draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3); 
 \draw[->, thick] (atom6)+(0.15,-0.15) arc (-150:150:.3); 
 \draw[->, thick] (atom1) -- (atom2);
