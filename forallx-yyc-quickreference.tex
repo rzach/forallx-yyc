@@ -46,10 +46,13 @@ Not all $F$s are $G$s & $\enot\forall x(\atom{F}{x} \eif \atom{G}{x})$\ or\\
 & $\exists x(\atom{F}{x} \eand \enot \atom{G}{x})$\\
 No $F$s are $G$s & $\forall x(\atom{F}{x} \eif\enot \atom{G}{x})$\ or\\
 & $\enot\exists x(\atom{F}{x} \eand \atom{G}{x})$\\
+Only $F$s are $G$s & $\forall x(\atom{G}{x} \eif \atom{F}{x})$\\
+& $\enot\exists x(\enot\atom{F}{x} \eand \atom{G}{x})$\\
 \\
 \multicolumn{2}{c}{\textsc{Identity}}\\ \\
 Only $c$ is $G$ & $\forall x(\atom{G}{x} \eiff x=c)$\\
-Everything besides $c$ is $G$ & $\forall x(\enot x = c \eif \atom{G}{x} )$\\
+Everything other than $c$ is $G$ & $\forall x(\enot x = c \eif \atom{G}{x} )$\\
+Everything except $c$ is $G$ & $\forall x(\enot x = c \eiff \atom{G}{x} )$\\
 %$j$ is more $R$ than anyone else. & $\forall x(x\neq j \eif Rjx)$\\
 The $F$ is $G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \atom{G}{x} )$\\
 It is not the case that\\
