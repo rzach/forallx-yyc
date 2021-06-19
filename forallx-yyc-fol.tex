@@ -957,7 +957,7 @@ Let the domain be people; this will allow us to symbolize `everyone' with a univ
 		\item[\atom{O}{x,y}] \gap{x} owes money to \gap{y}
 		\item[p] Pavel
 	\end{ekey}
-we can symbolize sentence \ref{else1} by `$\forall x\, \atom{O}{p,x}$'. But this has a (perhaps) odd consequence. It requires that Pavel owes money to every member of the domain (whatever the domain may be). The domain certainly includes Pavel. So this entails that Pavel owes money to himself. And maybe we did not want to say that. Maybe we meant to say:
+we can symbolize sentence \ref{else1} by `$\forall x\, \atom{O}{p,x}$'. But this has a (perhaps) odd consequence. It requires that Pavel owes money to every member of the domain (whatever the domain may be). The domain certainly includes Pavel. So this entails that Pavel owes money to himself. And maybe we did not want to say that. Maybe we meant to leave it open if Pavel owes money to himself, something we could have expressed more precisely by using either on of the following:
 	\begin{earg}
 		\item[\ex{else1b}] Pavel owes money to everyone \emph{else}
 		\item[\ex{else1c}] Pavel owes money to everyone \emph{other than} Pavel
@@ -986,25 +986,31 @@ We can also now deal with sentences \ref{else1b} and~\ref{else1c}. Both of these
 
 This last sentence contains the formula `$\enot x = p$'. That might look a bit strange, because the symbol that comes immediately after the `$\enot$' is a variable, rather than a predicate, but this is not a problem. We are simply negating the entire formula, `$x = p$'. 
 
-In addition to sentences that use the word `else', and `other than', identity will be helpful when symbolizing some sentences that contain the words `only', and so-called ``exceptives'' like `besides', `but', and, well,~`except.' Consider these examples:
+\section{`Only' and `except'}
+
+In addition to sentences that use the word `else', and `other than', identity is helpful when symbolizing some sentences that contain the words `only', and~`except'. Consider:
 \begin{earg}
 \item[\ex{only1}] Only Pavel owes money to Hikaru.
-\item[\ex{except}] Everyone except Pavel owes money to Hikaru.
 \end{earg}
-Let `$h$' name Hikaru. Plausibly, sentence~\ref{else3} is true if, and only if, both of the following conditions hold:
+Let `$h$' name Hikaru. Plausibly, sentence~\ref{only1} is true if, and only if, both of the following conditions hold:
 \begin{earg}
 	\item[\ex{only2}] Pavel owes money to Hikaru.
-	\item[\ex{else3}] Noone other than Pavel owes money to Hikaru.
+	\item[\ex{else3}] Noone who is not Pavel owes money to Hikaru.
 \end{earg}
-Sentence \ref{else3} can be paraphrased as, `No one who is not Pavel owes money to Hikaru'. This can be symbolized by any one of:
+Sentence \ref{else3} can be symbolized by any one of:
 \begin{align*}
 	& \enot\exists x(\enot x = p \eand \atom{O}{x,h}),\\
 	& \forall x(\enot x = p \eif \enot\atom{O}{x,h}),\\
 	& \forall x(\atom{O}{x,h} \eif x = p).
 \end{align*}
-Thus, we can symbolize sentence~\ref{only1} as the conjunction of one of the above with the symbolization of~\ref{only2}, `$\atom{O}{p,h}$', or more compactly using `$\eiff$' as `$\forall x(\atom{O}{x,h} \eif x = p)$'.
+Thus, we can symbolize sentence~\ref{only1} as the conjunction of one of the above with the symbolization of~\ref{only2}, `$\atom{O}{p,h}$', or more compactly using `$\eiff$' as `$\forall x(\atom{O}{x,h} \eiff x = p)$'.
 
-Sentence \ref{except} can be treated similarly, although now of course Pavel does \emph{not} owe Hikaru money. We can paraphrase it as `Everyone who is not Pavel owes Hikaru money, and Pavel does not'. Consequently, it can be symbolized as, `$\forall x(\enot x = p \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h}$', or more concisely, `$\forall x(\enot x = p \eiff \atom{O}{x,h})$'. Similar exceptive determiners, e.g., `noone but Pavel', can be treated the same way.\footnote{This treatment of exceptives is not uncontentious. Some linguists think that sentence~\ref{except} does not entail that Pavel does not owe Hikaru money, and so the symbolization should just be `$\forall x(\enot x = p \eif \atom{O}{x,h})$'. We will assume that it does.}
+\begin{earg}
+	\item[\ex{except}] Everyone except Pavel owes money to Hikaru.
+	\end{earg}
+Sentence \ref{except} can be treated similarly, although now of course Pavel does \emph{not} owe Hikaru money. We can paraphrase it as `Everyone who is not Pavel owes Hikaru money, and Pavel does not'. Consequently, it can be symbolized as, `$\forall x(\enot x = p \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h}$', or more concisely, `$\forall x(\enot x = p \eiff \atom{O}{x,h})$'. Other locutions akin to `except' such as `but' or `besides' (as used in `noone but Pavel' or `someone besides Hikaru') can be treated in similary ways.
+
+The treatment of so-called ``exceptives'' is not uncontentious. Some linguists think that sentence~\ref{except} does not entail that Pavel doesn't owe Hikaru money, and so the symbolization should just be `$\forall x(\enot x = p \eif \atom{O}{x,h})$'.  There are also uses of `except' that clearly do not have that entailment, especially in mathematical writing.  For instance, you may read in a calculus textbook that ``the function~$f$ is defined everywhere except possibly at~$a$''.  That means only that for every point~$x$ other than~$a$, $f$~is defined at~$x$. It is not required that $f$ is undefined at~$a$; it's left open whether $f$ is or is not defined at~$a$.
 
 \section{There are at least\ldots}
 We can also use identity to say how many things there are of a particular kind. For example, consider these sentences:
@@ -1104,7 +1110,11 @@ It might be tempting to add a predicate to our symbolization key, to symbolize t
 %\item Any candy with chocolate and marzipan is better than any candy that lacks both.
 %\end{earg}
 
-
+\problempart Consider the sentence,
+\begin{earg}
+	\item[\ex{except2}] Every officer except Pavel owes money to Hikaru.
+\end{earg}
+Symbolize this sentence, using `$\atom{F}{x}$' for `\gap{x} is an officer'.  Are you confident that your symbolization is true if, and only if, sentence~\ref{except2} is true?  What happens if every officer owes money to Hikaru, Pavel does not, but Pavel isn't an officer?
 
 \problempart Explain why:
 	\begin{ebullet}
