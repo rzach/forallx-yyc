@@ -961,7 +961,6 @@ we can symbolize sentence \ref{else1} by `$\forall x\, \atom{O}{p,x}$'. But this
 	\begin{earg}
 		\item[\ex{else1b}] Pavel owes money to everyone \emph{else}
 		\item[\ex{else1c}] Pavel owes money to everyone \emph{other than} Pavel
-		\item[\ex{else1d}] Pavel owes money to everyone \emph{except} Pavel himself
 	\end{earg}
 But we do not have any way for dealing with the italicised words yet. The solution is to add another symbol to FOL.
 
@@ -983,19 +982,29 @@ Let us add to our symbolization key:
 	\end{ekey}
 Now sentence \ref{else2} can be symbolized as `$p=c$'. This tells us that the names `$p$' and `$c$' both name the same thing.
 
-We can also now deal with sentences \ref{else1b}--\ref{else1d}. All of these sentences can be  paraphrased as `Everyone who is not Pavel is owed money by Pavel'. Paraphrasing some more, we get: `For all $x$, if $x$ is not Pavel, then $x$ is owed money by Pavel'. Now that we are armed with our new identity symbol, we can symbolize this as `$\forall x (\enot x = p \eif \atom{O}{p,x})$'.
+We can also now deal with sentences \ref{else1b} and~\ref{else1c}. Both of these sentences can be  paraphrased as `Everyone who is not Pavel is owed money by Pavel'. Paraphrasing some more, we get: `For all $x$, if $x$ is not Pavel, then $x$ is owed money by Pavel'. Now that we are armed with our new identity symbol, we can symbolize this as `$\forall x (\enot x = p \eif \atom{O}{p,x})$'.
 
 This last sentence contains the formula `$\enot x = p$'. That might look a bit strange, because the symbol that comes immediately after the `$\enot$' is a variable, rather than a predicate, but this is not a problem. We are simply negating the entire formula, `$x = p$'. 
 
-In addition to sentences that use the word `else', `other than' and `except', identity will be helpful when symbolizing some sentences that contain the words `besides' and `only.' Consider these examples:
-
+In addition to sentences that use the word `else', and `other than', identity will be helpful when symbolizing some sentences that contain the words `only', and so-called ``exceptives'' like `besides', `but', and, well,~`except.' Consider these examples:
 \begin{earg}
-\item[\ex{else3}] No one besides Pavel owes money to Hikaru.
-\item[\ex{else4}] Only Pavel owes Hikaru money.
+\item[\ex{only1}] Only Pavel owes money to Hikaru.
+\item[\ex{except}] Everyone except Pavel owes money to Hikaru.
 \end{earg}
-Let `$h$' name Hikaru. Sentence \ref{else3} can be paraphrased as, `No one who is not Pavel owes money to Hikaru'. This can be symbolized by `$\enot\exists x(\enot x = p \eand \atom{O}{x,h})$'. Equally, sentence \ref{else3} can be paraphrased as `for all $x$, if $x$ owes money to Hikaru, then $x$ is Pavel'. It can then be symbolized as `$\forall x (\atom{O}{x,h} \eif x = p)$'.
+Let `$h$' name Hikaru. Plausibly, sentence~\ref{else3} is true if, and only if, both of the following conditions hold:
+\begin{earg}
+	\item[\ex{only2}] Pavel owes money to Hikaru.
+	\item[\ex{else3}] Noone other than Pavel owes money to Hikaru.
+\end{earg}
+Sentence \ref{else3} can be paraphrased as, `No one who is not Pavel owes money to Hikaru'. This can be symbolized by any one of:
+\begin{align*}
+	& \enot\exists x(\enot x = p \eand \atom{O}{x,h}),\\
+	& \forall x(\enot x = p \eif \enot\atom{O}{x,h}),\\
+	& \forall x(\atom{O}{x,h} \eif x = p).
+\end{align*}
+Thus, we can symbolize sentence~\ref{only1} as the conjunction of one of the above with the symbolization of~\ref{only2}, `$\atom{O}{p,h}$', or more compactly using `$\eiff$' as `$\forall x(\atom{O}{x,h} \eif x = p)$'.
 
-Sentence \ref{else4} can be treated similarly, but there is one subtlety here. Do either sentence \ref{else3} or \ref{else4} entail that Pavel himself owes money to Hikaru? 
+Sentence \ref{except} can be treated similarly, although now of course Pavel does \emph{not} owe Hikaru money. We can paraphrase it as `Everyone who is not Pavel owes Hikaru money, and Pavel does not'. Consequently, it can be symbolized as, `$\forall x(\enot x = p \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h}$', or more concisely, `$\forall x(\enot x = p \eiff \atom{O}{x,h})$'. Similar exceptive determiners, e.g., `noone but Pavel', can be treated the same way.\footnote{This treatment of exceptives is not uncontentious. Some linguists think that sentence~\ref{except} does not entail that Pavel does not owe Hikaru money, and so the symbolization should just be `$\forall x(\enot x = p \eif \atom{O}{x,h})$'. We will assume that it does.}
 
 \section{There are at least\ldots}
 We can also use identity to say how many things there are of a particular kind. For example, consider these sentences:
