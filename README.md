@@ -28,7 +28,7 @@ for the book on carnap.io.
 There are translations into German ([forall _x_:
 Dortmund](https://github.com/sbwimmer/forallx-do)) and Portuguese
 ([Para Tod_x_s:
-Natal_](https://github.com/Grupo-de-Estudos-em-Logica-da-UFRN/Para-Todxs-Natal)).
+Natal](https://github.com/Grupo-de-Estudos-em-Logica-da-UFRN/Para-Todxs-Natal)).
 
 [Download](#download) links below.
 
