@@ -34,7 +34,7 @@ Note that we have here broken one of the maxims of this book and \emph{temporari
 To further illustrate the idea of disjunctive normal form, we will introduce some more notation. We write `$\pm\metav{A}$' to indicate that $\metav{A}$ is an atomic sentence which may or may not be prefaced with an occurrence of negation. Then a sentence in disjunctive normal form has the following shape:
 	$$(\pm \metav{A}_1 \land \ldots \land \pm \metav{A}_i) \lor (\pm \metav{A}_{i+1} \land \ldots \land \pm\metav{A}_j) \lor \ldots \lor (\pm\metav{A}_{m+1} \land \ldots \land \pm \metav{A}_n)$$
 We now know what it is for a sentence to be in disjunctive normal form. The result that we are aiming at is:
-	\factoidbox{\label{thm:dnf}\textbf{Disjunctive Normal Form Theorem.} For any sentence, there is a logically equivalent sentence in disjunctive normal form.
+	\factoidbox{\label{thm:dnf}\textbf{Disjunctive Normal Form Theorem.} For any sentence, there is an equivalent sentence in disjunctive normal form.
 	}
 Henceforth, we will abbreviate `Disjunctive Normal Form' by `DNF'. 
 
@@ -44,7 +44,7 @@ Henceforth, we will abbreviate `Disjunctive Normal Form' by `DNF'.
 
 Our first proof of the DNF Theorem employs truth tables. We will first illustrate the technique for finding an equivalent sentence in DNF, and then turn this illustration into a rigorous proof. 
 
-Let's suppose we have some sentence, $\metav{S}$, which contains three atomic sentences, `$A$', `$B$' and `$C$'. The very first thing to do is fill out a complete truth table for $\metav{S}$. Maybe we end up with this:
+Let's suppose we have some sentence, $\metav{S}$, which contains three atomic sentences, `$A$', `$B$' and `$C$'. The very first thing to do is fill out a complete truth table for~$\metav{S}$. Maybe we end up with this:
 \begin{center}
 \begin{tabular}{c c c | c}
 $A$ & $B$ & $C$ & $\metav{S}$\\
@@ -69,7 +69,7 @@ $A$ & $B$ & $C$ & $\metav{S}$\\
 %	$$(A \eand \enot B \eand C) \eor (\enot A \eand \enot B \eand C)$$
 %then it will be true on exactly \emph{two} lines of the truth table which describes all possible valuations of `$A$', `$B$' and `$C$'. 
 %
-As it happens, $\metav{S}$ is true on four lines of its truth table, namely lines 1, 3, 7 and 8. Corresponding to each of those lines, we will write down four sentences, whose only connectives are negations and conjunctions, where every negation has minimal scope:
+As it happens, $\metav{S}$ is true on four lines of its truth table, namely lines 1, 3, 7 and~8. Corresponding to each of those lines, we will write down four sentences, whose only connectives are negations and conjunctions, where every negation has minimal scope:
 	\begin{earg}
 		\item  `$A \eand B \eand C$'\hfill which is true on line 1 (and only then)
 		\item `$A \eand \enot B \eand C$' \hfill which is true on line 3 (and only then)
@@ -77,7 +77,7 @@ As it happens, $\metav{S}$ is true on four lines of its truth table, namely line
 		\item `$\enot A \eand \enot B \eand \enot C$' \hfill which is true on line 8 (and only then)
 	\end{earg}
 We now combine all of these conjunctions using~$\eor$, like so:
-$$(A \eand B \eand C) \eor (A \eand \enot B \eand C) \eor (\enot A \eand \enot B \eand C) \eor (\enot A \eand \enot B \eand \enot C)$$
+$$(A \eand B \eand C) \eor (A \eand \enot B \eand C) \eor (\enot A \eand \enot B \eand C) \eor (\enot A \eand \enot B \eand \enot C)$$\label{longDNF}
 This gives us a sentence in DNF which is true on exactly those lines where one of the disjuncts is true, i.e.\ it is true on (and only on) lines 1, 3, 7, and 8. So this sentence has exactly the same truth table as $\metav{S}$. So we have a sentence in DNF that is logically equivalent to $\metav{S}$, which is exactly what we wanted!
 
 Now, the strategy that we just adopted did not depend on the specifics of $\metav{S}$; it is perfectly general. Consequently, we can use it to obtain a simple proof of the DNF Theorem.
@@ -128,7 +128,7 @@ Generally, then, a sentence in CNF looks like this
 where each $\metav{A}_k$ is an atomic sentence.
 
 We can now prove another normal form theorem:
-	\factoidbox{\label{thm:cnf}\textbf{Conjunctive Normal Form Theorem.} For any sentence, there is a logically equivalent sentence in conjunctive normal form.}
+	\factoidbox{\label{thm:cnf}\textbf{Conjunctive Normal Form Theorem.} For any sentence, there is an equivalent sentence in conjunctive normal form.}
 
         
 	Given a TFL sentence, $\metav{S}$, we begin by writing down the complete truth table for $\metav{S}$.
@@ -149,7 +149,7 @@ Consider the following sentences:
 		\item $(\enot (A \eor B) \eiff ((\enot C \eand \enot A) \eif \enot B))$
 		\item $((\enot (A \eand \enot B) \eif C) \eand \enot (A \eand D))$
 	\end{earg}
-        For each sentence, find a logically equivalent sentence in DNF and one in CNF.
+        For each sentence, find an equivalent sentence in DNF and one in CNF.
 
 \chapter{Functional completeness}
 
@@ -226,10 +226,10 @@ $\metav{A}$ & $\metav{B}$ & $\metav{A} \mathrel{\uparrow} \metav{B}$\\
  F & F & T
 \end{tabular}
 \end{center}
- This is often called `the Sheffer stroke', after Henry Sheffer, who used it to show how to reduce the number of logical connectives in Russell and Whitehead's \emph{Principia Mathematica}.\footnote{Sheffer, `A Set of Five Independent Postulates for Boolean Algebras, with application to logical constants,' (1913, \emph{Transactions of the American Mathematical Society} 14.4)} (In fact, Charles Sanders Peirce had anticipated Sheffer by about 30 years, but never published his results.)\footnote{See Peirce, `A Boolian Algebra with One Constant', which dates to c.1880; and Peirce's \emph{Collected Papers}, 4.264--5.} It is quite common, as well, to call it `nand', since its characteristic truth table is the negation of the truth table for `$\eand$'.
+ This is often called `the Sheffer stroke', after Henry Sheffer, who used it to show how to reduce the number of logical connectives in Russell and Whitehead's \emph{Principia Mathematica}.\footnote{Sheffer, `A Set of Five Independent Postulates for Boolean Algebras, with application to logical constants,' (1913, \emph{Transactions of the American Mathematical Society} 14.4)} (In fact, Charles Sanders Peirce had anticipated Sheffer by about 30 years, but never published his results, and the Polish philosopher Erward Stamm published the same result two years before Sheffer.)\footnote{See Peirce, `A Boolian Algebra with One Constant', which dates to c.~1880, Peirce's \emph{Collected Papers}, 4.264--5, and Stamm, ``Beitrag zur Algebra der Logik,'' \emph{Monatshefte für Mathematik und Physik} 22 (1911): 137--49.} It is quite common, as well, to call it `nand', since its characteristic truth table is the negation of the truth table for `$\eand$'.
 \factoidbox{\label{prop:upexpressive}`$\uparrow$' is functionally complete all by itself.}
 
-The functional completeness Theorem tells us that `$\enot$' and `$\eor$' are jointly functionally complete. So it suffices to show that, given any scheme which contains only those two connectives, we can rewrite it as a logically equivalent scheme which contains only `$\uparrow$'. As in the proof of the subsidiary cases of the functional completeness Theorem, then, we simply apply the following equivalences:
+The functional completeness Theorem tells us that `$\enot$' and `$\eor$' are jointly functionally complete. So it suffices to show that, given any scheme which contains only those two connectives, we can rewrite it as an equivalent scheme which contains only `$\uparrow$'. As in the proof of the subsidiary cases of the functional completeness Theorem, then, we simply apply the following equivalences:
 		\begin{align*}
 			\enot \metav{A} &\text{\quad and \quad} (\metav{A} \uparrow \metav{A})\\
 			(\metav{A} \eor \metav{B}) & \text{\quad and \quad} ((\metav{A} \uparrow \metav{A}) \uparrow (\metav{B} \uparrow \metav{B}))
@@ -284,6 +284,147 @@ In fact, the following is true:
 
 This is of course harder to prove than for the primitive connectives. For instance, the ``exclusive or'' connective does not have a T in the first line of its characteristic truth table, and so the method used above no longer suffices to show that it cannot express all truth tables.  It is also harder to show that, e.g., `$\eiff$' and `$\enot$' \emph{together} are not functionally complete.
 
+\chapter{Proving equivalences}
+
+\section{Substitutability of equivalents}
+
+Recall from \S\ref{sec:equivalent} that $\metav{P}$ and $\metav{Q}$ are equivalent (in TFL) iff, for every valuation, their truth values agree.  We have seen many examples of this and used both truth tables and natural dedcution proofs to establish such equivalences.  In chapter~\ref{c:NormalForms} we've even proved that ever sentence of TFL is equivalent to one in conjunctive and one in disjunctive normal form.  If $\metav{P}$ and $\metav{Q}$ are equivalent, they always have the same truth value, either one entails the other, and from either one you can prove the other.
+
+Equivalent sentences are not the same, of course: the sentences $\enot\enot A$ and~$A$ may always have the same truth value, but the first starts with the `$\enot$' symbol while the second doesn't.  But you may wonder if it's always true that we can replace one of a pair of equivalent sentences by the other, and the results will be equivalent, too.  For instance, consider $\enot\enot A \eif B$ and $A \eif B$.  The second results from the first by replacing `$\enot\enot A$' by~`$A$'.  And these two sentences are also equivalent.
+
+This is a general fact, and it is not hard to see why it is true.  In any valuation, we compute the truth value of a sentence ``from the inside out.'' So when it comes to determining the truth value of `$\enot\enot A \eif B$', we first compute the truth value of `$\enot\enot A$', and the truth value of the overall sentence then just depends on that truth value (true or false, as the case may be) and the rest of the sentence (the truth value of~`$B$' and the truth table for~`$\eif$'). But since `$\enot\enot A$' are equivalent, they always have the same truth value in a given valuation---hence, replacing `$\enot\enot A$' by~`$A$' cannot change the truth value of the overall sentence.  The same of course is true for any other sentence equivalent to `$\enot\enot A$', say, `$A \eand (A \eor A)$'.
+
+To state the result in general, let's use the notation $\metav{R}(\metav{P})$ to mean a sentence which contains the sentence $\metav{P}$ as a part. Then by $\metav{R}(\metav{Q})$ we mean the result of replacing the occurrence of $\metav{P}$ by the sentence~$\metav{Q}$.  For instance, if $\metav{P}$ is the sentence letter~`$A$', $\metav{Q}$ is the sentence~`$\enot\enot A$', and $\metav{R}(\metav{P})$ is `$A \eif B$', then $\metav{R}(\metav{Q})$ is `$\enot\enot A \eif B$'.
+
+\factoidbox{If $\metav{P}$ and $\metav{Q}$ are equivalent, then so are $\metav{R}(\metav{P})$ and $\metav{R}(\metav{P})$.}
+
+It follows from this fact that any sentence of the form $\metav{R}(\metav{P}) \eiff \metav{R}(\metav{P})$, where $\metav{P}$ and $\metav{Q}$ are equivalent, is a tautology. However, the proofs in natural deduction will be wildly different for different~$\metav{R}$. (As an exercise, give proofs that show that 
+\begin{align*}
+	& \vdash (\enot\enot P \eif Q) \eiff (P \eif Q)  \text{ and}\\
+	& \vdash (\enot\enot P \eand Q) \eiff (P \eand Q)
+\end{align*}
+and compare the two.)
+
+Here is another fact: if two sentences $\metav{P}$ and~$\metav{Q}$ are equivalent, and you replace some sentence letter in both $\metav{P}$ and $\metav{Q}$ by the same sentence~$\metav{R}$, the results are also equivalent.  For instance, if you replace `$A$' in both `$A \land B$' and `$B \land A$' by, say, `$\enot C$', you get `$\enot C \land B$' and `$B \land \enot C$', and those are equivalent. We can record this, too:
+
+\factoidbox{Equivalence is preserved under replacement of sentence letters, i.e., if $\metav{P}(A)$ and $\metav{Q}(A)$ both contain the sentence letter~`$A$' and are equivalent, then the sentences $\metav{P}(\metav{R})$ and $\metav{Q}(\metav{R})$ (resulting by replacing `$A$' by $\metav{R}$ in both) are also equivalent.}
+
+This means that once we have shown that two sentence are equivalent (e.g., `$\enot\enot A$' and `$A$', or `$A \land B$' and `$B \land A$') we know that all their common ``instances'' are also equivalent.  Note that we do not immediately get this from a truth table or a natural deduction proof. E.g., a truth table that shows that `$\enot\enot A$' and~`$A$' are equivalent does \emph{not} also show that `$\enot\enot(B \eif C)$' and `$B \eif C$' are equivalent: the former needs just 2 lines, the latter~4.
+
+\section{Chains of equivalences}
+
+When you want to verify that two sentences are equivalent, you can of course do a truth table, or look for a formal proof.  But there is a simpler method, based on the principle of substitutability of equivalents we just discussed: Armed with a small catalog of simple equivalences, replace parts of your first sentence by equivalent parts, and repeat until you reach your second sentence.
+
+This method of showing sentences equivalent is underwritten by the two facts from the previous section. The first fact tells us that \emph{if}, say, $\enot\enot \metav{P}$ and $\metav{P}$ are equivalent (for any sentence~$\metav{P}$), then replacing $\enot\enot\metav{P}$ in a sentence by~$\metav{P}$ results in an equivalent sentence. The second fact tells us \emph{that} $\enot\enot \metav{P}$ and~$\metav{P}$ are always equivalent, for any sentence~$\metav{P}$. (A simple truth table shows that `$\enot\enot A$' and~`$A$' are equivalent.) By the second fact we know that whenever we replace `$A$' in both `$\enot\enot A$' and~`$A$' by some sentence~$\metav{P}$, we get equivalent results. In other words, from the fact that `$\enot\enot A$' and~`$A$' are equivalent and the second fact, we can conclude that, for any sentence~$\metav{P}$, $\enot\enot \metav{P}$ and~$\metav{P}$ are equivalent.
+
+Let's give an example. By De Morgan's Laws, the following pairs of sentences are equivalent:
+\begin{align*}
+	\enot (A \eand B) & \text{ and } (\enot A \eor \enot B)\\
+	\enot (A \eor B) & \text{ and } (\enot A \eand \enot B)
+\end{align*}
+This can be verified by constructing two truth tables, or four natural deduction proofs that show:
+\begin{align*}
+	\enot (A \eand B) & \vdash (\enot A \eor \enot B)\\
+	(\enot A \eor \enot B) & \vdash \enot (A \eand B)\\
+	\enot (A \eor B) & \vdash (\enot A \eand \enot B)\\
+	(\enot A \eand \enot B) & \vdash \enot (A \eor B)
+\end{align*}
+
+By the second fact, \emph{any} pairs of sentences of the following forms are equivalent:
+\begin{align*}
+	\enot (\metav{P} \eand \metav{Q}) & \text{ and } (\enot \metav{P} \eor \enot \metav{Q})\\
+	\enot (\metav{P} \eor \metav{Q}) & \text{ and } (\enot \metav{P} \eand \enot \metav{Q})
+\end{align*}
+Now consider the sentence `$\enot(R \eor (S \eand T))$'. We will find an equivalent sentence in which all `$\enot$' signs attach directly to sentence letters. In the first step, we consider this as a sentence of the form $\enot(\metav{P} \eor \metav{Q})$---then $\metav{P}$ is the sentence~`$R$' and $\metav{Q}$ is `$(S \eand T)$'. Since $\enot(\metav{P} \eor \metav{Q})$ is equivalent to $(\enot \metav{P} \eand \enot \metav{Q})$ (by the second of De Morgan's Laws) we can replace the entire sentence by $(\enot \metav{P} \eand \enot \metav{Q})$. In this case (where $\metav{P}$ is~`$R$' and $\metav{Q}$ is~`$(S \eand T)$') we obtain `$(\enot R \eand \enot (S \eand T))$'. This new sentence contains as a part the sentence `$\enot (S \eand T)$'. It is of the form $\enot(\metav{P} \eand \metav{Q})$, except now $\metav{P}$ is the sentence letter~`$S$' and $\metav{Q}$ is~`$T$'. By De Morgan's Law (the first one this time), this is equivalent to $(\enot\metav{P} \eor \enot\metav{Q})$, or in this specific case, to `$(\enot S \eor \enot T)$'. So we can replace the part `$\enot (S \eand T)$' by `$(\enot S \eor \enot T)$'. This now results in the sentence `$(\enot R \eand (\enot S \eor \enot T))$', in which the `$\enot$' symbols all attach directly to sentence letters. We've ``pushed'' the negations inwards as far as possible.  We can record such a chain of equivalences by listing the individual steps, and recording, just as we do in natural deduction, which basic equivalence we use in each case:
+\begin{align*}
+	& \fbox{\enot(\fbox{R} \eor \fbox{(S \eand T)})} \\
+	& (\enot(R \eand \fbox{\enot(\fbox{S} \eand \fbox{T})}) && \text{DeM}\\
+	& (\enot(R \eand (\enot \fbox{S} \eor \enot \fbox{T})) && \text{DeM}
+\end{align*}
+(We've highlighted the sentence replaced, and those mathching the $\metav{P}$ and~$\metav{Q}$ in De Morgan's Laws for clarity, but this is not necessary.)
+
+In table~\ref{tab:equivalences} we've given a list of basic equivalences you can use for such chains of equivalences. The labels abbreviate the customary name for the respective logical laws: double negation (DN), De Morgan (DeM), commutativity (Comm), distributivity (Dist), associativity (Assoc), idempotence (Id), and absorption (Abs).
+
+\begin{table}
+	\begin{align*}
+\lnot\lnot \metav{P} & \Leftrightarrow \metav{P} && \text{(DN)}\\[2ex]
+(\metav{P} \eif \metav{Q}) & \Leftrightarrow (\lnot \metav{P} \lor \metav{Q})
+&& \text{(Cond)}\\
+\lnot(\metav{P} \eif \metav{Q}) & \Leftrightarrow (\metav{P} \land \lnot\metav{Q}) \\[2ex]
+(\metav{P} \eiff \metav{Q}) & \Leftrightarrow ((\metav{P} \eif \metav{Q}) \land  (\metav{Q} \eif \metav{P}))
+&& \text{(Bicond)}\\[2ex]
+\lnot(\metav{P} \land \metav{Q}) & \Leftrightarrow (\lnot\metav{P} \lor \lnot\metav{Q})
+&& \text{(DeM)}\\
+\lnot(\metav{P} \lor \metav{Q}) & \Leftrightarrow (\lnot\metav{P} \land \lnot\metav{Q}) \\[2ex]
+(\metav{P} \lor \metav{Q}) & \Leftrightarrow (\metav{Q} \lor \metav{P}) & &\text{(Comm)}\\
+(\metav{P} \land \metav{Q}) & \Leftrightarrow (\metav{Q} \land \metav{P})\\[2ex]
+(\metav{P} \land (\metav{Q} \lor \metav{R})) & \Leftrightarrow ((\metav{P} \land \metav{Q}) \lor (\metav{P} \land \metav{R}))
+&& \text{(Dist)}\\
+(\metav{P} \lor (\metav{Q} \land \metav{R})) & \Leftrightarrow ((\metav{P} \lor \metav{Q}) \land (\metav{P} \lor \metav{R}))\\
+(\metav{P} \lor (\metav{Q} \lor \metav{R})) & \Leftrightarrow ((\metav{P} \lor \metav{Q}) \lor \metav{R}) & &\text{(Assoc)}\\
+(\metav{P} \land (\metav{Q} \land \metav{R})) & \Leftrightarrow ((\metav{P} \land \metav{Q}) \land \metav{R})\\[2ex]
+(\metav{P} \lor \metav{P}) & \Leftrightarrow \metav{P} && \text{(Id)}\\
+(\metav{P} \land \metav{P}) & \Leftrightarrow \metav{P}\\[2ex]
+(\metav{P} \land (\metav{P} \lor \metav{Q})) & \Leftrightarrow \metav{P}&& \text{(Abs)}\\
+(\metav{P} \lor (\metav{P} \land \metav{Q})) & \Leftrightarrow \metav{P}\\[2ex]
+(\metav{P} \land (\metav{Q} \lor \lnot\metav{Q})) & \Leftrightarrow \metav{P}  && \text{(Simp)}\\
+(\metav{P} \lor (\metav{Q} \land \lnot\metav{Q})) & \Leftrightarrow \metav{P}\\[2ex]
+(\metav{P} \lor (\metav{Q} \lor \lnot\metav{Q})) & \Leftrightarrow (\metav{Q} \lor \lnot\metav{Q}) \\
+(\metav{P} \land (\metav{Q} \land \lnot\metav{Q})) & \Leftrightarrow (\metav{Q} \land \lnot\metav{Q})
+\end{align*}
+\caption{Basic equivalences}
+\label{tab:equivalences}
+\end{table}
+
+\section{Finding equivalent normal forms}
+
+In chapter~\ref{c:NormalForms} we showed that every sentence of TFL is equivalent to one in disjunctive normal form (DNF) and to one in conjunctive normal form (CNF).  We did this by giving a method to construct a sentences in DNF or CNF equivalent to the original sentence by first constructing a truth table, and then ``reading off'' a sentence in DNF or CNF from the truth table.  This method has two drawbacks. The first one is that the resulting sentences in DNF or CNF are not always the shortest ones.  The second one is that the method itself becomes hard to apply when the sentence you start with contains more than a handful of sentence letters (since the truth table for a sentence with $n$ sentence letters has $2^n$ lines).
+
+We can use chains of equivalences as an alternative method: To find a sentence in~DNF, we can successively apply basic equivalences until we have found an equivalent sentence that is in~DNF. Recall the conditions a sentence in DNF must satisfy:
+\begin{earg}
+	\item[(\textsc{dnf1})] No connectives occur in the sentence other than negations, conjunctions and disjunctions;
+	\item[(\textsc{dnf2})] Every occurrence of negation has minimal scope (i.e., any `$\enot$' is immediately followed by an atomic sentence);
+	\item[(\textsc{dnf3})] No disjunction occurs within the scope of any conjunction.
+\end{earg}
+Condition (\textsc{dnf1}) says that we must remove all `$\eif$' and~`$\eiff$' symbols from a sentence.  This is what the basic equivalences (Cond) and (Bicond) are good for.  For instance, suppose we start with the sentence
+\begin{align*}
+	& \enot(A \eand \enot C) \land (\enot A\eif \enot B).
+\intertext{We can get rid of the `$\eif$' by using (Cond). In this case $\metav{P}$ is `$\enot A$' and $\metav{Q}$ is `$\enot{B}$'. We get:}
+& \enot(A \eand \enot C) \land (\enot\enot A \eor \enot B) && \text{Cond}
+\intertext{The double negation can be removed, since `$\enot\enot A$' is equivalent to~`$A$':}
+& \enot(A \eand \enot C) \land (A \eor \enot B) && \text{DN}
+\intertext{Now condition (\textsc{dnf1}) is satisfied: our sentence contains only `$\enot$', `$\eand$', and `$\eor$'. Condition (\textsc{dnf2}) says that we must find a way to have all `$\enot$'s apply immediately to sentence letters. But in the first conjunct it doesn't.  To ensure (\textsc{dnf2}) is satisfied, we use De Morgan's Laws and the double negation (DN) law as many times as needed.}
+& (\enot A \eor \enot\enot C) \land (A \eor \enot B) && \text{DeM}\\
+& (\enot A \eor C) \land (A \eor \enot B) && \text{DN}
+\intertext{The resulting sentence is now in CNF---it is a conjunction of disjunctions of sentence letters and negated sentence letters. But we want a sentence in DNF, i.e., a sentence in which (\textsc{dnf3}) is satisfied: no `$\eor$' occurs in the scope of an~`$\eand$'.  We use the distributive laws (Dist) to ensure this. The last sentence is of the form $\metav{P} \land (\metav{Q} \lor \metav{R})$, where $\metav{P}$ is `$(\enot A \eor C)$', $\metav{Q}$ is `$A$', and $\metav{R}$ is `$\enot B$'. By applying (Dist) once we get:}
+& ((\enot A \eor C) \eand A)) \eor ((\enot A \eor C) \eand \enot B) && \text{Dist}
+\intertext{This looks worse, but if we keep going, it's going to look better! The two disjuncts almost look like we can apply (Dist) again, except the `$\eor$' is on the wrong side. This is what commutativity (Comm) is good for. let's apply it to `$(\enot A \eor C) \eand A$':}
+& (A \eand (\enot A \eor C)) \eor ((\enot A \eor C) \eand \enot B) && \text{Comm}
+\intertext{We can apply (Dist) again to the resulting part, `$A \eand (\enot A \eor C)$':}
+& ((A \eand \enot A) \eor (A \eand C)) \eor ((\enot A \eor C) \eand \enot B) && \text{Dist}
+\intertext{Now in the left half, no `$\eor$' is in the scope of an `$\eand$'. Let's apply the same principles to the right half:}
+& ((A \eand \enot A) \eor (A \eand C)) \eor (\enot B \eand (\enot A \eor C)) && \text{Comm}\\
+& ((A \eand \enot A) \eor (A \eand C)) \eor ((\enot B \eand \enot A) \eor (\enot B \eand C)) && \text{Dist}
+\intertext{Our sentence is now in DNF! But we can simplify it a bit: `$(A \eand \enot A)$' is a contradiction in TFL, i.e., it is always false. And if you combine something that's always false using `$\eor$' with a sentence~$\metav{P}$, you get something equivalent to just~$\metav{P}$.  This is the second of the simplification (Simp) rules.}
+& ((A \eand C) \eor (A \eand \enot A)) \eor ((\enot B \eand \enot A) \eor (\enot B \eand C)) && \text{Comm}\\
+& (A \eand C) \eor ((\enot B \eand \enot A) \eor (\enot B \eand C)) && \text{Simp}
+\end{align*}
+The final result is still in DNF, but a bit simpler still.  It is also much simpler than the DNF we would have obtained by the method of chapter~\ref{c:NormalForms}. In fact, the sentence we started with could have been the $\metav{S}$ of \S\ref{s:DNFTruthTable}---it has exactly the truth table used as an example there. The DNF we found there (on p.~\pageref{longDNF}), was (with all necessary brackets):
+$$((((A \eand B) \eand C) \eor ((A \eand \enot B) \eand C)) \eor ((\enot A \eand \enot B) \eand C)) \eor ((\enot A \eand \enot B) \eand \enot C).$$
+
+\practiceproblems
+\problempart
+\label{pr.DNF}
+Consider the following sentences:
+\begin{earg}
+	\item $(A \eif \enot B)$
+	\item $\enot (A \eiff B)$
+	\item $(\enot A \eor \enot (A \eand B))$
+	\item $(\enot (A \eif B ) \eand (A \eif C))$
+	\item $(\enot (A \eor B) \eiff ((\enot C \eand \enot A) \eif \enot B))$
+	\item $((\enot (A \eand \enot B) \eif C) \eand \enot (A \eand D))$
+\end{earg}
+For each sentence, find an equivalent sentence in DNF and one in CNF by giving a chain of equivalences. Use (Id), (Abs), and (Simp) to simplify your sentences as much as possible.
 
 \chapter{Soundness}\label{ch:Soundness}
 
@@ -297,7 +438,7 @@ Let's make the idea more precise. We'll abbreviate a list of sentences using the
 
 To prove this, we will check each of the rules of TFL's proof system individually. We want to show that no application of those rules ever leads us astray. Since a proof just involves repeated application of those rules, this will show that no proof ever leads us astray. Or at least, that is the general idea.
 
-To begin with, we must make the idea of `leading us astray' more precise. Say that a line of a proof is \define{shiny} iff the assumptions on which that line depends tautologically entail the sentence on that line.\footnote{The word `shiny' is not standard among logicians.} To illustrate the idea, consider the following:
+To begin with, we must make the idea of `leading us astray' more precise. Say that a line of a proof is \define{shiny} iff the assumptions on which that line depends entail the sentence on that line.\footnote{The word `shiny' is not standard among logicians.} To illustrate the idea, consider the following:
 	\begin{fitchproof}
 		\hypo{fgh}{F\eif(G\eand H)}
 		\open

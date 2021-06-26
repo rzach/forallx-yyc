@@ -12,7 +12,58 @@ Consider the following sentences:
 		\item $(\enot (A \eor B) \eiff ((\enot C \eand \enot A) \eif \enot B))$
 		\item $((\enot (A \eand \enot B) \eif C) \eand \enot (A \eand D))$
 	\end{earg}
-        For each sentence, find a tautologically equivalent sentence in DNF and one in CNF.
+For each sentence, find an equivalent sentence in DNF and one in CNF.
+\myanswer{We give a solution for (2). The truth table for $\enot (A \eiff B)$ is:
+\begin{center}
+\begin{tabular}{c c | l}
+$A$ & $B$ & $\enot (A \eiff B)$\\
+\hline
+T & T & F \\
+T & F & T \\
+F & T & T \\
+F & F & F \\
+\end{tabular}
+\end{center}
+A sentence in DNF can be read off from lines 2 and 3:
+\[(A \eand \enot B) \eor (\enot A \eand B)\]
+and one in CNF from lines 1 and~4:
+\[(\enot A \eor \enot B) \eand (A \eor B).\]}
 
 \stepcounter{chapter} % Functional completeness
+
+\chapter{Proving equivalences}\setcounter{ProbPart}{0}
+
+\problempart
+\label{pr.DNF}
+Consider the following sentences:
+\begin{earg}
+	\item $(A \eif \enot B)$
+	\item $\enot (A \eiff B)$
+	\item $(\enot A \eor \enot (A \eand B))$
+	\item $(\enot (A \eif B ) \eand (A \eif C))$
+	\item $(\enot (A \eor B) \eiff ((\enot C \eand \enot A) \eif \enot B))$
+	\item $((\enot (A \eand \enot B) \eif C) \eand \enot (A \eand D))$
+\end{earg}
+For each sentence, find an equivalent sentence in DNF and one inCNF by giving a chain of equivalences. Use (Id), (Absorp), and (Simp) to simplify your sentences as much as possible.
+\myanswer{We give a solution for (2). Removing `$\eiff$' and pushing negations inward is common to both:
+\begin{align*}
+	& \enot (A \eiff B)\\
+	& \enot((A \eif B) \eand (B \eif A)) && \text{Bicond}\\
+	& \enot((\enot A \eor B) \eand (B \eif A)) && \text{Cond}\\
+	& \enot((\enot A \eor B) \eand (\enot B \eor A)) && \text{Cond}\\
+	& \enot(\enot A \eor B) \eor \enot(\enot B \eor A) && \text{DeM}\\
+	& (\enot\enot A \eand \enot B) \eor (\enot\enot B \eand \enot A) && \text{DeM}\\
+	& (A \eand \enot B) \eor (\enot\enot B \eand \enot A) && \text{DN}\\
+	& (A \eand \enot B) \eor (B \eand \enot A) && \text{DN}
+\intertext{The result is now in DNF. To obtain a CNF, we keep going, using (Comm) and (Dist):}
+& ((A \eand \enot B) \eor B) \eand ((A \eand \enot B) \eor \enot A) && \text{Dist}\\
+& (B \eor (A \eand \enot B)) \eand ((A \eand \enot B) \eor \enot A) && \text{Comm}\\
+& ((B \eor A) \eand (B \eor \enot B)) \eand ((A \eand \enot B) \eor \enot A) && \text{Dist}\\
+& ((B \eor A) \eand (B \eor \enot B)) \eand (\enot A \eor (A \eand \enot B)) && \text{Comm}\\
+& ((B \eor A) \eand (B \eor \enot B)) \eand ((\enot A \eor A) \eand (\enot A \eor \enot B)) && \text{Dist}\\
+\intertext{The result can be simplified using (Simp):}
+& (B \eor A) \eand ((\enot A \eor A) \eand (\enot A \eor \enot B)) && \text{Simp}\\
+& (B \eor A) \eand (\enot A \eor \enot B) && \text{Simp}
+\end{align*}}
+
 \stepcounter{chapter} % Soundness
