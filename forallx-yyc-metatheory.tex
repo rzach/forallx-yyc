@@ -337,11 +337,12 @@ By the second fact, \emph{any} pairs of sentences of the following forms are equ
 \end{align*}
 Now consider the sentence `$\enot(R \eor (S \eand T))$'. We will find an equivalent sentence in which all `$\enot$' signs attach directly to sentence letters. In the first step, we consider this as a sentence of the form $\enot(\metav{P} \eor \metav{Q})$---then $\metav{P}$ is the sentence~`$R$' and $\metav{Q}$ is `$(S \eand T)$'. Since $\enot(\metav{P} \eor \metav{Q})$ is equivalent to $(\enot \metav{P} \eand \enot \metav{Q})$ (by the second of De Morgan's Laws) we can replace the entire sentence by $(\enot \metav{P} \eand \enot \metav{Q})$. In this case (where $\metav{P}$ is~`$R$' and $\metav{Q}$ is~`$(S \eand T)$') we obtain `$(\enot R \eand \enot (S \eand T))$'. This new sentence contains as a part the sentence `$\enot (S \eand T)$'. It is of the form $\enot(\metav{P} \eand \metav{Q})$, except now $\metav{P}$ is the sentence letter~`$S$' and $\metav{Q}$ is~`$T$'. By De Morgan's Law (the first one this time), this is equivalent to $(\enot\metav{P} \eor \enot\metav{Q})$, or in this specific case, to `$(\enot S \eor \enot T)$'. So we can replace the part `$\enot (S \eand T)$' by `$(\enot S \eor \enot T)$'. This now results in the sentence `$(\enot R \eand (\enot S \eor \enot T))$', in which the `$\enot$' symbols all attach directly to sentence letters. We've ``pushed'' the negations inwards as far as possible.  We can record such a chain of equivalences by listing the individual steps, and recording, just as we do in natural deduction, which basic equivalence we use in each case:
 \begin{align*}
-	& \fbox{\enot(\fbox{R} \eor \fbox{(S \eand T)})} \\
-	& (\enot(R \eand \fbox{\enot(\fbox{S} \eand \fbox{T})}) && \text{DeM}\\
-	& (\enot(R \eand (\enot \fbox{S} \eor \enot \fbox{T})) && \text{DeM}
+	& \fbox{\enot(\fbox{$R$} \eor \fbox{$(S \eand T)$})} \\
+	& \fbox{(\enot(\fbox{$R$} \eand \enot\fbox{$(S \eand T)$})} && \text{DeM}\\
+	& (\enot(R \eand \fbox{$\enot(\fbox{$S$} \eand \fbox{$T$})$}) \\
+	& (\enot(R \eand \fbox{$(\enot \fbox{$S$} \eor \enot \fbox{$T$})$}) && \text{DeM}
 \end{align*}
-(We've highlighted the sentence replaced, and those mathching the $\metav{P}$ and~$\metav{Q}$ in De Morgan's Laws for clarity, but this is not necessary.)
+We've highlighted the sentence replaced, and those matching the $\metav{P}$ and~$\metav{Q}$ in De Morgan's Laws for clarity, but this is not necessary, and we won't keep doing it.
 
 In table~\ref{tab:equivalences} we've given a list of basic equivalences you can use for such chains of equivalences. The labels abbreviate the customary name for the respective logical laws: double negation (DN), De Morgan (DeM), commutativity (Comm), distributivity (Dist), associativity (Assoc), idempotence (Id), and absorption (Abs).
 
