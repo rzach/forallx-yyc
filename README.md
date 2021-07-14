@@ -1,6 +1,6 @@
 # forall x: Calgary
 
-![Book Cover](https://forallx.openlogicproject.org/forallxyyc.png)
+[![Book Cover](https://forallx.openlogicproject.org/forallxyyc.png)](https://forallx.openlogicproject.org/forallxyyc.pdf)
 
 ## Description
 
@@ -27,10 +27,70 @@ for the book on carnap.io.
 
 There are translations into German ([forall _x_:
 Dortmund](https://github.com/sbwimmer/forallx-do)) and Portuguese
-([Para Tod_x_s:
+([Para Tod*x*s:
 Natal](https://github.com/Grupo-de-Estudos-em-Logica-da-UFRN/Para-Todxs-Natal)).
 
-[Download](#download) links below.
+## Download
+
+You can download PDFs of the **most current version under development** here:
+
+  - [`forallxyyc.pdf`](https://forallx.openlogicproject.org/forallxyyc.pdf)
+    (in color, for screen reading)
+  - [`forallxyyc-accessible.pdf`](https://forallx.openlogicproject.org/forallxyyc-accessible.pdf)
+    (an accessible version for dyslexics)
+  - [`forallxyyc-print.pdf`](https://forallx.openlogicproject.org/forallxyyc-print.pdf)
+    (b/w, for printing on Quarto stock)
+  - [`forallxyyc-letter.pdf`](https://forallx.openlogicproject.org/forallxyyc-letter.pdf)
+    (b/w, for printing on regular letter-size paper)
+  - [`forallxyyc-solutions.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions.pdf)
+    (solutions booklet)
+
+**Note that these files change whenever the source files change.** So
+if you use the text in a course, better to download the PDFs and make
+them available to students directly, rather than to link here, to avoid
+mismatches between versions.
+
+PDFs of the **Fall 2020** edition are archived here:
+
+  - [`forallxyyc-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-f20.pdf)
+  - [`forallxyyc-accessible-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-accessible-f20.pdf)
+  - [`forallxyyc-print-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-print-f20.pdf)
+  - [`forallxyyc-letter-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-letter-f20.pdf)
+  - [`forallxyyc-solutions-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions-f20.pdf)
+
+## Buy a Printed Copy
+
+If you'd like to purchase a nice paperback copy of the Fall 2021 edition, you can do so on
+Amazon ([US](https://www.amazon.com/dp/B097XGMP17) |
+[CA](https://www.amazon.ca/dp/B097XGMP17) |
+[UK](https://www.amazon.co.uk/dp/B097XGMP17) |
+[DE](https://www.amazon.de/dp/B097XGMP17) | 
+[AU](https://www.amazon.com.au/dp/B097XGMP17)), or use search in your
+local Amazon store. Be sure to get the latest version that's available
+in print (Fall 2021). The version on Amazon usually is not as current
+as the PDF.
+
+(The process for getting the book printed is described
+[here](https://openlogicproject.org/2015/11/22/getting-your-book-to-print/)
+and
+[here](https://openlogicproject.org/2017/05/19/forall-x-yyc-is-now-on-amazon-and-how-it-got-there/).)
+
+## Make PDFs Yourself
+
+Clone the [GitHub repository](https://github.com/rzach/forallx-yyc) locally or download the ZIP file and run [LaTeX](https://www.latex-project.org/) on one of
+
+  - `forallxyyc.tex` (in color, for screen reading)
+  - `forallxyyc-accessible.tex` (accessible version)
+  - `forallxyyc-print.tex` (b/w, for printing on Quarto stock)
+  - `forallxyyc-letter.tex` (b/w, for printing on regular letter-size paper)
+
+You'll have to run `makeglossaries` to produce the glossary as well.
+
+To make changes to the definitions in the preamble and `forallyyc.sty`
+file, put them in a file named `forallxyyc-local.sty`. For instance,
+to get the connectives to be ∼, &, ⊃, ≡ instead of ¬, ∧, →, ↔, and
+atomic formulas _Lab_ instead of _L(a,b)_, copy
+`forallxyyc-local-sample.sty` to that file.
 
 ## Credits and License
 
@@ -64,63 +124,3 @@ International License](https://creativecommons.org/licenses/by/4.0/).
 The LaTeX source code for this work is available on GitHub at
 [github.com/rzach/forallx-yyc](https://github.com/rzach/forallx-yyc).
 
-## Download
-
-You can download PDFs of the **most current version under development** here:
-
-  - [`forallxyyc.pdf`](https://forallx.openlogicproject.org/forallxyyc.pdf)
-    (in color, for screen reading)
-  - [`forallxyyc-accessible.pdf`](https://forallx.openlogicproject.org/forallxyyc-accessible.pdf)
-    (an accessible version for dyslexics)
-  - [`forallxyyc-print.pdf`](https://forallx.openlogicproject.org/forallxyyc-print.pdf)
-    (b/w, for printing on Quarto stock)
-  - [`forallxyyc-letter.pdf`](https://forallx.openlogicproject.org/forallxyyc-letter.pdf)
-    (b/w, for printing on regular letter-size paper)
-  - [`forallxyyc-solutions.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions.pdf)
-    (solutions booklet)
-
-**Note that these files change whenever the source files change.** So
-if you use the text in a course, better to download the PDFs and make
-them available to students directly, rather than to link here, to avoid
-mismatches between versions.
-
-The latest "stable" version (also available in hardcopy; see below) is **Fall 2020**. You can download PDFs of that here:
-
-  - [`forallxyyc-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-f20.pdf)
-  - [`forallxyyc-accessible-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-accessible-f20.pdf)
-  - [`forallxyyc-print-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-print-f20.pdf)
-  - [`forallxyyc-letter-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-letter-f20.pdf)
-  - [`forallxyyc-solutions-f20.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions-f20.pdf)
-
-## Buy a Printed Copy
-
-If you'd like to purchase a nice paperback copy, you can do so on
-Amazon ([US](https://www.amazon.com/dp/B08F6CG587) |
-[CA](https://www.amazon.ca/dp/B08F6CG587) |
-[UK](https://www.amazon.co.uk/dp/B08F6CG587) |
-[DE](https://www.amazon.de/dp/B08F6CG587)), or use search in your
-local Amazon store. Be sure to get the latest version that's available
-in print (Fall 2020). The version on Amazon usually is not as current
-as the PDF.
-
-(The process for getting the book printed is described
-[here](https://openlogicproject.org/2015/11/22/getting-your-book-to-print/)
-and
-[here](https://openlogicproject.org/2017/05/19/forall-x-yyc-is-now-on-amazon-and-how-it-got-there/).)
-
-## Make PDFs Yourself
-
-Clone the [GitHub repository](https://github.com/rzach/forallx-yyc) locally or download the ZIP file and run [LaTeX](https://www.latex-project.org/) on one of
-
-  - `forallxyyc.tex` (in color, for screen reading)
-  - `forallxyyc-accessible.tex` (accessible version)
-  - `forallxyyc-print.tex` (b/w, for printing on Quarto stock)
-  - `forallxyyc-letter.tex` (b/w, for printing on regular letter-size paper)
-
-You'll have to run `makeglossaries` to produce the glossary as well.
-
-To make changes to the definitions in the preamble and `forallyyc.sty`
-file, put them in a file named `forallxyyc-local.sty`. For instance,
-to get the connectives to be ∼, &, ⊃, ≡ instead of ¬, ∧, →, ↔, and
-atomic formulas _Lab_ instead of _L(a,b)_, copy
-`forallxyyc-local-sample.sty` to that file.
