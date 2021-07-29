@@ -63,15 +63,16 @@
 \renewcommand*{\printpartname}{%
   \partnamefont PART}
 
-\chapterstyle{leadbeater}
 
 \copypagestyle{leadbeater}{headings}
 
-\makeoddhead{leadbeater}{\small\sffamily\color{leadbeater}\rightmark}{}
-            {\color{leadbeater}\sffamily\bfseries\thepage}
+\chapterstyle{leadbeater}
 
-\makeevenhead{leadbeater}{\small\sffamily\color{leadbeater}\leftmark}{}
-            {\color{leadbeater}\sffamily\bfseries\thepage}
+\makeoddhead{leadbeater}{\small\sffamily\color{leadbeater}\rightmark}{}
+    {\color{leadbeater}\sffamily\bfseries\thepage}
+
+\makeevenhead{leadbeater}{\color{leadbeater}\sffamily\bfseries\thepage}{}
+    {\small\sffamily\color{leadbeater}\leftmark}
 
 \usepackage[font={small,it}]{caption}
 

@@ -4,7 +4,7 @@
 
 \pdfminorversion=3
 
-\documentclass[openany,11pt]{memoir}
+\documentclass[openany,twosided,11pt]{memoir}
 
 \usepackage{forallxyyc-style}
 \usepackage{forallxyyc}
@@ -34,6 +34,18 @@
 \colorlet{dkleadbeater}{black}
 \colorlet{ltleadbeater}{black!50}
 \colorlet{vltleadbeater}{black!3}
+
+\makepsmarks{leadbeater}{%
+\createmark{chapter}{both}{shownumber}{\@chapapp\ }{. \ }
+\createmark{section}{right}{shownumber}{}{. \ }
+\createplainmark{toc}{both}{\contentsname}
+\createplainmark{lof}{both}{\listfigurename}
+\createplainmark{lot}{both}{\listtablename}
+\createplainmark{bib}{both}{\bibname}
+\createplainmark{index}{both}{\indexname}
+\createplainmark{glossary}{both}{\glossaryname}
+\createplainmark{pcr}{both}{Photo Credits}
+}
 
 \begin{document}
 
