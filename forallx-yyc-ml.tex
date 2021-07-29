@@ -18,7 +18,7 @@ There are lots of different kinds of necessity. It is \emph{humanly impossible} 
 
 Which kind of modality does ML deal with? \emph{All of them!} ML is a very flexible tool. We start with a basic set of rules that govern $\ebox$ and $\ediamond$, and then add more rules to fit whatever kind of modality we are interested in. In fact, ML is so flexible that we do not even have to think of $\ebox$ and $\ediamond$ as expressing \emph{necessity} and \emph{possibility}. We might instead read $\ebox$ as expressing \emph{provability}, so that $\ebox\metav{A}$ means \emph{It is provable that} $\metav{A}$, and $\ediamond\metav{A}$ means \emph{It is not refutable that} $\metav{A}$. Similarly, we can interpret $\ebox$ to mean $S$ \emph{knows that $\metav{A}$} or $S$ \emph{believes that $\metav{A}$}. Or we might read $\ebox$ as expressing \emph{moral obligation}, so that $\ebox \metav{A}$ means \emph{It is morally obligatory that} $\metav{A}$, and $\ediamond \metav{A}$ means \emph{It is morally permissible that} $\metav{A}$. All we would need to do is cook up the right rules for these different readings of $\ebox$ and $\ediamond$.
 
-A modal formula is one that includes modal operators such as $\ebox$ and $\ediamond$. Depending on the interpretation we assign to $\ebox$ and $\ediamond$, different modal formulas will be provable or valid. For instance, $\ebox \metav{A} \eif \metav{A}$ might say that ``if $\metav{A}$ is necessary, it is true,'' if $\ebox$ is interpreted as necessity. It might express ``if $\metav{A}$ is known, then it is true,'' if $\ebox$ expresses known truth. Under both these interpretations, $\ebox\metav{A} \eif \metav{A}$ is valid: All necessary propositions are true come what may, so are true in the actual world. And if a proposition is known to be true, it must be true (one can't know something that's false). However, when $\ebox$ is interpreted as ``it is believed that'' or ``it ought to be the case that,'' $\ebox\metav{A} \eif \metav{A}$ is not valid: We can believe false propositions. Not every proposition that ought to be true is in fact true, e.g., ``Every murderer will be brought to justice.'' This \emph{ought} to be true, but it isn't. 
+A modal formula is one that includes modal operators such as $\ebox$ and $\ediamond$. Depending on the interpretation we assign to $\ebox$ and $\ediamond$, different modal formulas will be provable or valid. For instance, $\ebox \metav{A} \eif \metav{A}$ might say that ``if $\metav{A}$ is necessary, it is true,'' if $\ebox$ is interpreted as necessity. It might express ``if $\metav{A}$ is known, then it is true,'' if $\ebox$ expresses known truth. Under both these interpretations, $\ebox\metav{A} \eif \metav{A}$ is valid: All necessary propositions are true come what may, so are true in the actual world. And if a proposition is known to be true, it must be true (one can't know something that's false). However, when $\ebox$ is interpreted as ``it is believed that'' or ``it ought to be the case that,'' $\ebox\metav{A} \eif \metav{A}$ is not valid: We can believe false propositions. Not every proposition that ought to be true is in fact true, e.g., ``Every murderer will be brought to justice.'' This \emph{ought} to be true, but it isn't.
 
 We will consider different kinds of systems of ML. They differ in the rules of proof allowed, and in the semantics we use to define our logical notions. The different systems we'll consider are called \mlK, \mlT, \mlSfour, and \mlSfive. \mlK{} is the basic system; everything that is valid or provable in \mlK{} is also provable in the others. But there are some things that \mlK{} does not prove, such as the formula $\ebox A \eif A$ for sentence letter~$A$. So \mlK{} is not an appropriate modal logic for necessity and possibility (where $\ebox\metav{A} \eif \metav{A}$ should be provable). This is provable in the system \mlT, so \mlT{} is more appropriate when dealing with necessity and possibiliity, but less apropriate when dealing with belief or obligation, since then $\ebox\metav{A} \eif \metav{A}$ should \emph{not} (always) be provable. The perhaps best system of ML for necessity and possibility, and in any case the most widely accepted, is the strongest of the systems we consider, \mlSfive.
 
@@ -115,7 +115,7 @@ We said above that a strict subproof allows us to reason about arbitrary alterna
 			\have[n]{n}{\metav{A}}\boxe{m}
 			\close
 		\end{nd}\]
-		\ebox E can only be applied if line $m$ (containing $\ebox A$) lies \emph{outside} of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing~$m$. 
+		\ebox E can only be applied if line $m$ (containing $\ebox A$) lies \emph{outside} of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing~$m$.
 		}
 \ebox E allows you to assert $\metav{A}$ inside a strict subproof if you have $\ebox \metav{A}$ outside the strict subproof. The restriction means that you can only do this in the first strict subproof, you cannot apply the \ebox E rule inside a nested strict subproof. So the following is not allowed:
 \[\begin{nd}
@@ -127,7 +127,7 @@ We said above that a strict subproof allows us to reason about arbitrary alterna
 	\have{4}{\metav{A}}\by{incorrect use of \ebox E}{1}
 \close\close
 \end{nd}\]
-The incorrect use of \ebox E on line~$4$ violates the condition, because although line~$1$ lies outside the strict subproof in which line~$4$ falls, the strict subproof containing line~$4$ lies inside the strict subproof beginning on line~$2$ which does not contain line~$1$. 
+The incorrect use of \ebox E on line~$4$ violates the condition, because although line~$1$ lies outside the strict subproof in which line~$4$ falls, the strict subproof containing line~$4$ lies inside the strict subproof beginning on line~$2$ which does not contain line~$1$.
 
 Let's begin with an example.
 \[
@@ -258,10 +258,10 @@ This leads us to another new system, \mlSfour, which we get by adding the follow
 			\close
 		\end{nd}
 	\]
-	Note that R$\mathbf{4}$ can only be applied if line $m$ (containing $\ebox A$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing $n$. 
+	Note that R$\mathbf{4}$ can only be applied if line $m$ (containing $\ebox A$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing $n$.
 }
 
-Rule R$\mathbf{4}$ looks just like {\ebox}E, except that instead of yielding $\metav{A}$ from $\ebox\metav{A}$ it yields $\ebox\metav{A}$ inside a strict subproof. The restriction is the same, however: R$\mathbf{4}$ allows us to ``import'' $\ebox \metav{A}$ into a strict subproof, but not into a strict subproof itself nested inside a strict subproof. However, if that is necessary, an additional application of R$\mathbf{4}$ would have the same result. 
+Rule R$\mathbf{4}$ looks just like {\ebox}E, except that instead of yielding $\metav{A}$ from $\ebox\metav{A}$ it yields $\ebox\metav{A}$ inside a strict subproof. The restriction is the same, however: R$\mathbf{4}$ allows us to ``import'' $\ebox \metav{A}$ into a strict subproof, but not into a strict subproof itself nested inside a strict subproof. However, if that is necessary, an additional application of R$\mathbf{4}$ would have the same result.
 
 Now we can prove even more results. For instance:
 \[\begin{nd}
@@ -291,7 +291,7 @@ This leads us to our final modal system, \mlSfive, which we get by adding the fo
 			\have[n]{n}{\enot\ebox\metav{A}}\rfive{m}
 			\close
 	\end{nd}\]
-	Rule R$\mathbf{5}$ can only be applied if line $m$ (containing $\enot \ebox\metav{A}$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing line~$m$. 
+	Rule R$\mathbf{5}$ can only be applied if line $m$ (containing $\enot \ebox\metav{A}$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing line~$m$.
 }
 
 This rule allows us to show, for instance, that $\ediamond\ebox A\proves_\mlSfive  \ebox A$:
@@ -310,7 +310,7 @@ This rule allows us to show, for instance, that $\ediamond\ebox A\proves_\mlSfiv
 	\have{8}{\ebox A}\by{IP}{3-7}
 \end{nd}\]
 
-So, as well as adding boxes in front of diamonds, we can also delete diamonds in front of boxes. 
+So, as well as adding boxes in front of diamonds, we can also delete diamonds in front of boxes.
 
 We got \mlSfive{} just by adding the rule R$\mathbf{5}$ rule to \mlSfour. In fact, we could have added rule R$\mathbf{5}$ to \mlT{} alone, and leave out rule R$\mathbf{4}$). Everything we can prove by rule R$\mathbf{4}$ can also be proved using R\mlT{} together with R$\mathbf{5}$. For instance, here is a proof that shows $\ebox A \proves_\mlSfive  \ebox\ebox A$ without using R$\mathbf{4}$:
 \[\begin{nd}
@@ -482,7 +482,7 @@ We can now extend all of the semantic concepts of TFL to cover ML:
 }
 (From now on we will drop the explicit `modal' qualifications, since they can be taken as read.)
 
-We can also extend our use of $\entails$. However, we need to add subscripts again, just as we did with $\proves$. So, when we want to say that $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is valid, we will write: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$. 
+We can also extend our use of $\entails$. However, we need to add subscripts again, just as we did with $\proves$. So, when we want to say that $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is valid, we will write: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$.
 
 Let's get more of a feel for this semantics by presenting some counter-interpretations. Consider the following (false) claim:
 \begin{itemize}
@@ -512,7 +512,7 @@ Why did we choose the subscript \mlK? Well, it turns out that there is an import
 \end{itemize}
 The first result is known as a \emph{soundness} result, since it tells us that the rules of \mlK{} are good, sound rules: if you can vindicate an argument by giving a proof for it using system \mlK, then that argument really is valid. The second result is known as a \emph{completeness} result, since it tells us that the rules of \mlK{} are broad enough to capture all of the valid arguments: if an argument is valid, then it will be possible to offer a proof in \mlK{} which vindicates it.
 
-Now, it is one thing to state these results, quite another to prove them. However, we will not try to prove them here. But the idea behind the proof of soundness will perhaps make clearer how strict subproofs work. 
+Now, it is one thing to state these results, quite another to prove them. However, we will not try to prove them here. But the idea behind the proof of soundness will perhaps make clearer how strict subproofs work.
 
 In a strict subproof, we are not allowed to make use of any information from outside the strict subproof, except what we import into the strict subproof using \ebox E. If we've assumed or proved $\ebox \metav{A}$, by \ebox E, we can used $\metav{A}$ inside a strict subproof. And in \mlK, that is the only way to import a formula into a strict subproof. So everything that can be proved inside a strict subproof must follow from formulas $\metav{A}$ where outside the strict subproof we have $\ebox \metav{A}$. Let's imagine that we are reasoning about what's true in a possible world in some interpretation. If we know that $\ebox\metav{A}$ is true in that possible world, we know that $\metav{A}$ is true in all accessible worlds. So, everything proved inside a strict subproof is true in all accessible possible worlds. That is why \ebox I is a sound rule.
 
@@ -613,7 +613,7 @@ To see this, just imagine trying to cook up a counter-interpretation to this cla
 \[
 	\enot\ebox\metav{A} \entails_\mlSfive  \ebox \enot\ebox \metav{A}
 \]
-We would need to construct a world, $w_1$, at which $\enot\ebox\metav{A}$ was true, but $\ebox \enot\ebox \metav{A}$ was false. 
+We would need to construct a world, $w_1$, at which $\enot\ebox\metav{A}$ was true, but $\ebox \enot\ebox \metav{A}$ was false.
 Now, if $\enot\ebox\metav{A}$ is true at $w_1$, then $w_1$ must access some world, $w_2$, at which $\metav{A}$ is false. Equally, if $\ebox \enot\ebox \metav{A}$ is false at $w_1$, then $w_1$ must access some world, $w_3$, at which $\enot\ebox \metav{A}$ is false. Since we are now insisting that the accessibility relation is an equivalence relation, and hence symmetric, we can infer that $w_3$ accesses $w_1$. Thus, $w_3$ accesses $w_1$, and $w_1$ accesses $w_2$. Again, since we are now insisting that the accessibility relation is an equivalence relation, and hence transitive, we can infer that $w_3$ accesses $w_2$. But earlier we said that $\enot\ebox \metav{A}$ is false at $w_3$, which implies that $\metav{A}$ is true at every world which $w_3$ accesses. So $\metav{A}$ is true \emph{and} false at $w_2$. Contradiction!
 
 In the definition of $\entails_\mlSfive $, we stipulated that the accessibility relation must be an equivalence relation. But it turns out that there is another way of getting a notion of validity fit for \mlSfive. Rather than stipulating that the accessibility relation be an equivalence relation, we can instead stipulate that it be a \emph{universal} relation:

@@ -5,7 +5,7 @@
 
 \chapter{The very idea of natural deduction}\label{s:NDVeryIdea}
 
-Way back in \S\ref{s:Valid}, we said that an argument is valid iff there is no case in which all of the premises are true and the conclusion is false. 
+Way back in \S\ref{s:Valid}, we said that an argument is valid iff there is no case in which all of the premises are true and the conclusion is false.
 
 In the case of TFL, this led us to develop truth tables. Each line of a complete truth table corresponds to a valuation. So, when faced with a TFL argument, we have a very direct way to assess whether there is a valuation on which the premises are true and the conclusion is false: just thrash through the truth table.
 
@@ -14,9 +14,9 @@ However, truth tables may not give us much \emph{insight}. Consider two argument
 P \eor Q, \enot P & \therefore Q\\
 P \eif Q, P & \therefore Q
 \end{align*}
-Clearly, these are valid arguments. You can confirm that they are valid by constructing four-line truth tables, but we might say that they make use of different \emph{forms} of reasoning. It might be nice to keep track of these different forms of inference. 
+Clearly, these are valid arguments. You can confirm that they are valid by constructing four-line truth tables, but we might say that they make use of different \emph{forms} of reasoning. It might be nice to keep track of these different forms of inference.
 
-One aim of a \emph{natural deduction system} is to show that particular arguments are valid, in a way that allows us to understand the reasoning that the arguments might involve. We begin with very basic rules of inference. These rules can be combined to offer more complicated arguments. Indeed, with just a small starter pack of rules of inference, we hope to capture all valid arguments. 
+One aim of a \emph{natural deduction system} is to show that particular arguments are valid, in a way that allows us to understand the reasoning that the arguments might involve. We begin with very basic rules of inference. These rules can be combined to offer more complicated arguments. Indeed, with just a small starter pack of rules of inference, we hope to capture all valid arguments.
 
 \emph{This is a very different way of thinking about arguments.} 
 
@@ -31,12 +31,12 @@ A_1 \eif C_1 \therefore\ & (A_1 \eand A_2 \eand A_3 \eand A_4 \eand A_5 \eand A_
 \end{align*}
 This argument is also valid---as you can probably tell---but to test it requires a truth table with $2^{20} = 1048576$ lines. In principle, we can set a machine to grind through truth tables and report back when it is finished. In practice, complicated arguments in TFL can become \emph{intractable} if we use truth tables.
 
-When we get to first-order logic (FOL) (beginning in chapter \ref{s:FOLBuildingBlocks}), though, the problem gets dramatically worse. There is nothing like the truth table test for FOL. To assess whether or not an argument is valid, we have to reason about \emph{all} interpretations, but, as we will see, there are infinitely many possible interpretations. We cannot even in principle set a machine to grind through infinitely many possible interpretations and report back when it is finished: it will \emph{never} finish. We either need to come up with some more efficient way of reasoning about all interpretations, or we need to look for something different. 
+When we get to first-order logic (FOL) (beginning in chapter \ref{s:FOLBuildingBlocks}), though, the problem gets dramatically worse. There is nothing like the truth table test for FOL. To assess whether or not an argument is valid, we have to reason about \emph{all} interpretations, but, as we will see, there are infinitely many possible interpretations. We cannot even in principle set a machine to grind through infinitely many possible interpretations and report back when it is finished: it will \emph{never} finish. We either need to come up with some more efficient way of reasoning about all interpretations, or we need to look for something different.
 
-There are, indeed, systems that codify ways to reason about all possible interpretations. They were developed in the 1950s by Evert Beth and Jaakko Hintikka, but we will not follow this path. We will, instead, look to natural deduction. 
+There are, indeed, systems that codify ways to reason about all possible interpretations. They were developed in the 1950s by Evert Beth and Jaakko Hintikka, but we will not follow this path. We will, instead, look to natural deduction.
 
-Rather than reasoning directly about all valuations (in the case of TFL), we will try to select a few basic rules of inference. Some of these will govern the behaviour of the sentential connectives. Others will govern the behaviour of the quantifiers and identity that are the hallmarks of FOL. The resulting system of rules will give us a new way to think about the validity of arguments. 
-The modern development of natural deduction dates from simultaneous and unrelated papers by Gerhard Gentzen and Stanis\l{}aw Ja\'{s}kowski (1934). However, the natural deduction system that we will consider is based largely around work by Frederic Fitch (first published in 1952). 
+Rather than reasoning directly about all valuations (in the case of TFL), we will try to select a few basic rules of inference. Some of these will govern the behaviour of the sentential connectives. Others will govern the behaviour of the quantifiers and identity that are the hallmarks of FOL. The resulting system of rules will give us a new way to think about the validity of arguments.
+The modern development of natural deduction dates from simultaneous and unrelated papers by Gerhard Gentzen and Stanis\l{}aw Ja\'{s}kowski (1934). However, the natural deduction system that we will consider is based largely around work by Frederic Fitch (first published in 1952).
 
 
 
@@ -44,7 +44,11 @@ The modern development of natural deduction dates from simultaneous and unrelate
 We will develop a \define{natural deduction} system. For each connective, there will be \define{introduction} rules, that allow us to prove a sentence that has that connective as the main logical operator, and \define{elimination} rules, that allow us to prove something given a sentence that has that connective as the main logical operator.
 
 \section{The idea of a formal proof}
-A \emph{formal proof} is a sequence of sentences, some of which are marked as being initial assumptions (or premises). The last line of the formal proof is the conclusion. (Henceforth, we will simply call these `proofs', but be aware that there are \emph{informal proofs} too.)
+A \emph{formal proof} or \emph{derivation} is a sequence of sentences,
+some of which are marked as being initial assumptions (or premises).
+The last line of the formal proof is the conclusion. (Henceforth, we
+will simply call these `proofs' or `derivations', but be aware that
+there are \emph{informal proofs} too.)
 
 As an illustration, consider:
 	$$\enot (A \eor B) \therefore \enot A \eand \enot B$$
@@ -52,7 +56,7 @@ We will start a proof by writing the premise:
 \begin{fitchproof}
 	\hypo{a1}{\enot (A \eor B)}
 \end{fitchproof}
-Note that we have numbered the premise, since we will want to refer back to it. Indeed, every line on of proof is numbered, so that we can refer back to it. 
+Note that we have numbered the premise, since we will want to refer back to it. Indeed, every line on of proof is numbered, so that we can refer back to it.
 
 Note also that we have drawn a line underneath the premise. Everything written above the line is an \emph{assumption}. Everything written below the line will either be something which follows from the assumptions, or it will be some new assumption. We are hoping to conclude `$\enot A \eand \enot B$'; so we are hoping ultimately to conclude our proof with
 \begin{fitchproof}
@@ -75,7 +79,7 @@ and we are hoping to conclude with some line:
 All that remains to do is to explain each of the rules that we can use along the way from premises to conclusion. The rules are broken down by our logical connectives.
 
 \section{Reiteration}
-The very first rule is so breathtakingly obvious that it is surprising we bother with it at all. 
+The very first rule is so breathtakingly obvious that it is surprising we bother with it at all.
 
 If you already have shown something in the course of a proof, the \emph{reiteration rule} allows you to repeat it on a new line. For example:
 \begin{fitchproof}
@@ -90,7 +94,7 @@ Here is a general expression of the rule:
 	\have[m]{a}{\metav{A}}
 	\have[\ ]{c}{\metav{A}} \by{R}{a}
 \end{fitchproof}
-The point is that, if any sentence $\metav{A}$ occurs on some line, then we can repeat $\metav{A}$ on later lines. Each line of our proof must be justified by some rule, and here we have `R $m$'. This means: Reiteration, applied to line~$m$. 
+The point is that, if any sentence $\metav{A}$ occurs on some line, then we can repeat $\metav{A}$ on later lines. Each line of our proof must be justified by some rule, and here we have `R $m$'. This means: Reiteration, applied to line~$m$.
 
 Two things need emphasizing. First `$\metav{A}$' is not a sentence of TFL. Rather, it a symbol in the metalanguage, which we use when we want to talk about any sentence of TFL (see \S\ref{s:UseMention}). Second, and similarly, `$m$' is not a symbol that will appear on a proof. Rather, it is a symbol in the metalanguage, which we use when we want to talk about any line number of a proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth. But when we define the rule, we use variables like `$m$' to underscore the point that the rule may be applied at any point.
 
@@ -121,7 +125,7 @@ with the citation reversed, to reflect the order of the conjuncts. More generall
 	\have[n]{b}{\metav{B}}
 	\have[\ ]{c}{\metav{A}\eand\metav{B}} \ai{a, b}
 \end{fitchproof}}
-To be clear, the statement of the rule is \emph{schematic}. It is not itself a proof.  `$\metav{A}$' and `$\metav{B}$' are not sentences of TFL. Rather, they are symbols in the metalanguage, which we use when we want to talk about any sentence of TFL (see \S\ref{s:UseMention}). Similarly, `$m$' and `$n$' are not a numerals that will appear on any actual proof. Rather, they are symbols in the metalanguage, which we use when we want to talk about any line number of any proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth, but when we define the rule, we use variables to emphasize that the rule may be applied at any point. The rule requires only that we have both conjuncts available to us somewhere in the proof. They can be separated from one another, and they can appear in any order. 
+To be clear, the statement of the rule is \emph{schematic}. It is not itself a proof.  `$\metav{A}$' and `$\metav{B}$' are not sentences of TFL. Rather, they are symbols in the metalanguage, which we use when we want to talk about any sentence of TFL (see \S\ref{s:UseMention}). Similarly, `$m$' and `$n$' are not a numerals that will appear on any actual proof. Rather, they are symbols in the metalanguage, which we use when we want to talk about any line number of any proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth, but when we define the rule, we use variables to emphasize that the rule may be applied at any point. The rule requires only that we have both conjuncts available to us somewhere in the proof. They can be separated from one another, and they can appear in any order.
 
 The rule is called `conjunction \emph{introduction}' because it introduces the symbol `$\eand$' into our proof where it may have been absent. Correspondingly, we have a rule that \emph{eliminates} that symbol.  Suppose you have shown that Ludwig is both reactionary and libertarian. You are entitled to conclude that Ludwig is reactionary. Equally, you are entitled to conclude that Ludwig is libertarian. Putting this together, we obtain our conjunction elimination rule(s):
 \factoidbox{
@@ -160,7 +164,7 @@ So by applying the {\eand}I rule to lines 3 and 2 (in that order), we arrive at 
 	\have{b}{{[}(E \eor F) \eif (G\eor H){]}} \ae{ab}
 	\have{ba}{{[}(E \eor F) \eif (G\eor H){]} \eand {[}(A\eor B)\eif(C\eor D){]}} \ai{b,a}
 \end{fitchproof}
-This is a very simple proof, but it shows how we can chain rules of proof together into longer proofs. In passing, note that investigating this argument with a truth table would have required 256 lines; our formal proof required only four lines. 
+This is a very simple proof, but it shows how we can chain rules of proof together into longer proofs. In passing, note that investigating this argument with a truth table would have required 256 lines; our formal proof required only four lines.
 
 It is worth giving another example. Back in \S\ref{s:MoreBracketingConventions}, we noted that this argument is valid:
 	$$A \eand (B \eand C) \therefore (A \eand B) \eand C$$
@@ -229,7 +233,7 @@ The next thing we did is to make an \emph{additional} assumption (`Ludwig is lib
 		\open
 			\hypo{l}{L}
 	\end{fitchproof}
-Note that we are \emph{not} claiming, on line 2, to have proved `$L$' from line 1, so we do not write in any justification for the additional assumption on line 2. We do, however, need to mark that it is an additional assumption. We do this by drawing a line under it (to indicate that it is an assumption) and by indenting it with a further vertical line (to indicate that it is additional). 
+Note that we are \emph{not} claiming, on line 2, to have proved `$L$' from line 1, so we do not write in any justification for the additional assumption on line 2. We do, however, need to mark that it is an additional assumption. We do this by drawing a line under it (to indicate that it is an assumption) and by indenting it with a further vertical line (to indicate that it is additional).
 
 With this extra assumption in place, we are in a position to use $\eand$I. So we can continue our proof:
 	\begin{fitchproof}
@@ -260,7 +264,7 @@ The general pattern at work here is the following. We first make an additional a
 		\close
 		\have[\ ]{ab}{\metav{A}\eif\metav{B}}\ci{a-b}
 	\end{fitchproof}}
-There can be as many or as few lines as you like between lines $i$ and $j$. 
+There can be as many or as few lines as you like between lines $i$ and $j$.
 
 It will help to offer a second  illustration of $\eif$I in action. Suppose we want to consider the following:
 	$$P \eif Q, Q \eif R \therefore P \eif R$$
@@ -296,7 +300,7 @@ The rule $\eif$I invoked the idea of making additional assumptions. These need t
 	\close
 	\have{con}{B \eif B}\ci{b1-b2}
 \end{fitchproof}
-This is perfectly in keeping with the rules we have laid down already, and it should not seem particularly strange. Since `$B \eif B$' is a tautology, no particular premises should be required to prove it. 
+This is perfectly in keeping with the rules we have laid down already, and it should not seem particularly strange. Since `$B \eif B$' is a tautology, no particular premises should be required to prove it.
 
 But suppose we now tried to continue the proof as follows:
 \begin{fitchproof}
@@ -319,9 +323,9 @@ When we are working within the subproof, we can refer to the additional assumpti
 \item the line must come before the line where the rule is applied, but 
 \item not occur within a subproof that has been closed before the line where the rule is applied.
 \end{enumerate}}
-This stipulation rules out the disastrous attempted proof above. The rule of $\eif$E requires that we cite two individual lines from earlier in the proof. In the purported proof, above, one of these lines (namely, line~$4$) occurs within a subproof that has (by line~$5$) been closed. This is illegitimate. 
+This stipulation rules out the disastrous attempted proof above. The rule of $\eif$E requires that we cite two individual lines from earlier in the proof. In the purported proof, above, one of these lines (namely, line~$4$) occurs within a subproof that has (by line~$5$) been closed. This is illegitimate.
 
-Closing a subproof is called \define{discharging} the assumptions of that subproof. So we can put the point this way: \emph{you cannot refer back to anything that was obtained using discharged assumptions}. 
+Closing a subproof is called \define{discharging} the assumptions of that subproof. So we can put the point this way: \emph{you cannot refer back to anything that was obtained using discharged assumptions}.
 
 Subproofs, then, allow us to think about what we could show, if we made additional assumptions. The point to take away from this is not surprising---in the course of a proof, we have to keep very careful track of what assumptions we are making, at any given moment. Our proof system does this very graphically. (Indeed, that's precisely why we have chosen to use \emph{this} proof system.)
 
@@ -400,7 +404,7 @@ One last point to emphasize how rules can be applied: where a rule requires you 
 Here, we have tried to justify $C$ on line~$6$ by the reiteration rule, but we have cited the subproof on lines $3$--$5$ with it. That subproof is closed and can in principle be cited on line~$6$. (For instance, we could use it to justify $C \eif C$ by $\eif$I.) But the reiteration rule~R requires you to cite an individual line, so citing the entire subproof is inadmissible (even if that subproof contains the sentence~$C$ we want to reiterate).
 
 
-It is always permissible to open a subproof with any assumption. However, there is some strategy involved in picking a useful assumption. Starting a subproof with an arbitrary, wacky assumption would just waste lines of the proof. In order to obtain a conditional by {\eif}I, for instance, you must assume the antecedent of the conditional in a subproof. 
+It is always permissible to open a subproof with any assumption. However, there is some strategy involved in picking a useful assumption. Starting a subproof with an arbitrary, wacky assumption would just waste lines of the proof. In order to obtain a conditional by {\eif}I, for instance, you must assume the antecedent of the conditional in a subproof.
 
 Equally, it is always permissible to close a subproof (and discharge its assumptions). However, it will not be helpful to do so until you have reached something useful. Once the subproof is closed, you can only cite the entire subproof in any justification. Those rules that call for a subproof or subproofs, in turn, require that the last line of the subproof is a sentence of some form or other. For instance, you are only allowed to cite a subproof for $\eif$I if the line you are justifying is of the form $\metav{A} \eif \metav{B}$, $\metav{A}$ is the assumption of your subproof, and $\metav{B}$ is the last line of your subproof.
 
@@ -439,7 +443,7 @@ and equally:
 Note that the biconditional, and the right or left half, can be separated from one another, and they can appear in any order. However, in the citation for $\eiff$E, we always cite the biconditional first.
 
 \section{Disjunction}
-Suppose Ludwig is reactionary. Then Ludwig is either reactionary or libertarian. After all, to say that Ludwig is either reactionary or libertarian is to say something weaker than to say that Ludwig is reactionary. 
+Suppose Ludwig is reactionary. Then Ludwig is either reactionary or libertarian. After all, to say that Ludwig is either reactionary or libertarian is to say something weaker than to say that Ludwig is reactionary.
 
 Let's emphasize this point. Suppose Ludwig is reactionary. It follows that Ludwig is \emph{either} reactionary \emph{or} a kumquat. Equally, it follows that \emph{either} Ludwig is reactionary \emph{or} that kumquats are the only fruit.  Equally, it follows that \emph{either} Ludwig is reactionary \emph{or} that God is dead. Many of these are strange inferences to draw, but there is nothing \emph{logically} wrong with them (even if they maybe violate all sorts of implicit conversational norms).
 
@@ -460,7 +464,7 @@ Notice that \metav{B} can be \emph{any} sentence whatsoever, so the following is
 \end{fitchproof}
 Using a truth table to show this would have taken 128 lines.
 
-The disjunction elimination rule is, though, slightly trickier. Suppose that either Ludwig is reactionary or he is libertarian. What can you conclude? Not that Ludwig is reactionary; it might be that he is libertarian instead. Equally, not that Ludwig is libertarian; for he might merely be reactionary. Disjunctions, just by themselves, are hard to work with. 
+The disjunction elimination rule is, though, slightly trickier. Suppose that either Ludwig is reactionary or he is libertarian. What can you conclude? Not that Ludwig is reactionary; it might be that he is libertarian instead. Equally, not that Ludwig is libertarian; for he might merely be reactionary. Disjunctions, just by themselves, are hard to work with.
 
 But suppose that we could somehow show both of the following: first, that Ludwig's being reactionary entails that he is an Austrian economist: second, that Ludwig's being libertarian entails that he is an Austrian economist. Then if we know that Ludwig is either reactionary or libertarian, then we know that, whichever he is, Ludwig is an Austrian economist. This insight can be expressed in the following rule, which is our disjunction elimination ($\eor$E) rule:
 \factoidbox{
@@ -517,7 +521,7 @@ Don't be alarmed if you think that you wouldn't have been able to come up with t
 
 \section{Contradiction and negation}
 
-We have only one connective left to deal with: negation. But to tackle it, we must connect negation with \emph{contradiction}. 
+We have only one connective left to deal with: negation. But to tackle it, we must connect negation with \emph{contradiction}.
 
 An effective form of argument is to argue your opponent into contradicting themselves. At that point, you have them on the ropes. They have to give up at least one of their assumptions. We are going to make use of this idea in our proof system, by adding a new symbol, `$\ered$', to our proofs. This should be read as something like `contradiction!'\ or `reductio!'\ or `but that's absurd!'  The rule for introducing this symbol is that we can use it whenever we explicitly contradict ourselves, i.e., whenever we find both a sentence and its negation appearing in our proof:
 \factoidbox{
@@ -528,12 +532,12 @@ An effective form of argument is to argue your opponent into contradicting thems
 \end{fitchproof}}
 It does not matter what order the sentence and its negation appear in, and they do not need to appear on adjacent lines. However, we always cite the line number of the negation first, followed by that of the sentence it is a negation of.
 
-There is obviously a tight link between contradiction and negation. 
+There is obviously a tight link between contradiction and negation.
 The rule $\enot$E lets us proceed from two contradictory sentences---$\metav{A}$ and its negation $\enot \metav{A}$---to an explicit contradition~$\ered$. We choose the label for a reason: it is the the most basic rule that lets us proceed from a premise containing a negation, i.e., $\enot\metav{A}$, to a sentence not containing it, i.e., $\ered$. So it is a rule that \emph{eliminates}~$\enot$.
 
-We have said that `$\ered$' should be read as something like `contradiction!' but this does not tell us much about the symbol. There are, roughly, three ways to approach the symbol. 
+We have said that `$\ered$' should be read as something like `contradiction!' but this does not tell us much about the symbol. There are, roughly, three ways to approach the symbol.
 	\begin{ebullet}
-		\item We might regard `$\ered$' as a new atomic sentence of TFL, but one which can only ever have the truth value False. 
+		\item We might regard `$\ered$' as a new atomic sentence of TFL, but one which can only ever have the truth value False.
 		\item We might regard `$\ered$' as an abbreviation for some canonical contradiction, such as `$A \eand \enot A$'. This will have the same effect as the above---obviously, `$A \eand \enot A$' only ever has the truth value False---but it means that, officially, we do not need to add a new symbol to TFL.
 		\item We might regard `$\ered$', not as a symbol of TFL, but as something more like a \emph{punctuation mark} that appears in our proofs. (It is on a par with the line numbers and the vertical lines, say.)
 	\end{ebullet}
@@ -753,7 +757,7 @@ Obviously, deleting everything and starting over is frustrating, so you should a
 
 \section{Work forward from what you have}
 
-Your proof may have premises. And if you've worked backward in order to prove a conditional or a negated sentence, you will have set up subproofs with an assumption, and be looking to prove a final sentence in the subproof. These premises and assumptions are sentences you can work forward from in order to fill in the missing steps in your proof. That means applying elimination rules for the main operators of these sentences. The form of the rules will tell you what you'll have to do. 
+Your proof may have premises. And if you've worked backward in order to prove a conditional or a negated sentence, you will have set up subproofs with an assumption, and be looking to prove a final sentence in the subproof. These premises and assumptions are sentences you can work forward from in order to fill in the missing steps in your proof. That means applying elimination rules for the main operators of these sentences. The form of the rules will tell you what you'll have to do.
 
 \subsection*{Working forward from a conjunction}
 
@@ -1148,7 +1152,7 @@ and
 	\have[n]{nb}{\enot \metav{B}}
 	\have[\ ]{con}{\metav{A}}\by{DS}{ab, nb}
 \end{fitchproof}}
-As usual, the disjunction and the negation of one disjunct may occur in either order and need not be adjacent. However, we always cite the disjunction first. 
+As usual, the disjunction and the negation of one disjunct may occur in either order and need not be adjacent. However, we always cite the disjunction first.
 
 \section{Modus tollens}
 Another useful pattern of inference is embodied in the following argument:
@@ -1161,7 +1165,7 @@ This inference pattern is called \emph{modus tollens}. The corresponding rule is
 	\have[n]{a}{\enot\metav{B}}
 	\have[\ ]{b}{\enot\metav{A}}\mt{ab,a}
 \end{fitchproof}}
-As usual, the premises may occur in either order, but we always cite the conditional first. 
+As usual, the premises may occur in either order, but we always cite the conditional first.
 
 \section{Double-negation elimination}
 Another useful rule is \emph{double-negation elimination}. It does exactly what it says on the tin:
@@ -1169,13 +1173,13 @@ Another useful rule is \emph{double-negation elimination}. It does exactly what 
 		\have[m]{dna}{\enot \enot \metav{A}}
 		\have[ ]{a}{\metav{A}}\dne{dna}
 	\end{fitchproof}}
-The justification for this is that, in natural language, double-negations tend to cancel out. 
+The justification for this is that, in natural language, double-negations tend to cancel out.
 
 That said, you should be aware that context and emphasis can prevent them from doing so. Consider: `Jane is not \emph{not} happy'. Arguably, one cannot infer `Jane is happy', since the first sentence should be understood as meaning the same as  `Jane is not \emph{un}happy'. This is compatible with `Jane is in a state of profound indifference'. As usual, moving to TFL forces us to sacrifice certain nuances of English expressions.
 
 \section{Excluded middle}
 
-Suppose that we can show that if it's sunny outside, then Bill will have brought an umbrella (for fear of burning). Suppose we can also show that, if it's not sunny outside, then Bill will have brought an umbrella (for fear of rain). Well, there is no third way for the weather to be. So, \emph{whatever the weather}, Bill will have brought an umbrella. 
+Suppose that we can show that if it's sunny outside, then Bill will have brought an umbrella (for fear of burning). Suppose we can also show that, if it's not sunny outside, then Bill will have brought an umbrella (for fear of rain). Well, there is no third way for the weather to be. So, \emph{whatever the weather}, Bill will have brought an umbrella.
 
 This line of thinking motivates the following rule:
 \factoidbox{\begin{fitchproof}
@@ -1356,20 +1360,35 @@ description={A property held by pairs of statements if and only if there is a de
 }
 
 
-As in the case of showing that a sentence is a theorem, it is relatively easy to show that two sentences are provably equivalent: it just requires a pair of proofs. Showing that sentences are \emph{not} provably equivalent would be much harder: it is just as hard as showing that a sentence is not a theorem. 
+As in the case of showing that a sentence is a theorem, it is relatively easy to show that two sentences are provably equivalent: it just requires a pair of proofs. Showing that sentences are \emph{not} provably equivalent would be much harder: it is just as hard as showing that a sentence is not a theorem.
 
 Here is a third, related, bit of terminology:
 	\factoidbox{
-		The sentences $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n$ are \define{provably inconsistent} iff a contradiction can be proved from them, i.e., $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n \proves \ered$. If they are not \define{inconsistent}, we call them \define{provably consistent}.
+	The sentences $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n$ are
+	\define{jointly inconsistent} iff the contradiction~$\ered$ can be proved from
+	them, i.e., $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n \proves
+	\ered$. If they are not \define{inconsistent}, we call them
+	\define{jointly consistent}.
 	}
         
-\newglossaryentry{provably inconsistent}
-{    name={provable inconsistency}, 
-  description={Sentences are provably inconsistent iff a contradiction can be derived from them},
-    text={provably inconsistent}
+\newglossaryentry{inconsistent}
+{    name={inconsistency}, 
+  description={Sentences are inconsistent iff the contradiction~$\ered$ can be proved from them},
+    text={inconsistent}
 }
 
-        It is easy to show that some sentences are provably inconsistent: you just need to prove a contradiction from assuming all the sentences. Showing that some sentences are not provably inconsistent is much harder. It would require more than just providing a proof or two; it would require showing that no proof of a certain kind is \emph{possible}.
+\newglossaryentry{consistent}
+{    name={consistency}, 
+  description={Sentences are jointly consistent iff the contradiction~$\ered$ can\emph{not} be proved from them},
+    text={consistent}
+}
+
+It is easy to show that some sentences are inconsistent: you just need
+to prove the contradiction~$\ered$, assuming all the sentences as
+premises. Showing that some sentences are \emph{not} inconsistent is much
+harder. It would require more than just providing a proof or two; it
+would require showing that no proof of a certain kind is
+\emph{possible}.
 
 \
 \\
@@ -1428,7 +1447,7 @@ If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}
 
 
 \chapter{Derived rules}\label{s:Derived}
-In this section, we will see why we introduced the rules of our proof system in two separate batches. In particular, we want to show that the additional rules of \S\ref{s:Further} are not strictly speaking necessary, but can be derived from the basic rules of \S\ref{s:BasicTFL}. 
+In this section, we will see why we introduced the rules of our proof system in two separate batches. In particular, we want to show that the additional rules of \S\ref{s:Further} are not strictly speaking necessary, but can be derived from the basic rules of \S\ref{s:BasicTFL}.
 
 \section{Derivation of Reiteration}
 To illustrate what it means to derive a \emph{rule} from other rules, first consider reiteration. It is a basic rule of our system, but it is also not necessary. Suppose you have some sentence on some line of your deduction:
@@ -1441,7 +1460,7 @@ You now want to repeat yourself, on some line $k$. You could just invoke the rul
 	\have[k]{aa}{\metav{A} \eand \metav{A}}\ai{a, a}
 	\have{a2}{\metav{A}}\ae{aa}
 \end{fitchproof}
-To be clear: this is not a proof. Rather, it is a proof \emph{scheme}. After all, it uses a variable, `$\metav{A}$', rather than a sentence of TFL, but the point is simple: Whatever sentences of TFL we plugged in for `$\metav{A}$', and whatever lines we were working on, we could produce a bona fide proof. So you can think of this as a recipe for producing proofs. 
+To be clear: this is not a proof. Rather, it is a proof \emph{scheme}. After all, it uses a variable, `$\metav{A}$', rather than a sentence of TFL, but the point is simple: Whatever sentences of TFL we plugged in for `$\metav{A}$', and whatever lines we were working on, we could produce a bona fide proof. So you can think of this as a recipe for producing proofs.
 
 Indeed, it is a recipe which shows us the following: anything we can prove using the rule R, we can prove (with one more line) using just the basic rules of \S\ref{s:BasicTFL} without~R. That is what it means to say that the rule~R can be derived from the other basic rules: anything that can be justified using~R can be justified using only the other basic rules.
 
@@ -1601,7 +1620,7 @@ Similar demonstrations can be offered explaining how we could derive the third a
 \practiceproblems
 
 \problempart
-Provide proof schemes that justify the addition of the third and fourth De Morgan rules as derived rules. 
+Provide proof schemes that justify the addition of the third and fourth De Morgan rules as derived rules.
 
 \
 
@@ -1635,16 +1654,29 @@ Give a proof of the first De Morgan rule, but using only the basic rules, in par
 \chapter{Soundness and completeness}
 \label{sec:soundness_and_completeness}
 
-In \S\ref{s:ProofTheoreticConcepts}, we saw that we could use derivations to test for the same concepts we used truth tables to test for. Not only could we use derivations to prove that an argument is valid, we could also use them to test if a sentence is a tautology or a pair of sentences are equivalent. We also started using the single turnstile the same way we used the double turnstile. If we could prove that \metav{A} was a tautology with a truth table, we wrote $\entails \metav{A}$, and if we could prove it using a derivation, we wrote $\proves \metav{A}.$ 
+In \S\ref{s:ProofTheoreticConcepts}, we saw that we could use derivations to test for the same concepts we used truth tables to test for. Not only could we use derivations to prove that an argument is valid, we could also use them to test if a sentence is a tautology or a pair of sentences are equivalent. We also started using the single turnstile the same way we used the double turnstile. If we could prove that \metav{A} was a tautology using a truth table, we wrote $\entails \metav{A}$, and if we could prove it using a derivation, we wrote $\proves \metav{A}$.
 
-You may have wondered at that point if the two kinds of turnstiles always worked the same way. If you can show that \metav{A} is a tautology using truth tables, can you also always show that it is a theorem using a derivation? Is the reverse true? Are these things also true for valid arguments and pairs of equivalent sentences? As it turns out, the answer to all these questions and many more like them is yes. We can show this by defining all these concepts separately and then proving them equivalent. That is, we imagine that we actually have two notions of validity, valid$_{\entails}$ and  valid$_{\proves}$ and then show that the two concepts always work the same way. 
+You may have wondered at that point if the two kinds of turnstiles always worked the same way. If you can show that \metav{A} is a tautology using truth tables, can you also always show that it is a theorem using a derivation? Is the reverse true? Are these things also true for valid arguments and pairs of equivalent sentences? As it turns out, the answer to all these questions and many more like them is yes. We can show this by defining all these concepts separately and then proving them equivalent. That is, we imagine that we actually have two notions of validity, valid$_{\entails}$ and  valid$_{\proves}$ and then show that the two concepts always work the same way.
 
-To begin with, we need to define all of our logical concepts separately for truth tables and derivations. A lot of this work has already been done. We handled all of the truth table definitions in \S\ref{s:SemanticConcepts}. We have also already given syntactic definitions for tautologies (theorems) and pairs of logically equivalent sentences. The other definitions follow naturally. For most logical properties we can devise a test using derivations, and those that we cannot test for directly can be defined in terms of the concepts that we can define.
+To begin with, we need to define all of our logical concepts separately for truth tables and derivations. A lot of this work has already been done. We handled all of the truth table definitions in \S\ref{s:SemanticConcepts}. We have also already given proof-theoretic definitions for theorems and pairs of logically equivalent sentences. The other definitions follow naturally. For most logical properties we can devise a test using derivations, and those that we cannot test for directly can be defined in terms of the concepts that we can define.
 
-For instance, we defined a theorem as a sentence that can be derived without any premises (p.~\pageref{def:syntactic_tautology_in_sl}). Since the negation of a contradiction is a tautology, we can define a \define{syntactic contradiction in TFL} \label{def:syntactic_contradiction_in_sl} as a sentence whose negation can be derived without any premises. The syntactic definition of a contingent sentence is a little different. We don't have any practical, finite method for proving that a sentence is contingent using derivations, the way we did using truth tables. So we have to content ourselves with defining ``contingent sentence'' negatively. A sentence is \define{{syntactically contingent in TFL}} \label{def:syntactically_contingent_in_sl} if it is not a theorem or a contradiction. 
+For instance, we defined a theorem as a sentence that can be derived
+without any premises (p.~\pageref{def:syntactic_tautology_in_sl}).
+Since the negation of a contradiction is a tautology, we can define an
+\define{inconsistent sentence in TFL}
+\label{def:syntactic_contradiction_in_sl} as a sentence whose negation
+can be derived without any premises.\footnote{Note that $\lnot
+\metav{A}$ is a theorem iff $\metav{A} \proves \ered$.} The syntactic
+definition of a contingent sentence is a little different. We don't
+have any practical, finite method for proving that a sentence is
+contingent using derivations, the way we did using truth tables. So we
+have to content ourselves with defining ``contingent sentence''
+negatively. A sentence is \define{{proof-theoretically contingent in
+TFL}} \label{def:syntactically_contingent_in_sl} if it is neither a
+theorem nor an inconsistent sentence.
  
 
-A collection of sentences are \define{provably inconsistent in TFL} \label{def:syntactically_inconsistent_ in_sl} if and only if one can derive a contradiction from them. Consistency, on the other hand, is like contingency, in that we do not have a practical finite method to test for it directly. So again, we have to define a term negatively. A collection of  sentences is \define{provably consistent in TFL} \label{def:syntactically consistent in SL} if and only if they are not provably inconsistent.
+A collection of sentences is \define{inconsistent in TFL} \label{def:syntactically_inconsistent_ in_sl} if and only if one can derive the contradiction~$\ered$ from them. Consistency, on the other hand, is like contingency, in that we do not have a practical finite method to test for it directly. So again, we have to define a term negatively. A collection of sentences is \define{consistent in TFL} \label{def:syntactically consistent in SL} if and only if they are not inconsistent.
     
 
 Finally, an argument is \define{provably valid in TFL} \label{def:syntactically_valid_in_SL} if and only if there is a derivation of its conclusion from its premises. All of these definitions are given in Table \ref{table:truth_tables_or_derivations}.
@@ -1655,17 +1687,17 @@ Finally, an argument is \define{provably valid in TFL} \label{def:syntactically_
 \begin{tabu}{X[.5,c,m] ||X[1,l,m] |X[1,l,m]}
 \textbf{Concept} 		&	\textbf{Truth table (semantic) definition} 	&	\textbf{Proof-theoretic (syntactic) definition} \\ \hline \hline
 
-Tautology   &	A sentence whose truth table only has Ts under the main connective & A sentence that can be derived without any premises.	 \\ \hline
+Tautology/ theorem   &	A sentence whose truth table only has Ts under the main connective & A sentence that can be derived without any premises.	 \\ \hline
  
-Contradiction		&	A sentence whose truth table only has Fs under the main connective  &	A sentence whose negation can be derived without any premises\\ \hline
+Contradiction/ inconsistent sentence		&	A sentence whose truth table only has Fs under the main connective  &	A sentence whose negation can be derived without any premises\\ \hline
 
 Contingent sentence	&	A sentence whose truth table contains both Ts and Fs under the main connective & A sentence that is not a theorem or contradiction \\ \hline
 
 Equivalent sentences &	The columns under the main connectives are identical.& The sentences can be derived from each other	\\ \hline
 
-Unsatisfiable/ inconsistent sentences	&	Sentences which do not have a single line in their truth table where they are all true.	& Sentences  from which one can derive a contradiction \\ \hline
+Unsatisfiable/ inconsistent sentences	&	Sentences which do not have a single line in their truth table where they are all true.	& Sentences  from which one can derive the contradiction~$\ered$ \\ \hline
 
-Satisfiable/ Consistent sentences	&	Sentences which have at least one line in their truth table where they are all true. & Sentences from which one cannot derive a contradiction	\\ \hline
+Satisfiable/ Consistent sentences	&	Sentences which have at least one line in their truth table where they are all true. & Sentences from which one cannot derive the contradiction~$\ered$	\\ \hline
 
 Valid argument		&	An argument whose truth table has no lines where there are all Ts under main connectives for the premises and an F under the main connective for the conclusion.  & An argument where one can derive the conclusion from the premises	\\ 
 \end{tabu}
@@ -1673,7 +1705,20 @@ Valid argument		&	An argument whose truth table has no lines where there are all
 \label{table:truth_tables_or_derivations}
 \end{sidewaystable}
 
-All of our concepts have now been defined both semantically and syntactically. How can we prove that these definitions always work the same way? A full proof here goes well beyond the scope of this book. However, we can sketch what it would be like. We will focus on showing the two notions of validity to be equivalent.  From that the other concepts will follow quickly. The proof will have to go in two directions. First we will have to show that things which are syntactically valid will also be semantically valid. In other words, everything that we can prove using derivations could also be proven using truth tables. Put symbolically, we want to show that valid$_{\proves}$ implies valid$_{\entails}$. Afterwards, we will need to show things in the other directions,  valid$_{\entails}$ implies valid$_{\proves}$
+All of our concepts have now been defined both semantically (using
+valuations and truth tables) and proof-theoretically (on the basis of
+natural deduction). How can we establish that these definitions always
+work the same way? A full proof here goes well beyond the scope of
+this book. However, we can sketch what it would be like. We will focus
+on showing the two notions of validity to be equivalent.  From that
+the other concepts will follow quickly. The proof will have to go in
+two directions. First we will have to show that things which are
+proof-theoretically valid will also be semantically valid. In other words,
+everything that we can prove using derivations could also be proven
+using truth tables. Put symbolically, we want to show that
+valid$_{\proves}$ implies valid$_{\entails}$. Afterwards, we will need
+to show things in the other directions,  valid$_{\entails}$ implies
+valid$_{\proves}$
 
 \newglossaryentry{soundness}
 {
@@ -1683,17 +1728,42 @@ description={A property held by logical systems if and only if $\proves $ implie
 
 This argument from $\proves $ to $\entails $ is the problem of \define{\gls{soundness}}. \label{def:soundness} A proof system is \define{sound} if there are no derivations of arguments that can be shown invalid by truth tables. \label{def_Soundness} Demonstrating that the proof system is sound would require showing that \emph{any} possible proof is the proof of a valid argument. It would not be enough simply to succeed when trying to prove many valid arguments and to fail when trying to prove invalid ones.
 
-The proof that we will sketch depends on the fact that we initially defined a sentence of TFL using an inductive definition (see p.~\pageref{TFLsentences}). We could have also used inductive definitions to define a proper proof in TFL and a proper truth table. \nix{Later this will be a truth assignment}(Although we didn't.) If we had these definitions, we could then use a \emph{inductive proof} to show the soundness of TFL. An inductive proof works the same way as an inductive definition. With the inductive definition, we identified a group of base elements that were stipulated to be examples of the thing we were trying to define. In the case of a TFL sentence, the base class was the set of sentence letters $A$, $B$, $C$, \dots. We just announced that these were sentences. The second step of an inductive definition is to say that anything that is built up from your base class using certain rules also counts as an example of the thing you are defining. In the case of a definition of a sentence, the rules corresponded to the five sentential connectives (see p.~\pageref{TFLsentences}). Once you have established an inductive definition, you can use that definition to show that all the members of the class you have defined have a certain property. You simply prove that the property is true of the members of the base class, and then you prove that the rules for extending the base class don't change the property. This is what it means to give an inductive proof.
+The proof that we will sketch depends on the fact that we initially
+defined a sentence of TFL using an inductive definition (see
+p.~\pageref{TFLsentences}). We could have also used inductive
+definitions to define a proper proof in TFL and a proper truth table
+(although we didn't.) If we had these definitions, we could then use an
+\emph{inductive proof} to show the soundness of TFL. An inductive
+proof works the same way as an inductive definition. With the
+inductive definition, we identified a group of base elements that were
+stipulated to be examples of the thing we were trying to define. In
+the case of a TFL sentence, the base class was the set of sentence
+letters $A$, $B$, $C$, \dots. We just announced that these were
+sentences. The second step of an inductive definition is to say that
+anything that is built up from your base class using certain rules
+also counts as an example of the thing you are defining. In the case
+of a definition of a sentence, the rules corresponded to the five
+sentential connectives (see p.~\pageref{TFLsentences}). Once you have
+established an inductive definition, you can use that definition to
+show that all the members of the class you have defined have a certain
+property. You simply prove that the property is true of the members of
+the base class, and then you prove that the rules for extending the
+base class don't change the property. This is what it means to give an
+inductive proof.
 
-Even though we don't have an inductive definition of a proof in TFL, we can sketch how an inductive proof of the soundness of TFL would go. Imagine a base class of one-line proofs, one for each of our eleven rules of inference. The members of this class would look like this $\metav{A}, \metav{B} \proves  \metav{A} \eand \metav{B}$; $\metav{A} \eand \metav{B} \proves \metav{A}$; $\metav{A} \eor \metav{B}, \enot\metav{A} \proves  \metav{B}$ \ldots{} etc. Since some rules have a couple different forms, we would have to have add some members to this base class, for instance $\metav{A} \eand \metav{B} \proves  \metav{B}$ Notice that these are all statements in the metalanguage. The proof that TFL is sound is not a part of TFL, because TFL does not have the power to talk about itself. 
+Even though we don't have an inductive definition of a proof in TFL, we can sketch how an inductive proof of the soundness of TFL would go. Imagine a base class of one-line proofs, one for each of our eleven rules of inference. The members of this class would look like this $\metav{A}, \metav{B} \proves  \metav{A} \eand \metav{B}$; $\metav{A} \eand \metav{B} \proves \metav{A}$; $\metav{A} \eor \metav{B}, \enot\metav{A} \proves  \metav{B}$ \ldots{} etc. Since some rules have a couple different forms, we would have to have add some members to this base class, for instance $\metav{A} \eand \metav{B} \proves  \metav{B}$ Notice that these are all statements in the metalanguage. The proof that TFL is sound is not a part of TFL, because TFL does not have the power to talk about itself.
 
-You can use truth tables to prove to yourself that each of these one-line proofs in this base class is valid$_{\entails}$. For instance the proof $\metav{A}, \metav{B} \proves \metav{A} \eand \metav{B}$ corresponds to a truth table that shows $\metav{A}, \metav{B} \entails  \metav{A} \eand \metav{B}$ This establishes the first part of our inductive proof. 
+You can use truth tables to prove to yourself that each of these one-line proofs in this base class is valid$_{\entails}$. For instance the proof $\metav{A}, \metav{B} \proves \metav{A} \eand \metav{B}$ corresponds to a truth table that shows $\metav{A}, \metav{B} \entails  \metav{A} \eand \metav{B}$ This establishes the first part of our inductive proof.
 
 The next step is to show that adding lines to any proof will never change a valid$_{\entails}$ proof into an invalid$_{\entails}$ one. We would need to do this for each of our eleven basic rules of inference. So, for instance, for \eand{I} we need to show that for any proof $\metav{A}_{1}$, \dots, $\metav{A}_{n} \proves  \metav {B}$ adding a line where we use \eand{I} to infer $\metav{C} \eand \metav{D}$, where $\metav{C} \eand \metav{D}$ can be legitimately inferred from $\metav{A}_{1}$, \dots, $\metav{A}_{n}$,~$\metav{B}$, would not change a valid proof into an invalid proof. But wait, if we can legitimately derive $\metav{C} \eand \metav{D}$ from these premises, then $\metav{C}$ and $\metav{D}$ must be already available in the proof. They are either already among $\metav{A}_{1}$, \dots, $\metav{A}_{n}$,~$\metav {B}$, or can be legitimately derived from them. As such, any truth table line in which the premises are true must be a truth table line in which \metav{C} and \metav{D} are true. According to the characteristic truth table for \eand, this means that $\metav{C} \eand \metav{D}$ is also true on that line. Therefore, $\metav{C} \eand \metav{D}$ validly follows from the premises. This means that using the {\eand}E rule to extend a valid proof produces another valid proof.
 
-In order to show that the proof system is sound, we would need to show this for the other inference rules. Since the derived rules are consequences of the basic rules, it would suffice to provide similar arguments for the 11 other basic rules. This tedious exercise falls beyond the scope of this book.
+In order to show that the proof system is sound, we would need to show
+this for the other inference rules. Since the derived rules are
+consequences of the basic rules, it would suffice to provide similar
+arguments for the 11 other basic rules. You can find the details of
+this proof worked out in Chapter~\ref{ch:Soundness}.
 
-So we have shown that $\metav{A} \proves  \metav{B}$ implies $\metav{A} \entails \metav{B}.$ What about the other direction, that is why think that \emph{every} argument that can be shown valid using truth tables can also be proven using a derivation. 
+So we have shown that $\metav{A} \proves \metav{B}$ implies $\metav{A} \entails \metav{B}.$ What about the other direction, that is, why think that \emph{every} argument that can be shown valid using truth tables can also be proven using a derivation? 
 
 \newglossaryentry{completeness}
 {
@@ -1705,7 +1775,7 @@ This is the problem of completeness. A proof system has the property of  \define
 
 Now that we know that the truth table method is interchangeable with the method of derivations, you can chose which method you want to use for any given problem. Students often prefer to use truth tables, because they can be produced  purely mechanically, and that seems `easier'. However, we have already seen that truth tables become impossibly large after just a few sentence letters. On the other hand, there are a couple situations where using proofs simply isn't possible. We syntactically defined a contingent sentence as a sentence that couldn't be proven to be a tautology or a contradiction. There is no practical way to prove this kind of negative statement. We will never know if there isn't some proof out there that a statement is a contradiction and we just haven't found it yet. We have nothing to do in this situation but resort to truth tables. Similarly, we can use derivations to prove two sentences equivalent, but what if we want to prove that they are \emph{not} equivalent? We have no way of proving that we will never find the relevant proof. So we have to fall back on truth tables again.
 
-Table \ref{table.ProofOrModel} summarizes when it is best to give proofs and when it is best to give truth tables. 
+Table \ref{table.ProofOrModel} summarizes when it is best to give proofs and when it is best to give truth tables.
 
 \begin{table}\small
 \tabulinesep=1ex
@@ -1725,12 +1795,12 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 
 
 \practiceproblems
-\noindent\problempart Use either a derivation or a truth table for each of the following. 
+\noindent\problempart Use either a derivation or a truth table for each of the following.
 \begin{enumerate}%[label=(\arabic*)]
 \item Show that $A \eif [((B \eand C) \eor D) \eif A]$ is a theorem.
 \item Show that $A \eif (A \eif B)$ is not a theorem.
 \item Show that the sentence $A \eif \enot{A}$ is not a contradiction.
-\item Show that the sentence $A \eiff \enot A$ is a contradiction. 
+\item Show that the sentence $A \eiff \enot A$ is a contradiction.
 \item Show that the sentence $ \enot (W \eif (J \eor J)) $ is contingent.
 \item Show that the sentence $ \enot(X \eor (Y \eor Z)) \eor (X \eor (Y \eor Z))$ is not contingent.
  \item Show that the sentence $B \eif \enot S$ is equivalent to the sentence $\enot \enot B \eif \enot S$.
@@ -1738,11 +1808,11 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 \item Show that the sentences $\enot(A \eor B)$, $C$, $C \eif A$  are jointly inconsistent.
 \item Show that the sentences $\enot(A \eor B)$, $\enot{B}$, $B \eif A$ are jointly consistent.
 \item Show that $\enot(A \eor (B \eor C)) $ \therefore $ \enot{C}$ is valid.
-\item Show that $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ is invalid. 
+\item Show that $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ is invalid.
 \end{enumerate}
 
 
-\noindent\problempart Use either a derivation or a truth table for each of the following. 
+\noindent\problempart Use either a derivation or a truth table for each of the following.
 \begin{enumerate}%[label=(\arabic*)]
 \item Show that $A \eif (B \eif A)$ is a theoremy.
 \item Show that $\enot (((N \eiff Q) \eor Q) \eor N)$ is not a theorem.
@@ -1755,6 +1825,6 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 \item Show that the sentences $ \enot (W \eif W)$, $(W \eiff W) \eand W$, $E \eor (W \eif \enot (E \eand W))$ are jointly inconsistent.
 \item Show that the sentences  $\enot R \eor C $, $(C \eand R) \eif \enot R$, $(\enot (R \eor R) \eif R) $ are jointly consistent.
 \item Show that $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ is valid.
-\item Show that $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ is invalid. 
+\item Show that $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ is invalid.
 \end{enumerate}
 

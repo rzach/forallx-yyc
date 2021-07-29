@@ -8,7 +8,7 @@
 
 \section{Disjunctive normal form}\label{s:DNFDefined}
 
-Sometimes it is useful to consider sentences of a particularly simple form. For instance, we might consider sentences in which $\enot$ only attaches to atomic sentences, or those which are combinations of atomic sentences and negated atomic sentences using only $\eand$.  A relatively general but still simple form is that where a sentence is a disjunction of conjunctions of atomic or negated atomic sentences.  When such a sentence is constructed, we start with atomic sentences, then (perhaps) attach negations, then (perhaps) combine using $\eand$, and finally (perhaps) combine using~$\eor$. 
+Sometimes it is useful to consider sentences of a particularly simple form. For instance, we might consider sentences in which $\enot$ only attaches to atomic sentences, or those which are combinations of atomic sentences and negated atomic sentences using only $\eand$.  A relatively general but still simple form is that where a sentence is a disjunction of conjunctions of atomic or negated atomic sentences.  When such a sentence is constructed, we start with atomic sentences, then (perhaps) attach negations, then (perhaps) combine using $\eand$, and finally (perhaps) combine using~$\eor$.
 
 Let's say that a sentence is in \define{disjunctive normal form} \emph{iff} it meets all of the following conditions:
 	\begin{earg}
@@ -36,13 +36,13 @@ To further illustrate the idea of disjunctive normal form, we will introduce som
 We now know what it is for a sentence to be in disjunctive normal form. The result that we are aiming at is:
 	\factoidbox{\label{thm:dnf}\textbf{Disjunctive Normal Form Theorem.} For any sentence, there is an equivalent sentence in disjunctive normal form.
 	}
-Henceforth, we will abbreviate `Disjunctive Normal Form' by `DNF'. 
+Henceforth, we will abbreviate `Disjunctive Normal Form' by `DNF'.
 
 
 \section{Proof of DNF theorem via truth tables}
 \label{s:DNFTruthTable}
 
-Our first proof of the DNF Theorem employs truth tables. We will first illustrate the technique for finding an equivalent sentence in DNF, and then turn this illustration into a rigorous proof. 
+Our first proof of the DNF Theorem employs truth tables. We will first illustrate the technique for finding an equivalent sentence in DNF, and then turn this illustration into a rigorous proof.
 
 Let's suppose we have some sentence, $\metav{S}$, which contains three atomic sentences, `$A$', `$B$' and `$C$'. The very first thing to do is fill out a complete truth table for~$\metav{S}$. Maybe we end up with this:
 \begin{center}
@@ -63,11 +63,11 @@ $A$ & $B$ & $C$ & $\metav{S}$\\
 %	$$A \eand \enot B \eand C$$
 %This sentence is true when, and only when, `$A$' is true, `$B$' is false and `$C$' is true. Similarly, the sentence:
 %	$$\enot A \eand \enot B \eand C$$
-%this is true when, and only when, `$A$' is false, `$B$' is false and `$C$' is true. 
+%this is true when, and only when, `$A$' is false, `$B$' is false and `$C$' is true.
 %
 %A disjunction is true when, and only when, at least one of the disjuncts is true. So if we write down a disjunction of sentences of the above form, perhaps
 %	$$(A \eand \enot B \eand C) \eor (\enot A \eand \enot B \eand C)$$
-%then it will be true on exactly \emph{two} lines of the truth table which describes all possible valuations of `$A$', `$B$' and `$C$'. 
+%then it will be true on exactly \emph{two} lines of the truth table which describes all possible valuations of `$A$', `$B$' and `$C$'.
 %
 As it happens, $\metav{S}$ is true on four lines of its truth table, namely lines 1, 3, 7 and~8. Corresponding to each of those lines, we will write down four sentences, whose only connectives are negations and conjunctions, where every negation has minimal scope:
 	\begin{earg}
@@ -84,7 +84,7 @@ Now, the strategy that we just adopted did not depend on the specifics of $\meta
 
 Pick any arbitrary sentence, $\metav{S}$, and let $\metav{A}_1, \ldots, \metav{A}_n$ be the atomic sentences that occur in $\metav{S}$. To obtain a sentence in DNF that is logically equivalent $\metav{S}$, we consider $\metav{S}$'s truth table. There are two cases to consider:
 	\begin{enumerate}
-		\item \emph{$\metav{S}$ is false on every line of its truth table.} Then, $\metav{S}$ is a contradiction. In that case, the contradiction $(\metav{A}_1 \eand \enot \metav{A}_1)$ is in DNF and logically equivalent to~$\metav{S}$. 
+		\item \emph{$\metav{S}$ is false on every line of its truth table.} Then, $\metav{S}$ is a contradiction. In that case, the contradiction $(\metav{A}_1 \eand \enot \metav{A}_1)$ is in DNF and logically equivalent to~$\metav{S}$.
 	
 		\item \emph{$\metav{S}$ is true on at least one line of its truth table.}
 		For each line $i$ of the truth table, let $\metav{B}_i$ be a conjunction of the form 
@@ -94,7 +94,7 @@ Pick any arbitrary sentence, $\metav{S}$, and let $\metav{A}_1, \ldots, \metav{A
 				\metav{A}_m\text{ is a conjunct of }\metav{B}_i&\emph{ iff }\metav{A}_m\text{ is true on line }i\\
 				\enot\metav{A}_m\text{ is a conjunct of }\metav{B}_i&\emph{ iff }\metav{A}_m\text{ is false on line }i
 			\end{align*}
-		Given these rules, $\metav{B_i}$ is true on (and only on) line $i$ of the truth table which considers all possible valuations of $\metav{A}_1, \ldots, \metav{A}_n$ (i.e.\ $\metav{S}$'s truth table). 
+		Given these rules, $\metav{B_i}$ is true on (and only on) line $i$ of the truth table which considers all possible valuations of $\metav{A}_1, \ldots, \metav{A}_n$ (i.e.\ $\metav{S}$'s truth table).
 		
 		Next, let $i_1$, $i_2$, \dots, $i_m$ be the numbers of the lines of the truth table where $\metav{S}$ is \emph{true}. Now let $\metav{D}$ be the sentence:
 		$$\metav{B}_{i_1} \eor \metav{B}_{i_2} \eor \ldots \eor \metav{B}_{i_m}$$
@@ -116,7 +116,7 @@ The definition of CNF is exactly analogous to the definition of DNF. So, a sente
 	\begin{earg}
 		\item[(\textsc{cnf1})] No connectives occur in the sentence other than negations, conjunctions and disjunctions;
 		\item[(\textsc{cnf2})] Every occurrence of negation has minimal scope;
-		\item[(\textsc{cnf3})] No conjunction occurs within the scope of any disjunction. 
+		\item[(\textsc{cnf3})] No conjunction occurs within the scope of any disjunction.
 	\end{earg}
 \newglossaryentry{conjunctive normal form}{
   name = conjunctive normal form (DNF),
@@ -215,7 +215,7 @@ In short, there is never any \emph{need} to add new connectives to TFL. Indeed, 
 
 In fact, some two-place connectives are \emph{individually} functionally complete. These connectives are not standardly included in TFL, since they are rather cumbersome to use. But their existence shows that, if we had wanted to, we could have defined a truth-functional language that was functionally complete, which contained only a single primitive connective.
 
-The first such connective we will consider is `$\uparrow$', which has the following characteristic truth table. 
+The first such connective we will consider is `$\uparrow$', which has the following characteristic truth table.
 \begin{center}
 \begin{tabular}{c c | c}
 $\metav{A}$ & $\metav{B}$ & $\metav{A} \mathrel{\uparrow} \metav{B}$\\
@@ -457,9 +457,9 @@ Then we will know that we have never gone astray, on any line of a proof. Indeed
 
 \emph{Proof.} Suppose $\Gamma \proves \metav{C}$. Then there is a TFL-proof, with $\metav{C}$ appearing on its last line, whose only undischarged assumptions are among $\Gamma$. The Shininess Lemma tells us that every line on every TFL-proof is shiny. So this last line is shiny, i.e.\ $\Gamma \entails \metav{C}$. QED
 
-It remains to prove the Shininess Lemma. 
+It remains to prove the Shininess Lemma.
 
-To do this, we observe that every line of any TFL-proof is obtained by applying some rule. So what we want to show is that no application of a rule of TFL's proof system will lead us astray. More precisely, say that a rule of inference is \define{rule-sound} \emph{iff} for all TFL-proofs, if we obtain a line on a TFL-proof by applying that rule, and every earlier line in the TFL-proof is shiny, then our new line is also shiny. What we need to show is that \emph{every} rule in TFL's proof system is rule-sound. 
+To do this, we observe that every line of any TFL-proof is obtained by applying some rule. So what we want to show is that no application of a rule of TFL's proof system will lead us astray. More precisely, say that a rule of inference is \define{rule-sound} \emph{iff} for all TFL-proofs, if we obtain a line on a TFL-proof by applying that rule, and every earlier line in the TFL-proof is shiny, then our new line is also shiny. What we need to show is that \emph{every} rule in TFL's proof system is rule-sound.
 
 We will do this in the next section. But having demonstrated the rule-soundness of every rule, the Shininess Lemma will follow immediately:
 
@@ -483,18 +483,18 @@ If $\metav{A}$ is introduced as an assumption on line $n$, then $\metav{A}$ is a
 	\have[j]{b}{\metav{B}}
 	\have[n]{c}{\metav{A}\eand\metav{B}} \ai{a, b}
 \end{fitchproof}\noindent
-To show that $\eand$I is rule-sound, we assume that every line before line $n$ is shiny; and we aim to show that line $n$ is shiny, i.e.\ that $\Delta_n \entails \metav{A} \eand \metav{B}$. 
+To show that $\eand$I is rule-sound, we assume that every line before line $n$ is shiny; and we aim to show that line $n$ is shiny, i.e.\ that $\Delta_n \entails \metav{A} \eand \metav{B}$.
 
-So, let $v$ be any valuation that makes all of $\Delta_{n}$ true. 
+So, let $v$ be any valuation that makes all of $\Delta_{n}$ true.
 
 We first show that $v$ makes $\metav{A}$ true. To prove this, note that all of $\Delta_i$ are among $\Delta_{n}$. By hypothesis, line $i$ is shiny. So any valuation that makes all of $\Delta_i$ true makes $\metav{A}$ true. Since $v$ makes all of $\Delta_i$ true, it makes $\metav{A}$ true too.
 
-We can similarly see that $v$ makes $\metav{B}$ true. 
+We can similarly see that $v$ makes $\metav{B}$ true.
 
 So $v$ makes $\metav{A}$ true and $v$ makes $\metav{B}$ true. Consequently, $v$ makes $\metav{A}\eand\metav{B}$ true. So any valuation that makes all of the sentences among $\Delta_{n}$ true also makes $\metav{A} \eand \metav{B}$ true. That is: line $n$ is shiny. QED
 
 
-All of the remaining lemmas establishing rule-soundness will have, essentially, the same structure as this one did. 
+All of the remaining lemmas establishing rule-soundness will have, essentially, the same structure as this one did.
 
 \begin{factoidboxe}$\eand$E is rule-sound.
 \end{factoidboxe}
@@ -532,7 +532,7 @@ We leave this as an exercise.
    \end{fitchproof}\noindent
 Let $v$ be any valuation that makes all of $\Delta_{n}$ true. Note that all of $\Delta_m$ are among $\Delta_{n}$. By hypothesis, line $m$ is shiny. So any valuation that makes $\Delta_{n}$ true makes $\metav{A} \eor \metav{B}$ true. So in particular, $v$ makes $\metav{A} \eor \metav{B}$ true, and hence either $v$ makes $\metav{A}$ true, or $v$ makes $\metav{B}$ true. We now reason through these two cases:
    \begin{ebullet}
-	   \item[\emph{Case 1: $v$ makes $\metav{A}$ true.}] All of $\Delta_i$ are among $\Delta_{n}$, with the possible exception of $\metav{A}$. Since $v$ makes all of $\Delta_{n}$ true, and also makes $\metav{A}$ true,  $v$ makes all of $\Delta_i$ true. Now, by assumption, line $j$ is shiny; so $\Delta_{j} \entails \metav{C}$. But the sentences $\Delta_i$ are just the sentences $\Delta_{j}$, so $\Delta_i \entails \metav{C}$. So, any valuation that makes all of $\Delta_i$ true makes $\metav{C}$ true. But $v$ is just such a valuation. So $v$ makes $\metav{C}$ true. 
+	   \item[\emph{Case 1: $v$ makes $\metav{A}$ true.}] All of $\Delta_i$ are among $\Delta_{n}$, with the possible exception of $\metav{A}$. Since $v$ makes all of $\Delta_{n}$ true, and also makes $\metav{A}$ true,  $v$ makes all of $\Delta_i$ true. Now, by assumption, line $j$ is shiny; so $\Delta_{j} \entails \metav{C}$. But the sentences $\Delta_i$ are just the sentences $\Delta_{j}$, so $\Delta_i \entails \metav{C}$. So, any valuation that makes all of $\Delta_i$ true makes $\metav{C}$ true. But $v$ is just such a valuation. So $v$ makes $\metav{C}$ true.
 	   \item[\emph{Case 2: $v$ makes $\metav{B}$ true.}] Reasoning in exactly the same way, considering lines $k$ and $l$, $v$ makes $\metav{C}$ true.
 	   \end{ebullet}
 Either way, $v$ makes $\metav{C}$ true. So $\Delta_n \entails \metav{C}$.
@@ -587,13 +587,13 @@ This establishes that all the basic rules of our proof system are rule-sound. Fi
 \end{factoidboxe}
 
 \emph{Proof.}
-	Suppose that we used a derived rule to obtain some sentence, $\metav{A}$, on line $n$ of some TFL-proof, and that every earlier line is shiny. Every use of a derived rule can be replaced (at the cost of long-windedness) with multiple uses of basic rules. That is to say, we could have used basic rules to write $\metav{A}$ on some line $n + k$, without introducing any further assumptions. So, applying our individual results that all basic rules are rule-sound several times ($k + 1$ times, in fact), we can see that line $n+k$ is shiny. Hence the derived rule is rule-sound. 
+	Suppose that we used a derived rule to obtain some sentence, $\metav{A}$, on line $n$ of some TFL-proof, and that every earlier line is shiny. Every use of a derived rule can be replaced (at the cost of long-windedness) with multiple uses of basic rules. That is to say, we could have used basic rules to write $\metav{A}$ on some line $n + k$, without introducing any further assumptions. So, applying our individual results that all basic rules are rule-sound several times ($k + 1$ times, in fact), we can see that line $n+k$ is shiny. Hence the derived rule is rule-sound.
 QED
 	
 
 And that's that! We have shown that every rule---basic or otherwise---is rule-sound, which is all that we required to establish the Shininess Lemma, and hence the Soundness Theorem.
 
-But it might help to round off this chapter if we repeat my informal explanation of what we have done. A formal proof is just a sequence---of arbitrary length---of applications of rules. We have shown that any application of any rule will not lead you astray. It follows (by induction)that no formal proof will lead you astray. That is: our proof system is sound. 
+But it might help to round off this chapter if we repeat my informal explanation of what we have done. A formal proof is just a sequence---of arbitrary length---of applications of rules. We have shown that any application of any rule will not lead you astray. It follows (by induction)that no formal proof will lead you astray. That is: our proof system is sound.
 
 \practiceproblems
 

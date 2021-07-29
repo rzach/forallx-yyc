@@ -90,17 +90,17 @@ Using this symbolization key:
 \end{ekey}
 symbolize each of the following sentences in FOL:
 \begin{earg}
-\item Amos, Bouncer, and Cleo all live at the zoo. 
+\item Amos, Bouncer, and Cleo all live at the zoo.
 \item[] \myanswer{$\atom{Z}{a} \eand \atom{Z}{b} \eand \atom{Z}{c}$}
-\item Bouncer is a reptile, but not an alligator. 
+\item Bouncer is a reptile, but not an alligator.
 \item[] \myanswer{$\atom{R}{b} \eand \enot \atom{A}{b}$}
-%\item If Cleo loves Bouncer, then Bouncer is a monkey. 
+%\item If Cleo loves Bouncer, then Bouncer is a monkey.
 %\item If both Bouncer and Cleo are alligators, then Amos loves them both.
-\item Some reptile lives at the zoo. 
+\item Some reptile lives at the zoo.
 \item[] \myanswer{$\exists x (\atom{R}{x} \eand \atom{Z}{x})$}
-\item Every alligator is a reptile. 
+\item Every alligator is a reptile.
 \item[] \myanswer{$\forall x(\atom{A}{x} \eif \atom{R}{x})$}
-\item Any animal that lives at the zoo is either a monkey or an alligator. 
+\item Any animal that lives at the zoo is either a monkey or an alligator.
 \item[] \myanswer{$\forall x(\atom{Z}{x} \eif (\atom{M}{x} \eor \atom{A}{x}))$}
 \item There are reptiles which are not alligators.
 \item[] \myanswer{$\exists x (\atom{R}{x} \eand \enot \atom{A}{x})$}
@@ -194,13 +194,13 @@ Using this symbolization key:
 \end{ekey}
 symbolize each of the following sentences in FOL:
 \begin{earg}
-\item If Cleo loves Bouncer, then Bouncer is a monkey. 
+\item If Cleo loves Bouncer, then Bouncer is a monkey.
 \item[] \myanswer{$\atom{L}{c,b} \eif \atom{M}{b}$}
 \item If both Bouncer and Cleo are alligators, then Amos loves them both.
 \item[] \myanswer{$(\atom{A}{b} \eand \atom{A}{c}) \eif (\atom{L}{a,b} \eand \atom{L}{a,c})$}
-%\item Some reptile lives at the zoo. 
-%\item Every alligator is a reptile. 
-%\item Any animal that lives at the zoo is either a monkey or an alligator. 
+%\item Some reptile lives at the zoo.
+%\item Every alligator is a reptile.
+%\item Any animal that lives at the zoo is either a monkey or an alligator.
 %\item There are reptiles which are not alligators.
 \item Cleo loves a reptile.
 \item[] \myanswer{$\exists x(\atom{R}{x} \eand \atom{L}{c,x})$\\Comment: this English expression is ambiguous; in some contexts, it can be read as a generic, along the lines of `Cleo loves reptiles'. (Compare `I do love a good pint'.) }
@@ -421,13 +421,13 @@ So it can be symbolized as `$\forall x((\atom{F}{x} \eand \enot x = p) \eif \eno
 		\item   `$\exists x \forall y(\atom{A}{y} \eiff x= y)$' is a good symbolization of `there is exactly one apple'.
 		\item[] \myanswer{We might naturally read this in English thus: 
 		\begin{ebullet}
-			\item There is something, $x$, such that, if you choose any object at all, if you chose an apple then you chose $x$ itself, and if you chose $x$ itself then you chose an apple. 
+			\item There is something, $x$, such that, if you choose any object at all, if you chose an apple then you chose $x$ itself, and if you chose $x$ itself then you chose an apple.
 		\end{ebullet}
 		The $x$ in question must therefore be the one and only thing which is an apple.}
 		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall z(\atom{A}{z} \eiff (x= z \eor y = z)\bigr]$' is a good symbolization of `there are exactly two apples'.
 		\item[] \myanswer{Similarly to the above, we might naturally read this in English thus: 
 		\begin{ebullet}
-			\item There are two distinct things, $x$ and $y$, such that if you choose any object at all, if you chose an apple then you either chose $x$ or $y$, and if you chose either $x$ or $y$ then you chose an apple. 
+			\item There are two distinct things, $x$ and $y$, such that if you choose any object at all, if you chose an apple then you either chose $x$ or $y$, and if you chose either $x$ or $y$ then you chose an apple.
 		\end{ebullet}
 		The $x$ and $y$ in question must therefore be the only things which are apples, and since they are distinct, there are two of them.}
 	\end{ebullet}		

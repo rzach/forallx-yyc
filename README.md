@@ -14,7 +14,7 @@ systems for both TFL and FOL. It also deals with some advanced topics
 such as modal logic, soundness, and functional completeness. Exercises
 with solutions are available. It is provided in PDF (for screen
 reading, printing, and a special version for dyslexics) and in LaTeX
-source code. 
+source code.
 
 A proof editor/checker for the proof system used is available at
 [proofs.openlogicproject.org](https://proofs.openlogicproject.org/).

@@ -20,7 +20,7 @@ We obtained line 2 by dropping the universal quantifier and replacing every inst
 	\hypo{a}{\forall x\,\atom{R}{x,x,d}}
 	\have{c}{\atom{R}{d,d,d}} \Ae{a}
 \end{fitchproof}
-We obtained line 2 here by dropping the universal quantifier and replacing every instance of `$x$' with `$d$'. We could have done the same with any other name we wanted. 
+We obtained line 2 here by dropping the universal quantifier and replacing every instance of `$x$' with `$d$'. We could have done the same with any other name we wanted.
 
 This motivates the universal elimination rule ($\forall$E):
 \factoidbox{
@@ -28,7 +28,7 @@ This motivates the universal elimination rule ($\forall$E):
 	\have[m]{a}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\have[\ ]{c}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)} \Ae{a}
 \end{fitchproof}}
-The notation here was introduced in \S\ref{s:TruthFOL}. The point is that you can obtain any \emph{substitution instance} of a universally quantified formula: replace every instance of the quantified variable with any name you like. 
+The notation here was introduced in \S\ref{s:TruthFOL}. The point is that you can obtain any \emph{substitution instance} of a universally quantified formula: replace every instance of the quantified variable with any name you like.
 
 We should emphasize that (as with every elimination rule) you can only apply the $\forall$E rule when the universal quantifier is the main logical operator. So the following is \emph{banned}:
 \begin{fitchproof}
@@ -87,7 +87,7 @@ Could this be a bad proof? If anything exists at all, then certainly we can infe
 
 Actually, we are already committed to this oddity. In \S\ref{s:FOLBuildingBlocks}, we stipulated that domains in FOL must have at least one member. We then defined a validity (of FOL) as a sentence which is true in every interpretation. Since `$\exists x\, x=x$' will be true in every interpretation, this \emph{also} had the effect of stipulating that it is a matter of logic that there is something rather than nothing.
 
-Since it is far from clear that logic should tell us that there must be something rather than nothing, we might well be cheating a bit here. 
+Since it is far from clear that logic should tell us that there must be something rather than nothing, we might well be cheating a bit here.
 
 If we refuse to cheat, though, then we pay a high cost. Here are three things that we want to hold on to:
 	\begin{ebullet}
@@ -101,9 +101,9 @@ Before we start thinking about which to surrender, we might want to ask how \emp
 
 
 \section{Universal introduction}
-Suppose you had shown of each particular thing that it is F (and that there are no other things to consider). Then you would be justified in claiming that everything is F. This would motivate the following proof rule. If you had established each and every single substitution instance of `$\forall x\,\atom{F}{x}$', then you can infer `$\forall x\,\atom{F}{x}$'. 
+Suppose you had shown of each particular thing that it is F (and that there are no other things to consider). Then you would be justified in claiming that everything is F. This would motivate the following proof rule. If you had established each and every single substitution instance of `$\forall x\,\atom{F}{x}$', then you can infer `$\forall x\,\atom{F}{x}$'.
 
-Unfortunately, that rule would be utterly unusable. To establish each and every single substitution instance would require proving `$\atom{F}{a}$', `$\atom{F}{b}$', \dots, `$\atom{F}{j_2}$', \dots, `$\atom{F}{r_{79002}}$', \ldots, and so on. Indeed, since there are infinitely many names in FOL, this process would never come to an end. So we could never apply that rule. We need to be a bit more cunning in coming up with our rule for introducing universal quantification. 
+Unfortunately, that rule would be utterly unusable. To establish each and every single substitution instance would require proving `$\atom{F}{a}$', `$\atom{F}{b}$', \dots, `$\atom{F}{j_2}$', \dots, `$\atom{F}{r_{79002}}$', \ldots, and so on. Indeed, since there are infinitely many names in FOL, this process would never come to an end. So we could never apply that rule. We need to be a bit more cunning in coming up with our rule for introducing universal quantification.
 
 A solution will be inspired by considering:
 $$\forall x\,\atom{F}{x} \therefore \forall y\,\atom{F}{y}$$
@@ -230,7 +230,7 @@ The last line of the proof is not allowed. The name that we used in our substitu
 	\have{econ1}{\exists x (\atom{L}{x} \eand \enot \atom{L}{x})}\by{naughty attempt}{}
 	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con1}
 \end{fitchproof}
-The last line is still not allowed. For the name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$', namely `$b$', occurs in an undischarged assumption, namely line~$1$. 
+The last line is still not allowed. For the name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$', namely `$b$', occurs in an undischarged assumption, namely line~$1$.
 
 The moral of the story is this. \emph{If you want to squeeze information out of an existential quantifier, choose a new name for your substitution instance.} That way, you can guarantee that you meet all the constraints on the rule for $\exists$E.
 
@@ -257,7 +257,7 @@ Explain why these two `proofs' are \emph{incorrect}. Also, provide interpretatio
 
 \problempart 
 \label{pr.justifyFOLproof}
-The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into bona fide proofs. 
+The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into bona fide proofs.
 \begin{earg}
 \item \begin{fitchproof}
 \hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}
@@ -387,7 +387,7 @@ For each of the following arguments: If it is valid in FOL, give a proof. If it 
 
 \chapter{Proofs with quantifiers}
 
-In \S\ref{s:stratTFL} we discussed strategies for constructing proofs using the basic rules of natural deduction for TFL. The same principles apply to the rules for the quantifiers. If we want to prove a quantifier sentence $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ or $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$. We can work backward by justifying the sentence we want by $\forall$I or $\exists$I and trying to find a proof of the corresponding premise of that rule. And to work forward from a quantified sentence, we apply $\forall$E or $\exists$E, as the case may be. 
+In \S\ref{s:stratTFL} we discussed strategies for constructing proofs using the basic rules of natural deduction for TFL. The same principles apply to the rules for the quantifiers. If we want to prove a quantifier sentence $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ or $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$. We can work backward by justifying the sentence we want by $\forall$I or $\exists$I and trying to find a proof of the corresponding premise of that rule. And to work forward from a quantified sentence, we apply $\forall$E or $\exists$E, as the case may be.
 
 Specifically, suppose you want to prove $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$. To do so using $\forall$I, we would need a proof of $\atom{\metav{A}}{\metav{c}}$ for some name~$\metav{c}$ which does not occur in any undischarged assumption. To apply the corresponding strategy, i.e., to construct a proof of $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ by working backward, is thus to write $\atom{\metav{A}}{\metav{c}}$ above it and then to continue to try to find a proof of that sentence.
 \begin{fitchproof}
@@ -397,7 +397,7 @@ Specifically, suppose you want to prove $\forall \metav{x}\, \atom{\metav{A}}{\m
 \end{fitchproof}
 $\atom{\metav{A}}{\metav{c}}$ is obtained from $\atom{\metav{A}}{\metav{x}}$ by replacing every free occurrence of $\metav{x}$ in $\atom{\metav{A}}{\metav{x}}$ by~$\metav{c}$. For this to work, $\metav{c}$ must satisfy the special condition. We can ensure that it does by always picking a name that does not already occur in the proof constructed so far. (Of course, it will occur in the proof we end up constructing---just not in an assumption that is undischarged at line~$n+1$.)
 
-To work backward from a sentence $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ we similarly write a sentence above it that can serve as a justification for an application of the $\exists$I rule, i.e., a sentence of the form $\atom{\metav{A}}{\metav{c}}$. 
+To work backward from a sentence $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ we similarly write a sentence above it that can serve as a justification for an application of the $\exists$I rule, i.e., a sentence of the form $\atom{\metav{A}}{\metav{c}}$.
 \begin{fitchproof}
 	\ellipsesline
 	\have[n]{n}{\atom{\metav{A}}{\metav{c}}}
@@ -405,7 +405,7 @@ To work backward from a sentence $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}
 \end{fitchproof}
 This looks just like what we would do if we were working backward from a universally quantified sentence. The difference is that whereas for $\forall$I we have to pick a name~$\metav{c}$ which does not occur in the proof (so far), for $\exists$I we may and in general must pick a name~$\metav{c}$ which already occurs in the proof.  Just like in the case of $\eor$I, it is often not clear which $\metav{c}$ will work out, and so to avoid having to backtrack you should work backward from existentially quantified sentences only when all other strategies have been applied.
 
-By contrast, working \emph{forward} from sentences $\exists \metav{x}\, \atom{\metav{A}(\metav{x}})$ generally always works and you won't have to backtrack. Working forward from an existentially quantified sentence takes into account not just $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ but also whatever sentence $\metav{B}$ you would like to prove. It requires that you set up a subproof above $\metav{B}$, wherein $\metav{B}$ is the last line, and a substitution instance $\atom{\metav{A}}{\metav{c}}$ of $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ as the assumption.  In order to ensure that the condition on $\metav{c}$ that governs $\exists$E is satisfied, chose a name $\metav{c}$ which does not already occur in the proof. 
+By contrast, working \emph{forward} from sentences $\exists \metav{x}\, \atom{\metav{A}(\metav{x}})$ generally always works and you won't have to backtrack. Working forward from an existentially quantified sentence takes into account not just $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ but also whatever sentence $\metav{B}$ you would like to prove. It requires that you set up a subproof above $\metav{B}$, wherein $\metav{B}$ is the last line, and a substitution instance $\atom{\metav{A}}{\metav{c}}$ of $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ as the assumption.  In order to ensure that the condition on $\metav{c}$ that governs $\exists$E is satisfied, chose a name $\metav{c}$ which does not already occur in the proof.
 \begin{fitchproof}
 	\ellipsesline
 	\have[m]{m}{\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}}
@@ -571,7 +571,7 @@ and
 
 \practiceproblems
 \problempart
-Show in each case that the sentences are provably inconsistent:
+Show in each case that the sentences are inconsistent:
 \begin{earg}
 \item $\atom{S}{a}\eif \atom{T}{m}, \atom{T}{m} \eif \atom{S}{a}, \atom{T}{m} \eand \enot \atom{S}{a}$
 \item $\enot\exists x\,\atom{R}{x,a}, \forall x\, \forall y\,\atom{R}{y,x}$
@@ -609,7 +609,7 @@ However, every object is identical to itself. No premises, then, are required in
 \begin{fitchproof}
 	\have[\ \,\,\,]{x}{\metav{c}=\metav{c}} \by{=I}{}
 \end{fitchproof}}
-Notice that this rule does not require referring to any prior lines of the proof. For any name \metav{c}, you can write $\metav{c}=\metav{c}$ on any point, with only the {=}I rule as justification. 
+Notice that this rule does not require referring to any prior lines of the proof. For any name \metav{c}, you can write $\metav{c}=\metav{c}$ on any point, with only the {=}I rule as justification.
 
 Our elimination rule is more fun. If you have established `$a=b$', then anything that is true of the object named by `$a$' must also be true of the object named by `$b$'. For any sentence with `$a$' in it, you can replace some or all of the occurrences of `$a$' with `$b$' and produce an equivalent sentence. For example, from `$\atom{R}{a,a}$' and `$a = b$', you are justified in inferring `$\atom{R}{a,b}$', `$\atom{R}{b,a}$' or `$\atom{R}{b,b}$'. More generally:
 \factoidbox{\begin{fitchproof}
@@ -623,7 +623,7 @@ The notation here is as for $\exists$I. So $\metav{A}(\ldots \metav{a} \ldots \m
 	\have[n]{a}{\metav{A}(\ldots \metav{b} \ldots \metav{b}\ldots)}
 	\have[\ ]{ea2}{\metav{A}(\ldots \metav{a} \ldots \metav{b}\ldots)} \by{=E}{e,a}
 \end{fitchproof}}
-This rule is sometimes called \emph{Leibniz's Law}, after Gottfried Leibniz. 
+This rule is sometimes called \emph{Leibniz's Law}, after Gottfried Leibniz.
 
 To see the rules in action, we will prove some quick results. First, we will prove that identity is \emph{symmetric}:
 \begin{fitchproof}
@@ -636,7 +636,7 @@ To see the rules in action, we will prove some quick results. First, we will pro
 	\have{ayya}{\forall y (a = y \eif y = a)}\Ai{abba}
 	\have{xyyx}{\forall x\, \forall y (x = y \eif y = x)}\Ai{ayya}
 \end{fitchproof}
-We obtain line 3 by replacing one instance of `$a$' in line 2 with an instance of `$b$'; this is justified given `$a= b$'. 
+We obtain line 3 by replacing one instance of `$a$' in line 2 with an instance of `$b$'; this is justified given `$a= b$'.
 
 Second, we will prove that identity is \emph{transitive}:
 \begin{fitchproof}
@@ -651,7 +651,7 @@ Second, we will prove that identity is \emph{transitive}:
 	\have{cony}{\forall y\,\forall z((a = y \eand y = z) \eif a = z)}\Ai{conz}
 	\have{conx}{\forall x\,\forall y \forall z((x = y \eand y = z) \eif x = z)}\Ai{cony}
 \end{fitchproof}
-We obtain line 4 by replacing `$b$' in line 3 with `$a$'; this is justified given `$a= b$'. 
+We obtain line 4 by replacing `$b$' in line 3 with `$a$'; this is justified given `$a= b$'.
 
 \practiceproblems
 \problempart
@@ -732,7 +732,7 @@ Here is a justification of the third CQ rule:
 	\close
 	\have{dada}{\enot \forall x\, \atom{A}{x}}\ni{Aa-con1}
 \end{fitchproof}
-This explains why the CQ rules can be treated as derived. Similar justifications can be offered for the other two CQ rules. 
+This explains why the CQ rules can be treated as derived. Similar justifications can be offered for the other two CQ rules.
 
 \practiceproblems
 
@@ -750,7 +750,7 @@ means that no valuation (or interpretation) makes all of $\metav{A}_1, \metav{A}
 
 It cannot be emphasized enough that these are different notions. But we can emphasize it a bit more: \emph{They are different notions.}
 
-Once you have internalised this point, continue reading. 
+Once you have internalised this point, continue reading.
 
 Although our semantic and proof-theoretic notions are different, there is a deep connection between them. To explain this connection,we will start by considering the relationship between validities and theorems.
 
@@ -765,12 +765,15 @@ $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \proves\metav{B} \textbf{ iff }\
 This shows that, whilst provability and entailment are \emph{different} notions, they are extensionally equivalent. As such:
 	\begin{ebullet}
 		\item An argument is \emph{valid} iff \emph{the conclusion can be proved from the premises}.
-		\item Two sentences are \emph{logically equivalent} iff they are \emph{provably equivalent}.
-		\item Sentences are \emph{satisfiable} iff they are \emph{not provably inconsistent}.
+		\item A sentence is a \emph{validity} iff it is a \emph{theorem}.
+		\item Two sentences are \emph{equivalent} iff they are
+		\emph{provably equivalent}.
+		\item Sentences are \emph{jointly satisfiable} iff they are
+		\emph{jointly consistent}.
 	\end{ebullet}
 For this reason, you can pick and choose when to think in terms of proofs and when to think in terms of valuations/interpretations, doing whichever is easier for a given task. The table on the next page summarises which is (usually) easier.
 
-It is intuitive that provability and semantic entailment should agree. But---let us repeat this---do not be fooled by the similarity of the symbols `$\entails$' and `$\proves$'. These two symbols have very different meanings. The fact that provability and semantic entailment agree is not an easy result to come by. 
+It is intuitive that provability and semantic entailment should agree. But---let us repeat this---do not be fooled by the similarity of the symbols `$\entails$' and `$\proves$'. These two symbols have very different meanings. The fact that provability and semantic entailment agree is not an easy result to come by.
 
 In fact, demonstrating that provability and semantic entailment agree is, very decisively, the point at which introductory logic becomes intermediate logic.
 
