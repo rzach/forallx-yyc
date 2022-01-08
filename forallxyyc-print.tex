@@ -2,14 +2,9 @@
 % Driver file to produce version of forall x:YYC on quarto stock 
 % for printing in black and white via Amazon KDP or similar print-on-demand service.
 
-\pdfminorversion=3
+%\pdfminorversion=3
 
-\documentclass[openany,twosided,11pt]{memoir}
-
-\usepackage{forallxyyc-style}
-\usepackage{forallxyyc}
-
-\usepackage[x-1a]{pdfx}
+\documentclass[openany,twoside,11pt]{memoir}
 
 % set stock & paper size to Quarto
 
@@ -29,6 +24,15 @@
 \setheaderspaces{*}{*}{1}
 
 \checkandfixthelayout
+
+% make output PDF/X compliant
+
+\RequirePackage[x-1a]{pdfx}
+
+% load forall x style and macro definitions
+
+\usepackage{forallxyyc-style}
+\usepackage{forallxyyc}
 
 \colorlet{leadbeater}{black}
 \colorlet{dkleadbeater}{black}

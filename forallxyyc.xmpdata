@@ -4,5 +4,8 @@
 \Language{en-US}
 \Keywords{logic\sep truth-functional logic\sep propositional logic\sep predicate logic\sep first-order logic\sep natural deduction\sep Fitch}
 \Copyright{CC BY 4.0}
+\CopyrightURL{https://forallx.openlogicproject.org/}
 \PublicationType{book}
+\Source{https://github.com/rzach/forallx-yyc}
 \URLlink{https://forallx.openlogicproject.org/}
+\Publisher{Open Logic Project}

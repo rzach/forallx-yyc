@@ -1,19 +1,43 @@
-% forallxyyc
+% forallxyyc-accessible
 % Driver file to produce accessible of forall x:YYC for screen reading
 % Larger type, line spacing & tracking, dyslexia-friendly typeface, 
 % no ligatures, no text justification
 
 \documentclass[openany,oneside,12pt]{memoir}
 
+% set stock & paper size with narrow margins
+
+\setstocksize{8in}{5in}
+
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+% set the size of the type block
+
+\settypeblocksize{*}{300pt}{1.52}
+
+% set spine and and edge margin
+
+\setlrmargins{*}{*}{1}
+\setulmargins{.6in}{*}{*}
+\setheaderspaces{*}{*}{1}
+
+\checkandfixthelayout
+
+% make output PDF/A compliant
+
+\RequirePackage[a-1b]{pdfx}
+
+% load forall x style and macro definitions
+
 \usepackage{forallxyyc-style}
 \usepackage{forallxyyc}
 
 \usepackage[absolute,overlay]{textpos}
 
-\RequirePackage[a-1b]{pdfx}
-
 % Accessibility: use a sans-serif font
 % GoSans is designed by Bigelow & Holmes, also the makers of the Dyslexia font
+
 \usepackage[sfdefault]{GoSans}
 \usepackage{sfmath}
 \usepackage[T1]{fontenc}
@@ -38,26 +62,6 @@
 \renewcommand{\printparttitle}[1]{\RaggedRight\parttitlefont #1}
 \renewcommand*{\printpartname}{%
 \RaggedRight\partnamefont Part}
-
-
-% set stock & paper size with narrow margins
-
-\setstocksize{8in}{5in}
-
-\settrimmedsize{\stockheight}{\stockwidth}{*}
-\settrims{0pt}{0pt}
-
-% set the size of the type block
-
-\settypeblocksize{*}{300pt}{1.52}
-
-% set spine and and edge margin
-
-\setlrmargins{*}{*}{1}
-\setulmargins{.6in}{*}{*}
-\setheaderspaces{*}{*}{1}
-
-\checkandfixthelayout
 
 \definecolor{lyallpink}{RGB}{222,31,149}
 \colorlet{leadbeater}{lyallpink}

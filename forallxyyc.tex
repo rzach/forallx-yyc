@@ -3,13 +3,6 @@
 
 \documentclass[openany,oneside,11pt]{memoir}
 
-\usepackage{forallxyyc-style}
-\usepackage{forallxyyc}
-
-\usepackage[absolute,overlay]{textpos}
-
-\RequirePackage[a-1b]{pdfx}
-
 % set stock & paper size with narrow margins
 
 \setstocksize{8in}{5in}
@@ -18,9 +11,6 @@
 \settrims{0pt}{0pt}
 
 % Text width hard coded to 300pt
-
-% let's calculate the line length for 65 characters in \normalfont
-% \setlxvchars
 
 % set the size of the type block to golden ratio calculated width
 
@@ -33,6 +23,17 @@
 \setheaderspaces{*}{*}{1}
 
 \checkandfixthelayout
+
+% make output PDF/A compliant
+
+\RequirePackage[a-1b]{pdfx}
+
+% load forall x style and macro definitions
+
+\usepackage{forallxyyc-style}
+\usepackage{forallxyyc}
+
+\usepackage[absolute,overlay]{textpos}
 
 \definecolor{lyallpink}{RGB}{222,31,149}
 \colorlet{leadbeater}{lyallpink}
