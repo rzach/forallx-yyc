@@ -323,7 +323,7 @@ When we are working within the subproof, we can refer to the additional assumpti
 \item the line must come before the line where the rule is applied, but 
 \item not occur within a subproof that has been closed before the line where the rule is applied.
 \end{enumerate}}
-This stipulation rules out the disastrous attempted proof above. The rule of $\eif$E requires that we cite two individual lines from earlier in the proof. In the purported proof, above, one of these lines (namely, line~$4$) occurs within a subproof that has (by line~$5$) been closed. This is illegitimate.
+This stipulation rules out the disastrous attempted proof above. The application of rule $\eif$E on line~$5$ requires that we cite two individual lines from earlier in the proof. One of these lines (namely, line~$3$) occurs within a subproof (lines $2$--$3$). By line $5$, where we have to cite line $3$, the subproof has been closed. This is illegitimate: we are not allowed to cite line $3$ on line $5$.
 
 Closing a subproof is called \define{discharging} the assumptions of that subproof. So we can put the point this way: \emph{you cannot refer back to anything that was obtained using discharged assumptions}.
 
