@@ -17,7 +17,7 @@ An argument, as we will understand it, is something more like this:
 		\item[] The butler didn't do it.
 		\item[\therefore] The gardener did it.
 	\end{earg}
-We here have a series of sentences. The three dots on the third line of the argument are read `therefore.' They indicate that the final sentence expresses the \emph{conclusion} of the argument. The two sentences before that are the \emph{premises} of the argument. If you believe the premises, and you think the conclusion follows from the premises---that the argument, as we will say, is valid---then this (perhaps) provides you with a reason to believe the conclusion.
+We have here a series of sentences. The three dots on the third line of the argument are read `therefore.' They indicate that the final sentence expresses the \emph{conclusion} of the argument. The two sentences before that are the \emph{premises} of the argument. If you believe the premises, and you think the conclusion follows from the premises---that the argument, as we will say, is valid---then this (perhaps) provides you with a reason to believe the conclusion.
 
 This is the sort of thing that logicians are interested in. We will say that an argument is any collection of premises, together with a conclusion.
 
@@ -207,25 +207,25 @@ For both of these notions of validity, aspects of the world (e.g., what the laws
 
 One distinguishing feature of \emph{logical} consequence, however, is that it should not depend on the content of the premises and conclusion, but only on their logical form. In other words, as logicians we want to develop a theory that can make finer-grained distinctions still. For instance, both
 \begin{earg}
-	\item[] Either Priya is an ophthalmologist or a dentist.
+	\item[] Priya is either an ophthalmologist or a dentist.
 	\item[] Priya isn't a dentist.
 	\item[\therefore] Priya is an eye doctor.
 \end{earg}
 and
 \begin{earg}
-	\item[] Either Priya is an ophthalmologist or a dentist.
+	\item[] Priya is either an ophthalmologist or a dentist.
 	\item[] Priya isn't a dentist.
 	\item[\therefore] Priya is an ophthalmologist.
 \end{earg}
 are valid arguments. But while the validity of the first depends on the content (i.e., the meaning of ``ophthalmologist'' and ``eye doctor''), the second does not. The second argument is \define{formally valid}. We can describe the ``form'' of this argument as a pattern, something like this:
 \begin{earg}
-	\item[] Either $A$ is an $X$ or a $Y$.
+	\item[] $A$ is either an $X$ or a $Y$.
 	\item[] $A$ isn't a $Y$.
 	\item[\therefore] $A$ is an $X$.
 \end{earg}
 Here, $A$, $X$, and $Y$ are placeholders for appropriate expressions that, when substituted for $A$, $X$, and $Y$, turn the pattern into an argument consisting of sentences. For instance,
 \begin{earg}
-	\item[] Either Mei is a mathematician or a botanist.
+	\item[] Mei is either a mathematician or a botanist.
 	\item[] Mei isn't a botanist.
 	\item[\therefore] Mei is a mathematician.
 \end{earg}
@@ -233,13 +233,13 @@ is an argument of the same form, but the first argument above is not: we would h
 
 Moreover, the first argument is not formally valid. \emph{Its} form is this:
 \begin{earg}
-	\item[] Either $A$ is an $X$ or a $Y$.
+	\item[] $A$ is either an $X$ or a $Y$.
 	\item[] $A$ isn't a $Y$.
 	\item[\therefore] $A$ is a $Z$.
 \end{earg}
 In this pattern we can replace $X$ by ``ophthalmologist'' and $Z$ by ``eye doctor'' to obtain the original argument.  But here is another argument of the same form:
 \begin{earg}
-	\item[] Either Mei is a mathematician or a botanist.
+	\item[] Mei is either a mathematician or a botanist.
 	\item[] Mei isn't a botanist.
 	\item[\therefore] Mei is an acrobat.
 \end{earg}
@@ -271,7 +271,7 @@ The premises and conclusion of this argument are, as a matter of fact, all true,
 
 The important thing to remember is that validity is not about the actual truth or falsity of the sentences in the argument. It is about whether it is \emph{possible} for all the premises to be true and the conclusion to be not true at the same time (in some hypothetical case). What is in fact the case has no special role to play; and what the facts are does not determine whether an argument is valid or not.\footnote{Well, there is one case where it does: if the premises are in fact true and the conclusion is in fact not true, then we live in a counterexample; so the argument is invalid.} Nothing about the way things are can by itself determine if an argument is valid. It is often said that logic doesn't care about feelings. Actually, it doesn't care about facts, either.
 
-When we use an argument to prove that its conclusion \emph{is true}, then, we need two things. First, we need the argument to be valid, i.e., we need the conclusion to follow from the premises. But we also need the premises to be true. We will say that an argument is \define{sound} if and only if it is both valid and all of its premises are true.
+When we use an argument to prove that its conclusion \emph{is true}, then, we need two things. First, we need the argument to be valid; i.e., we need the conclusion to follow from the premises. But we also need the premises to be true. We will say that an argument is \define{sound} if and only if it is both valid and all of its premises are true.
 
 \newglossaryentry{sound}
 {
@@ -306,7 +306,7 @@ Which of the following arguments are valid? Which are invalid?
 \end{earg}
 
 \begin{earg}
-\item Abe Lincoln was either born in Illinois or he was once president.
+\item Either Abe Lincoln was born in Illinois or he was once president.
 \item Abe Lincoln was never president.
 \item[\therefore] Abe Lincoln was born in Illinois.
 \end{earg}
@@ -318,8 +318,8 @@ Which of the following arguments are valid? Which are invalid?
 \end{earg}
 
 \begin{earg}
-\item Abe Lincoln was either from France or from Luxemborg.
-\item Abe Lincoln was not from Luxemborg.
+\item Abe Lincoln was either from France or from Luxembourg.
+\item Abe Lincoln was not from Luxembourg.
 \item[\therefore] Abe Lincoln was from France.
 \end{earg}
 
@@ -391,10 +391,10 @@ We can ask about the joint possibility of any number of sentences. For example, 
 	\begin{ebullet}	
 		\item[G1.] \label{MartianGiraffes} There are at least four giraffes at the wild animal park.
 		\item[G2.] There are exactly seven gorillas at the wild animal park.
-		\item[G3.] There are not more than two martians at the wild animal park.
-		\item[G4.] Every giraffe at the wild animal park is a martian.
+		\item[G3.] There are not more than two Martians at the wild animal park.
+		\item[G4.] Every giraffe at the wild animal park is a Martian.
 	\end{ebullet}
-G1 and G4 together entail that there are at least four martian giraffes at the park. This conflicts with G3, which implies that there are no more than two martian giraffes there. So the sentences G1--G4 are jointly impossible. They cannot all be true together. (Note that the sentences G1, G3 and G4 are jointly impossible. But if sentences are already jointly impossible, adding an extra sentence to the mix cannot make them jointly possible!)
+G1 and G4 together entail that there are at least four Martian giraffes at the park. This conflicts with G3, which implies that there are no more than two Martian giraffes there. So the sentences G1--G4 are jointly impossible. They cannot all be true together. (Note that the sentences G1, G3 and G4 are jointly impossible. But if sentences are already jointly impossible, adding an extra sentence to the mix cannot make them jointly possible!)
 
 \section[Necessary truths and falsehoods]{Necessary truths, necessary falsehoods, and contingency}
 
@@ -483,8 +483,8 @@ For each of the following: Is it a necessary truth, a necessary falsehood, or co
 \item Elephants dissolve in water.
 \item Wood is a light, durable substance useful for building things.
 \item If wood were a good building material, it would be useful for building things.
-\item I live in a three story building that is two stories tall.
-\item If gerbils were mammals they would nurse their young.
+\item I live in a three-story building that is two stories tall.
+\item If gerbils were mammals, they would nurse their young.
 \end{earg}
 
 \problempart Which of the following pairs of sentences are necessarily  equivalent? 
@@ -550,7 +550,7 @@ Which combinations of sentences are jointly possible? Mark each ``possible'' or 
 
 \problempart
 \label{pr.EnglishCombinations2}
-Which of the following is possible? If it is possible, give an example. If it is not possible, explain why.
+Which of the following are possible? For each, if it is possible, give an example. If it is not possible, explain why.
 \begin{earg}
 \item A valid argument that has one false premise and one true premise
 
@@ -574,7 +574,7 @@ Which of the following is possible? If it is possible, give an example. If it is
 \end{earg}
 
 \problempart
-Which of the following is possible? If it is possible, give an example. If it is not possible, explain why.
+Which of the following are possible? For each, if it is possible, give an example. If it is not possible, explain why.
 
 \begin{earg}
 \item A valid argument, whose premises are all necessary truths, and whose conclusion is contingent

@@ -100,12 +100,12 @@ Cambridge_](https://www.homepages.ucl.ac.uk/~uctytbu/OERs.html), by
 under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 license, which is based in turn on [_forall
 x_](https://www.fecundity.com/logic/), by
-[P.D. Magnus](https://www.fecundity.com/job/) used under a [CC BY
+[P.~D. Magnus](https://www.fecundity.com/job/) used under a [CC BY
 4.0](https://creativecommons.org/licenses/by/3.0/) license, and was
 remixed, revised, & expanded by [Aaron
 Thomas-Bolduc](https://phil.ucalgary.ca/profiles/aaron-thomas-bolduc)
 & [Richard Zach](https://richardzach.org/).  It includes additional
-material from _forall x_ by P.D. Magnus and
+material from _forall x_ by P.~D. Magnus and
 [_Metatheory_](https://www.homepages.ucl.ac.uk/~uctytbu/OERs.html) by
 Tim Button, both used under a [CC BY
 4.0](https://creativecommons.org/licenses/by/4.0/) license, from
