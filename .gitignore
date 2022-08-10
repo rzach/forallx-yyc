@@ -1,3 +1,7 @@
+## Added by me (CE 2022-08-10)
+*.lua
+*.xmpi
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
