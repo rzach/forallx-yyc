@@ -538,7 +538,7 @@ For each argument, write a symbolization key and symbolize the argument in FOL.
 \item Willard is a logician. All logicians wear funny hats. So Willard wears a funny hat.
 \item Nothing on my desk escapes my attention. There is a computer on my desk. As such, there is a computer that does not escape my attention.
 \item All my dreams are black and white. Old TV shows are in black and white. Therefore, some of my dreams are old TV shows.
-\item Neither Holmes nor Watson has been to Australia. A person could see a kangaroo only if they had been to Australia or to a zoo. Although Watson has not seen a kangaroo, Holmes has. Therefore, Holmes has been to a zoo.
+\item Neither Holmes nor Watson has been to Australia. A person could have seen a kangaroo only if they had been to Australia or to a zoo. Although Watson has not seen a kangaroo, Holmes has. Therefore, Holmes has been to a zoo.
 \item No one expects the Spanish Inquisition. No one knows the troubles I've seen. Therefore, anyone who expects the Spanish Inquisition knows the troubles I've seen.
 \item All babies are illogical. Nobody who is illogical can manage a crocodile. Berthold is a baby. Therefore, Berthold is unable to manage a crocodile.
 \end{earg}
@@ -628,8 +628,8 @@ In any case, the overall moral of this is simple. \emph{When dealing with predic
 \section{The order of quantifiers}\label{ss:OrderQuant}
 Consider the sentence `everyone loves someone'. This is potentially ambiguous. It might mean either of the following:
 	\begin{earg}
-		\item[\ex{lovecycle}] For every person x, there is some person that x loves
-		\item[\ex{loveconverge}] There is some particular person whom every person loves
+		\item[\ex{lovecycle}] For every person x, there is some person that x loves.
+		\item[\ex{loveconverge}] There is some particular person whom every person loves.
 	\end{earg}
 Sentence \ref{lovecycle} can be symbolized by `$\forall x \exists y\, \atom{L}{x,y}$', and would be true of a love-triangle. For example, suppose that our domain of discourse is restricted to Imre, Juan and Karl. Suppose also that Karl loves Imre but not Juan, that Imre loves Juan but not Karl, and that Juan loves Karl but not Imre. Then sentence \ref{lovecycle} is true.
 
