@@ -8,11 +8,11 @@
 
 Recall that TFL is a truth-functional language. Its connectives are all truth-functional, and \emph{all} that we can do with TFL is key sentences to particular truth values. We can do this \emph{directly}. For example, we might stipulate that the TFL sentence `$P$' is to be true. Alternatively, we can do this \emph{indirectly}, offering a symbolization key, e.g.:
 	\begin{ekey}
-		\item[P] Big Ben is in London
+		\item[P] Big Ben is in London.
 	\end{ekey}
  But recall from \S\ref{s:TruthFunctionality} that this is \emph{just} a means of specifying `$P$'s truth value; the symbolization key statement amounts to something like the following stipulation: 
 	\begin{ebullet}
-		\item The TFL sentence `$P$' is true iff Big Ben is in London
+		\item The TFL sentence `$P$' is true iff Big Ben is in London.
 	\end{ebullet}
 And we emphasised in \S\ref{s:TruthFunctionality} that TFL cannot handle differences in meaning that go beyond mere differences in truth value.
 
@@ -69,7 +69,7 @@ All of this is quite easy to understand when it comes to one-place predicates, b
 	\end{ekey}
 Given what we said above, this symbolization key should be read as saying:
 	\begin{earg}
-		\item[\textbullet] `$\atom{L}{x,y}$' and `\gap{x} loves \gap{y}' are to be true of exactly the same things
+		\item[\textbullet] `$\atom{L}{x,y}$' and `\gap{x} loves \gap{y}' are to be true of exactly the same things.
 	\end{earg}
 So, in particular:
 	\begin{earg}
@@ -98,7 +98,7 @@ To make these ideas more precise, we would need to develop some very elementary 
 
 
 \section{Semantics for identity}
-Identity is a special predicate of FOL. We write it a bit differently than other two-place predicates: `$x=y$' instead of `$\atom{I}{x,y}$' (for example). More important, though, its interpretation is fixed, once and for all.
+Identity is a special predicate of FOL. We write it a bit differently than other two-place predicates: `$x=y$' instead of `$\atom{I}{x,y}$' (for example). More important, though, is that its interpretation is fixed, once and for all.
 
 If two names refer to the same object, then swapping one name for another will not change the truth value of any sentence. So, in particular, if `$a$' and `$b$' name the same object, then all of the following will be true:\label{model.nonidentity}
 	\begin{align*}
@@ -208,7 +208,7 @@ We need to explain truth for all three kinds of sentence.
 
 We will provide a completely general explanation in this section. However, to try to keep the explanation comprehensible, we will, at several points, use the following interpretation:
 	\begin{ekey}
-		\item[\text{domain}] all people born before 2000\textsc{ce}
+		\item[\text{domain}] all people born before 2000 \textsc{ce}
 		\item[a] Aristotle
 		\item[b] Beyonc\'e
 		\item[\atom{P}{x}] \gap{x} is a philosopher
@@ -217,7 +217,7 @@ We will provide a completely general explanation in this section. However, to tr
 This will be our \emph{go-to example} in what follows.
 
 \section{Atomic sentences}
-The truth of atomic sentences should be fairly straightforward. For sentence letters, the interpretation specifies if it is true or false. The sentence `$\atom{P}{a}$' should be true just in case `$\atom{P}{x}$' is true of `$a$'. Given our go-to interpretation, this is true iff Aristotle is a philosopher. Aristotle is a philosopher. So the sentence is true. Equally, `$\atom{P}{b}$' is false on our go-to interpretation.
+The truth of atomic sentences should be fairly straightforward. For sentence letters, the interpretation specifies if they are true or false. The sentence `$\atom{P}{a}$' should be true just in case `$\atom{P}{x}$' is true of `$a$'. Given our go-to interpretation, this is true iff Aristotle is a philosopher. Aristotle is a philosopher. So the sentence is true. Equally, `$\atom{P}{b}$' is false on our go-to interpretation.
 
 Likewise, on this interpretation, `$\atom{R}{a,b}$' is true iff the object named by `$a$' was born before the object named by `$b$'. Well, Aristotle was born before Beyonc\'e. So `$\atom{R}{a,b}$' is true. Equally, `$\atom{R}{a,a}$' is false: Aristotle was not born before Aristotle.
 
@@ -238,20 +238,20 @@ So in our go-to interpretation, `$a = b$' is false, since Aristotle is distinct 
 \section{Sentential connectives}
 We saw in \S\ref{s:FOLSentences} that FOL sentences can be built up from simpler ones using the truth-functional connectives that were familiar from TFL. The rules governing these truth-functional connectives are \emph{exactly} the same as they were when we considered TFL. Here they are:
 	\factoidbox{
-		$\metav{A} \eand \metav{B}$ is true in an interpretation \textbf{iff}\\ both $\metav{A}$ is true and $\metav{B}$ is true in that interpretation
+		$\metav{A} \eand \metav{B}$ is true in an interpretation \textbf{iff}\\ both $\metav{A}$ is true and $\metav{B}$ is true in that interpretation.
 		
 		\medskip
 		
-		$\metav{A} \eor \metav{B}$ is true in an interpretation \textbf{iff}\\ either $\metav{A}$ is true or $\metav{B}$ is true in that interpretation
+		$\metav{A} \eor \metav{B}$ is true in an interpretation \textbf{iff}\\ either $\metav{A}$ is true or $\metav{B}$ is true in that interpretation.
 
 		\medskip
-		$\enot \metav{A}$ is true in an interpretation \textbf{iff} \\$\metav{A}$ is false in that interpretation
+		$\enot \metav{A}$ is true in an interpretation \textbf{iff} \\$\metav{A}$ is false in that interpretation.
 
 		\medskip
-		$\metav{A} \eif \metav{B}$ is true in an interpretation \textbf{iff}\\ either $\metav{A}$ is false or $\metav{B}$ is true in that interpretation
+		$\metav{A} \eif \metav{B}$ is true in an interpretation \textbf{iff}\\ either $\metav{A}$ is false or $\metav{B}$ is true in that interpretation.
 
 		\medskip
-		$\metav{A} \eiff \metav{B}$ is true in an interpretation \textbf{iff} \\$\metav{A}$ has the same truth value as $\metav{B}$ in that interpretation
+		$\metav{A} \eiff \metav{B}$ is true in an interpretation \textbf{iff} \\$\metav{A}$ has the same truth value as $\metav{B}$ in that interpretation.
 	}
 This presents the very same information as the characteristic truth tables for the connectives; it just does so in a slightly different way. Some examples will probably help to illustrate the idea. (Make sure you understand them!) On our go-to interpretation:
 	\begin{earg}
@@ -272,7 +272,7 @@ Unfortunately, this na\"{i}ve thought is not general enough. For example, we wan
 
 So here is a second na\"{i}ve thought. We might try to say that `$\forall x \exists y\, \atom{L}{x,y}$' is to be true in an interpretation iff $\exists y\, \atom{L}{\metav{a},y}$ is true for \emph{every} name \metav{a} that we have included in our interpretation. Similarly, we might try to say that $\exists y\, \atom{L}{\metav{a},y}$ is true just in case $\atom{L}{\metav{a},\metav{b}}$ is true for \emph{some} name \metav{b} that we have included in our interpretation.
 
-Unfortunately, this is not right either. To see this, observe that our go-to interpretation only interprets \emph{two} names, `$a$' and `$b$'. But the domain---all people born before the year 2000\textsc{ce}---contains many more than two people. (And we have no intention of trying to correct for this by naming \emph{all} of them!)
+Unfortunately, this is not right either. To see this, observe that our go-to interpretation only interprets \emph{two} names, `$a$' and `$b$'. But the domain---all people born before the year 2000 \textsc{ce}---contains many more than two people. (And we have no intention of trying to correct for this by naming \emph{all} of them!)
 
 So here is a third thought. (And this thought is not na\"{i}ve, but correct.) Although it is not the case that we have named \emph{everyone}, each person \emph{could} have been given a name. So we should focus on this possibility of extending an interpretation by adding a new name. We will offer a few examples of how this might work, centring on our go-to interpretation, and we will then present the formal definition.
 
@@ -312,7 +312,7 @@ An object $d$ \define{satisfies} $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ 
 
 So, for instance, Socrates satisfies the formula~$\atom{P}{x}$ since $\atom{P}{c}$ is true in the interpretation $\mathbf{I}[\text{Socrates}/c]$, i.e., the interpretation:
 \begin{ekey}
-	\item[\text{domain}] all people born before 2000\textsc{ce}
+	\item[\text{domain}] all people born before 2000 \textsc{ce}
 	\item[a] Aristotle
 	\item[b] Beyonc\'e
 	\item[c] Socrates 
@@ -336,7 +336,7 @@ To be clear: all this is doing is formalizing (very pedantically) the intuitive 
 
 The concept of an object satisfying a formula with a free variable can also be extended to formulas with more than one free variable. If we have a formula $\metav{A}(\metav{x},\metav{y})$ with two free variables $\metav{x}$ and $\metav{y}$, then we can say that a pair of objects $\langle a, b\rangle$ satisfies $\metav{A}(\metav{x},\metav{y})$ iff $\metav{A}(\metav{c},\metav{d})$ is true in the interpretation extended by two names $\metav{c}$ and $\metav{d}$, where $\metav{c}$ names~$a$ and $\metav{d}$ names~$b$. So, for instance, $\langle \text{Socrates}, \text{Plato}\rangle$ satisfies $R(x,y)$ since $R(c,d)$ is true in the interpretation:
 \begin{ekey}
-	\item[\text{domain}] all people born before 2000\textsc{ce}
+	\item[\text{domain}] all people born before 2000 \textsc{ce}
 	\item[a] Aristotle
 	\item[b] Beyonc\'e
 	\item[c] Socrates
@@ -724,7 +724,7 @@ Let's have another example. The sentence `$\forall x(\atom{R}{x,x}\eor\enot \ato
 	\begin{quote}
 		Consider some arbitrary interpretation. $\forall x(\atom{R}{x,x}\eor \enot\atom{R}{x,x})$ is true in our interpretation iff $\atom{R}{x,x}\eor\enot\atom{R}{x,x}$ is satisfied by every object of its domain. Consider some arbitrary member of the domain, which, for convenience, we will call Fred. Either Fred satisfies $\atom{R}{x,x}$ or it does not. If Fred satisfies `$\atom{R}{x,x}$', then Fred also satisfies `$\atom{R}{x,x} \eor \enot \atom{R}{x,x}$'. If Fred does not satisfy `$\atom{R}{x,x}$', it \emph{does} satisfy `$\enot\atom{R}{x,x}$' and so also `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'.\footnote{We use here the fact that the truth conditions for connectives also apply to satisfaction: $a$ satisfies $\metav{A}(\metav{x}) \lor \metav{B}(\metav{x})$ iff $a$ satisfies $\metav{A}(\metav{x})$ or $\metav{B}(\metav{x})$, etc.} So either way, Fred satisfies `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'. Since there was nothing special about Fred---we might have chosen any object---we see that every object in the domain satisfies `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'. So `$\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$' is true in our interpretation. But we chose our interpretation arbitrarily, so `$\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$' is true in every interpretation. It is therefore a validity.
 	\end{quote}
-This is quite longwinded, but, as things stand, there is no alternative. In order to show that a sentence is a validity, we must reason about \emph{all} interpretations.
+This is quite long-winded, but, as things stand, there is no alternative. In order to show that a sentence is a validity, we must reason about \emph{all} interpretations.
 
 \section{Other cases}
 Similar points hold of other cases too. Thus, we must reason about all interpretations if we want to show:
