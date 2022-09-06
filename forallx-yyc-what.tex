@@ -7,7 +7,7 @@
 \chapter{Arguments}
 \label{s:Arguments}
 
-Logic is the business of evaluating arguments; sorting the good from the bad.
+Logic has \emph{many} uses, as mention in the~\hyperlink{chapter*.2}{Preface}. What we will be focussing on here, is its use in evaluating arguments; sorting the good from the bad.
 
 In everyday language, we sometimes use the word `argument' to talk about belligerent shouting matches.  If you and a friend have an argument in this sense, things are not going well between the two of you. Logic is not concerned with such teeth-gnashing and hair-pulling. They are not arguments, in our sense; they are just disagreements.
 
@@ -21,7 +21,7 @@ We have here a series of sentences. The three dots on the third line of the argu
 
 This is the sort of thing that logicians are interested in. We will say that an argument is any collection of premises, together with a conclusion.
 
-This Part discusses some basic logical notions that apply to arguments in a natural language like English. It is important to begin with a clear understanding of what arguments are and of what it means for an argument to be valid. Later we will translate arguments from English into a formal language. We want formal validity, as defined in the formal language, to have at least some of the important features of natural-language validity.
+This Part discusses some basic logical notions that apply to arguments in a natural language like English. It is important to begin with a clear understanding of what arguments are and of what it means for an argument to be valid. Later we will represent English-language arguments in a formal language. %We want formal validity, as defined in the formal language, to have at least some of the important features of natural-language validity.
 
 In the example just given, we used individual sentences to express both of the argument's premises, and we used a third sentence to express the argument's conclusion. Many arguments are expressed in this way, but a single sentence can contain a complete argument. Consider:
 	\begin{quote}
@@ -92,7 +92,7 @@ To be perfectly general, we can define an \define{argument} as a series of sente
 
 In logic, we are only interested in sentences that can figure as a premise or conclusion of an argument, i.e., sentences that can be true or false.  So we will restrict ourselves to sentences of this sort, and define a \define{sentence} as a sentence that can be true or false.
 
-You should not confuse the idea of a sentence that can be true or false with the difference between fact and opinion. Often, sentences in logic will express things that would count as facts--- such as `Kierkegaard was a hunchback' or `Kierkegaard liked almonds.' They can also express things that you might think of as matters of opinion---such as, `Almonds are tasty.' In other words, a sentence is not disqualified from being part of an argument because we don't know if it is true or false, or because its truth or falsity is a matter of opinion. If it is the kind of sentence that could be true or false it can play the role of premise or conclusion.
+You should not confuse the idea of a sentence that can be true or false with the difference between fact and opinion. Often, sentences in logic will express things that would count as facts--- such as `Rudolf Carnap was born in Ronsdorf' or `Simone de Beauvoir liked taking walks'. They can also express things that you might think of as matters of opinion---such as, `Rhubarb is tasty'. In other words, a sentence is not disqualified from being part of an argument because we don't know if it is true or false, or because its truth or falsity is a matter of opinion. If it is the kind of sentence that could be true or false it can play the role of premise or conclusion. 
 
 Also, there are things that would count as `sentences' in a linguistics or grammar course that we will not count as sentences in logic.
 
@@ -146,7 +146,7 @@ By way of contrast, consider the following argument:
 	\item[] The maid didn't do it.
 	\item[\therefore] The driver did it.
 \end{earg}
-We still have no idea what is being talked about here. But, again, you probably agree that this argument is different from the previous one in an important respect. If the premises are true, it is not guaranteed that the conclusion is also true. The premises of this argument do not rule out, by themselves, that someone other than the maid or the driver ``did it.'' So there is a case where both premises are true, and yet the driver didn't do it, i.e., the conclusion is not true. In this second argument, the conclusion does not follow from the premises. If, like in this argument, the conclusion does not follow from the premises, we say it is \define{invalid}.
+We still have no idea what is being talked about here. But, again, you probably agree that this argument is different from the previous one in an important respect. If the premises are true, it is \emph{not} guaranteed that the conclusion is also true. The premises of this argument do not rule out, by themselves, that someone other than the maid or the driver ``did it.'' So there is a case where both premises are true, and yet the driver didn't do it, i.e., the conclusion is not true. In this second argument, the conclusion does not follow from the premises. If, like in this argument, the conclusion does not follow from the premises, we say it is \define{invalid}.
 
 \section{Cases and types of validity}
 
@@ -288,7 +288,7 @@ Many good arguments are invalid. Consider this one:
 		\item[] Every winter so far, it has snowed in Calgary.
 	\item[\therefore] It will snow in Calgary this coming winter.
 \end{earg}
-This argument generalises from observations about many (past) cases to a conclusion about all (future) cases. Such arguments are called \define{inductive} arguments. Nevertheless, the argument is invalid. Even if it has snowed in Calgary every winter thus far, it remains \emph{possible} that Calgary will stay dry all through the coming winter. In fact, even if it will henceforth snow every January in Calgary, we could still \emph{imagine} a case in which this year is the first year it doesn't snow all winter. And that hypothetical scenario is a case where the premises of the argument are true but the conclusion is not, making the argument invalid.
+This argument generalises from observations about many (past) cases to a conclusion about all (future) cases. Such arguments are called \define{inductive} arguments. Nevertheless, the argument is invalid. Even if it has snowed in Calgary every winter thus far, it remains \emph{possible} that Calgary will stay dry all through the coming winter. In fact, even if it will henceforth snow every winter in Calgary, we could still \emph{imagine} a case in which this year is the first year it doesn't snow all winter. And that hypothetical scenario is a case where the premises of the argument are true but the conclusion is not, making the argument invalid.
 
 The point of all this is that inductive arguments---even good inductive arguments---are not (deductively) valid. They are not \emph{watertight}. Unlikely though it might be, it is \emph{possible} for their conclusion to be false, even when all of their premises are true. In this book, we will set aside (entirely) the question of what makes for a good inductive argument. Our interest is simply in sorting the (deductively) valid arguments from the invalid ones.  
 
