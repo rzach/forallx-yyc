@@ -445,7 +445,7 @@ Note that the biconditional, and the right or left half, can be separated from o
 \section{Disjunction}
 Suppose Ludwig is reactionary. Then Ludwig is either reactionary or libertarian. After all, to say that Ludwig is either reactionary or libertarian is to say something weaker than to say that Ludwig is reactionary.
 
-Let's emphasize this point. Suppose Ludwig is reactionary. It follows that Ludwig is \emph{either} reactionary \emph{or} a kumquat. Equally, it follows that \emph{either} Ludwig is reactionary \emph{or} that kumquats are the only fruit.  Equally, it follows that \emph{either} Ludwig is reactionary \emph{or} that God is dead. Many of these are strange inferences to draw, but there is nothing \emph{logically} wrong with them (even if they maybe violate all sorts of implicit conversational norms).
+Let's emphasize this point. Suppose Ludwig is reactionary. It follows that Ludwig is \emph{either} reactionary \emph{or} a kumquat. Equally, it follows that \emph{either} Ludwig is reactionary \emph{or} kumquats are the only fruit.  Equally, it follows that \emph{either} Ludwig is reactionary \emph{or}  God is dead. Many of these are strange inferences to draw, but there is nothing \emph{logically} wrong with them (even if they maybe violate all sorts of implicit conversational norms).
 
 Armed with all this, we present the disjunction introduction rule(s):
 \factoidbox{\begin{fitchproof}
@@ -464,7 +464,7 @@ Notice that \metav{B} can be \emph{any} sentence whatsoever, so the following is
 \end{fitchproof}
 Using a truth table to show this would have taken 128 lines.
 
-The disjunction elimination rule is, though, slightly trickier. Suppose that either Ludwig is reactionary or he is libertarian. What can you conclude? Not that Ludwig is reactionary; it might be that he is libertarian instead. Equally, not that Ludwig is libertarian; for he might merely be reactionary. Disjunctions, just by themselves, are hard to work with.
+The disjunction elimination rule is slightly trickier. Suppose that either Ludwig is reactionary or he is libertarian. What can you conclude? Not that Ludwig is reactionary; it might be that he is libertarian instead. Equally, not that Ludwig is libertarian; for he might merely be reactionary. Disjunctions, just by themselves, are hard to work with.
 
 But suppose that we could somehow show both of the following: first, that Ludwig's being reactionary entails that he is an Austrian economist: second, that Ludwig's being libertarian entails that he is an Austrian economist. Then if we know that Ludwig is either reactionary or libertarian, then we know that, whichever he is, Ludwig is an Austrian economist. This insight can be expressed in the following rule, which is our disjunction elimination ($\eor$E) rule:
 \factoidbox{
@@ -581,7 +581,7 @@ Using $\enot$I, we were able to give a proof of $\enot\enot\metav{D}$ from $\met
 		\have{con}{D}\ip{nd-ndr}
 	\end{fitchproof}
 
-We need one last rule. It is a kind of elimination rule for `$\ered$', and known as \emph{explosion}.\footnote{The latin name for this principle is \emph{ex contradictione quod libet}, ``from contradiction, anything.''} If we obtain a contradiction, symbolized by `$\ered$', then we can infer whatever we like. How can this be motivated, as a rule of argumentation? Well, consider the English rhetorical device `\ldots and if \emph{that's} true, I'll eat my hat'. Since contradictions simply cannot be true, if one \emph{is} true then not only will I eat my hat, I'll have it too. Here is the formal rule:
+We need one last rule. It is a kind of elimination rule for `$\ered$', and known as \emph{explosion}.\footnote{The Latin name for this principle is \emph{ex contradictione quodlibet}, ``from contradiction, anything.''} If we obtain a contradiction, symbolized by `$\ered$', then we can infer whatever we like. How can this be motivated, as a rule of argumentation? Well, consider the English rhetorical device `\ldots and if \emph{that's} true, I'll eat my hat'. Since contradictions simply cannot be true, if one \emph{is} true then not only will I eat my hat, I'll have it too. Here is the formal rule:
 \factoidbox{\begin{fitchproof}
 \have[m]{bot}{\ered}
 \have[ ]{}{\metav{A}}\re{bot}
