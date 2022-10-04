@@ -55,7 +55,7 @@ Armed with this interpretation of `$\atom{H}{x}$', suppose we now add to our sym
 	\end{ekey}
 Then `$\atom{H}{j}$' and `$\atom{H}{p}$' will both be true, on this interpretation, but `$\atom{H}{a}$' will be false, since Angela Merkel was not among the stipulated objects.
 
-This process of explicit stipulation is sometimes described as stipulating the \emph{extension} of a predicate. Note that, in the stipulation we just gave, the objects we listed have nothing particularly in common. This doesn't matter. Logic doesn't care about what we humans (at a particular moment) think `naturally go together'; to logic, all objects are on an equal footing.
+This process of explicit stipulation is sometimes described as stipulating the \emph{extension} of a predicate. Note that, in the stipulation we just gave, the objects we listed have nothing particularly in common. This doesn't matter. Logic doesn't care about what we humans (at a particular moment) think `naturally goes together'; to logic, all objects are on an equal footing.
 
 Any well-defined collection of objects is a potential extension of a one-place predicate.  The example above shows one way of stipulating the extension of `$\atom{H}{x}$' by \emph{enumeration}, i.e., we simply list the objects in the extension of~`$\atom{H}{x}$'. We can also stipulate the extension, as we have also already seen, by giving an English predicate, such as `\gap{x} teaches Logic~III at Calgary' or `\gap{x} is an even integer between $3$ and $9$'. The latter would specify an extension consisting of, and only of, $4$, $6$, and~$8$.
 
@@ -278,7 +278,7 @@ So here is a third thought. (And this thought is not na\"{i}ve, but correct.) Al
 
 In our go-to interpretation, `$\exists x\, \atom{R}{b,x}$' should be true. After all, in the domain, there is certainly someone who was born after Beyonc\'e. Lady Gaga is one of those people. Indeed, if we were to extend our go-to interpretation---temporarily, mind---by adding the name `$c$' to refer to Lady Gaga, then `$\atom{R}{b,c}$' would be true on this extended interpretation. This, surely, should suffice to make `$\exists x\, \atom{R}{b,x}$' true on the original go-to interpretation.
 
-In our go-to interpretation, `$\exists x (\atom{P}{x} \eand \atom{R}{x,a})$' should also be true. After all, in the domain, there is certainly someone who was both a philosopher and born before Aristotle. Socrates is one such person. Indeed, if we were to extend our go-to interpretation by letting a new name, `$c$', denote Socrates, then `$\atom{W}{c} \eand \atom{R}{c,a}$' would be true on this extended interpretation. Again, this should surely suffice to make `$\exists x (\atom{P}{x} \eand \atom{R}{x,a})$' true on the original go-to interpretation.
+In our go-to interpretation, `$\exists x (\atom{P}{x} \eand \atom{R}{x,a})$' should also be true. After all, in the domain, there is certainly someone who was both a philosopher and born before Aristotle. Socrates is one such person. Indeed, if we were to extend our go-to interpretation by letting a new name, `$c$', denote Socrates, then `$\atom{P}{c} \eand \atom{R}{c,a}$' would be true on this extended interpretation. Again, this should surely suffice to make `$\exists x (\atom{P}{x} \eand \atom{R}{x,a})$' true on the original go-to interpretation.
 
 In our go-to interpretation, `$\forall x \exists y\, \atom{R}{x,y}$' should be false. After all, consider the last person born in the year 1999. We don't know who that was, but if we were to extend our go-to interpretation by letting a new name, `$d$', denote that person, then we would not be able to find anyone else in the domain to denote with some further new name, perhaps `$e$', in such a way that `$\atom{R}{d,e}$' would be true. Indeed, no matter \emph{whom} we named with `$e$', `$\atom{R}{d,e}$' would be false. This observation is surely sufficient to make `$\exists y\, \atom{R}{d,y}$' \emph{false} in our extended interpretation, which in turn is surely sufficient to make `$\forall x \exists y\, \atom{R}{x,y}$' false on the original go-to interpretation.
 
@@ -353,7 +353,7 @@ the formula $\atom{R}{x,y}$. It expresses the relation `\gap{x} was
 born before \gap{y}', since that is how we have specified its
 extension. What happens if we switch the variables, i.e., consider
 `$\atom{R}{y,x}$'?  A pair of objects \ntuple{$\text{y}, \text{x}$} in
-the domain (i.e., people) satisfies $\atom{R}{y,x}$ if, and only if,
+the domain (i.e., a pair of people) satisfies $\atom{R}{y,x}$ if, and only if,
 the reverse pair \ntuple{$\text{x}, \text{y}$} satisfies
 $\atom{R}{x,y}$. In other words, $\atom{R}{y,x}$ expresses the
 relation `\gap{x} was born \emph{after} \gap{y}'. Or suppose we add to
@@ -628,14 +628,14 @@ and many more besides.
 \end{ebullet}}
 An interpretation which refutes a claim---to logical truth, say, or to entailment---is called a \emph{counter-interpretation}, or a \emph{counter-model}.
 
-We'll close this section, though, with a caution about the relationship between (in)validity and (non)entailment. Recall FOL's limitations: it is is an extensional language; it ignores issues of vagueness; and it cannot handle cases of validity for `special reasons'. To take one illustration of these issues, consider this natural-language argument: 
+We'll close this section, though, with a caution about the relationship between (in)validity and (non)entailment. Recall FOL's limitations: it is an extensional language; it ignores issues of vagueness; and it cannot handle cases of validity for `special reasons'. To take one illustration of these issues, consider this natural-language argument: 
 \begin{earg}
 	\item[] Every fox is cute.
 	\item[\therefore] All vixens are cute.
 \end{earg}
 This is valid: necessarily every vixen is a fox, so it is impossible for the premise to be true and the conclusion false. Now, we might sensibly symbolize the argument as follows:
 $$\forall x(\atom{F}{x} \eif \atom{C}{x}) \therefore \forall x(\atom{V}{x} \eif  \atom{C}{x})$$
-However, it is easy to find counter-models which show that $\forall x(\atom{F}{x} \eif \atom{C}{x}) \nentails \forall x(\atom{V}{x} \eif  \atom{C}{x})$. (\emph{Exercise}: find one.) So, it would be \emph{wrong} to infer that the English argument is \emph{invalid}, just because there is a counter-model to the relevant \emph{FOL-entailment}.
+However, it is easy to find counter-models which show that $\forall x(\atom{F}{x} \eif \atom{C}{x}) \nentails \forall x(\atom{V}{x} \eif  \atom{C}{x})$. (\emph{Exercise}: find one.) So, it would be \emph{wrong} to infer that the English argument is \emph{invalid}, just because there is a counter-model to the relevant \emph{FOL{}-entailment}.
 
 The general moral is this. If you want to infer from the absence of an entailment in FOL to the invalidity of some English argument, then you need to argue that nothing important is lost in the way you have symbolized the English argument.
 
