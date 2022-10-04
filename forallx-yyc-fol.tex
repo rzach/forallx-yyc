@@ -681,7 +681,7 @@ Now let's try to symbolize these sentences:
 \end{earg}
 Sentence \ref{dog2} can be paraphrased as, `There is a dog that Geraldo owns'. This can be symbolized by `$\exists x(\atom{D}{x} \eand \atom{O}{g,x})$'.
 
-Sentence \ref{dog3} can be paraphrased as, `There is some y such that y is a dog owner'. Dealing with part of this, we might write `$\exists y(y\text{ is a dog owner})$'. Now the fragment we have left as `$y$ is a dog owner' is much like sentence~\ref{dog2}, except that it is not specifically about Geraldo. So we can symbolize sentence~\ref{dog3} by:
+Sentence \ref{dog3} can be paraphrased as, `There is some $y$ such that $y$ is a dog owner'. Dealing with part of this, we might write `$\exists y(y\text{ is a dog owner})$'. Now the fragment we have left as `$y$ is a dog owner' is much like sentence~\ref{dog2}, except that it is not specifically about Geraldo. So we can symbolize sentence~\ref{dog3} by:
 $$\exists y \exists x(\atom{D}{x} \eand \atom{O}{y,x})$$
 We should pause to clarify something here. In working out how to symbolize the last sentence, we wrote down `$\exists y(y\text{ is a dog owner})$'. To be very clear: this is \emph{neither} an FOL sentence \emph{nor} an English sentence: it uses bits of FOL (`$\exists$', `$y$') and bits of English (`dog owner'). It is really is \emph{just a stepping-stone} on the way to symbolizing the entire English sentence with a FOL sentence. You should regard it as a bit of rough-working-out, on a par with the doodles that you might absent-mindedly draw in the margin of this book, whilst you are concentrating fiercely on some problem.  
 
@@ -1114,7 +1114,7 @@ Finally, consider these sentence:
 \end{earg}
 It might be tempting to add a predicate to our symbolization key, to symbolize the English predicate `\blank\ is a thing' or `\blank\ is an object', but this is unnecessary. Words like `thing' and `object' do not sort wheat from chaff: they apply trivially to everything, which is to say, they apply trivially to every thing. So we can symbolize either sentence with either of the following:
 	\begin{align*}
-		\exists x \exists y \enot x = y & \eand  \enot \exists x \exists y \exists z ((\enot x = y \eand \enot y = z) \eand \enot x = z) \\
+		\exists x \exists y\,\enot x = y & \eand  \enot \exists x \exists y \exists z ((\enot x = y \eand \enot y = z) \eand \enot x = z) \\
 		\exists x \exists y \bigl[\enot x = y & \eand \forall z(x=z \eor y = z)\bigr]
 	\end{align*}
 
@@ -1189,7 +1189,7 @@ We start by defining the notion of a term.
 	\factoidbox{
 		A \define{term} is any name or any variable. }
 So, here are some terms:
-	$$a, b, x, x_1 x_2, y, y_{254}, z$$
+	$$a, b, x, x_1, x_2, y, y_{254}, z$$
 Next we need to define atomic formulas.
 	\factoidbox{
 		\begin{enumerate}
@@ -1219,7 +1219,7 @@ The use of script letters here follows the conventions laid down in \S\ref{s:Use
 		& a = b && \atom{G}{a,a,a}\\
 		& \atom{F}{x} && \atom{S}{x_1, x_2, a, b, y, x_1}\\
 	\end{align*}
-Once we know what atomic formulas are, we can offer recursion clauses to define arbitrary formulas. The first few clauses are exactly the same as for TFL.
+Once we know what atomic formulas are, we can offer recursion clauses to define arbitrary formulas. The first few clauses are exactly analogous to those in the definition of `sentence of TFL'.
 	\factoidbox{
 	\begin{enumerate}
 		\item Every atomic formula is a formula.
@@ -1428,7 +1428,7 @@ Using the following symbolization key:
 		\item[\atom{K}{x}] \gap{x} is a present king of France
 		\item[\atom{D}{x,y}] \gap{x} is dating \gap{y}
 	\end{ekey}
-	(Note that the symbolization key speaks of \emph{a} present King of France, not \emph{the} present King of France; i.e., it employs indefinite, rather than definite, description.) Sentence \ref{kingdate} would be symbolized by `$\exists x \bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif  x = y)) \eand \atom{D}{a,x}\bigr]$'. Now, this can be false in (at least) two ways, corresponding to these two different sentences:
+	(Note that the symbolization key speaks of \emph{a} present King of France, not \emph{the} present King of France; i.e., it employs an indefinite, rather than a definite, description.) Sentence \ref{kingdate} would be symbolized by `$\exists x \bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif  x = y)) \eand \atom{D}{a,x}\bigr]$'. Now, this can be false in (at least) two ways, corresponding to these two different sentences:
 	\begin{earg}
 		\item[\ex{outernegation}] There is no one who is both the present King of France and such that he and Alex are dating.
 		\item[\ex{innernegation}] There is a unique present King of France, but Alex is not dating him.
