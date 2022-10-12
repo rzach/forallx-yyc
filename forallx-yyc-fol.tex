@@ -685,7 +685,7 @@ Sentence \ref{dog3} can be paraphrased as, `There is some $y$ such that $y$ is a
 $$\exists y \exists x(\atom{D}{x} \eand \atom{O}{y,x})$$
 We should pause to clarify something here. In working out how to symbolize the last sentence, we wrote down `$\exists y(y\text{ is a dog owner})$'. To be very clear: this is \emph{neither} an FOL sentence \emph{nor} an English sentence: it uses bits of FOL (`$\exists$', `$y$') and bits of English (`dog owner'). It is really is \emph{just a stepping-stone} on the way to symbolizing the entire English sentence with a FOL sentence. You should regard it as a bit of rough-working-out, on a par with the doodles that you might absent-mindedly draw in the margin of this book, whilst you are concentrating fiercely on some problem.  
 
-Sentence \ref{dog4} can be paraphrased as, `Every x who is a friend of Geraldo is a dog owner'. Using our stepping-stone tactic, we might write 
+Sentence \ref{dog4} can be paraphrased as, `Every $x$ who is a friend of Geraldo is a dog owner'. Using our stepping-stone tactic, we might write 
 $$\forall x \bigl[\atom{F}{x,g} \eif x \text{ is a dog owner}\bigr]$$
 Now the fragment that we have left to deal with, `$x$ is a dog owner', is structurally just like sentence~\ref{dog2}. However, it would be a mistake for us simply to write 
 $$\forall x \bigl[\atom{F}{x,g} \eif \exists x(\atom{D}{x} \eand \atom{O}{x,x})\bigr]$$
@@ -721,11 +721,11 @@ And a bit more:
 And we are done!
 
 There is one subtle issue we should briefly address. We paraphrased
-sentence~\ref{dog3} as `There is some y such that y is a dog owner'.
+sentence~\ref{dog3} as `There is some $y$ such that $y$ is a dog owner'.
 Now our domain includes people and dogs, and `someone' includes
 people, but (at least arguably) does not include dogs.  To be more
 correct, we should have paraphrased sentence~\ref{dog3} as `There is
-some y such that y is a person and a dog owner'. A more accurate
+some $y$ such that $y$ is a person and a dog owner'. A more accurate
 symbolization of `Someone is a dog owner' would require that we add a
 predicate for `\blank{} is a person' to our symbolization key:
 \begin{ekey}
