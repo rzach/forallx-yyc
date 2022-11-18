@@ -23,13 +23,20 @@ One aim of a \emph{natural deduction system} is to show that particular argument
 With truth tables, we directly consider different ways to make sentences true or false. With natural deduction systems, we manipulate sentences in accordance with rules that we have set down as good rules. The latter promises to give us a better insight---or at least, a different insight---into how arguments work.
 
 The move to natural deduction might be motivated by more than the search for insight. It might also be motivated by \emph{necessity}. Consider:
-$$A_1 \eif C_1 \therefore (A_1 \eand A_2 \eand A_3 \eand A_4 \eand A_5) \eif (C_1 \eor C_2 \eor C_3 \eor C_4 \eor C_5)$$
-To test this argument for validity, you might use a 1024-line truth table. If you do it correctly, then you will see that there is no line on which all the premises are true and on which the conclusion is false. So you will know that the argument is valid. (But, as just mentioned, there is a sense in which you will not know \emph{why} the argument is valid.) But now consider:
 \begin{align*}
-A_1 \eif C_1 \therefore\ & (A_1 \eand A_2 \eand A_3 \eand A_4 \eand A_5 \eand A_6 \eand A_7 \eand A_8 \eand A_9 \eand A_{10}) \eif \phantom{(}\\
-&(C_1 \eor C_2 \eor C_3 \eor C_4 \eor C_5 \eor C_6 \eor C_7 \eor C_8 \eor C_9 \eor C_{10})
+	& A_1 \eif C_1 \\
+	\therefore\, & (A_1 \eand (A_2 \eand (A_3 \eand (A_4 \eand A_5)))) \eif {}\\ 
+	& \qquad ((((C_1 \eor C_2) \eor C_3) \eor C_4) \eor C_5)
 \end{align*}
-This argument is also valid---as you can probably tell---but to test it requires a truth table with $2^{20} = 1048576$ lines. In principle, we can set a machine to grind through truth tables and report back when it is finished. In practice, complicated arguments in TFL can become \emph{intractable} if we use truth tables.
+To test this argument for validity, you might use a 1{,}024-line truth table. If you do it correctly, then you will see that there is no line on which all the premises are true and on which the conclusion is false. So you will know that the argument is valid. (But, as just mentioned, there is a sense in which you will not know \emph{why} the argument is valid.) But now consider:
+\begin{align*}
+& A_1 \eif C_1 \\
+\therefore\, & \small (A_1 \eand (A_2 \eand (A_3 \eand (A_4 \eand (A_5 \eand {}\\
+&\qquad (A_6 \eand (A_7 \eand (A_8 \eand (A_9 \eand A_{10}))))))))) \eif {}\\
+&(((((((((C_1 \eor C_2) \eor C_3) \eor C_4) \eor C_5) \eor {}\\
+& \qquad C_6) \eor C_7) \eor C_8) \eor C_9) \eor C_{10})
+\end{align*}
+This argument is also valid---as you can probably tell---but to test it requires a truth table with $2^{20} = 1{,}048{,}576$ lines. In principle, we can set a machine to grind through truth tables and report back when it is finished. In practice, complicated arguments in TFL can become \emph{intractable} if we use truth tables.
 
 When we get to first-order logic (FOL) (beginning in chapter \ref{s:FOLBuildingBlocks}), though, the problem gets dramatically worse. There is nothing like the truth table test for FOL. To assess whether or not an argument is valid, we have to reason about \emph{all} interpretations, but, as we will see, there are infinitely many possible interpretations. We cannot even in principle set a machine to grind through infinitely many possible interpretations and report back when it is finished: it will \emph{never} finish. We either need to come up with some more efficient way of reasoning about all interpretations, or we need to look for something different.
 
@@ -90,10 +97,11 @@ If you already have shown something in the course of a proof, the \emph{reiterat
 This indicates that we have written `$A \eand B$' on line~$4$. Now, at some later line---line~$10$, for example---we have decided that we want to repeat this. So we write it down again. We also add a citation which justifies what we have written. In this case, we write `R', to indicate that we are using the reiteration rule, and we write `$4$', to indicate that we have applied it to line $4$.
 
 Here is a general expression of the rule:
+\factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
 	\have[\ ]{c}{\metav{A}} \by{R}{a}
-\end{fitchproof}
+\end{fitchproof}}
 The point is that, if any sentence $\metav{A}$ occurs on some line, then we can repeat $\metav{A}$ on later lines. Each line of our proof must be justified by some rule, and here we have `R $m$'. This means: Reiteration, applied to line~$m$.
 
 Two things need emphasizing. First `$\metav{A}$' is not a sentence of TFL. Rather, it a symbol in the metalanguage, which we use when we want to talk about any sentence of TFL (see \S\ref{s:UseMention}). Second, and similarly, `$m$' is not a symbol that will appear on a proof. Rather, it is a symbol in the metalanguage, which we use when we want to talk about any line number of a proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth. But when we define the rule, we use variables like `$m$' to underscore the point that the rule may be applied at any point.
@@ -125,7 +133,7 @@ with the citation reversed, to reflect the order of the conjuncts. More generall
 	\have[n]{b}{\metav{B}}
 	\have[\ ]{c}{\metav{A}\eand\metav{B}} \ai{a, b}
 \end{fitchproof}}
-To be clear, the statement of the rule is \emph{schematic}. It is not itself a proof.  `$\metav{A}$' and `$\metav{B}$' are not sentences of TFL. Rather, they are symbols in the metalanguage, which we use when we want to talk about any sentence of TFL (see \S\ref{s:UseMention}). Similarly, `$m$' and `$n$' are not a numerals that will appear on any actual proof. Rather, they are symbols in the metalanguage, which we use when we want to talk about any line number of any proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth, but when we define the rule, we use variables to emphasize that the rule may be applied at any point. The rule requires only that we have both conjuncts available to us somewhere in the proof. They can be separated from one another, and they can appear in any order.
+To be clear, the statement of the rule is \emph{schematic}. It is not itself a proof.  `$\metav{A}$' and `$\metav{B}$' are not sentences of TFL. Rather, they are symbols in the metalanguage, which we use when we want to talk about any sentence of TFL (see \S\ref{s:UseMention}). Similarly, `$m$' and `$n$' are not numerals that will appear in any actual proof. Rather, they are symbols in the metalanguage, which we use when we want to talk about any line number of any proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth, but when we define the rule, we use variables to emphasize that the rule may be applied at any point. The rule requires only that we have both conjuncts available to us somewhere earlier in the proof. They can be separated from one another, and they can appear in any order.
 
 The rule is called `conjunction \emph{introduction}' because it introduces the symbol `$\eand$' into our proof where it may have been absent. Correspondingly, we have a rule that \emph{eliminates} that symbol.  Suppose you have shown that Ludwig is both reactionary and libertarian. You are entitled to conclude that Ludwig is reactionary. Equally, you are entitled to conclude that Ludwig is libertarian. Putting this together, we obtain our conjunction elimination rule(s):
 \factoidbox{
@@ -383,7 +391,7 @@ Here we are trying to cite a subproof that begins on line~$2$ and ends on line~$
 \begin{enumerate} 
 \item the cited subproof must come entirely before the application of the rule where it is cited, 
 \item the cited subproof must not lie within some other closed subproof which is closed at the line it is cited, and 
-\item its last line of the cited subproof must not occur inside a nested subproof.
+\item the last line of the cited subproof must not occur inside a nested subproof.
 \end{enumerate}}
 
 One last point to emphasize how rules can be applied: where a rule requires you to cite an individual line, you cannot cite a subproof instead; and where it requires you to cite a subproof, you cannot cite an individual line instead. So for instance, this is incorrect:
@@ -466,7 +474,7 @@ Using a truth table to show this would have taken 128 lines.
 
 The disjunction elimination rule is slightly trickier. Suppose that either Ludwig is reactionary or he is libertarian. What can you conclude? Not that Ludwig is reactionary; it might be that he is libertarian instead. Equally, not that Ludwig is libertarian; for he might merely be reactionary. Disjunctions, just by themselves, are hard to work with.
 
-But suppose that we could somehow show both of the following: first, that Ludwig's being reactionary entails that he is an Austrian economist: second, that Ludwig's being libertarian entails that he is an Austrian economist. Then if we know that Ludwig is either reactionary or libertarian, then we know that, whichever he is, Ludwig is an Austrian economist. This insight can be expressed in the following rule, which is our disjunction elimination ($\eor$E) rule:
+But suppose that we could somehow show both of the following: first, that Ludwig's being reactionary entails that he is an Austrian economist; second, that Ludwig's being libertarian entails that he is an Austrian economist. Then if we know that Ludwig is either reactionary or libertarian, then we know that, whichever he is, Ludwig is an Austrian economist. This insight can be expressed in the following rule, which is our disjunction elimination ($\eor$E) rule:
 \factoidbox{
 	\begin{fitchproof}
 		\have[m]{ab}{\metav{A}\eor\metav{B}}
@@ -707,7 +715,12 @@ If we want to prove $\metav{A} \eand \metav{B}$, working backward means we shoul
 	\have[m]{m}{\metav{B}}
     \have{4}{\metav{A} \eand \metav{B}}\ai{n,m}
   \end{fitchproof}
-For $\eand$I, we need to prove $\metav{A}$ first, then prove $\metav{B}$. For the last line, we have to cite the lines where we (will have) proved $\metav{A}$ and  $\metav{B}$, and use~$\eand$I. The parts of the proof labelled $\vdots$ have to still be filled in. We'll mark the line numbers $m$, $n$ for now. When the proof is complete, these placeholders can be replaced by actual numbers.
+For $\eand$I, we need to prove $\metav{A}$ first, then prove
+$\metav{B}$. For the last line, we have to cite the lines where we
+(will have) proved $\metav{A}$ and  $\metav{B}$, and use~$\eand$I. The
+parts of the proof labelled by the vertical $\cdots$ have to still be filled in.
+We'll mark the line numbers $m$, $n$ for now. When the proof is
+complete, these placeholders can be replaced by actual numbers.
 
 \subsection*{Working backward from a conditional}
 
@@ -747,7 +760,10 @@ So to work backward, you pick a disjunct, infer $\metav{A} \eor \metav{B}$ from 
 	\have[n]{2}{\metav{A}} 
 	\have{3}{\metav{A} \eor \metav{B}}\oi{2}
 \end{fitchproof}
-However, you may not be able to prove the disjunct you picked. In that case you have to backtrack. When you can't fill in the $\vdots$, delete everything, and try with the other disjunct:
+However, you may not be able to prove the disjunct you picked. In that
+case you have to backtrack. When you can't fill in the part labelled
+by the vertical $\cdots$,
+delete everything, and try with the other disjunct:
 \begin{fitchproof}
 	\ellipsesline 
 	\have[n]{2}{\metav{B}} 
@@ -829,7 +845,7 @@ We now have two options: either work backward from the conclusion, or work forwa
 	\ellipsesline
 	\have[m]{11}{A \eand (B \eor C)}
 	\close
-	\have{12}{A \eand (B \eor C)}\oe{1,2-6,7-11}
+	\have{12}{A \eand (B \eor C)}\oe{1,2-6,(7)-11}
 \end{fitchproof}
 You now have two separate tasks, namely to fill in each of the two subproofs. In the first subproof, we now work backward from the conclusion $A \eand (B \eor C)$. That is a conjunction, so inside the first subproof, you will have two separate subgoals: proving $A$, and proving $B \eor C$. These subgoals will let you justify line~$n$ using~$\eand$I. Your proof now looks like this:
 \begin{fitchproof}
@@ -870,7 +886,7 @@ Like line~$3$, we get line $4$ from $2$ by $\eand$E. Line~$5$ is justified by $\
 
 That's it for the first subproof. The second subproof is almost exactly the same. We'll leave it as an exercise.
 
-Remember that when we started, we had the option of working forward from the premise, or working backward from the conclusion, and we picked the first option. The second option also leads to a proof, but it will look different.  The first steps would be to work backward from the conclusion and set up two subgoals, $A$ and $B \eor C$, and then work forward from the premise to prove them, e.g.,:
+Remember that when we started, we had the option of working forward from the premise, or working backward from the conclusion, and we picked the first option. The second option also leads to a proof, but it will look different.  The first steps would be to work backward from the conclusion and set up two subgoals, $A$ and $B \eor C$, and then work forward from the premise to prove them, e.g.,
 \begin{fitchproof}
 	\hypo{1}{(A \eand B) \eor (A \eand C)}
 	\open
@@ -899,7 +915,7 @@ Remember that when we started, we had the option of working forward from the pre
 \end{fitchproof}
 We'll leave you to fill in the missing pieces indicated by~$\vdots$.
 
-Let's give another example to illustrate how to apply the strategies to deal with conditionals and negation. The sentence $(A \eif B) \eif (\enot B \eif \enot A)$ is a tautology. Let's see if we can find a proof of it, from no premises, using the strategies. We first write the sentence at the bottom of a sheet of paper. Since working forward is not an option (there is nothing to work forward from), we work backward, and set up a subproof to establish the sentence we want $(A \eif B) \eif (\enot B \eif \enot A)$ using $\eif$I. Its assumption must be the antecedent of the conditional we want to prove, i.e., $A \eif B$, and its last line the consequent $\enot B \eif \enot A$.
+Let's give another example to illustrate how to apply the strategies to deal with conditionals and negation. The sentence $(A \eif B) \eif (\enot B \eif \enot A)$ is a tautology. Let's see if we can find a proof of it, from no premises, using the strategies. We first write the sentence at the bottom of a sheet of paper. Since working forward is not an option (there is nothing to work forward from), we work backward, and set up a subproof to establish the sentence we want, $(A \eif B) \eif (\enot B \eif \enot A)$, using $\eif$I. Its assumption must be the antecedent of the conditional we want to prove, i.e., $A \eif B$, and its last line the consequent, $\enot B \eif \enot A$.
 \begin{fitchproof}
 \open
 \hypo{1}{A \eif B}
@@ -937,7 +953,17 @@ From $\enot A$ we again work backward. To do this, look at the $\enot$I rule. It
 	\close
 	\have{8}{(A \eif B) \eif (\enot B \eif \enot A)}\ci{1-7}
 \end{fitchproof}
-Now our goal is to prove~$\ered$. We said above, when discussing how to work forward from a negated sentence, that the $\enot$E rule allows you to prove~$\ered$, which is our goal in the innermost subproof. So we look for a negated sentence which we can work forward from: that would be $\enot B$ on line~$2$. That means we have to derive $B$ inside the subproof, since $\enot$E requires not just $\enot B$ (which we have already), but also~$B$. And $B$, in turn, we get by working forward from $A \eif B$, since $\eif$E will allow us to justify the consequent of that conditional~$B$ by $\eif$E. The rule $\eif$E also requires the antecedent~$A$ of the conditional, but that is also already available (on line~$3$). So we finish with:
+Now our goal is to prove~$\ered$. We said above, when discussing how
+to work forward from a negated sentence, that the $\enot$E rule allows
+you to prove~$\ered$, which is our goal in the innermost subproof. So
+we look for a negated sentence which we can work forward from: that
+would be $\enot B$ on line~$2$. That means we have to derive $B$
+inside the subproof, since $\enot$E requires not just $\enot B$ (which
+we have already), but also~$B$. And $B$, in turn, we get by working
+forward from $A \eif B$, since $\eif$E will allow us to justify the
+consequent of that conditional, $B$, by $\eif$E. The rule $\eif$E also
+requires the antecedent~$A$ of the conditional, but that is also
+already available (on line~$3$). So we finish with:
 \begin{fitchproof}
 	\open
 	\hypo{1}{A \eif B}
@@ -1157,7 +1183,7 @@ As usual, the disjunction and the negation of one disjunct may occur in either o
 \section{Modus tollens}
 Another useful pattern of inference is embodied in the following argument:
 	\begin{quote}
-		If Hilary has won the election, then he is in the White House. She is not in the White House. So she has not won the election.
+		If Hilary has won the election, then she is in the White House. She is not in the White House. So she has not won the election.
 	\end{quote}
 This inference pattern is called \emph{modus tollens}. The corresponding rule is:
 \factoidbox{\begin{fitchproof}
@@ -1531,9 +1557,11 @@ Suppose you want to prove something using the LEM rule, i.e., you have in your p
   \have[l]{bbb}{\metav{B}}
   \close
 \end{fitchproof}
-You now want, on line $l+1$, to prove $\metav{B}$. The rule LEM from \S\ref{s:Further} would allow you to do it. But can do this with the \emph{basic} rules of \S\ref{s:BasicTFL}?
+You now want, on line $l+1$, to prove $\metav{B}$. The rule LEM from
+\S\ref{s:Further} would allow you to do it. But can you do this with
+the \emph{basic} rules of \S\ref{s:BasicTFL}?
 
-One option is to first prove $\metav{A} \eor \enot\metav{A}$, and then apply $\eor$E, i.e.\ proof by cases:
+One option is to first prove $\metav{A} \eor \enot\metav{A}$, and then apply $\eor$E, i.e., proof by cases:
 \begin{fitchproof}
   \open
   \hypo[m]{a}{\metav{A}}
@@ -1585,14 +1613,14 @@ Here is a demonstration of how we could derive the first De Morgan rule:
 				\have{ab}{\metav{A} \eand \metav{B}}\ai{a,b}
 				\have{nab1}{\ered}\ne{nab, ab}
 			\close
-			\have{nb}{\enot \metav{B}}\ni{b-nab1}
+			\have{nb}{\enot \metav{B}}\ni{(b)-(nab1)}
 			\have{dis}{\enot\metav{A} \eor \enot \metav{B}}\oi{nb}
 		\close
 		\open
 			\hypo{na1}{\enot \metav{A}}
 			\have{dis1}{\enot\metav{A} \eor \enot \metav{B}}\oi{na1}
 		\close
-		\have{con}{\enot \metav{A} \eor \enot \metav{B}}\tnd{a-dis, na1-dis1}
+		\have{con}{\enot \metav{A} \eor \enot \metav{B}}\tnd{a-(dis), (na1)-(dis1)}
 	\end{fitchproof}
 Here is a demonstration of how we could derive the second De Morgan rule:
  	\begin{fitchproof}
@@ -1609,9 +1637,9 @@ Here is a demonstration of how we could derive the second De Morgan rule:
 				\hypo{nb}{\enot \metav{B}}
 				\have{c2}{\ered}\ne{nb, b}
 			\close
-			\have{con2}{\ered}\oe{nab, na-c1, nb-c2}
+			\have{con2}{\ered}\oe{nab, (na)-(c1), (nb)-(c2)}
 		\close
-		\have{nab}{\enot (\metav{A} \eand \metav{B})}\ni{ab-con2}
+		\have{nab}{\enot (\metav{A} \eand \metav{B})}\ni{ab-(con2)}
 	\end{fitchproof}
 Similar demonstrations can be offered explaining how we could derive the third and fourth De Morgan rules. These are left as exercises.
 
@@ -1755,13 +1783,32 @@ Even though we don't have an inductive definition of a proof in TFL, we can sket
 
 You can use truth tables to prove to yourself that each of these one-line proofs in this base class is valid$_{\entails}$. For instance the proof $\metav{A}, \metav{B} \proves \metav{A} \eand \metav{B}$ corresponds to a truth table that shows $\metav{A}, \metav{B} \entails  \metav{A} \eand \metav{B}$ This establishes the first part of our inductive proof.
 
-The next step is to show that adding lines to any proof will never change a valid$_{\entails}$ proof into an invalid$_{\entails}$ one. We would need to do this for each of our eleven basic rules of inference. So, for instance, for \eand{I} we need to show that for any proof $\metav{A}_{1}$, \dots, $\metav{A}_{n} \proves  \metav {B}$ adding a line where we use \eand{I} to infer $\metav{C} \eand \metav{D}$, where $\metav{C} \eand \metav{D}$ can be legitimately inferred from $\metav{A}_{1}$, \dots, $\metav{A}_{n}$,~$\metav{B}$, would not change a valid proof into an invalid proof. But wait, if we can legitimately derive $\metav{C} \eand \metav{D}$ from these premises, then $\metav{C}$ and $\metav{D}$ must be already available in the proof. They are either already among $\metav{A}_{1}$, \dots, $\metav{A}_{n}$,~$\metav {B}$, or can be legitimately derived from them. As such, any truth table line in which the premises are true must be a truth table line in which \metav{C} and \metav{D} are true. According to the characteristic truth table for \eand, this means that $\metav{C} \eand \metav{D}$ is also true on that line. Therefore, $\metav{C} \eand \metav{D}$ validly follows from the premises. This means that using the {\eand}E rule to extend a valid proof produces another valid proof.
+The next step is to show that adding lines to any proof will never
+change a valid$_{\entails}$ proof into an invalid$_{\entails}$ one. We
+would need to do this for each of our eleven basic rules of inference.
+So, for instance, for \eand{I} we need to show that for any proof that
+shows that $\metav{A}_{1}$, \dots, $\metav{A}_{n} \proves  \metav {B}$,
+adding a line where we use \eand{I} to infer $\metav{C} \eand
+\metav{D}$, where $\metav{C} \eand \metav{D}$ can be legitimately
+inferred from $\metav{A}_{1}$, \dots, $\metav{A}_{n}$,~$\metav{B}$,
+would result in a valid proof. But wait, if we
+can legitimately derive $\metav{C} \eand \metav{D}$ at the end of the
+given proof, then $\metav{C}$ and $\metav{D}$ must be already available
+in the proof. They are either already among $\metav{A}_{1}$, \dots,
+$\metav{A}_{n}$,~$\metav {B}$, or can be legitimately derived from
+them. As such, any truth table line in which the premises are true
+must be a truth table line in which \metav{C} and \metav{D} are true.
+According to the characteristic truth table for \eand, this means that
+$\metav{C} \eand \metav{D}$ is also true on that line. Therefore,
+$\metav{C} \eand \metav{D}$ validly follows from the premises. This
+means that using the {\eand}I rule to extend a valid proof produces
+another valid proof.
 
 In order to show that the proof system is sound, we would need to show
 this for the other inference rules. Since the derived rules are
 consequences of the basic rules, it would suffice to provide similar
 arguments for the 11 other basic rules. You can find the details of
-this proof worked out in Chapter~\ref{ch:Soundness}.
+this proof worked out in chapter~\ref{ch:Soundness}.
 
 So we have shown that $\metav{A} \proves \metav{B}$ implies $\metav{A} \entails \metav{B}.$ What about the other direction, that is, why think that \emph{every} argument that can be shown valid using truth tables can also be proven using a derivation? 
 
@@ -1814,10 +1861,10 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 
 \noindent\problempart Use either a derivation or a truth table for each of the following.
 \begin{enumerate}%[label=(\arabic*)]
-\item Show that $A \eif (B \eif A)$ is a theoremy.
+\item Show that $A \eif (B \eif A)$ is a theorem.
 \item Show that $\enot (((N \eiff Q) \eor Q) \eor N)$ is not a theorem.
 \item Show that $ Z \eor (\enot Z \eiff Z) $ is contingent.
-\item show that $ (L \eiff ((N \eif N) \eif L)) \eor H $ is not contingent.
+\item Show that $ (L \eiff ((N \eif N) \eif L)) \eor H $ is not contingent.
 \item Show that $ (A \eiff A) \eand (B \eand \enot B)$ is a contradiction.
 \item Show that $ (B \eiff (C \eor B)) $ is not a contradiction.
 \item Show that $ ((\enot X \eiff X) \eor X) $ is equivalent to $X$.

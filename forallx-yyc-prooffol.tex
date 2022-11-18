@@ -48,12 +48,12 @@ Here, we have replaced the name `$d$' with a variable `$x$', and then existentia
 	\hypo{a}{\atom{R}{a,a,d}}
 	\have{c}{\exists x\, \atom{R}{x,x,d}} \Ei{a}
 \end{fitchproof}
-Here we have replaced both instances of the name `$a$' with a variable, and then existentially generalised. But we do not need to replace \emph{both} instances of a name with a variable: if Narcissus loves himself, then there is someone who loves Narcissus. So we also allow:
+Here we have replaced both instances of the name `$a$' with a variable, and then existentially generalized. But we do not need to replace \emph{both} instances of a name with a variable: if Narcissus loves himself, then there is someone who loves Narcissus. So we also allow:
 \begin{fitchproof}
 	\hypo{a}{\atom{R}{a,a,d}}
 	\have{d}{\exists x\, \atom{R}{x,a,d}} \Ei{a}
 \end{fitchproof}
-Here we have replaced \emph{one} instance of the name `$a$' with a variable, and then existentially generalised. These observations motivate our introduction rule, although to explain it, we will need to introduce some new notation.
+Here we have replaced \emph{one} instance of the name `$a$' with a variable, and then existentially generalized. These observations motivate our introduction rule, although to explain it, we will need to introduce some new notation.
 
 Where $\metav{A}$ is a sentence containing the name $\metav{c}$, we can emphasize this by writing `$\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$'. We will write `$\metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)$' to indicate any formula obtained by replacing \emph{some or all} of the instances of the name \metav{c} with the variable \metav{x}. Armed with this, our introduction rule is:
 \factoidbox{
@@ -61,20 +61,22 @@ Where $\metav{A}$ is a sentence containing the name $\metav{c}$, we can emphasiz
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
 	\have[\ ]{c}{\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)} \Ei{a}
 \end{fitchproof}
-\metav{x} must not occur in $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$}
-The constraint is included to guarantee that any application of the rule yields a  sentence of FOL. Thus the following is allowed:
-\begin{fitchproof}
-	\hypo{a}{\atom{R}{a,a,d}}
-	\have{d}{\exists x\, \atom{R}{x,a,d}} \Ei{a}
-	\have{e}{\exists y \exists x\, \atom{R}{x,y,d}} \Ei{d}
-\end{fitchproof}
-But this is banned:
-\begin{fitchproof}
-	\hypo{a}{\atom{R}{a,a,d}}
-	\have{d}{\exists x\, \atom{R}{x,a,d}} \Ei{a}
-	\have{e}{\exists x\, \exists x\, \atom{R}{x,x,d}}\by{naughty attempt to invoke $\exists$I}{d}
-\end{fitchproof}
-since the expression on line~3 contains clashing variables, and so is not a sentence of FOL.
+%\metav{x} must not occur in $\metav{A}(\ldots \metav{c} \ldots
+%\metav{c}\ldots)$
+}
+% The constraint is included to guarantee that any application of the rule yields a  sentence of FOL. Thus the following is allowed:
+% \begin{fitchproof}
+% 	\hypo{a}{\atom{R}{a,a,d}}
+% 	\have{d}{\exists x\, \atom{R}{x,a,d}} \Ei{a}
+% 	\have{e}{\exists y \exists x\, \atom{R}{x,y,d}} \Ei{d}
+% \end{fitchproof}
+% But this is banned:
+% \begin{fitchproof}
+% 	\hypo{a}{\atom{R}{a,a,d}}
+% 	\have{d}{\exists x\, \atom{R}{x,a,d}} \Ei{a}
+% 	\have{e}{\exists x\, \exists x\, \atom{R}{x,x,d}}\by{naughty attempt to invoke $\exists$I}{d}
+% \end{fitchproof}
+% since the expression on line~3 contains clashing variables, and so is not a sentence of FOL.
 
 \section{Empty domains}
 The following proof combines our two new rules for quantifiers:
@@ -124,9 +126,12 @@ The crucial thought here is that `$a$' was just some \emph{arbitrary} name. Ther
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
 	\have[\ ]{c}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)} \Ai{a}
 \end{fitchproof}
-	\metav{c} must not occur in any undischarged assumption\\ 
-	\metav{x} must not occur in $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$}
-A crucial aspect of this rule, though, is bound up in the first constraint. This constraint ensures that we are always reasoning at a sufficiently general level.
+	\metav{c} must not occur in any undischarged assumption%\\ 
+	%\metav{x} must not occur in $\metav{A}(\ldots \metav{c} \ldots
+	%\metav{c}\ldots)$
+	}
+A crucial aspect of this rule, though, is bound up in the %first 
+constraint. This constraint ensures that we are always reasoning at a sufficiently general level.
 %\footnote{Recall from \S\ref{s:BasicTFL} that we are treating `$\ered$' as a canonical contradiction. But if it were the canonical contradiction as involving some \emph{constant}, it might interfere with the constraint mentioned here. To avoid such problems, we will treat `$\ered$' as a canonical contradiction \emph{that involves no particular names}.} 
 To see the constraint in action, consider this terrible argument:
 	\begin{quote}
@@ -153,7 +158,7 @@ Although the name may not occur in any \emph{undischarged} assumption, it may oc
 \end{fitchproof}
 This tells us that `$\forall z (\atom{G}{z} \eif \atom{G}{z})$' is a \emph{theorem}. And that is as it should be.
 
-We should emphasize one last point. As per the conventions of \S\ref{s:MainLogicalOperatorQuantifier}, the use of $\forall$I requires that we are replacing \emph{every} instance of the name \metav{c} in $\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ with the variable \metav{x}. If we only replace \emph{some} names and not others, we end up `proving' silly things. For example, consider the argument:
+We should emphasize one last point. As per the conventions of \S\ref{s:MainLogicalOperatorQuantifier}, the use of $\forall$I requires that we are replacing \emph{every} instance of the name \metav{c} in $\metav{A}(\ldots \metav{c}\ldots\metav{c}\ldots)$ with the variable \metav{x}. If we only replace \emph{some} names and not others, we end up `proving' silly things. For example, consider the argument:
 	\begin{quote}
 	Everyone is as old as themselves; so everyone is as old as Judi Dench.
 	\end{quote}
@@ -218,7 +223,7 @@ Now, suppose we tried to offer a proof that vindicates this argument:
 	\have{econ1}{\atom{L}{b} \eand \enot \atom{L}{b}}\by{naughty attempt}{}
 	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con}
 \end{fitchproof}
-The last line of the proof is not allowed. The name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$' on line~$3$, namely `$b$', occurs in line~$4$. The this would be no better:
+The last line of the proof is not allowed. The name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$' on line~$3$, namely `$b$', occurs in line~$4$. This would be no better:
 \begin{fitchproof}
 	\hypo{f}{\atom{L}{b}}
 	\hypo{nf}{\exists x\, \enot \atom{L}{x}}	
@@ -326,7 +331,8 @@ Aristotle and his successors identified other syllogistic forms which depended u
 
 \problempart
 \label{pr.someFOLproofs}
-Provide a proof of each claim.
+For each of the following claims, provide an FOL proof that shows it
+is true.
 \begin{earg}
 \item $\proves \forall x\,\atom{F}{x} \eif \forall y(\atom{F}{y} \eand \atom{F}{y})$
 \item $\forall x(\atom{A}{x}\eif \atom{B}{x}), \exists x\,\atom{A}{x} \proves \exists x\,\atom{B}{x}$
@@ -387,7 +393,16 @@ For each of the following arguments: If it is valid in FOL, give a proof. If it 
 
 \chapter{Proofs with quantifiers}
 
-In \S\ref{s:stratTFL} we discussed strategies for constructing proofs using the basic rules of natural deduction for TFL. The same principles apply to the rules for the quantifiers. If we want to prove a quantifier sentence $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ or $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$. We can work backward by justifying the sentence we want by $\forall$I or $\exists$I and trying to find a proof of the corresponding premise of that rule. And to work forward from a quantified sentence, we apply $\forall$E or $\exists$E, as the case may be.
+In \S\ref{s:stratTFL} we discussed strategies for constructing proofs
+using the basic rules of natural deduction for TFL. The same
+principles apply to the rules for the quantifiers. If we want to prove
+a quantifier sentence $\forall \metav{x}\,
+\atom{\metav{A}}{\metav{x}}$ or $\exists \metav{x}\,
+\atom{\metav{A}}{\metav{x}}$, we can work backward by justifying the
+sentence we want by $\forall$I or $\exists$I and trying to find a
+proof of the corresponding premise of that rule. And to work forward
+from a quantified sentence, we apply $\forall$E or $\exists$E, as the
+case may be.
 
 Specifically, suppose you want to prove $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$. To do so using $\forall$I, we would need a proof of $\atom{\metav{A}}{\metav{c}}$ for some name~$\metav{c}$ which does not occur in any undischarged assumption. To apply the corresponding strategy, i.e., to construct a proof of $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ by working backward, is thus to write $\atom{\metav{A}}{\metav{c}}$ above it and then to continue to try to find a proof of that sentence.
 \begin{fitchproof}
@@ -405,7 +420,7 @@ To work backward from a sentence $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}
 \end{fitchproof}
 This looks just like what we would do if we were working backward from a universally quantified sentence. The difference is that whereas for $\forall$I we have to pick a name~$\metav{c}$ which does not occur in the proof (so far), for $\exists$I we may and in general must pick a name~$\metav{c}$ which already occurs in the proof.  Just like in the case of $\eor$I, it is often not clear which $\metav{c}$ will work out, and so to avoid having to backtrack you should work backward from existentially quantified sentences only when all other strategies have been applied.
 
-By contrast, working \emph{forward} from sentences $\exists \metav{x}\, \atom{\metav{A}(\metav{x}})$ generally always works and you won't have to backtrack. Working forward from an existentially quantified sentence takes into account not just $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ but also whatever sentence $\metav{B}$ you would like to prove. It requires that you set up a subproof above $\metav{B}$, wherein $\metav{B}$ is the last line, and a substitution instance $\atom{\metav{A}}{\metav{c}}$ of $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ as the assumption.  In order to ensure that the condition on $\metav{c}$ that governs $\exists$E is satisfied, chose a name $\metav{c}$ which does not already occur in the proof.
+By contrast, working \emph{forward} from sentences $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ generally always works and you won't have to backtrack. Working forward from an existentially quantified sentence takes into account not just $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ but also whatever sentence $\metav{B}$ you would like to prove. It requires that you set up a subproof above $\metav{B}$, wherein $\metav{B}$ is the last line, and a substitution instance $\atom{\metav{A}}{\metav{c}}$ of $\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}$ as the assumption.  In order to ensure that the condition on $\metav{c}$ that governs $\exists$E is satisfied, chose a name $\metav{c}$ which does not already occur in the proof.
 \begin{fitchproof}
 	\ellipsesline
 	\have[m]{m}{\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}}
@@ -609,7 +624,7 @@ However, every object is identical to itself. No premises, then, are required in
 \begin{fitchproof}
 	\have[\ \,\,\,]{x}{\metav{c}=\metav{c}} \by{=I}{}
 \end{fitchproof}}
-Notice that this rule does not require referring to any prior lines of the proof. For any name \metav{c}, you can write $\metav{c}=\metav{c}$ on any point, with only the {=}I rule as justification.
+Notice that this rule does not require referring to any prior lines of the proof. For any name \metav{c}, you can write $\metav{c}=\metav{c}$ on any line, with only the {=}I rule as justification.
 
 Our elimination rule is more fun. If you have established `$a=b$', then anything that is true of the object named by `$a$' must also be true of the object named by `$b$'. For any sentence with `$a$' in it, you can replace some or all of the occurrences of `$a$' with `$b$' and produce an equivalent sentence. For example, from `$\atom{R}{a,a}$' and `$a = b$', you are justified in inferring `$\atom{R}{a,b}$', `$\atom{R}{b,a}$' or `$\atom{R}{b,b}$'. More generally:
 \factoidbox{\begin{fitchproof}
@@ -656,7 +671,8 @@ We obtain line 4 by replacing `$b$' in line 3 with `$a$'; this is justified give
 \practiceproblems
 \problempart
 \label{pr.identity}
-Provide a proof of each claim.
+For each of the following claims, provide an FOL proof that shows it
+is true.
 \begin{earg}
 \item $\atom{P}{a} \eor \atom{Q}{b}, \atom{Q}{b} \eif b=c, \enot\atom{P}{a} \proves \atom{Q}{c}$
 \item $m=n \eor n=o, \atom{A}{n} \proves \atom{A}{m} \eor \atom{A}{o}$

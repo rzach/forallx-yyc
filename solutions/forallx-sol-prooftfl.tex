@@ -781,7 +781,7 @@ Show that each of the following pairs of sentences are provably equivalent: %TB:
 
 \problempart
 If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}\eand\metav{C})\proves\metav{B}$? What about $(\metav{A}\eor\metav{C})\proves\metav{B}$? Explain your answers.
-\\\myanswer{If $\metav{A} \proves \metav{B}$, then $(\metav{A} \eand \metav{C})\proves \metav{B}$. After all, if $\metav{A} \proves \metav{B}$, then there is some proof with assumption $\metav{A}$ that ends with $\metav{B}$, and no undischarged assumptions other than $\metav{A}$. Now, if we start a proof with assumption $(\metav{A} \eand \metav{C})$, we can obtain $\metav{A}$ by $\eand$E. We can now copy and paste the original proof of $\metav{B}$ from $\metav{A}$, adding 1 to every line number and line number citation. The result will be a proof of $\metav{B}$ from assumption $\metav{A}$.}
+\\\myanswer{If $\metav{A} \proves \metav{B}$, then $(\metav{A} \eand \metav{C})\proves \metav{B}$. After all, if $\metav{A} \proves \metav{B}$, then there is some proof with assumption $\metav{A}$ that ends with $\metav{B}$, and no undischarged assumptions other than $\metav{A}$. Now, if we start a proof with assumption $(\metav{A} \eand \metav{C})$, we can obtain $\metav{A}$ by $\eand$E. We can now copy and paste the original proof of $\metav{B}$ from $\metav{A}$, adding 1 to every line number and line number citation. The result will be a proof of $\metav{B}$ from assumption $\metav{A} \eand\metav{C}$.}
 
 \myanswer{However, we cannot prove much from $(\metav{A} \eor \metav{C})$. After all, it might be impossible to prove $\metav{B}$ from $\metav{C}$.}
 

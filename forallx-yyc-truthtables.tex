@@ -358,7 +358,7 @@ Offer complete truth tables for each of the following:
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
 \end{earg}
 \problempart
-Check all the claims made in introducing the new notational conventions in \S\ref{s:MoreBracketingConventions}, i.e.\ show that:
+Check all the claims made in \S\ref{s:MoreBracketingConventions}, i.e., show that:
 \begin{earg}
 	\item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
 	\item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
@@ -649,15 +649,37 @@ The only row on which both`$\enot L \eif (J \eor L)$' and `$\enot L$' are true i
 
 We now make an important observation:
 	\factoidbox{
-		If $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ entail $\metav{C}$, in TFL then $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ is valid.
+	If $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ entail
+	$\metav{C}$ in TFL, then $\metav{A}_1, \metav{A}_2, \ldots,
+	\metav{A}_n \therefore \metav{C}$ is valid.
 	}
-Here's why. If $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ entail $\metav{C}$, then there is no valuation which makes all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and also makes $\metav{C}$ false. Any case in which all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ are true and $\metav{C}$ is false would generate a valuation with this property: take the truth value of any sentence letter to be just the truth value the corresponding sentence in that case. Since there is no such valuation, there is no case in which all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ are true and $\metav{C}$ is false.  But this is just what it takes for an argument, with premises $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ and conclusion $\metav{C}$, to be valid!
+Here's why. Suppose $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$
+entail $\metav{C}$ in TFL. Can it happen that the argument
+$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$
+is invalid? Then there would be a \emph{case} which makes all of
+$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and $\metav{C}$
+false, relative to some symbolization key. This case would generate a
+valuation of the sentence letters occurring in $\metav{A}_1,
+\metav{A}_2, \ldots, \metav{A}_n$, and $\metav{C}$: take the truth
+value of any sentence letter to be just the truth value of the
+corresponding sentence in the case in question. This valuation would
+also make $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and
+$\metav{C}$ false, since truth values are determined from the truth
+values of sentence letters by the truth tables of the connectives, and
+the truth values of the sentence letters are the same in the valuation
+as they are in the (imagined) case. But this is impossible, since
+we've assumed that $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$
+entail $\metav{C}$ in TFL, and so there is no valuation which makes
+all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and also
+makes $\metav{C}$ false. So it can't happen that the argument
+$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$
+is invalid; consequently, it must be valid.
 
 In short, we have a way to test for the validity of English arguments. First, we symbolize them in TFL; then we test for entailment in TFL using truth tables.
 
 
 \section{The limits of these tests}\label{s:ParadoxesOfMaterialConditional}
-This is an important milestone: a test for the validity of arguments! However, we should not get carried away just yet. It is important to understand the \emph{limits} of our achievement. We will illustrate these limits with three examples.
+This is an important milestone: a test for the validity of arguments! However, we should not get carried away just yet. It is important to understand the \emph{limits} of our achievement. We will illustrate these limits with four examples.
 
 First, consider the argument: 
 	\begin{earg}
@@ -681,12 +703,12 @@ Symbolizing this in TFL, we would offer something like `$\enot (G \eif M)$'. Now
 
 One lesson of this is that the symbolization of \ref{n:GodParadox} as `$\enot(G \eif M)$' shows that \ref{n:GodParadox} does not express what we intend. Perhaps we should rephrase it as
 	\begin{earg}
-	\setcounter{eargnum}{2}	
+	\setcounter{eargnum}{3}	
 	\item\label{n:GodParadox2} If God exists, She does not answer malevolent prayers.
 	\end{earg}
-and symbolize \ref{n:GodParadox2} as `$G \eif \enot M$'.  Now, if atheists are right, and there is no God, then `$G$' is false and so `$G \eif \enot M$' is true, and the puzzle disappears. However, if `$G$' is false, `$G \eif M$', i.e.\ `If God exists, She answers malevolent prayers', is \emph{also} true!
+and symbolize \ref{n:GodParadox2} as `$G \eif \enot M$'.  Now, if atheists are right, and there is no God, then `$G$' is false and so `$G \eif \enot M$' is true, and the puzzle disappears. However, if `$G$' is false, `$G \eif M$', i.e., `If God exists, She answers malevolent prayers', is \emph{also} true!
                 
-In different ways, these four examples highlight some of the limits of working with a language (like TFL) that can \emph{only} handle truth-functional connectives. Moreover, these limits give rise to some interesting questions in philosophical logic. The case of Jan's baldness (or otherwise) raises the general question of what logic we should use when dealing with \emph{vague} discourse. The case of the atheist raises the question of how to deal with the (so-called) \emph{paradoxes of the material conditional}. Part of the purpose of this course is to equip you with the tools to explore these questions of \emph{philosophical logic}. But we have to walk before we can run; we have to become proficient in using TFL, before we can adequately discuss its limits, and consider alternatives.
+In different ways, these four examples highlight some of the limits of working with a language (like TFL) that can \emph{only} handle truth-functional connectives. Moreover, these limits give rise to some interesting questions in philosophical logic. The case of Jan's baldness (or otherwise) raises the general question of what logic we should use when dealing with \emph{vague} discourse. The case of the atheist raises the question of how to deal with the (so-called) \emph{paradoxes of the material conditional}. Part of the purpose of this book is to equip you with the tools to explore these questions of \emph{philosophical logic}. But we have to walk before we can run; we have to become proficient in using TFL, before we can adequately discuss its limits, and consider alternatives.
 
 \section{The double turnstile}
 In what follow, we will use the notion of entailment rather a lot in this book. It will help us, then, to introduce a symbol that abbreviates it. Rather than saying that the TFL sentences $\metav{A}_1$, $\metav{A}_2$, \dots{} and $\metav{A}_n$ together entail $\metav{C}$, we will abbreviate this by:
@@ -713,7 +735,13 @@ Sometimes, we will want to deny that there is a tautological entailment, and say
 \end{center}
 In that case, we can just slash the turnstile through, and write: 
 $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \nentails\metav{C}$$
-This means that \emph{some} valuation makes all of $\metav{A}_1, \ldots, \metav{A}_n$ true whilst making $\metav{C}$ false. (But note that it does \emph{not} immediately follow that $\metav{A}_1,\ldots, \metav{A}_n \entails \enot \metav{C}$, for that would mean that \emph{every} valuation makes all of $\metav{A}_1, \ldots, \metav{A}_n$ true whilst making $\metav{C}$ false.) 
+This means that \emph{some} valuation makes all of $\metav{A}_1,
+\ldots, \metav{A}_n$ true whilst making $\metav{C}$ false. Note that
+it does \emph{not} follow that $\metav{A}_1,\ldots, \metav{A}_n
+\entails \enot \metav{C}$, for it is possible that some \emph{other}
+valuation makes all of $\metav{A}_1, \ldots, \metav{A}_n$ true and
+makes $\metav{C}$ \emph{true}. For instance, $P \nentails Q$ but also
+$P \nentails \enot Q$.
 
 \section{`$\entails$' versus `$\eif$'}
 We now want to compare and contrast `$\entails$' and `$\eif$'.
@@ -939,7 +967,7 @@ $P$&$Q$&$(P$&\eor&$Q)$&\eiff&\enot&$P$\\
  F & F &  & F &  & \TTbf{F} & T
 \end{tabular}
 \end{center}
-You also know for sure that a disjunction is true whenever one of the disjuncts is true. So if you find a true disjunct, there is no need to work out the truth values of the other disjuncts. Thus you might offer:
+You also know for sure that a disjunction is true whenever one of the disjuncts is true. So if you find a true disjunct, there is no need to work out the truth value of the other disjunct. Thus you might offer:
 \begin{center}
 \begin{tabular}{c c|d e e e e e e f}
 $P$&$Q$& $(\enot$ & $P$&\eor&\enot&$Q)$&\eor&\enot&$P$\\
@@ -1145,8 +1173,10 @@ To show that two sentences are equivalent, we must show that the sentences have 
 
 To show that two sentences are \emph{not} equivalent, we only need to show that there is a valuation on which they have different truth values. So this requires only a one-line partial truth table: make the table so that one sentence is true and the other false.
 
-\paragraph{Consistency.}
-To show that some sentences are jointly satisfiable, we must show that there is a valuation which makes all of the sentences true ,so this requires only a partial truth table with a single line.
+\paragraph{Joint satisfiability.}
+To show that some sentences are jointly satisfiable, we must show that
+there is a valuation which makes all of the sentences true, so this
+requires only a partial truth table with a single line.
 
 To show that some sentences are jointly unsatisfiable, we must show that there is no valuation which makes all of the sentence true. So this requires a complete truth table: You must show that on every row of the table at least one of the sentences is false.
 
@@ -1155,7 +1185,7 @@ To show that an argument is valid, we must show that there is no valuation which
 
 To show that argument is \emph{invalid}, we must show that there is a valuation which makes all of the premises true and the conclusion false. So this requires only a one-line partial truth table on which all of the premises are true and the conclusion is false. (Likewise for a failure of entailment.)
 
-This table summarizeswhat is required:
+This table summarizes what is required:
 
 \begin{center}
 \begin{tabular}{l l l}
@@ -1216,7 +1246,7 @@ Use complete or partial truth tables (as appropriate) to determine whether each 
 
 \problempart
 \label{pr.TT.TTorC3}
-Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table where appropriate.
+Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table as appropriate.
 
 % truth tables in LaTeX generated by http://www.curtisbright.com/logic/. Be sure to give him a shout out.
 
@@ -1409,7 +1439,7 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 
 \noindent\problempart
 \label{pr.TT.TTorC4}
-Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table where appropriate.
+Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table as appropriate.
 \begin{earg}
 \item  $\enot (A \eor A)$\vspace{.5ex}							%	Contradiction		1 letter, 2 connectives
 \item $(A \eif B) \eor (B \eif A)$\vspace{.5ex}					%	Tautology			2 letters, 2 connectives
@@ -1426,7 +1456,7 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 
 
 \noindent\problempart
-Determine whether each the following pairs of sentences are logically equivalent using complete truth tables. If the two sentences really are logically equivalent, write ``equivalent.'' Otherwise write, ``not equivalent.''
+Determine whether each the following pairs of sentences are logically equivalent using complete truth tables. Justify your answer with a complete or partial truth table as appropriate.
 \begin{earg}
 \item $A$ and $A \eor A$
 \item $A$ and $A \eand A$
@@ -1442,7 +1472,7 @@ Determine whether each the following pairs of sentences are logically equivalent
 
 \noindent\problempart
 \label{pr.TT.satisfiable5}
-Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable. Justify your answer with a complete or partial truth table where appropriate.
+Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable. Justify your answer with a complete or partial truth table as appropriate.
 \begin{earg}
 \item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ %satisfiable
 \item $A \eif \enot A$, $\enot A \eif A$%unsatisfiable.
@@ -1456,7 +1486,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 \item $\enot (A \eand \enot B)$,  $B \eif \enot A$, $\enot B$   %Consistent
 \end{earg}
 
-\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table where appropriate.
+\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
 \label{pr.TT.valid5} 
 \begin{earg}
 \item $A\eif(A\eand\enot A)\therefore \enot A$% valid
@@ -1472,7 +1502,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 
 \end{earg}
 
-\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table where appropriate.
+\noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
 \label{pr.TT.valid6} 
 \begin{earg}
 \item $A\eiff\enot(B\eiff A)\therefore A$ % invalid

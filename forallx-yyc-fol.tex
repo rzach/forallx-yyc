@@ -40,7 +40,7 @@ That is the general idea, but FOL is significantly more subtle than TFL, so we w
 \section{Names}
 In English, a \emph{singular term} is a word or phrase that refers to a \emph{specific} person, place, or thing. The word `dog' is not a singular term, because there are a great many dogs. The phrase `Bertie' is a singular term, because it refers to a specific terrier. Likewise, the phrase `Philip's dog Bertie' is a singular term, because it refers to a specific little terrier.
 
-\emph{Proper names} are a particularly important kind of singular term. These are expressions that pick out individuals without describing them. The name `Emerson' is a proper name, and the name alone does not tell you anything about Emerson. Of course, some names are traditionally given to boys and other are traditionally given to girls. If `Hilary' is used as a singular term, you might guess that it refers to a woman. You might, though, be guessing wrongly. Indeed, the name does not necessarily mean that the person referred to is even a person: Hilary might be a giraffe, for all you could tell just from the name.
+\emph{Proper names} are a particularly important kind of singular term. These are expressions that pick out individuals without describing them. The name `Emerson' is a proper name, and the name alone does not tell you anything about Emerson. Of course, some names are traditionally given to boys and others are traditionally given to girls. If `Hilary' is used as a singular term, you might guess that it refers to a woman. You might, though, be guessing wrongly. Indeed, the name does not necessarily mean that the person referred to is even a person: Hilary might be a giraffe, for all you could tell just from the name.
 
 In FOL, our \define{names} are lower-case letters `$a$' through to `$r$'. We can add subscripts if we want to use some letter more than once. So here are some singular terms in FOL:
 	$$a,b,c,\ldots, r, a_1, f_{32}, j_{390}, m_{12}$$
@@ -72,7 +72,7 @@ In general, you can think about predicates as things which combine with singular
 		Vinnie borrowed \blank\ from Nunzio\\
 		Vinnie borrowed the family car from \blank
 	\end{quote}
-In FOL, \define{predicates} are capital letters $A$ through $Z$, with or without subscripts. We might write a symbolization key for predicates thus:
+In FOL, \define{predicates} are capital letters `$A$' through `$Z$', with or without subscripts. We might write a symbolization key for predicates thus:
 	\begin{ekey}
 		\item[\atom{A}{x}] \gap{x} is angry
 		\item[\atom{H}{x}] \gap{x} is happy
@@ -387,9 +387,17 @@ To symbolize these sentences, we will have to add a new name to the symbolizatio
 	\begin{ekey}
 		\item[l] Lars
 	\end{ekey}
-Sentence \ref{qscope1} is a conditional, whose antecedent is `everyone is a bassist', so we will symbolize it with `$\forall x\, \atom{B}{x} \eif \atom{B}{l}$'. This sentence is \emph{necessarily} true: if \emph{everyone} is indeed a bassist, then take any one you like---for example Lars---and he will be a bassist.
+Sentence \ref{qscope1} is a conditional, whose antecedent is `everyone is a bassist', so we will symbolize it with `$\forall x\, \atom{B}{x} \eif \atom{B}{l}$'. This sentence is \emph{necessarily} true: if \emph{everyone} is indeed a bassist, then take anyone you like---for example Lars---and he will be a bassist.
 
-Sentence \ref{qscope2}, by contrast, might best be paraphrased by `every person $x$ is such that, if $x$ is a bassist, then Lars is a bassist'. This is symbolized by `$\forall x (\atom{B}{x} \eif \atom{B}{l})$'. This sentence is false; Kim Deal is a bassist. So `$\atom{B}{k}$' is true. Suppose that Lars is not a bassist (say, he's a drummer instead), so `$\atom{B}{l}$' is false. Accordingly, `$\atom{B}{k} \eif \atom{B}{l}$' will be false, so `$\forall x (\atom{B}{x} \eif \atom{B}{l})$' will be false as well.
+Sentence \ref{qscope2}, by contrast, might best be paraphrased by
+`every person $x$ is such that, if $x$ is a bassist, then Lars is a
+bassist'. This is symbolized by `$\forall x (\atom{B}{x} \eif
+\atom{B}{l})$'. This sentence can well be false. For instance,
+Kim Deal is a bassist. So
+`$\atom{B}{k}$' is true. Suppose that Lars is not a bassist (say, he's
+a drummer instead), so `$\atom{B}{l}$' is false. Accordingly,
+`$\atom{B}{k} \eif \atom{B}{l}$' will be false, so `$\forall x
+(\atom{B}{x} \eif \atom{B}{l})$' will be false as well.
 
 In short, `$\forall x \atom{B}{x} \eif \atom{B}{l}$' and `$\forall x (\atom{B}{x} \eif \atom{B}{l})$' are very different sentences. We can explain the difference in terms of the \emph{scope} of the quantifier. The scope of quantification is very much like the scope of negation, which we considered when discussing TFL, and it will help to explain it in this way.
 
@@ -476,7 +484,7 @@ Here are the syllogistic figures identified by Aristotle and his successors, alo
 	\item \textbf{Dimaris.} Some F is G. All G are H. So: Some H is F.
 	\item \textbf{Fresison.} No F are G. Some G is H. So: Some H is not~F.
 \end{earg}
-Symbolize each argument in FOL.
+Symbolize each figure in FOL.
 
 \
 
@@ -583,7 +591,7 @@ Indeed, there is no in principle upper limit on the number of places that our pr
 
 \section{Mind the gap(s)!}
 
-We have used the same symbol, `\blank', to indicate a gap formed by deleting a term from a sentence. However, as Frege emphasized, these are \emph{different} gaps. To obtain a sentence, we can fill them in with the same term, but we can equally fill them in with different terms, and in various different orders. The following are three perfectly perfectly good sentences, obtained by filling in the gaps in `\blank\ loves \blank{}' in different ways; but they all have distinctively different meanings:
+We have used the same symbol, `\blank', to indicate a gap formed by deleting a term from a sentence. However, as Frege emphasized, these are \emph{different} gaps. To obtain a sentence, we can fill them in with the same term, but we can equally fill them in with different terms, and in various different orders. The following are three perfectly good sentences, obtained by filling in the gaps in `\blank\ loves \blank{}' in different ways; but they all have distinctively different meanings:
 \begin{earg}
 	\item[\ex{terms3}] Karl loves Imre.
 	\item[\ex{terms3b}] Imre loves Karl.
@@ -602,7 +610,7 @@ The point is that we need to keep track of the gaps in predicates, so that we ca
 	\item[\ex{terms5}] Karl loves Imre, but not vice versa.
 	\item[\ex{terms6}] Karl is loved by Imre.
 \end{earg}
-Sentence \ref{terms4} can be paraphrased as `Imre loves Imre', and so symbolized by `$\atom{L}{i,i}$'. Sentence \ref{terms5} is a conjunction. We can paraphrase it as `Karl loves Imre, and Imre does not love Karl', and so symbolize it as `$\atom{L}{k,i} \eand \enot \atom{L}{i,k}$'. Sentence \ref{terms6} can be paraphrased by `Imre loves Karl', and so symbolized as `$\atom{L}{i,k}$'. In this last case, of course, we have lots the difference in \emph{tone} between the active and passive voice; but we have at least preserved the truth conditions.
+Sentence \ref{terms4} can be paraphrased as `Imre loves Imre', and so symbolized by `$\atom{L}{i,i}$'. Sentence \ref{terms5} is a conjunction. We can paraphrase it as `Karl loves Imre, and Imre does not love Karl', and so symbolize it as `$\atom{L}{k,i} \eand \enot \atom{L}{i,k}$'. Sentence \ref{terms6} can be paraphrased by `Imre loves Karl', and so symbolized as `$\atom{L}{i,k}$'. In this last case, of course, we have lost the difference in \emph{tone} between the active and passive voice; but we have at least preserved the truth conditions.
 
 But the relationship between `Imre loves Karl' and `Karl is loved by Imre' highlights something important. To see what, suppose we add another entry to our symbolization key:
 \begin{ekey}
@@ -683,7 +691,16 @@ Sentence \ref{dog2} can be paraphrased as, `There is a dog that Geraldo owns'. T
 
 Sentence \ref{dog3} can be paraphrased as, `There is some $y$ such that $y$ is a dog owner'. Dealing with part of this, we might write `$\exists y(y\text{ is a dog owner})$'. Now the fragment we have left as `$y$ is a dog owner' is much like sentence~\ref{dog2}, except that it is not specifically about Geraldo. So we can symbolize sentence~\ref{dog3} by:
 $$\exists y \exists x(\atom{D}{x} \eand \atom{O}{y,x})$$
-We should pause to clarify something here. In working out how to symbolize the last sentence, we wrote down `$\exists y(y\text{ is a dog owner})$'. To be very clear: this is \emph{neither} an FOL sentence \emph{nor} an English sentence: it uses bits of FOL (`$\exists$', `$y$') and bits of English (`dog owner'). It is really is \emph{just a stepping-stone} on the way to symbolizing the entire English sentence with a FOL sentence. You should regard it as a bit of rough-working-out, on a par with the doodles that you might absent-mindedly draw in the margin of this book, whilst you are concentrating fiercely on some problem.  
+We should pause to clarify something here. In working out how to
+symbolize the last sentence, we wrote down `$\exists y(y\text{ is a
+dog owner})$'. To be very clear: this is \emph{neither} an FOL
+sentence \emph{nor} an English sentence: it uses bits of FOL
+(`$\exists$', `$y$') and bits of English (`dog owner'). It is really
+\emph{just a stepping-stone} on the way to symbolizing the entire
+English sentence with a sentence of FOL. You should regard it as a bit of
+rough-working-out, on a par with the doodles that you might
+absent-mindedly draw in the margin of this book, whilst you are
+concentrating fiercely on some problem.  
 
 Sentence \ref{dog4} can be paraphrased as, `Every $x$ who is a friend of Geraldo is a dog owner'. Using our stepping-stone tactic, we might write 
 $$\forall x \bigl[\atom{F}{x,g} \eif x \text{ is a dog owner}\bigr]$$
@@ -711,12 +728,12 @@ x\text{ owns a dog which is owned by a friend of }x\bigr]
 Breaking this down a bit more:
 \begin{multline*}
 	\forall x\bigl[\exists y(\atom{F}{x,y} \eand y\text{ is a dog owner})\eif {}\\
-\exists y(\atom{D}{y} \eand \atom{O}{x,y} \eand y\text{ is owned by a friend of }x)\bigr]
+\exists y((\atom{D}{y} \eand \atom{O}{x,y}) \eand y\text{ is owned by a friend of }x)\bigr]
 \end{multline*}
 And a bit more: 
 \begin{multline*}
 \forall x\bigl[\exists y(\atom{F}{x,y} \eand \exists z(\atom{D}{z} \eand \atom{O}{y,z})) \eif {}\\
-\exists y(\atom{D}{y} \eand \atom{O}{x,y} \eand \exists z(\atom{F}{z,x} \eand \atom{O}{z,y}))\bigr]
+\exists y((\atom{D}{y} \eand \atom{O}{x,y}) \eand \exists z(\atom{F}{z,x} \eand \atom{O}{z,y}))\bigr]
 \end{multline*}
 And we are done!
 
@@ -993,7 +1010,7 @@ Let the domain be people; this will allow us to symbolize `everyone' with a univ
 		\item[\atom{O}{x,y}] \gap{x} owes money to \gap{y}
 		\item[p] Pavel
 	\end{ekey}
-we can symbolize sentence \ref{else1} by `$\forall x\, \atom{O}{p,x}$'. But this has a (perhaps) odd consequence. It requires that Pavel owes money to every member of the domain (whatever the domain may be). The domain certainly includes Pavel. So this entails that Pavel owes money to himself. And maybe we did not want to say that. Maybe we meant to leave it open if Pavel owes money to himself, something we could have expressed more precisely by using either on of the following:
+we can symbolize sentence \ref{else1} by `$\forall x\, \atom{O}{p,x}$'. But this has a (perhaps) odd consequence. It requires that Pavel owes money to every member of the domain (whatever the domain may be). The domain certainly includes Pavel. So this entails that Pavel owes money to himself. And maybe we did not want to say that. Maybe we meant to leave it open if Pavel owes money to himself, something we could have expressed more precisely by using either one of the following:
 	\begin{earg}
 		\item[\ex{else1b}] Pavel owes money to everyone \emph{else}.
 		\item[\ex{else1c}] Pavel owes money to everyone \emph{other than} Pavel.
@@ -1088,7 +1105,7 @@ $$\forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{
 
 
 \section{There are exactly\ldots}\label{sec:exactlyn}
-We can now consider precise  of numerical quantity, like:
+We can now consider statements of exact numerical quantity, like:
 \begin{earg}
 \item[\ex{exactly1}] There is exactly one apple.
 \item[\ex{exactly2}] There are exactly two apples.
@@ -1107,7 +1124,7 @@ Similarly, sentence \ref{exactly2} may be paraphrased as, `There are \emph{at le
 \end{multline*}
 More efficiently, though, we can paraphrase it as `There are at least two different apples, and every apple is one of those two apples'. Then we offer:
 $$\exists x\exists y\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y) \eand \forall z(\atom{A}{z} \eif ( x= z \eor y = z))\bigr]$$
-Finally, consider these sentence:
+Finally, consider these sentences:
 \begin{earg}
 \item[\ex{exactly2things}] There are exactly two things.
 \item[\ex{exactly2objects}] There are exactly two objects.
@@ -1471,7 +1488,7 @@ The difference between the symbolization of this and that of `both $F$s are~$G$s
 \section{The adequacy of Russell's analysis}
 How good is Russell's analysis of definite descriptions? This question has generated a substantial philosophical literature, but we will restrict ourselves to two observations.
 
-One worry focusses on Russell's treatment of empty definite descriptions. If there are no $F$s, then on Russell's analysis, both `the $F$ is $G$' is and  `the $F$ is non-$G$' are false. P.~F.\ Strawson suggested that such sentences should not be regarded as false, exactly, but involve \emph{presupposition failure}, and so need to be treated as \emph{neither} true \emph{nor} false.\footnote{P.~F.\ Strawson, `On Referring', 1950, \emph{Mind 59}, pp.\ 320--34.}
+One worry focusses on Russell's treatment of empty definite descriptions. If there are no $F$s, then on Russell's analysis, both `the $F$ is $G$' and  `the $F$ is non-$G$' are false. P.~F.\ Strawson suggested that such sentences should not be regarded as false, exactly, but involve \emph{presupposition failure}, and so need to be treated as \emph{neither} true \emph{nor} false.\footnote{P.~F.\ Strawson, `On Referring', 1950, \emph{Mind 59}, pp.\ 320--34.}
 
 If we agree with Strawson here, we will need to revise our logic. For, in our logic, there are only two truth values (True and False), and every sentence is assigned exactly one of these truth values.
 
@@ -1593,7 +1610,7 @@ in other words, we symbolize it the same way as we would `Nothing that glitters 
 \begin{earg}
 	\item[] $\enot\forall x(\atom{F}{x} \eif \atom{G}{x})$
 \end{earg}
-Compare the first of these with the previous symbolization: again we see that the difference in the two meanings of the ambiguous sentence lies in whether the `\enot' is in the scope of the `$\forall$' (in the first symbolization) or `$\forall$' is in the scope of `\enot' (in the second).
+Compare this with the previous symbolization: again we see that the difference in the two meanings of the ambiguous sentence lies in whether the `\enot' is in the scope of the `$\forall$' (in the first symbolization) or `$\forall$' is in the scope of `\enot' (in the second).
 
 Of course we can alternatively symbolize the two readings using existential quantifiers as well:
 \begin{earg}

@@ -406,15 +406,17 @@ symbolize the following sentences in FOL:
 
 \problempart Consider the sentence,
 \begin{earg}
+	\setcounter{eargnum}{18}
+	\setcounter{OLDeargnum}{18}
 	\item[\ex{except2}] Every officer except Pavel owes money to Hikaru.
 \end{earg}
 Symbolize this sentence, using `$\atom{F}{x}$' for `\gap{x} is an officer'.  Are you confident that your symbolization is true if, and only if, sentence~\ref{except2} is true?  What happens if every officer owes money to Hikaru, Pavel does not, but Pavel isn't an officer? \myanswer{Most people, including most linguists thinking about `except', read sentence~\ref{except2} as entailing all three of the following:
 \begin{earg}
-	\item No officer who is not Pavel owes money to Hikaru
+	\item Every officer who is not Pavel owes money to Hikaru
 	\item Pavel does not owe money to Hikaru
 	\item Pavel is an officer
 \end{earg}
-So it can be symbolized as `$\forall x((\atom{F}{x} \eand \enot x = p) \eif \enot\atom{O}{x}{h}) \eand \enot \atom{O}{p,h} \eand \atom{F}{p}$'.}
+So it can be symbolized as `$\forall x((\atom{F}{x} \eand \enot x = p) \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h} \eand \atom{F}{p}$'.}
 
 \problempart Explain why:
 	\begin{ebullet}
