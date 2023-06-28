@@ -1,0 +1,38 @@
+% forallxyyc-html
+% Driver file to produce HTML etc. version of forall x:YYC 
+% using LaTeXML 
+
+\documentclass{book}
+
+\RequirePackage{xcolor,tabularx}
+\definecolor{lyallpink}{RGB}{222,31,149}
+\colorlet{leadbeater}{lyallpink}
+\colorlet{dkleadbeater}{lyallpink!80!black}
+\colorlet{ltleadbeater}{lyallpink!50}
+\colorlet{vltleadbeater}{lyallpink!3}
+
+\usepackage{forallxyyc-style}
+\usepackage{forallxyyc}
+
+\title{forall x: Calgary\\
+An Introduction to Formal Logic}
+
+\author{P.~D. Magnus\\
+Tim Button\\
+\textit{with additions by}\\
+J.~Robert Loftis\\
+Robert Trueman\\
+\textit{remixed and revised by}\\
+Aaron Thomas-Bolduc\\
+Richard Zach}
+
+\date{\forallxversion}
+
+
+\begin{document}
+
+\maketitle
+
+\input{forallx-yyc-content}
+
+\end{document}

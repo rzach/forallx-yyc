@@ -13,19 +13,18 @@ English in TFL and FOL, and Fitch-style natural deduction proof
 systems for both TFL and FOL. It also deals with some advanced topics
 such as modal logic, soundness, and functional completeness. Exercises
 with solutions are available. It is provided in PDF (for screen
-reading, printing, and a special version for dyslexics) and in LaTeX
-source code.
+reading, printing, and a special version for dyslexics), HTML, and in
+LaTeX source code.
 
-A proof editor/checker for the proof system used is available at
-[proofs.openlogicproject.org](https://proofs.openlogicproject.org/).
-However, instructors wishing to adopt it should consider the
-open-source [Carnap](https://carnap.io/) system, which supports the
-notation and proof systems of *forall x: Calgary*. Check out the
-[sample
+Instructors wishing to adopt it should consider the open-source
+[Carnap](https://carnap.io/) system, which supports the notation and
+proof systems of *forall x: Calgary*. Check out the [sample
 exercises](https://carnap.io/shared/rzach@ucalgary.ca/forall%20x:%20Calgary.md)
-for the book on carnap.io.
+for the book on carnap.io. (There is also an outdated and unsupported
+proof editor/checker for the proof system used available at
+[proofs.openlogicproject.org](https://proofs.openlogicproject.org/).)
 
-There are translations into German ([forall _x_:
+The book has been translated into German ([forall _x_:
 Dortmund](https://github.com/sbwimmer/forallx-do)) and Portuguese
 ([Para Tod*x*s:
 Natal](https://github.com/Grupo-de-Estudos-em-Logica-da-UFRN/Para-Todxs-Natal)).
@@ -44,6 +43,13 @@ You can download PDFs of the **most current version under development** here:
     (b/w, for printing on regular letter-size paper)
   - [`forallxyyc-solutions.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions.pdf)
     (solutions booklet)
+
+The book is also available in HTML in [a single large
+file](https://forallx.openlogicproject.org/forallxyyc.html) or [broken
+into chapters](https://forallx.openlogicproject.org/html/) for easier
+online reading. The HTML versions are produced using
+[LaTeXML](http://dlmf.nist.gov/LaTeXML/), and the conversion is not
+perfect. In particular, proofs are not rendered quite properly.
 
 **Note that these files change whenever the source files change.** So
 if you use the text in a course, better to download the PDFs and make

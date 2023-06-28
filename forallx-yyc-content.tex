@@ -1,5 +1,9 @@
 \frontmatter
 
+\iflatexml
+  \tableofcontents
+  \input{forallx-yyc-frontmatter}
+\else
 \input{forallx-yyc-frontmatter}
 
 \clearpage
@@ -7,6 +11,7 @@
 \thispagestyle{plain}
 \currentpdfbookmark{Table of Contents}{name}
 \tableofcontents*
+\fi
 
 \input{forallx-yyc-preface}
 
@@ -33,8 +38,9 @@
 
 %\backmatter
 
+\iflatexml\else
 \glsaddall
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 \printglossaries
 \input{forallx-yyc-backmatter}
-
+\fi

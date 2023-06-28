@@ -1284,8 +1284,7 @@ And the fourth is the reverse of the third:
 \label{pr.justifyTFLproof}
 The following proofs are missing their citations (rule and line numbers). Add them wherever they are required:
 \begin{earg}
-\item 
-	\begin{fitchproof}
+\item\begin{fitchproof}
 \hypo{1}{W \eif \enot B}
 \hypo{2}{A \eand W}
 \hypo{2b}{B \eor (J \eand K)}
@@ -1709,11 +1708,7 @@ A collection of sentences is \define{inconsistent in TFL} \label{def:syntactical
 
 Finally, an argument is \define{provably valid in TFL} \label{def:syntactically_valid_in_SL} if and only if there is a derivation of its conclusion from its premises. All of these definitions are given in Table \ref{table:truth_tables_or_derivations}.
 
-
-\begin{sidewaystable}\small
-\tabulinesep=1ex
-\begin{tabu}{X[.5,c,m] ||X[1,l,m] |X[1,l,m]}
-\textbf{Concept} 		&	\textbf{Truth table (semantic) definition} 	&	\textbf{Proof-theoretic (syntactic) definition} \\ \hline \hline
+\def\tmptable{\textbf{Concept} 		&	\textbf{Truth table (semantic) definition} 	&	\textbf{Proof-theoretic (syntactic) definition} \\ \hline \hline
 
 Tautology/ theorem   &	A sentence whose truth table only has Ts under the main connective & A sentence that can be derived without any premises.	 \\ \hline
  
@@ -1727,11 +1722,26 @@ Unsatisfiable/ inconsistent sentences	&	Sentences which do not have a single lin
 
 Satisfiable/ Consistent sentences	&	Sentences which have at least one line in their truth table where they are all true. & Sentences from which one cannot derive the contradiction~$\ered$	\\ \hline
 
-Valid argument		&	An argument whose truth table has no lines where there are all Ts under main connectives for the premises and an F under the main connective for the conclusion.  & An argument where one can derive the conclusion from the premises	\\ 
+Valid argument		&	An argument whose truth table has no lines where there are all Ts under main connectives for the premises and an F under the main connective for the conclusion.  & An argument where one can derive the conclusion from the premises.}
+
+\iflatexml
+\begin{table}
+\begin{tabularx}{\textwidth}{X||X|X}
+\tmptable
+\end{tabularx}
+\caption{Two ways to define logical concepts.}
+\label{table:truth_tables_or_derivations}
+\end{table}
+\else
+\begin{sidewaystable}\small
+\tabulinesep=1ex
+\begin{tabu}{X[.5,c,m] ||X[1,l,m] |X[1,l,m]}
+\tmptable
 \end{tabu}
 \caption{Two ways to define logical concepts.}
 \label{table:truth_tables_or_derivations}
 \end{sidewaystable}
+\fi
 
 All of our concepts have now been defined both semantically (using
 valuations and truth tables) and proof-theoretically (on the basis of
@@ -1822,22 +1832,35 @@ This is the problem of completeness. A proof system has the property of  \define
 
 Now that we know that the truth table method is interchangeable with the method of derivations, you can chose which method you want to use for any given problem. Students often prefer to use truth tables, because they can be produced  purely mechanically, and that seems `easier'. However, we have already seen that truth tables become impossibly large after just a few sentence letters. On the other hand, there are a couple situations where using proofs simply isn't possible. We syntactically defined a contingent sentence as a sentence that couldn't be proven to be a tautology or a contradiction. There is no practical way to prove this kind of negative statement. We will never know if there isn't some proof out there that a statement is a contradiction and we just haven't found it yet. We have nothing to do in this situation but resort to truth tables. Similarly, we can use derivations to prove two sentences equivalent, but what if we want to prove that they are \emph{not} equivalent? We have no way of proving that we will never find the relevant proof. So we have to fall back on truth tables again.
 
-Table \ref{table.ProofOrModel} summarizes when it is best to give proofs and when it is best to give truth tables.
+Table \ref{table.ProofOrModel} summarizes when it is best to give proofs 
+and when it is best to give truth tables.
 
-\begin{table}\small
-\tabulinesep=1ex
-\begin{tabu}{X[.7,c,m] ||X[1,l,m] |X[1,l,m]}
-\textbf{Logical property} 	&	\textbf{To prove it present} 	&	\textbf{To prove it absent} \\ \hline \hline
+\def\tmptable{\textbf{Logical property} 	&	\textbf{To prove it present} 	&	\textbf{To prove it absent} \\ \hline \hline
 Being a theorem 		& Derive the sentence  						& Find a false line in the truth table for the sentence \\ \hline
 Being a contradiction 	&  Derive the negation of the sentence  		 & Find a true line in the truth table for the sentence\\ \hline
 Contingency 			& Find a false line and a true line in the truth table for the sentence & Prove the sentence or its negation\\ \hline
 Equivalence 			& Derive each sentence from the other 		 & Find a line in the truth tables for the sentence where they have different values\\ \hline
 Consistency 		& Find a line in truth table for the sentence where they all are true & Derive a contradiction from the sentences\\ \hline
-Validity 				& Derive the conclusion from the premises & Find a line in the truth table where the premises are true and the conclusion false. \\ 
+Validity 				& Derive the conclusion from the premises & Find a line in the truth table where the premises are true and the conclusion false. \\ }
+
+\iflatexml
+\begin{table}
+\begin{tabularx}{\textwidth}{X||X|X}
+\tmptable
+\end{tabularx}
+\caption{When to provide a truth table and when to provide a proof.}
+\label{table.ProofOrModel}
+\end{table}
+\else
+\begin{table}\small
+\tabulinesep=1ex
+\begin{tabu}{X[.7,c,m] ||X[1,l,m] |X[1,l,m]}
+\tmptable
 \end{tabu}
 \caption{When to provide a truth table and when to provide a proof.}
 \label{table.ProofOrModel}
 \end{table}
+\fi
 
 
 

@@ -36,7 +36,11 @@
 \def\ered{\ensuremath{\bot}}% TB: added to give an absurdity sign
 \newcommand*{\ebox}{\ensuremath{\Box}}
 \def\ediamond{\ensuremath{\Diamond}}
+\iflatexml
+\def\maththe{\ensuremath{\iota}}
+\else
 \def\maththe{\rotatebox[origin=c]{180}{$\iota$}} % TB: added to give definite description operator
+\fi
 \def\proves{\ensuremath{\vdash}}
 \def\entails{\ensuremath{\vDash}}
 \def\nproves{\ensuremath{\nvdash}}
@@ -60,7 +64,7 @@
 
 \newcommand{\argsep}{}
 
-\newcommand{\atom}[2]{\mathord{#1}(#2)}
+\newcommand{\atom}[2]{\ensuremath{\mathord{#1}(#2)}}
 
 %    ****************************************
 %    *       SYMBOLS AND SCRIPTY BITS       *
