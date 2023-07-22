@@ -3,6 +3,8 @@
 % using LaTeXML 
 
 \documentclass{book}
+\usepackage{bookml/bookml}
+\iflatexml\else\latexmltrue\fi
 
 \RequirePackage{xcolor,tabularx}
 \definecolor{lyallpink}{RGB}{222,31,149}
@@ -14,20 +16,19 @@
 \usepackage{forallxyyc-style}
 \usepackage{forallxyyc}
 
-\title{forall x: Calgary\\
-An Introduction to Formal Logic}
+\title{forall x: Calgary. An Introduction to Formal Logic}
 
-\author{P.~D. Magnus\\
-Tim Button\\
-\textit{with additions by}\\
-J.~Robert Loftis\\
-Robert Trueman\\
-\textit{remixed and revised by}\\
-Aaron Thomas-Bolduc\\
+\author{P.~D. Magnus\and
+Tim Button\and
+J.~Robert Loftis\and
+Robert Trueman\and
+Aaron Thomas-Bolduc\and
 Richard Zach}
 
 \date{\forallxversion}
 
+\bmlAltFormat{forallxyyc.pdf}{PDF}
+\bmlAltFormat{forallxyyc-accessible.pdf}{PDF (accessible)}
 
 \begin{document}
 
