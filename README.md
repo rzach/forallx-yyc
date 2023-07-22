@@ -53,8 +53,16 @@ perfect. In particular, proofs are not rendered quite properly.
 
 **Note that these files change whenever the source files change.** So
 if you use the text in a course, better to download the PDFs and make
-them available to students directly, rather than to link here, to avoid
+them available to students directly rather than to link here, to avoid
 mismatches between versions.
+
+PDFs of the **Fall 2021** edition are archived here:
+
+  - [`forallxyyc-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-f21.pdf)
+  - [`forallxyyc-accessible-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-accessible-f21.pdf)
+  - [`forallxyyc-print-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-print-f21.pdf)
+  - [`forallxyyc-letter-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-letter-f21.pdf)
+  - [`forallxyyc-solutions-f21.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions-f21.pdf)
 
 PDFs of the **Fall 2020** edition are archived here:
 
@@ -74,7 +82,9 @@ Amazon ([US](https://www.amazon.com/dp/B097XGMP17) |
 [AU](https://www.amazon.com.au/dp/B097XGMP17)), or use search in your
 local Amazon store. Be sure to get the latest version that's available
 in print (Fall 2021). The version on Amazon usually is not as current
-as the PDF.
+as the PDF. (Specifically, to avoid a jump in prices due to Amazon's
+new pricing scheme, the F21 version on Amazon has not been updated to
+include the (minor) [corrections made after January 2022](https://github.com/rzach/forallx-yyc/compare/F21-kdp...rzach:forallx-yyc:master).
 
 (The process for getting the book printed is described
 [here](https://openlogicproject.org/2015/11/22/getting-your-book-to-print/)
