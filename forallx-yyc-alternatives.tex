@@ -9,19 +9,19 @@ Some systems take DS as their basic rule for disjunction elimination. Such syste
 \begin{fitchproof}
   \have[m]{ab}{\metav{A}\eor\metav{B}}
   \open
-    \hypo[i]{a}{\metav{A}} {}
+    \hypo[i]{a}{\metav{A}} \AS
     \have[j]{c1}{\metav{C}}
   \close
   \open
-    \hypo[k]{b}{\metav{B}}{}
+    \hypo[k]{b}{\metav{B}} \AS
     \have[l]{c2}{\metav{C}}
   \close
   \have[n]{aic}{\metav{A} \eif \metav{C}}\ci{a-c1}
   \have{bic}{\metav{B} \eif \metav{C}}\ci{b-c2}
   \open
-    \hypo{nc}{\enot\metav{C}}
+    \hypo{nc}{\enot\metav{C}} \AS
     \open
-      \hypo{a2}{\metav{A}}
+      \hypo{a2}{\metav{A}} \AS
       \have{c3}{\metav{C}}\ce{a2,aic}
       \have{bot1}{\ered}\ne{nc,c3}
     \close
@@ -39,7 +39,7 @@ So why did we choose to take $\eor$E as basic, rather than DS?\footnote{P.~D.\ M
 Some systems take the following rule as their basic negation introduction rule:
 \begin{fitchproof}
 	\open
-		\hypo[m]{a}{\metav{A}}
+		\hypo[m]{a}{\metav{A}}\AS
 		\have[n-1]{b}{\metav{B}}
 		\have[n]{nb}{\enot\metav{B}}
 	\close
@@ -48,7 +48,7 @@ Some systems take the following rule as their basic negation introduction rule:
 and a corresponding version of the rule we called IP as their basic negation elimination rule:
 \begin{fitchproof}
 	\open
-		\hypo[m]{na}{\enot\metav{A}}
+		\hypo[m]{na}{\enot\metav{A}} \AS
 		\have[n][-1]{b}{\metav{B}}
 		\have{nb}{\enot\metav{B}}
 	\close
@@ -69,44 +69,44 @@ This discussion, and in fact the vast majority of mathematical study on applicat
 
 
 \section{Alternative quantification rules}
-An alternative approach to the quantifiers is to take as basic the rules for $\forall$I and $\forall$E from \S\ref{s:BasicFOL}, and also two CQ rules which allow us to move from $\forall \metav{x} \enot \metav{A}$ to $\enot \exists \metav{x} \metav{A}$ and vice versa.\footnote{Warren Goldfarb follows this line in \textit{Deductive Logic}, 2003, Hackett Publishing Co.}  
+An alternative approach to the quantifiers is to take as basic the rules for $\forall$I and $\forall$E from \S\ref{s:BasicFOL}, and also two CQ rules which allow us to move from $\forall \metav{x}\, \enot \metav{A}$ to $\enot \exists \metav{x}\, \metav{A}$ and vice versa.\footnote{Warren Goldfarb follows this line in \textit{Deductive Logic}, 2003, Hackett Publishing Co.}  
 
 Taking only these rules as basic, we could have derived the  $\exists$I and $\exists$E rules provided in \S\ref{s:BasicFOL}. To derive the $\exists$I rule is fairly simple. Suppose $\metav{A}$ contains the name $\metav{c}$, and contains no instances of the variable $\metav{x}$, and that we want to do the following:
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
-	\have[k]{c}{\exists \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}
+	\have[k]{c}{\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}
 \end{fitchproof}
 This is not yet permitted, since in this new system, we do not have the $\exists$I rule. We can, however, offer the following:
 \begin{fitchproof}
-	\hypo[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
+	\hypo[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}\PR
 	\open
-		\hypo{nEna}{\enot \exists \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}
-		\have{Ana}{\forall \metav{x} \enot \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}\cq{nEna}
+		\hypo{nEna}{\enot \exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}\AS
+		\have{Ana}{\forall \metav{x}\, \enot \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}\cq{nEna}
 		\have{nAc}{\enot\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}\Ae{Ana}
 		\have{red}{\ered}\ne{nAc, a}
 	\close
-	\have{nnEa}{\exists \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}\ip{nEna-red}
+	\have{nnEa}{\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}\ip{nEna-red}
 \end{fitchproof}\noindent
 To derive the $\exists$E rule is rather more subtle. This is because the $\exists$E rule has an important constraint (as, indeed, does the $\forall$I rule), and we need to make sure that we are respecting it. So, suppose we are in a situation where we \emph{want} to do the following:
 \begin{fitchproof}
-	\have[m]{ExA}{\exists \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
+	\have[m]{ExA}{\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\open
-		\hypo[i]{Ac}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
+		\hypo[i]{Ac}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}\AS
 		\have[j]{B}{\metav{B}}
 	\close
 	\have[k]{end}{\metav{B}}
 \end{fitchproof}\noindent
- where $\metav{c}$ does not occur in any undischarged assumptions, or in $\metav{B}$, or in $\exists \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$. Ordinarily, we would be allowed to use the $\exists$E rule; but we are not here assuming that we have access to this rule as a basic rule. Nevertheless, we could offer the following, more complicated derivation:
+ where $\metav{c}$ does not occur in any undischarged assumptions, or in $\metav{B}$, or in $\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$. Ordinarily, we would be allowed to use the $\exists$E rule; but we are not here assuming that we have access to this rule as a basic rule. Nevertheless, we could offer the following, more complicated derivation:
  
 \begin{fitchproof}
-	\have[m]{ExA}{\exists \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
+	\have[m]{ExA}{\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\open
-		\hypo[i]{Ac}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
+		\hypo[i]{Ac}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}\AS
 		\have[j]{B}{\metav{B}}
 	\close
 	\have[k]{condi}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots) \eif \metav{B}}\ci{Ac-B}
 	\open
-		\hypo{nB}{\enot \metav{B}}
+		\hypo{nB}{\enot \metav{B}}\AS
 		\have{nAc}{\enot \metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}\mt{condi, nB}
 		\have{AxnA}{\forall \metav{x} \enot \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}\Ai{nAc}
 		\have{nEA}{\enot \exists \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}\cq{AxnA}
@@ -114,7 +114,7 @@ To derive the $\exists$E rule is rather more subtle. This is because the $\exist
 	\close
 	\have{nnB}{\metav{B}}\ip{nB-red2}
 \end{fitchproof}\noindent
-We are permitted to use $\forall$I on line $k+3$ because $\metav{c}$ does not occur in any  undischarged assumptions or in $\metav{B}$. The entries on lines $k+4$ and $k+1$ contradict each other, because $\metav{c}$ does not occur in $\exists \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$.
+We are permitted to use $\forall$I on line $k+3$ because $\metav{c}$ does not occur in any  undischarged assumptions or in $\metav{B}$. The entries on lines $k+4$ and $k+1$ contradict each other, because $\metav{c}$ does not occur in $\exists \metav{x}\, \metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$.
 
 Armed with these derived rules, we could now go on to derive the two remaining CQ rules, exactly as in \S\ref{s:DerivedFOL}.
 
@@ -122,4 +122,4 @@ So, why did we start with all of the quantifier rules as basic, and then derive 
 
 Our first reason is that it seems more intuitive to treat the quantifiers as on a par with one another, giving them their own basic rules for introduction and elimination.
 
-Our second reason relates to the discussion of alternative negation rules. In the derivations of the rules of $\exists$I and $\exists$E that we have offered in this section, we invoked~IP.  But, as we mentioned earlier, IP is a contentious rule. So, if we want to move to a system which abandons IP, but which still allows us to use existential quantifiers, we will want to take the introduction and elimination rules for the quantifiers as basic, and take the CQ rules as derived. (Indeed, in a system without IP, LEM, and DNE, we will be \emph{unable} to derive the CQ rule which moves from $\enot \forall \metav{x} \metav{A}$ to $\exists \metav{x} \enot \metav{A}$.)
+Our second reason relates to the discussion of alternative negation rules. In the derivations of the rules of $\exists$I and $\exists$E that we have offered in this section, we invoked~IP.  But, as we mentioned earlier, IP is a contentious rule. So, if we want to move to a system which abandons IP, but which still allows us to use existential quantifiers, we will want to take the introduction and elimination rules for the quantifiers as basic, and take the CQ rules as derived. (Indeed, in a system without IP, LEM, and DNE, we will be \emph{unable} to derive the CQ rule which moves from $\enot \forall \metav{x}\, \metav{A}$ to $\exists \metav{x}\, \enot \metav{A}$.)
