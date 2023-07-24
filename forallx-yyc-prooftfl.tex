@@ -336,8 +336,12 @@ But suppose we now tried to continue the proof as follows:
 		\have{b2}{B} \by{R}{b1}
 	\close
 	\have{con}{B \eif B}\ci{b1-b2}
+\ifHTMLtarget
+	\have{b}{B} \by{naughty attempt to invoke $\eif$E}{con, b2}
+\else
 	\have{b}{B} \by{naughty attempt}{}
 	\have [\ ]{x}{} \by{to invoke $\eif$E}{con, b2}
+\fi
 \end{fitchproof}
 If we were allowed to do this, it would be a disaster. It would allow us to prove any sentence letter from any other sentence letter. However, if you tell me that Anne is fast (symbolized by `$A$'), we shouldn't be able to conclude that Queen Boudica stood twenty-feet tall (symbolized by `$B$')! We must be prohibited from doing this, but how are we to implement the prohibition?
 
@@ -382,8 +386,12 @@ Again, though, we need to keep careful track of what we are assuming at any give
 	\have{cab}{C \eif (A \eand B)}\ci{c-ab}
 \close
 \have{bcab}{B \eif(C \eif (A \eand B))}\ci{b-cab}
-\have{bcab}{C \eif (A \eand B)}\by{naughty attempt}{}
-\have [\ ]{x}{} \by{to invoke $\eif$I}{c-ab}
+\ifHTMLtarget
+	\have{bcab}{C \eif (A \eand B)}\by{naughty attempt to invoke $\eif$I}{c-ab}
+\else
+	\have{bcab}{C \eif (A \eand B)}\by{naughty attempt}{}
+	\have [\ ]{x}{} \by{to invoke $\eif$I}{c-ab}
+\fi
 \end{fitchproof}
 This would be awful. If we tell you that Anne is smart, you should not be able to infer that, if Cath is smart (symbolized by `$C$') then \emph{both} Anne is smart and Queen Boudica stood 20-feet tall! But this is just what such a proof would suggest, if it were permissible.
 
@@ -400,8 +408,12 @@ Here is one further case we have to exclude:
 	\have{c2}{C}\ae{bc}
 	\close
 \close
+\ifHTMLtarget
+\have{bcab}{B \eif C}\by{naughty attempt to invoke $\eif$I}{b-c2}
+\else
 \have{bcab}{B \eif C}\by{naughty attempt}{}
 \have [\ ]{x}{} \by{to invoke $\eif$I}{b-c2}
+\fi
 \end{fitchproof}
 Here we are trying to cite a subproof that begins on line~$2$ and ends on line~$5$---but the sentence on line~$5$ depends not only on the assumption on line~$2$, but also on one another assumption (line~$3$) which we have not discharged at the end of the subproof. The subproof started on line~$3$ is still open at line~$3$. But $\eif$I requires that the last line of the subproof \emph{only} relies on the assumption of the subproof being cited, i.e., the subproof beginning on line~$2$ (and anything before it), and not on assumptions of any subproofs within it. In particular, the last line of the subproof cited must not itself lie within a nested subproof.
 
@@ -422,8 +434,12 @@ One last point to emphasize how rules can be applied: where a rule requires you 
 	\have{bc}{B \eand C}\ai{b,c}
 	\have{c2}{C}\ae{bc}
 	\close
-	\have{c3}{C}\by{naughty attempt}{}
+\ifHTMLtarget
+	\have{c3}{C}\by{naughty attempt to invoke R}{c-c2}
+\else
+\have{c3}{C}\by{naughty attempt}{}
 \have [\ ]{x}{} \by{to invoke R}{c-c2}
+\fi
 \close
 \have[7]{bcab}{B \eif C}\ci{b-c3}
 \end{fitchproof}

@@ -126,9 +126,12 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 
 \label{ProofRules}
 \newpage\section{Basic deduction rules for TFL}
+
+\ifHTMLtarget\else
 \renewenvironment{fitchproof}
 	{\noindent\par\noindent\small$\begin{nd}}
 	{\end{nd}$\noindent\normalsize\ignorespacesafterend}
+\fi
 
 %{\LARGE \textbf{Basic Rules of Proof}}
 \begin{multicols}{2}
@@ -145,12 +148,14 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 	\have[m]{a}{\metav{A}}
 	\have[n]{b}{\metav{B}}
 	\have[\ ]{c}{\metav{A}\eand\metav{B}} \ai{a, b}
-
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eand\metav{B}}
-\\	\have[\ ]{a}{\metav{A}} \ae{ab}
-
+	\have[\ ]{a}{\metav{A}} \ae{ab}
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eand\metav{B}}
-\\	\have[\ ]{b}{\metav{B}} \ae{ab}
+	\have[\ ]{b}{\metav{B}} \ae{ab}
 \end{fitchproof}
 
 \subsection*{Conditional}
@@ -161,9 +166,10 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 		\have[j]{b}{\metav{B}}
 	\close
 	\have[\ ]{ab}{\metav{A}\eif\metav{B}}\ci{a-b}
-
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eif\metav{B}}
-\\	\have[n]{a}{\metav{A}}
+	\have[n]{a}{\metav{A}}
 	\have[\ ]{b}{\metav{B}} \ce{ab,a}
 \end{fitchproof}
 
@@ -175,10 +181,11 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 	\have[j]{nb}{\ered}
 \close
 \have[\ ]{na}{\enot\metav{A}}\ni{a-nb}
-
-\have[m]{na}{\enot\metav{A}}
-\\ \have[n]{a}{\metav{A}}
-\have[ ]{bot}{\ered}\ri{na, a}
+\end{fitchproof}
+\begin{fitchproof}
+	\have[m]{na}{\enot\metav{A}}
+	\have[n]{a}{\metav{A}}
+	\have[ ]{bot}{\ered}\ri{na, a}
 \end{fitchproof}
 
 \subsection*{Indirect proof}
@@ -196,7 +203,7 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 
 \begin{fitchproof}
 \have[m]{bot}{\ered}
-\\\have[ ]{}{\metav{A}}\re{bot}
+\have[ ]{}{\metav{A}}\re{bot}
 \end{fitchproof}
 
 \subsection*{Disjunction}
@@ -204,12 +211,14 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
 	\have[\ ]{ab}{\metav{A}\eor\metav{B}}\oi{a}
-
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{a}{\metav{A}}
-\\	\have[\ ]{ba}{\metav{B}\eor\metav{A}}\oi{a}
-
+	\have[\ ]{ba}{\metav{B}\eor\metav{A}}\oi{a}
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eor\metav{B}}
-\\	\open
+	\open
 		\hypo[i]{a}{\metav{A}}
 		\have[j]{c1}{\metav{C}}
 	\close
@@ -232,13 +241,15 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 		\have[l]{a2}{\metav{A}}
 	\close
 	\have[\ ]{ab}{\metav{A}\eiff\metav{B}}\bi{a1-b1,b2-a2}
-
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eiff\metav{B}}
-\\	\have[n]{a}{\metav{A}}
+	\have[n]{a}{\metav{A}}
 	\have[\ ]{b}{\metav{B}} \be{ab,a}
-
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eiff\metav{B}}
-\\	\have[n]{a}{\metav{B}}
+	\have[n]{a}{\metav{B}}
 	\have[\ ]{b}{\metav{A}} \be{ab,a}
 \end{fitchproof}
 
@@ -252,9 +263,10 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 	\have[m]{ab}{\metav{A} \eor \metav{B}}
 	\have[n]{nb}{\enot \metav{A}}
 	\have[\ ]{con}{\metav{B}}\by{DS}{ab, nb}
-
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\metav{A} \eor \metav{B}}
-\\	\have[n]{nb}{\enot \metav{B}}
+	\have[n]{nb}{\enot \metav{B}}
 	\have[\ ]{con}{\metav{A}}\by{DS}{ab, nb}
 \end{fitchproof}
 
@@ -299,15 +311,18 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 \begin{fitchproof}
 	\have[m]{ab}{\enot (\metav{A} \eor \metav{B})}
 	\have[\ ]{dm}{\enot \metav{A} \eand \enot \metav{B}}\dem{ab}
-
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\enot \metav{A} \eand \enot \metav{B}}
-\\	\have[\ ]{dm}{\enot (\metav{A} \eor \metav{B})}\dem{ab}
-
+	\have[\ ]{dm}{\enot (\metav{A} \eor \metav{B})}\dem{ab}
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\enot (\metav{A} \eand \metav{B})}
-\\	\have[\ ]{dm}{\enot \metav{A} \eor \enot \metav{B}}\dem{ab}
-
+	\have[\ ]{dm}{\enot \metav{A} \eor \enot \metav{B}}\dem{ab}
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\enot \metav{A} \eor \enot \metav{B}}
-\\	\have[\ ]{dm}{\enot (\metav{A} \eand \metav{B})}\dem{ab}
+	\have[\ ]{dm}{\enot (\metav{A} \eand \metav{B})}\dem{ab}
 \end{fitchproof}
 \end{multicols}
 
@@ -393,16 +408,18 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 \begin{fitchproof}
 	\have[m]{ab}{\forall \metav{x}\enot \metav{A}}
 	\have[\ ]{ac}{\enot \exists \metav{x} \metav{A}}\cq{m}
-
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\enot \exists \metav{x}  \metav{A}}
-\\	\have[\ ]{ac}{\forall \metav{x}\enot\metav{A}}\cq{m}
+	\have[\ ]{ac}{\forall \metav{x}\enot\metav{A}}\cq{m}
 \end{fitchproof}
 \begin{fitchproof}
 	\have[m]{ab}{\exists \metav{x}\enot\metav{A}}
 	\have[\ ]{ac}{\enot \forall \metav{x} \metav{A}}\cq{m}
-
+\end{fitchproof}
+\begin{fitchproof}
 	\have[m]{ab}{\enot \forall \metav{x}  \metav{A}}
-\\	\have[\ ]{ac}{\exists \metav{x}\enot \metav{A}}\cq{m}
+	\have[\ ]{ac}{\exists \metav{x}\enot \metav{A}}\cq{m}
 \end{fitchproof}
 \end{multicols}
 \end{minipage}

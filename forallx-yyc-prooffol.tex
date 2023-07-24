@@ -220,8 +220,13 @@ Now, suppose we tried to offer a proof that vindicates this argument:
 		\hypo{na}{\enot \atom{L}{b}}
 		\have{con}{\atom{L}{b} \eand \enot \atom{L}{b}}\ai{f, na}
 	\close
+\ifHTMLtarget
+	\have{econ1}{\atom{L}{b} \eand \enot \atom{L}{b}}\by{naughty attempt
+	to invoke $\exists$E }{nf, na-con}
+\else
 	\have{econ1}{\atom{L}{b} \eand \enot \atom{L}{b}}\by{naughty attempt}{}
 	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con}
+\fi
 \end{fitchproof}
 The last line of the proof is not allowed. The name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$' on line~$3$, namely `$b$', occurs in line~$4$. This would be no better:
 \begin{fitchproof}
@@ -232,8 +237,13 @@ The last line of the proof is not allowed. The name that we used in our substitu
 		\have{con}{\atom{L}{b} \eand \enot \atom{L}{b}}\ai{f, na}
 		\have{con1}{\exists x (\atom{L}{x} \eand \enot \atom{L}{x})}\Ei{con}		
 	\close
+\ifHTMLtarget
+	\have{econ1}{\exists x (\atom{L}{x} \eand \enot
+	\atom{L}{x})}\by{naughty attempt to invoke $\exists$E }{nf, na-con1}
+\else
 	\have{econ1}{\exists x (\atom{L}{x} \eand \enot \atom{L}{x})}\by{naughty attempt}{}
 	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con1}
+\fi
 \end{fitchproof}
 The last line is still not allowed. For the name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$', namely `$b$', occurs in an undischarged assumption, namely line~$1$.
 

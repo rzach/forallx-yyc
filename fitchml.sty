@@ -1,0 +1,108 @@
+% fitchml.sty -- patch fitch.sty for better HTML output with LaTeXML
+
+\ProvidesPackage{fitchml}
+\RequirePackage{fitch}
+
+{\chardef\x=\catcode`\*
+\catcode`\*=11
+\global\let\nd*astcode\x}
+\catcode`\*=11
+
+% A counter to keep track of subproof levels
+\newcounter{nd*scope}
+% toggles used to insert "open subproof" and "close subproof" aria
+% labels
+\newif\iffmlOpen
+\fmlOpenfalse
+\newif\iffmlClose
+\fmlClosefalse
+
+\def\nd*openb{\nd*push\nd*stack{\nd*i}\nd*push\nd*stack{\nd*t}\stepcounter{nd*scope}\fmlOpentrue}
+\def\nd*closeb{\nd*pop\nd*stack\nd*pop\nd*stack\addtocounter{nd*scope}{-1}\fmlClosetrue}
+
+\def\nd*starttable{%
+\<table class="fitch">
+% Make an invisible table header
+\<thead class="fml-sr-only">
+  \<tr>%
+    \<th class="fml-pline">%
+      \<div>Line number\</div>%
+    \</th>%
+    \<th class="fml-subproof">%
+      \<div>Subproof level\</div>%
+    \</th>%
+    \<th class="fml-fmla">%
+      \<div>Formula\</div>%
+    \</th>%
+    \<th class="fml-just">%
+      \<div>Justification\</div>%
+    \</th>%
+  \</tr>%
+\</thead>}
+\def\nd*pline#1{\<th class="fml-pline">\ensuremath{\nd*num{#1}}\</th>}
+\def\nd*scope{%
+  \<td class="fml-subproof">\<div>%
+  \iffmlClose
+    \<span aria-label="close subproof">\</span>%
+    \global\fmlClosefalse
+  \fi
+  \arabic{nd*scope}%
+  \iffmlOpen
+    \<span aria-label="open subproof">\</span>%
+    \global\fmlOpenfalse
+  \fi
+  \</div>\</td>}
+% cant get this to work
+\def\nd*just#1{%
+  \<td class="fml-just">%
+  \<div class="fml-just">%
+  #1\</div>\</td>}
+
+\def\PR{\<span aria-label="Premise">PR\</span>}
+\def\AS{\<span aria-label="Assumption">AS\</span>}
+
+
+% \def\nd*beginb{\begingroup\nd*reset\gdef\nd*stack{\nd*nil}\nd*push\nd*stack{\nd*t}%
+%   \begin{array}{l@{\hspace{\nd*labelsep}}l@{\hspace{\nd*justsep}}l}}
+\def\nd*beginb{\begingroup\nd*reset\gdef\nd*stack{\nd*nil}\nd*push\nd*stack{\nd*t}%
+  \setcounter{nd*scope}{0}
+  \nd*starttable}
+%\def\nd*resumeb{\begingroup\begin{array}{l@{\hspace{\nd*labelsep}}l@{\hspace{\nd*justsep}}l}}
+\def\nd*resumeb{\nd*starttable}
+%\def\nd*endb{\end{array}\endgroup}
+\def\nd*endb{\</table>\endgroup}
+% \def\nd*hypob#1#2{\nd*f{\nd*num{#1}}&\nd*iter\nd*stack\relax\nd*cont\nd*stack\nd*s\nd*u{#2}&}
+\def\nd*hypob#1#2{\<tr>\nd*pline{#1}\nd*scope\<td class="fml-fmla">%
+  \nd*iter\nd*stack\relax\nd*cont\nd*stack\nd*s\nd*u{#2}\</td>}
+% \def\nd*hypob#1#2{\nd*f{\nd*num{#1}}&\nd*iter\nd*stack\relax\nd*cont\nd*stack\nd*s\nd*u{#2}&}
+\def\nd*haveb#1#2{\<tr>\nd*pline{#1}\nd*scope\<td class="fml-fmla">%
+  \nd*iter\nd*stack\relax\nd*cont\nd*stack\nd*s\nd*f{#2}\</td>}
+% line continuations not yet supported!
+% \def\nd*havecontb#1#2{&\nd*iter\nd*stack\relax\nd*cont\nd*stack\nd*s\nd*f{\hspace{\ndindent}#2}&}
+% \def\nd*hypocontb#1#2{&\nd*iter\nd*stack\relax\nd*cont\nd*stack\nd*s\nd*u{\hspace{\ndindent}#2}&}
+
+% \def\nd*sto#1#2#3{\gdef\nd*typ{#1}\gdef\nd*byt{}%
+%   \gdef\nd*cmd{\nd*typ{#2}{#3}\nd*byt\\}}
+\def\nd*sto#1#2#3{\gdef\nd*typ{#1}\gdef\nd*byt{}%
+  \gdef\nd*cmd{\nd*typ{#2}{#3}\nd*just{\nd*byt}\</tr>}}
+
+%\def\nd*v{\rule[-\nd*depthdim]{\nd*thickness}{\nd*height}}
+\def\nd*v{\<div class="fml-scope">\</div>}
+% \def\nd*t{\rule[-\nd*depthdim]{0mm}{\nd*height}\rule[-\nd*depthdim]{\nd*thickness}{\nd*initheight}}
+\def\nd*t{\<div class="fml-scope-start">\</div>}
+% \def\nd*i{\hspace{\nd*indent}} 
+\def\nd*i{}
+% \def\nd*s{\hspace{\nd*hsep}}
+\def\nd*s{}
+% \def\nd*g#1{\nd*f{\makebox[\nd*indent][c]{$#1$}}}
+\def\nd*g#1{} % Guards not supported!
+% \def\nd*f#1{\raisebox{0pt}[0pt][0pt]{$#1$}}
+\def\nd*f#1{\<div class="fml-fmla">\ensuremath{#1}\</div>} % \raisebox{0pt}[0pt][0pt]{$#1$}}
+% \def\nd*u#1{\makebox[0pt][l]{\settowidth{\nd*dim}{\nd*f{#1}}%
+%     \addtolength{\nd*dim}{2\nd*hsep}\hspace{-\nd*hsep}\rule[-\nd*depthdim]{\nd*dim}{\nd*thickness}}\nd*f{#1}}
+\def\nd*u#1{\<div class="fml-as">\ensuremath{#1}\</div>}
+
+% \def\nd*by#1#2{\ifx\nd*x#2\nd*x\gdef\nd*byt{\mbox{#1}}\else\gdef\nd*byt{\mbox{#1, \ndref{#2}}}\fi}
+\def\nd*by#1#2{\ifx\nd*x#2\nd*x\gdef\nd*byt{#1}\else\gdef\nd*byt{#1 \ndref{#2}}\fi}
+
+\catcode`\*=\nd*astcode

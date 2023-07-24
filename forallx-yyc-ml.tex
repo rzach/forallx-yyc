@@ -6,9 +6,6 @@
 \label{ch.ML}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-%\usepackage{gensymb}
-%\input{fitch1.sty}
-
 \chapter{Introducing modal logic}
 \label{Intro}
 
@@ -61,17 +58,15 @@ The special kind of subproof looks like an ordinary subproof, except it has a~\e
 The \ebox I rule allows us to derive a formula $\ebox \metav{A}$ if we can derive $\metav{A}$ inside a strict subproof.  It is our fundamental method of introducing \ebox{} into proofs. The basic idea is simple enough: if $\metav{A}$ is a theorem, then $\ebox \metav{A}$ should be a theorem too. (Remember that to call $\metav{A}$ a theorem is to say that we can prove $\metav{A}$ without relying on any undischarged assumptions.)
 
 Suppose we wanted to prove $\ebox(A\eif A)$. The first thing we need to do is prove that $A\eif A$ is a theorem. You already know how to do that using TFL. You simply present a proof of $A\eif A$ which doesn't start with any premises, like this:
-\[
-	\begin{nd}
+\begin{fitchproof}
 		\open
 		\hypo{1}{A}
 		\have{2}{A}\by{R}{1}
 		\close
 		\have{3}{A\eif A}\ci{1-2}
-	\end{nd}
-\]
+\end{fitchproof}
 But to apply \ebox I, we need to have proven the formula inside a strict subproof.  Since our proof of $A \eif A$ makes use of no assumptions at all, this is possible.
-\[\begin{nd}
+\begin{fitchproof}
 		\open
 		\hypo{1}{\ebox}
 		\open
@@ -81,44 +76,43 @@ But to apply \ebox I, we need to have proven the formula inside a strict subproo
 		\have{4}{A\eif A}\ci{2-3}
 		\close
 		\have{5}{\ebox(A\eif A)}\boxi{1-4}
-	\end{nd}\]
+\end{fitchproof}
 
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\open
 			\hypo[m]{m}{\ebox}
 			\have[n]{n}{\metav{A}}
 			\close
 			\have[\,]{o}{\ebox\metav{A}}\boxi{m-n}
-		\end{nd}\]
+	\end{fitchproof}
 	No line above line $m$ may be cited by any rule within the strict subproof begun at line $m$ unless the rule explicitly allows it.
 }
 It is essential to emphasize that in strict subproof you cannot use any rule which appeals to anything you proved outside of the strict subproof. There are exceptions, e.g., the \ebox E rule below. These rules will explicitly state that they can be used inside strict subproofs and cite lines outside the strict subproof. This restriction is essential, otherwise we would get terrible results. For example, we could provide the following proof to vindicate $A\therefore \ebox A$:
-\[\begin{nd}
+\begin{fitchproof}
 		\hypo{1}{A}
 		\open
 		\hypo{2}{\ebox}
 		\have{3}{A}\by{incorrect use of R}{1}
 		\close
 		\have{4}{\ebox A}\boxi{2-3}
-	\end{nd}
-\]
+\end{fitchproof}
 This is not a legitimate proof, because at line 3 we appealed to line 1, even though line 1 comes before the beginning of the strict subproof at line 2.
 
 We said above that a strict subproof allows us to reason about arbitrary alternate possible situations. What can be proved in a strict subproof holds in all alternate possible situtations, and so is necessary. This is the idea behind the \ebox I rule. On the other hand, if we've assumed that something is necessary, we have therewith assumed that it is true in all alternate possbile situations.  Hence, we have the rule \ebox E:
 
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
 			\open
 			\hypo[\ ]{o}{\ebox}
 			\have[n]{n}{\metav{A}}\boxe{m}
 			\close
-		\end{nd}\]
+		\end{fitchproof}
 		\ebox E can only be applied if line $m$ (containing $\ebox A$) lies \emph{outside} of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing~$m$.
 		}
 \ebox E allows you to assert $\metav{A}$ inside a strict subproof if you have $\ebox \metav{A}$ outside the strict subproof. The restriction means that you can only do this in the first strict subproof, you cannot apply the \ebox E rule inside a nested strict subproof. So the following is not allowed:
-\[\begin{nd}
+\begin{fitchproof}
 	\have{1}{\ebox\metav{A}}
 	\open
 	\hypo{2}{\ebox}
@@ -126,12 +120,11 @@ We said above that a strict subproof allows us to reason about arbitrary alterna
 	\hypo{3}{\ebox}
 	\have{4}{\metav{A}}\by{incorrect use of \ebox E}{1}
 \close\close
-\end{nd}\]
+\end{fitchproof}
 The incorrect use of \ebox E on line~$4$ violates the condition, because although line~$1$ lies outside the strict subproof in which line~$4$ falls, the strict subproof containing line~$4$ lies inside the strict subproof beginning on line~$2$ which does not contain line~$1$.
 
 Let's begin with an example.
-\[
-	\begin{nd}
+\begin{fitchproof}
 		\hypo{1}{\ebox A}
 		\hypo{2}{\ebox B}
 		\open
@@ -141,10 +134,9 @@ Let's begin with an example.
 		\have{6}{A \eand B}\ai{4,5}
 		\close
 		\have{6}{\ebox(A \land B)}\boxi{3-6}
-	\end{nd}
-\]
+\end{fitchproof}
 We can also mix regular subproofs and strict subproofs:
-\[\begin{nd}
+\begin{fitchproof}
 		\hypo{1}{\ebox (A \eif B)}
 		\open
 		\hypo{2}{\ebox A}
@@ -154,10 +146,10 @@ We can also mix regular subproofs and strict subproofs:
 		\have{5}{A \eif B}\boxe{1}
 		\have{6}{B}\ce{4,5}
 		\close
-		\have{7}{\ebox B}
+		\have{7}{\ebox B}\boxi{3-6}
 		\close
 		\have{8}{\ebox A \eif \ebox B} \ci{2-7}
-	\end{nd}\]
+\end{fitchproof}
 This is called the \emph{Distribution Rule}, because it tells us that $\ebox$ `distributes' over $\eif$.
 
 The rules \ebox I and \ebox E look simple enough, and indeed \mlK{} is a very simple system! But \mlK{} is more powerful than you might have thought. You can prove a fair few things in it.
@@ -171,37 +163,35 @@ $\ediamond\metav{A}=_{df} \enot \ebox\enot \metav{A}$
 }
 In other words, to say that $\metav{A}$ is \emph{possibly true}, is to say that $\metav{A}$ is \emph{not necessarily false}. As a result, it isn't really essential to add a $\ediamond$, a special symbol for possibility, into system \mlK. Still, the system will be \emph{much} easier to use if we do, and so we will add the following definitional rules:
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox\enot \metav{A}}
 			\have[\, ]{n}{\ediamond \metav{A}}\diadf{m}
-		\end{nd}
-	\]
-	\[\begin{nd}
+	\end{fitchproof}
+	\begin{fitchproof}
 			\have[m]{m}{\ediamond \metav{A}}
 			\have[\, ]{n}{\enot\ebox\enot \metav{A}}\diadf{m}
-		\end{nd}\]
+	\end{fitchproof}
 }
 Importantly, you should not think of these rules as any real addition to \mlK: they just record the way that $\ediamond$ is defined in terms of $\ebox$.
 
 If we wanted, we could leave our rules for \mlK{} here. But it will be helpful to add some \emph{Modal Conversion} rules, which give us some more ways of flipping between $\ebox$ and $\ediamond$:
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox \metav{A}}
 			\have[\, ]{n}{\ediamond \enot\metav{A}}\mc{m}
-		\end{nd}
-	\]
-	\[\begin{nd}
+	\end{fitchproof}
+	\begin{fitchproof}
 			\have[m]{m}{\ediamond \enot \metav{A}}
 			\have[\, ]{n}{\enot\ebox \metav{A}}\mc{m}
-		\end{nd}\]
-	\[\begin{nd}
+	\end{fitchproof}
+	\begin{fitchproof}
 			\have[m]{m}{\enot\ediamond \metav{A}}
 			\have[\, ]{n}{\ebox \enot\metav{A}}\mc{m}
-		\end{nd}\]
-	\[\begin{nd}
+	\end{fitchproof}
+	\begin{fitchproof}
 			\have[m]{m}{\ebox\enot \metav{A}}
 			\have[\, ]{n}{\enot\ediamond\metav{A}}\mc{m}
-		\end{nd}\]
+	\end{fitchproof}
 }
 These Modal Conversion Rules are also no addition to the power of \mlK, because they can be derived from the basic rules, along with the definition of $\ediamond$.
 
@@ -214,10 +204,10 @@ So far we have focussed on \mlK, which is a very simple modal system. \mlK{} is 
 
 This leads us to a new system,  \mlT, which we get by adding the following rule to \mlK:
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\have[m]{m}{\ebox \metav{A}}
 			\have[n]{n}{\metav{A}}\rt{m}
-		\end{nd}\]
+	\end{fitchproof}
 	The line $n$ on which rule R\mlT{} is applied must \emph{not} lie in a strict subproof that begins after line~$m$.
 }
 
@@ -229,8 +219,7 @@ We can prove things in \mlT{} which we could not prove in \mlK, e.g., $\ebox A \
 \label{S4}
 
 \mlT{} allows you to strip away the necessity boxes: from $\ebox \metav{A}$, you may infer $\metav{A}$. But what if we wanted to add extra boxes? That is, what if we wanted to go from $\ebox\metav{A}$ to $\ebox\ebox\metav{A}$? Well, that would be no problem, if we had proved $\ebox\metav{A}$ by applying \ebox I to a strict subproof of $\metav{A}$ which itself does not use \ebox E. In that case, $\metav{A}$ is a tautology, and by nesting the strict subproof inside another strict subproof and applying \ebox I again, we can prove $\ebox\ebox \metav{A}$. For example, we could prove $\ebox\ebox (P\eif P)$ like this:
-\[
-	\begin{nd}
+\begin{fitchproof}
 		\open
 		\hypo{1}{\ebox}
 		\open
@@ -244,27 +233,25 @@ We can prove things in \mlT{} which we could not prove in \mlK, e.g., $\ebox A \
 		\have{6}{\ebox(P\eif P)}\boxi{2-5}
 		\close
 		\have{7}{\ebox\ebox(P\eif P)}\boxi{1-6}
-	\end{nd}
-\]
+\end{fitchproof}
 But what if we didn't prove $\ebox\metav{A}$ in this restricted way, but used \ebox E inside the strict subproof of $\metav{A}$. If we put that strict subproof inside another strict subproof, the requirement of rule \ebox E to not cite a line containing $\ebox\metav{A}$ which lies in another strict subproof that has not yet concluded, is violated.  Or what if $\ebox\metav{A}$ were just an assumption we started our proof with? Could we infer $\ebox\ebox\metav{A}$ then? Not in  \mlT, we couldn't. And this might well strike you as a limitation of  \mlT, at least if we are reading $\ebox$ as expressing \emph{necessity}. It seems intuitive that if $\metav{A}$ is necessarily true, then it couldn't have \emph{failed} to be necessarily true.
 
 This leads us to another new system, \mlSfour, which we get by adding the following rule to~\mlT:
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
 			\open
 			\hypo[\ ]{k}{\ebox}
 			\have[n]{n}{\ebox\metav{A}}\rfour{m}
 			\close
-		\end{nd}
-	\]
+	\end{fitchproof}
 	Note that R$\mathbf{4}$ can only be applied if line $m$ (containing $\ebox A$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing~$m$.
 }
 
 Rule R$\mathbf{4}$ looks just like {\ebox}E, except that instead of yielding $\metav{A}$ from $\ebox\metav{A}$ it yields $\ebox\metav{A}$ inside a strict subproof. The restriction is the same, however: R$\mathbf{4}$ allows us to ``import'' $\ebox \metav{A}$ into a strict subproof, but not into a strict subproof itself nested inside a strict subproof. However, if that is necessary, an additional application of R$\mathbf{4}$ would have the same result.
 
 Now we can prove even more results. For instance:
-\[\begin{nd}
+\begin{fitchproof}
 	\open
 	\hypo{1}{\ebox A}
 	\open
@@ -274,7 +261,7 @@ Now we can prove even more results. For instance:
 	\have{4}{\ebox\ebox A}\boxi{2-3}
 	\close
 	\have{5}{\ebox A \eif \ebox\ebox A}\ci{1-6}
-\end{nd}\]
+\end{fitchproof}
 Similarly, we can prove $\ediamond\ediamond A \eif \ediamond A$. This shows us that as well as letting us \emph{add} extra \emph{boxes}, \mlSfour{} lets us \emph{delete} extra \emph{diamonds}: from $\ediamond\ediamond \metav{A}$, you can always infer $\ediamond\metav{A}$.
 
 \section{System \mlSfive}
@@ -284,18 +271,18 @@ In \mlSfour, we can always add a box in front of another box. But \mlSfour{} doe
 
 This leads us to our final modal system, \mlSfive, which we get by adding the following rule to \mlSfour:
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\have[m]{m}{\enot \ebox\metav{A}}
 			\open
 			\hypo[\ ]{k}{\ebox}
 			\have[n]{n}{\enot\ebox\metav{A}}\rfive{m}
 			\close
-	\end{nd}\]
+	\end{fitchproof}
 	Rule R$\mathbf{5}$ can only be applied if line $m$ (containing $\enot \ebox\metav{A}$) lies outside of the strict subproof in which line $n$ falls, and this strict subproof is not itself part of a strict subproof not containing line~$m$.
 }
 
 This rule allows us to show, for instance, that $\ediamond\ebox A\proves_\mlSfive  \ebox A$:
-\[\begin{nd}
+\begin{fitchproof}
 	\hypo{1}{\ediamond\ebox A}
 	\have{2}{\enot\ebox\enot\ebox A}\by{Def\ediamond}{1}
 	\open
@@ -308,12 +295,12 @@ This rule allows us to show, for instance, that $\ediamond\ebox A\proves_\mlSfiv
 	\have{7}{\ered}\ne{2,6}
 	\close
 	\have{8}{\ebox A}\by{IP}{3-7}
-\end{nd}\]
+\end{fitchproof}
 
 So, as well as adding boxes in front of diamonds, we can also delete diamonds in front of boxes.
 
 We got \mlSfive{} just by adding the rule R$\mathbf{5}$ rule to \mlSfour. In fact, we could have added rule R$\mathbf{5}$ to \mlT{} alone, and leave out rule R$\mathbf{4}$). Everything we can prove by rule R$\mathbf{4}$ can also be proved using R\mlT{} together with R$\mathbf{5}$. For instance, here is a proof that shows $\ebox A \proves_\mlSfive  \ebox\ebox A$ without using R$\mathbf{4}$:
-\[\begin{nd}
+\begin{fitchproof}
 	\hypo{1}{\ebox A}
 	\open
 	\hypo{2}{\ebox\enot\ebox A}
@@ -336,7 +323,7 @@ We got \mlSfive{} just by adding the rule R$\mathbf{5}$ rule to \mlSfour. In fac
 	\have{13}{\ebox A}\ip{7-12}
 	\close
 	\have{14}{\ebox\ebox A}\boxi{6-13}
-\end{nd}\]
+\end{fitchproof}
 \mlSfive{} is \emph{strictly stronger} than \mlSfour: there are things which can be proved in \mlSfive, but not in \mlSfour{} (e.g., $\ediamond\ebox A \eif \ebox A$).
 
 The important point about \mlSfive{} can be put like this: if you have a long string of boxes and diamonds, in any combination whatsoever, you can delete all but the last of them. So for example, $\ediamond\ebox\ediamond\ediamond\ebox\ebox\ediamond\ebox A$ can be simplified down to just $\ebox A$.
@@ -458,11 +445,11 @@ Here is how to read the interpretation off from this diagram. It contains just t
 	\item[]$A\eand\enot B$, $B\eif A$, $\ediamond A$, $\ebox\enot B$
 \end{itemize}
 If you don't like thinking diagrammatically, then you can also present an interpretation like this:
-\begin{itemize}
-	\item[$W$:]$1,2$
-	\item[$R$:]$\langle 1,1\rangle, \langle 2,1\rangle$
-	\item[]$\nu_{1}(A)=T, \nu_{1}(B)=F, \nu_{2}(A)=F, \nu_{2}(B)=T$
-\end{itemize}
+\begin{ekey}
+	\item[W]$1,2$
+	\item[R]$\langle 1,1\rangle, \langle 2,1\rangle$
+	\item[\nu]$\nu_{1}(A)=T, \nu_{1}(B)=F, \nu_{2}(A)=F, \nu_{2}(B)=T$
+\end{ekey}
 You will get the chance to cook up some interpretations of your own shortly, when we start looking at \emph{counter-interpretations}.
 
 \section{A Semantics for System \mlK}
@@ -538,10 +525,10 @@ We have attached the \mlT{} subscript to $\entails$ because it turns out that sy
 \end{itemize}
 As before, we will not try to prove these soundness and completeness results. However, it is relatively easy to see how insisting that the accessibility relation must be reflexive will vindicate the R\mlT{} rule:
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\have[m]{m}{\ebox \metav{A}}
 			\have[\, ]{n}{\metav{A}}\rt{m}
-		\end{nd}\]
+	\end{fitchproof}
 }
 To see this, just imagine trying to cook up a counter-interpretation to this claim:
 \[
@@ -567,12 +554,12 @@ We have attached the \mlSfour{} subscript to $\entails$ because it turns out tha
 \end{itemize}
 As before, we will not try to prove these soundness and completeness results. However, it is relatively easy to see how insisting that the accessibility relation must be transitive will vindicate the \mlSfour{} rule:
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
 			\open
 			\hypo[\ ]{k}{\ebox}
 			\have[\ ]{n}{\ebox\metav{A}}\rfour{m}
-		\end{nd}\]
+	\end{fitchproof}
 }
 The idea behind strict subproofs, remember, is that they are ways to prove things that must be true in all accessible worlds. So the R$\mathbf{4}$ rule means that whenever $\ebox \metav{A}$ is true, $\ebox \metav{A}$ must also be true in every accessible world. In other words, we must have $\ebox\metav{A} \entails_\mlSfour \ebox\ebox\metav{A}$.
 
@@ -600,12 +587,12 @@ We have attached the \mlSfive{} subscript to $\entails$ because it turns out tha
 \end{itemize}
 As before, we will not try to prove these soundness and completeness results here. However, it is relatively easy to see how insisting that the accessibility relation must be an equivalence relation will vindicate the R$\mathbf{5}$ rule:
 \factoidbox{
-	\[\begin{nd}
+	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox \metav{A}}
 			\open
 			\hypo[\ ]{k}{\ebox}
 			\have[\, ]{n}{\enot\ebox\metav{A}}\rfive{m}
-		\end{nd}\]
+	\end{fitchproof}
 }
 The rule says that if $\metav{A}$ is not necessary, i.e., false in some accessible world, it is also not necessary in any accessible possible world, i.e., we have $\enot\ebox \metav{A} \proves_\mlSfive  \ebox\enot\ebox \metav{A}$.
 
@@ -656,9 +643,9 @@ Present counter-interpretations to the following false claims:
 Modal logic is a large subfield of logic. We have only scratched the surface. If you want to learn more about modal logic, here are some textbooks you might consult.
 
 \begin{itemize}
-	\item Hughes, G. E., \& Cresswell, M. J. (1996). \emph{A New Introduction to Modal Logic}, Oxford: Routledge.
-	\item Priest, G. (2008). \emph{An Introduction to Non-Classical Logic}, 2nd ed., Cambridge: Cambridge University Press.
-	\item Garson, J. W. (2013). \emph{Modal Logic for Philosophers}, 2nd ed., Cambridge: Cambridge University Press.
+	\item Hughes, G. E., \& Cresswell, M. J. (1996). \textit{A New Introduction to Modal Logic}, Oxford: Routledge.
+	\item Priest, G. (2008). \textit{An Introduction to Non-Classical Logic}, 2nd ed., Cambridge: Cambridge University Press.
+	\item Garson, J. W. (2013). \textit{Modal Logic for Philosophers}, 2nd ed., Cambridge: Cambridge University Press.
 \end{itemize}
 
 None of these authors formulate their modal proof systems in quite the way we did, but the closest formulation is given by Garson.

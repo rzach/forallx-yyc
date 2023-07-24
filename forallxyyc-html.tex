@@ -15,6 +15,14 @@
 
 \usepackage{forallxyyc-html}
 \usepackage{forallxyyc}
+\usepackage{gitinfo2}
+
+\iflatexml
+  \usepackage{fitchml}% patch fitch for HTML
+  \renewenvironment{fitchproof}
+	{\begin{nd}}
+	{\end{nd}}
+\fi
 
 \HTMLtargettrue
 
@@ -30,7 +38,7 @@ Robert Trueman\and
 Aaron Thomas-Bolduc\and
 Richard Zach}
 
-\date{\forallxversion}
+\date{\forallxversion{} (\gitAuthorDate)}
 
 \bmlAltFormat{forallxyyc.pdf}{PDF}
 \bmlAltFormat{forallxyyc-accessible.pdf}{PDF (accessible)}
