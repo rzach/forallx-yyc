@@ -27,21 +27,20 @@ In order to do modal logic, we have to do two things. First, we want to learn ho
 The language of ML is an extension of TFL. We could have started with FOL, which would have given us Quantified Modal Logic (QML). QML is much more powerful than ML, but it is also much, much more complicated. So we are going to keep things simple, and start with TFL.
 
 Just like TFL, ML starts with an infinite stock of \emph{atoms}. These are written as capital letters, with or without numerical subscripts: $A$, $B$, \dots  $A_1$, $B_1$, \dots  We then take all of the rules about how to make sentences from TFL, and add two more for $\ebox$ and $\ediamond$:
-\begin{itemize}
-	\item[(1)]Every atom of ML is a sentence of ML.
-	\item[(2)]If $\metav{A}$ is a sentence of ML, then $\enot\metav{A}$ is a sentence of ML.
-	\item[(3)]If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eand\metav{B})$ is a sentence of ML.
-	\item[(4)]If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eor\metav{B})$ is a sentence of ML.
-	\item[(5)]If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eif\metav{B})$ is a sentence of ML.
-	\item[(6)]If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eiff\metav{B})$ is a sentence of ML.
-	\item[(7)]If $\metav{A}$ is a sentence of ML, then $\ebox\metav{A}$ is a sentence of ML.
-	\item[(8)]If $\metav{A}$ is a sentence of ML, then $\ediamond\metav{A}$ is a sentence of ML.
-	\item[(9)]Nothing else is a sentence of ML.
-\end{itemize}
+\begin{compactlist}
+	\item Every atom of ML is a sentence of ML.
+	\item If $\metav{A}$ is a sentence of ML, then $\enot\metav{A}$ is a sentence of ML.
+	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eand\metav{B})$ is a sentence of ML.
+	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eor\metav{B})$ is a sentence of ML.
+	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eif\metav{B})$ is a sentence of ML.
+	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eiff\metav{B})$ is a sentence of ML.
+	\item If $\metav{A}$ is a sentence of ML, then $\ebox\metav{A}$ is a sentence of ML.
+	\item If $\metav{A}$ is a sentence of ML, then $\ediamond\metav{A}$ is a sentence of ML.
+	\item Nothing else is a sentence of ML.
+\end{compactlist}
 Here are some examples of ML sentences:
-\begin{itemize}
-	\item[]$A,\;P\eor Q,\;\ebox A,\;C\eor \ebox D,\;\ebox\ebox (A\eif R),\;\ebox\ediamond (S\eand (Z\eiff (\ebox W \eor \ediamond Q)))$
-\end{itemize}
+\[A,\;P\eor Q,\;\ebox A,\;C\eor \ebox D,\;\ebox\ebox (A\eif R),\;\ebox\ediamond (S\eand (Z\eiff (\ebox W \eor \ediamond Q)))
+\]
 
 \chapter{Natural deduction for ML}
 \label{Proof}
@@ -60,7 +59,7 @@ The \ebox I rule allows us to derive a formula $\ebox \metav{A}$ if we can deriv
 Suppose we wanted to prove $\ebox(A\eif A)$. The first thing we need to do is prove that $A\eif A$ is a theorem. You already know how to do that using TFL. You simply present a proof of $A\eif A$ which doesn't start with any premises, like this:
 \begin{fitchproof}
 		\open
-		\hypo{1}{A}
+		\hypo{1}{A}\AS
 		\have{2}{A}\by{R}{1}
 		\close
 		\have{3}{A\eif A}\ci{1-2}
@@ -68,9 +67,9 @@ Suppose we wanted to prove $\ebox(A\eif A)$. The first thing we need to do is pr
 But to apply \ebox I, we need to have proven the formula inside a strict subproof.  Since our proof of $A \eif A$ makes use of no assumptions at all, this is possible.
 \begin{fitchproof}
 		\open
-		\hypo{1}{\ebox}
+		\hypo{1}{\ebox}\AS
 		\open
-		\hypo{2}{A}
+		\hypo{2}{A}\AS
 		\have{3}{A}\by{R}{2}
 		\close
 		\have{4}{A\eif A}\ci{2-3}
@@ -81,7 +80,7 @@ But to apply \ebox I, we need to have proven the formula inside a strict subproo
 \factoidbox{
 	\begin{fitchproof}
 			\open
-			\hypo[m]{m}{\ebox}
+			\hypo[m]{m}{\ebox}\AS
 			\have[n]{n}{\metav{A}}
 			\close
 			\have[\,]{o}{\ebox\metav{A}}\boxi{m-n}
@@ -90,9 +89,9 @@ But to apply \ebox I, we need to have proven the formula inside a strict subproo
 }
 It is essential to emphasize that in strict subproof you cannot use any rule which appeals to anything you proved outside of the strict subproof. There are exceptions, e.g., the \ebox E rule below. These rules will explicitly state that they can be used inside strict subproofs and cite lines outside the strict subproof. This restriction is essential, otherwise we would get terrible results. For example, we could provide the following proof to vindicate $A\therefore \ebox A$:
 \begin{fitchproof}
-		\hypo{1}{A}
+		\hypo{1}{A}\PR
 		\open
-		\hypo{2}{\ebox}
+		\hypo{2}{\ebox}\AS
 		\have{3}{A}\by{incorrect use of R}{1}
 		\close
 		\have{4}{\ebox A}\boxi{2-3}
@@ -105,7 +104,7 @@ We said above that a strict subproof allows us to reason about arbitrary alterna
 	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
 			\open
-			\hypo[\ ]{o}{\ebox}
+			\hypo[\ ]{o}{\ebox}\AS
 			\have[n]{n}{\metav{A}}\boxe{m}
 			\close
 		\end{fitchproof}
@@ -115,9 +114,9 @@ We said above that a strict subproof allows us to reason about arbitrary alterna
 \begin{fitchproof}
 	\have{1}{\ebox\metav{A}}
 	\open
-	\hypo{2}{\ebox}
+	\hypo{2}{\ebox}\AS
 	\open
-	\hypo{3}{\ebox}
+	\hypo{3}{\ebox}\AS
 	\have{4}{\metav{A}}\by{incorrect use of \ebox E}{1}
 \close\close
 \end{fitchproof}
@@ -125,10 +124,10 @@ The incorrect use of \ebox E on line~$4$ violates the condition, because althoug
 
 Let's begin with an example.
 \begin{fitchproof}
-		\hypo{1}{\ebox A}
-		\hypo{2}{\ebox B}
+		\hypo{1}{\ebox A}\PR
+		\hypo{2}{\ebox B}\PR
 		\open
-		\hypo{3}{\ebox}
+		\hypo{3}{\ebox}\AS
 		\have{4}{A}\boxe{1}
 		\have{5}{B}\boxe{2}
 		\have{6}{A \eand B}\ai{4,5}
@@ -137,11 +136,11 @@ Let's begin with an example.
 \end{fitchproof}
 We can also mix regular subproofs and strict subproofs:
 \begin{fitchproof}
-		\hypo{1}{\ebox (A \eif B)}
+		\hypo{1}{\ebox (A \eif B)}\PR
 		\open
-		\hypo{2}{\ebox A}
+		\hypo{2}{\ebox A}\AS
 		\open
-		\hypo{3}{\ebox}
+		\hypo{3}{\ebox}\AS
 		\have{4}{A}\boxe{2}
 		\have{5}{A \eif B}\boxe{1}
 		\have{6}{B}\ce{4,5}
@@ -221,11 +220,11 @@ We can prove things in \mlT{} which we could not prove in \mlK, e.g., $\ebox A \
 \mlT{} allows you to strip away the necessity boxes: from $\ebox \metav{A}$, you may infer $\metav{A}$. But what if we wanted to add extra boxes? That is, what if we wanted to go from $\ebox\metav{A}$ to $\ebox\ebox\metav{A}$? Well, that would be no problem, if we had proved $\ebox\metav{A}$ by applying \ebox I to a strict subproof of $\metav{A}$ which itself does not use \ebox E. In that case, $\metav{A}$ is a tautology, and by nesting the strict subproof inside another strict subproof and applying \ebox I again, we can prove $\ebox\ebox \metav{A}$. For example, we could prove $\ebox\ebox (P\eif P)$ like this:
 \begin{fitchproof}
 		\open
-		\hypo{1}{\ebox}
+		\hypo{1}{\ebox}\AS
 		\open
-		\hypo{2}{\ebox}
+		\hypo{2}{\ebox}\AS
 		\open
-		\hypo{3}{P}
+		\hypo{3}{P}\AS
 		\have{4}{P}\by{R}{3}
 		\close
 		\have{5}{P\eif P}\ci{3-4}
@@ -241,7 +240,7 @@ This leads us to another new system, \mlSfour, which we get by adding the follow
 	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
 			\open
-			\hypo[\ ]{k}{\ebox}
+			\hypo[\ ]{k}{\ebox}\AS
 			\have[n]{n}{\ebox\metav{A}}\rfour{m}
 			\close
 	\end{fitchproof}
@@ -253,9 +252,9 @@ Rule R$\mathbf{4}$ looks just like {\ebox}E, except that instead of yielding $\m
 Now we can prove even more results. For instance:
 \begin{fitchproof}
 	\open
-	\hypo{1}{\ebox A}
+	\hypo{1}{\ebox A}\AS
 	\open
-	\hypo{2}{\ebox}
+	\hypo{2}{\ebox}\AS
 	\have{3}{\ebox A}\rfour{1}
 	\close
 	\have{4}{\ebox\ebox A}\boxi{2-3}
@@ -274,7 +273,7 @@ This leads us to our final modal system, \mlSfive, which we get by adding the fo
 	\begin{fitchproof}
 			\have[m]{m}{\enot \ebox\metav{A}}
 			\open
-			\hypo[\ ]{k}{\ebox}
+			\hypo[\ ]{k}{\ebox}\AS
 			\have[n]{n}{\enot\ebox\metav{A}}\rfive{m}
 			\close
 	\end{fitchproof}
@@ -283,12 +282,12 @@ This leads us to our final modal system, \mlSfive, which we get by adding the fo
 
 This rule allows us to show, for instance, that $\ediamond\ebox A\proves_\mlSfive  \ebox A$:
 \begin{fitchproof}
-	\hypo{1}{\ediamond\ebox A}
+	\hypo{1}{\ediamond\ebox A}\PR
 	\have{2}{\enot\ebox\enot\ebox A}\by{Def\ediamond}{1}
 	\open
-	\hypo{3}{\enot \ebox A}
+	\hypo{3}{\enot \ebox A}\AS
 	\open
-	\hypo{4}{\ebox}
+	\hypo{4}{\ebox}\AS
 	\have{5}{\enot\ebox A}\rfive{3}
 	\close
 	\have{6}{\ebox\enot\ebox A}\boxi{4-5}
@@ -301,19 +300,19 @@ So, as well as adding boxes in front of diamonds, we can also delete diamonds in
 
 We got \mlSfive{} just by adding the rule R$\mathbf{5}$ rule to \mlSfour. In fact, we could have added rule R$\mathbf{5}$ to \mlT{} alone, and leave out rule R$\mathbf{4}$). Everything we can prove by rule R$\mathbf{4}$ can also be proved using R\mlT{} together with R$\mathbf{5}$. For instance, here is a proof that shows $\ebox A \proves_\mlSfive  \ebox\ebox A$ without using R$\mathbf{4}$:
 \begin{fitchproof}
-	\hypo{1}{\ebox A}
+	\hypo{1}{\ebox A}\PR
 	\open
-	\hypo{2}{\ebox\enot\ebox A}
+	\hypo{2}{\ebox\enot\ebox A}\AS
 	\have{3}{\enot\ebox A}\rt{2}
 	\have{4}{\ered}\ne{1,3}
 	\close
 	\have{5}{\enot\ebox\enot\ebox A}\ni{2-4}
 	\open
-	\hypo{6}{\ebox}
+	\hypo{6}{\ebox}\AS
 	\open
-	\hypo{7}{\enot\ebox A}
+	\hypo{7}{\enot\ebox A}\AS
 	\open
-	\hypo{8}{\ebox}
+	\hypo{8}{\ebox}\AS
 	\have{9}{\enot\ebox A}\rfive{7}
 	\close
 	\have{10}{\ebox \enot\ebox A}\boxi{8-9}
@@ -397,29 +396,29 @@ Once you have chosen your collection of possible worlds, you need to find some w
 A valuation function for ML takes in a sentence and a world as its arguments, and then returns a truth-value as its value. So if $\nu$ is a valuation function and $w$ is a possible world, $\nu_w(\metav{A})$ is whatever truth-value $\nu$ maps $\metav{A}$ and $w$ to: if $\nu_w(\metav{A})=F$, then $\metav{A}$ is false at world $w$ on valuation $\nu$; if $\nu_w(\metav{A})=T$, then $\metav{A}$ is true at world $w$ on valuation $\nu$.
 
 These valuation functions are allowed to map any \emph{atomic} sentence to any truth-value at any world. But there are rules about which truth-values more complex sentences get assigned at a world. Here are the rules for the connectives from TFL:
-\begin{itemize}
-	\item[(1)]$\nu_w(\enot\metav{A})=T$ iff: $\nu_w(\metav{A})=F$
-	\item[(2)]$\nu_w(\metav{A}\eand\metav{B})=T$ iff: $\nu_w(\metav{A})=T$ and $\nu_w(\metav{B})=T$
-	\item[(3)]$\nu_w(\metav{A}\eor\metav{B})=T$ iff: $\nu_w(\metav{A})=T$ or $\nu_w(\metav{B})=T$, or both
-	\item[(4)]$\nu_w(\metav{A}\eif\metav{B})=T$ iff: $\nu_w(\metav{A})=F$ or $\nu_w(\metav{B})=T$, or both
-	\item[(5)]$\nu_w(\metav{A}\eiff\metav{B})=T$ iff: $\nu_w(\metav{A})=T$ and $\nu_w(\metav{B})=T$, or $\nu_w(\metav{A})=F$ and $\nu_w(\metav{B})=F$
-\end{itemize}
+\begin{compactlist}
+	\item $\nu_w(\enot\metav{A})=T$ \ifeff{} $\nu_w(\metav{A})=F$
+	\item $\nu_w(\metav{A}\eand\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ and $\nu_w(\metav{B})=T$
+	\item $\nu_w(\metav{A}\eor\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ or $\nu_w(\metav{B})=T$, or both
+	\item $\nu_w(\metav{A}\eif\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=F$ or $\nu_w(\metav{B})=T$, or both
+	\item $\nu_w(\metav{A}\eiff\metav{B})=T$ \ifeff{} $\nu_w(\metav{A})=T$ and $\nu_w(\metav{B})=T$, or $\nu_w(\metav{A})=F$ and $\nu_w(\metav{B})=F$
+\end{compactlist}
 So far, these rules should all look very familiar. Essentially, they all work exactly like the truth-tables for TFL. The only difference is that these truth-table rules have to be applied over and over again, to one world at a time.
 
 But what are the rules for the new modal operators, $\ebox$ and $\ediamond$? The most obvious idea would be to give rules like these:
 \begin{itemize}
-	\item[]$\nu_w(\ebox \metav{A})=T$ \ifeff{} $\forall w' (\nu_{w'}(\metav{A})=T)$
-	\item[]$\nu_w(\ediamond \metav{A})=T$ \ifeff{} $\exists w' (\nu_{w'}(\metav{A})=T)$
+	\item $\nu_w(\ebox \metav{A})=T$ \ifeff{} $\forall w' (\nu_{w'}(\metav{A})=T)$
+	\item $\nu_w(\ediamond \metav{A})=T$ \ifeff{} $\exists w' (\nu_{w'}(\metav{A})=T)$
 \end{itemize}
 This is just the fancy formal way of writing out the idea that $\ebox\metav{A}$ is true at $w$ just in case $\metav{A}$ is true at \emph{every} world, and $\ediamond\metav{A}$ is true at $w$ just in case $\metav{A}$ is true at \emph{some} world.
 
 However, while these rules are nice and simple, they turn out not to be quite as useful as we would like. As we mentioned, ML is meant to be a very flexible tool. It is meant to be a general framework for dealing with lots of different kinds of necessity. As a result, we want our semantic rules for $\ebox$ and $\ediamond$ to be a bit less rigid. We can do this by introducing another new idea: \emph{accessibility relations}.
 
 An accessibility relation, $R$, is a relation between possible worlds. Roughly, to say that $Rw_1w_2$ (in English: world $w_1$ \emph{accesses} world $w_2$) is to say that $w_2$ is possible \emph{relative to} $w_1$. In other words, by introducing accessibility relations, we open up the idea that a given world might be possible relative to some worlds but not others. This turns out to be a \emph{very} fruitful idea when studying modal systems. We can now give the following semantic rules for $\ebox$ and $\ediamond$:
-\begin{itemize}
-	\item[(6)]$\nu_{w_1}(\ebox \metav{A})=T$ \ifeff{} $\forall w_2 (Rw_1w_2\eif \nu_{w_2}(\metav{A})=T)$
-	\item[(7)]$\nu_{w_1}(\ediamond \metav{A})=T$ \ifeff{} $\exists w_2 (Rw_1w_2\eand \nu_{w_2}(\metav{A})=T)$
-\end{itemize}
+\begin{compactlist}[resume]
+	\item $\nu_{w_1}(\ebox \metav{A})=T$ \ifeff{} $\forall w_2 (Rw_1w_2\eif \nu_{w_2}(\metav{A})=T)$
+	\item $\nu_{w_1}(\ediamond \metav{A})=T$ \ifeff{} $\exists w_2 (Rw_1w_2\eand \nu_{w_2}(\metav{A})=T)$
+\end{compactlist}
 Or in plain English: $\ebox\metav{A}$ is true in world $w_1$ \ifeff{} $\metav{A}$ is true in every world that is possible relative to $w_1$; and $\ediamond\metav{A}$ is true in world $w_1$ \ifeff{} $\metav{A}$ is true in some world that is possible relative to $w_1$.
 
 So, there we have it. An interpretation for ML consists of three things: a collection of possible worlds, $W$; an accessibility relation, $R$; and a valuation function, $\nu$. The collection of `possible worlds' can really be a collection of anything you like. It really doesn't matter, so long as $W$ isn't empty. (For many purposes, it is helpful just to take a collection of numbers to be your collection of worlds.) And for now, at least, $R$ can be any relation between the worlds in $W$ that you like. It could be a relation which every world in $W$ bears to every world in $W$, or one which no world bears to any world, or anything in between. And lastly, $\nu$ can map any atomic sentence of ML to any truth-value at any world. All that matters is that it follows the rules (1)--(7) when it comes to the more complex sentences.
@@ -441,9 +440,9 @@ Let's look at an example. It is often helpful to present interpretations of ML a
 	\end{tikzpicture}
 \end{center}
 Here is how to read the interpretation off from this diagram. It contains just two worlds, 1 and 2. The arrows between the worlds indicate the accessibility relation. So 1 and 2 both access 1, but neither 1 nor 2 accesses 2. The boxes at each world let us know which atomic sentences are true at each world: $A$ is true at 1 but false at 2; $B$ is false at 1 but true at 2. You may only write an atomic sentence or the negation of an atomic sentence into one of these boxes. We can figure out what truth-values the more complex sentences get at each world from that. For example, on this interpretation all of the following sentences are true at $w_1$:
-\begin{itemize}
-	\item[]$A\eand\enot B$, $B\eif A$, $\ediamond A$, $\ebox\enot B$
-\end{itemize}
+\[
+A\eand\enot B,\qquad B\eif A,\qquad \ediamond A,\qquad \ebox\enot B
+\]
 If you don't like thinking diagrammatically, then you can also present an interpretation like this:
 \begin{ekey}
 	\item[W]$1,2$
@@ -472,12 +471,7 @@ We can now extend all of the semantic concepts of TFL to cover ML:
 We can also extend our use of $\entails$. However, we need to add subscripts again, just as we did with $\proves$. So, when we want to say that $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is valid, we will write: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$.
 
 Let's get more of a feel for this semantics by presenting some counter-interpretations. Consider the following (false) claim:
-\begin{itemize}
-	\item[]
-	      \begin{itemize}
-		      \item[]$\enot A\entails_\mlK \enot \ediamond A$
-	      \end{itemize}
-\end{itemize}
+\[\enot A\entails_\mlK \enot \ediamond A\]
 In order to present a counter-interpretation to this claim, we need to cook up an interpretation which makes $\enot A$ true at some world $w$, and $\enot\ediamond A$ false at $w$. Here is one such interpretation, presented diagrammatically:
 \begin{center}
 	\begin{tikzpicture}
@@ -493,10 +487,10 @@ In order to present a counter-interpretation to this claim, we need to cook up a
 It is easy to see that this will work as a counter-interpretation for our claim. First, $\enot A$ is true at world $1$. And second, $\enot\ediamond A$ is false at $1$: $A$ is true at $2$, and $2$ is accessible from $1$. So there is some world in this interpretation where $\enot A$ is true and $\enot\ediamond A$ is false, so it is not the case that $\enot A\entails_\mlK\enot\ediamond A$.
 
 Why did we choose the subscript \mlK? Well, it turns out that there is an important relationship between system \mlK{} and the definition of validity we have just given. In particular, we have the following two results:
-\begin{itemize}
+\begin{compactlist}
 	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$
 	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlK\metav{C}$
-\end{itemize}
+\end{compactlist}
 The first result is known as a \emph{soundness} result, since it tells us that the rules of \mlK{} are good, sound rules: if you can vindicate an argument by giving a proof for it using system \mlK, then that argument really is valid. The second result is known as a \emph{completeness} result, since it tells us that the rules of \mlK{} are broad enough to capture all of the valid arguments: if an argument is valid, then it will be possible to offer a proof in \mlK{} which vindicates it.
 
 Now, it is one thing to state these results, quite another to prove them. However, we will not try to prove them here. But the idea behind the proof of soundness will perhaps make clearer how strict subproofs work.
@@ -511,18 +505,16 @@ A few moments ago, we said that system \mlK{} is sound and complete. Where does 
 Does that mean that these systems are a waste of time? Not at all! These systems are only unsound \emph{relative to the definition of validity we gave above}. (Or to use symbols, they are unsound relative to $\entails_\mlK$.) So when we are dealing with these stronger modal systems, we just need to modify our definition of validity to fit. This is where accessibility relations come in really handy.
 
 When we introduced the idea of an accessibility relation, we said that it could be any relation between worlds that you like: you could have it relating every world to every world, no world to any world, or anything in between. That is how we were thinking of accessibility relations in our definition of $\entails_\mlK$. But if we wanted, we could start putting some restrictions on the accessibility relation. In particular, we might insist that it has to be \emph{reflexive}:
-\begin{itemize}
-	\item $\forall wRww$
-\end{itemize}
+\[\forall wRww\]
 In English: every world accesses itself. Or in terms of relative possibility: every world is possible relative to itself. If we imposed this restriction, we could introduce a new consequence relation, $\entails_\mlT$, as follows:
 \factoidbox{
 	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a reflexive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
 }
 We have attached the \mlT{} subscript to $\entails$ because it turns out that system \mlT{} is sound and complete relative to this new definition of validity:
-\begin{itemize}
+\begin{compactlist}
 	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$
 	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlT\metav{C}$
-\end{itemize}
+\end{compactlist}
 As before, we will not try to prove these soundness and completeness results. However, it is relatively easy to see how insisting that the accessibility relation must be reflexive will vindicate the R\mlT{} rule:
 \factoidbox{
 	\begin{fitchproof}
@@ -540,57 +532,51 @@ We would need to construct a world, $w$, at which $\ebox \metav{A}$ was true, bu
 \label{SemanticsS4}
 
 How else might we tweak our definition of validity? Well, we might also stipulate that the accessibility relation has to be \emph{transitive}:
-\begin{itemize}
-	\item $\forall w_1\forall w_2\forall w_3 ((Rw_1w_2 \eand Rw_2w_3)\eif Rw_1w_3)$
-\end{itemize}
+\[\forall w_1\forall w_2\forall w_3 ((Rw_1w_2 \eand Rw_2w_3)\eif Rw_1w_3)\]
 In English: if $w_1$ accesses $w_2$, and $w_2$ accesses $w_3$, then $w_1$ accesses $w_3$. Or in terms of relative possibility: if $w_3$ is possible relative to $w_2$, and $w_2$ is possible relative to $w_1$, then $w_3$ is possible relative to $w_1$. If we added this restriction on our accessibility relation, we could introduce a new consequence relation, $\entails_\mlSfour$, as follows:
 \factoidbox{
 	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a reflexive and transitive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
 }
 We have attached the \mlSfour{} subscript to $\entails$ because it turns out that system \mlSfour{} is sound and complete relative to this new definition of validity:
-\begin{itemize}
+\begin{compactlist}
 	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$
 	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour\metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfour\metav{C}$
-\end{itemize}
+\end{compactlist}
 As before, we will not try to prove these soundness and completeness results. However, it is relatively easy to see how insisting that the accessibility relation must be transitive will vindicate the \mlSfour{} rule:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\ebox\metav{A}}
 			\open
-			\hypo[\ ]{k}{\ebox}
+			\hypo[\ ]{k}{\ebox}\AS
 			\have[\ ]{n}{\ebox\metav{A}}\rfour{m}
 	\end{fitchproof}
 }
 The idea behind strict subproofs, remember, is that they are ways to prove things that must be true in all accessible worlds. So the R$\mathbf{4}$ rule means that whenever $\ebox \metav{A}$ is true, $\ebox \metav{A}$ must also be true in every accessible world. In other words, we must have $\ebox\metav{A} \entails_\mlSfour \ebox\ebox\metav{A}$.
 
 To see this, just imagine trying to cook up a counter-interpretation to this claim:
-\begin{itemize}
-	\item[]$\ebox\metav{A} \entails_\mlSfour \ebox \ebox \metav{A}$
-\end{itemize}
+\[\ebox\metav{A} \entails_\mlSfour \ebox \ebox \metav{A}\]
 We would need to construct a world, $w_1$, at which $\ebox\metav{A}$ was true, but $\ebox \ebox \metav{A}$ was false. Now, if $\ebox \ebox \metav{A}$ is false at $w_1$, then $w_1$ must access some world, $w_2$, at which $\ebox\metav{A}$ is false. Equally, if $\ebox \metav{A}$ is false at $w_2$, then $w_2$ must access some world, $w_3$, at which $\metav{A}$ is false. We just said that $w_1$ accesses $w_2$, and $w_2$ accesses $w_3$. So since we are now insisting that the accessibility relation be transitive, $w_1$ must access $w_3$. And as $\ebox\metav{A}$ is true at $w_1$, and $w_3$ is accessible from $w_1$, it follows that $\metav{A}$ must be true at $w_3$. So $\metav{A}$ is true \emph{and} false at $w_3$. Contradiction!
 
 \section{A Semantics for \mlSfive}
 \label{SemanticsS5}
 
 Let's put one more restriction on the accessibility relation. This time, let's insist that it must also be \emph{symmetric}:
-\begin{itemize}
-	\item $\forall w_1\forall w_2(Rw_1w_2 \eif Rw_2w_1)$
-\end{itemize}
+\[\forall w_1\forall w_2(Rw_1w_2 \eif Rw_2w_1)\]
 In English: if $w_1$ accesses $w_2$, then $w_2$ accesses $w_1$. Or in terms of relative possibility: if $w_2$ is possible relative to $w_1$, then $w_1$ is possible relative to $w_2$. Logicians call a relation that is reflexive, symmetric, and transitive an \emph{equivalence} relation. We can now define a new consequence relation, $\entails_\mlSfive $, as follows:
 \factoidbox{
 	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} there is no world in any interpretation \emph{whose accessibility relation is an equivalence relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
 }
 We have attached the \mlSfive{} subscript to $\entails$ because it turns out that system \mlSfive{} is sound and complete relative to this new definition of validity:
-\begin{itemize}
+\begin{compactlist}
 	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$
 	\item If $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive \metav{C}$, then $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\proves_\mlSfive \metav{C}$
-\end{itemize}
+\end{compactlist}
 As before, we will not try to prove these soundness and completeness results here. However, it is relatively easy to see how insisting that the accessibility relation must be an equivalence relation will vindicate the R$\mathbf{5}$ rule:
 \factoidbox{
 	\begin{fitchproof}
 			\have[m]{m}{\enot\ebox \metav{A}}
 			\open
-			\hypo[\ ]{k}{\ebox}
+			\hypo[\ ]{k}{\ebox}\AS
 			\have[\, ]{n}{\enot\ebox\metav{A}}\rfive{m}
 	\end{fitchproof}
 }
@@ -604,9 +590,7 @@ We would need to construct a world, $w_1$, at which $\enot\ebox\metav{A}$ was tr
 Now, if $\enot\ebox\metav{A}$ is true at $w_1$, then $w_1$ must access some world, $w_2$, at which $\metav{A}$ is false. Equally, if $\ebox \enot\ebox \metav{A}$ is false at $w_1$, then $w_1$ must access some world, $w_3$, at which $\enot\ebox \metav{A}$ is false. Since we are now insisting that the accessibility relation is an equivalence relation, and hence symmetric, we can infer that $w_3$ accesses $w_1$. Thus, $w_3$ accesses $w_1$, and $w_1$ accesses $w_2$. Again, since we are now insisting that the accessibility relation is an equivalence relation, and hence transitive, we can infer that $w_3$ accesses $w_2$. But earlier we said that $\enot\ebox \metav{A}$ is false at $w_3$, which implies that $\metav{A}$ is true at every world which $w_3$ accesses. So $\metav{A}$ is true \emph{and} false at $w_2$. Contradiction!
 
 In the definition of $\entails_\mlSfive $, we stipulated that the accessibility relation must be an equivalence relation. But it turns out that there is another way of getting a notion of validity fit for \mlSfive. Rather than stipulating that the accessibility relation be an equivalence relation, we can instead stipulate that it be a \emph{universal} relation:
-\begin{itemize}
-	\item $\forall w_1\forall w_2Rw_1w_2$
-\end{itemize}
+\[\forall w_1\forall w_2Rw_1w_2\]
 In English: every world accesses every world. Or in terms of relative possibility: every world is possible relative to every world. Using this restriction on the accessibility relation, we could have defined $\entails_\mlSfive $ like this:
 \factoidbox{
 	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a universal accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.

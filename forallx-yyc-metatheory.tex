@@ -448,9 +448,9 @@ To prove this, we will check each of the rules of TFL's proof system individuall
 
 To begin with, we must make the idea of `leading us astray' more precise. Say that a line of a proof is \define{shiny} \ifeff{} the assumptions on which that line depends entail the sentence on that line.\footnote{The word `shiny' is not standard among logicians.} To illustrate the idea, consider the following:
 	\begin{fitchproof}
-		\hypo{fgh}{F\eif(G\eand H)}
+		\hypo{fgh}{F\eif(G\eand H)}\PR
 		\open
-			\hypo{f}{F}
+			\hypo{f}{F}\AS
 			\have{gh}{G \eand H}\ce{fgh,f}
 			\have{g}{G}\ae{gh}
 		\close
@@ -528,11 +528,11 @@ We leave this as an exercise.
    \begin{fitchproof}
 	   \have[m]{aob}{\metav{A}\eor\metav{B}}
 	   \open
-		   \hypo[i]{a}{\metav{A}} %\by{want \metav{C}}{}
+		   \hypo[i]{a}{\metav{A}}\AS %\by{want \metav{C}}{}
 		   \have[j]{c1}{\metav{C}}
 	   \close
 	   \open
-		   \hypo[k]{b}{\metav{B}} %\by{want \metav{C}}{}
+		   \hypo[k]{b}{\metav{B}}\AS %\by{want \metav{C}}{}
 		   \have[l]{c2}{\metav{C}}
 	   \close
 	   \have[n]{ab}{\metav{C}}\oe{aob, a-c1,b-c2}
@@ -574,7 +574,7 @@ We leave this as an exercise.
 	Assume that every line before line $n$ on some TFL-proof is shiny, and that $\enot$I is used on line $n$. So the situation is:
 \begin{fitchproof}
    \open
-	   \hypo[i]{a}{\metav{A}}
+	   \hypo[i]{a}{\metav{A}}\AS
 	   \have[j]{b}{\ered}
    \close
    \have[n]{na}{\enot\metav{A}}\ni{a-b}

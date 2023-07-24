@@ -12,12 +12,12 @@ The language of FOL makes use of all of the connectives of TFL. So proofs in FOL
 
 From the claim that everything is~$F$, you can infer that any particular thing is~$F$. You name it; it's~$F$. So the following should be fine:
 \begin{fitchproof}
-	\hypo{a}{\forall x\,\atom{R}{x,x,d}}
+	\hypo{a}{\forall x\,\atom{R}{x,x,d}}\PR
 	\have{c}{\atom{R}{a,a,d}} \Ae{a}
 \end{fitchproof}
 We obtained line 2 by dropping the universal quantifier and replacing every instance of `$x$' with `$a$'. Equally, the following should be allowed:
 \begin{fitchproof}
-	\hypo{a}{\forall x\,\atom{R}{x,x,d}}
+	\hypo{a}{\forall x\,\atom{R}{x,x,d}}\PR
 	\have{c}{\atom{R}{d,d,d}} \Ae{a}
 \end{fitchproof}
 We obtained line 2 here by dropping the universal quantifier and replacing every instance of `$x$' with `$d$'. We could have done the same with any other name we wanted.
@@ -32,7 +32,7 @@ The notation here was introduced in \S\ref{s:TruthFOL}. The point is that you ca
 
 We should emphasize that (as with every elimination rule) you can only apply the $\forall$E rule when the universal quantifier is the main logical operator. So the following is \emph{banned}:
 \begin{fitchproof}
-	\hypo{a}{\forall x\,\atom{B}{x} \eif \atom{B}{k}}
+	\hypo{a}{\forall x\,\atom{B}{x} \eif \atom{B}{k}}\PR
 	\have{c}{\atom{B}{b} \eif \atom{B}{k}}\by{naughy attempt to invoke $\forall$E}{a}
 \end{fitchproof}
 This is illegitimate, since `$\forall x$' is not the main logical operator in line~1. (If you need a reminder as to why this sort of inference should be banned, reread \S\ref{s:MoreMonadic}.)
@@ -40,17 +40,17 @@ This is illegitimate, since `$\forall x$' is not the main logical operator in li
 \section{Existential introduction}
 From the claim that some particular thing is~$F$, you can infer that something is~$F$. So we ought to allow:
 \begin{fitchproof}
-	\hypo{a}{\atom{R}{a,a,d}}
+	\hypo{a}{\atom{R}{a,a,d}}\PR
 	\have{b}{\exists x\, \atom{R}{a,a,x}} \Ei{a}
 \end{fitchproof}
 Here, we have replaced the name `$d$' with a variable `$x$', and then existentially quantified over it. Equally, we would have allowed:
 \begin{fitchproof}
-	\hypo{a}{\atom{R}{a,a,d}}
+	\hypo{a}{\atom{R}{a,a,d}}\PR
 	\have{c}{\exists x\, \atom{R}{x,x,d}} \Ei{a}
 \end{fitchproof}
 Here we have replaced both instances of the name `$a$' with a variable, and then existentially generalized. But we do not need to replace \emph{both} instances of a name with a variable: if Narcissus loves himself, then there is someone who loves Narcissus. So we also allow:
 \begin{fitchproof}
-	\hypo{a}{\atom{R}{a,a,d}}
+	\hypo{a}{\atom{R}{a,a,d}}\PR
 	\have{d}{\exists x\, \atom{R}{x,a,d}} \Ei{a}
 \end{fitchproof}
 Here we have replaced \emph{one} instance of the name `$a$' with a variable, and then existentially generalized. These observations motivate our introduction rule, although to explain it, we will need to introduce some new notation.
@@ -81,7 +81,7 @@ Where $\metav{A}$ is a sentence containing the name $\metav{c}$, we can emphasiz
 \section{Empty domains}
 The following proof combines our two new rules for quantifiers:
 	\begin{fitchproof}
-		\hypo{a}{\forall x\, \atom{F}{x}}
+		\hypo{a}{\forall x\, \atom{F}{x}}\PR
 		\have{in}{\atom{F}{a}}\Ae{a}
 		\have{e}{\exists x\, \atom{F}{x}}\Ei{in}
 	\end{fitchproof}
@@ -92,11 +92,11 @@ Actually, we are already committed to this oddity. In \S\ref{s:FOLBuildingBlocks
 Since it is far from clear that logic should tell us that there must be something rather than nothing, we might well be cheating a bit here.
 
 If we refuse to cheat, though, then we pay a high cost. Here are three things that we want to hold on to:
-	\begin{ebullet}
+	\begin{compactlist}
 		\item $\forall x\,\atom{F}{x} \proves \atom{F}{a}$: after all, that was $\forall$E.
 		\item $\atom{F}{a} \proves \exists x\,\atom{F}{x}$: after all, that was $\exists$I.
 		\item the ability to copy-and-paste proofs together: after all, reasoning works by putting lots of little steps together into rather big chains.
-	\end{ebullet}
+	\end{compactlist}
 If we get what we want on all three counts, then we have to countenance that $\forall x\,\atom{F}{x} \proves \exists x\,\atom{F}{x}$. So, if we get what we want on all three counts, the proof system alone tells us that there is something rather than nothing. And if we refuse to accept that, then we have to surrender one of the three things that we want to hold on to!
 
 Before we start thinking about which to surrender, we might want to ask how \emph{much} of a cheat this is. Granted, it may make it harder to engage in theological debates about why there is something rather than nothing. But the rest of the time, we will get along just fine. So maybe we should just regard our proof system (and FOL, more generally) as having a very slightly limited purview. If we ever want to allow for the possibility of \emph{nothing}, then we will have to cast around for a more complicated proof system. But for as long as we are content to ignore that possibility, our proof system is perfectly in order. (As, similarly, is the stipulation that every domain must contain at least one object.)
@@ -111,12 +111,12 @@ A solution will be inspired by considering:
 $$\forall x\,\atom{F}{x} \therefore \forall y\,\atom{F}{y}$$
 This argument should \emph{obviously} be valid. After all, alphabetical variation ought to be a matter of taste, and of no logical consequence. But how might our proof system reflect this? Suppose we begin a proof thus:
 \begin{fitchproof}
-	\hypo{x}{\forall x\, \atom{F}{x}} 
+	\hypo{x}{\forall x\, \atom{F}{x}} \PR
 	\have{a}{\atom{F}{a}} \Ae{x}
 \end{fitchproof}
 We have proved `$\atom{F}{a}$'. And, of course, nothing stops us from using the same justification to prove `$\atom{F}{b}$', `$\atom{F}{c}$', \ldots, `$\atom{F}{j_2}$', \ldots, `$\atom{F}{r_{79002}}$, \dots, and so on until we run out of space, time, or patience. But reflecting on this, we see that there is a way to prove $F\metav{c}$, for any name \metav{c}. And if we can do it for \emph{any} thing, we should surely be able to say that `$F$' is true of \emph{everything}. This therefore justifies us in inferring `$\forall y\,\atom{F}{y}$', thus:
 \begin{fitchproof}
-	\hypo{x}{\forall x\, \atom{F}{x}}
+	\hypo{x}{\forall x\, \atom{F}{x}}\PR
 	\have{a}{\atom{F}{a}} \Ae{x}
 	\have{y}{\forall y\, \atom{F}{y}} \Ai{a}
 \end{fitchproof}
@@ -134,14 +134,15 @@ A crucial aspect of this rule, though, is bound up in the %first
 constraint. This constraint ensures that we are always reasoning at a sufficiently general level.
 %\footnote{Recall from \S\ref{s:BasicTFL} that we are treating `$\ered$' as a canonical contradiction. But if it were the canonical contradiction as involving some \emph{constant}, it might interfere with the constraint mentioned here. To avoid such problems, we will treat `$\ered$' as a canonical contradiction \emph{that involves no particular names}.} 
 To see the constraint in action, consider this terrible argument:
-	\begin{quote}
-		Everyone loves Kylie Minogue; therefore everyone loves themselves.
-	\end{quote}
+	\begin{earg}
+		\item Everyone loves Kylie Minogue.
+		\item[\texttherefore] therefore everyone loves themselves.
+	\end{earg}
 We might symbolize this obviously invalid inference pattern as:
 $$\forall x\,\atom{L}{x,k} \therefore \forall x\,\atom{L}{x,x}$$
 Now, suppose we tried to offer a proof that vindicates this argument:
 \begin{fitchproof}
-	\hypo{x}{\forall x\, \atom{L}{x,k}}
+	\hypo{x}{\forall x\, \atom{L}{x,k}}\PR
 	\have{a}{\atom{L}{k,k}} \Ae{x}
 	\have{y}{\forall x\, \atom{L}{x,x}} \by{naughty attempt to invoke $\forall$I}{a}
 \end{fitchproof}\noindent
@@ -150,7 +151,7 @@ This is not allowed, because `$k$' occurred already in an undischarged assumptio
 Although the name may not occur in any \emph{undischarged} assumption, it may occur in a \emph{discharged} assumption. That is, it may occur in a subproof that we have already closed. For example, this is just fine:
 \begin{fitchproof}
 	\open
-		\hypo{f1}{\atom{G}{d}}
+		\hypo{f1}{\atom{G}{d}}\AS
 		\have{f2}{\atom{G}{d}}\by{R}{f1}
 	\close
 	\have{ff}{\atom{G}{d} \eif \atom{G}{d}}\ci{f1-f2}
@@ -159,14 +160,15 @@ Although the name may not occur in any \emph{undischarged} assumption, it may oc
 This tells us that `$\forall z (\atom{G}{z} \eif \atom{G}{z})$' is a \emph{theorem}. And that is as it should be.
 
 We should emphasize one last point. As per the conventions of \S\ref{s:MainLogicalOperatorQuantifier}, the use of $\forall$I requires that we are replacing \emph{every} instance of the name \metav{c} in $\metav{A}(\ldots \metav{c}\ldots\metav{c}\ldots)$ with the variable \metav{x}. If we only replace \emph{some} names and not others, we end up `proving' silly things. For example, consider the argument:
-	\begin{quote}
-	Everyone is as old as themselves; so everyone is as old as Judi Dench.
-	\end{quote}
+	\begin{earg}
+	\item Everyone is as old as themselves.
+	\item[\texttherefore] so everyone is as old as Judi Dench.
+	\end{earg}
 We might symbolize this as follows:
 $$\forall x\,\atom{O}{x,x} \therefore \forall x\,\atom{O}{x,d}$$
 But now suppose we tried to \emph{vindicate} this terrible argument with the following:
 \begin{fitchproof}
-	\hypo{x}{\forall x\, \atom{O}{x,x}}
+	\hypo{x}{\forall x\, \atom{O}{x,x}}\PR
 	\have{a}{\atom{O}{d,d}}\Ae{x}
 	\have{y}{\forall x\, \atom{O}{x,d}}\by{naughty attempt to invoke $\forall$I}{a}	
 \end{fitchproof}
@@ -181,10 +183,10 @@ Suppose we know that something is~$F$, and that everything which is~$F$ is also~
 	\end{quote}
 We might try to capture this reasoning pattern in a proof as follows:
 \begin{fitchproof}
-	\hypo{es}{\exists x\, \atom{F}{x}}
-	\hypo{ast}{\forall x(\atom{F}{x} \eif \atom{G}{x})}
+	\hypo{es}{\exists x\, \atom{F}{x}}\PR
+	\hypo{ast}{\forall x(\atom{F}{x} \eif \atom{G}{x})}\PR
 	\open
-		\hypo{s}{\atom{F}{b}}
+		\hypo{s}{\atom{F}{b}}\AS
 		\have{st}{\atom{F}{b} \eif \atom{G}{b}}\Ae{ast}
 		\have{t}{\atom{G}{b}} \ce{st, s}
 		\have{et1}{\exists x\, \atom{G}{x}}\Ei{t}
@@ -198,7 +200,7 @@ Putting this together, we obtain the existential elimination rule ($\exists$E):
 \begin{fitchproof}
 	\have[m]{a}{\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\open	
-		\hypo[i]{b}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
+		\hypo[i]{b}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}\AS
 		\have[j]{c}{\metav{B}}
 	\close
 	\have[\ ]{d}{\metav{B}} \Ee{a,b-c}
@@ -207,17 +209,19 @@ Putting this together, we obtain the existential elimination rule ($\exists$E):
 \metav{c} must not occur in $\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$\\
 \metav{c} must not occur in \metav{B}}
 As with universal introduction, the constraints are extremely important. To see why, consider the following terrible argument:
-	\begin{quote}
-		Tim Button is a lecturer. Someone is not a lecturer. So Tim Button is both a lecturer and not a lecturer.
-	\end{quote}
+	\begin{earg}
+		\item Tim Button is a lecturer. 
+		\item Someone is not a lecturer. 
+		\item[\texttherefore] Tim Button is both a lecturer and not a lecturer.
+	\end{earg}
 We might symbolize this obviously invalid inference pattern as follows:
 $$\atom{L}{b}, \exists x\, \enot\atom{L}{x} \therefore \atom{L}{b} \eand \enot \atom{L}{b}$$
 Now, suppose we tried to offer a proof that vindicates this argument:
 \begin{fitchproof}
-	\hypo{f}{\atom{L}{b}}
+	\hypo{f}{\atom{L}{b}}\PR
 	\hypo{nf}{\exists x\, \enot \atom{L}{x}}	
 	\open	
-		\hypo{na}{\enot \atom{L}{b}}
+		\hypo{na}{\enot \atom{L}{b}}\AS
 		\have{con}{\atom{L}{b} \eand \enot \atom{L}{b}}\ai{f, na}
 	\close
 \ifHTMLtarget
@@ -230,10 +234,10 @@ Now, suppose we tried to offer a proof that vindicates this argument:
 \end{fitchproof}
 The last line of the proof is not allowed. The name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$' on line~$3$, namely `$b$', occurs in line~$4$. This would be no better:
 \begin{fitchproof}
-	\hypo{f}{\atom{L}{b}}
-	\hypo{nf}{\exists x\, \enot \atom{L}{x}}	
-	\open	
-		\hypo{na}{\enot \atom{L}{b}}
+	\hypo{f}{\atom{L}{b}}\PR
+	\hypo{nf}{\exists x\, \enot \atom{L}{x}}\PR
+	\open
+		\hypo{na}{\enot \atom{L}{b}}\AS
 		\have{con}{\atom{L}{b} \eand \enot \atom{L}{b}}\ai{f, na}
 		\have{con1}{\exists x (\atom{L}{x} \eand \enot \atom{L}{x})}\Ei{con}		
 	\close
@@ -254,16 +258,16 @@ The moral of the story is this. \emph{If you want to squeeze information out of 
 Explain why these two `proofs' are \emph{incorrect}. Also, provide interpretations which would invalidate the fallacious argument forms the `proofs' enshrine:
 \begin{multicols}{2}
 	\begin{fitchproof}
-		\hypo{Rxx}{\forall x\, \atom{R}{x,x}}
+		\hypo{Rxx}{\forall x\, \atom{R}{x,x}}\PR
 		\have{Raa}{\atom{R}{a,a}}\Ae{Rxx}
 		\have{Ray}{\forall y\, \atom{R}{a,y}}\Ai{Raa}
 		\have{Rxy}{\forall x\, \forall y\, \atom{R}{x,y}}\Ai{Ray}
 	\end{fitchproof}
 	\begin{fitchproof}
-		\hypo{AE}{\forall x\, \exists y\, \atom{R}{x,y}}
+		\hypo{AE}{\forall x\, \exists y\, \atom{R}{x,y}}\PR
 		\have{E}{\exists y\, \atom{R}{a,y}}\Ae{AE}
 		\open
-			\hypo{ass}{\atom{R}{a,a}}
+			\hypo{ass}{\atom{R}{a,a}}\AS
 			\have{Ex}{\exists x\, \atom{R}{x,x}}\Ei{ass}
 		\close
 		\have{con}{\exists x\, \atom{R}{x,x}}\Ee{E, ass-Ex}
@@ -275,11 +279,11 @@ Explain why these two `proofs' are \emph{incorrect}. Also, provide interpretatio
 The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into bona fide proofs.
 \begin{compactlist}
 \item \begin{fitchproof}
-\hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}
-\hypo{p2}{\forall x\,\enot \atom{R}{m,x}}
+\hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}\PR
+\hypo{p2}{\forall x\,\enot \atom{R}{m,x}}\PR
 \have{3}{\exists y(\atom{R}{m,y} \eor \atom{R}{y,m})}{}
 	\open
-		\hypo{a1}{\atom{R}{m,a} \eor \atom{R}{a,m}}
+		\hypo{a1}{\atom{R}{m,a} \eor \atom{R}{a,m}}\AS
 		\have{a2}{\enot \atom{R}{m,a}}{}
 		\have{a3}{\atom{R}{a,m}}{}
 		\have{a4}{\exists x\, \atom{R}{x,m}}{}
@@ -288,8 +292,8 @@ The following three proofs are missing their citations (rule and line numbers). 
 \end{fitchproof}
 
 \item \begin{fitchproof}
-\hypo{1}{\forall x(\exists y\,\atom{L}{x,y} \eif \forall z\,\atom{L}{z,x})}
-\hypo{2}{\atom{L}{a,b}}
+\hypo{1}{\forall x(\exists y\,\atom{L}{x,y} \eif \forall z\,\atom{L}{z,x})}\PR
+\hypo{2}{\atom{L}{a,b}}\PR
 \have{3}{\exists y\,\atom{L}{a,y} \eif \forall z\atom{L}{z,a}}{}
 \have{4}{\exists y\, \atom{L}{a,y}} {}
 \have{5}{\forall z\, \atom{L}{z,a}} {}
@@ -302,11 +306,11 @@ The following three proofs are missing their citations (rule and line numbers). 
 \end{fitchproof}
 
 \item \begin{fitchproof}
-\hypo{a}{\forall x(\atom{J}{x} \eif \atom{K}{x})}
-\hypo{b}{\exists x\,\forall y\, \atom{L}{x,y}}
-\hypo{c}{\forall x\, \atom{J}{x}}
+\hypo{a}{\forall x(\atom{J}{x} \eif \atom{K}{x})}\PR
+\hypo{b}{\exists x\,\forall y\, \atom{L}{x,y}}\PR
+\hypo{c}{\forall x\, \atom{J}{x}}\PR
 \open
-	\hypo{2}{\forall y\, \atom{L}{a,y}}
+	\hypo{2}{\forall y\, \atom{L}{a,y}}\AS
 	\have{3}{\atom{L}{a,a}}{}
 	\have{d}{\atom{J}{a}}{}
 	\have{e}{\atom{J}{a} \eif \atom{K}{a}}{}
@@ -359,9 +363,11 @@ is true.
 \problempart
 \label{pr.likes}
 Write a symbolization key for the following argument, symbolize it, and prove it:
-\begin{quote}
-There is someone who likes everyone who likes everyone that she likes. Therefore, there is someone who likes herself.
-\end{quote}
+\begin{earg}
+\item There is someone who likes everyone who likes everyone that she
+likes. 
+\item[\texttherefore] There is someone who likes herself.
+\end{earg}
 
 
 \problempart
@@ -436,7 +442,7 @@ By contrast, working \emph{forward} from sentences $\exists \metav{x}\, \atom{\m
 	\have[m]{m}{\exists \metav{x}\, \atom{\metav{A}}{\metav{x}}}
 	\ellipsesline
 	\open
-	\hypo[n]{n}{\atom{\metav{A}}{\metav{c}}}
+	\hypo[n]{n}{\atom{\metav{A}}{\metav{c}}}\AS
 	\ellipsesline
 	\have[k]{k}{\metav{B}}
 	\close
@@ -448,15 +454,15 @@ Lastly, working forward from $\forall \metav{x}\, \atom{\metav{A}}{\metav{x}}$ m
 
 Let's consider as an example the argument $\forall x(\atom{A}{x} \eif B) \therefore \exists x\,\atom{A}{x} \eif B$. To start constructing a proof, we write the premise at the top and the conclusion at the bottom.
 \begin{fitchproof}
-\hypo{1}{\forall x(\atom{A}{x} \eif B)}
+\hypo{1}{\forall x(\atom{A}{x} \eif B)}\PR
 \ellipsesline
 \have[n]{7}{\exists x\,\atom{A}{x} \eif B}
 \end{fitchproof}
 The strategies for connectives of TFL still apply, and you should apply them in the same order: first work backward from conditionals, negated sentences, conjunctions, and now also universal quantifiers, then forward from disjunctions and now existential quantifiers, and only then try to apply $\eif$E, $\enot$E, $\lor$I, $\forall$E, or $\exists$I. In our case, that means, working backward from the conclusion:
 \begin{fitchproof}
-	\hypo{1}{\forall x(\atom{A}{x} \eif B)}
+	\hypo{1}{\forall x(\atom{A}{x} \eif B)}\PR
 	\open
-	\hypo{2}{\exists x\,\atom{A}{x}}
+	\hypo{2}{\exists x\,\atom{A}{x}}\AS
 	\ellipsesline
 	\have[n][-1]{6}{B}
 	\close
@@ -464,11 +470,11 @@ The strategies for connectives of TFL still apply, and you should apply them in 
 \end{fitchproof}
 Our next step should be to work forward from $\exists x\,\atom{A}{x}$ on line~$2$. For that, we have to pick a name not already in our proof. Since no names appear, we can pick any name, say~`$d$'
 \begin{fitchproof}
-	\hypo{1}{\forall x(\atom{A}{x} \eif B)}
+	\hypo{1}{\forall x(\atom{A}{x} \eif B)}\PR
 	\open
-	\hypo{2}{\exists x\,\atom{A}{x}}
+	\hypo{2}{\exists x\,\atom{A}{x}}\AS
 	\open
-	\hypo{3}{\atom{A}{d}}
+	\hypo{3}{\atom{A}{d}}\AS
 	\ellipsesline
 	\have[n][-2]{5}{B}
 	\close
@@ -478,11 +484,11 @@ Our next step should be to work forward from $\exists x\,\atom{A}{x}$ on line~$2
 \end{fitchproof}
 Now we've exhausted our primary strategies, and it is time to work forward from the premise $\forall x(\atom{A}{x} \eif B)$. Applying $\forall$E means we can justify any instance of $A(\metav{c}) \eif B$, regardless of what $\metav{c}$ we choose. Of course, we'll do well to choose $d$, since that will give us $\atom{A}{d} \eif B$. Then we can apply $\eif$E to justify~$B$, finishing the proof.
 \begin{fitchproof}
-	\hypo{1}{\forall x(\atom{A}{x} \eif B)}
+	\hypo{1}{\forall x(\atom{A}{x} \eif B)}\PR
 	\open
-	\hypo{2}{\exists x\,\atom{A}{x}}
+	\hypo{2}{\exists x\,\atom{A}{x}}\AS
 	\open
-	\hypo{3}{\atom{A}{d}}
+	\hypo{3}{\atom{A}{d}}\AS
 \have{4}{\atom{A}{d} \eif B}\Ae{1}
 	\have{5}{B}\ce{4,3}
 	\close
@@ -493,22 +499,22 @@ Now we've exhausted our primary strategies, and it is time to work forward from 
 
 Now let's construct a proof of the converse. We begin with
 \begin{fitchproof}
-	\hypo{1}{\exists x\,\atom{A}{x} \eif B}
+	\hypo{1}{\exists x\,\atom{A}{x} \eif B}\PR
 	\ellipsesline
 	\have[n]{7}{\forall x(\atom{A}{x} \eif B)}
 \end{fitchproof}
 Note that the premise is a conditional, not an existentially quantified sentence, so we should not (yet) work forward from it. Working backward from the conclusion, $\forall x(\atom{A}{x} \eif B)$, leads us to look for a proof of $\atom{A}{d} \eif B$:
 \begin{fitchproof}
-	\hypo{1}{\exists x\,\atom{A}{x} \eif B}
+	\hypo{1}{\exists x\,\atom{A}{x} \eif B}\PR
 	\ellipsesline
 	\have[n][-1]{6}{\atom{A}{d} \eif B}
 	\have[n]{7}{\forall x(\atom{A}{x} \eif B)}\Ai{6}
 \end{fitchproof}
 And working backward from $\atom{A}{d} \eif B$ means we should set up a subproof with $\atom{A}{d}$ as an assumption and $B$ as the last line:
 \begin{fitchproof}
-	\hypo{1}{\exists x\,\atom{A}{x} \eif B}
+	\hypo{1}{\exists x\,\atom{A}{x} \eif B}\PR
 	\open
-	\hypo{2}{\atom{A}{d}}
+	\hypo{2}{\atom{A}{d}}\AS
 	\ellipsesline
 	\have[n][-2]{5}{B}
 	\close
@@ -517,9 +523,9 @@ And working backward from $\atom{A}{d} \eif B$ means we should set up a subproof
 \end{fitchproof}
 Now we can work forward from the premise on line~$1$. That's a conditional, and its consequent happens to be the sentence~$B$ we are trying to justify. So we should look for a proof of its antecedent, $\exists x\,\atom{A}{x}$. Of course, that is now readily available, by $\exists$I from line~$2$, and we're done:
 \begin{fitchproof}
-	\hypo{1}{\exists x\,\atom{A}{x} \eif B}
+	\hypo{1}{\exists x\,\atom{A}{x} \eif B}\PR
 	\open
-	\hypo{2}{\atom{A}{d}}
+	\hypo{2}{\atom{A}{d}}\AS
 	\have{3}{\exists x\,\atom{A}{x}}\Ei{2}
 	\have{5}{B}\ce{1,3}
 	\close
@@ -653,7 +659,7 @@ This rule is sometimes called \emph{Leibniz's Law}, after Gottfried Leibniz.
 To see the rules in action, we will prove some quick results. First, we will prove that identity is \emph{symmetric}:
 \begin{fitchproof}
 	\open
-		\hypo{ab}{a = b}
+		\hypo{ab}{a = b}\AS
 		\have{aa}{a = a}\by{=I}{}
 		\have{ba}{b = a}\by{=E}{ab, aa}
 	\close
@@ -666,7 +672,7 @@ We obtain line 3 by replacing one instance of `$a$' in line 2 with an instance o
 Second, we will prove that identity is \emph{transitive}:
 \begin{fitchproof}
 	\open
-		\hypo{abc}{a = b \eand b = c}
+		\hypo{abc}{a = b \eand b = c}\AS
 		\have{ab}{a = b}\ae{abc}
 		\have{bc}{b = c}\ae{abc}
 		\have{ac}{a = c}\by{=E}{ab, bc}
@@ -731,11 +737,11 @@ And offer a proof of it.
 \chapter{Derived rules}\label{s:DerivedFOL}
 As in the case of TFL, we first introduced some rules for FOL as basic (in \S\ref{s:BasicFOL}), and then added some further rules for conversion of quantifiers (in \S\ref{s:CQ}). In fact, the CQ rules should be regarded as \emph{derived} rules, for they can be derived from the  \emph{basic} rules of \S\ref{s:BasicFOL}. (The point here is as in \S\ref{s:Derived}.) Here is a justification for the first CQ rule:
 \begin{fitchproof}
-	\hypo{An}{\forall x\, \enot \atom{A}{x}}
+	\hypo{An}{\forall x\, \enot \atom{A}{x}}\PR
 	\open
-		\hypo{E}{\exists x\, \atom{A}{x}}
+		\hypo{E}{\exists x\, \atom{A}{x}}\AS
 		\open
-			\hypo{c}{\atom{A}{c}}%\by{for $\exists$E}{}
+			\hypo{c}{\atom{A}{c}}\AS
 			\have{nc}{\enot \atom{A}{c}}\Ae{An}
 			\have{red}{\ered}\ne{nc,c}
 		\close
@@ -746,11 +752,11 @@ As in the case of TFL, we first introduced some rules for FOL as basic (in \S\re
 %You will note that on line 3 I have written `for $\exists$E'. This is not technically a part of the proof. It is just a reminder---to me and to you---of why I have bothered to introduce `$\enot \atom{A}{c}$' out of the blue. You might find it helpful to add similar annotations to assumptions when performing proofs. But do not add annotations on lines other than assumptions: the proof requires its own citation, and your annotations will clutter it.
 Here is a justification of the third CQ rule:
 \begin{fitchproof}
-	\hypo{nEna}{\exists x\, \enot \atom{A}{x}} 
+	\hypo{nEna}{\exists x\, \enot \atom{A}{x}}\PR
 	\open
-		\hypo{Aa}{\forall x\, \atom{A}{x}}
+		\hypo{Aa}{\forall x\, \atom{A}{x}}\AS
 		\open
-			\hypo{nac}{\enot \atom{A}{c}}%\by{for $\exists$E}{}
+			\hypo{nac}{\enot \atom{A}{c}}\AS
 			\have{a}{\atom{A}{c}}\Ae{Aa}
 			\have{con}{\ered}\ne{nac,a}
 		\close

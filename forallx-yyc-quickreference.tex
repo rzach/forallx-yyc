@@ -162,7 +162,7 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 
 \begin{fitchproof}
 	\open
-		\hypo[i]{a}{\metav{A}}
+		\hypo[i]{a}{\metav{A}}\AS
 		\have[j]{b}{\metav{B}}
 	\close
 	\have[\ ]{ab}{\metav{A}\eif\metav{B}}\ci{a-b}
@@ -177,7 +177,7 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 
 \begin{fitchproof}
 \open
-	\hypo[i]{a}{\metav{A}}
+	\hypo[i]{a}{\metav{A}}\AS
 	\have[j]{nb}{\ered}
 \close
 \have[\ ]{na}{\enot\metav{A}}\ni{a-nb}
@@ -192,7 +192,7 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 
 \begin{fitchproof}
 \open
-	\hypo[i]{a}{\enot\metav{A}}
+	\hypo[i]{a}{\enot\metav{A}}\AS
 	\have[j]{nb}{\ered}
 \close
 \have[\ ]{na}{\metav{A}}\ip{a-nb}
@@ -219,11 +219,11 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eor\metav{B}}
 	\open
-		\hypo[i]{a}{\metav{A}}
+		\hypo[i]{a}{\metav{A}}\AS
 		\have[j]{c1}{\metav{C}}
 	\close
 	\open
-		\hypo[k]{b}{\metav{B}}
+		\hypo[k]{b}{\metav{B}}\AS
 		\have[l]{c2}{\metav{C}}
 	\close
 	\have[\ ]{c}{\metav{C}} \oe{ab,a-c1, b-c2}
@@ -233,11 +233,11 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 
 \begin{fitchproof}
 	\open
-		\hypo[i]{a1}{\metav{A}} 
+		\hypo[i]{a1}{\metav{A}} \AS
 		\have[j]{b1}{\metav{B}}
 	\close
 	\open
-		\hypo[k]{b2}{\metav{B}}
+		\hypo[k]{b2}{\metav{B}}\AS
 		\have[l]{a2}{\metav{A}}
 	\close
 	\have[\ ]{ab}{\metav{A}\eiff\metav{B}}\bi{a1-b1,b2-a2}
@@ -288,11 +288,11 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 \subsection*{Excluded middle}
 	\begin{fitchproof}
 		\open
-			\hypo[i]{a}{\metav{A}}
+			\hypo[i]{a}{\metav{A}}\AS
 			\have[j]{c1}{\metav{B}}
 		\close
 		\open
-			\hypo[k]{b}{\enot\metav{A}}
+			\hypo[k]{b}{\enot\metav{A}}\AS
 			\have[l]{c2}{\metav{B}}
 		\close
 		\have[\ ]{ab}{\metav{B}}\tnd{a-c1,b-c2}
@@ -334,7 +334,7 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 \subsection*{Universal elimination}
 
 \begin{fitchproof}
-	\have[m]{a}{\forall \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
+	\have[m]{a}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\have[\ ]{c}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)} \Ae{a}
 \end{fitchproof}
 
@@ -342,7 +342,7 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
-	\have[\ ]{c}{\forall \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)} \Ai{a}
+	\have[\ ]{c}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)} \Ai{a}
 \end{fitchproof}
 
 \medskip\begin{raggedright}
@@ -355,27 +355,27 @@ $n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}
 
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
-	\have[\ ]{c}{\exists \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}\Ei{a}
+	\have[\ ]{c}{\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}\Ei{a}
 \end{fitchproof}
 
-\medskip\begin{raggedright}
-%\noindent \metav{x} must not occur in\\ $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$
-\end{raggedright}
-%\noindent You can replace one or more instance of \metav{c} with \metav{x}.
+% \medskip\begin{raggedright}
+% %\noindent \metav{x} must not occur in\\ $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$
+% \end{raggedright}
+% %\noindent You can replace one or more instance of \metav{c} with \metav{x}.
 
 \subsection*{Existential elimination}
 
 \begin{fitchproof}
-	\have[m]{a}{\exists \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
+	\have[m]{a}{\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\open	
-		\hypo[i]{b}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
+		\hypo[i]{b}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}\AS
 		\have[j]{c}{\metav{B}}
 	\close
 	\have[\ ]{d}{\metav{B}}\Ee{a,b-c}
 \end{fitchproof}
 
 \medskip\begin{raggedright}
-\noindent \metav{c} must not occur in any undischarged assumption, in $\exists \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$, or in \metav{B}\end{raggedright}\vfill\columnbreak
+\noindent \metav{c} must not occur in any undischarged assumption, in $\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$, or in \metav{B}\end{raggedright}\vfill\columnbreak
 
 \end{multicols}
 

@@ -7,47 +7,54 @@ must be loaded when running LaTeXML */
   overflow: hidden;
   padding: 0 !important;
 }
-table.fitch td, table.fitch th {
+
+table.fitch td, table.fitch th, table.fitch tr  {
   padding: 0 !important;
-  /* padding-bottom: .5ex !important; */
   border: none !important;
 }
-table.fitch tr {
-  border: 0 !important;
+
+th.fml-pline, td.fml-pline {
+  width: 10%;
+  padding-right: 1ex; 
+  text-align: right;
 }
 
-.fml-pline {
-  padding-right: 1ex; 
-  padding-left: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+td.fml-pline, th.fml-pline {
+  width: 10%;
   text-align: right;
+  font-weight: normal !important;
 }
-.fml-level {
-  padding: 0;
-  margin: 0; 
-  text-align: right;
-}
-td.fml-fmla {
-  padding-left: 0;
+
+td.fml-fmla, th.fml-fmla {
+  width: 45%;
   text-align: left;
 }
+
+table.fitch td.fml-just, table.fitch th.fml-just {
+  width: 45%;
+  text-align: left;
+  padding-left: 1em !important;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
 div.fml-fmla {
   display: inline-block;
+  overflow: scroll;
   padding-left: 1ex;
   padding-right: 1ex; 
-  margin-bottom: 0;
 }
 div.fml-as {
   display: inline-block;
+  overflow: scroll;
   border-bottom: 1pt solid black; 
   padding-left: 1ex;
   padding-right: 1ex;
-  margin-bottom: 0;
-  margin-top: 1ex;
 }
 div.fml-just {
   display: inline-block;
+  max-width: 100%;
+  overflow: auto;
 }
 div.fml-scope {
   display: inline;
