@@ -345,53 +345,53 @@ The important point about \mlSfive{} can be put like this: if you have a long st
 
 \problempart
 Provide proofs for the following:
-\begin{earg}
+\begin{compactlist}
 	\item $\ebox (A\eand B)\proves_\mlK\ebox A \eand \ebox B$
 	\item $\ebox A\eand\ebox B\proves_\mlK\ebox( A \eand  B)$
 	\item $\ebox A\eor\ebox B\proves_\mlK\ebox( A \eor  B)$
 	\item $\ebox (A \eiff B)\proves_\mlK \ebox A \eiff \ebox B$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Provide proofs for the following (without using Modal Conversion!):
-\begin{earg}
+\begin{compactlist}
 	\item $\enot\ebox A\proves_\mlK \ediamond \enot A$
 	\item $\ediamond\enot A\proves_\mlK\enot \ebox A$
 	\item $\enot\ediamond A\proves_\mlK\ebox\enot A$
 	\item $\ebox\enot A\proves_\mlK\enot\ediamond A$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Provide proofs of the following (and now feel free to use Modal Conversion!):
-\begin{earg}
+\begin{compactlist}
 	\item $\ebox(A\eif B), \ediamond A \proves_\mlK \ediamond B$
 	\item $\ebox A \proves_\mlK \enot\ediamond\enot A$
 	\item $\enot\ediamond\enot A \proves_\mlK \ebox A$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Provide proofs for the following:
-\begin{earg}
+\begin{compactlist}
 	\item $P\proves_\mlT\ediamond P$
 	\item $\proves_\mlT (A\eand B)\eor(\enot \ebox A\eor\enot\ebox B)$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Provide proofs for the following:
-\begin{earg}
+\begin{compactlist}
 	\item $\ebox(\ebox A\eif B), \ebox (\ebox B\eif C), \ebox A \proves_\mlSfour \ebox\ebox C$
 	\item $\ebox A \proves_\mlSfour \ebox(\ebox A \eor B)$
 	\item $\ediamond \ediamond A \proves_\mlSfour \ediamond A$
-\end{earg}
+\end{compactlist}
 
 
 \problempart
 Provide proofs in \mlSfive{} for the following:
-\begin{earg}
+\begin{compactlist}
 	\item $\enot\ebox\enot A, \ediamond B\proves_\mlSfive \ebox(\ediamond A \eand \ediamond B)$
 	\item $A \proves_\mlSfive  \ebox\ediamond A$
 	\item $\ediamond\ediamond A\proves_\mlSfive  \ediamond A$
-\end{earg}
+\end{compactlist}
 
 
 \chapter{Semantics for ML}
@@ -401,7 +401,7 @@ So far, we have focussed on laying out various systems of Natural Deduction for 
 
 \section{Interpretations of ML}
 
-The big idea behind the semantics for ML is this. In ML, sentences are not just true or false, full stop. A sentence is true or false \emph{at a given possible world}, and a single sentence may well be true at some worlds and false at others. We then say that $\ebox \metav{A}$ is true iff $\metav{A}$ is true at \emph{every} world, and $\ediamond\metav{A}$ is true iff $\metav{A}$ is true at \emph{some} world.
+The big idea behind the semantics for ML is this. In ML, sentences are not just true or false, full stop. A sentence is true or false \emph{at a given possible world}, and a single sentence may well be true at some worlds and false at others. We then say that $\ebox \metav{A}$ is true \ifeff{} $\metav{A}$ is true at \emph{every} world, and $\ediamond\metav{A}$ is true \ifeff{} $\metav{A}$ is true at \emph{some} world.
 
 That's the big idea, but we need to refine it and make it more precise. To do this, we need to introduce the idea of an \emph{interpretation} of ML. The first thing you need to include in an interpretation is a collection of \emph{possible worlds}. Now, at this point you might well want to ask: What exactly is a possible world? The intuitive idea is that a possible world is another way that this world could have been. But what exactly does that mean? This is an excellent philosophical question, and we will look at it in a lot of detail later. But we do not need to worry too much about it right now. As far as the formal logic goes, possible worlds can be anything you like. All that matters is that you supply each interpretation with a non-empty collection of things labelled \define{possible worlds}.
 
@@ -421,8 +421,8 @@ So far, these rules should all look very familiar. Essentially, they all work ex
 
 But what are the rules for the new modal operators, $\ebox$ and $\ediamond$? The most obvious idea would be to give rules like these:
 \begin{itemize}
-	\item[]$\nu_w(\ebox \metav{A})=T$ iff $\forall w' (\nu_{w'}(\metav{A})=T)$
-	\item[]$\nu_w(\ediamond \metav{A})=T$ iff $\exists w' (\nu_{w'}(\metav{A})=T)$
+	\item[]$\nu_w(\ebox \metav{A})=T$ \ifeff{} $\forall w' (\nu_{w'}(\metav{A})=T)$
+	\item[]$\nu_w(\ediamond \metav{A})=T$ \ifeff{} $\exists w' (\nu_{w'}(\metav{A})=T)$
 \end{itemize}
 This is just the fancy formal way of writing out the idea that $\ebox\metav{A}$ is true at $w$ just in case $\metav{A}$ is true at \emph{every} world, and $\ediamond\metav{A}$ is true at $w$ just in case $\metav{A}$ is true at \emph{some} world.
 
@@ -430,10 +430,10 @@ However, while these rules are nice and simple, they turn out not to be quite as
 
 An accessibility relation, $R$, is a relation between possible worlds. Roughly, to say that $Rw_1w_2$ (in English: world $w_1$ \emph{accesses} world $w_2$) is to say that $w_2$ is possible \emph{relative to} $w_1$. In other words, by introducing accessibility relations, we open up the idea that a given world might be possible relative to some worlds but not others. This turns out to be a \emph{very} fruitful idea when studying modal systems. We can now give the following semantic rules for $\ebox$ and $\ediamond$:
 \begin{itemize}
-	\item[(6)]$\nu_{w_1}(\ebox \metav{A})=T$ iff $\forall w_2 (Rw_1w_2\eif \nu_{w_2}(\metav{A})=T)$
-	\item[(7)]$\nu_{w_1}(\ediamond \metav{A})=T$ iff $\exists w_2 (Rw_1w_2\eand \nu_{w_2}(\metav{A})=T)$
+	\item[(6)]$\nu_{w_1}(\ebox \metav{A})=T$ \ifeff{} $\forall w_2 (Rw_1w_2\eif \nu_{w_2}(\metav{A})=T)$
+	\item[(7)]$\nu_{w_1}(\ediamond \metav{A})=T$ \ifeff{} $\exists w_2 (Rw_1w_2\eand \nu_{w_2}(\metav{A})=T)$
 \end{itemize}
-Or in plain English: $\ebox\metav{A}$ is true in world $w_1$ iff $\metav{A}$ is true in every world that is possible relative to $w_1$; and $\ediamond\metav{A}$ is true in world $w_1$ iff $\metav{A}$ is true in some world that is possible relative to $w_1$.
+Or in plain English: $\ebox\metav{A}$ is true in world $w_1$ \ifeff{} $\metav{A}$ is true in every world that is possible relative to $w_1$; and $\ediamond\metav{A}$ is true in world $w_1$ \ifeff{} $\metav{A}$ is true in some world that is possible relative to $w_1$.
 
 So, there we have it. An interpretation for ML consists of three things: a collection of possible worlds, $W$; an accessibility relation, $R$; and a valuation function, $\nu$. The collection of `possible worlds' can really be a collection of anything you like. It really doesn't matter, so long as $W$ isn't empty. (For many purposes, it is helpful just to take a collection of numbers to be your collection of worlds.) And for now, at least, $R$ can be any relation between the worlds in $W$ that you like. It could be a relation which every world in $W$ bears to every world in $W$, or one which no world bears to any world, or anything in between. And lastly, $\nu$ can map any atomic sentence of ML to any truth-value at any world. All that matters is that it follows the rules (1)--(7) when it comes to the more complex sentences.
 
@@ -471,13 +471,13 @@ You will get the chance to cook up some interpretations of your own shortly, whe
 We can now extend all of the semantic concepts of TFL to cover ML:
 \factoidbox{
 	\begin{itemize}
-		\item  $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is \define{modally valid} iff there is no world in any interpretation at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
+		\item  $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is \define{modally valid} \ifeff{} there is no world in any interpretation at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
 
-		\item $\metav{A}$ is a \define{modal truth} iff $\metav{A}$ is true at every world in every interpretation.
+		\item $\metav{A}$ is a \define{modal truth} \ifeff{} $\metav{A}$ is true at every world in every interpretation.
 
-		\item $\metav{A}$ is a \define{modal contradiction} iff $\metav{A}$ is false at every world in every interpretation.
+		\item $\metav{A}$ is a \define{modal contradiction} \ifeff{} $\metav{A}$ is false at every world in every interpretation.
 
-		\item $\metav{A}$ is \define{modally satisfiable} iff $\metav{A}$ is true at some world in some interpretation.
+		\item $\metav{A}$ is \define{modally satisfiable} \ifeff{} $\metav{A}$ is true at some world in some interpretation.
 	\end{itemize}
 }
 (From now on we will drop the explicit `modal' qualifications, since they can be taken as read.)
@@ -529,7 +529,7 @@ When we introduced the idea of an accessibility relation, we said that it could 
 \end{itemize}
 In English: every world accesses itself. Or in terms of relative possibility: every world is possible relative to itself. If we imposed this restriction, we could introduce a new consequence relation, $\entails_\mlT$, as follows:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT \metav{C}$ iff there is no world in any interpretation \emph{which has a reflexive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a reflexive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
 }
 We have attached the \mlT{} subscript to $\entails$ because it turns out that system \mlT{} is sound and complete relative to this new definition of validity:
 \begin{itemize}
@@ -558,7 +558,7 @@ How else might we tweak our definition of validity? Well, we might also stipulat
 \end{itemize}
 In English: if $w_1$ accesses $w_2$, and $w_2$ accesses $w_3$, then $w_1$ accesses $w_3$. Or in terms of relative possibility: if $w_3$ is possible relative to $w_2$, and $w_2$ is possible relative to $w_1$, then $w_3$ is possible relative to $w_1$. If we added this restriction on our accessibility relation, we could introduce a new consequence relation, $\entails_\mlSfour$, as follows:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour \metav{C}$ iff there is no world in any interpretation \emph{which has a reflexive and transitive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfour \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a reflexive and transitive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
 }
 We have attached the \mlSfour{} subscript to $\entails$ because it turns out that system \mlSfour{} is sound and complete relative to this new definition of validity:
 \begin{itemize}
@@ -591,7 +591,7 @@ Let's put one more restriction on the accessibility relation. This time, let's i
 \end{itemize}
 In English: if $w_1$ accesses $w_2$, then $w_2$ accesses $w_1$. Or in terms of relative possibility: if $w_2$ is possible relative to $w_1$, then $w_1$ is possible relative to $w_2$. Logicians call a relation that is reflexive, symmetric, and transitive an \emph{equivalence} relation. We can now define a new consequence relation, $\entails_\mlSfive $, as follows:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ iff there is no world in any interpretation \emph{whose accessibility relation is an equivalence relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} there is no world in any interpretation \emph{whose accessibility relation is an equivalence relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
 }
 We have attached the \mlSfive{} subscript to $\entails$ because it turns out that system \mlSfive{} is sound and complete relative to this new definition of validity:
 \begin{itemize}
@@ -622,7 +622,7 @@ In the definition of $\entails_\mlSfive $, we stipulated that the accessibility 
 \end{itemize}
 In English: every world accesses every world. Or in terms of relative possibility: every world is possible relative to every world. Using this restriction on the accessibility relation, we could have defined $\entails_\mlSfive $ like this:
 \factoidbox{
-	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ iff there is no world in any interpretation \emph{which has a universal accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
+	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a universal accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
 }
 If we defined $\entails_\mlSfive $ like this, we would still get the same soundness and completeness results for \mlSfive. What does this tell us? Well, it means that if we are dealing with a notion of necessity according to which \emph{every} world is possible relative to \emph{every} world, then we should use \mlSfive. What is more, most philosophers assume that the notions of necessity that they are most concerned with, like \emph{logical necessity} and \emph{metaphysical necessity}, are of exactly this kind. So \mlSfive{} is the modal system that most philosophers use most of the time.
 
@@ -630,26 +630,26 @@ If we defined $\entails_\mlSfive $ like this, we would still get the same soundn
 
 \problempart
 Present counter-interpretations to the following false claims:
-\begin{earg}
+\begin{compactlist}
 	\item $\enot P \entails_\mlK \enot\ediamond P$
 	\item $\ebox(P \eor Q)\entails_\mlK \ebox P \eor \ebox Q$
 	\item $\entails_\mlK \enot \ebox (A\eand \enot A)$
 	\item $\ebox A\entails_\mlK A$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Present counter-interpretations to the following false claims:
-\begin{earg}
+\begin{compactlist}
 	\item $\ediamond A\entails_\mlSfour \ebox\ediamond A$
 	\item $\ediamond A, \ebox (\ediamond A \eif B)\entails_\mlSfour\ebox B$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Present counter-interpretations to the following false claims:
-\begin{earg}
+\begin{compactlist}
 	\item $\ebox (M\eif O),\ediamond M\entails_\mlT O$
 	\item $\ebox A\entails_\mlT \ebox \ebox A$
-\end{earg}
+\end{compactlist}
 
 \section*{Further reading}
 

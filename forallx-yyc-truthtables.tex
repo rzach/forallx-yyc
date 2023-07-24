@@ -84,7 +84,7 @@ Unsurprisingly, the biconditional is symmetrical.
 \section{The idea of truth-functionality}
 Let's introduce an important idea.
 	\factoidbox{
-		A connective is \define{truth-functional} iff the truth value of a sentence with that connective as its main logical operator is uniquely determined by the truth value(s) of the constituent sentence(s).
+		A connective is \define{truth-functional} \ifeff{} the truth value of a sentence with that connective as its main logical operator is uniquely determined by the truth value(s) of the constituent sentence(s).
 	}
 \newglossaryentry{truth-functional connective}
 {
@@ -97,24 +97,24 @@ Every connective in TFL is truth-functional. The truth value of a negation is un
 This is what gives TFL its name: it is \emph{truth-functional logic}.
 
 Many languages use connectives that are not truth-functional. In English, for example, we can form a new sentence from any simpler sentence by prefixing it with `It is necessarily the case that\ldots'. The truth value of this new sentence is not fixed solely by the truth value of the original sentence. For consider two true sentences:
-	\begin{earg}
+	\begin{compactlist}
 		\item $2 + 2 = 4$
-		\item Shostakovich wrote fifteen string quartets
-	\end{earg}
-Whereas it is necessarily the case that $2 + 2 = 4$, it is not \emph{necessarily} the case that Shostakovich wrote fifteen string quartets. If Shostakovich had died earlier, he would have failed to finish Quartet no.\ 15; if he had lived longer, he might have written a few more. So `It is necessarily the case that\ldots' is not \emph{truth-functional}.
+		\item Shostakovich wrote fifteen string quartets.
+	\end{compactlist}
+Whereas it is necessarily the case that $2 + 2 = 4$, it is not \emph{necessarily} the case that Shostakovich wrote fifteen string quartets. If Shostakovich had died earlier, he would have failed to finish Quartet no.~15; if he had lived longer, he might have written a few more. So `It is necessarily the case that\ldots' is not \emph{truth-functional}.
 
 
 \section{Symbolizing versus translating}
 All of the connectives of TFL are truth-functional, but more than that: they really do nothing \emph{but} map us between truth values.  
 
 When we symbolize a sentence or an argument in TFL, we ignore everything \emph{besides} the contribution that the truth values of a component might make to the truth value of the whole. There are subtleties to our ordinary claims that far outstrip their mere truth values. Sarcasm; poetry; snide implicature; emphasis; these are important parts of everyday discourse, but none of this is retained in TFL. As remarked in \S\ref{s:TFLConnectives}, TFL cannot capture the subtle differences between the following English sentences:
-	\begin{earg}
+	\begin{compactlist}
 		\item Dana is a logician and Dana is a nice person
 		\item Although Dana is a logician, Dana is a nice person
 		\item Dana is a logician despite being a nice person
 		\item Dana is a nice person, but also a logician
 		\item Dana's being a logician notwithstanding, he is a nice person
-	\end{earg}
+	\end{compactlist}
 All of the above sentences will be symbolized with the same TFL sentence, perhaps `$L \eand N$'.
 
 Now, we keep saying that we use TFL sentences to \emph{symbolize} English sentences. Many other textbooks talk about \emph{translating} English sentences into TFL. However, a good translation should preserve certain facets of meaning, and---as we just saw---TFL just cannot do that. This is why we will speak of \emph{symbolizing} English sentences, rather than of \emph{translating} them.
@@ -131,7 +131,7 @@ Other textbooks will understand this as a stipulation that the TFL sentence `$L$
 
 
 \section{Indicative versus subjunctive conditionals}\label{s:IndicativeSubjunctive}
-We want to bring home the point that TFL can \emph{only} deal with truth functions by considering the case of the conditional. When we introduced the characteristic truth table for the material conditional in \S\ref{s:CharacteristicTruthTables}, we did not say anything to justify it. Let's now offer a justification, which follows Dorothy Edgington.\footnote{Dorothy Edgington, `Conditionals', 2014, in the \emph{Stanford Encyclopedia of Philosophy} (\url{https://plato.stanford.edu/archives/win2014/entries/conditionals/}).} 
+We want to bring home the point that TFL can \emph{only} deal with truth functions by considering the case of the conditional. When we introduced the characteristic truth table for the material conditional in \S\ref{s:CharacteristicTruthTables}, we did not say anything to justify it. Let's now offer a justification, which follows Dorothy Edgington.\footnote{Dorothy Edgington, `Conditionals', 2014, in the \textit{Stanford Encyclopedia of Philosophy} (\url{https://plato.stanford.edu/archives/win2014/entries/conditionals/}).} 
 
 Suppose that Lara has drawn some shapes on a piece of paper, and coloured some of them in. We have not seen them, but nevertheless claim:
 	\begin{quote}
@@ -139,12 +139,17 @@ Suppose that Lara has drawn some shapes on a piece of paper, and coloured some o
 	\end{quote}
 As it happens, Lara has drawn the following:
 \begin{center}
+\begin{bmlimage}
 \begin{tikzpicture}
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, diamond, phantom_shape] (cat2)  { } ;
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C} ;
-	\node[right=10pt of cat3, diamond, white_shape] (cat4)  {D};
+	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
+\end{bmlimage}\bmlDescription{There are three shapes: the first shape is
+a grey circle labelled A, some empty space, the
+second shape is a white circle labelled C, and the fourth a white square
+labelled D.}
 \end{center}
 In this case, our claim is surely true.  Shapes C and D are not grey, and so can hardly present \emph{counterexamples} to our claim. Shape A \emph{is} grey, but fortunately it is also circular. So our claim has no counterexamples. It must be true. That means that each of the following \emph{instances} of our claim must be true too:
 	\begin{ebullet}
@@ -154,12 +159,17 @@ In this case, our claim is surely true.  Shapes C and D are not grey, and so can
 	\end{ebullet}
 However, if Lara had drawn a fourth shape, thus:
 \begin{center}
+\begin{bmlimage}
 \begin{tikzpicture}
 	\node[circle, grey_shape] (cat1) {A};
-	\node[right=10pt of cat1, diamond, grey_shape] (cat2)  {B};
+	\node[right=10pt of cat1, grey_shape] (cat2)  {B};
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C};
-	\node[right=10pt of cat3, diamond, white_shape] (cat4)  {D};
+	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
+\end{bmlimage}\bmlDescription{There are four shapes: the first shape is
+a grey circle labelled A, the second a grey square labelled B, the
+third a white circle labelled C, and the fourth a white square
+labelled D.}
 \end{center}
 then our claim would have been false. So this claim must also be false:
 	\begin{ebullet}
@@ -168,10 +178,10 @@ then our claim would have been false. So this claim must also be false:
 Now, recall that every connective of TFL has to be truth-functional. This means that merely the truth values of the antecedent and consequent must uniquely determine the truth value of the conditional as a whole. Thus, from the truth values of our four claims---which provide us with all possible combinations of truth and falsity in antecedent and consequent---we can read off the truth table for the material conditional.
 
 What this argument shows is that `$\eif$' is the \emph{best} candidate for a truth-functional conditional. Otherwise put, \emph{it is the best conditional that TFL can provide}. But is it any good, as a surrogate for the conditionals we use in everyday language? Consider two sentences:
-	\begin{earg}
-		\item[\ex{brownwins1}] If Hillary Clinton had won the 2016 election, then she would have been the first woman president of the USA.
-		\item[\ex{brownwins2}] If Hillary Clinton had won the 2016 election, then she would have turned into a helium-filled balloon and floated away into the night sky.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{brownwins1} If Hillary Clinton had won the 2016 election, then she would have been the first woman president of the USA.
+		\item\label{brownwins2} If Hillary Clinton had won the 2016 election, then she would have turned into a helium-filled balloon and floated away into the night sky.
+	\end{enumerate}
 Sentence \ref{brownwins1} is true; sentence \ref{brownwins2} is false, but both have false antecedents and false consequents. (Hillary did not win; she did not become the first woman president of the US; and she did not fill with helium and float away.) So the truth value of the whole sentence is not uniquely determined by the truth value of the parts.
 
 The crucial point is that sentences \ref{brownwins1} and \ref{brownwins2} employ \emph{subjunctive} conditionals, rather than \emph{indicative} conditionals. They ask us to imagine something contrary to fact---after all, Hillary Clinton lost the 2016 election---and then ask us to evaluate what \emph{would} have happened in that case. Such considerations simply cannot be tackled using `$\eif$'.
@@ -182,7 +192,7 @@ We will say more about the difficulties with conditionals in \S\ref{s:ParadoxesO
 \chapter{Complete truth tables}
 \label{s:CompleteTruthTables}
 
-So far, we have used symbolization keys to assign truth values to TFL sentences \emph{indirectly}. For example, we might say that the TFL sentence `$B$' is to be true iff Big Ben is in London. Since Big Ben \emph{is} in London, this symbolisation would make `$B$' true. But we can also assign truth values \emph{directly}. We can simply stipulate that `$B$' is to be true, or stipulate that it is to be false. Such stipulations are called \emph{valuations}: 
+So far, we have used symbolization keys to assign truth values to TFL sentences \emph{indirectly}. For example, we might say that the TFL sentence `$B$' is to be true \ifeff{} Big Ben is in London. Since Big Ben \emph{is} in London, this symbolisation would make `$B$' true. But we can also assign truth values \emph{directly}. We can simply stipulate that `$B$' is to be true, or stipulate that it is to be false. Such stipulations are called \emph{valuations}: 
 	\factoidbox{
 		A \define{valuation} is any assignment of truth values to particular sentence letters of TFL.
 	}
@@ -218,7 +228,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
  F & F & {F} & & {F} & & {F}
 \end{tabular}
 \end{center}
-Now consider the subsentence `$(H\eand I)$'. This is a conjunction, $(\metav{A}\eand\metav{B})$, with `$H$' as \metav{A} and with `$I$' as \metav{B}. The characteristic truth table for conjunction gives the truth conditions for \emph{any} sentence of the form $(\metav{A}\eand\metav{B})$, whatever $\metav{A}$ and $\metav{B}$ might be. It represents the point that a conjunction is true iff both conjuncts are true. In this case, our conjuncts are just `$H$' and `$I$'. They are both true on (and only on) the first line of the truth table. Accordingly, we can calculate the truth value of the conjunction on all four rows.
+Now consider the subsentence `$(H\eand I)$'. This is a conjunction, $(\metav{A}\eand\metav{B})$, with `$H$' as \metav{A} and with `$I$' as \metav{B}. The characteristic truth table for conjunction gives the truth conditions for \emph{any} sentence of the form $(\metav{A}\eand\metav{B})$, whatever $\metav{A}$ and $\metav{B}$ might be. It represents the point that a conjunction is true \ifeff{} both conjuncts are true. In this case, our conjuncts are just `$H$' and `$I$'. They are both true on (and only on) the first line of the truth table. Accordingly, we can calculate the truth value of the conjunction on all four rows.
 \begin{center}
 \begin{tabular}{c c|d e e e f}
  & & \metav{A} & \eand & \metav{B} & & \\
@@ -346,7 +356,7 @@ it would be dangerously ambiguous. \emph{Never write this.} The moral is: never 
 \practiceproblems\label{pr.TT.TTorC}
 \problempart
 Offer complete truth tables for each of the following:
-\begin{earg}
+\begin{compactlist}
 \item $A \eif A$ %taut
 \item $C \eif\enot C$ %contingent
 \item $(A \eiff B) \eiff \enot(A\eiff \enot B)$ %tautology
@@ -356,24 +366,24 @@ Offer complete truth tables for each of the following:
 \item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$ %contradiction
 \item $[(A \eand B) \eand C] \eif B$ %taut
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
-\end{earg}
+\end{compactlist}
 \problempart
 Check all the claims made in \S\ref{s:MoreBracketingConventions}, i.e., show that:
-\begin{earg}
+\begin{compactlist}
 	\item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
 	\item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
 	\item `$((A \eor B) \eand C)$' and `$(A \eor (B \eand C))$' do not have the same truth table
 	\item `$((A \eif B) \eif C)$' and `$(A \eif (B \eif C))$' do not have the same truth table
-\end{earg}
+\end{compactlist}
 Also, check whether:
-\begin{earg}
+\begin{compactlist}
 	\item[5.] `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table
-\end{earg}
+\end{compactlist}
 
 \problempart
 Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
 
-\begin{earg}
+\begin{compactlist}
 
 \item $\enot (S \eiff (P \eif S))$
 
@@ -451,12 +461,12 @@ Write complete truth tables for the following sentences and mark the column that
 
 %\vspace{1em}
 
-\end{earg}
+\end{compactlist}
 
 \problempart
 Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
 
-\begin{earg}
+\begin{compactlist}
 
 \item	$(D \eand \enot D) \eif G $
 
@@ -539,7 +549,7 @@ Write complete truth tables for the following sentences and mark the column that
 %\cline{8-8}
 %\end{tabular}
 %\vspace{1em}
-\end{earg}
+\end{compactlist}
 
 
 If you want additional practice, you can construct truth tables for any of the sentences and arguments in the exercises for the previous chapter.
@@ -554,7 +564,7 @@ In the previous section, we introduced the idea of a valuation and showed how to
 \section{Tautologies and contradictions}
 In \S\ref{s:BasicNotions}, we explained \emph{necessary truth} and \emph{necessary falsity}. Both notions have surrogates in TFL. We will start with a surrogate for necessary truth.
 	\factoidbox{
-		$\metav{A}$ is a \define{tautology} iff it is true on every valuation.
+		$\metav{A}$ is a \define{tautology} \ifeff{} it is true on every valuation.
 	}
 
 \newglossaryentry{tautology}
@@ -569,7 +579,7 @@ This is only, though, a \emph{surrogate} for necessary truth. There are some nec
 
 We have a similar surrogate for necessary falsity:
 	\factoidbox{
-		$\metav{A}$ is a \define{contradiction} (in TFL) iff it is false on every valuation.
+		$\metav{A}$ is a \define{contradiction} (in TFL) \ifeff{} it is false on every valuation.
 	}
 \newglossaryentry{contradiction of TFL}
 {
@@ -607,9 +617,9 @@ Look at the columns for the main logical operators; negation for the first sente
 
 
 \section{Satisfiability}
-In \S\ref{s:BasicNotions}, we said that sentences are jointly possible iff it is possible for all of them to be true at once. We can offer a surrogate for this notion too:
+In \S\ref{s:BasicNotions}, we said that sentences are jointly possible \ifeff{} it is possible for all of them to be true at once. We can offer a surrogate for this notion too:
 	\factoidbox{
-		$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ are \define{jointly satisfiable} (in TFL) iff there is some valuation which makes them all true.
+		$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ are \define{jointly satisfiable} (in TFL) \ifeff{} there is some valuation which makes them all true.
 	}
 
         \newglossaryentry{satisfiability in TFL}
@@ -619,12 +629,12 @@ In \S\ref{s:BasicNotions}, we said that sentences are jointly possible iff it is
 description={A property held by sentences if and only if the \gls{complete truth table} for those sentences contains one line on which all the sentences are true, i.e., if some \gls{valuation} makes all the sentences true}
 }
 
-Derivatively, sentences are \define{jointly unsatisfiable} iff no valuation makes them all true. Again, it is easy to test for joint satisfiability using truth tables.
+Derivatively, sentences are \define{jointly unsatisfiable} \ifeff{} no valuation makes them all true. Again, it is easy to test for joint satisfiability using truth tables.
 
 \section{Entailment and validity}
 The following idea is closely related to that of joint satisfiability:
 	\factoidbox{
-		The sentences $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ \define{entail} (in TFL) the sentence $\metav{C}$ iff no valuation of the relevant sentence letters makes all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and $\metav{C}$ false.
+		The sentences $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ \define{entail} (in TFL) the sentence $\metav{C}$ \ifeff{} no valuation of the relevant sentence letters makes all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and $\metav{C}$ false.
 	}
        \newglossaryentry{valid in TFL}
 {
@@ -683,29 +693,27 @@ This is an important milestone: a test for the validity of arguments! However, w
 
 First, consider the argument: 
 	\begin{earg}
-		\item Daisy has four legs. So Daisy has more than two legs.
+		\item Daisy has four legs.
+		\item[\texttherefore] Daisy has more than two legs.
 	\end{earg}
 To symbolize this argument in TFL, we would have to use two different sentence letters---perhaps `$F$'  and `$T$'---for the premise and the conclusion respectively. Now, it is obvious that `$F$' does not entail~`$T$'. But the English argument is surely valid!
 
 Second, consider the sentence:
-	\begin{earg}
-\setcounter{eargnum}{1}
+	\begin{enumerate}
 		\item\label{n:JanBald} Jan is neither bald nor not-bald.
-	\end{earg}
+	\end{enumerate}
 To symbolize this sentence in TFL, we would offer something like `$\enot J \eand \enot \enot J$'. This a contradiction (check this with a truth-table), but sentence \ref{n:JanBald} does not itself seem like a contradiction; for we might have happily added `Jan is on the borderline of baldness'!
 
 Third, consider the following sentence:
-	\begin{earg}
-	\setcounter{eargnum}{2}	
+	\begin{enumerate}
 	\item\label{n:GodParadox}	It's not the case that, if God exists, She answers malevolent prayers.
-	\end{earg}
+	\end{enumerate}
 Symbolizing this in TFL, we would offer something like `$\enot (G \eif M)$'. Now, `$\enot (G \eif M)$' entails `$G$' (again, check this with a truth table). So if we symbolize sentence \ref{n:GodParadox} in TFL, it seems to entail that God exists. But that's strange: surely even an atheist can accept sentence \ref{n:GodParadox}, without contradicting herself!
 
 One lesson of this is that the symbolization of \ref{n:GodParadox} as `$\enot(G \eif M)$' shows that \ref{n:GodParadox} does not express what we intend. Perhaps we should rephrase it as
-	\begin{earg}
-	\setcounter{eargnum}{3}	
+	\begin{enumerate}
 	\item\label{n:GodParadox2} If God exists, She does not answer malevolent prayers.
-	\end{earg}
+	\end{enumerate}
 and symbolize \ref{n:GodParadox2} as `$G \eif \enot M$'.  Now, if atheists are right, and there is no God, then `$G$' is false and so `$G \eif \enot M$' is true, and the puzzle disappears. However, if `$G$' is false, `$G \eif M$', i.e., `If God exists, She answers malevolent prayers', is \emph{also} true!
                 
 In different ways, these four examples highlight some of the limits of working with a language (like TFL) that can \emph{only} handle truth-functional connectives. Moreover, these limits give rise to some interesting questions in philosophical logic. The case of Jan's baldness (or otherwise) raises the general question of what logic we should use when dealing with \emph{vague} discourse. The case of the atheist raises the question of how to deal with the (so-called) \emph{paradoxes of the material conditional}. Part of the purpose of this book is to equip you with the tools to explore these questions of \emph{philosophical logic}. But we have to walk before we can run; we have to become proficient in using TFL, before we can adequately discuss its limits, and consider alternatives.
@@ -716,13 +724,11 @@ In what follow, we will use the notion of entailment rather a lot in this book. 
 The symbol `$\entails$' is known as \emph{the double turnstile}, since it looks like a turnstile with two horizontal beams.
 
 Let's be clear. `$\entails$' is not a symbol of TFL. Rather, it is a symbol of our metalanguage, augmented English (recall the difference between object language and metalanguage from \S\ref{s:UseMention}). So the metalanguage sentence:
-	\begin{ebullet}
-		\item $P, P \eif Q \entails Q$
-	\end{ebullet}
+	\[P, P \eif Q \entails Q\]
 is \emph{just} an abbreviation for this metalanguage sentence: 
-	\begin{ebullet}
+	\begin{quote}
 		\item The TFL sentences `$P$' and `$P \eif Q$' entail `$Q$'
-	\end{ebullet}
+	\end{quote}
 Note that there is no limit on the number of TFL sentences that can be mentioned before the symbol `$\entails$'. Indeed, we can even consider the limiting case:
 	$$\entails \metav{C}$$
 This says that there is no valuation which makes all the sentences mentioned on the left side of `$\entails$' true whilst making $\metav{C}$ false. Since \emph{no} sentences are mentioned on the left side of `$\entails$' in this case, this just means that there is no valuation which makes $\metav{C}$ false. Otherwise put, it says that every valuation makes $\metav{C}$ true. Otherwise put, it says that $\metav{C}$ is a tautology. Equally, to say that $\metav{A}$ is a contradiction, we can write:
@@ -746,11 +752,11 @@ $P \nentails \enot Q$.
 \section{`$\entails$' versus `$\eif$'}
 We now want to compare and contrast `$\entails$' and `$\eif$'.
 
-Observe: $\metav{A} \entails \metav{C}$ iff no valuation of the sentence letters makes $\metav{A}$ true and $\metav{C}$ false.
+Observe: $\metav{A} \entails \metav{C}$ \ifeff{} no valuation of the sentence letters makes $\metav{A}$ true and $\metav{C}$ false.
 
-Observe: $\metav{A} \eif \metav{C}$ is a tautology iff no valuation of the sentence letters makes $\metav{A} \eif \metav{C}$ false. Since a conditional is true except when its antecedent is true and its consequent false, $\metav{A} \eif \metav{C}$ is a tautology iff no valuation makes $\metav{A}$ true and $\metav{C}$ false.
+Observe: $\metav{A} \eif \metav{C}$ is a tautology \ifeff{} no valuation of the sentence letters makes $\metav{A} \eif \metav{C}$ false. Since a conditional is true except when its antecedent is true and its consequent false, $\metav{A} \eif \metav{C}$ is a tautology \ifeff{} no valuation makes $\metav{A}$ true and $\metav{C}$ false.
 
-Combining these two observations, we see that $\metav{A} \eif \metav{C}$  is a tautology iff  $\metav{A} \entails \metav{C}$. But there is a really, really important difference between `$\entails$' and `$\eif$':
+Combining these two observations, we see that $\metav{A} \eif \metav{C}$  is a tautology \ifeff{}  $\metav{A} \entails \metav{C}$. But there is a really, really important difference between `$\entails$' and `$\eif$':
 	\factoidbox{`$\eif$' is a sentential connective of TFL.\\ `$\entails$' is a symbol of augmented English.
 	}
 Indeed, when `$\eif$' is flanked with two TFL sentences, the result is a longer TFL sentence. By contrast, when we use `$\entails$', we form a metalinguistic sentence that \emph{mentions} the surrounding TFL sentences.
@@ -766,28 +772,28 @@ Revisit your answers to \S\ref{s:CompleteTruthTables}\textbf{A}. Determine which
 \problempart
 \label{pr.TT.satisfiable}
 Use truth tables to determine whether these sentences are jointly satisfiable, or jointly unsatisfiable:
-\begin{earg}
+\begin{compactlist}
 \item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ %satisfiable
 \item $A\eor B$, $A\eif C$, $B\eif C$ %satisfiable
 \item $B\eand(C\eor A)$, $A\eif B$, $\enot(B\eor C)$  %unsatisfiable
 \item $A\eiff(B\eor C)$, $C\eif \enot A$, $A\eif \enot B$ %satisfiable
-\end{earg}
+\end{compactlist}
 
 
 \solutions
 \problempart
 \label{pr.TT.valid}
 Use truth tables to determine whether each argument is valid or invalid.
-\begin{earg}
+\begin{compactlist}
 \item $A\eif A \therefore A$ %invalid
 \item $A\eif(A\eand\enot A) \therefore \enot A$ %valid
 \item $A\eor(B\eif A) \therefore \enot A \eif \enot B$ %valid
 \item $A\eor B, B\eor C, \enot A \therefore B \eand C$ %invalid
 \item $(B\eand A)\eif C, (C\eand A)\eif B \therefore (C\eand B)\eif A$ %invalid
-\end{earg}
+\end{compactlist}
 
 \problempart Determine whether each sentence is a tautology, a contradiction, or a contingent sentence, using a complete truth table.
-\begin{earg}
+\begin{compactlist}
 \item $\enot B \eand B$ \vspace{.5ex}%contra
 
 
@@ -805,37 +811,37 @@ Use truth tables to determine whether each argument is valid or invalid.
 
 \item $[(A \eand B) \eiff B] \eif (A \eif B)$ \vspace{.5ex}% contingent.
 
-\end{earg}
+\end{compactlist}
 
 
 
 \noindent\problempart
 \label{pr.TT.equiv}
 Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are logically equivalent, write ``equivalent.'' Otherwise write, ``Not equivalent.'' 
-\begin{earg}
+\begin{compactlist}
 \item $A$ and $\enot A$
 \item $A \eand \enot A$ and $\enot B \eiff B$
 \item $[(A \eor B) \eor C]$ and $[A \eor (B \eor C)]$
 \item $A \eor (B \eand C)$ and $(A \eor B) \eand (A \eor C)$
-\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$\end{earg}
+\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$\end{compactlist}
 
 
 \problempart
 \label{pr.TT.equiv2}
 Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are equivalent, write ``equivalent.'' Otherwise write, ``not equivalent.''
-\begin{earg}
+\begin{compactlist}
 \item $A\eif A$ and $A \eiff A$
 \item $\enot(A \eif B)$ and $\enot A \eif \enot B$
 \item $A \eor B$ and $\enot A \eif B$
 \item$(A \eif B) \eif C$ and $A \eif (B \eif C)$
 \item $A \eiff (B \eiff C)$ and $A \eand (B \eand C)$
-\end{earg}
+\end{compactlist}
 
 
 \problempart
 \label{pr.TT.satisfiable2}
 Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable using a complete truth table.
-\begin{earg}
+\begin{compactlist}
 \item $A \eand \enot B$, $\enot(A \eif B)$, $B \eif A$\vspace{.5ex} %Consistent
 
 %\begin{tabular}{ccccccccccccccc} 
@@ -883,18 +889,18 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 
 \item $A \eif (B \eif C)$, $(A \eif B) \eif C$, $A \eif C$\vspace{.5ex} % satisfiable.
 
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.satisfiable3}
 Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable, using a complete truth table.
-\begin{earg}
+\begin{compactlist}
 \item $\enot B$, $A \eif B$, $A$ \vspace{.5ex}%unsatisfiable.
 \item $\enot(A \eor B)$, $A \eiff B$, $B \eif A$\vspace{.5ex} %Consistent
 \item $A \eor B$, $\enot B$, $\enot B \eif \enot A$\vspace{.5ex} %Insatisfiable
 \item $A \eiff B$, $\enot B \eor \enot A$, $A \eif B$\vspace{.5ex} %satisfiable.
 \item $(A \eor B) \eor C$, $\enot A \eor \enot B$, $\enot C \eor \enot B$\vspace{.5ex} %satisfiable
-\end{earg}
+\end{compactlist}
 
 
 
@@ -902,7 +908,7 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 \noindent\problempart
 \label{pr.TT.valid2}
 Determine whether each argument is valid or invalid, using a complete truth table.
-\begin{earg}
+\begin{compactlist}
 \item $A\eif B$, $B \therefore  A$ %invalid
 
 \item $A\eiff B$, $B\eiff C \therefore A\eiff C$ %valid
@@ -911,24 +917,24 @@ Determine whether each argument is valid or invalid, using a complete truth tabl
 
 \item $A \eif B$, $B \eif A\therefore A \eiff B$ %valid.
 
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.valid3}
 Determine whether each argument is valid or invalid, using a complete truth table.
-\begin{earg}
+\begin{compactlist}
 \item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore  A $\vspace{.5ex}%invalid
 \item $A\eor B$, $B\eor C$, $\enot B \therefore A \eand C$\vspace{.5ex} %valid
 \item $A \eif B$, $\enot A\therefore \enot B$ \vspace{.5ex}%invalid
 \item $A$, $B\therefore \enot(A\eif \enot B)$ \vspace{.5ex}%valid
 \item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\therefore C$ \vspace{.5ex}%valid 
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
 \label{pr.TT.concepts}
 Answer each of the questions below and justify your answer.
-\begin{earg}
+\begin{compactlist}
 \item Suppose that \metav{A} and \metav{B} are logically equivalent. What can you say about $\metav{A}\eiff\metav{B}$?
 %\metav{A} and \metav{B} have the same truth value on every line of a complete truth table, so $\metav{A}\eiff\metav{B}$ is true on every line. It is a tautology.
 \item Suppose that $(\metav{A}\eand\metav{B})\eif\metav{C}$ is neither a tautology nor a contradiction. What can you say about whether $\metav{A}, \metav{B} \therefore\metav{C}$ is valid?
@@ -942,7 +948,7 @@ Answer each of the questions below and justify your answer.
 %Not much. $(\metav{A}\eor\metav{B})$ is a tautology if \metav{A} and \metav{B} are tautologies; it is a contradiction if they are contradictions; it is contingent if they are contingent.
 \item Suppose that \metav{A} and \metav{B} are \emph{not} logically equivalent. What can you say about $(\metav{A}\eor\metav{B})$?
 %\metav{A} and \metav{B} have different truth values on at least one line of a complete truth table, and $(\metav{A}\eor\metav{B})$ will be true on that line. On other lines, it might be true or false. So $(\metav{A}\eor\metav{B})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.
-\end{earg}
+\end{compactlist}
 \problempart 
 Consider the following principle:
 	\begin{ebullet}
@@ -1004,10 +1010,10 @@ So `$((P \eif Q) \eif P) \eif P$' is a tautology. In fact, it is an instance of 
 
 \section{Testing for validity and entailment}
 In \S\ref{s:SemanticConcepts}, we saw how to use truth tables to test for validity. In that test, we look for \emph{bad} lines: lines where the premises are all true and the conclusion is false. Now:
-\begin{earg}
+\begin{compactlist}
 	\item[\textbullet] If the conclusion is true on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)
 	\item[\textbullet] If any premise is false on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)
-\end{earg}
+\end{compactlist}
 With this in mind, we can speed up our tests for validity quite considerably.
 
 Let's consider how we might test the following:
@@ -1091,7 +1097,7 @@ We have been discussing shortcuts in testing for validity. But exactly the same 
 \practiceproblems
 \problempart
 Using shortcuts, check whether each sentence is a tautology, a contradiction, or neither.
-\begin{earg}
+\begin{compactlist}
 	\item $\enot B \eand B$ %contra
 	\item $\enot D \eor D$ %taut
 	\item $(A\eand B) \eor (B\eand A)$ %contingent
@@ -1101,7 +1107,7 @@ Using shortcuts, check whether each sentence is a tautology, a contradiction, or
 	\item $A\eif(B\eor C)$ %contingent
 	\item $(A \eand\enot A) \eif (B \eor C)$ %tautology
 	\item $(B\eand D) \eiff [A \eiff(A \eor C)]$%contingent
-\end{earg}
+\end{compactlist}
 
 \chapter{Partial truth tables}\label{s:PartialTruthTable}
 
@@ -1210,7 +1216,7 @@ entailment? & complete & one-line partial\\
 \problempart
 \label{pr.TT.equiv3}
 Use complete or partial truth tables (as appropriate) to determine whether these pairs of sentences are logically equivalent:
-\begin{earg}
+\begin{compactlist}
 \item $A$, $\enot A$ %No
 \item $A$, $A \eor A$ %Yes
 \item $A\eif A$, $A \eiff A$ %Yes
@@ -1219,30 +1225,30 @@ Use complete or partial truth tables (as appropriate) to determine whether these
 \item $\enot(A \eand B)$, $\enot A \eor \enot B$ %Yes
 \item $\enot(A \eif B)$, $\enot A \eif \enot B$ %No
 \item $(A \eif B)$, $(\enot B \eif \enot A)$ %Yes
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.TT.satisfiable4}
 Use complete or partial truth tables (as appropriate) to determine whether these sentences are jointly satisfiable, or jointly unsatisfiable:
-\begin{earg}
+\begin{compactlist}
 \item $A \eand B$, $C\eif \enot B$, $C$ %unsatisfiable
 \item $A\eif B$, $B\eif C$, $A$, $\enot C$ %unsatisfiable
 \item $A \eor B$, $B\eor C$, $C\eif \enot A$ %satisfiable
 \item $A$, $B$, $C$, $\enot D$, $\enot E$, $F$ %satisfiable
 \item $A \eand (B \eor C)$, $\enot(A \eand C)$, $\enot(B \eand C)$ %satisfiable
 \item $A \eif B$, $B \eif C$, $\enot(A \eif C)$ %unsatisfiable
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.TT.valid4}
 Use complete or partial truth tables (as appropriate) to determine whether each argument is valid or invalid:
-\begin{earg}
+\begin{compactlist}
 \item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore A$ %invalid
 \item $A\eiff\enot(B\eiff A) \therefore A$ %invalid
 \item $A\eif B, B \therefore A$ %invalid
 \item $A\eor B, B\eor C, \enot B \therefore A \eand C$ %valid
 \item $A\eiff B, B\eiff C \therefore A\eiff C$ %valid
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.TT.TTorC3}
@@ -1250,7 +1256,7 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 
 % truth tables in LaTeX generated by http://www.curtisbright.com/logic/. Be sure to give him a shout out.
 
-\begin{earg}
+\begin{compactlist}
 \item  $A \eif \enot A$ \vspace{.5ex}							
 
 %{\color{red}
@@ -1435,12 +1441,12 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 %}
 %
 %	4 letters, 5 connectives
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.TTorC4}
 Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table as appropriate.
-\begin{earg}
+\begin{compactlist}
 \item  $\enot (A \eor A)$\vspace{.5ex}							%	Contradiction		1 letter, 2 connectives
 \item $(A \eif B) \eor (B \eif A)$\vspace{.5ex}					%	Tautology			2 letters, 2 connectives
 \item $[(A \eif B) \eif A] \eif A$\vspace{.5ex}					%	Tautology			2 letters, 3 connectives
@@ -1451,13 +1457,13 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 \item $(A \eand\enot A) \eif (B \eor C)$\vspace{.5ex} 			%tautology			3 letters, 4 connectives 
 \item $(B\eand D) \eiff [A \eiff(A \eor C)]$\vspace{.5ex}			%contingent			4 letters, 4 connectives
 \item $\enot[(A \eif B) \eor (C \eif D)]$\vspace{.5ex} 			% Contingent. 		4 letters, 4 connectives
-\end{earg}
+\end{compactlist}
 
 
 
 \noindent\problempart
 Determine whether each the following pairs of sentences are logically equivalent using complete truth tables. Justify your answer with a complete or partial truth table as appropriate.
-\begin{earg}
+\begin{compactlist}
 \item $A$ and $A \eor A$
 \item $A$ and $A \eand A$
 \item $A \eor \enot B$ and $A\eif B$
@@ -1467,13 +1473,13 @@ Determine whether each the following pairs of sentences are logically equivalent
 \item $ ((C \eand (N \eiff C)) \eiff C)$ and $(\enot \enot \enot N \eif C)$
 \item $[(A \eor B) \eand C]$ and $[A \eor (B \eand C)]$
 \item $((L \eand C) \eand I)$ and $L \eor C$
-\end{earg}
+\end{compactlist}
 
 
 \noindent\problempart
 \label{pr.TT.satisfiable5}
 Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable. Justify your answer with a complete or partial truth table as appropriate.
-\begin{earg}
+\begin{compactlist}
 \item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ %satisfiable
 \item $A \eif \enot A$, $\enot A \eif A$%unsatisfiable.
 \item $A\eor B$, $A\eif C$, $B\eif C$ %satisfiable
@@ -1484,11 +1490,11 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 \item  $A \eiff B$,  $\enot B \eor \enot A$,  $A \eif  B$ % Consistent
 \item $A \eiff B$, $A \eif C$, $B \eif D$, $\enot(C \eor D)$ %consitent
 \item $\enot (A \eand \enot B)$,  $B \eif \enot A$, $\enot B$   %Consistent
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
 \label{pr.TT.valid5} 
-\begin{earg}
+\begin{compactlist}
 \item $A\eif(A\eand\enot A)\therefore \enot A$% valid
 \item $A \eor B$, $A \eif B$, $B \eif A \therefore  A \eiff B$  % Valid
 \item $A\eor(B\eif A)\therefore \enot A \eif \enot B$ %valid
@@ -1500,15 +1506,15 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 \item $A \eif B\therefore (A \eand B) \eor (\enot A \eand \enot B)$ % invalid
 \item $\enot A \eif B$,$ \enot B \eif C $,$ \enot C \eif A \therefore  \enot A \eif (\enot B \eor \enot C) $% Invalid
 
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
 \label{pr.TT.valid6} 
-\begin{earg}
+\begin{compactlist}
 \item $A\eiff\enot(B\eiff A)\therefore A$ % invalid
 \item $A\eor B$, $B\eor C$, $\enot A\therefore B \eand C$ % invalid
 \item $A \eif C$, $E \eif (D \eor B)$, $B \eif \enot D\therefore (A \eor C) \eor (B \eif (E \eand D))$ % invalid
 \item $A \eor B$, $C \eif A$, $C \eif B\therefore A \eif (B \eif C)$ % invalid
 \item $A \eif B$, $\enot B \eor A\therefore A \eiff B$ % valid
-\end{earg}
+\end{compactlist}
 

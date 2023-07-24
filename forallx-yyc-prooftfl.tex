@@ -5,7 +5,7 @@
 
 \chapter{The very idea of natural deduction}\label{s:NDVeryIdea}
 
-Way back in \S\ref{s:Valid}, we said that an argument is valid iff there is no case in which all of the premises are true and the conclusion is false.
+Way back in \S\ref{s:Valid}, we said that an argument is valid \ifeff{} there is no case in which all of the premises are true and the conclusion is false.
 
 In the case of TFL, this led us to develop truth tables. Each line of a complete truth table corresponds to a valuation. So, when faced with a TFL argument, we have a very direct way to assess whether there is a valuation on which the premises are true and the conclusion is false: just thrash through the truth table.
 
@@ -23,12 +23,29 @@ One aim of a \emph{natural deduction system} is to show that particular argument
 With truth tables, we directly consider different ways to make sentences true or false. With natural deduction systems, we manipulate sentences in accordance with rules that we have set down as good rules. The latter promises to give us a better insight---or at least, a different insight---into how arguments work.
 
 The move to natural deduction might be motivated by more than the search for insight. It might also be motivated by \emph{necessity}. Consider:
+\ifHTMLtarget
+\begin{earg}
+	\item $A_1 \eif C_1$
+	\item[\texttherefore] $(A_1 \eand (A_2 \eand (A_3 \eand (A_4 \eand A_5)))) \eif 
+	((((C_1 \eor C_2) \eor C_3) \eor C_4) \eor C_5)$
+\end{earg}
+\else
 \begin{align*}
 	& A_1 \eif C_1 \\
 	\therefore\, & (A_1 \eand (A_2 \eand (A_3 \eand (A_4 \eand A_5)))) \eif {}\\ 
 	& \qquad ((((C_1 \eor C_2) \eor C_3) \eor C_4) \eor C_5)
 \end{align*}
+\fi
 To test this argument for validity, you might use a 1{,}024-line truth table. If you do it correctly, then you will see that there is no line on which all the premises are true and on which the conclusion is false. So you will know that the argument is valid. (But, as just mentioned, there is a sense in which you will not know \emph{why} the argument is valid.) But now consider:
+\ifHTMLtarget
+\begin{earg}
+\item $A_1 \eif C_1$
+\item[\texttherefore] $(A_1 \eand (A_2 \eand (A_3 \eand (A_4 \eand (A_5 \eand 
+ (A_6 \eand (A_7 \eand (A_8 \eand (A_9 \eand A_{10}))))))))) \eif 
+ (((((((((C_1 \eor C_2) \eor C_3) \eor C_4) \eor C_5) \eor  C_6) \eor
+ C_7) \eor C_8) \eor C_9) \eor C_{10})$
+\end{earg}
+\else
 \begin{align*}
 & A_1 \eif C_1 \\
 \therefore\, & \small (A_1 \eand (A_2 \eand (A_3 \eand (A_4 \eand (A_5 \eand {}\\
@@ -36,6 +53,7 @@ To test this argument for validity, you might use a 1{,}024-line truth table. If
 &(((((((((C_1 \eor C_2) \eor C_3) \eor C_4) \eor C_5) \eor {}\\
 & \qquad C_6) \eor C_7) \eor C_8) \eor C_9) \eor C_{10})
 \end{align*}
+\fi
 This argument is also valid---as you can probably tell---but to test it requires a truth table with $2^{20} = 1{,}048{,}576$ lines. In principle, we can set a machine to grind through truth tables and report back when it is finished. In practice, complicated arguments in TFL can become \emph{intractable} if we use truth tables.
 
 When we get to first-order logic (FOL) (beginning in chapter \ref{s:FOLBuildingBlocks}), though, the problem gets dramatically worse. There is nothing like the truth table test for FOL. To assess whether or not an argument is valid, we have to reason about \emph{all} interpretations, but, as we will see, there are infinitely many possible interpretations. We cannot even in principle set a machine to grind through infinitely many possible interpretations and report back when it is finished: it will \emph{never} finish. We either need to come up with some more efficient way of reasoning about all interpretations, or we need to look for something different.
@@ -152,7 +170,7 @@ The point is simply that, when you have a conjunction on some line of a proof, y
 Even with just these two rules, we can start to see some of the power of our formal proof system. Consider:
 \begin{earg}
 \item[] $[(A\eor B)\eif(C\eor D)] \eand [(E \eor F) \eif (G\eor H)]$
-\item[\therefore] $[(E \eor F) \eif (G\eor H)] \eand [(A\eor B)\eif(C\eor D)]$
+\item[\texttherefore] $[(E \eor F) \eif (G\eor H)] \eand [(A\eor B)\eif(C\eor D)]$
 \end{earg}
 The main logical operator in both the premise and conclusion of this argument is `$\eand$'. In order to provide a proof, we begin by writing down the premise, which is our assumption. We draw a line below this: everything after this line must follow from our assumptions by (repeated applications of) our rules of inference. So the beginning of the proof looks like this:
 \begin{fitchproof}
@@ -212,7 +230,7 @@ Consider the following argument:
 \begin{earg}
 		\item[] If Jane is smart then she is fast.
 		\item[] Jane is smart.
-		\item[\therefore] Jane is fast.
+		\item[\texttherefore] Jane is fast.
 \end{earg}
 This argument is certainly valid, and it suggests a straightforward conditional elimination rule ($\eif$E):
 \factoidbox{
@@ -327,10 +345,10 @@ We can describe the process of making an additional assumption as one of perform
 
 When we are working within the subproof, we can refer to the additional assumption that we made in introducing the subproof, and to anything that we obtained from our original assumptions. (After all, those original assumptions are still in effect.) At some point though, we will want to stop working with the additional assumption: we will want to return from the subproof to the main proof. To indicate that we have returned to the main proof, the vertical line for the subproof comes to an end. At this point, we say that the subproof is \define{closed}. Having closed a subproof, we have set aside the additional assumption, so it will be illegitimate to draw upon anything that depends upon that additional assumption. Thus we stipulate:
 \factoidbox{To cite an individual line when applying a rule:
-\begin{enumerate}
+\begin{numberlist}
 \item the line must come before the line where the rule is applied, but 
 \item not occur within a subproof that has been closed before the line where the rule is applied.
-\end{enumerate}}
+\end{numberlist}}
 This stipulation rules out the disastrous attempted proof above. The application of rule $\eif$E on line~$5$ requires that we cite two individual lines from earlier in the proof. One of these lines (namely, line~$3$) occurs within a subproof (lines $2$--$3$). By line $5$, where we have to cite line $3$, the subproof has been closed. This is illegitimate: we are not allowed to cite line $3$ on line $5$.
 
 Closing a subproof is called \define{discharging} the assumptions of that subproof. So we can put the point this way: \emph{you cannot refer back to anything that was obtained using discharged assumptions}.
@@ -388,11 +406,11 @@ Here is one further case we have to exclude:
 Here we are trying to cite a subproof that begins on line~$2$ and ends on line~$5$---but the sentence on line~$5$ depends not only on the assumption on line~$2$, but also on one another assumption (line~$3$) which we have not discharged at the end of the subproof. The subproof started on line~$3$ is still open at line~$3$. But $\eif$I requires that the last line of the subproof \emph{only} relies on the assumption of the subproof being cited, i.e., the subproof beginning on line~$2$ (and anything before it), and not on assumptions of any subproofs within it. In particular, the last line of the subproof cited must not itself lie within a nested subproof.
 
 \factoidbox{To cite a subproof when applying a rule:
-\begin{enumerate} 
+\begin{numberlist} 
 \item the cited subproof must come entirely before the application of the rule where it is cited, 
 \item the cited subproof must not lie within some other closed subproof which is closed at the line it is cited, and 
 \item the last line of the cited subproof must not occur inside a nested subproof.
-\end{enumerate}}
+\end{numberlist}}
 
 One last point to emphasize how rules can be applied: where a rule requires you to cite an individual line, you cannot cite a subproof instead; and where it requires you to cite a subproof, you cannot cite an individual line instead. So for instance, this is incorrect:
 \begin{fitchproof}
@@ -598,7 +616,7 @@ Note that \metav{A} can be \emph{any} sentence whatsoever.
 
 The explosion rule is a bit odd. It looks like \metav{A} arrives in our proof like a bunny out of a hat. When trying to find proofs, it is very tempting to try to use it everywhere, since it seems so powerful. Resist this temptation: you can only apply it when you already have~$\ered$!  And you get $\ered$ only when your assumptions are contradictory.
 
-Still, isn't it odd that from a contradiction anything whatsoever should follow? Not according to our notion of entailment and validity. For \metav{A} entails \metav{B} iff there is no valuation of the sentence letters which makes \metav{A} true and \metav{B} false at the same time. Now $\ered$ is a contradiction---it is never true, whatever the valuation of the sentence letters. Since there is no valuation which makes $\ered$ true, there of course is also no valuation that makes $\ered$ true and \metav{B} false! So according to our definition of entailment, $\ered \entails \metav{B}$, whatever \metav{B} is. A contradiction entails anything.\footnote{There are some logicians who don't buy this. They think that if \metav{A} entails \metav{B}, there must be some \emph{relevant connection} between \metav{A} and \metav{B}---and there isn't one between $\ered$ and some arbitrary sentence~\metav{B}. So these logicians develop other, ``relevant'' logics in which you aren't allowed the explosion rule.}
+Still, isn't it odd that from a contradiction anything whatsoever should follow? Not according to our notion of entailment and validity. For \metav{A} entails \metav{B} \ifeff{} there is no valuation of the sentence letters which makes \metav{A} true and \metav{B} false at the same time. Now $\ered$ is a contradiction---it is never true, whatever the valuation of the sentence letters. Since there is no valuation which makes $\ered$ true, there of course is also no valuation that makes $\ered$ true and \metav{B} false! So according to our definition of entailment, $\ered \entails \metav{B}$, whatever \metav{B} is. A contradiction entails anything.\footnote{There are some logicians who don't buy this. They think that if \metav{A} entails \metav{B}, there must be some \emph{relevant connection} between \metav{A} and \metav{B}---and there isn't one between $\ered$ and some arbitrary sentence~\metav{B}. So these logicians develop other, ``relevant'' logics in which you aren't allowed the explosion rule.}
 
 \emph{These are all of the basic rules for the proof system for TFL.}
 
@@ -674,7 +692,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 \problempart
 \label{pr.solvedTFLproofs}
 Give a proof for each of the following arguments:
-\begin{earg}
+\begin{compactlist}
 \item $J\eif\enot J \therefore \enot J$
 \item $Q\eif(Q\eand\enot Q) \therefore \enot Q$
 \item $A\eif (B\eif C) \therefore (A\eand B)\eif C$
@@ -687,7 +705,7 @@ Give a proof for each of the following arguments:
 \item $S\eiff T \therefore S\eiff (T\eor S)$
 \item $\enot (P \eif Q) \therefore \enot Q$
 \item $\enot (P \eif Q) \therefore P$
-\end{earg}
+\end{compactlist}
 
 
 \chapter{Constructing proofs}\label{s:stratTFL}
@@ -1097,7 +1115,7 @@ Inside this new subproof, we again need to justify $\ered$. The best way to do t
 
 \problempart
 Use the strategies to find proofs for each of the following arguments:
-\begin{earg}
+\begin{compactlist}
 \item $A \eif B, A \eif C \therefore A \eif (B \eand C)$
 \item $(A \eand B) \eif C \therefore A \eif (B \eif C)$
 \item $A \eif (B \eif C) \therefore (A \eif B) \eif (A \eif C)$
@@ -1106,25 +1124,25 @@ Use the strategies to find proofs for each of the following arguments:
 \item $A \eor B, A \eif C, B \eif D \therefore C \eor D$
 \item $\enot A \lor \enot B \therefore \enot(A \eand B)$
 \item $A \eand \enot B \therefore \enot(A \eif B)$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Formulate strategies for working backward and forward from $\metav{A} \eiff \metav{B}$.
 
 \problempart
 Use the strategies to find proofs for each of the following sentences:
-\begin{earg}
+\begin{compactlist}
 \item $\enot A \eif (A \eif \ered)$
 \item $\enot(A \eand \enot A)$
 \item $[(A \eif C) \eand (B \eif C)] \eif [(A \lor B) \eif C]$
 \item $\enot(A \eif B) \eif (A \eand \enot B)$
 \item $(\enot A \eor B) \eif (A \eif B)$
-\end{earg}
+\end{compactlist}
 Since these should be proofs of sentences from no premises, you will start with the respective sentence at the \emph{bottom} of the proof, which will have no premises.
 
 \problempart
 Use the strategies to find proofs for each one of the following arguments and sentences:
-\begin{earg}
+\begin{compactlist}
 \item $\enot\enot A \eif A$
 \item $\enot A \eif \enot B \therefore B \eif A$
 \item $A \eif B \therefore \enot A \eor B$
@@ -1132,7 +1150,7 @@ Use the strategies to find proofs for each one of the following arguments and se
 \item $A \eif (B \eor C) \therefore (A \eif B) \eor (A \eif C)$
 \item $(A \eif B) \lor (B \eif A)$
 \item $((A \eif B) \eif A) \eif A$
-\end{earg}
+\end{compactlist}
 These all will require the IP strategy. The last three especially are quite hard!
 
 \chapter{Additional rules for TFL}\label{s:Further}
@@ -1283,7 +1301,7 @@ And the fourth is the reverse of the third:
 \problempart
 \label{pr.justifyTFLproof}
 The following proofs are missing their citations (rule and line numbers). Add them wherever they are required:
-\begin{earg}
+\begin{compactlist}
 \item\begin{fitchproof}
 \hypo{1}{W \eif \enot B}
 \hypo{2}{A \eand W}
@@ -1327,16 +1345,16 @@ The following proofs are missing their citations (rule and line numbers). Add th
 \have{3b}{\enot\enot(N \eor C)}{}
 \have{3}{N \eor C}{}
 \end{fitchproof}
-\end{earg}
+\end{compactlist}
 
 \problempart 
 Give a proof for each of these arguments:
-\begin{earg}
+\begin{compactlist}
 \item $E\eor F$, $F\eor G$, $\enot F \therefore E \eand G$
 \item $M\eor(N\eif M) \therefore \enot M \eif \enot N$
 \item $(M \eor N) \eand (O \eor P)$, $N \eif P$, $\enot P \therefore M\eand O$
 \item $(X\eand Y)\eor(X\eand Z)$, $\enot(X\eand D)$, $D\eor M \therefore M$
-\end{earg}
+\end{compactlist}
 
 
 
@@ -1350,7 +1368,7 @@ The symbol `$\proves$' is called the \emph{single turnstile}. We want to emphasi
 
 Armed with our `$\proves$' symbol, we can introduce some more terminology. To say that there is a proof of $\metav{A}$ with no undischarged assumptions, we write: ${} \proves \metav{A}$. In this case, we say that $\metav{A}$ is a \define{theorem}.
 	\factoidbox{\label{def:syntactic_tautology_in_sl}
-		$\metav{A}$ is a \define{theorem} iff $\proves \metav{A}$
+		$\metav{A}$ is a \define{theorem} \ifeff{} $\proves \metav{A}$
 	}
 \newglossaryentry{theorem}
 {
@@ -1374,7 +1392,7 @@ To show that something is a theorem, you just have to find a suitable proof. It 
 
 Here is another new bit of terminology:
 	\factoidbox{
-		Two sentences \metav{A} and \metav{B} are \define{provably equivalent} iff each can be proved from the other; i.e., both $\metav{A}\proves\metav{B}$ and $\metav{B}\proves\metav{A}$.
+		Two sentences \metav{A} and \metav{B} are \define{provably equivalent} \ifeff{} each can be proved from the other; i.e., both $\metav{A}\proves\metav{B}$ and $\metav{B}\proves\metav{A}$.
 	}
         
 \newglossaryentry{provably equivalent}
@@ -1390,7 +1408,7 @@ As in the case of showing that a sentence is a theorem, it is relatively easy to
 Here is a third, related, bit of terminology:
 	\factoidbox{
 	The sentences $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n$ are
-	\define{jointly inconsistent} iff the contradiction~$\ered$ can be proved from
+	\define{jointly inconsistent} \ifeff{} the contradiction~$\ered$ can be proved from
 	them, i.e., $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n \proves
 	\ered$. If they are not \define{inconsistent}, we call them
 	\define{jointly consistent}.
@@ -1398,13 +1416,13 @@ Here is a third, related, bit of terminology:
         
 \newglossaryentry{inconsistent}
 {    name={inconsistency}, 
-  description={Sentences are inconsistent iff the contradiction~$\ered$ can be proved from them},
+  description={Sentences are inconsistent \ifeff{} the contradiction~$\ered$ can be proved from them},
     text={inconsistent}
 }
 
 \newglossaryentry{consistent}
 {    name={consistency}, 
-  description={Sentences are jointly consistent iff the contradiction~$\ered$ can\emph{not} be proved from them},
+  description={Sentences are jointly consistent \ifeff{} the contradiction~$\ered$ can\emph{not} be proved from them},
     text={consistent}
 }
 
@@ -1436,39 +1454,39 @@ consistent? & all possible proofs & one proof\\
 \practiceproblems
 \problempart
 Show that each of the following sentences is a theorem:
-\begin{earg}
+\begin{compactlist}
 \item $O \eif O$
 \item $N \eor \enot N$
 \item $J \eiff [J\eor (L\eand\enot L)]$
 \item $((A \eif B) \eif A) \eif A$ 
-\end{earg}
+\end{compactlist}
 
 \problempart
 Provide proofs to show each of the following:
-\begin{earg}
+\begin{compactlist}
 \item $C\eif(E\eand G), \enot C \eif G \proves G$
 \item $M \eand (\enot N \eif \enot M) \proves (N \eand M) \eor \enot M$
 \item $(Z\eand K)\eiff(Y\eand M), D\eand(D\eif M) \proves Y\eif Z$
 \item $(W \eor X) \eor (Y \eor Z), X\eif Y, \enot Z \proves W\eor Y$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Show that each of the following pairs of sentences are provably equivalent:
-\begin{earg}
+\begin{compactlist}
 \item $R \eiff E$, $E \eiff R$
 \item $G$, $\enot\enot\enot\enot G$
 \item $T\eif S$, $\enot S \eif \enot T$
 \item $U \eif I$, $\enot(U \eand \enot I)$
 \item $\enot (C \eif D), C \eand \enot D$
 \item $\enot G \eiff H$, $\enot(G \eiff H)$ 
-\end{earg}
+\end{compactlist}
 
 \problempart
 If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}\eand\metav{C})\proves\metav{B}$? What about $(\metav{A}\eor\metav{C})\proves\metav{B}$? Explain your answers.
 
 \
 
-\problempart In this chapter, we claimed that it is just as hard to show that two sentences are not provably equivalent, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem iff \metav{A} and \metav{B} were provably equivalent.)
+\problempart In this chapter, we claimed that it is just as hard to show that two sentences are not provably equivalent, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem \ifeff{} \metav{A} and \metav{B} were provably equivalent.)
 
 
 \chapter{Derived rules}\label{s:Derived}
@@ -1693,7 +1711,7 @@ Since the negation of a contradiction is a tautology, we can define an
 \define{inconsistent sentence in TFL}
 \label{def:syntactic_contradiction_in_sl} as a sentence whose negation
 can be derived without any premises.\footnote{Note that $\lnot
-\metav{A}$ is a theorem iff $\metav{A} \proves \ered$.} The syntactic
+\metav{A}$ is a theorem \ifeff{} $\metav{A} \proves \ered$.} The syntactic
 definition of a contingent sentence is a little different. We don't
 have any practical, finite method for proving that a sentence is
 contingent using derivations, the way we did using truth tables. So we
@@ -1724,7 +1742,7 @@ Satisfiable/ Consistent sentences	&	Sentences which have at least one line in th
 
 Valid argument		&	An argument whose truth table has no lines where there are all Ts under main connectives for the premises and an F under the main connective for the conclusion.  & An argument where one can derive the conclusion from the premises.}
 
-\iflatexml
+\ifHTMLtarget
 \begin{table}
 \begin{tabularx}{\textwidth}{X||X|X}
 \tmptable
@@ -1843,7 +1861,7 @@ Equivalence 			& Derive each sentence from the other 		 & Find a line in the tru
 Consistency 		& Find a line in truth table for the sentence where they all are true & Derive a contradiction from the sentences\\ \hline
 Validity 				& Derive the conclusion from the premises & Find a line in the truth table where the premises are true and the conclusion false. \\ }
 
-\iflatexml
+\ifHTMLtarget
 \begin{table}
 \begin{tabularx}{\textwidth}{X||X|X}
 \tmptable
@@ -1866,7 +1884,7 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 
 \practiceproblems
 \noindent\problempart Use either a derivation or a truth table for each of the following.
-\begin{enumerate}%[label=(\arabic*)]
+\begin{compactlist}%[label=(\arabic*)]
 \item Show that $A \eif [((B \eand C) \eor D) \eif A]$ is a theorem.
 \item Show that $A \eif (A \eif B)$ is not a theorem.
 \item Show that the sentence $A \eif \enot{A}$ is not a contradiction.
@@ -1879,11 +1897,11 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 \item Show that the sentences $\enot(A \eor B)$, $\enot{B}$, $B \eif A$ are jointly consistent.
 \item Show that $\enot(A \eor (B \eor C)) $ \therefore $ \enot{C}$ is valid.
 \item Show that $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ is invalid.
-\end{enumerate}
+\end{compactlist}
 
 
 \noindent\problempart Use either a derivation or a truth table for each of the following.
-\begin{enumerate}%[label=(\arabic*)]
+\begin{compactlist}%[label=(\arabic*)]
 \item Show that $A \eif (B \eif A)$ is a theorem.
 \item Show that $\enot (((N \eiff Q) \eor Q) \eor N)$ is not a theorem.
 \item Show that $ Z \eor (\enot Z \eiff Z) $ is contingent.
@@ -1896,5 +1914,5 @@ Validity 				& Derive the conclusion from the premises & Find a line in the trut
 \item Show that the sentences  $\enot R \eor C $, $(C \eand R) \eif \enot R$, $(\enot (R \eor R) \eif R) $ are jointly consistent.
 \item Show that $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ is valid.
 \item Show that $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ is invalid.
-\end{enumerate}
+\end{compactlist}
 

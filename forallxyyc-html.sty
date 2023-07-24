@@ -1,0 +1,22 @@
+%!TEX root = forallxyyc.tex
+
+% forallxyyc-html provides layout and style setup for HTML version 
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{forallxyyc-html}
+
+\RequirePackage{hyperref,ifthen,graphicx,xcolor}
+
+% Make glossary commands do nothing if converting to HTML
+\newcommand{\newglossaryentry}[2]{}
+\newcommand{\glspl}[1]{#1s}
+\newcommand{\gls}[1]{#1}
+\newcommand{\printglossaries}{}
+\newcommand{\glsaddall}{}
+
+% \factoidbox{...} produces a highlighted paragraph of text
+
+\usepackage{framed}
+\colorlet{shadecolor}{lyallpink!5}
+\newenvironment{factoidboxe}{\begin{shaded*}\noindent}{\end{shaded*}}
+\newcommand{\factoidbox}[1]{\begin{factoidboxe}#1\end{factoidboxe}}

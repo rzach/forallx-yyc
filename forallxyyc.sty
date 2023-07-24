@@ -2,11 +2,36 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{forallxyyc}[2011/10/29 support for a logic textbook]
 
+% The current book version
+\def\forallxversion{Fall 2023$\alpha$}
+\def\forallxshortversion{F23$\alpha$}
+
 \RequirePackage{amssymb,amsmath,pifont,rotating,fitch}
 \usepackage[cal=boondoxo]{mathalfa}
+\usepackage[german,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{latexml}
+\RequirePackage{hyperref,ifthen,graphicx,xcolor}
+\RequirePackage{enumitem}
+
+% \ifHTMLtarget -- for conditional code depending on whether we're
+% compiling to HTML or to PDF. To be used for anything that would also
+% compile to PDF for testing and because BookML runs the file through
+% LaTeX. Use \iflatexml to test for when we're *actually* running
+% through LaTeXML (e.g., inserting raw HTML)
+\newif\ifHTMLtarget
+\HTMLtargetfalse
 
 % The original forallx.sty was written in 2005
 % Comments marked "TB" are additions by Tim Button in September 2012
+
+%    ****************************************
+%    *        TITLE AND VERSION DATA        *
+%    ****************************************
+% the title of the book
+
+\newcommand*{\forallx}{\texttt{forall}\script{x}}
+\newcommand*{\forallxyyc}{\texttt{forall}\script{x}\texttt{:Calgary}}
 
 %    ****************************************
 %    *            LOGICAL SYMBOLS           *
@@ -22,6 +47,11 @@
 %
 \let\oldtherefore\therefore
 \def\therefore{\ensuremath{\oldtherefore}}
+\iflatexml
+\def\texttherefore{∴}
+\else
+\let\texttherefore\therefore
+\fi
 % disjunction
 \def\eor{\ensuremath{\vee}}
 % conjunction: 
@@ -75,9 +105,20 @@
 \newcommand*{\script}[1]{\ensuremath{\mathcal{#1}}}
 \newcommand*{\metav}[1]{\ensuremath{\mathcal{#1}}}
 
-% create a blank
+% create a blank that SRs read out as "blank"
+\iflatexml
+\newcommand*{\blank}{\underline{blank}\bmlPlusClass{fxblank}}
+\else
 \newcommand*{\blank}{\underline{\hspace*{2.5em}}}
+\fi
 \newcommand*{\gap}[1]{\blank$_{#1}$} % TB: used for keys, to avoid use/mention confusion
+
+% make SRs read out "iff" as "if-f"
+\iflatexml
+\newcommand*{\ifeff}{\<span aria-label="if-f">iff\</span>}
+\else
+\newcommand*{\ifeff}{iff}
+\fi
 
 % These are included for discussing formal semantics in predicate logic.
 \newcommand*{\model}[1]{\ensuremath{\mathbb{#1}}}
@@ -97,18 +138,49 @@
 %    ****************************************
 % The {earg} environment is used for arguments and example sentences.
 % The {ekey} environment is used for symbolization keys.
-\newcounter{eargnum}
-\newcounter{OLDeargnum}
-\newenvironment{earg}%
-{\begin{list}{\arabic{eargnum}.}{\usecounter{eargnum}\itemsep=0pt \parsep=0pt}}%
-{\setcounter{OLDeargnum}{\arabic{eargnum}}\end{list}}
+% \newcounter{eargnum}
+% \newcounter{OLDeargnum}
+% \newenvironment{earg}%
+% {\begin{list}{\arabic{eargnum}.}{\usecounter{eargnum}\itemsep=0pt \parsep=0pt}}%
+% {\setcounter{OLDeargnum}{\arabic{eargnum}}\end{list}}
 
+\iflatexml
+%\DeclareUnicodeCharacter{25B9}{$\triangleright$}
+\setlist[itemize]{label=▹}
+\else
+\setlist[itemize]{label=$\triangleright$}
+\fi
+
+% earg -- an unordered list for arguments, no labels
+%\newenvironment{earg}{\begin{itemize}[noitemsep,label={},align=right]}{\end{itemize}}
+\newlist{earg}{itemize}{1}
+\setlist[earg]{noitemsep,label={},align=right}
+
+% ebullet - a bulleted list
 \newenvironment{ebullet}% TB: added to give a nice bulleted enivronment
-{\begin{list}{\textbullet}{\itemsep=0pt \parsep=0pt}}%
-{\end{list}}
+{\begin{itemize}[noitemsep,label=\textbullet]}{\end{itemize}}
 
-\newcommand{\ekeylabel}[1]{{\makebox[8ex][r]{\ensuremath{ #1}:}}}
-\newenvironment{ekey}{\begin{list}{}{\renewcommand{\makelabel}{\ekeylabel} \itemsep=0pt \parsep=0pt}}{\end{list}}
+% ekey - for symbolization keys. TODO: turn this into a description
+% list for better A11Y
+% \newcommand{\ekeylabel}[1]{{\makebox[8ex][r]{\ensuremath{ #1}:}}}
+% \newenvironment{ekey}{\begin{list}{}{\renewcommand{\makelabel}{\ekeylabel}
+% \itemsep=0pt \parsep=0pt}}{\end{list}}
+\newlist{ekeylist}{description}{1}
+\setlist[ekeylist]{noitemsep,labelwidth=4em,align=right,font=\normalfont}
+\def\ekeylabel#1{\hfil\normalfont\ensuremath{#1}:}
+\newenvironment{ekey}{\begin{ekeylist}\renewcommand{\makelabel}{\ekeylabel}}{\end{ekeylist}}
+
+% compactlist -- a numbered list with tight spacing
+\newlist{compactlist}{enumerate}{1}
+\setlist[compactlist]{noitemsep,label=\arabic*.}
+% numberlist -- a numbered list with standard spacing
+\newlist{numberlist}{enumerate}{1}
+\setlist[numberlist]{label=\arabic*.}
+
+% enumerate -- used for numbered examples; counter resets every
+% chapter
+\setlist[enumerate]{resume,noitemsep}
+\@addtoreset{enumi}{chapter}
 
 %    ****************************************
 %    *             TRUTH TABLES             *
@@ -241,5 +313,55 @@
 		grey_shape/.style={thick, fill=black!20, draw, minimum width=30pt, minimum height=30pt}, % TB: renders a light grey shape with a black outline
 		white_shape/.style={thick, fill=black!0, draw, minimum width=30pt, minimum height=30pt} % TB: renders a white shape with a black outline
 		}
+
+%    ****************************************
+%    *          PRACTICE PROBLEMS           *
+%    ****************************************
+\newcounter{ProbPart}
+\renewcommand{\theProbPart}{\Alph{ProbPart}}
+\renewcommand{\theHProbPart}{\thechapter.\theProbPart}
+% This inserts a heading and resets the counter:
+\newcommand*{\practiceproblems}{
+	\setcounter{ProbPart}{0}\section*{Practice exercises}%
+  \sectionmark{Practice exercises}%
+	\addcontentsline{toc}{section}{Practice exercises}
+}
+% This starts a new section which is automatically numbered:
+\newcommand*{\problempart}{\par\noindent\refstepcounter{ProbPart}\textbf{\Alph{ProbPart}. }}
+% This bullet is used to indicate that solutions appear at the end of
+% the book.
+\newcommand*{\solutions}{} %TB: removed, since I am not including the solutions in the book
+% When solutions are only given for selected problems, the
+% star is placed left of the problem number.
+\newcommand*{\leftsolutions}{\hspace{-2.2em}\makebox[2em][l]{\solutions}}
+
+% This is used at the beginning of a section in the solutions
+% appendix.
+\newcommand*{\solutionsection}[2]{%
+	\textbf{\textsc{Chapter {\ref{#1}} Part {\ref{#2}}}}%
+	\markright{solutions for ch.~\ref{#1}}%
+	\setcounter{countSeq}{0}
+}
+
+% This is used to enumerate things that have a given property.
+% For example: \nextSeq\nextSeq\noSeq\lastSeq are valid.
+% produces   : 1, 2, and 4 are valid.
+\newcounter{countSeq}
+\newcommand*{\nextSeq}{\stepcounter{countSeq}\arabic{countSeq}, }
+\newcommand*{\noSeq}{\stepcounter{countSeq}}
+\newcommand*{\lastSeq}{and \stepcounter{countSeq}\arabic{countSeq} }
+
+%    ****************************************
+%    *         TABLE OF CONTENTS, ETC.      *
+%    ****************************************
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thepart}{\Roman{part}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+
+\setcounter{tocdepth}{0} %TB: only chapters and sections to appear
+
+\setlength{\columnsep}{2em} % Sets 2em space between columns when calling multicol 
+
+\newcommand\myanswer[1]{\textcolor{dkleadbeater}{#1}} % TB: puts model answers in blue
 
 \IfFileExists{forallxyyc-local.sty}{\usepackage{forallxyyc-local}}{}

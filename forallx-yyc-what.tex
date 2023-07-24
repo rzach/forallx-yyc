@@ -13,9 +13,9 @@ In everyday language, we sometimes use the word `argument' to talk about bellige
 
 An argument, as we will understand it, is something more like this:
 	\begin{earg}\label{argButlerGardner}
-		\item[] Either the butler or the gardener did it.
-		\item[] The butler didn't do it.
-		\item[\therefore] The gardener did it.
+		\item Either the butler or the gardener did it.
+		\item The butler didn't do it.
+		\item[\texttherefore] The gardener did it.
 	\end{earg}
 We have here a series of sentences. The three dots on the third line of the argument are read `therefore.' They indicate that the final sentence expresses the \emph{conclusion} of the argument. The two sentences before that are the \emph{premises} of the argument. If you believe the premises, and you think the conclusion follows from the premises---that the argument, as we will say, is valid---then this (perhaps) provides you with a reason to believe the conclusion.
 
@@ -111,7 +111,7 @@ At the end of some chapters, there are exercises that review and explore the mat
 \medskip
 
 So here's the first exercise. Highlight the phrase which expresses the conclusion of each of these arguments:
-\begin{earg}
+\begin{compactlist}
 	\item It is sunny. So I should take my sunglasses.
 	\item It must have been sunny. I did wear my sunglasses, after all.
 	\item No one but you has had their hands in the cookie-jar. And the scene of the crime is littered with cookie-crumbs. You're the culprit!
@@ -120,7 +120,7 @@ So here's the first exercise. Highlight the phrase which expresses the conclusio
 	ballroom, and we know that there is no blood on his hands. Hence
 	Colonel Mustard did it in the kitchen with the lead pipe.
 	Recall, after all, that the gun had not been fired.
-\end{earg}
+\end{compactlist}
 
 
 \chapter{The scope of logic}
@@ -136,7 +136,7 @@ What about the main argument discussed in \S\ref{s:Arguments}?
 \begin{earg}
 	\item[] Either the butler or the gardener did it.
 	\item[] The butler didn't do it.
-	\item[\therefore] The gardener did it.
+	\item[\texttherefore] The gardener did it.
 \end{earg}
 We don't have any context for what the sentences in this argument refer to. Perhaps you suspect that ``did it'' here means ``was the perpetrator'' of some unspecified crime. You might imagine that the argument occurs in a mystery novel or TV show, perhaps spoken by a detective working through the evidence. But even without having any of this information, you probably agree that the argument is a good one in the sense that whatever the premises refer to, if they are both true, the conclusion cannot but be true as well. If the first premise is true, i.e., it's true that ``the butler did it or the gardener did it,'' then at least one of them ``did it,'' whatever that means. And if the second premise is true, then the butler did not ``do it.'' That leaves only one option: ``the gardener did it'' must be true. Here, the conclusion follows from the premises. We call arguments that have this property \define{valid}.
 
@@ -144,7 +144,7 @@ By way of contrast, consider the following argument:
 \begin{earg}\label{argMaidDriver}
 	\item[] If the driver did it, the maid didn't do it.
 	\item[] The maid didn't do it.
-	\item[\therefore] The driver did it.
+	\item[\texttherefore] The driver did it.
 \end{earg}
 We still have no idea what is being talked about here. But, again, you probably agree that this argument is different from the previous one in an important respect. If the premises are true, it is \emph{not} guaranteed that the conclusion is also true. The premises of this argument do not rule out, by themselves, that someone other than the maid or the driver ``did it.'' So there is a case where both premises are true, and yet the driver didn't do it, i.e., the conclusion is not true. In this second argument, the conclusion does not follow from the premises. If, like in this argument, the conclusion does not follow from the premises, we say it is \define{invalid}.
 
@@ -188,15 +188,15 @@ Making ``case'' more specific by interpreting it as ``hypothetical scenario'' is
 
 Suppose the answer to the first question is ``yes.'' Consider the following argument:
 	\begin{earg}
-		\item[] The spaceship \emph{Rocinante} took six hours to reach Jupiter from Tycho space station.
-		\item[\therefore] The distance between Tycho space station and Jupiter is less than 14~billion kilometers.
+		\item[] The spaceship \textit{Rocinante} took six hours to reach Jupiter from Tycho space station.
+		\item[\texttherefore] The distance between Tycho space station and Jupiter is less than 14~billion kilometers.
 	\end{earg}
-A counterexample to this argument would be a scenario in which the \emph{Rocinante} makes a trip of over 14 billion kilometers in 6 hours, exceeding the speed of light. Since such a scenario is incompatible with the laws of physics, there is no such scenario if hypothetical scenarios have to conform to the laws of physics.  If hypothetical scenarios are not limited by the laws of physics, however, there is a counterexample: a scenario where the \emph{Rocinante} travels faster than the speed of light.
+A counterexample to this argument would be a scenario in which the \textit{Rocinante} makes a trip of over 14 billion kilometers in 6 hours, exceeding the speed of light. Since such a scenario is incompatible with the laws of physics, there is no such scenario if hypothetical scenarios have to conform to the laws of physics.  If hypothetical scenarios are not limited by the laws of physics, however, there is a counterexample: a scenario where the \textit{Rocinante} travels faster than the speed of light.
 
 Suppose the answer to the second question is ``yes,'' and consider another argument:
 	\begin{earg}
 		\item[] Priya is an ophthalmologist.
-		\item[\therefore] Priya is an eye doctor.
+		\item[\texttherefore] Priya is an eye doctor.
 	\end{earg}
 If we're allowing only conceivable scenarios, this is also a valid argument. If you imagine Priya being an ophthalmologist, you thereby imagine Priya being an eye doctor. That's just what ``ophthalmologist'' and ``eye doctor'' mean.  A scenario where Priya is an ophthalmologist but not an eye doctor is ruled out by the conceptual connection between these words.
 
@@ -209,25 +209,25 @@ One distinguishing feature of \emph{logical} consequence, however, is that it sh
 \begin{earg}
 	\item[] Priya is either an ophthalmologist or a dentist.
 	\item[] Priya isn't a dentist.
-	\item[\therefore] Priya is an eye doctor.
+	\item[\texttherefore] Priya is an eye doctor.
 \end{earg}
 and
 \begin{earg}
 	\item[] Priya is either an ophthalmologist or a dentist.
 	\item[] Priya isn't a dentist.
-	\item[\therefore] Priya is an ophthalmologist.
+	\item[\texttherefore] Priya is an ophthalmologist.
 \end{earg}
 are valid arguments. But while the validity of the first depends on the content (i.e., the meaning of ``ophthalmologist'' and ``eye doctor''), the second does not. The second argument is \define{formally valid}. We can describe the ``form'' of this argument as a pattern, something like this:
 \begin{earg}
 	\item[] $A$ is either an $X$ or a $Y$.
 	\item[] $A$ isn't a $Y$.
-	\item[\therefore] $A$ is an $X$.
+	\item[\texttherefore] $A$ is an $X$.
 \end{earg}
 Here, $A$, $X$, and $Y$ are placeholders for appropriate expressions that, when substituted for $A$, $X$, and $Y$, turn the pattern into an argument consisting of sentences. For instance,
 \begin{earg}
 	\item[] Mei is either a mathematician or a botanist.
 	\item[] Mei isn't a botanist.
-	\item[\therefore] Mei is a mathematician.
+	\item[\texttherefore] Mei is a mathematician.
 \end{earg}
 is an argument of the same form, but the first argument above is not: we would have to replace $Y$ by different expressions (once by ``ophthalmologist'' and once by ``eye doctor'') to obtain it from the pattern.
 
@@ -235,13 +235,13 @@ Moreover, the first argument is not formally valid. \emph{Its} form is this:
 \begin{earg}
 	\item[] $A$ is either an $X$ or a $Y$.
 	\item[] $A$ isn't a $Y$.
-	\item[\therefore] $A$ is a $Z$.
+	\item[\texttherefore] $A$ is a $Z$.
 \end{earg}
 In this pattern we can replace $X$ by ``ophthalmologist'' and $Z$ by ``eye doctor'' to obtain the original argument.  But here is another argument of the same form:
 \begin{earg}
 	\item[] Mei is either a mathematician or a botanist.
 	\item[] Mei isn't a botanist.
-	\item[\therefore] Mei is an acrobat.
+	\item[\texttherefore] Mei is an acrobat.
 \end{earg}
 This argument is clearly not valid, since we can imagine a mathematician named Mei who is not an acrobat.
 
@@ -257,7 +257,7 @@ Consider this example:
 	\begin{earg}
 		\item[] Oranges are either fruit or musical instruments.
 		\item[] Oranges are not fruit.
-		\item[\therefore] Oranges are musical instruments.
+		\item[\texttherefore] Oranges are musical instruments.
 	\end{earg}
 The conclusion of this argument is ridiculous. Nevertheless, it follows from the premises. \emph{If} both premises are true, \emph{then} the conclusion just has to be true. So the argument is valid.
 
@@ -265,7 +265,7 @@ Conversely, having true premises and a true conclusion is not enough to make an 
 	\begin{earg}
 		\item[] London is in England.
 		\item[] Beijing is in China.
-		\item[\therefore] Paris is in France.
+		\item[\texttherefore] Paris is in France.
 	\end{earg}
 The premises and conclusion of this argument are, as a matter of fact, all true, but the argument is invalid. If Paris were to declare independence from the rest of France, then the conclusion would no longer be true, even though both of the premises would remain true. Thus, there is a case where the premises of this argument are true without the conclusion being true. So the argument is invalid.
 
@@ -286,7 +286,7 @@ The flip side of this is that when you want to rebut an argument, you have two o
 Many good arguments are invalid. Consider this one:
 	\begin{earg}
 		\item[] Every winter so far, it has snowed in Calgary.
-	\item[\therefore] It will snow in Calgary this coming winter.
+	\item[\texttherefore] It will snow in Calgary this coming winter.
 \end{earg}
 This argument generalises from observations about many (past) cases to a conclusion about all (future) cases. Such arguments are called \define{inductive} arguments. Nevertheless, the argument is invalid. Even if it has snowed in Calgary every winter thus far, it remains \emph{possible} that Calgary will stay dry all through the coming winter. In fact, even if it will henceforth snow every winter in Calgary, we could still \emph{imagine} a case in which this year is the first year it doesn't snow all winter. And that hypothetical scenario is a case where the premises of the argument are true but the conclusion is not, making the argument invalid.
 
@@ -298,53 +298,55 @@ So: we are interested in whether or not a conclusion \emph{follows from} some pr
 \practiceproblems
 \problempart
 Which of the following arguments are valid? Which are invalid?
-
+\begin{compactlist}
+\item
 \begin{earg}
 \item Socrates is a man.
 \item All men are carrots.
-\item[\therefore] Socrates is a carrot.
+\item[\texttherefore] Socrates is a carrot.
 \end{earg}
-
+\item
 \begin{earg}
 \item Either Abe Lincoln was born in Illinois or he was once president.
 \item Abe Lincoln was never president.
-\item[\therefore] Abe Lincoln was born in Illinois.
+\item[\texttherefore] Abe Lincoln was born in Illinois.
 \end{earg}
-
+\item
 \begin{earg}
 \item If I pull the trigger, Abe Lincoln will die.
 \item I do not pull the trigger.
-\item[\therefore] Abe Lincoln will not die.
+\item[\texttherefore] Abe Lincoln will not die.
 \end{earg}
-
+\item
 \begin{earg}
 \item Abe Lincoln was either from France or from Luxembourg.
 \item Abe Lincoln was not from Luxembourg.
-\item[\therefore] Abe Lincoln was from France.
+\item[\texttherefore] Abe Lincoln was from France.
 \end{earg}
-
+\item
 \begin{earg}
 \item If the world ends today, then I will not need to get up tomorrow morning.
 \item I will need to get up tomorrow morning.
-\item[\therefore] The world will not end today.
+\item[\texttherefore] The world will not end today.
 \end{earg}
-
+\item
 \begin{earg}
 \item Joe is now 19 years old.
 \item Joe is now 87 years old.
-\item[\therefore] Bob is now 20 years old.
+\item[\texttherefore] Bob is now 20 years old.
 \end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.EnglishCombinations}
 Could there be:
-	\begin{earg}
+	\begin{compactlist}
 		\item A valid argument that has one false premise and one true premise?
 		\item A valid argument that has only false premises?
 		\item A valid argument with only false premises and a false conclusion?
 		\item An invalid argument that can be made valid by the addition of a new premise?
 		\item A valid argument that can be made invalid by the addition of a new premise?
-	\end{earg}
+	\end{compactlist}
 In each case: if so, give an example; if not, explain why not.
 
 
@@ -366,19 +368,19 @@ In \S\ref{s:Valid}, we introduced the ideas of consequence and of valid argument
 \section{Joint possibility}
 
 Consider these two sentences:
-	\begin{ebullet}
+	\begin{compactlist}
 		\item[B1.] Jane's only brother is shorter than her.
 		\item[B2.] Jane's only brother is taller than her.
-	\end{ebullet}
+	\end{compactlist}
 Logic alone cannot tell us which, if either, of these sentences is true. Yet we can say that \emph{if} the first sentence (B1) is true, \emph{then} the second sentence (B2) must be false. Similarly, if B2 is true, then B1 must be false. There is no possible scenario where both sentences are true together. These sentences are incompatible with each other, they cannot all be true at the same time. This motivates the following definition:
 	\factoidbox{
 		Sentences are \define{jointly possible} if and only if there is a case where they are all true together.
 	}
 B1 and B2 are \emph{jointly impossible}, while, say, the following two sentences are jointly possible:
-	\begin{ebullet}
+	\begin{compactlist}
 		\item[B1.] Jane's only brother is shorter than her.
 		\item[B2.] Jane's only brother is younger than her.
-	\end{ebullet}
+	\end{compactlist}
 
 \newglossaryentry{possibility}
 {
@@ -388,22 +390,26 @@ description={A property possessed by some sentences when they are all true in a 
 }
 
 We can ask about the joint possibility of any number of sentences. For example, consider the following four sentences:
-	\begin{ebullet}	
+	\begin{compactlist}	
 		\item[G1.] \label{MartianGiraffes} There are at least four giraffes at the wild animal park.
 		\item[G2.] There are exactly seven gorillas at the wild animal park.
 		\item[G3.] There are not more than two Martians at the wild animal park.
 		\item[G4.] Every giraffe at the wild animal park is a Martian.
-	\end{ebullet}
+	\end{compactlist}
 G1 and G4 together entail that there are at least four Martian giraffes at the park. This conflicts with G3, which implies that there are no more than two Martian giraffes there. So the sentences G1--G4 are jointly impossible. They cannot all be true together. (Note that the sentences G1, G3 and G4 are jointly impossible. But if sentences are already jointly impossible, adding an extra sentence to the mix cannot make them jointly possible!)
 
+\ifHTMLtarget
+\section{Necessary truths, necessary falsehoods, and contingency}
+\else
 \section[Necessary truths and falsehoods]{Necessary truths, necessary falsehoods, and contingency}
+\fi
 
 In assessing arguments for validity, we care about what would be true \emph{if} the premises were true, but some sentences just \emph{must} be true. Consider these sentences:
-	\begin{earg}
-		\item[\ex{Acontingent}] It is raining.
-		\item[\ex{Atautology}] Either it is raining here, or it is not.
-		\item[\ex{Acontradiction}] It is both raining here and not raining here.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{Acontingent} It is raining.
+		\item\label{Atautology} Either it is raining here, or it is not.
+		\item\label{Acontradiction} It is both raining here and not raining here.
+	\end{enumerate}
 In order to know if sentence \ref{Acontingent} is true, you would need to look outside or check the weather channel. It might be true; it might be false. A sentence which is capable of being true and capable of being false (in different circumstances, of course) is called \define{contingent}.
 
 \newglossaryentry{contingent sentence}
@@ -433,10 +439,10 @@ Something might \emph{always} be true and still be contingent. For instance, if 
 \section{Necessary equivalence}
 
 We can also ask about the logical relations \emph{between} two sentences. For example:
-\begin{earg}
+\begin{compactlist}
 \item[] John went to the store after he washed the dishes.
 \item[] John washed the dishes before he went to the store.
-\end{earg}
+\end{compactlist}
 These two sentences are both contingent, since John might not have gone to the store or washed dishes at all. Yet they must have the same truth-value. If either of the sentences is true, then they both are; if either of the sentences is false, then they both are. When two sentences have the same truth value in every case, we say that they are \define{necessarily equivalent}.
 
 \newglossaryentry{necessary equivalence}
@@ -468,28 +474,28 @@ description={A property held by a pair of sentences that, in every case, are eit
 \problempart
 \label{pr.EnglishTautology2}
 For each of the following: Is it a necessary truth, a necessary falsehood, or contingent?
-\begin{earg}
+\begin{compactlist}
 \item Caesar crossed the Rubicon.
 \item Someone once crossed the Rubicon.
 \item No one has ever crossed the Rubicon.
 \item If Caesar crossed the Rubicon, then someone has.
 \item Even though Caesar crossed the Rubicon, no one has ever crossed the Rubicon.
 \item If anyone has ever crossed the Rubicon, it was Caesar.
-\end{earg}
+\end{compactlist}
 
 \problempart
 For each of the following: Is it a necessary truth, a necessary falsehood, or contingent?
-\begin{earg}
+\begin{compactlist}
 \item Elephants dissolve in water.
 \item Wood is a light, durable substance useful for building things.
 \item If wood were a good building material, it would be useful for building things.
 \item I live in a three-story building that is two stories tall.
 \item If gerbils were mammals, they would nurse their young.
-\end{earg}
+\end{compactlist}
 
 \problempart Which of the following pairs of sentences are necessarily  equivalent? 
 
-\begin{earg}
+\begin{compactlist}
 \item Elephants dissolve in water.	\\
 	If you put an elephant in water, it will disintegrate.
 \item All mammals dissolve in water.\\		
@@ -500,10 +506,10 @@ For each of the following: Is it a necessary truth, a necessary falsehood, or co
 	  Barack Obama was president immediately after the 43rd president.
 \item Elephants dissolve in water. 	\\	
 	All mammals dissolve in water.
-\end{earg}
+\end{compactlist}
 \problempart Which of the following pairs of sentences are necessarily equivalent? 
 
-\begin{earg}
+\begin{compactlist}
 \item  Thelonious Monk played piano.	\\
 	John Coltrane played tenor sax.
 \item  Thelonious Monk played gigs with John Coltrane.	\\
@@ -514,44 +520,44 @@ For each of the following: Is it a necessary truth, a necessary falsehood, or co
 	All piano players suffer from severe mental illness.
 \item John Coltrane was deeply religious.	 \\
 John Coltrane viewed music as an expression of spirituality.
-\end{earg}
+\end{compactlist}
 
 \noindent \problempart Consider the following sentences: 
-\begin{enumerate}%[label=(\alph*)]
+\begin{compactlist}%[label=(\alph*)]
 \item[G1] \label{itm:at_least_four}There are at least four giraffes at the wild animal park.
 \item[G2] \label{itm:exactly_seven} There are exactly seven gorillas at the wild animal park.
 \item[G3] \label{itm:not_more_than_two} There are not more than two Martians at the wild animal park.
 \item[G4] \label{itm:martians} Every giraffe at the wild animal park is a Martian.
-\end{enumerate}
+\end{compactlist}
 
 Now consider each of the following collections of sentences. Which are jointly possible? Which are jointly impossible?
-\begin{earg}
+\begin{compactlist}
 \item Sentences G2, G3, and G4
 \item Sentences G1, G3, and G4
 \item Sentences G1, G2, and G4
 \item Sentences G1, G2, and G3
-\end{earg}
+\end{compactlist}
 
 \problempart Consider the following sentences.
-\begin{enumerate}%[label=(\alph*)]
+\begin{compactlist}%[label=(\alph*)]
 \item[M1] \label{itm:allmortal} All people are mortal.
 \item[M2] \label{itm:socperson} Socrates is a person.
 \item[M3] \label{itm:socnotdie} Socrates will never die.
 \item[M4] \label{itm:socmortal} Socrates is mortal.
-\end{enumerate}
+\end{compactlist}
 Which combinations of sentences are jointly possible? Mark each ``possible'' or ``impossible.''
-\begin{earg}
+\begin{compactlist}
 \item Sentences M1, M2, and M3
 \item Sentences M2, M3, and M4
 \item Sentences M2 and M3
 \item Sentences M1 and M4
 \item Sentences M1, M2, M3, and M4
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.EnglishCombinations2}
 Which of the following are possible? For each, if it is possible, give an example. If it is not possible, explain why.
-\begin{earg}
+\begin{compactlist}
 \item A valid argument that has one false premise and one true premise
 
 \item A valid argument that has a false conclusion
@@ -571,12 +577,12 @@ Which of the following are possible? For each, if it is possible, give an exampl
 \item A jointly possible collection of sentences that contains a necessary falsehood
 
 \item A jointly impossible set of sentences that contains a necessary truth
-\end{earg}
+\end{compactlist}
 
 \problempart
 Which of the following are possible? For each, if it is possible, give an example. If it is not possible, explain why.
 
-\begin{earg}
+\begin{compactlist}
 \item A valid argument, whose premises are all necessary truths, and whose conclusion is contingent
 \item A valid argument with true premises and a false conclusion
 \item A jointly possible collection of sentences that contains two sentences that are not necessarily equivalent
@@ -586,4 +592,4 @@ Which of the following are possible? For each, if it is possible, give an exampl
 \item A necessarily equivalent pair of sentences that are not jointly possible
 \item A necessary truth that is also a necessary falsehood
 \item A jointly possible collection of sentences that are all necessary falsehoods
-\end{earg}
+\end{compactlist}

@@ -1,0 +1,28 @@
+/* forallxyyc.css -- style sheet to fix spacing etc. in BookML and LaTeXML styles
+Must be passed to LaTeXML and BookML */
+
+span.fxblank {
+  display: inline-block;
+  height: 0px;
+  overflow: hidden;
+}
+
+dl.ltx_description dt,
+dt span.ltx_tag {
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: inherit !important;
+}
+
+dl.ltx_description dt {
+  text-align: right;
+  width: 6em;
+}
+
+dd, dd p.ltx_p {
+  margin-bottom: 0px !important;
+} 
+
+dl.ltx_description {
+  margin-left: 0.5em;
+}

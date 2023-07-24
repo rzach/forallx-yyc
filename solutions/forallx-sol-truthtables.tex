@@ -10,7 +10,7 @@
 \problempart
 \label{pr.TT.TTorC}
 Complete truth tables for each of the following:
-\begin{earg}
+\begin{compactlist}
 \item $A \eif A$ %taut
 \myanswer{\begin{center}
 \begin{tabular}{c | def}
@@ -129,12 +129,12 @@ F & F & T & \TTbf{F} & T & T & F & T & F\\
 F & F & F & \TTbf{T} & F & F & F & F & F
 \end{tabular}
 \end{center}}
-\end{earg}
+\end{compactlist}
 
 
 \problempart
 Check all the claims made in introducing the new notational conventions in \S10.3, i.e.\ show that:
-\begin{earg}
+\begin{compactlist}
 
 	\item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
 \myanswer{\begin{center}
@@ -199,9 +199,9 @@ F & F & T & F & T & F & \TTbf{T} & T & F& \TTbf{T} & F& T & T\\
 F & F & F & F & T & F & \TTbf{F} & F & F& \TTbf{T} &  F& T & F\\
 \end{tabular}
 \end{center}}
-\end{earg}
+\end{compactlist}
 Also, check whether:
-\begin{earg}
+\begin{compactlist}
 
 	\item[5.] `$((A \eiff B) \eiff C)$' and `$(A \eiff (B \eiff C))$' have the same truth table
 		\\\myanswer{Indeed they do:
@@ -219,12 +219,12 @@ F & F & T & F & T & F & \TTbf{T} & T & F& \TTbf{T} & F& F & T\\
 F & F & F & F & T & F & \TTbf{F} & F & F& \TTbf{F} &  F& T & F\\
 \end{tabular}
 \end{center}}
-\end{earg}
+\end{compactlist}
 
 \problempart
 Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
 
-\begin{earg}
+\begin{compactlist}
 
 \item $\enot (S \eiff (P \eif S))$
 \myanswer{
@@ -322,12 +322,12 @@ Write complete truth tables for the following sentences and mark the column that
 
 \vspace{1em}
 
-\end{earg}
+\end{compactlist}
 
 \problempart
 Write complete truth tables for the following sentences and mark the column that represents the possible truth values for the whole sentence.
 
-\begin{earg}
+\begin{compactlist}
 
 \item	$(D \eand \enot D) \eif G $
 
@@ -434,7 +434,7 @@ Write complete truth tables for the following sentences and mark the column that
 \end{center}
 }
 \vspace{1em}
-\end{earg}
+\end{compactlist}
 
 
 If you want additional practice, you can construct truth tables for any of the sentences and arguments in the exercises for the previous chapter.
@@ -444,7 +444,7 @@ If you want additional practice, you can construct truth tables for any of the s
 \chapter{Semantic concepts}\setcounter{ProbPart}{0}
 \problempart
 Revisit your answers to \S10\textbf{A}. Determine which sentences were tautologies, which were contradictions, and which were neither tautologies nor contradictions.
-\begin{earg}
+\begin{compactlist}
 \item $A \eif A$ \hfill \myanswer{Tautology}
 \item $C \eif\enot C$ \hfill \myanswer{Neither}
 \item $(A \eiff B) \eiff \enot(A\eiff \enot B)$  \hfill \myanswer{Tautology}
@@ -454,14 +454,14 @@ Revisit your answers to \S10\textbf{A}. Determine which sentences were tautologi
 \item $\bigl[(A\eand B) \eand\enot(A\eand B)\bigr] \eand C$  \hfill \myanswer{Contradiction}
 \item $[(A \eand B) \eand C] \eif B$  \hfill \myanswer{Tautology}
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$  \hfill \myanswer{Neither}
-\end{earg}
+\end{compactlist}
 
 \
 
 \problempart
 \label{pr.TT.satisfiable}
 Use truth tables to determine whether these sentences are jointly satisfiable, or jointly unsatisfiable:
-\begin{earg}
+\begin{compactlist}
 \item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ \hfill \myanswer{Jointly satisfiable (see line 1)}
 \myanswer{\begin{center}
 \begin{tabular}{c | d e f | d e e e f | d e f | d e f}
@@ -516,13 +516,13 @@ F & F & T & F & \TTbf{F} & F & T & T & T & \TTbf{T} & T & F & F & \TTbf{T} &T & 
 F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & T & F & F & \TTbf{T} & T & F
 \end{tabular}
 \end{center}}
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
 \label{pr.TT.valid}
 Use truth tables to determine whether each argument is valid or invalid.
-\begin{earg}
+\begin{compactlist}
 \item $A\eif A \therefore A$  \hfill \myanswer{Invalid (see line 2)}
 \myanswer{\begin{center}
 \begin{tabular}{c | d e f | c}
@@ -582,10 +582,10 @@ F & F & T & F & F & F & \TTbf{T} & T & T & F & F & \TTbf{T} & F & T & F & F & \T
 F & F & F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F
 \end{tabular}
 \end{center}}
-\end{earg}
+\end{compactlist}
 
 \problempart Determine whether each sentence is a tautology, a contradiction, or a contingent sentence, using a complete truth table.
-\begin{earg}
+\begin{compactlist}
 \item $\enot B \eand B$ \vspace{.5ex} \hfill \myanswer{Contradiction}
 
 
@@ -604,35 +604,35 @@ F & F & F & F & F & F & \TTbf{T} & F & F & F & F & \TTbf{T} & F & F & F & F & \T
 \item $[(A \eand B) \eiff B] \eif (A \eif B)$ \vspace{.5ex} \hfill \myanswer{Contingent}
 
 
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.equiv}
 Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are logically equivalent, write ``equivalent.'' Otherwise write, ``Not equivalent.'' 
-\begin{earg}
+\begin{compactlist}
 \item $A$ and $\enot A$
 \item $A \eand \enot A$ and $\enot B \eiff B$
 \item $[(A \eor B) \eor C]$ and $[A \eor (B \eor C)]$
 \item $A \eor (B \eand C)$ and $(A \eor B) \eand (A \eor C)$
-\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$\end{earg}
+\item $[A \eand (A \eor B)] \eif B$ and $A \eif B$\end{compactlist}
 
 
 \problempart
 \label{pr.TT.equiv2}
 Determine whether each the following sentences are logically equivalent using complete truth tables. If the two sentences really are equivalent, write ``equivalent.'' Otherwise write, ``not equivalent.''
-\begin{earg}
+\begin{compactlist}
 \item $A\eif A$ and $A \eiff A$
 \item $\enot(A \eif B)$ and $\enot A \eif \enot B$
 \item $A \eor B$ and $\enot A \eif B$
 \item$(A \eif B) \eif C$ and $A \eif (B \eif C)$
 \item $A \eiff (B \eiff C)$ and $A \eand (B \eand C)$
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.TT.satisfiable2}
 Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable using a complete truth table.
 
-\begin{earg}
+\begin{compactlist}
 
 \item $A \eand \enot B$, $\enot(A \eif B)$, $B \eif A$ %Consistent
 
@@ -693,23 +693,23 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 
 \item $A \eif (B \eif C)$, $(A \eif B) \eif C$, $A \eif C$ \hfill \myanswer{ Consistent} 
 
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.satisfiable3}
 Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable, using a complete truth table.
-\begin{earg}
+\begin{compactlist}
 \item $\enot B$, $A \eif B$, $A$ \vspace{.5ex} \hfill \myanswer{Insatisfiable}
 \item $\enot(A \eor B)$, $A \eiff B$, $B \eif A$\vspace{.5ex} \hfill \myanswer{Consistent}
 \item $A \eor B$, $\enot B$, $\enot B \eif \enot A$\vspace{.5ex} \hfill \myanswer{Insatisfiable}
 \item $A \eiff B$, $\enot B \eor \enot A$, $A \eif B$\vspace{.5ex} \hfill \myanswer{Consistent} 
 \item $(A \eor B) \eor C$, $\enot A \eor \enot B$, $\enot C \eor \enot B$\vspace{.5ex} \hfill \myanswer{Consistent}
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.valid2}
 Determine whether each argument is valid or invalid, using a complete truth table.
-\begin{earg}
+\begin{compactlist}
 \item $A\eif B$, $B \therefore  A$ \hfill \myanswer{Invalid}
 
 \item $A\eiff B$, $B\eiff C \therefore A\eiff C$ \hfill \myanswer{Valid}
@@ -717,24 +717,24 @@ Determine whether each argument is valid or invalid, using a complete truth tabl
 \item $A \eif B$, $A \eif C\therefore B \eif C$ \hfill \myanswer{Invalid}.
 
 \item $A \eif B$, $B \eif A\therefore A \eiff B$ \hfill \myanswer{Valid} 
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.valid3}
 Determine whether each argument is valid or invalid, using a complete truth table.
-\begin{earg}
+\begin{compactlist}
 \item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore  A $\vspace{.5ex} \hfill \myanswer{Invalid}
 \item $A\eor B$, $B\eor C$, $\enot B \therefore A \eand C$\vspace{.5ex} \hfill \myanswer{Valid}
 \item $A \eif B$, $\enot A\therefore \enot B$ \vspace{.5ex} \hfill \myanswer{Invalid}
 \item $A$, $B\therefore \enot(A\eif \enot B)$ \vspace{.5ex} \hfill \myanswer{Valid}
 \item $\enot(A \eand B)$, $A \eor B$, $A \eiff B\therefore C$ \vspace{.5ex} \hfill \myanswer{Valid}
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
 \label{pr.TT.concepts}
 Answer each of the questions below and justify your answer.
-\begin{earg}
+\begin{compactlist}
 \item Suppose that \metav{A} and \metav{B} are logically equivalent. What can you say about $\metav{A}\eiff\metav{B}$?
 \item[] \myanswer{\metav{A} and \metav{B} have the same truth value on every line of a complete truth table, so $\metav{A}\eiff\metav{B}$ is true on every line. It is a tautology.}
 \item Suppose that $(\metav{A}\eand\metav{B})\eif\metav{C}$ is neither a tautology nor a contradiction. What can you say about whether $\metav{A}, \metav{B} \therefore\metav{C}$ is valid?
@@ -749,7 +749,7 @@ Answer each of the questions below and justify your answer.
 \item[] \myanswer{Not much. Since $\metav{A}$ and $\metav{B}$ are true on exactly the same lines of the truth table, their disjunction is true on exactly the same lines. So, their disjunction is logically equivalent to them.}
 \item Suppose that \metav{A} and \metav{B} are \emph{not} logically equivalent. What can you say about $(\metav{A}\eor\metav{B})$?
 \item[] \myanswer{\metav{A} and \metav{B} have different truth values on at least one line of a complete truth table, and $(\metav{A}\eor\metav{B})$ will be true on that line. On other lines, it might be true or false. So $(\metav{A}\eor\metav{B})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.}
-\end{earg}
+\end{compactlist}
 
 \problempart
 Consider the following principle:
@@ -763,7 +763,7 @@ Is this principle correct? Explain your answer.
 \problempart
 \label{pr.TT.TTorC2}
 Using shortcuts, determine whether each sentence is a tautology, a contradiction, or neither.
-\begin{earg}
+\begin{compactlist}
 
 \item $\enot B \eand B$ %contra
 \myanswer{ \hfill Contradiction\begin{center}
@@ -888,14 +888,14 @@ F & F & F & T & & F & & \TTbf{F} &  & T & &  F\\
 F & F & F & F & & F & & \TTbf{F} &  & T & &  F
 \end{tabular}
 \end{center}}
-\end{earg}
+\end{compactlist}
 
 
 \chapter{Partial truth tables}\setcounter{ProbPart}{0}
 \problempart
 \label{pr.TT.equiv3}
 Use complete or partial truth tables (as appropriate) to determine whether these pairs of sentences are logically equivalent:
-\begin{earg}
+\begin{compactlist}
 \item $A$, $\enot A$
 \myanswer{\hfill Not logically equivalent
 \begin{center}
@@ -980,13 +980,13 @@ F & T &T& F & & \TTbf{T} &  \\
 F & F &T& T & & \TTbf{T} & T 
 \end{tabular}
 \end{center}}
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
 \label{pr.TT.satisfiable4}
 Use complete or partial truth tables (as appropriate) to determine whether these sentences are jointly satisfiable, or jointly unsatisfiable:
-\begin{earg}
+\begin{compactlist}
 \item $A \eand B$, $C\eif \enot B$, $C$ %unsatisfiable
 \myanswer{\hfill Jointly unsatisfiable
 \begin{center}
@@ -1038,13 +1038,13 @@ T & T & T & F & F & T & T & T& T& T& T& T
 \end{tabular}
 \end{center}}
 % solutions to last two problems omitted
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
 \label{pr.TT.valid4}
 Use complete or partial truth tables (as appropriate) to determine whether each argument is valid or invalid:
-\begin{earg}
+\begin{compactlist}
 \item $A\eor\bigl[A\eif(A\eiff A)\bigr] \therefore A$ %invalid
 \myanswer{\hfill Invalid
 \begin{center}
@@ -1107,7 +1107,7 @@ F & F & T & T & F & F\\
 F & F & F &  &  & T
 \end{tabular}
 \end{center}}
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.TT.TTorC3}
@@ -1115,7 +1115,7 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 
 % truth tables in LaTeX generated by http://www.curtisbright.com/logic/. Be sure to give him a shout out.
 
-\begin{earg}
+\begin{compactlist}
 \item  $A \eif \enot A$ 
 \myanswer{\hfill Contingent
  \[
@@ -1260,12 +1260,12 @@ T&T&F&F&&&T&T&T&&&\mathbf{F}&&&T&F&F&&F&&T&F&F&&\\
 \]}
 
 %	4 letters, 5 connectives
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart
 \label{pr.TT.TTorC4}
 Determine whether each sentence is a tautology, a contradiction, or a contingent sentence. Justify your answer with a complete or partial truth table as appropriate.
-\begin{earg}
+\begin{compactlist}
 \item  $\enot (A \eor A)$\vspace{.5ex}		\hfill			\myanswer{		Contradiction}	%	1 letter, 2 connectives
 \item $(A \eif B) \eor (B \eif A)$\vspace{.5ex}	\hfill		\myanswer{			Tautology	}	%	2 letters, 2 connectives
 \item $[(A \eif B) \eif A] \eif A$\vspace{.5ex}	\hfill			\myanswer{	  	Tautology		 }   %2 letters, 3 connectives
@@ -1276,13 +1276,13 @@ Determine whether each sentence is a tautology, a contradiction, or a contingent
 \item $(A \eand\enot A) \eif (B \eor C)$\vspace{.5ex} 	\hfill		\myanswer{	Tautology		}	%3 letters, 4 connectives 
 \item $(B\eand D) \eiff [A \eiff(A \eor C)]$\vspace{.5ex}\hfill		\myanswer{		Contingent	}	%	4 letters, 4 connectives
 \item $\enot[(A \eif B) \eor (C \eif D)]$\vspace{.5ex} 	\hfill		\myanswer{	 Contingent 	}	%4 letters, 4 connectives
-\end{earg}
+\end{compactlist}
 
 
 
 \noindent\problempart
 Determine whether each the following pairs of sentences are logically equivalent using complete truth tables. Justify your answer with a complete or partial truth table as appropriate.
-\begin{earg}
+\begin{compactlist}
 \item $A$ and $A \eor A$
 \item $A$ and $A \eand A$
 \item $A \eor \enot B$ and $A\eif B$
@@ -1292,13 +1292,13 @@ Determine whether each the following pairs of sentences are logically equivalent
 \item $ ((C \eand (N \eiff C)) \eiff C)$ and $(\enot \enot \enot N \eif C)$
 \item $[(A \eor B) \eand C]$ and $[A \eor (B \eand C)]$
 \item $((L \eand C) \eand I)$ and $L \eor C$
-\end{earg}
+\end{compactlist}
 
 
 \noindent\problempart
 \label{pr.TT.satisfiable5}
 Determine whether each collection of sentences is jointly satisfiable or jointly unsatisfiable. Justify your answer with a complete or partial truth table as appropriate.
-\begin{earg}
+\begin{compactlist}
 \item $A\eif A$, $\enot A \eif \enot A$, $A\eand A$, $A\eor A$ \vspace{.5ex} \hfill \myanswer{Consistent}
 \item $A \eif \enot A$, $\enot A \eif A$\vspace{.5ex} \hfill \myanswer{Insatisfiable }
 \item $A\eor B$, $A\eif C$, $B\eif C$\vspace{.5ex} \hfill \myanswer{Consistent}
@@ -1309,11 +1309,11 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 \item  $A \eiff B$,  $\enot B \eor \enot A$,  $A \eif  B$ \vspace{.5ex} \hfill \myanswer{ Consistent}
 \item $A \eiff B$, $A \eif C$, $B \eif D$, $\enot(C \eor D)$\vspace{.5ex} \hfill \myanswer{Consistent}
 \item $\enot (A \eand \enot B)$,  $B \eif \enot A$, $\enot B$  \vspace{.5ex} \hfill \myanswer{Consistent}
-\end{earg}
+\end{compactlist}
 
 \noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
 \label{pr.TT.valid5} 
-\begin{enumerate}
+\begin{compactlist}
 \item $A\eif(A\eand\enot A)\therefore \enot A$ \hfill \myanswer{ Valid}
 \item $A \eor B$, $A \eif B$, $B \eif A \therefore  A \eiff B$  \hfill \myanswer{ Valid}
 \item $A\eor(B\eif A)\therefore \enot A \eif \enot B$ \hfill \myanswer{Valid}
@@ -1325,15 +1325,15 @@ Determine whether each collection of sentences is jointly satisfiable or jointly
 \item $A \eif B\therefore (A \eand B) \eor (\enot A \eand \enot B)$ \hfill \myanswer{ Invalid}
 \item $\enot A \eif B$,$ \enot B \eif C $,$ \enot C \eif A \therefore  \enot A \eif (\enot B \eor \enot C)$ \hfill \myanswer{Invalid}
 
-\end{enumerate}
+\end{compactlist}
 
 \noindent\problempart Determine whether each argument is valid or invalid. Justify your answer with a complete or partial truth table as appropriate.
 \label{pr.TT.valid6} 
-\begin{enumerate}
+\begin{compactlist}
 \item $A\eiff\enot(B\eiff A)\therefore A$ \hfill \myanswer{ Invalid}
 \item $A\eor B$, $B\eor C$, $\enot A\therefore B \eand C$ \hfill \myanswer{ Invalid}
 \item $A \eif C$, $E \eif (D \eor B)$, $B \eif \enot D\therefore (A \eor C) \eor (B \eif (E \eand D))$ \hfill \myanswer{ Invalid}
 \item $A \eor B$, $C \eif A$, $C \eif B\therefore A \eif (B \eif C)$ \hfill \myanswer{ Invalid}
 \item $A \eif B$, $\enot B \eor A\therefore A \eiff B$ \hfill \myanswer{ Valid}
-\end{enumerate}
+\end{compactlist}
 

@@ -9,7 +9,7 @@
 \problempart
 \label{pr.BarbaraEtc}
 Here are the syllogistic figures identified by Aristotle and his successors, along with their medieval names:
-\begin{earg}
+\begin{compactlist}
 	\item \textbf{Barbara.} All G are F. All H are G. So:  All H are F
 	\item[] \myanswer{$\forall x (\atom{G}{x} \eif \atom{F}{x}), \forall x (\atom{H}{x} \eif \atom{G}{x}) \therefore \forall x (\atom{H}{x} \eif \atom{F}{x})$}
 	\item \textbf{Celarent.} No G are F. All H are G. So: No H are F
@@ -40,7 +40,7 @@ Here are the syllogistic figures identified by Aristotle and his successors, alo
 	\item[] \myanswer{$\exists x (\atom{F}{x} \eand \atom{G}{x}), \forall x (\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$}
 	\item \textbf{Fresison.} No F are G. Some G is H. So: Some H is not F.
 	\item[] \myanswer{$\forall x (\atom{F}{x} \eif \enot \atom{G}{x}), \exists x (\atom{G}{x} \eand \atom{H}{x}) \therefore \exists (\atom{H}{x} \eand \enot \atom{F}{x})$}
-\end{earg}
+\end{compactlist}
 Symbolize each argument in FOL.
 
 \
@@ -57,7 +57,7 @@ Using the following symbolization key:
 \item[i] Ingmar
 \end{ekey}
 symbolize the following sentences in FOL:
-\begin{earg}
+\begin{compactlist}
 \item Neither Hofthor nor Ingmar is a vegetarian.
 \item[] \myanswer{$\enot \atom{V}{h} \eand \enot \atom{V}{i}$}
 \item No spy knows the combination to the safe.
@@ -73,7 +73,7 @@ symbolize the following sentences in FOL:
 %\item Ingmar trusts Hofthor, but no one else.
 %\item The person who knows the combination to the safe is a vegetarian.
 %\item The person who knows the combination to the safe is not a spy.
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart\label{pr.FOLalligators}
@@ -89,7 +89,7 @@ Using this symbolization key:
 \item[c] Cleo
 \end{ekey}
 symbolize each of the following sentences in FOL:
-\begin{earg}
+\begin{compactlist}
 \item Amos, Bouncer, and Cleo all live at the zoo.
 \item[] \myanswer{$\atom{Z}{a} \eand \atom{Z}{b} \eand \atom{Z}{c}$}
 \item Bouncer is a reptile, but not an alligator.
@@ -113,12 +113,12 @@ symbolize each of the following sentences in FOL:
 \item[] \myanswer{$\forall x(\atom{A}{x} \eif \atom{R}{x})$}
 %\item Every monkey that Cleo loves is also loved by Amos.
 %\item There is a monkey that loves Bouncer, but sadly Bouncer does not reciprocate this love.
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.FOLarguments}
 For each argument, write a symbolization key and symbolize the argument in FOL.
-\begin{earg}
+\begin{compactlist}
 \item Willard is a logician. All logicians wear funny hats. So Willard wears a funny hat
 \myanswer{
 \begin{ekey}
@@ -176,7 +176,7 @@ $\forall x\enot \atom{S}{x}, \forall x \enot \atom{T}{x} \therefore \forall x (\
 \item[b] Berthold
 \end{ekey}
 $\forall x (\atom{B}{x} \eif \atom{I}{x}), \forall x (\atom{I}{x} \eif \enot \atom{C}{x}), \atom{B}{b} \therefore \enot \atom{C}{b}$}
-\end{earg}
+\end{compactlist}
 
 \chapter{Multiple generality}\setcounter{ProbPart}{0}
 \problempart
@@ -193,7 +193,7 @@ Using this symbolization key:
 \item[c] Cleo
 \end{ekey}
 symbolize each of the following sentences in FOL:
-\begin{earg}
+\begin{compactlist}
 \item If Cleo loves Bouncer, then Bouncer is a monkey.
 \item[] \myanswer{$\atom{L}{c,b} \eif \atom{M}{b}$}
 \item If both Bouncer and Cleo are alligators, then Amos loves them both.
@@ -213,7 +213,7 @@ symbolize each of the following sentences in FOL:
 \item[] \myanswer{$\forall x ((\atom{M}{x} \eand \atom{L}{c,x}) \eif \atom{L}{a,x})$}
 \item There is a monkey that loves Bouncer, but sadly Bouncer does not reciprocate this love.
 \item[] \myanswer{$\exists x (\atom{M}{x} \eand \atom{L}{x,b} \eand \enot \atom{L}{b,x})$}
-\end{earg}
+\end{compactlist}
 
 \problempart 
 Using the following symbolization key:
@@ -227,7 +227,7 @@ Using the following symbolization key:
 \item[d] Daisy
 \end{ekey}
 symbolize the following sentences in FOL:
-\begin{earg}
+\begin{compactlist}
 \item Rave is a dog who likes samurai movies.
 \item[] \myanswer{$\atom{D}{r} \eand \atom{S}{r}$}
 \item Rave, Shane, and Daisy are all dogs.
@@ -264,7 +264,7 @@ Comment: the English sentence is potentially ambiguous here. I have resolved the
 \item If there is an animal that is larger than any dog, then that animal does not like samurai movies.
 \item[] \myanswer{$\forall x (\forall y (\atom{D}{y} \eif \atom{L}{x,y}) \eif \enot \atom{S}{x})$\\
 Comment: I have assumed that `larger than any dog' here means `larger than every dog'.}
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.QLcandies}
@@ -277,7 +277,7 @@ Using the symbolization key given, translate each English-language sentence into
 \item[\atom{T}{x}] Boris has tried \gap{x}.
 \item[\atom{B}{x,y}] \gap{x} is better than \gap{y}.
 \end{ekey}
-\begin{earg}
+\begin{compactlist}
 \item Boris has never tried any candy.
 \item Marzipan is always made with sugar.
 \item Some candy is sugar-free.
@@ -288,7 +288,7 @@ Using the symbolization key given, translate each English-language sentence into
 %\item Boris has tried nothing that is better than sugar-free marzipan.
 \item Any candy with chocolate is better than any candy without it.
 \item Any candy with chocolate and marzipan is better than any candy that lacks both.
-\end{earg}
+\end{compactlist}
 
 \problempart
 Using the following symbolization key:
@@ -304,7 +304,7 @@ Using the following symbolization key:
 \item[g] the guacamole
 \end{ekey}
 symbolize the following English sentences in FOL:
-\begin{earg}
+\begin{compactlist}
 \item All the food is on the table.
 \item[] \myanswer{$\forall x(\atom{F}{x} \eif \atom{T}{x})$}
 \item If the guacamole has not run out, then it is on the table.
@@ -322,7 +322,7 @@ symbolize the following English sentences in FOL:
 \item[] \myanswer{$\forall x \bigl[\bigl(\atom{P}{x} \eand \forall y[(\atom{P}{y} \eand \atom{L}{e,y}) \eif \atom{L}{x,y}]\bigr) \eif \atom{L}{e,x}\bigr]$}
 \item If there is a person on the table already, then all of the food must have run out.
 \item[] \myanswer{$\exists x(\atom{P}{x} \eand \atom{T}{x}) \eif \forall x(\atom{F}{x} \eif \atom{R}{x})$}
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
@@ -340,7 +340,7 @@ Using the following symbolization key:
 \item[p] Patrick
 \end{ekey}
 symbolize the following sentences in FOL:
-\begin{earg}
+\begin{compactlist}
 \item All of Patrick's children are ballet dancers.
 \item[] \myanswer{$\forall x(\atom{C}{x,p} \eif \atom{D}{x})$}
 \item Jane is Patrick's daughter.
@@ -365,7 +365,7 @@ symbolize the following sentences in FOL:
 \item[] \myanswer{$\forall x\bigl[\atom{D}{x} \eif \exists y(\atom{M}{y} \eand \atom{S}{y,x} \eand \atom{D}{y})\bigr]$}
 \item Every woman who dances ballet is the child of someone who dances ballet.
 \item[] \myanswer{$\forall x\bigl[(\atom{F}{x} \eand \atom{D}{x}) \eif \exists y(\atom{C}{x,y} \eand \atom{D}{y})\bigr]$}
-\end{earg}
+\end{compactlist}
 
 
 \chapter{Identity}\label{sec.identity}\setcounter{ProbPart}{0}
@@ -382,7 +382,7 @@ symbolize the following sentences in FOL:
 %\end{ekey}
 %symbolize the following English sentences in FOL:\\
 %\myanswer{Comment: these are deliberately tricky. What follows is the \emph{best} we can offer in FOL, for each of these sentences. Some are not great.}
-%\begin{earg}
+%\begin{compactlist}
 %\item Boris has never tried any candy.
 %\item[] \myanswer{$\forall x(\atom{C}{x} \eif \enot \atom{T}{x})$}
 %\item Marzipan is always made with sugar.
@@ -402,20 +402,20 @@ symbolize the following sentences in FOL:
 %\item[] \myanswer{$\forall x(\atom{C}{x} \eif \forall (\enot \atom{C}{y} \eif \atom{B}{x,y}))$}
 %\item Any candy with chocolate and marzipan is better than any candy that lacks both.
 %\item[] \myanswer{$\forall x\bigl[(\atom{C}{x} \eand \atom{M}{x})\eif \forall \bigl((\enot \atom{C}{y} \eand \enot \atom{M}{y}) \eif Bxy\bigr)\bigr]$}
-%\end{earg}
+%\end{compactlist}
 
 \problempart Consider the sentence,
-\begin{earg}
+\begin{compactlist}
 	\setcounter{eargnum}{18}
 	\setcounter{OLDeargnum}{18}
-	\item[\ex{except2}] Every officer except Pavel owes money to Hikaru.
-\end{earg}
+	\item\label{except2} Every officer except Pavel owes money to Hikaru.
+\end{compactlist}
 Symbolize this sentence, using `$\atom{F}{x}$' for `\gap{x} is an officer'.  Are you confident that your symbolization is true if, and only if, sentence~\ref{except2} is true?  What happens if every officer owes money to Hikaru, Pavel does not, but Pavel isn't an officer? \myanswer{Most people, including most linguists thinking about `except', read sentence~\ref{except2} as entailing all three of the following:
-\begin{earg}
+\begin{compactlist}
 	\item Every officer who is not Pavel owes money to Hikaru
 	\item Pavel does not owe money to Hikaru
 	\item Pavel is an officer
-\end{earg}
+\end{compactlist}
 So it can be symbolized as `$\forall x((\atom{F}{x} \eand \enot x = p) \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h} \eand \atom{F}{p}$'.}
 
 \problempart Explain why:
@@ -440,13 +440,13 @@ So it can be symbolized as `$\forall x((\atom{F}{x} \eand \enot x = p) \eif \ato
 \label{pr.freeFOL}
 Identify which variables are bound and which are free.
 \myanswer{We underline the bound variables, and overline the free variables.}
-\begin{earg}
+\begin{compactlist}
 \item $\exists x\, \atom{L}{\underline{x},\overline{y}} \eand \forall y\,\atom{L}{\underline{y},\overline{x}}$
 \item $\forall x\, \atom{A}{\underline{x}} \eand \atom{B}{\overline{x}}$
 \item $\forall x (\atom{A}{\underline{x}} \eand \atom{B}{\underline{x}}) \eand \forall y(\atom{C}{\overline{x}} \eand \atom{D}{\underline{y}})$
 \item $\forall x\exists y[\atom{R}{\underline{x},\underline{y}} \eif (\atom{J}{\overline{z}} \eand \atom{K}{\underline{x}})] \eor \atom{R}{\overline{y},\overline{x}}$
 \item $\forall x_1(\atom{M}{\overline{x_2}} \eiff \atom{L}{\overline{x_2},\underline{x_1}}) \eand \exists x_2\, \atom{L}{\overline{x_3},\underline{x_2}}$
-\end{earg}
+\end{compactlist}
 
 
 \chapter{Definite descriptions}\setcounter{ProbPart}{0}
@@ -462,7 +462,7 @@ Using the following symbolization key:
 \item[i] Ingmar
 \end{ekey}
 symbolize the following sentences in FOL:
-\begin{earg}
+\begin{compactlist}
 \item Hofthor trusts a vegetarian.
 \item[] \myanswer{$\exists x(\atom{V}{x} \eand \atom{T}{h,x})$}
 \item Everyone who trusts Ingmar trusts a vegetarian.
@@ -478,7 +478,7 @@ symbolize the following sentences in FOL:
 \item The person who knows the combination to the safe is not a spy.
 \item[] \myanswer{$\exists x\bigl[\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x = y) \eand \enot \atom{S}{x}\bigr]$\\
 Comment: the scope of negation is potentially ambiguous here; I have read it as \emph{inner} negation.}
-\end{earg}
+\end{compactlist}
 
 
 \solutions
@@ -496,7 +496,7 @@ Using the following symbolization key:
 \item[\atom{W}{x}] \gap{x} is wild.
 \end{ekey}
 symbolize each sentence in FOL:
-\begin{earg}
+\begin{compactlist}
 \item All clubs are black cards.
 \item[] \myanswer{$\forall x (\atom{C}{x} \eif \atom{B}{x})$}
 \item There are no wild cards.
@@ -528,7 +528,7 @@ Comment: if there is not exactly one deuce of clubs, then the above sentence is 
 \item The deuce of clubs is not the man with the axe.
 \item[] \myanswer{$\exists x \exists y\bigl(\atom{D}{x} \eand \atom{C}{x} \eand \forall z[(\atom{D}{z} \eand \atom{C}{z}) \eif x = z] \eand \atom{M}{y} \eand \forall z(\atom{M}{z} \eif y = z) \eand \enot x = y\bigr)$}
 
-\end{earg}
+\end{compactlist}
 
 \
 
@@ -541,7 +541,7 @@ Comment: if there is not exactly one deuce of clubs, then the above sentence is 
 \item[\atom{W}{x}] \gap{x} has wings.
 \end{ekey}
 symbolize the following sentences in FOL:
-\begin{earg}
+\begin{compactlist}
 \item There are at least three horses in the world.
 \item[] \myanswer{$\exists x \exists y \exists z (\enot x = y \eand \enot x = z \eand \enot y = z \eand \atom{H}{x} \eand \atom{H}{y} \eand \atom{H}{z})$}
 \item There are at least three animals in the world.
@@ -559,7 +559,7 @@ symbolize the following sentences in FOL:
 \item The horse in Farmer Brown's field does not have wings.
 \item[] \myanswer{$\exists x \bigl[\atom{H}{x} \eand \atom{B}{x} \eand \forall y \bigl((\atom{H}{y} \eand \atom{B}{y}) \eif x = y\bigr) \eand \enot \atom{W}{x}\bigr]$\\Comment: the scope of negation might be ambiguous here; I have read it as \emph{inner} negation.}
 
-\end{earg}
+\end{compactlist}
 
 \problempart
 In this chapter, we symbolized `Nick is the traitor' by `$\exists x (\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) \eand x = n)$'. Explain why these would be equally good symbolisations:

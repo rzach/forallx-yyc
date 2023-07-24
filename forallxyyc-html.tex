@@ -1,10 +1,10 @@
 % forallxyyc-html
 % Driver file to produce HTML etc. version of forall x:YYC 
-% using LaTeXML 
+% using LaTeXML/bookml
 
 \documentclass{book}
 \usepackage{bookml/bookml}
-\iflatexml\else\latexmltrue\fi
+%\iflatexml\else\latexmltrue\fi % ensure \iflatexml is true
 
 \RequirePackage{xcolor,tabularx}
 \definecolor{lyallpink}{RGB}{222,31,149}
@@ -13,8 +13,13 @@
 \colorlet{ltleadbeater}{lyallpink!50}
 \colorlet{vltleadbeater}{lyallpink!3}
 
-\usepackage{forallxyyc-style}
+\usepackage{forallxyyc-html}
 \usepackage{forallxyyc}
+
+\HTMLtargettrue
+
+\let\emph\textbf
+\renewcommand*{\define}[1]{\textbf{\color{dkleadbeater}#1}}
 
 \title{forall x: Calgary. An Introduction to Formal Logic}
 

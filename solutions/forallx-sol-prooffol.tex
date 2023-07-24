@@ -48,7 +48,7 @@ Explain why these two `proofs' are incorrect. Also, provide interpretations whic
 \problempart 
 \label{pr.justifyFOLproof}
 The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into bona fide proofs.
-\begin{earg}
+\begin{compactlist}
 \item\begin{fitchproof}
 \hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}
 \hypo{p2}{\forall x\enot \atom{R}{m,x}}
@@ -91,7 +91,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 \close
 \have{j}{\exists x(\atom{K}{x} \eand \atom{L}{x,x})}\Ee{b, 2-5}
 \end{fitchproof}
-\end{earg}
+\end{compactlist}
 
 
 \problempart
@@ -138,7 +138,7 @@ In \S\ref{s:MoreMonadic} problem A, we considered fifteen syllogistic figures of
 \problempart
 \label{pr.BarbaraEtc.proof2}
 Aristotle and his successors identified other syllogistic forms which depended upon `existential import'. Symbolize each of the following argument forms in FOL and offer proofs.
-\begin{earg}
+\begin{compactlist}
 \newpage	\item \textbf{Barbari.} Something is H. All G are F. All H are G. So: Some H is F
 	\\\myanswer{$\exists x\,\atom{H}{x}, \forall x(\atom{G}{x} \eif \atom{F}{x}), \forall x (\atom{H}{x} \eif \atom{G}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$
 \begin{fitchproof}
@@ -285,13 +285,13 @@ Aristotle and his successors identified other syllogistic forms which depended u
 \close
 \have{con}{\exists x (\atom{H}{x} \eand \atom{F}{x})}\Ee{imp, fa-hf}
 \end{fitchproof}}
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.someFOLproofs}
 For each of the following claims, provide an FOL proof that shows it
 is true.
-\begin{earg}
+\begin{compactlist}
 \item $\proves \forall x\,\atom{F}{x} \eif \forall y(\atom{F}{y} \eand \atom{F}{y})$
 \myanswer{\begin{fitchproof}
 \open
@@ -412,7 +412,7 @@ is true.
 \have{lj3}{\atom{L}{j,a}}\oe{nmlj, nm-lj, lj1-lj2}
 \have{Alj}{\forall x\,\atom{L}{j,x}}\Ai{lj3}
 \end{fitchproof}}
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
@@ -446,18 +446,18 @@ $\exists x \forall y(\forall z(\atom{L}{x,z} \eif \atom{L}{y,z}) \eif \atom{L}{x
 
 \problempart
 Show that each pair of sentences is provably equivalent.
-\begin{earg}
+\begin{compactlist}
 \item $\forall x (Ax\eif \enot \atom{B}{x})$, $\enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot \atom{A}{x}\eif \atom{B}{d})$, $\forall x\,\atom{A}{x} \eor \atom{B}{d}$
 \item $\exists x\,\atom{P}{x} \eif \atom{Q}{c}$, $\forall x (\atom{P}{x} \eif \atom{Q}{c})$
-\end{earg}
+\end{compactlist}
 
 
 \solutions
 \problempart
 \label{pr.FOLequivornot}
 For each of the following pairs of sentences: If they are provably equivalent, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
-\begin{earg}
+\begin{compactlist}
 \item $\forall x\,\atom{P}{x} \eif \atom{Q}{c}, \forall x (\atom{P}{x} \eif \atom{Q}{c})$ \hfill \myanswer{Not logically equivalent}
 \\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$c$' name $1$. Let `$Px$' be true of and only of $1$. Let `$Qx$' be true of, and only of, $2$.}
 \item $\forall x\forall y \forall z Bxyz, \forall x\,\atom{B}{x,x}x$\hfill \myanswer{Not logically equivalent}
@@ -498,13 +498,13 @@ For each of the following pairs of sentences: If they are provably equivalent, g
 %\draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
 \end{center}}
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
 \label{pr.FOLvalidornot}
 For each of the following arguments: If it is valid in FOL, give a proof. If it is invalid, construct an interpretation to show that it is invalid.
-\begin{earg}
+\begin{compactlist}
 \item $\exists y\forall x\,\atom{R}{x,y} \therefore \forall x\exists y\,\atom{R}{x,y}$ \hfill \myanswer{Valid
 \begin{fitchproof}
 \hypo{EAr}{\exists y \forall x\,\atom{R}{x,y}}
@@ -586,14 +586,14 @@ Counter-interpretation: let the domain be the number $1$. Let `$Px$' be true of 
 \have{nMa}{\enot \atom{M}{a}}\ni{Ma-abs}
 \have{AnM}{\forall x \enot \atom{M}{x}}\Ai{nMa}
 \end{fitchproof}}
-\end{earg}
+\end{compactlist}
 
 \stepcounter{chapter} % Proofs with quantifiers
 
 \chapter{Conversion of quantifiers}\setcounter{ProbPart}{0}
 \problempart
 Show in each case that the sentences are inconsistent:
-\begin{earg}
+\begin{compactlist}
 \item $Sa\eif \atom{T}{m}, \atom{T}{m} \eif \atom{S}{a}, \atom{T}{m} \eand \enot \atom{S}{a}$
 \myanswer{\begin{fitchproof}
 \hypo{st}{\atom{S}{a} \eif \atom{T}{m}}
@@ -636,7 +636,7 @@ Show in each case that the sentences are inconsistent:
 \have{p}{\atom{P}{a}}\Ae{Ap}
 \have{red}{\ered}\ri{p,np}
 \end{fitchproof}}
-\end{earg}
+\end{compactlist}
 
 \problempart
 Show that each pair of sentences is provably equivalent: %TB: Again, have to do some manual numbering to make the multicols have enough space.
@@ -925,7 +925,7 @@ NB: the variable `$x$' does not occur in `$\atom{G}{a}$'. When all the quantifie
 \label{pr.identity}
 For each of the following claims, provide an FOL proof that shows it
 is true.
-\begin{earg}
+\begin{compactlist}
 \item $Pa \eor \atom{Q}{b}, \atom{Q}{b} \eif b=c, \enot \atom{P}{a} \proves \atom{Q}{c}$
 \myanswer{
 \begin{fitchproof}
@@ -1078,7 +1078,7 @@ is true.
 \close
 \have{con}{\atom{P}{a} \eif \forall x (\atom{P}{x} \eor \enot x = a)}\ci{pa-Apoi}
 \end{fitchproof}}
-\end{earg}
+\end{compactlist}
 
 \problempart
 Show that the following are provably equivalent:
@@ -1201,12 +1201,12 @@ Symbolize the following argument
 	\end{quote}
 And offer a proof of it.\\
 \myanswer{
-\begin{earg}
+\begin{compactlist}
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$ 
 \item $\exists x \bigl[\atom{G}{x} \eand \forall y ( \atom{G}{y} \eif x = y)\bigr]$
 \item $\forall x (\enot \atom{F}{x} \eor \enot \atom{G}{x}) \therefore \phantom{.}$
-\item[\therefore] $\exists x \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = z \eor y = z))\bigr]$
-\end{earg}}
+\item[\texttherefore] $\exists x \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = z \eor y = z))\bigr]$
+\end{compactlist}}
 
 \myanswer{\begin{fitchproof}
 \hypo{p1}{\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]}

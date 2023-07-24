@@ -100,7 +100,7 @@ $\enot L \eif (J \eor L), \enot L \therefore J$}
 \problempart
 \label{pr.solvedTFLproofs}
 Give a proof for each of the following arguments:
-\begin{earg}
+\begin{compactlist}
 \item $J\eif\enot J \therefore \enot J$
 \myanswer{\begin{fitchproof}
 \hypo{jnj}{J \eif \enot J}
@@ -294,7 +294,7 @@ Give a proof for each of the following arguments:
 \close
 \have{con}{P}\ip{np-red1}
 \end{fitchproof}}
-\end{earg}
+\end{compactlist}
 
 \stepcounter{chapter} % Constructing proofs
 
@@ -354,7 +354,7 @@ The following proofs are missing their citations (rule and line numbers). Add th
 
 \problempart 
 Give a proof for each of these arguments:
-\begin{earg}
+\begin{compactlist}
 \item $E\eor F$, $F\eor G$, $\enot F \therefore E \eand G$
 \myanswer{\begin{fitchproof}
 \hypo{ef}{E \eor F}
@@ -412,7 +412,7 @@ Give a proof for each of these arguments:
 \have{m}{M}\ds{dm, nd}
 \end{fitchproof}}
 
-\end{earg}
+\end{compactlist}
 
 \chapter{Proof-theoretic concepts}
 \label{s:ProofTheoreticConcepts}
@@ -420,7 +420,7 @@ Give a proof for each of these arguments:
 \setcounter{ProbPart}{0}
 \problempart
 Show that each of the following sentences is a theorem:
-\begin{earg}
+\begin{compactlist}
 \item $O \eif O$
 \myanswer{\begin{fitchproof}
 \open
@@ -489,12 +489,12 @@ Show that each of the following sentences is a theorem:
 \close
 \have{con}{((A \eif B) \eif A) \eif A}\ci{aba-a2}
 \end{fitchproof}}
-\end{earg}
+\end{compactlist}
 
 
 \problempart
 Provide proofs to show each of the following:
-\begin{earg}
+\begin{compactlist}
 \item $C\eif(E\eand G), \enot C \eif G \proves G$
 \myanswer{\begin{fitchproof}
 \hypo{ceg}{C \eif (E \eand G)}
@@ -572,7 +572,7 @@ Provide proofs to show each of the following:
 \close
 \have{wy4}{W \eor Y}\oe{wxyz, wx-wy3, yz-wy}
 \end{fitchproof}}
-\end{earg}
+\end{compactlist}
 
 
 
@@ -787,7 +787,7 @@ If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}
 
 \
 
-\problempart In this chapter, we claimed that it is just as hard to show that two sentences are not provably equivalent, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem iff \metav{A} and \metav{B} were provably equivalent.)
+\problempart In this chapter, we claimed that it is just as hard to show that two sentences are not provably equivalent, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem \ifeff{} \metav{A} and \metav{B} were provably equivalent.)
 \\\myanswer{Consider the sentence $\metav{A} \eiff \metav{B}$. Suppose we can show that this is a theorem. So we can prove it, with no assumptions, in $m$ lines, say. Then if we assume $\metav{A}$ and copy and paste the proof of $\metav{A} \eiff \metav{B}$ (changing the line numbering), we will have a deduction of this shape:
 \begin{fitchproof}
 \hypo{a}{\metav{A}}
@@ -865,7 +865,7 @@ The proofs you offered in response to the practice exercises of \S\S\ref{s:Furth
 
 \practiceproblems
 \noindent\problempart Use either a derivation or a truth table for each of the following.
-\begin{enumerate}%[label=(\arabic*)]
+\begin{compactlist}%[label=(\arabic*)]
 \item Show that $A \eif [((B \eand C) \eor D) \eif A]$ is a theorem..
 \item Show that $A \eif (A \eif B)$ is not a theorem.
 \item Show that the sentence $A \eif \enot{A}$ is not a contradiction.
@@ -878,11 +878,11 @@ The proofs you offered in response to the practice exercises of \S\S\ref{s:Furth
 \item Show that the sentences $\enot(A \eor B)$, $\enot{B}$, $B \eif A$ are jointly consistent
 \item Show that $\enot(A \eor (B \eor C)) $ \therefore $ \enot{C}$ is valid.
 \item Show that $\enot(A \eand (B \eor C))$ \therefore $ \enot{C}$ is invalid.
-\end{enumerate}
+\end{compactlist}
 
 
 \noindent\problempart Use either a derivation or a truth table for each of the following.
-\begin{enumerate}%[label=(\arabic*)]
+\begin{compactlist}%[label=(\arabic*)]
 \item Show that $A \eif (B \eif A)$ is a theorem.
 \item Show that $\enot (((N \eiff Q) \eor Q) \eor N)$ is not a theorem.
 \item Show that $ Z \eor (\enot Z \eiff Z) $ is contingent.
@@ -895,4 +895,4 @@ The proofs you offered in response to the practice exercises of \S\S\ref{s:Furth
 \item Show that the sentences  $\enot R \eor C $, $(C \eand R) \eif \enot R$, $(\enot (R \eor R) \eif R) $ are jointly consistent.
 \item Show that $\enot \enot (C \eiff \enot C), ((G \eor C) \eor G) \therefore ((G \eif C) \eand G) $ is valid.
 \item Show that $ \enot \enot L,  (C \eif \enot L) \eif C) \therefore \enot C$ is invalid.
-\end{enumerate}
+\end{compactlist}

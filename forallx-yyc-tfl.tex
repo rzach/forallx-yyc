@@ -10,43 +10,43 @@ Consider this argument:
 	\begin{earg}
 		\item[] It is raining outside.
 		\item[] If it is raining outside, then Jenny is miserable.
-		\item[\therefore] Jenny is miserable.
+		\item[\texttherefore] Jenny is miserable.
 	\end{earg}
 and another argument:
 	\begin{earg}
 		\item[] Jenny is an anarcho-syndicalist.
 		\item[] If Jenny is an anarcho-syndicalist, then Dipan is an avid reader of Tolstoy.
-		\item[\therefore] Dipan is an avid reader of Tolstoy.
+		\item[\texttherefore] Dipan is an avid reader of Tolstoy.
 	\end{earg}
 Both arguments are valid, and there is a straightforward sense in which we can say that they share a common structure. We might express the structure thus:
 	\begin{earg}
 		\item[] $A$
 		\item[] If $A$, then $C$
-		\item[\therefore] $C$
+		\item[\texttherefore] $C$
 	\end{earg}
 This looks like an excellent argument \emph{structure}. Indeed, surely any argument with this \emph{structure} will be valid, and this is not the only good argument structure. Consider an argument like:
 	\begin{earg}
 		\item[] Jenny is either happy or sad.
 		\item[] Jenny is not happy.
-		\item[\therefore] Jenny is sad.
+		\item[\texttherefore] Jenny is sad.
 	\end{earg}
 Again, this is a valid argument. The structure here is something like:
 	\begin{earg}
 		\item[] $A$ or $B$
 		\item[] not-$A$
-		\item[\therefore] $B$
+		\item[\texttherefore] $B$
 	\end{earg}
 A superb structure! Here is another example:
 	\begin{earg}
 		\item[] It's not the case that Jim both studied hard and acted in lots of plays.
 		\item[] Jim studied hard.
-		\item[\therefore] Jim did not act in lots of plays.
+		\item[\texttherefore] Jim did not act in lots of plays.
 	\end{earg}
 This valid argument has a structure which we might represent thus:
 	\begin{earg}
 		\item[] not-($A$ and $B$)
 		\item[] $A$
-		\item[\therefore] not-$B$
+		\item[\texttherefore] not-$B$
 	\end{earg}
 These examples illustrate an important idea, which we might describe as \emph{validity in virtue of form}. The validity of the arguments just considered has nothing very much to do with the meanings of English expressions like `Jenny is miserable', `Dipan is an avid reader of Tolstoy', or `Jim acted in lots of plays'. If it has to do with meanings at all, it is with the meanings of phrases like `and', `or', `not,' and `if \ldots, then \ldots'.
 
@@ -56,22 +56,22 @@ In Parts \ref{ch.TFL}--\ref{ch.NDTFL}, we are going to develop a formal language
 There are plenty of arguments that are valid, but not for reasons relating to their form. Take an example:
 	\begin{earg}
 		\item[] Juanita is a vixen.
-		\item[\therefore] Juanita is a fox.
+		\item[\texttherefore] Juanita is a fox.
 	\end{earg}
 It is impossible for the premise to be true and the conclusion false. So the argument is valid. However, the validity is not related to the form of the argument. Here is an invalid argument with the same form:
 	\begin{earg}
 		\item[] Juanita is a vixen.
-		\item[\therefore] Juanita is a cathedral.
+		\item[\texttherefore] Juanita is a cathedral.
 	\end{earg}
 This might suggest that the validity of the first argument \emph{is} keyed to the meaning of the words `vixen' and `fox'. But, whether or not that is right, it is not simply the \emph{shape} of the argument that makes it valid. Equally, consider the argument:
 	\begin{earg}
 		\item[] The sculpture is green all over.
-		\item[\therefore] The sculpture is not red all over.
+		\item[\texttherefore] The sculpture is not red all over.
 	\end{earg}
 Again, it seems impossible for the premise to be true and the conclusion false, for nothing can be both green all over and red all over. So the argument is valid, but here is an invalid argument with the same form:
 	\begin{earg}
 		\item[] The sculpture is green all over.
-		\item[\therefore] The sculpture is not shiny all over.
+		\item[\texttherefore] The sculpture is not shiny all over.
 	\end{earg}
 The argument is invalid, since it is possible to be green all over and shiny all over. (One might paint their nails with an elegant shiny green varnish.) Plausibly, the validity of the first argument is keyed to the way that colours (or colour-words) interact, but, whether or not that is right, it is not simply the \emph{shape} of the argument that makes it valid.
 
@@ -143,11 +143,11 @@ These are not the only connectives of English of interest. Others are, e.g., `un
 \section{Negation}
 
 Consider how we might symbolize these sentences:
-	\begin{earg}
-	\item[\ex{not1}] Mary is in Barcelona.
-	\item[\ex{not2}] It is not the case that Mary is in Barcelona.
-	\item[\ex{not3}] Mary is not in Barcelona.
-	\end{earg}
+	\begin{enumerate}
+	\item\label{not1} Mary is in Barcelona.
+	\item\label{not2} It is not the case that Mary is in Barcelona.
+	\item\label{not3} Mary is not in Barcelona.
+	\end{enumerate}
 In order to symbolize sentence \ref{not1}, we will need a sentence letter. We might offer this symbolization key:
 	\begin{ekey}
 		\item[B] Mary is in Barcelona.
@@ -159,11 +159,11 @@ Sentence \ref{not3} also contains the word `not', and it is obviously equivalent
 A sentence can be symbolized as $\enot\metav{A}$ if it can be paraphrased in English as `It is not the case that\ldots'.
 }
 It will help to offer a few more examples:
-	\begin{earg}
-		\item[\ex{not4}] The widget can be replaced.
-		\item[\ex{not5}] The widget is irreplaceable.
-		\item[\ex{not5b}] The widget is not irreplaceable.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{not4} The widget can be replaced.
+		\item\label{not5} The widget is irreplaceable.
+		\item\label{not5b} The widget is not irreplaceable.
+	\end{enumerate}
 Let us use the following representation key:
 	\begin{ekey}
 		\item[R] The widget is replaceable
@@ -173,10 +173,10 @@ Sentence \ref{not4} can now be symbolized by `$R$'. Moving on to sentence \ref{n
 Sentence \ref{not5b} can be paraphrased as `It is not the case that the widget is irreplaceable.' Which can again be paraphrased as `It is not the case that it is not the case that the widget is replaceable'. So we might symbolize this English sentence with the TFL sentence `$\enot\enot R$'.
 
 But some care is needed when handling negations. Consider:
-	\begin{earg}
-		\item[\ex{not6}] Jane is happy.
-		\item[\ex{not7}] Jane is unhappy.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{not6} Jane is happy.
+		\item\label{not7} Jane is unhappy.
+	\end{enumerate}
 If we let the TFL-sentence `$H$' symbolize  `Jane is happy', then we can symbolize sentence \ref{not6} as `$H$'. However, it would be a mistake to symbolize sentence \ref{not7} with `$\enot{H}$'. If Jane is unhappy, then she is not happy; but sentence \ref{not7} does not mean the same thing as `It is not the case that Jane is happy'. Jane might be neither happy nor unhappy; she might be in a state of blank indifference. In order to symbolize sentence \ref{not7}, then, we would need a new sentence letter of TFL.
 \newglossaryentry{negation}
 {
@@ -188,11 +188,11 @@ description={The symbol \enot, used to represent words and phrases that function
 \label{s:ConnectiveConjunction}
 
 Consider these sentences:
-	\begin{earg}
-		\item[\ex{and1}]Adam is athletic.
-		\item[\ex{and2}]Barbara is athletic.
-		\item[\ex{and3}]Adam is athletic, and also Barbara is athletic.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{and1}Adam is athletic.
+		\item\label{and2}Barbara is athletic.
+		\item\label{and3}Adam is athletic, and also Barbara is athletic.
+	\end{enumerate}
 We will need separate sentence letters of TFL to symbolize sentences \ref{and1} and \ref{and2}; perhaps
 	\begin{ekey}
 		\item[A] Adam is athletic.
@@ -215,12 +215,12 @@ description={A sentence joined to another by a \gls{conjunction}}
 Notice that we make no attempt to symbolize the word `also' in sentence \ref{and3}. Words like `both' and `also' function to draw our attention to the fact that two things are being conjoined. Maybe they affect the emphasis of a sentence, but we will not (and cannot) symbolize such things in TFL.
 
 Some more examples will bring out this point:
-	\begin{earg}
-		\item[\ex{and4}]Barbara is athletic and energetic.
-		\item[\ex{and5}]Barbara and Adam are both athletic.
-		\item[\ex{and6}]Although Barbara is energetic, she is not athletic.
-	\item[\ex{and7}]Adam is athletic, but Barbara is more athletic than him.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{and4}Barbara is athletic and energetic.
+		\item\label{and5}Barbara and Adam are both athletic.
+		\item\label{and6}Although Barbara is energetic, she is not athletic.
+	\item\label{and7}Adam is athletic, but Barbara is more athletic than him.
+	\end{enumerate}
 Sentence \ref{and4} is obviously a conjunction. The sentence says two things (about Barbara). In English, it is permissible to refer to Barbara only once. It \emph{might} be tempting to think that we need to symbolize sentence \ref{and4} with something along the lines of `$B$ and energetic'. This would be a mistake. Once we symbolize part of a sentence as `$B$', any further structure is lost, as `$B$' is a sentence letter of TFL. Conversely, `energetic' is not an English sentence at all. What we are aiming for is something like `$B$ and Barbara is energetic'. So we need to add another sentence letter to the symbolization key. Let `$E$' symbolize `Barbara is energetic'. Now the entire sentence can be symbolized as `$(B\eand E)$'.
 
 Sentence \ref{and5} says one thing about two different subjects. It says of both Barbara and Adam that they are athletic, even though in English we use the word `athletic' only once. The sentence can be paraphrased as `Barbara is athletic, and Adam is athletic'. We can symbolize this in TFL as `$(B\eand A)$', using the same symbolization key that we have been using.
@@ -232,10 +232,10 @@ Sentence \ref{and7} raises similar issues. There is a contrastive structure, but
 		A sentence can be symbolized as $(\metav{A}\eand\metav{B})$ if it can be paraphrased in English as `Both\ldots, and\ldots', or as `\ldots, but \ldots', or as `although \ldots, \ldots'.
 	}
 You might be wondering why we put brackets around the conjunctions. The reason can be brought out by thinking about how negation interacts with conjunction. Consider:
-	\begin{earg}
-		\item[\ex{negcon1}] It's not the case that you will get both soup and salad.
-		\item[\ex{negcon2}] You will not get soup but you will get salad.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{negcon1} It's not the case that you will get both soup and salad.
+		\item\label{negcon2} You will not get soup but you will get salad.
+	\end{enumerate}
 Sentence \ref{negcon1} can be paraphrased as `It is not the case that: both you will get soup and you will get salad'. Using this symbolization key:
 	\begin{ekey}
 		\item[\ensuremath{S_1}] You will get soup.
@@ -250,10 +250,10 @@ These English sentences are very different, and their symbolizations differ acco
 \section{Disjunction}
 
 Consider these sentences:
-	\begin{earg}
-		\item[\ex{or1}]Either Fatima will play videogames, or she will watch movies.
-		\item[\ex{or2}]Either Fatima or Omar will play videogames.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{or1}Either Fatima will play videogames, or she will watch movies.
+		\item\label{or2}Either Fatima or Omar will play videogames.
+	\end{enumerate}
 For these sentences we can use this symbolization key:
 	\begin{ekey}
 		\item[F] Fatima will play videogames.
@@ -283,11 +283,11 @@ Sometimes in English, the word `or' is used in a way that excludes the possibili
 At other times, the word `or' allows for the possibility that both disjuncts might be true. This is probably the case with sentence \ref{or2}, above. Fatima might play videogames alone, Omar might play videogames alone, or they might both play. Sentence~\ref{or2} merely says that \emph{at least} one of them plays videogames. This is an \define{inclusive or}. The TFL symbol `\eor' always symbolizes an \emph{inclusive or}.
 
 It will also help to see how negation interacts with disjunction. Consider: 
-	\begin{earg}
-		\item[\ex{or3}] Either you will not have soup, or you will not have salad.
-		\item[\ex{or4}] You will have neither soup nor salad.
-		\item[\ex{or.xor}] You get either soup or salad, but not both.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{or3} Either you will not have soup, or you will not have salad.
+		\item\label{or4} You will have neither soup nor salad.
+		\item\label{or.xor} You get either soup or salad, but not both.
+	\end{enumerate}
 Using the same symbolization key as before, sentence \ref{or3} can be paraphrased in this way: `\emph{Either} it is not the case that you get soup, \emph{or} it is not the case that you get salad'. To symbolize this in TFL, we need both disjunction and negation. `It is not the case that you get soup' is symbolized by `$\enot S_1$'. `It is not the case that you get salad' is symbolized by `$\enot S_2$'. So sentence \ref{or3} itself is symbolized by `$(\enot S_1 \eor \enot S_2)$'.
 
 Sentence \ref{or4} also requires negation. It can be paraphrased as, `\emph{It is not the case that:} either you get soup or you get salad'. Since this negates the entire disjunction, we symbolize sentence \ref{or4} with `$\enot (S_1 \eor S_2)$'.
@@ -298,10 +298,10 @@ This last example shows something important. Although the TFL symbol `\eor' alwa
 
 \section{Conditional}
 Consider these sentences:
-	\begin{earg}
-		\item[\ex{if1}] If Jean is in Paris, then Jean is in France.
-		\item[\ex{if2}] Jean is in France only if Jean is in Paris.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{if1} If Jean is in Paris, then Jean is in France.
+		\item\label{if2} Jean is in France only if Jean is in Paris.
+	\end{enumerate}
 Let's use the following symbolization key:
 	\begin{ekey}
 		\item[P] Jean is in Paris.
@@ -334,23 +334,23 @@ In fact, sentence \ref{if2} can be paraphrased as `If Jean is in France, then Je
 	\factoidbox{
 		A sentence can be symbolized as $(\metav{A} \eif \metav{B})$ if it can be paraphrased in English as `If A, then B' or `A only if B'.
 	}
-\noindent In fact, the conditional can represent many English expressions. Consider: 	\begin{earg}
-		\item[\ex{ifnec1}] For Jean to be in Paris, it is necessary that Jean be in France.
-		\item[\ex{ifnec2}] It is a necessary condition on Jean's being in Paris that she be in France.
-		\item[\ex{ifsuf1}] For Jean to be in France, it is sufficient that Jean be in Paris.
-		\item[\ex{ifsuf2}] It is a sufficient condition on Jean's being in France that she be in Paris.
-	\end{earg}
+\noindent In fact, the conditional can represent many English expressions. Consider: 	\begin{enumerate}
+		\item\label{ifnec1} For Jean to be in Paris, it is necessary that Jean be in France.
+		\item\label{ifnec2} It is a necessary condition on Jean's being in Paris that she be in France.
+		\item\label{ifsuf1} For Jean to be in France, it is sufficient that Jean be in Paris.
+		\item\label{ifsuf2} It is a sufficient condition on Jean's being in France that she be in Paris.
+	\end{enumerate}
 If we think about it, all four of these sentences mean the same as  `If Jean is in Paris, then Jean is in France'. So they can all be symbolized by `$(P \eif F)$'.
 
-It is important to bear in mind that the connective `\eif' tells us only that, if the antecedent is true, then the consequent is true. It says nothing about a \emph{causal} connection between two events (for example). In fact, we lose a huge amount when we use `$\eif$' to symbolize English conditionals. We will return to this in \S\ref{s:IndicativeSubjunctive} and \S\ref{s:ParadoxesOfMaterialConditional}.
+It is important to bear in mind that the connective `\eif' tells us only that, if the antecedent is true, then the consequent is true. It says nothing about a \emph{causal} connection between two events (for example). In fact, we lose a huge amount when we use `$\eif$' to symbolize English conditionals. We will return to this in \S\ref{s:IndicativeSubjunctive} and~\S\ref{s:ParadoxesOfMaterialConditional}.
 
 \section{Biconditional}
 Consider these sentences:
-	\begin{earg}
-		\item[\ex{iff1}] Laika is a dog only if she is a mammal.
-		\item[\ex{iff2}] Laika is a dog if she is a mammal.
-		\item[\ex{iff3}] Laika is a dog if and only if she is a mammal.
-	\end{earg}
+	\begin{enumerate}
+		\item\label{iff1} Laika is a dog only if she is a mammal.
+		\item\label{iff2} Laika is a dog if she is a mammal.
+		\item\label{iff3} Laika is a dog if and only if she is a mammal.
+	\end{enumerate}
 We will use the following symbolization key:
 	\begin{ekey}
 		\item[D] Laika is a dog
@@ -359,7 +359,7 @@ We will use the following symbolization key:
 For reasons discussed above, sentence \ref{iff1} can be symbolized by `$(D \eif M)$'.
 
 
-Sentence \ref{iff3} says something stronger than either \ref{iff1} or \ref{iff2}. It can be paraphrased as `Laika is a dog if Laika is a mammal, and Laika is a dog only if Laika is a mammal'. This is just the conjunction of sentences \ref{iff1} and \ref{iff2}. So we can symbolize it as `$(D \eif M) \eand (M \eif D)$'. We call this a \define{biconditional}, because it amounts to stating both directions of the conditional.
+Sentence \ref{iff3} says something stronger than either \ref{iff1} or \ref{iff2}. It can be paraphrased as `Laika is a dog if Laika is a mammal, and Laika is a dog only if Laika is a mammal'. This is just the conjunction of sentences \ref{iff1} and~\ref{iff2}. So we can symbolize it as `$(D \eif M) \eand (M \eif D)$'. We call this a \define{biconditional}, because it amounts to stating both directions of the conditional.
 
 \newglossaryentry{biconditional}
 {
@@ -371,17 +371,17 @@ We could treat every biconditional this way. So, just as we do not need a new TF
 
 The expression `if and only if' occurs a lot especially in philosophy, mathematics, and logic. For brevity, we can abbreviate it with the snappier word `iff'. We will follow this practice. So `if' with only \emph{one} `f' is the English conditional. But `iff' with \emph{two} `f's is the English biconditional. Armed with this we can say:
 	\factoidbox{
-		A sentence can be symbolized as $(\metav{A} \eiff \metav{B})$ if it can be paraphrased in English as `A iff B'; that is, as `A if and only if B'.
+		A sentence can be symbolized as $(\metav{A} \eiff \metav{B})$ if it can be paraphrased in English as `A \ifeff{} B'; that is, as `A if and only if B'.
 	}
-A word of caution. Ordinary speakers of English often use `if \ldots, then\ldots' when they really mean to use something more like `\ldots if and only if \ldots'. Perhaps your parents told you, when you were a child: `if you don't eat your greens, you won't get any dessert'. Suppose you ate your greens, but that your parents refused to give you any dessert, on the grounds that they were only committed to the \emph{conditional} (roughly `if you get dessert, then you will have eaten your greens'), rather than the biconditional (roughly, `you get dessert iff you eat your greens'). Well, a tantrum would rightly ensue. So, be aware of this when interpreting people; but in your own writing, make sure you use the biconditional iff you mean to.
+A word of caution. Ordinary speakers of English often use `if \ldots, then\ldots' when they really mean to use something more like `\ldots if and only if \ldots'. Perhaps your parents told you, when you were a child: `if you don't eat your greens, you won't get any dessert'. Suppose you ate your greens, but that your parents refused to give you any dessert, on the grounds that they were only committed to the \emph{conditional} (roughly `if you get dessert, then you will have eaten your greens'), rather than the biconditional (roughly, `you get dessert \ifeff{} you eat your greens'). Well, a tantrum would rightly ensue. So, be aware of this when interpreting people; but in your own writing, make sure you use the biconditional \ifeff{} you mean to.
 
 \section{Unless}
 We have now introduced all of the connectives of TFL. We can use them together to symbolize many kinds of sentences. An especially difficult case is when we use the English-language connective `unless':
 
-\begin{earg}
-\item[\ex{unless1}] Unless you wear a jacket, you will catch a cold.
-\item[\ex{unless2}] You will catch a cold unless you wear a jacket.
-\end{earg}
+\begin{enumerate}
+\item\label{unless1} Unless you wear a jacket, you will catch a cold.
+\item\label{unless2} You will catch a cold unless you wear a jacket.
+\end{enumerate}
 These two sentences are clearly equivalent. To symbolize them, we will use the symbolization key:
 	\begin{ekey}
 		\item[J] You will wear a jacket
@@ -399,7 +399,7 @@ All three are correct symbolizations. Indeed, in chapter \ref{s:SemanticConcepts
 	\factoidbox{
 		If a sentence can be paraphrased as `Unless $A$, $B$,' then it can be symbolized as `$(\metav{A}\eor\metav{B})$'.
 	}
-Again, though, there is a little complication. `Unless' can be symbolized as a conditional; but as we said above, people often use the conditional (on its own) when they mean to use the biconditional. Equally, `unless' can be symbolized as a disjunction; but there are two kinds of disjunction (exclusive and inclusive). So it will not surprise you to discover that ordinary speakers of English often use `unless' to mean something more like the biconditional, or like exclusive disjunction. Suppose someone says: `I will go running unless it rains'. They probably mean something like `I will go running iff it does not rain' (i.e., the biconditional), or  `either I will go running or it will rain, but not both' (i.e., exclusive disjunction). Again: be aware of this when interpreting what other people have said, but be precise in your writing.
+Again, though, there is a little complication. `Unless' can be symbolized as a conditional; but as we said above, people often use the conditional (on its own) when they mean to use the biconditional. Equally, `unless' can be symbolized as a disjunction; but there are two kinds of disjunction (exclusive and inclusive). So it will not surprise you to discover that ordinary speakers of English often use `unless' to mean something more like the biconditional, or like exclusive disjunction. Suppose someone says: `I will go running unless it rains'. They probably mean something like `I will go running \ifeff{} it does not rain' (i.e., the biconditional), or  `either I will go running or it will rain, but not both' (i.e., exclusive disjunction). Again: be aware of this when interpreting what other people have said, but be precise in your writing.
 
 \practiceproblems
 \solutions
@@ -409,14 +409,14 @@ Again, though, there is a little complication. `Unless' can be symbolized as a c
 		\item[C] Those creatures are chimpanzees
 		\item[G] Those creatures are gorillas
 	\end{ekey}
-\begin{earg}
+\begin{compactlist}
 \item Those creatures are not men in suits.
 \item Those creatures are men in suits, or they are not.
 \item Those creatures are either gorillas or chimpanzees.
 \item Those creatures are neither gorillas nor chimpanzees.
 \item If those creatures are chimpanzees, then they are neither gorillas nor men in suits.
 \item Unless those creatures are men in suits, they are either chimpanzees or they are gorillas.
-\end{earg}
+\end{compactlist}
 
 \problempart Using the symbolization key given, symbolize each English sentence in TFL.
 \begin{ekey}
@@ -427,7 +427,7 @@ Again, though, there is a little complication. `Unless' can be symbolized as a c
 \item[E] Mister Edge was murdered.
 \item[F] The murder weapon was a frying pan.
 \end{ekey}
-\begin{earg}
+\begin{compactlist}
 \item Either Mister Ace or Mister Edge was murdered.
 \item If Mister Ace was murdered, then the cook did it.
 \item If Mister Edge was murdered, then the cook did not do it.
@@ -440,7 +440,7 @@ Again, though, there is a little complication. `Unless' can be symbolized as a c
 \item If Mister Ace was murdered, he was done in with a frying pan.
 \item Since the cook did it, the butler did not.
 \item Of course the Duchess is lying!
-\end{earg}
+\end{compactlist}
 \solutions
 
 \problempart Using the symbolization key given, symbolize each English sentence in TFL.\label{pr.avacareer}
@@ -452,7 +452,7 @@ Again, though, there is a little complication. `Unless' can be symbolized as a c
 		\item[\ensuremath{S_1}] Ava is satisfied with her career
 		\item[\ensuremath{S_2}] Harrison is satisfied with his career
 	\end{ekey}
-\begin{earg}
+\begin{compactlist}
 \item Ava and Harrison are both electricians.
 \item If Ava is a firefighter, then she is satisfied with her career.
 \item Ava is a firefighter, unless she is an electrician.
@@ -465,7 +465,7 @@ Again, though, there is a little complication. `Unless' can be symbolized as a c
 \item If Harrison is both an electrician and a firefighter, then he must be satisfied with his work.
 \item It cannot be that Harrison is both an electrician and a firefighter.
 \item Harrison and Ava are both firefighters if and only if neither of them is an electrician.
-\end{earg}
+\end{compactlist}
 
 \problempart
 Using the symbolization key given, symbolize each English-language sentence in TFL.
@@ -478,7 +478,7 @@ Using the symbolization key given, symbolize each English-language sentence in T
 \item[\ensuremath{M_2}] Miles Davis played tuba
 \end{ekey}
 
-\begin{earg}
+\begin{compactlist}
 \item John Coltrane played tenor and soprano sax. %{\color{red} $J_1 \eand J_2$} \vspace{1ex}
 \item Neither Miles Davis nor John Coltrane played tuba. %{\color{red} $\enot(M_2 \eor J_3)$ or $\enot M_2 \eand \enot J_3$} \vspace{1ex}
 \item John Coltrane did not play both tenor sax and tuba.  %{\color{red} $\enot(J_1 \eand J_3)$ or $\enot J_1 \eor \enotJ_3$} \vspace{1ex}
@@ -488,42 +488,42 @@ Using the symbolization key given, symbolize each English-language sentence in T
 \item If Miles Davis played trumpet, then John Coltrane played at least one of these three instruments: tenor sax, soprano sax, or tuba. %{\color{red} $M_1 \eif (J_1 \eor (J_2 \eor J_3))&} \vspace{1ex}
 \item If John Coltrane played tuba then Miles Davis played neither trumpet nor tuba. %{\color{red} $J_3 \eif \enot(M_1 \eor M_2)$ or $J_3 \eif (\enot M_1 \eand \enot M_2)$  } \vspace{1ex}
 \item Miles Davis and John Coltrane both played tuba if and only if Coltrane did not play tenor sax and Miles Davis did not play trumpet. %{\color{red} $(J_3 \eand M_2) \eiff \enotJ_1 & \enot M_1)$ or $(J_3 \eand M_2) \eiff \enot (J_1 \eor M_1)$} \vspace{1ex}
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
 \label{pr.spies}
 Give a symbolization key and symbolize the following English sentences in TFL.
-\begin{earg}
+\begin{compactlist}
 \item Alice and Bob are both spies.
 \item If either Alice or Bob is a spy, then the code has been broken.
 \item If neither Alice nor Bob is a spy, then the code remains unbroken.
 \item The German embassy will be in an uproar, unless someone has broken the code.
 \item Either the code has been broken or it has not, but the German embassy will be in an uproar regardless.
 \item Either Alice or Bob is a spy, but not both.
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart Give a symbolization key and symbolize the following English sentences in TFL.
-\begin{earg}
+\begin{compactlist}
 \item If there is food to be found in the pridelands, then Rafiki will talk about squashed bananas.
 \item Rafiki will talk about squashed bananas unless Simba is alive.
 \item Rafiki will either talk about squashed bananas or he won't, but there is food to be found in the pridelands regardless.
 \item Scar will remain as king if and only if there is food to be found in the pridelands.
 \item If Simba is alive, then Scar will not remain as king.
-\end{earg}
+\end{compactlist}
 
 \problempart
 For each argument, write a symbolization key and symbolize all of the sentences of the argument in TFL.
-\begin{earg}
+\begin{compactlist}
 \item If Dorothy plays the piano in the morning, then Roger wakes up cranky. Dorothy plays piano in the morning unless she is distracted. So if Roger does not wake up cranky, then Dorothy must be distracted.
 \item It will either rain or snow on Tuesday. If it rains, Neville will be sad. If it snows, Neville will be cold. Therefore, Neville will either be sad or cold on Tuesday.
 \item If Zoog remembered to do his chores, then things are clean but not neat. If he forgot, then things are neat but not clean. Therefore, things are either neat or clean; but not both.
-\end{earg}
+\end{compactlist}
 
 \problempart
 For each argument, write a symbolization key and symbolize the argument as well as possible in TFL. The part of the passage in italics is there to provide context for the argument, and doesn't need to be symbolized.
-\begin{earg}
+\begin{compactlist}
 \item It is going to rain soon. I know because my leg is hurting, and my leg hurts if it's going to rain.
 
 %{\color{red}
@@ -568,7 +568,7 @@ For each argument, write a symbolization key and symbolize the argument as well 
 %\item[$\therefore$]  
 %}
 
-\end{earg}
+\end{compactlist}
 
 
 \problempart
@@ -603,7 +603,7 @@ Instead, we will describe the process by which sentences can be \emph{constructe
 
 We can say similar things for each of the other connectives. For instance, if \metav{A} and \metav{B} are sentences of TFL, then $(\metav{A}\eand\metav{B})$ is a sentence of TFL. Providing clauses like this for all of the connectives, we arrive at the following formal definition for a \define{sentence of TFL}:
 	\factoidbox{\label{TFLsentences}
-	\begin{enumerate}
+	\begin{numberlist}
 		\item Every sentence letter is a sentence.
 		\item If \metav{A} is a sentence, then $\enot\metav{A}$ is a sentence.
 		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eand\metav{B})$ is a sentence.
@@ -611,23 +611,23 @@ We can say similar things for each of the other connectives. For instance, if \m
 		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eif\metav{B})$ is a sentence.
 		\item If \metav{A} and \metav{B} are sentences, then $(\metav{A}\eiff\metav{B})$ is a sentence.
 		\item Nothing else is a sentence.
-	\end{enumerate}
+	\end{numberlist}
 	}
 \newglossaryentry{sentence of TFL}
 {
 name=sentence (of TFL),
-description={A string of symbols in TFL that can be built up according to the inductive rules given on p.~\pageref{TFLsentences}}
+description={A string of symbols in TFL that can be built up according to the inductive rules given \ifHTMLtarget in section~\ref{s:Sentences}\else on p.~\pageref{TFLsentences}\fi}
 }
 
 Definitions like this are called \emph{inductive}. Inductive definitions begin with some specifiable base elements, and then present ways to generate indefinitely many more elements by compounding together previously established ones. To give you a better idea of what an inductive definition is, we can give an inductive definition of the idea of \emph{an ancestor of mine}. We specify a base clause.
-	\begin{ebullet}
+	\begin{itemize}
 		\item My parents are ancestors of mine.
-	\end{ebullet}
+	\end{itemize}
 and then offer further clauses like:
-	\begin{ebullet}
+	\begin{itemize}
 		\item If $x$ is an ancestor of mine, then $x$'s parents are ancestors of mine.
 		\item Nothing else is an ancestor of mine.
-	\end{ebullet}
+	\end{itemize}
 Using this definition, we can easily check to see whether someone is my ancestor: just check whether she is the parent of the parent of\ldots one of my parents. And the same is true for our inductive definition of sentences of TFL. Just as the inductive definition allows complex sentences to be built up from simpler parts, the definition allows us to decompose sentences into their simpler parts. Once we get down to sentence letters, then we know we are ok.
 
 Let's consider some examples.
@@ -639,10 +639,10 @@ Next, consider the example `$\enot (P \eand \enot (\enot Q \eor R))$'. Looking a
 Ultimately, every sentence is constructed nicely out of sentence letters. When we are dealing with a \emph{sentence} other than a sentence letter, we can see that there must be some sentential connective that was introduced \emph{last}, when constructing the sentence. We call that connective the \define{main logical operator} of the sentence. In the case of `$\enot\enot\enot D$', the main logical operator is the very first `$\enot$' sign. In the case of `$(P \eand \enot (\enot Q \eor R))$', the main logical operator is `$\eand$'. In the case of `$((\enot E \eor F) \eif \enot\enot G)$', the main logical operator is `$\eif$'.
 
 As a general rule, you can find the main logical operator for a sentence by using the following method:
-\begin{ebullet}
+\begin{itemize}
 	\item If the first symbol in the sentence is `$\enot$', then that is the main logical operator
 	\item Otherwise, start counting the brackets. For each open-bracket, i.e., `(', add $1$; for each closing-bracket, i.e., `$)$', subtract $1$. When your count is at exactly $1$, the first operator you hit (\emph{apart} from a `$\enot$') is the main logical operator.
-\end{ebullet}
+\end{itemize}
 
 (Note: if you do use this method, then make sure to include \emph{all} the brackets in the sentence, rather than omitting some as per the conventions of \S\ref{TFLconventions}!)
 
@@ -678,7 +678,7 @@ The scope of each connective is now much easier to pick out.
 \problempart
 \label{pr.wiffTFL}
 For each of the following: (a) Is it a sentence of TFL, strictly speaking? (b) Is it a sentence of TFL, allowing for our relaxed bracketing conventions?
-\begin{earg}
+\begin{compactlist}
 \item $(A)$
 \item $J_{374} \eor \enot J_{374}$
 \item $\enot \enot \enot \enot F$
@@ -687,7 +687,7 @@ For each of the following: (a) Is it a sentence of TFL, strictly speaking? (b) I
 \item $(A \eif (A \eand \enot F)) \eor (D \eiff E)$
 \item $[(Z \eiff S) \eif W] \eand [J \eor X]$
 \item $(F \eiff \enot D \eif J) \eor (C \eand D)$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Are there any sentences of TFL that contain no sentence letters? Explain your answer.\\
@@ -701,16 +701,16 @@ $$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
 In English, sentences can be \define{ambiguous}, i.e., they can have more than one meaning.  There are many sources of ambiguity. One is \emph{lexical ambiguity:} a sentence can contain words which have more than one meaning.  For instance, `bank' can mean the bank of a river, or a financial institution. So I might say that `I went to the bank' when I took a stroll along the river, or when I went to deposit a check.  Depending on the situation, a different meaning of `bank' is intended, and so the sentence, when uttered in these different contexts, expresses different meanings.
 
 A different kind of ambiguity is \emph{structural ambiguity}.  This arises when a sentence can be interpreted in different ways, and depending on the interpretation, a different meaning is selected.  A famous example due to Noam Chomsky is the following:
-\begin{earg}
+\begin{enumerate}
 	\item[] Flying planes can be dangerous.
-\end{earg}
+\end{enumerate}
 There is one reading in which `flying' is used as an adjective which modifies `planes'. In this sense, what's claimed to be dangerous are airplanes which are in the process of flying.  In another reading, `flying' is a gerund: what's claimed to be dangerous is the act of flying a plane.  In the first case, you might use the sentence to warn someone who's about to launch a hot air baloon.  In the second case, you might use it to counsel someone against becoming a pilot.
 
 When the sentence is uttered, usually only one meaning is intended. Which of the possible meanings an utterance of a sentence intends is determined by context, or sometimes by how it is uttered (which parts of the sentence are stressed, for instance). Often one interpretation is much more likely to be intended, and in that case it will even be difficult to ``see'' the unintended reading.  This is often the reason why a joke works, as in this example from Groucho Marx:
-\begin{earg}
+\begin{compactlist}
 	\item[] One morning I shot an elephant in my pajamas.
 	\item[] How he got in my pajamas, I don't know.
-\end{earg}
+\end{compactlist}
 
 Ambiguity is related to, but not the same as, vagueness. An adjective, for instance `rich' or `tall,' is \define{vague} when it is not always possible to determine if it applies or not.  For instance, a person who's 6~ft 4~in (1.9~m) tall is pretty clearly tall, but a building that size is tiny.  Here, context has a role to play in determining what the clear cases and clear non-cases are (`tall for a person,' `tall for a basketball player,' `tall for a building'). Even when the context is clear, however, there will still be cases that fall in a middle range.
 
@@ -720,7 +720,7 @@ It is an important feature of sentences of TFL that they \emph{cannot} be struct
 
 Stating things without ambiguity is of crucial importance in the law as well. Here, ambiguity can, without exaggeration, be a matter of life and death. Here is a famous example of where a death sentence hinged on the interpretation of an ambiguity in the law. Roger Casement (1864--1916) was a British diplomat who was famous in his time for publicizing human-rights violations in the Congo and Peru (for which he was knighted in 1911). He was also an Irish nationalist. In 1914--16, Casement secretly travelled to Germany, with which Britain was at war at the time, and tried to recruit Irish prisoners of war to fight against Britain and for Irish independence. Upon his return to Ireland, he was captured by the British and tried for high treason.
 
-The law under which Casement was tried is the \emph{Treason Act of 1351}. That act specifies what counts as treason, and so the prosecution had to establish at trial that Casement's actions met the criteria set forth in the Treason Act. The relevant passage stipulated that someone is guilty of treason
+The law under which Casement was tried is the \textit{Treason Act of 1351}. That act specifies what counts as treason, and so the prosecution had to establish at trial that Casement's actions met the criteria set forth in the Treason Act. The relevant passage stipulated that someone is guilty of treason
 \begin{quote}
 	if a man is adherent to the King's enemies in his
 realm, giving to them aid and comfort in the realm, or elsewhere.
@@ -735,34 +735,30 @@ We can use TFL to symbolize both readings of the passage, and thus to provide a 
 	\item[H] Casement gave aid and comfort to the King's enemies abroad.
 \end{ekey}
 The interpretation according to which Casement's behavior was not treasonous is this:
-\begin{earg}
-	\item[] $A \lor (G \lor H)$
-\end{earg} 
+\[A \lor (G \lor H)\]
 The interpretation which got him executed, on the other hand, can be symbolized by:
-\begin{earg}
-	\item[] $(A \lor B) \lor (G \lor H)$
-\end{earg}
+\[(A \lor B) \lor (G \lor H)\]
 Remember that in the case we're dealing with Casement, was adherent to the King's enemies abroad ($B$ is true), but not in the realm, and he did not give the King's enemies aid or comfort in or outside the realm ($A$, $G$, and~$H$ are false).
 
 One common source of structural ambiguity in English arises from its lack of parentheses. For instance, if I say `I like movies that are not long and boring', you will most likely think that what I dislike are movies that are long and boring. A less likely, but possible, interpretation is that I like movies that are both (a) not long and (b) boring. The first reading is more likely because who likes boring movies? But what about `I like dishes that are not sweet and flavorful'? Here, the more likely interpretation is that I like savory, flavorful dishes.  (Of course, I could have said that better, e.g., `I like dishes that are not sweet, yet flavorful'.) Similar ambiguities result from the interaction of `and' with `or'. For instance, suppose I ask you to send me a picture of a small and dangerous or stealthy animal.  Would a leopard count? It's stealthy, but not small. So it depends whether I'm looking for small animals that are dangerous or stealthy (leopard doesn't count), or whether I'm after either a small, dangerous animal or a stealthy animal (of any size).
 
-These kinds of ambiguities are called \emph{scope ambiguities}, since they depend on whether or not a connective is in the scope of another. For instance, the sentence, `\emph{Avengers: Endgame} is not long and boring' is ambiguous between:
-\begin{earg}
-	\item[\ex{scamb1}] \emph{Avengers: Endgame} is not: both long and boring.
-	\item[\ex{scamb2}] \emph{Avengers: Endgame} is both: not long and boring.
-\end{earg}
-Sentence~\ref{scamb2} is certainly false, since \emph{Avengers: Endgame} is over three hours long. Whether you think~\ref{scamb1} is true depends on if you think it is boring or not. We can use the symbolization key:
+These kinds of ambiguities are called \emph{scope ambiguities}, since they depend on whether or not a connective is in the scope of another. For instance, the sentence, `\textit{Avengers: Endgame} is not long and boring' is ambiguous between:
+\begin{enumerate}
+	\item\label{scamb1} \textit{Avengers: Endgame} is not: both long and boring.
+	\item\label{scamb2} \textit{Avengers: Endgame} is both: not long and boring.
+\end{enumerate}
+Sentence~\ref{scamb2} is certainly false, since \textit{Avengers: Endgame} is over three hours long. Whether you think~\ref{scamb1} is true depends on if you think it is boring or not. We can use the symbolization key:
 \begin{ekey}
-	\item[B] \emph{Avengers: Endgame} is boring.
-	\item[L] \emph{Avengers: Endgame} is long.
+	\item[B] \textit{Avengers: Endgame} is boring.
+	\item[L] \textit{Avengers: Endgame} is long.
 \end{ekey}
 Sentence~\ref{scamb1} can now be symbolized as `$\enot(L \eand B)$', whereas sentence~\ref{scamb2} would be `$\enot L \eand B$'. In the first case, the `\eand' is in the scope of `\enot', in the second case `\enot' is in the scope of `\eand'.
 
 The sentence `Tai Lung is small and dangerous or stealthy' is ambiguous between:
-\begin{earg}
-	\item[\ex{scamb3}] Tai Lung is either both small and dangerous or stealthy.
-	\item[\ex{scamb4}] Tai Lung is both small and either dangerous or stealthy.
-\end{earg}
+\begin{enumerate}
+	\item\label{scamb3} Tai Lung is either both small and dangerous or stealthy.
+	\item\label{scamb4} Tai Lung is both small and either dangerous or stealthy.
+\end{enumerate}
 We can use the following symbolization key:
 \begin{ekey}
 	\item[D] Tai Lung is dangerous.
@@ -774,35 +770,35 @@ The symbolization of sentence~\ref{scamb3} is `$(S \eand D) \eor T$' and that of
 \practiceproblems
 \solutions
 \problempart The following sentences are ambiguous. Give symbolization keys for each and symbolize the different readings.
-\begin{earg}
+\begin{compactlist}
 	\item Haskell is a birder and enjoys watching cranes.
 	\item The zoo has lions or tigers and bears.
 	\item The flower is not red or fragrant.
-\end{earg}
+\end{compactlist}
 
 \chapter{Use and mention}\label{s:UseMention}
 In this Part, we have talked a lot \emph{about} sentences. So we should pause to explain an important, and very general, point.
 
 \section{Quotation conventions}
 Consider these two sentences:
-	\begin{ebullet}
+	\begin{itemize}
 		\item Justin Trudeau is the Prime Minister.
 		\item The expression `Justin Trudeau' is composed of two uppercase letters and eleven lowercase letters
-	\end{ebullet}
+	\end{itemize}
 When we want to talk about the Prime Minister, we \emph{use} his name. When we want to talk about the Prime Minister's name, we \emph{mention} that name, which we do by putting it in quotation marks.
 
 There is a general point here. When we want to talk about things in the world, we just \emph{use} words. When we want to talk about words, we typically have to \emph{mention} those words. We need to indicate that we are mentioning them, rather than using them. To do this, some convention is needed. We can put them in quotation marks, or display them centrally in the page (say). So this sentence:
-	\begin{ebullet}
+	\begin{itemize}
 		\item `Justin Trudeau' is the Prime Minister.
-	\end{ebullet}
+	\end{itemize}
 says that some \emph{expression} is the Prime Minister. That's false. The \emph{man} is the Prime Minister; his \emph{name} isn't. Conversely, this sentence:
-	\begin{ebullet}
+	\begin{itemize}
 		\item Justin Trudeau is composed of two uppercase letters and eleven lowercase letters.
-	\end{ebullet}
+	\end{itemize}
 also says something false: Justin Trudeau is a man, made of flesh rather than letters. One final example:
-	\begin{ebullet}
+	\begin{itemize}
 		\item ``\,`Justin Trudeau'\,'' is the name of `Justin Trudeau'.
-	\end{ebullet} 
+	\end{itemize} 
 On the left-hand-side, here, we have the name of a name. On the right hand side, we have a name. Perhaps this kind of sentence only occurs in logic textbooks, but it is true nonetheless.
 
 Those are just general rules for quotation, and you should observe them carefully in all your work! To be clear, the quotation-marks here do not indicate reported speech. They indicate that you are moving from talking about an object, to talking about a name of that object.
@@ -831,21 +827,21 @@ For the most part, the object language in this chapter has been the formal langu
 Now, we have used uppercase letters as sentence letters of TFL:
 	$$A, B, C, Z, A_1, B_4, A_{25}, J_{375},\ldots$$
 These are sentences of the object language (TFL). They are not sentences of English. So we must not say, for example:
-	\begin{ebullet}
+	\begin{itemize}
 		\item $D$ is a sentence letter of TFL.
-	\end{ebullet}
+	\end{itemize}
 Obviously, we are trying to come out with an English sentence that says something about the object language (TFL), but `$D$' is a sentence of TFL, and not part of English. So the preceding is gibberish, just like:
-	\begin{ebullet}
-		\item Schnee ist wei\ss\ is a German sentence.
-	\end{ebullet}
+	\begin{itemize}
+		\item \foreignlanguage{german}{Schnee ist weiß} is a German sentence.
+	\end{itemize}
 What we surely meant to say, in this case, is:
-	\begin{ebullet}
-		\item `Schnee ist wei\ss' is a German sentence.
-	\end{ebullet}
+	\begin{itemize}
+		\item `\foreignlanguage{german}{Schnee ist weiß}' is a German sentence.
+	\end{itemize}
 Equally, what we meant to say above is just:
-	\begin{ebullet}
+	\begin{itemize}
 		\item `$D$' is a sentence letter of TFL.
-	\end{ebullet}
+	\end{itemize}
 The general point is that, whenever we want to talk in English about some specific expression of TFL, we need to indicate that we are \emph{mentioning} the expression, rather than \emph{using} it. We can either deploy quotation marks, or we can adopt some similar convention, such as  placing it centrally in the page.
 
 
@@ -853,13 +849,13 @@ The general point is that, whenever we want to talk in English about some specif
 However, we do not just want to talk about \emph{specific} expressions of TFL. We also want to be able to talk about \emph{any arbitrary} sentence of TFL. Indeed, we had to do this in \S\ref{s:Sentences}, when we presented the inductive definition of a sentence of TFL. We used uppercase script letters to do this, namely:
 	$$\metav{A}, \metav{B}, \metav{C}, \metav{D}, \ldots$$
 These symbols do not belong to TFL. Rather, they are part of our (augmented) metalanguage that we use to talk about \emph{any} expression of TFL. To explain why we need them, recall the second clause of the recursive definition of a sentence of TFL:
-	\begin{earg}
+	\begin{compactlist}
 		\item[2.] If $\metav{A}$ is a sentence, then $\enot \metav{A}$ is a sentence.
-	\end{earg}
+	\end{compactlist}
 This talks about \emph{arbitrary} sentences. If we had instead offered:
-	\begin{ebullet}
-		\item If `$A$' is a sentence, then `$\enot A$' is a sentence.
-	\end{ebullet}
+	\begin{compactlist}
+		\item[2$'$.] If `$A$' is a sentence, then `$\enot A$' is a sentence.
+	\end{compactlist}
 this would not have allowed us to determine whether `$\enot B$' is a sentence. To emphasize:
 	\factoidbox{
 	  `$\metav{A}$' is a symbol (called a \define{metavariable}) in augmented English, which we use to talk about expressions of TFL. 	`$A$' is a particular sentence letter of TFL.}
@@ -872,19 +868,19 @@ description={A variable in the metalanguage that can represent any sentence in t
 But this last example raises a further complication, concerning quotation conventions. We did not include any quotation marks in the second clause of our inductive definition. Should we have done so?
 
 The problem is that the expression on the right-hand-side of this rule, i.e., `$\enot\metav{A}$', is not a sentence of English, since it contains `$\enot$'. So we might try to write:
-	\begin{enumerate}
-		\item[2$'$.] If \metav{A} is a sentence, then `$\enot \metav{A}$' is a sentence.
-	\end{enumerate}
+	\begin{numberlist}
+		\item[2$''$.] If \metav{A} is a sentence, then `$\enot \metav{A}$' is a sentence.
+	\end{numberlist}
 But this is no good: `$\enot \metav{A}$' is not a TFL sentence, since `$\metav{A}$' is a symbol of (augmented) English rather than a symbol of TFL.
 
 What we really want to say is something like this:
-	\begin{enumerate}
-		\item[2$''$.] If \metav{A} is a sentence, then the result of concatenating the symbol `$\enot$' with the sentence \metav{A} is a sentence.
-	\end{enumerate}
+	\begin{numberlist}
+		\item[2$'''$.] If \metav{A} is a sentence, then the result of concatenating the symbol `$\enot$' with the sentence \metav{A} is a sentence.
+	\end{numberlist}
 This is impeccable, but rather long-winded. %Quine introduced a convention that speeds things up here. In place of (2$''$), he suggested:
-%	\begin{enumerate}
+%	\begin{numberlist}
 %		\item[2$'''$.] If \metav{A} and \metav{B} are sentences, then $\ulcorner (\metav{A}\eand\metav{B})\urcorner$ is a sentence
-%	\end{enumerate}
+%	\end{numberlist}
 %The rectangular quote-marks are sometimes called `Quine quotes', after Quine. The general interpretation of an expression like `$\ulcorner (\metav{A}\eand\metav{B})\urcorner$' is in terms of rules for concatenation.
 But we can avoid long-windedness by creating our own conventions. We can perfectly well stipulate that an expression like `$\enot \metav{A}$' should simply be read \emph{directly} in terms of rules for concatenation. So, \emph{officially}, the metalanguage expression `$\enot \metav{A}$'
 simply abbreviates:
@@ -911,4 +907,4 @@ The role of the symbol `$\therefore$' is simply to indicate which sentences are 
 
 Strictly, the symbol `$\therefore$' will not be a part of the object language, but of the \emph{metalanguage}. As such, one might think that we would need to put quote-marks around the TFL-sentences which flank it. That is a sensible thought, but adding these quote-marks would make things harder to read. Moreover---and as above---recall that \emph{we} are stipulating some new conventions. So, we can simply stipulate that these quote-marks are unnecessary. That is, we can simply write:
 $$A, A \eif B \therefore B$$
-\emph{without any quotation marks}, to indicate an argument whose premises are (symbolized by) `$A$' and `$A \eif B$' and whose conclusion is (symbolized by) `$B$'.
+\emph{without any quotation marks}, to indicate an argument whose premises are (symbolized by) `$A$' and `$A \eif B$' and whose conclusion is (symbolized by)~`$B$'.

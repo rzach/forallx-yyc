@@ -181,6 +181,13 @@ TSWLatexianTemp*
 
 *~
 \#*\#
-*ps
-*png
-*svg
+*.ps
+*.png
+*.svg
+*.xml
+*.css
+*.js
+*.html
+*.zip
+*.xmpi
+*.cache

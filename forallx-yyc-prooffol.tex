@@ -263,7 +263,7 @@ Explain why these two `proofs' are \emph{incorrect}. Also, provide interpretatio
 \problempart 
 \label{pr.justifyFOLproof}
 The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into bona fide proofs.
-\begin{earg}
+\begin{compactlist}
 \item \begin{fitchproof}
 \hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}
 \hypo{p2}{\forall x\,\enot \atom{R}{m,x}}
@@ -306,7 +306,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 \close
 \have{j}{\exists x(\atom{K}{x} \eand \atom{L}{x,x})}{}
 \end{fitchproof}
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.BarbaraEtc.proof1}
@@ -317,7 +317,7 @@ In \S\ref{s:MoreMonadic} problem A, we considered fifteen syllogistic figures of
 \problempart
 \label{pr.BarbaraEtc.proof2}
 Aristotle and his successors identified other syllogistic forms which depended upon `existential import'. Symbolize each of these argument forms in FOL and offer proofs.
-\begin{earg}
+\begin{compactlist}
 	\item \textbf{Barbari.} Something is H. All G are F. All H are G. So: Some H is F.
 	\item \textbf{Celaront.} Something is H. No G are F. All H are G. So: Some H is not F.
 	\item \textbf{Cesaro.} Something is H. No F are G. All H are G. So: Some H is not F.
@@ -327,13 +327,13 @@ Aristotle and his successors identified other syllogistic forms which depended u
 	\item \textbf{Calemos.} Something is H. All F are G. No G are H. So: Some H is not F.
 	\item \textbf{Fesapo.} Something is G. No F is G. All G are H. So: Some H is not F.
 	\item \textbf{Bamalip.} Something is F. All F are G. All G are H. So: Some H are F.
-\end{earg}
+\end{compactlist}
 
 \problempart
 \label{pr.someFOLproofs}
 For each of the following claims, provide an FOL proof that shows it
 is true.
-\begin{earg}
+\begin{compactlist}
 \item $\proves \forall x\,\atom{F}{x} \eif \forall y(\atom{F}{y} \eand \atom{F}{y})$
 \item $\forall x(\atom{A}{x}\eif \atom{B}{x}), \exists x\,\atom{A}{x} \proves \exists x\,\atom{B}{x}$
 \item $\forall x(\atom{M}{x} \eiff \atom{N}{x}), \atom{M}{a} \eand \exists x\,\atom{R}{x,a} \proves \exists x\,\atom{N}{x}$
@@ -343,7 +343,7 @@ is true.
 \item $\atom{N}{a} \eif \forall x(\atom{M}{x} \eiff \atom{M}{a}), \atom{M}{a}, \enot\atom{M}{b}\proves \enot \atom{N}{a}$
 \item $\forall x\, \forall y (\atom{G}{x,y} \eif \atom{G}{y,x}) \proves \forall x\forall y (\atom{G}{x,y} \eiff \atom{G}{y,x})$
 \item $\forall x(\enot\atom{M}{x} \eor \atom{L}{j,x}), \forall x(\atom{B}{x}\eif \atom{L}{j,x}), \forall x(\atom{M}{x}\eor \atom{B}{x})\proves \forall x\atom{L}{j,x}$
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
@@ -356,29 +356,29 @@ There is someone who likes everyone who likes everyone that she likes. Therefore
 
 \problempart
 Show that each pair of sentences is provably equivalent.
-\begin{earg}
+\begin{compactlist}
 \item $\forall x (\atom{A}{x}\eif \enot \atom{B}{x})$, $\enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot\atom{A}{x}\eif \atom{B}{d})$, $\forall x\,\atom{A}{x} \eor \atom{B}{d}$
 \item $\exists x\,\atom{P}{x} \eif \atom{Q}{c}$, $\forall x (\atom{P}{x} \eif \atom{Q}{c})$
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
 \label{pr.FOLequivornot}
 For each of the following pairs of sentences: If they are provably equivalent, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
-\begin{earg}
+\begin{compactlist}
 \item $\forall x\,\atom{P}{x} \eif \atom{Q}{c}, \forall x (\atom{P}{x} \eif \atom{Q}{c})$
 \item $\forall x\,\forall y\, \forall z\,\atom{B}{x,y,z}, \forall x\,\atom{B}{x,x}x$
 \item $\forall x\,\forall y\,\atom{D}{x,y}, \forall y\,\forall x\,\atom{D}{x,y}$
 \item $\exists x\,\forall y\,\atom{D}{x,y}, \forall y\,\exists x\,\atom{D}{x,y}$
 \item $\forall x (\atom{R}{c,a} \eiff \atom{R}{x,a}), \atom{R}{c,a} \eiff \forall x\,\atom{R}{x,a}$
-\end{earg}
+\end{compactlist}
 
 \solutions
 \problempart
 \label{pr.FOLvalidornot}
 For each of the following arguments: If it is valid in FOL, give a proof. If it is invalid, construct an interpretation to show that it is invalid.
-\begin{earg}
+\begin{compactlist}
 \item $\exists y\,\forall x\,\atom{R}{x,y} \therefore \forall x\,\exists y\,\atom{R}{x,y}$
 \item $\forall x\,\exists y\,\atom{R}{x,y} \therefore  \exists y\,\forall x\,\atom{R}{x,y}$
 \item $\exists x(\atom{P}{x} \eand \enot \atom{Q}{x}) \therefore \forall x(\atom{P}{x} \eif \enot \atom{Q}{x})$
@@ -389,7 +389,7 @@ For each of the following arguments: If it is valid in FOL, give a proof. If it 
 \item $\exists x\,\exists y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore \atom{R}{j,j}$
 \item $\forall x\,\atom{P}{x} \eif \forall x\,\atom{Q}{x}, \exists x\, \enot\atom{P}{x} \therefore \exists x\, \enot \atom{Q}{x}$
 \item $\exists x\,\atom{M}{x} \eif \exists x\,\atom{N}{x}$, $\enot \exists x\,\atom{N}{x}\therefore  \forall x\, \enot \atom{M}{x}$
-\end{earg}
+\end{compactlist}
 
 \chapter{Proofs with quantifiers}
 
@@ -521,7 +521,7 @@ Now we can work forward from the premise on line~$1$. That's a conditional, and 
 
 \problempart
 Use the strategies to find proofs for each of the following arguments and theorems:
-\begin{earg}
+\begin{compactlist}
 \item $A \eif \forall x\,\atom{B}{x} \therefore \forall x(A \eif \atom{B}{x})$
 \item $\exists x(A \eif \atom{B}{x}) \therefore A \eif \exists x\, \atom{B}{x}$
 \item $\forall x(\atom{A}{x} \eand \atom{B}{x}) \eiff (\forall x\,\atom{A}{x} \eand \forall x\,\atom{B}{x})$
@@ -530,29 +530,29 @@ Use the strategies to find proofs for each of the following arguments and theore
 \item $\forall x(\atom{A}{x} \eif B) \therefore \exists x\,\atom{A}{x} \eif B$
 \item $\exists x(\atom{A}{x} \eif B) \therefore \forall x\,\atom{A}{x} \eif B$
 \item $\forall x(\atom{A}{x} \eif \exists y\,\atom{A}{y})$
-\end{earg}
+\end{compactlist}
 Use only the basic rules of TFL in addition to the basic quantifier rules.
 
 \problempart
 Use the strategies to find proofs for each of the following arguments and theorems:
-\begin{earg}
+\begin{compactlist}
 \item $\forall x\,\atom{R}{x,x} \therefore \forall x\,\exists y\,\atom{R}{x,y}$
 \item $\forall x\,\forall y\,\forall z[(\atom{R}{x,y} \eand \atom{R}{y,z}) \eif \atom{R}{x,z}]$ \\
 $\therefore \forall x\,\forall y[\atom{R}{x,y} \eif \forall z(\atom{R}{y,z} \eif \atom{R}{x,z})]$
 \item $\forall x\,\forall y\,\forall z[(\atom{R}{x,y} \eand \atom{R}{y,z}) \eif \atom{R}{x,z}],$\\ $\forall x\,\forall y(\atom{R}{x,y} \eif \atom{R}{y, x})$ \\ $\therefore \forall x\,\forall y\,\forall z[(\atom{R}{x,y} \eand \atom{R}{x,z}) \eif \atom{R}{y,z}]$
 \item $\forall x\,\forall y(\atom{R}{x,y} \eif \atom{R}{y, x})$ \\$\therefore \forall x\,\forall y\,\forall z[(\atom{R}{x,y} \eand \atom{R}{x,z}) \eif \exists u(\atom{R}{y,u} \eand \atom{R}{z,u})]$
 \item $\enot \exists x\,\forall y (\atom{A}{x, y} \eiff \lnot\atom{A}{y, y})$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Use the strategies to find proofs for each of the following arguments and theorems:
-\begin{earg}
+\begin{compactlist}
 \item $\forall x\,\atom{A}{x} \eif B \therefore \exists x(\atom{A}{x} \eif B)$
 \item $A \eif \exists x\, \atom{B}{x} \therefore \exists x(A \eif \atom{B}{x})$
 \item $\forall x(A \eor \atom{B}{x}) \therefore A \eor \forall x\,\atom{B}{x})$
 \item $\exists x(\atom{A}{x} \eif \forall y\,\atom{A}{y})$
 \item $\exists x(\exists y\,\atom{A}{y} \eif \atom{A}{x})$
-\end{earg}
+\end{compactlist}
 These require the use of IP. Use only the basic rules of TFL in addition to the basic quantifier rules.
 
 \chapter{Conversion of quantifiers}\label{s:CQ}
@@ -587,30 +587,30 @@ and
 \practiceproblems
 \problempart
 Show in each case that the sentences are inconsistent:
-\begin{earg}
+\begin{compactlist}
 \item $\atom{S}{a}\eif \atom{T}{m}, \atom{T}{m} \eif \atom{S}{a}, \atom{T}{m} \eand \enot \atom{S}{a}$
 \item $\enot\exists x\,\atom{R}{x,a}, \forall x\, \forall y\,\atom{R}{y,x}$
 \item $\enot\exists x\, \exists y\,\atom{L}{x,y}, \atom{L}{a,a}$
 \item $\forall x(\atom{P}{x} \eif \atom{Q}{x}), \forall z(\atom{P}{z} \eif \atom{R}{z}), \forall y\,\atom{P}{y}, \enot \atom{Q}{a} \eand \enot \atom{R}{b}$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Show that each pair of sentences is provably equivalent:
-\begin{earg}
+\begin{compactlist}
 \item $\forall x (\atom{A}{x}\eif \enot \atom{B}{x}), \enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot\atom{A}{x}\eif \atom{B}{d}), \forall x\,\atom{A}{x} \eor \atom{B}{d}$
-\end{earg}
+\end{compactlist}
 
 \problempart
 In \S\ref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is provably equivalent:
-\begin{earg}
+\begin{compactlist}
 \item $\forall x(\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$
 \item $\exists x(\atom{F}{x} \eor \atom{G}{a}), \exists x\,\atom{F}{x} \eor \atom{G}{a}$
 \item $\forall x(\atom{G}{a} \eif \atom{F}{x}), \atom{G}{a} \eif \forall x\,\atom{F}{x}$
 \item $\forall x(\atom{F}{x} \eif \atom{G}{a}), \exists x\,\atom{F}{x} \eif \atom{G}{a}$
 \item $\exists x(\atom{G}{a} \eif \atom{F}{x}), \atom{G}{a} \eif \exists x\,\atom{F}{x}$
 \item $\exists x(\atom{F}{x} \eif \atom{G}{a}), \forall x\,\atom{F}{x} \eif \atom{G}{a}$
-\end{earg}
+\end{compactlist}
 NB: the variable `$x$' does not occur in `$\atom{G}{a}$'. When all the quantifiers occur at the beginning of a sentence, that sentence is said to be in \emph{prenex normal form}. These equivalences are sometimes called \emph{prenexing rules}, since they give us a means for putting any sentence into prenex normal form.
 
 
@@ -673,7 +673,7 @@ We obtain line 4 by replacing `$b$' in line 3 with `$a$'; this is justified give
 \label{pr.identity}
 For each of the following claims, provide an FOL proof that shows it
 is true.
-\begin{earg}
+\begin{compactlist}
 \item $\atom{P}{a} \eor \atom{Q}{b}, \atom{Q}{b} \eif b=c, \enot\atom{P}{a} \proves \atom{Q}{c}$
 \item $m=n \eor n=o, \atom{A}{n} \proves \atom{A}{m} \eor \atom{A}{o}$
 \item $\forall x\ x=m, \atom{R}{m,a} \proves \exists x\,\atom{R}{x,x}$
@@ -684,7 +684,7 @@ is true.
 \item $\exists x\,\atom{D}{x}, \forall x(x=p \eiff \atom{D}{x})\proves \atom{D}{p}$
 \item $\exists x\bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x=y)) \eand \atom{B}{x}\bigr], Kd\proves \atom{B}{d}$
 \item $\proves \atom{P}{a} \eif \forall x(\atom{P}{x} \eor \enot x = a)$
-\end{earg}
+\end{compactlist}
 
 \problempart
 Show that the following are provably equivalent:
@@ -777,14 +777,16 @@ Contrawise, to show that a sentence is \emph{not} a theorem is hard. We would ne
 Fortunately, \emph{a sentence is a theorem if and only if it is a validity}. As a result, if we provide a proof of $\metav{A}$ on no assumptions, and thus show that $\metav{A}$ is a theorem, i.e., ${}\proves \metav{A}$, we can legitimately infer that $\metav{A}$ is a validity, i.e., $\entails\metav{A}$. Similarly, if we construct an interpretation in which \metav{A} is false and thus show that it is not a validity, i.e., $\nentails \metav{A}$, it follows that \metav{A} is not a theorem, i.e.,  $\nproves \metav{A}$.
 
 More generally, we have the following powerful result:
-$$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \proves\metav{B} \textbf{ iff }\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \entails\metav{B}$$
+\factoidbox{$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n
+\proves\metav{B}$ \textbf{\ifeff} $\metav{A}_1, \metav{A}_2, \ldots,
+\metav{A}_n \entails\metav{B}$}
 This shows that, whilst provability and entailment are \emph{different} notions, they are extensionally equivalent. As such:
 	\begin{ebullet}
-		\item An argument is \emph{valid} iff \emph{the conclusion can be proved from the premises}.
-		\item A sentence is a \emph{validity} iff it is a \emph{theorem}.
-		\item Two sentences are \emph{equivalent} iff they are
+		\item An argument is \emph{valid} \ifeff{} \emph{the conclusion can be proved from the premises}.
+		\item A sentence is a \emph{validity} \ifeff{} it is a \emph{theorem}.
+		\item Two sentences are \emph{equivalent} \ifeff{} they are
 		\emph{provably equivalent}.
-		\item Sentences are \emph{jointly satisfiable} iff they are
+		\item Sentences are \emph{jointly satisfiable} \ifeff{} they are
 		\emph{jointly consistent}.
 	\end{ebullet}
 For this reason, you can pick and choose when to think in terms of proofs and when to think in terms of valuations/interpretations, doing whichever is easier for a given task. The table on the next page summarizes which is (usually) easier.
@@ -793,7 +795,7 @@ It is intuitive that provability and semantic entailment should agree. But---let
 
 In fact, demonstrating that provability and semantic entailment agree is, very decisively, the point at which introductory logic becomes intermediate logic.
 
-\iflatexml
+\ifHTMLtarget
 \begin{table}
 \else
 \begin{sidewaystable}\small
@@ -826,7 +828,7 @@ Is $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ \textbf{
 & give an interpretation in which each of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ is true and \metav{C} is false\\
 \end{tabular*}
 \end{center}
-\iflatexml
+\ifHTMLtarget
 \end{table}
 \else
 \end{sidewaystable}
