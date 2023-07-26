@@ -193,22 +193,27 @@ Given any truth table, we can use the method of proving the DNF Theorem (or the 
 		$$(A \eand B \eand \enot C) \eor (A \eand \enot B \eand C) \eor (\enot A \eand B \eand \enot C)$$			
 It follows that the connectives of TFL are jointly functionally complete. We now prove each of the subsidiary results.
 	
-\emph{Subsidiary Result \ref*{expressive:eor}: functional completeness of `$\enot$' and `$\eor$'.} Observe that the scheme that we generate, using the truth table method of proving the DNF Theorem, will only contain the connectives `$\enot$', `$\eand$' and `$\eor$'. So it suffices to show that there is an equivalent scheme which contains only `$\enot$' and `$\eor$'. To demonstrate this, we simply consider that
+\emph{Subsidiary Result 1: functional completeness of `$\enot$' and `$\eor$'.} Observe that the scheme that we generate, using the truth table method of proving the DNF Theorem, will only contain the connectives `$\enot$', `$\eand$' and `$\eor$'. So it suffices to show that there is an equivalent scheme which contains only `$\enot$' and `$\eor$'. To demonstrate this, we simply consider that
 		\begin{align*}
-		(\metav{A} \eand \metav{B}) & \text{\quad and \quad} \enot(\enot \metav{A} \eor\enot \metav{B})
+		(\metav{A} \eand \metav{B}) & \Leftrightarrow \enot(\enot \metav{A} \eor\enot \metav{B})
 		\end{align*}
-		are logically equivalent.
+		are logically equivalent.\footnote{We're here using the convention
+		that to say that $\metav{A}$ and $\metav{B}$ are equivalent can be
+		abbreviated as $\metav{A} \Leftrightarrow \metav{B}$. Note that
+		`$\Leftrightarrow$' is \emph{not} a connective like~`\eiff', but a
+		metalinguistic symbol just like~`$\entails$'; compare the discussion
+		of `$\entails$' and `$\eiff$' in \cref{entails-v-iff}.}
 
-\emph{Subsidiary Result \ref*{expressive:eand}: functional completeness of `$\enot$' and `$\eand$'.} Exactly as in Subsidiary Result~\ref*{expressive:eor}, making use of the fact that
+\emph{Subsidiary Result 2: functional completeness of `$\enot$' and `$\eand$'.} Exactly as in Subsidiary Result~1, making use of the fact that
 		\begin{align*}
-		(\metav{A} \eor \metav{B}) & \text{\quad and \quad}\enot(\enot \metav{A} \eand\enot \metav{B})
+		(\metav{A} \eor \metav{B}) & \Leftrightarrow \enot(\enot \metav{A} \eand\enot \metav{B})
 		\end{align*}
 are logically equivalent.
 
-\emph{Subsidiary Result \ref*{expressive:eif}: functional completeness of `$\enot$' and `$\eif$'.} Exactly as in Subsidiary Result~\ref*{expressive:eor}, making use of these equivalences instead:
+\emph{Subsidiary Result 3: functional completeness of `$\enot$' and `$\eif$'.} Exactly as in Subsidiary Result~1, making use of these equivalences instead:
 		\begin{align*}
-		(\metav{A} \eor \metav{B}) &\text{\quad and \quad} (\enot \metav{A} \eif \metav{B})\\
-		(\metav{A} \eand \metav{B}) &\text{\quad and \quad} \enot(\metav{A} \eif \enot\metav{B})
+		(\metav{A} \eor \metav{B}) &\Leftrightarrow (\enot \metav{A} \eif \metav{B})\\
+		(\metav{A} \eand \metav{B}) &\Leftrightarrow \enot(\metav{A} \eif \enot\metav{B})
 		\end{align*}
 Alternatively, we could simply rely upon one of the other two subsidiary results, and (repeatedly) invoke only one of these two equivalences.
 
@@ -238,8 +243,8 @@ $\metav{A}$ & $\metav{B}$ & $\metav{A} \mathrel{\uparrow} \metav{B}$\\
 
 The Functional Completeness Theorem tells us that `$\enot$' and `$\eor$' are jointly functionally complete. So it suffices to show that, given any scheme which contains only those two connectives, we can rewrite it as an equivalent scheme which contains only `$\uparrow$'. As in the proof of the subsidiary cases of the Functional Completeness Theorem, then, we simply apply the following equivalences:
 		\begin{align*}
-			\enot \metav{A} &\text{\quad and \quad} (\metav{A} \uparrow \metav{A})\\
-			(\metav{A} \eor \metav{B}) & \text{\quad and \quad} ((\metav{A} \uparrow \metav{A}) \uparrow (\metav{B} \uparrow \metav{B}))
+			\enot \metav{A} &\Leftrightarrow (\metav{A} \uparrow \metav{A})\\
+			(\metav{A} \eor \metav{B}) & \Leftrightarrow ((\metav{A} \uparrow \metav{A}) \uparrow (\metav{B} \uparrow \metav{B}))
 		\end{align*}
 to the Subsidiary Result~\ref*{expressive:eor}.
 
@@ -260,8 +265,8 @@ This is sometimes called the `Peirce arrow' (Peirce himself called it `ampheck')
 
 As in the previous result for $\uparrow$, although invoking the equivalences:
 		\begin{align*}
-			\enot \metav{A} &\text{\quad and \quad} (\metav{A} \downarrow \metav{A})\\
-			(\metav{A} \eand \metav{B}) & \text{\quad and \quad} ((\metav{A} \downarrow \metav{A}) \downarrow (\metav{B} \downarrow \metav{B}))
+			\enot \metav{A} &\Leftrightarrow (\metav{A} \downarrow \metav{A})\\
+			(\metav{A} \eand \metav{B}) & \Leftrightarrow ((\metav{A} \downarrow \metav{A}) \downarrow (\metav{B} \downarrow \metav{B}))
 		\end{align*}
 and Subsidiary Result~\ref*{expressive:eand}.
 
@@ -326,8 +331,8 @@ This method of showing sentences equivalent is underwritten by the two facts fro
 
 Let's give an example. By De Morgan's Laws, the following pairs of sentences are equivalent:
 \begin{align*}
-	\enot (A \eand B) & \text{ and } (\enot A \eor \enot B)\\
-	\enot (A \eor B) & \text{ and } (\enot A \eand \enot B)
+	\enot (A \eand B) & \Leftrightarrow (\enot A \eor \enot B)\\
+	\enot (A \eor B) & \Leftrightarrow (\enot A \eand \enot B)
 \end{align*}
 This can be verified by constructing two truth tables, or four natural deduction proofs that show:
 \begin{align*}
@@ -339,8 +344,8 @@ This can be verified by constructing two truth tables, or four natural deduction
 
 By the second fact, \emph{any} pairs of sentences of the following forms are equivalent:
 \begin{align*}
-	\enot (\metav{P} \eand \metav{Q}) & \text{ and } (\enot \metav{P} \eor \enot \metav{Q})\\
-	\enot (\metav{P} \eor \metav{Q}) & \text{ and } (\enot \metav{P} \eand \enot \metav{Q})
+	\enot (\metav{P} \eand \metav{Q}) & \Leftrightarrow (\enot \metav{P} \eor \enot \metav{Q})\\
+	\enot (\metav{P} \eor \metav{Q}) & \Leftrightarrow (\enot \metav{P} \eand \enot \metav{Q})
 \end{align*}
 Now consider the sentence `$\enot(R \eor (S \eand T))$'. We will find an equivalent sentence in which all `$\enot$' signs attach directly to sentence letters. In the first step, we consider this as a sentence of the form $\enot(\metav{P} \eor \metav{Q})$---then $\metav{P}$ is the sentence~`$R$' and $\metav{Q}$ is `$(S \eand T)$'. Since $\enot(\metav{P} \eor \metav{Q})$ is equivalent to $(\enot \metav{P} \eand \enot \metav{Q})$ (by the second of De Morgan's Laws) we can replace the entire sentence by $(\enot \metav{P} \eand \enot \metav{Q})$. In this case (where $\metav{P}$ is~`$R$' and $\metav{Q}$ is~`$(S \eand T)$') we obtain `$(\enot R \eand \enot (S \eand T))$'. This new sentence contains as a part the sentence `$\enot (S \eand T)$'. It is of the form $\enot(\metav{P} \eand \metav{Q})$, except now $\metav{P}$ is the sentence letter~`$S$' and $\metav{Q}$ is~`$T$'. By De Morgan's Law (the first one this time), this is equivalent to $(\enot\metav{P} \eor \enot\metav{Q})$, or in this specific case, to `$(\enot S \eor \enot T)$'. So we can replace the part `$\enot (S \eand T)$' by `$(\enot S \eor \enot T)$'. This now results in the sentence `$(\enot R \eand (\enot S \eor \enot T))$', in which the `$\enot$' symbols all attach directly to sentence letters. We've ``pushed'' the negations inwards as far as possible.  We can record such a chain of equivalences by listing the individual steps, and recording, just as we do in natural deduction, which basic equivalence we use in each case:
 \begin{align*}
