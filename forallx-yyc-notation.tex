@@ -15,7 +15,7 @@ In \S\ref{s:TFLSentences}, we defined \emph{sentences} of TFL. These are also so
 
 \paragraph{Valuations} Some texts call valuations \emph{truth-assignments}, or \emph{truth-value assignments}.
 
-\paragraph{$n$-place predicates.} We have chosen to call predicates `one-place', `two-place', `three-place', etc. Other texts respectively call them `monadic', `dyadic', `triadic', etc. Still other texts call them `unary', `binary', `ternary', etc.
+\paragraph{$n$-Place predicates} We have chosen to call predicates `one-place', `two-place', `three-place', etc. Other texts respectively call them `monadic', `dyadic', `triadic', etc. Still other texts call them `unary', `binary', `ternary', etc.
 
 \paragraph{Names} In FOL, we have used `$a$', `$b$', `$c$', for names. Some texts call these `constants'. Other texts do not mark any difference between names and variables in the syntax. Those texts focus simply on  whether the symbol occurs \emph{bound} or \emph{unbound}.
 
@@ -24,18 +24,25 @@ In \S\ref{s:TFLSentences}, we defined \emph{sentences} of TFL. These are also so
 \section{Alternative symbols}
 In the history of formal logic, different symbols have been used at different times and by different authors. Often, authors were forced to use notation that their printers could typeset. This appendix presents some common symbols, so that you can recognize them if you encounter them in an article or in another book.
 
-\paragraph{Negation.} Two commonly used symbols are the \emph{hoe}, `$\neg$', and the \emph{swung dash} or \emph{tilde}, `${\sim}$.' In some more advanced formal systems it is necessary to distinguish between two kinds of negation; the distinction is sometimes represented by using both `$\neg$' and `${\sim}$'. Older texts sometimes indicate negation by a line over the formula being negated, e.g., $\overline{A \eand B}$. Some texts use `$x \neq y$' to abbreviate `$\enot x = y$'.
+\paragraph{Negation} Two commonly used symbols are the \emph{hoe}, `$\neg$', and the \emph{swung dash} or \emph{tilde}, `${\sim}$.' In some more advanced formal systems it is necessary to distinguish between two kinds of negation; the distinction is sometimes represented by using both `$\neg$' and `${\sim}$'. Older texts sometimes indicate negation by a line over the formula being negated, e.g., $\overline{A \eand B}$. Some texts use `$x \neq y$' to abbreviate `$\enot x = y$'.
 
-\paragraph{Disjunction.} The symbol `$\vee$' is typically used to symbolize inclusive disjunction. One etymology is from the Latin word `vel', meaning `or'.%In some systems, disjunction is written as addition.
+\paragraph{Disjunction} The symbol `$\vee$' is typically used to symbolize inclusive disjunction. One etymology is from the Latin word `vel', meaning `or'.%In some systems, disjunction is written as addition.
 
-\paragraph{Conjunction.}
-Conjunction is often symbolized with the \emph{ampersand}, `{\&}'. The ampersand is a decorative form of the Latin word `et', which means `and'.  (Its etymology still lingers in certain fonts, particularly in italic fonts; thus an italic ampersand might appear as `\emph{\&}'.) This symbol is commonly used in natural English writing (e.g.  `Smith \& Sons'), and so even though it is a natural choice, many logicians use a different symbol to avoid confusion between the object and metalanguage: as a symbol in a formal system, the ampersand is not the English word `\&'. The most common choice now is `$\wedge$', which is a counterpart to the symbol used for disjunction. Sometimes a single dot, `{\scriptsize\textbullet}', is used. In some older texts, there is no symbol for conjunction at all; `$A$ and $B$' is simply written `$AB$'.
+\paragraph{Conjunction}
+Conjunction is often symbolized with the \emph{ampersand}, `{\&}'. The ampersand is a decorative form of the Latin word `et', which means `and'.  (Its etymology still lingers in certain fonts, particularly in italic fonts; thus an italic ampersand might appear as `%
+\ifHTMLtarget
+\<span class="ltx_text" style="font-family: Palatino; font-style:
+italic;">&amp;\</span>
+\else
+\emph{\&}
+\fi
+'.) This symbol is commonly used in natural English writing (e.g.  `Smith \& Sons'), and so even though it is a natural choice, many logicians use a different symbol to avoid confusion between the object and metalanguage: as a symbol in a formal system, the ampersand is not the English word `\&'. The most common choice now is `$\wedge$', which is a counterpart to the symbol used for disjunction. Sometimes a single dot, `{\scriptsize\textbullet}', is used. In some older texts, there is no symbol for conjunction at all; `$A$ and $B$' is simply written `$AB$'.
 
-\paragraph{Material Conditional.} There are two common symbols for the material conditional: the \emph{arrow}, `$\rightarrow$', and the \emph{horseshoe}, `$\supset$'.
+\paragraph{Material conditional} There are two common symbols for the material conditional: the \emph{arrow}, `$\rightarrow$', and the \emph{horseshoe}, `$\supset$'.
 
-\paragraph{Material Biconditional.} The \emph{double-headed arrow}, `$\leftrightarrow$', is used in systems that use the arrow to represent the material conditional. Systems that use the horseshoe for the conditional typically use the \emph{triple bar}, `$\equiv$', for the biconditional.
+\paragraph{Material biconditional} The \emph{double-headed arrow}, `$\leftrightarrow$', is used in systems that use the arrow to represent the material conditional. Systems that use the horseshoe for the conditional typically use the \emph{triple bar}, `$\equiv$', for the biconditional.
 
-\paragraph{Quantifiers.} The universal quantifier is typically symbolized as a rotated `A', and the existential quantifier as a rotated, `E'. In some texts, there is no separate symbol for the universal quantifier. Instead, the variable is just written in parentheses in front of the formula that it binds. For example, they might write `$(x)\atom{P}{x}$' where we would write `$\forall x\, \atom{P}{x}$'.
+\paragraph{Quantifiers} The universal quantifier is typically symbolized as a rotated `A', and the existential quantifier as a rotated, `E'. In some texts, there is no separate symbol for the universal quantifier. Instead, the variable is just written in parentheses in front of the formula that it binds. For example, they might write `$(x)\atom{P}{x}$' where we would write `$\forall x\, \atom{P}{x}$'.
 
 \bigskip
 

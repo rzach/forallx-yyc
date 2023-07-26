@@ -16,7 +16,7 @@ We introduced five connectives in chapter \ref{s:TFLConnectives}. So we just nee
                    description = {One of the two logical values sentences can have: True and False}
                    }
 
-\paragraph{Negation.} For any sentence \metav{A}: If \metav{A} is true, then \enot\metav{A} is false; and if \enot\metav{A} is true, then \metav{A} is false. We can summarize this in the \emph{characteristic truth table} for negation:
+\paragraph{Negation} For any sentence \metav{A}: If \metav{A} is true, then \enot\metav{A} is false; and if \enot\metav{A} is true, then \metav{A} is false. We can summarize this in the \emph{characteristic truth table} for negation:
 \begin{center}
 \begin{tabular}{c|c}
 \metav{A} & \enot\metav{A}\\
@@ -26,7 +26,7 @@ F & T
 \end{tabular}
 \end{center}
 
-\paragraph{Conjunction.} For any sentences \metav{A} and \metav{B}, \metav{A}\eand\metav{B} is true if and only if both \metav{A} and \metav{B} are true. We can summarize this in the {characteristic truth table} for conjunction:
+\paragraph{Conjunction} For any sentences \metav{A} and \metav{B}, \metav{A}\eand\metav{B} is true if and only if both \metav{A} and \metav{B} are true. We can summarize this in the {characteristic truth table} for conjunction:
 \begin{center}
 \begin{tabular}{c c |c}
 \metav{A} & \metav{B} & $\metav{A}\eand\metav{B}$\\
@@ -39,7 +39,7 @@ F & F & F
 \end{center}
 Note that conjunction is \emph{symmetrical}. The truth value for $\metav{A} \eand \metav{B}$ is always the same as the truth value for $\metav{B} \eand \metav{A}$.  
 
-\paragraph{Disjunction.} Recall that `$\eor$' always represents inclusive or. So, for any sentences \metav{A} and \metav{B}, $\metav{A}\eor \metav{B}$ is true if and only if either \metav{A} or \metav{B} is true. We can summarize this in the {characteristic truth table} for disjunction:
+\paragraph{Disjunction} Recall that `$\eor$' always represents inclusive or. So, for any sentences \metav{A} and \metav{B}, $\metav{A}\eor \metav{B}$ is true if and only if either \metav{A} or \metav{B} is true. We can summarize this in the {characteristic truth table} for disjunction:
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eor\metav{B}$ \\
@@ -52,7 +52,7 @@ F & F & F
 \end{center}
 Like conjunction, disjunction is symmetrical.
 
-\paragraph{Conditional.} We're just going to come clean and admit it: Conditionals are a mess in TFL. Exactly how much of a mess they are is \emph{philosophically} contentious. We'll discuss a few of the subtleties  in \S\S\ref{s:IndicativeSubjunctive} and \ref{s:ParadoxesOfMaterialConditional}. For now, we are going to stipulate the following: $\metav{A}\eif\metav{B}$ is false if and only if \metav{A} is true and \metav{B} is false. We can summarize this with a characteristic truth table for the conditional.
+\paragraph{Conditional} We're just going to come clean and admit it: Conditionals are a mess in TFL. Exactly how much of a mess they are is \emph{philosophically} contentious. We'll discuss a few of the subtleties in \S\S\ref{s:IndicativeSubjunctive} and \ref{s:ParadoxesOfMaterialConditional}. For now, we are going to stipulate the following: $\metav{A}\eif\metav{B}$ is false if and only if \metav{A} is true and \metav{B} is false. We can summarize this with a characteristic truth table for the conditional.
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eif\metav{B}$\\
@@ -65,7 +65,7 @@ F & F & T
 \end{center}
 The conditional is \emph{asymmetric}. You cannot swap the antecedent and consequent without changing the meaning of the sentence; $\metav{A}\eif\metav{B}$ and $\metav{B} \eif \metav{A}$ have different truth tables.
 
-\paragraph{Biconditional.} Since a biconditional is to be the same as the conjunction of the conditionals running in both directions, we will want the truth table for the biconditional to be:
+\paragraph{Biconditional} Since a biconditional is to be the same as the conjunction of the conditionals running in both directions, we will want the truth table for the biconditional to be:
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eiff\metav{B}$\\
@@ -1117,7 +1117,7 @@ Using shortcuts, check whether each sentence is a tautology, a contradiction, or
 
 Sometimes, we do not need to know what happens on every line of a truth table. Sometimes, just a line or two will do.
 
-\paragraph{Tautology.} 
+\paragraph{Tautology} 
 In order to show that a sentence is a tautology, we need to show that it is true on every valuation. That is to say, we need to know that it comes out true on every line of the truth table. So we need a complete truth table.
 
 To show that a sentence is \emph{not} a tautology, however, we only need one line: a line on which the sentence is false. Therefore, in order to show that some sentence is not a tautology, it is enough to provide a single valuation---a single line of the truth table---which makes the sentence false.
@@ -1158,7 +1158,7 @@ $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
 \end{center}
 We now have a partial truth table, which shows that `$(U \eand T) \eif (S \eand W)$' is not a tautology. Put otherwise, we have shown that there is a valuation which makes `$(U \eand T) \eif (S \eand W)$' false, namely, the valuation which makes `$S$' false, `$T$' true, `$U$' true and `$W$' false.
 
-\paragraph{Contradictions.}
+\paragraph{Contradictions}
 Showing that something is a contradiction in TFL requires a complete truth table: we need to show that there is no valuation which makes the sentence true; that is, we need to show that the sentence is false on every line of the truth table.
 
 However, to show that something is \emph{not} a contradiction, all we need to do is find a valuation which makes the sentence true, and a single line of a truth table will suffice. We can illustrate this with the same example.
@@ -1178,19 +1178,19 @@ $S$&$T$&$U$&$W$&$(U$&\eand&$T)$&\eif    &$(S$&\eand&$W)$\\
 \end{tabular}
 \end{center}
 
-\paragraph{Equivalence.}
+\paragraph{Equivalence}
 To show that two sentences are equivalent, we must show that the sentences have the same truth value on every valuation. So this requires a  complete truth table.
 
 To show that two sentences are \emph{not} equivalent, we only need to show that there is a valuation on which they have different truth values. So this requires only a one-line partial truth table: make the table so that one sentence is true and the other false.
 
-\paragraph{Joint satisfiability.}
+\paragraph{Joint satisfiability}
 To show that some sentences are jointly satisfiable, we must show that
 there is a valuation which makes all of the sentences true, so this
 requires only a partial truth table with a single line.
 
 To show that some sentences are jointly unsatisfiable, we must show that there is no valuation which makes all of the sentence true. So this requires a complete truth table: You must show that on every row of the table at least one of the sentences is false.
 
-\paragraph{Validity and entailment.}
+\paragraph{Validity and entailment}
 To show that an argument is valid, we must show that there is no valuation which makes all of the premises true and the conclusion false. So this  requires a complete truth table.  (Likewise for entailment.)
 
 To show that argument is \emph{invalid}, we must show that there is a valuation which makes all of the premises true and the conclusion false. So this requires only a one-line partial truth table on which all of the premises are true and the conclusion is false. (Likewise for a failure of entailment.)

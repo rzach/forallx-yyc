@@ -67,7 +67,8 @@
 \renewcommand*{\printpartname}{%
   \partnamefont PART}
 
-
+\newcommand{\trailingperiod}[1]{#1.}
+\setparaheadstyle{\normalsize\bfseries\trailingperiod}
 \copypagestyle{leadbeater}{headings}
 
 \chapterstyle{leadbeater}
