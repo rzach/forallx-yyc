@@ -131,7 +131,7 @@
 \newcommand*{\closentuple}{\rangle}
 \newcommand*{\ntuple}[1]{\ensuremath{\mathopen{\openntuple}}#1\ensuremath{\mathclose{\closentuple}}} 
 % definitions
-\newcommand*{\define}[1]{\textsc{\lowercase{\color{leadbeater}#1}}}
+\newcommand*{\define}[1]{\textsc{\lowercase{\color{dkleadbeater}#1}}}
 
 %    ****************************************
 %    *          LIST  ENVIRONMENTS          *
@@ -145,10 +145,9 @@
 % {\setcounter{OLDeargnum}{\arabic{eargnum}}\end{list}}
 
 \iflatexml
-%\DeclareUnicodeCharacter{25B9}{$\triangleright$}
-\setlist[itemize]{label=▹}
+\setlist[itemize]{label=‣,noitemsep}
 \else
-\setlist[itemize]{label=$\triangleright$}
+\setlist[itemize]{label=$\triangleright$,noitemsep}
 \fi
 
 % earg -- an unordered list for arguments, no labels

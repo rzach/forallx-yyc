@@ -103,6 +103,8 @@ The $F$ is non-$G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y
 \label{summary.atmost}
 
 One way to say `there are at most $n$ $F$s' is to put a negation sign in front of the symbolization for `there are at least $n+1$ $F$s'. Equivalently, we can offer:
+
+\noindent
 \ifHTMLtarget
 \begin{tabular*}{\textwidth}{rl}
 	one & $\forall x_1\forall x_2\bigl[(\atom{F}{x_1} \eand
@@ -130,6 +132,8 @@ One way to say `there are at most $n$ $F$s' is to put a negation sign in front o
 \label{summary.exactly}
 
 One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizations above and say `there are at least $n$ $F$s and there are at most $n$ $F$s.' The following equivalent formulas are shorter:
+
+\noindent
 \ifHTMLtarget
 \begin{tabular*}{\textwidth}{rl}
 	zero & $\forall x\,\enot \atom{F}{x}$\\
@@ -160,6 +164,9 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 \label{ProofRules}
 \newpage\section{Basic deduction rules for TFL}
+
+\newlength{\mathem}
+\settowidth{\mathem}{$m$}
 
 \ifHTMLtarget\else
 \renewenvironment{fitchproof}
@@ -196,8 +203,8 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 \begin{fitchproof}
 	\open
-		\hypo[i]{a}{\metav{A}}\AS
-		\have[j]{b}{\metav{B}}
+		\hypo[m]{a}{\metav{A}}\AS
+		\have[n]{b}{\metav{B}}
 	\close
 	\have[\ ]{ab}{\metav{A}\eif\metav{B}}\ci{a-b}
 \end{fitchproof}
@@ -211,8 +218,8 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 \begin{fitchproof}
 \open
-	\hypo[i]{a}{\metav{A}}\AS
-	\have[j]{nb}{\ered}
+	\hypo[m]{a}{\metav{A}}\AS
+	\have[n]{nb}{\ered}
 \close
 \have[\ ]{na}{\enot\metav{A}}\ni{a-nb}
 \end{fitchproof}
@@ -229,7 +236,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\hypo[i]{a}{\enot\metav{A}}\AS
 	\have[j]{nb}{\ered}
 \close
-\have[\ ]{na}{\metav{A}}\ip{a-nb}
+\have[\quad]{na}{\metav{A}}\ip{a-nb}
 \end{fitchproof}
 
 
@@ -260,7 +267,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 		\hypo[k]{b}{\metav{B}}\AS
 		\have[l]{c2}{\metav{C}}
 	\close
-	\have[\ ]{c}{\metav{C}} \oe{ab,a-c1, b-c2}
+	\have[\quad]{c}{\metav{C}} \oe{ab,a-c1, b-c2}
 \end{fitchproof}
 
 \subsection*{Biconditional}
@@ -274,7 +281,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 		\hypo[k]{b2}{\metav{B}}\AS
 		\have[l]{a2}{\metav{A}}
 	\close
-	\have[\ ]{ab}{\metav{A}\eiff\metav{B}}\bi{a1-b1,b2-a2}
+	\have[\quad]{ab}{\metav{A}\eiff\metav{B}}\bi{a1-b1,b2-a2}
 \end{fitchproof}
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eiff\metav{B}}
@@ -329,7 +336,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 			\hypo[k]{b}{\enot\metav{A}}\AS
 			\have[l]{c2}{\metav{B}}
 		\close
-		\have[\ ]{ab}{\metav{B}}\tnd{a-c1,b-c2}
+		\have[\quad]{ab}{\metav{B}}\tnd{a-c1,b-c2}
 	\end{fitchproof}
 
 %
@@ -416,7 +423,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 \subsection*{Identity introduction}
 
 \begin{fitchproof}
-	\have[\ \,\,\,]{x}{\metav{c}=\metav{c}} \by{=I}{}
+	\have[\quad]{x}{\metav{c}=\metav{c}} \by{=I}{}
 \end{fitchproof}
 
 
