@@ -8,7 +8,7 @@
 
 Any sentence of TFL is composed of sentence letters, possibly combined using sentential connectives. The truth value of the compound sentence depends only on the truth value of the sentence letters that comprise it. In order to know the truth value of `$(D \eand E)$', for instance, you only need to know the truth value of `$D$' and the truth value of `$E$'.
 
-We introduced five connectives in chapter \ref{s:TFLConnectives}. So we just need to explain how they map between truth values. For convenience, we abbreviate `True' with `T' and `False' with `F'. (But, to be clear, the two truth values are True and False; the truth values are not \emph{letters}!)
+We introduced five connectives in \cref{s:TFLConnectives}. So we just need to explain how they map between truth values. For convenience, we abbreviate `True' with `T' and `False' with `F'. (But, to be clear, the two truth values are True and False; the truth values are not \emph{letters}!)
 
 \newglossaryentry{truth value}
                  {
@@ -52,7 +52,7 @@ F & F & F
 \end{center}
 Like conjunction, disjunction is symmetrical.
 
-\paragraph{Conditional} We're just going to come clean and admit it: Conditionals are a mess in TFL. Exactly how much of a mess they are is \emph{philosophically} contentious. We'll discuss a few of the subtleties in \S\S\ref{s:IndicativeSubjunctive} and \ref{s:ParadoxesOfMaterialConditional}. For now, we are going to stipulate the following: $\metav{A}\eif\metav{B}$ is false if and only if \metav{A} is true and \metav{B} is false. We can summarize this with a characteristic truth table for the conditional.
+\paragraph{Conditional} We're just going to come clean and admit it: Conditionals are a mess in TFL. Exactly how much of a mess they are is \emph{philosophically} contentious. We'll discuss a few of the subtleties in \cref{s:IndicativeSubjunctive,s:ParadoxesOfMaterialConditional}. For now, we are going to stipulate the following: $\metav{A}\eif\metav{B}$ is false if and only if \metav{A} is true and \metav{B} is false. We can summarize this with a characteristic truth table for the conditional.
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eif\metav{B}$\\
@@ -107,7 +107,7 @@ Whereas it is necessarily the case that $2 + 2 = 4$, it is not \emph{necessarily
 \section{Symbolizing versus translating}
 All of the connectives of TFL are truth-functional, but more than that: they really do nothing \emph{but} map us between truth values.  
 
-When we symbolize a sentence or an argument in TFL, we ignore everything \emph{besides} the contribution that the truth values of a component might make to the truth value of the whole. There are subtleties to our ordinary claims that far outstrip their mere truth values. Sarcasm; poetry; snide implicature; emphasis; these are important parts of everyday discourse, but none of this is retained in TFL. As remarked in \S\ref{s:TFLConnectives}, TFL cannot capture the subtle differences between the following English sentences:
+When we symbolize a sentence or an argument in TFL, we ignore everything \emph{besides} the contribution that the truth values of a component might make to the truth value of the whole. There are subtleties to our ordinary claims that far outstrip their mere truth values. Sarcasm; poetry; snide implicature; emphasis; these are important parts of everyday discourse, but none of this is retained in TFL. As remarked in \cref{s:TFLConnectives}, TFL cannot capture the subtle differences between the following English sentences:
 	\begin{compactlist}
 		\item Dana is a logician and Dana is a nice person
 		\item Although Dana is a logician, Dana is a nice person
@@ -134,7 +134,7 @@ Other textbooks will understand this as a stipulation that the TFL sentence `$L$
 We want to bring home the point that TFL can \emph{only} deal with
 truth functions by considering the case of the conditional. When we
 introduced the characteristic truth table for the material conditional
-in \S\ref{s:CharacteristicTruthTables}, we did not say anything to
+in \cref{s:CharacteristicTruthTables}, we did not say anything to
 justify it. Let's now offer a justification, which follows Dorothy
 Edgington.\footnote{Dorothy Edgington, `Conditionals',
 \textit{Stanford Encyclopedia of Philosophy} (Fall 2020)
@@ -186,11 +186,11 @@ What this argument shows is that `$\eif$' is the \emph{best} candidate for a tru
 		\item\label{brownwins1} If Hillary Clinton had won the 2016 election, then she would have been the first woman president of the USA.
 		\item\label{brownwins2} If Hillary Clinton had won the 2016 election, then she would have turned into a helium-filled balloon and floated away into the night sky.
 	\end{enumerate}
-Sentence \ref{brownwins1} is true; sentence \ref{brownwins2} is false, but both have false antecedents and false consequents. (Hillary did not win; she did not become the first woman president of the US; and she did not fill with helium and float away.) So the truth value of the whole sentence is not uniquely determined by the truth value of the parts.
+\Cref*{brownwins1} is true; \cref*{brownwins2} is false, but both have false antecedents and false consequents. (Hillary did not win; she did not become the first woman president of the US; and she did not fill with helium and float away.) So the truth value of the whole sentence is not uniquely determined by the truth value of the parts.
 
-The crucial point is that sentences \ref{brownwins1} and \ref{brownwins2} employ \emph{subjunctive} conditionals, rather than \emph{indicative} conditionals. They ask us to imagine something contrary to fact---after all, Hillary Clinton lost the 2016 election---and then ask us to evaluate what \emph{would} have happened in that case. Such considerations simply cannot be tackled using `$\eif$'.
+The crucial point is that \cref*{brownwins1,brownwins2} employ \emph{subjunctive} conditionals, rather than \emph{indicative} conditionals. They ask us to imagine something contrary to fact---after all, Hillary Clinton lost the 2016 election---and then ask us to evaluate what \emph{would} have happened in that case. Such considerations simply cannot be tackled using `$\eif$'.
 
-We will say more about the difficulties with conditionals in \S\ref{s:ParadoxesOfMaterialConditional}. For now, we will content ourselves with the observation that `$\eif$' is the only candidate for a truth-functional conditional for TFL, but that many English conditionals cannot be represented adequately using `$\eif$'. TFL is an intrinsically limited language.
+We will say more about the difficulties with conditionals in \cref{s:ParadoxesOfMaterialConditional}. For now, we will content ourselves with the observation that `$\eif$' is the only candidate for a truth-functional conditional for TFL, but that many English conditionals cannot be represented adequately using `$\eif$'. TFL is an intrinsically limited language.
 
 
 \chapter{Complete truth tables}
@@ -324,7 +324,7 @@ Consider these two sentences:
 		((A \eand B) \eand C)\\
 		(A \eand (B \eand C))
 	\end{align*}
-These are truth functionally equivalent. Consequently, it will never make any difference from the perspective of truth value---which is all that TFL cares about (see \S\ref{s:TruthFunctionality})---which of the two sentences we assert (or deny). Even though the order of the brackets does not matter as to their truth, we should not just drop them. The expression
+These are truth functionally equivalent. Consequently, it will never make any difference from the perspective of truth value---which is all that TFL cares about (see \cref{s:TruthFunctionality})---which of the two sentences we assert (or deny). Even though the order of the brackets does not matter as to their truth, we should not just drop them. The expression
 	\begin{align*}
 		A \eand B \eand C
 	\end{align*}
@@ -372,7 +372,7 @@ Offer complete truth tables for each of the following:
 \item $\enot\bigl[(C\eor A) \eor B\bigr]$ %contingent
 \end{compactlist}
 \problempart
-Check all the claims made in \S\ref{s:MoreBracketingConventions}, i.e., show that:
+Check all the claims made in \cref{s:MoreBracketingConventions}, i.e., show that:
 \begin{compactlist}
 	\item `$((A \eand B) \eand C)$' and `$(A \eand (B \eand C))$' have the same truth table
 	\item `$((A \eor B) \eor C)$' and `$(A \eor (B \eor C))$' have the same truth table
@@ -566,7 +566,7 @@ In the previous section, we introduced the idea of a valuation and showed how to
 
 
 \section{Tautologies and contradictions}
-In \S\ref{s:BasicNotions}, we explained \emph{necessary truth} and \emph{necessary falsity}. Both notions have surrogates in TFL. We will start with a surrogate for necessary truth.
+In \cref{s:BasicNotions}, we explained \emph{necessary truth} and \emph{necessary falsity}. Both notions have surrogates in TFL. We will start with a surrogate for necessary truth.
 	\factoidbox{
 		$\metav{A}$ is a \define{tautology} \ifeff{} it is true on every valuation.
 	}
@@ -577,7 +577,7 @@ name=tautology,
 description={A sentence that has only Ts in the column under the main logical operator of its \gls{complete truth table}; a sentence that is true on every \gls{valuation}}
 }
 
-We can use truth tables to decide whether a sentence is a tautology. If the sentence is true on every line of its complete truth table, then it is true on every valuation, so it is a tautology. In the example of \S\ref{s:CompleteTruthTables}, `$(H \eand I) \eif H$' is a tautology.
+We can use truth tables to decide whether a sentence is a tautology. If the sentence is true on every line of its complete truth table, then it is true on every valuation, so it is a tautology. In the example of \cref{s:CompleteTruthTables}, `$(H \eand I) \eif H$' is a tautology.
 
 This is only, though, a \emph{surrogate} for necessary truth. There are some necessary truths that we cannot adequately symbolize in TFL. One example is `$2 + 2 = 4$'. This \emph{must} be true, but if we try to symbolize it in TFL, the best we can offer is a sentence letter, and no sentence letter is a tautology. Still, if we can adequately symbolize some English sentence using a TFL sentence which is a tautology, then that English sentence expresses a necessary truth.
 
@@ -592,7 +592,7 @@ We have a similar surrogate for necessary falsity:
 description={A sentence that has only Fs in the column under the main logical operator of its \gls{complete truth table}; a sentence that is false on every \gls{valuation}}
 }
 
-We can use truth tables to decide whether a sentence is a contradiction. If the sentence is false on every line of its complete truth table, then it is false on every valuation, so it is a contradiction. In the example of \S\ref{s:CompleteTruthTables}, `$[(C\eiff C) \eif C] \eand \enot(C \eif C)$' is a contradiction.
+We can use truth tables to decide whether a sentence is a contradiction. If the sentence is false on every line of its complete truth table, then it is false on every valuation, so it is a contradiction. In the example of \cref{s:CompleteTruthTables}, `$[(C\eiff C) \eif C] \eand \enot(C \eif C)$' is a contradiction.
 
 \section{Equivalence}\label{sec:equivalent}
 Here is a similar useful notion:
@@ -606,7 +606,7 @@ Here is a similar useful notion:
 description={A property held by pairs of sentences if and only if the \gls{complete truth table} for those sentences has identical columns under the two main logical operators, i.e., if the sentences have the same truth value on every valuation}
 }
 
-We have already made use of this notion, in effect, in \S\ref{s:MoreBracketingConventions}; the point was that `$(A \eand B) \eand C$' and  `$A \eand (B \eand C)$' are equivalent. Again, it is easy to test for equivalence using truth tables. Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. Are they equivalent? To find out, we construct a truth table.
+We have already made use of this notion, in effect, in \cref{s:MoreBracketingConventions}; the point was that `$(A \eand B) \eand C$' and  `$A \eand (B \eand C)$' are equivalent. Again, it is easy to test for equivalence using truth tables. Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. Are they equivalent? To find out, we construct a truth table.
 \begin{center}
 \begin{tabular}{c c|d e e f |d e e e f}
 $P$&$Q$&\enot&$(P$&\eor&$Q)$&\enot&$P$&\eand&\enot&$Q$\\
@@ -621,7 +621,7 @@ Look at the columns for the main logical operators; negation for the first sente
 
 
 \section{Satisfiability}
-In \S\ref{s:BasicNotions}, we said that sentences are jointly possible \ifeff{} it is possible for all of them to be true at once. We can offer a surrogate for this notion too:
+In \cref{s:BasicNotions}, we said that sentences are jointly possible \ifeff{} it is possible for all of them to be true at once. We can offer a surrogate for this notion too:
 	\factoidbox{
 		$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ are \define{jointly satisfiable} (in TFL) \ifeff{} there is some valuation which makes them all true.
 	}
@@ -706,19 +706,19 @@ Second, consider the sentence:
 	\begin{enumerate}
 		\item\label{n:JanBald} Jan is neither bald nor not-bald.
 	\end{enumerate}
-To symbolize this sentence in TFL, we would offer something like `$\enot J \eand \enot \enot J$'. This a contradiction (check this with a truth-table), but sentence \ref{n:JanBald} does not itself seem like a contradiction; for we might have happily added `Jan is on the borderline of baldness'!
+To symbolize this sentence in TFL, we would offer something like `$\enot J \eand \enot \enot J$'. This a contradiction (check this with a truth-table), but \cref*{n:JanBald} does not itself seem like a contradiction; for we might have happily added `Jan is on the borderline of baldness'!
 
 Third, consider the following sentence:
 	\begin{enumerate}
 	\item\label{n:GodParadox}	It's not the case that, if God exists, She answers malevolent prayers.
 	\end{enumerate}
-Symbolizing this in TFL, we would offer something like `$\enot (G \eif M)$'. Now, `$\enot (G \eif M)$' entails `$G$' (again, check this with a truth table). So if we symbolize sentence \ref{n:GodParadox} in TFL, it seems to entail that God exists. But that's strange: surely even an atheist can accept sentence \ref{n:GodParadox}, without contradicting herself!
+Symbolizing this in TFL, we would offer something like `$\enot (G \eif M)$'. Now, `$\enot (G \eif M)$' entails `$G$' (again, check this with a truth table). So if we symbolize \cref*{n:GodParadox} in TFL, it seems to entail that God exists. But that's strange: surely even an atheist can accept \cref*{n:GodParadox}, without contradicting herself!
 
-One lesson of this is that the symbolization of \ref{n:GodParadox} as `$\enot(G \eif M)$' shows that \ref{n:GodParadox} does not express what we intend. Perhaps we should rephrase it as
+One lesson of this is that the symbolization of \cref*{n:GodParadox} as `$\enot(G \eif M)$' shows that \cref*{n:GodParadox} does not express what we intend. Perhaps we should rephrase it as
 	\begin{enumerate}
 	\item\label{n:GodParadox2} If God exists, She does not answer malevolent prayers.
 	\end{enumerate}
-and symbolize \ref{n:GodParadox2} as `$G \eif \enot M$'.  Now, if atheists are right, and there is no God, then `$G$' is false and so `$G \eif \enot M$' is true, and the puzzle disappears. However, if `$G$' is false, `$G \eif M$', i.e., `If God exists, She answers malevolent prayers', is \emph{also} true!
+and symbolize \cref*{n:GodParadox2} as `$G \eif \enot M$'.  Now, if atheists are right, and there is no God, then `$G$' is false and so `$G \eif \enot M$' is true, and the puzzle disappears. However, if `$G$' is false, `$G \eif M$', i.e., `If God exists, She answers malevolent prayers', is \emph{also} true!
                 
 In different ways, these four examples highlight some of the limits of working with a language (like TFL) that can \emph{only} handle truth-functional connectives. Moreover, these limits give rise to some interesting questions in philosophical logic. The case of Jan's baldness (or otherwise) raises the general question of what logic we should use when dealing with \emph{vague} discourse. The case of the atheist raises the question of how to deal with the (so-called) \emph{paradoxes of the material conditional}. Part of the purpose of this book is to equip you with the tools to explore these questions of \emph{philosophical logic}. But we have to walk before we can run; we have to become proficient in using TFL, before we can adequately discuss its limits, and consider alternatives.
 
@@ -727,7 +727,7 @@ In what follow, we will use the notion of entailment rather a lot in this book. 
 	$$\metav{A}_1, \metav{A}_2, \dots, \metav{A}_n \entails \metav{C}$$
 The symbol `$\entails$' is known as \emph{the double turnstile}, since it looks like a turnstile with two horizontal beams.
 
-Let's be clear. `$\entails$' is not a symbol of TFL. Rather, it is a symbol of our metalanguage, augmented English (recall the difference between object language and metalanguage from \S\ref{s:UseMention}). So the metalanguage sentence:
+Let's be clear. `$\entails$' is not a symbol of TFL. Rather, it is a symbol of our metalanguage, augmented English (recall the difference between object language and metalanguage from \cref{s:UseMention}). So the metalanguage sentence:
 	\[P, P \eif Q \entails Q\]
 is \emph{just} an abbreviation for this metalanguage sentence: 
 	\begin{quote}
@@ -768,7 +768,7 @@ Indeed, when `$\eif$' is flanked with two TFL sentences, the result is a longer 
 
 \practiceproblems
 \problempart
-Revisit your answers to \S\ref{s:CompleteTruthTables}\textbf{A}. Determine which sentences were tautologies, which were contradictions, and which were neither tautologies nor contradictions.
+Revisit your answers to \cref{s:CompleteTruthTables}\textbf{A}. Determine which sentences were tautologies, which were contradictions, and which were neither tautologies nor contradictions.
 \solutions
 
 \
@@ -1013,7 +1013,7 @@ $P$&$Q$& $((P$&\eif&$Q$)&\eif&$P)$&\eif&$P$\\
 So `$((P \eif Q) \eif P) \eif P$' is a tautology. In fact, it is an instance of \emph{Peirce's Law}, named after Charles Sanders Peirce.
 
 \section{Testing for validity and entailment}
-In \S\ref{s:SemanticConcepts}, we saw how to use truth tables to test for validity. In that test, we look for \emph{bad} lines: lines where the premises are all true and the conclusion is false. Now:
+In \cref{s:SemanticConcepts}, we saw how to use truth tables to test for validity. In that test, we look for \emph{bad} lines: lines where the premises are all true and the conclusion is false. Now:
 \begin{compactlist}
 	\item[\textbullet] If the conclusion is true on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)
 	\item[\textbullet] If any premise is false on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)

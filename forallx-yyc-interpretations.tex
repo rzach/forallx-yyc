@@ -10,11 +10,11 @@ Recall that TFL is a truth-functional language. Its connectives are all truth-fu
 	\begin{ekey}
 		\item[P] Big Ben is in London.
 	\end{ekey}
- But recall from \S\ref{s:TruthFunctionality} that this is \emph{just} a means of specifying `$P$'s truth value; the symbolization key statement amounts to something like the following stipulation: 
+ But recall from \cref{s:TruthFunctionality} that this is \emph{just} a means of specifying `$P$'s truth value; the symbolization key statement amounts to something like the following stipulation: 
 	\begin{itemize}
 		\item The TFL sentence `$P$' is true \ifeff{} Big Ben is in London.
 	\end{itemize}
-And we emphasized in \S\ref{s:TruthFunctionality} that TFL cannot handle differences in meaning that go beyond mere differences in truth value.
+And we emphasized in \cref{s:TruthFunctionality} that TFL cannot handle differences in meaning that go beyond mere differences in truth value.
 
 \section{Symbolizing versus translating}
 
@@ -136,7 +136,7 @@ We don't need to specify anything for`$=$', since it has a
 \emph{fixed} meaning, namely that of identity. Everything is identical
 to itself, and only to itself. 
 
-The symbolization keys that we considered in Part~\ref{ch.FOL} consequently give us one very convenient way to present an interpretation. We will continue to use them in this chapter. Following the discussion of \S\ref{sec:extensions}, we now also allow extensions specified by enumerations on the right side, e.g.,
+The symbolization keys that we considered in \cref{ch.FOL} consequently give us one very convenient way to present an interpretation. We will continue to use them in this chapter. Following the discussion of \cref{sec:extensions}, we now also allow extensions specified by enumerations on the right side, e.g.,
 \begin{ekey}
 	\item[\text{domain}] heads of state, numbers
 	\item[\atom{H}{x}] Justin Trudeau, Angela Merkel, $\pi$
@@ -213,7 +213,7 @@ If we wanted, we could make our diagrams more complex. For example, we could add
 \chapter{Truth in FOL}\label{s:TruthFOL}
 We have introduced you to interpretations. Since, among other things, they tell us which predicates are true of which objects, they will provide us with an account of the truth of atomic sentences. However, we now need to say, precisely, what it is for an arbitrary FOL sentence to be true or false in an interpretation.
 
-We know from \S\ref{s:FOLSentences} that there are three kinds of sentence in FOL: 
+We know from \cref{s:FOLSentences} that there are three kinds of sentence in FOL: 
 	\begin{compactlist}
 		\item atomic sentences,
 		\item sentences whose main logical operator is a sentential connective,
@@ -251,7 +251,7 @@ So in our go-to interpretation, `$a = b$' is false, since Aristotle is distinct 
 
 
 \section{Sentential connectives}
-We saw in \S\ref{s:FOLSentences} that FOL sentences can be built up from simpler ones using the truth-functional connectives that were familiar from TFL. The rules governing these truth-functional connectives are \emph{exactly} the same as they were when we considered TFL. Here they are:
+We saw in \cref{s:FOLSentences} that FOL sentences can be built up from simpler ones using the truth-functional connectives that were familiar from TFL. The rules governing these truth-functional connectives are \emph{exactly} the same as they were when we considered TFL. Here they are:
 	\factoidbox{
 		$\metav{A} \eand \metav{B}$ is true in an interpretation \textbf{\ifeff} both $\metav{A}$ is true and $\metav{B}$ is true in that interpretation.
 		
@@ -452,7 +452,7 @@ Determine whether each of the following sentences is true or false in that inter
 
 \problempart
 \label{pr.TorF3}
-Following the diagram conventions introduced at the end of \S\ref{s:Interpretations}, consider the following interpretation:	
+Following the diagram conventions introduced at the end of \cref{s:Interpretations}, consider the following interpretation:	
 \begin{center}
 \begin{arialabel}{The numbers 1, 2, 3, 4, and 5 are connected by arrows. There are arrows from 1 to 2, 3, 4, 5, and to itself, from 2 to 5, from 5 to itself, and from 4 to 1. There is no arrow leaving 3.}
 \begin{tikzpicture}
@@ -490,7 +490,7 @@ Determine whether each of the following sentences is true or false in that inter
 
 \chapter{Semantic concepts}
 
-Defining truth in FOL was quite fiddly. But now that we are done, we can define various other central logical notions. These definitions will look very similar to those for TFL, from \S\ref{s:SemanticConcepts}. However, remember that they concern \emph{interpretations}, rather than valuations.
+Defining truth in FOL was quite fiddly. But now that we are done, we can define various other central logical notions. These definitions will look very similar to those for TFL, from \cref{s:SemanticConcepts}. However, remember that they concern \emph{interpretations}, rather than valuations.
 
 We will use the symbol `$\entails$' for FOL much as we did for TFL. So:
 	$$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \entails\metav{C}$$
@@ -620,7 +620,7 @@ Again, we want to show that this is invalid. To do this, we must make the premis
 \end{ekey}
 The premise is clearly true on this interpretation. Anyone in the domain is a Canadian citizen in a domestic partnership with some other Canadian citizen. That other citizen will also, then, be in the domain. So for everyone in the domain, there will be someone (else) in the domain with whom they are in a domestic partnership. Hence `$\forall x \exists y\, \atom{L}{x,y}$' is true. However, the conclusion is clearly false, for that would require that there is some single person who is in a domestic partnership with everyone in the domain, and there is no such person, so the argument is invalid. We observe immediately that the sentences `$\forall x \exists y\, \atom{L}{x,y}$' and `$\enot\exists y \forall x\, \atom{L}{x,y}$' are jointly satisfiable and that `$\forall x \exists y\, \atom{L}{x,y}$' does not entail `$\exists y \forall x\, \atom{L}{x,y}$'.
 
-For our third example, we'll mix things up a bit. In \S\ref{s:Interpretations}, we described how we can present some interpretations using diagrams. For example:
+For our third example, we'll mix things up a bit. In \cref{s:Interpretations}, we described how we can present some interpretations using diagrams. For example:
 \begin{center}
 	\begin{arialabel}{The numbers 1, 2, and 3 are connected by arrows. There are arrows from 1 to 2, 3, and to itself, and from 2 to 3. There is no arrow leaving 3.}
 	\begin{tikzpicture}
@@ -634,7 +634,7 @@ For our third example, we'll mix things up a bit. In \S\ref{s:Interpretations}, 
 \end{tikzpicture}
 \end{arialabel}
 \end{center}
-Using the conventions employed in \S\ref{s:Interpretations}, the domain of this interpretation is the first three positive whole numbers, and `$\atom{R}{x,y}$' is true of x and y just in case there is an arrow from x to y in our diagram. Here are some sentences that the interpretation makes true:
+Using the conventions employed in \cref{s:Interpretations}, the domain of this interpretation is the first three positive whole numbers, and `$\atom{R}{x,y}$' is true of x and y just in case there is an arrow from x to y in our diagram. Here are some sentences that the interpretation makes true:
 \begin{ebullet}
 	\item `$\forall x \exists y\, \atom{R}{y,x}$' 
 	\item `$\exists x \forall y\, \atom{R}{x,y}$' \hfill witness 1
@@ -797,4 +797,4 @@ entailment? & all interpretations & one counter-interpretation\\
 \end{center}
 \label{table.ModelOrArgument}
 
-You might want to compare this table with the table at the end of \S\ref{s:PartialTruthTable}. The key difference resides in the fact that TFL concerns truth tables, whereas FOL concerns interpretations. This difference is deeply important, since each truth-table only ever has finitely many lines, so that a complete truth table is a relatively tractable object. By contrast, there are infinitely many interpretations for any given sentence(s), so that reasoning about all interpretations can be a deeply tricky business.
+You might want to compare this table with the table at the end of \cref{s:PartialTruthTable}. The key difference resides in the fact that TFL concerns truth tables, whereas FOL concerns interpretations. This difference is deeply important, since each truth-table only ever has finitely many lines, so that a complete truth table is a relatively tractable object. By contrast, there are infinitely many interpretations for any given sentence(s), so that reasoning about all interpretations can be a deeply tricky business.

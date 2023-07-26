@@ -96,7 +96,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 
 \problempart
 \label{pr.BarbaraEtc.proof1}
-In \S\ref{s:MoreMonadic} problem A, we considered fifteen syllogistic figures of Aristotelian logic. Provide proofs for each of the argument forms. NB: You will find it \emph{much} easier if you symbolize (for example) `No F is G' as `$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$'.
+In \cref{s:MoreMonadic} problem A, we considered fifteen syllogistic figures of Aristotelian logic. Provide proofs for each of the argument forms. NB: You will find it \emph{much} easier if you symbolize (for example) `No F is G' as `$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$'.
 \\\myanswer{We prove the four Figure I syllogisms; the rest are \emph{extremely} similar.
 \begin{multicols}{2}
 \noindent \textbf{Barbara}
@@ -418,9 +418,11 @@ is true.
 \problempart
 \label{pr.likes}
 Write a symbolization key for the following argument, symbolize it, and prove it:
-\begin{quote}
-There is someone who likes everyone who likes everyone that she likes. Therefore, there is someone who likes herself.
-\end{quote}
+\begin{earg}
+\item There is someone who likes everyone who likes everyone that she
+likes. 
+\item[\texttherefore] There is someone who likes herself.
+\end{earg}
 \myanswer{Symbolization key:
 \begin{ekey}
 \item[\text{domain}] all people
@@ -715,7 +717,7 @@ Show that each pair of sentences is provably equivalent: %TB: Again, have to do 
 
 
 \problempart
-In \S\ref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is provably equivalent: %TB: Again, manual line numbering to give multicols enough space.
+In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is provably equivalent: %TB: Again, manual line numbering to give multicols enough space.
 
 \
 
@@ -1112,7 +1114,7 @@ And hence that both have a decent claim to symbolize the English sentence `Nick 
 \
 
 \problempart
-In \S\ref{sec.identity}, we claimed that the following are logically equivalent symbolizations of the English sentence `there is exactly one F':
+In \cref{sec.identity}, we claimed that the following are logically equivalent symbolizations of the English sentence `there is exactly one F':
 \begin{ebullet}
 \item $\exists x\,\atom{F}{x} \eand \forall x \forall y \bigl[(\atom{F}{x} \eand \atom{F}{y}) \eif x = y\bigr]$
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
@@ -1196,9 +1198,12 @@ Show that they are all provably equivalent. (\emph{Hint}: to show that three cla
 \
 \problempart
 Symbolize the following argument
-	\begin{quote}
-		There is exactly one F. There is exactly one G. Nothing is both F and G. So: there are exactly two things that are either F or G.
-	\end{quote}
+	\begin{earg}
+		\item There is exactly one F. 
+		\item There is exactly one G. 
+		\item Nothing is both F and G. 
+		\item[\texttherefore] There are exactly two things that are either F or G.
+	\end{earg}
 And offer a proof of it.\\
 \myanswer{
 \begin{compactlist}

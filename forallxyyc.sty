@@ -14,6 +14,11 @@
 \RequirePackage{hyperref,ifthen,graphicx,xcolor}
 \RequirePackage{enumitem}
 
+% References using cleveref
+
+\RequirePackage[nameinlink]{cleveref}
+\crefname{enumi}{sentence}{sentences}
+
 % \ifHTMLtarget -- for conditional code depending on whether we're
 % compiling to HTML or to PDF. To be used for anything that would also
 % compile to PDF for testing and because BookML runs the file through
@@ -178,7 +183,7 @@
 
 % enumerate -- used for numbered examples; counter resets every
 % chapter
-\setlist[enumerate]{resume,noitemsep}
+\setlist[enumerate]{resume,noitemsep,labelwidth=4em}
 \@addtoreset{enumi}{chapter}
 
 %    ****************************************

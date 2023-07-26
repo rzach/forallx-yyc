@@ -34,7 +34,7 @@ dl.ltx_description {
 
 /* fix LaTeXML.css handling of paras inside list items without tags */
 
-.ltx_item + .ltx_para .ltx_p  { display:inline; }
+.ltx_item .ltx_para:first-child .ltx_p  { display:inline; }
 
 /* override gitbook/css/style.css size of p2's for paragraphs */
 .ltx_title_paragraph   { 

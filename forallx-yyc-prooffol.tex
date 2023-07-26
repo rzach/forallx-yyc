@@ -5,7 +5,7 @@
 
 \chapter{Basic rules for FOL}\label{s:BasicFOL}
 
-The language of FOL makes use of all of the connectives of TFL. So proofs in FOL will use all of the basic and derived rules from Part~\ref{ch.NDTFL}. We will also use the proof-theoretic notions (particularly, the symbol `$\proves$') introduced there. However, we will also need some new basic rules to govern the quantifiers, and to govern the identity sign.
+The language of FOL makes use of all of the connectives of TFL. So proofs in FOL will use all of the basic and derived rules from \cref{ch.NDTFL}. We will also use the proof-theoretic notions (particularly, the symbol `$\proves$') introduced there. However, we will also need some new basic rules to govern the quantifiers, and to govern the identity sign.
 
 
 \section{Universal elimination}
@@ -28,14 +28,14 @@ This motivates the universal elimination rule ($\forall$E):
 	\have[m]{a}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\have[\ ]{c}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)} \Ae{a}
 \end{fitchproof}}
-The notation here was introduced in \S\ref{s:TruthFOL}. The point is that you can obtain any \emph{substitution instance} of a universally quantified formula: replace every instance of the quantified variable with any name you like.
+The notation here was introduced in \cref{s:TruthFOL}. The point is that you can obtain any \emph{substitution instance} of a universally quantified formula: replace every instance of the quantified variable with any name you like.
 
 We should emphasize that (as with every elimination rule) you can only apply the $\forall$E rule when the universal quantifier is the main logical operator. So the following is \emph{banned}:
 \begin{fitchproof}
 	\hypo{a}{\forall x\,\atom{B}{x} \eif \atom{B}{k}}\PR
 	\have{c}{\atom{B}{b} \eif \atom{B}{k}}\by{naughy attempt to invoke $\forall$E}{a}
 \end{fitchproof}
-This is illegitimate, since `$\forall x$' is not the main logical operator in line~1. (If you need a reminder as to why this sort of inference should be banned, reread \S\ref{s:MoreMonadic}.)
+This is illegitimate, since `$\forall x$' is not the main logical operator in line~1. (If you need a reminder as to why this sort of inference should be banned, reread \cref{s:MoreMonadic}.)
 
 \section{Existential introduction}
 From the claim that some particular thing is~$F$, you can infer that something is~$F$. So we ought to allow:
@@ -87,7 +87,7 @@ The following proof combines our two new rules for quantifiers:
 	\end{fitchproof}
 Could this be a bad proof? If anything exists at all, then certainly we can infer that something is~$F$, from the fact that everything is~$F$. But what if \emph{nothing} exists at all? Then it is surely vacuously true that everything is~$F$; however, it does not following that something is~$F$, for there is nothing to \emph{be}~$F$. So if we claim that, as a matter of logic alone, `$\exists x\,\atom{F}{x}$' follows from `$\forall x\,\atom{F}{x}$', then we are claiming that, as a matter of \emph{logic alone}, there is something rather than nothing. This might strike us as a bit odd.
 
-Actually, we are already committed to this oddity. In \S\ref{s:FOLBuildingBlocks}, we stipulated that domains in FOL must have at least one member. We then defined a validity (of FOL) as a sentence which is true in every interpretation. Since `$\exists x\, x=x$' will be true in every interpretation, this \emph{also} had the effect of stipulating that it is a matter of logic that there is something rather than nothing.
+Actually, we are already committed to this oddity. In \cref{s:FOLBuildingBlocks}, we stipulated that domains in FOL must have at least one member. We then defined a validity (of FOL) as a sentence which is true in every interpretation. Since `$\exists x\, x=x$' will be true in every interpretation, this \emph{also} had the effect of stipulating that it is a matter of logic that there is something rather than nothing.
 
 Since it is far from clear that logic should tell us that there must be something rather than nothing, we might well be cheating a bit here.
 
@@ -132,7 +132,7 @@ The crucial thought here is that `$a$' was just some \emph{arbitrary} name. Ther
 	}
 A crucial aspect of this rule, though, is bound up in the %first 
 constraint. This constraint ensures that we are always reasoning at a sufficiently general level.
-%\footnote{Recall from \S\ref{s:BasicTFL} that we are treating `$\ered$' as a canonical contradiction. But if it were the canonical contradiction as involving some \emph{constant}, it might interfere with the constraint mentioned here. To avoid such problems, we will treat `$\ered$' as a canonical contradiction \emph{that involves no particular names}.} 
+%\footnote{Recall from \cref{s:BasicTFL} that we are treating `$\ered$' as a canonical contradiction. But if it were the canonical contradiction as involving some \emph{constant}, it might interfere with the constraint mentioned here. To avoid such problems, we will treat `$\ered$' as a canonical contradiction \emph{that involves no particular names}.} 
 To see the constraint in action, consider this terrible argument:
 	\begin{earg}
 		\item Everyone loves Kylie Minogue.
@@ -159,7 +159,7 @@ Although the name may not occur in any \emph{undischarged} assumption, it may oc
 \end{fitchproof}
 This tells us that `$\forall z (\atom{G}{z} \eif \atom{G}{z})$' is a \emph{theorem}. And that is as it should be.
 
-We should emphasize one last point. As per the conventions of \S\ref{s:MainLogicalOperatorQuantifier}, the use of $\forall$I requires that we are replacing \emph{every} instance of the name \metav{c} in $\metav{A}(\ldots \metav{c}\ldots\metav{c}\ldots)$ with the variable \metav{x}. If we only replace \emph{some} names and not others, we end up `proving' silly things. For example, consider the argument:
+We should emphasize one last point. As per the conventions of \cref{s:MainLogicalOperatorQuantifier}, the use of $\forall$I requires that we are replacing \emph{every} instance of the name \metav{c} in $\metav{A}(\ldots \metav{c}\ldots\metav{c}\ldots)$ with the variable \metav{x}. If we only replace \emph{some} names and not others, we end up `proving' silly things. For example, consider the argument:
 	\begin{earg}
 	\item Everyone is as old as themselves.
 	\item[\texttherefore] so everyone is as old as Judi Dench.
@@ -324,7 +324,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 
 \problempart
 \label{pr.BarbaraEtc.proof1}
-In \S\ref{s:MoreMonadic} problem A, we considered fifteen syllogistic figures of Aristotelian logic. Provide proofs for each of the argument forms. NB: You will find it \emph{much} easier if you symbolize (for example) `No F is G' as `$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$'.
+In \cref{s:MoreMonadic} problem A, we considered fifteen syllogistic figures of Aristotelian logic. Provide proofs for each of the argument forms. NB: You will find it \emph{much} easier if you symbolize (for example) `No F is G' as `$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$'.
 
 \
 
@@ -409,7 +409,7 @@ For each of the following arguments: If it is valid in FOL, give a proof. If it 
 
 \chapter{Proofs with quantifiers}
 
-In \S\ref{s:stratTFL} we discussed strategies for constructing proofs
+In \cref{s:stratTFL} we discussed strategies for constructing proofs
 using the basic rules of natural deduction for TFL. The same
 principles apply to the rules for the quantifiers. If we want to prove
 a quantifier sentence $\forall \metav{x}\,
@@ -575,7 +575,7 @@ These require the use of IP. Use only the basic rules of TFL in addition to the 
 
 In this section, we will add some additional rules to the basic rules of the previous section. These govern the interaction of quantifiers and negation.
  
-In \S\ref{s:FOLBuildingBlocks}, we noted that $\enot\exists x\metav{A}$ is logically equivalent to $\forall x\, \enot\metav{A}$. We will add some rules to our proof system that govern this. In particular, we add:
+In \cref{s:FOLBuildingBlocks}, we noted that $\enot\exists x\metav{A}$ is logically equivalent to $\forall x\, \enot\metav{A}$. We will add some rules to our proof system that govern this. In particular, we add:
 	\factoidbox{
 	\begin{fitchproof}
 		\have[m]{a}{\forall \metav{x}\, \enot\metav{A}}
@@ -618,7 +618,7 @@ Show that each pair of sentences is provably equivalent:
 \end{compactlist}
 
 \problempart
-In \S\ref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is provably equivalent:
+In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is provably equivalent:
 \begin{compactlist}
 \item $\forall x(\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$
 \item $\exists x(\atom{F}{x} \eor \atom{G}{a}), \exists x\,\atom{F}{x} \eor \atom{G}{a}$
@@ -631,7 +631,7 @@ NB: the variable `$x$' does not occur in `$\atom{G}{a}$'. When all the quantifie
 
 
 \chapter{Rules for identity}
-In \S\ref{s:Interpretations}, we mentioned the philosophically contentious thesis of the \emph{identity of indiscernibles}. This is the claim that objects which are indiscernible in every way are, in fact, identical to each other. It was also mentioned that we will not subscribe to this thesis. It follows that, no matter how much you learn about two objects, we cannot prove that they are identical. That is unless, of course, you learn that the two objects are, in fact, identical, but then the proof will hardly be very illuminating.
+In \cref{s:Interpretations}, we mentioned the philosophically contentious thesis of the \emph{identity of indiscernibles}. This is the claim that objects which are indiscernible in every way are, in fact, identical to each other. It was also mentioned that we will not subscribe to this thesis. It follows that, no matter how much you learn about two objects, we cannot prove that they are identical. That is unless, of course, you learn that the two objects are, in fact, identical, but then the proof will hardly be very illuminating.
 
 The general point, though, is that \emph{no sentences} which do not already contain the identity predicate could justify an inference to `$a=b$'. So our identity introduction rule cannot allow us to infer to an identity claim containing two \emph{different} names.
 
@@ -711,7 +711,7 @@ Show that the following are provably equivalent:
 And hence that both have a decent claim to symbolize the English sentence `Nick is the~$F$'.\\
 
 \problempart
-In \S\ref{sec.identity}, we claimed that the following are logically equivalent symbolizations of the English sentence `there is exactly one $F$':
+In \cref{sec.identity}, we claimed that the following are logically equivalent symbolizations of the English sentence `there is exactly one $F$':
 \begin{ebullet}
 \item $\exists x\,\atom{F}{x} \eand \forall x\, \forall y \bigl[(\atom{F}{x} \eand \atom{F}{y}) \eif x = y\bigr]$
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
@@ -723,9 +723,12 @@ Show that they are all provably equivalent. (\emph{Hint}: to show that three cla
 \
 \problempart
 Symbolize the following argument
-	\begin{quote}
-		There is exactly one $F$. There is exactly one $G$. Nothing is both $F$ and~$G$. So: there are exactly two things that are either~$F$ or~$G$.
-	\end{quote}
+	\begin{earg}
+		\item There is exactly one $F$. 
+		\item There is exactly one $G$. 
+		\item Nothing is both $F$ and~$G$. 
+		\item[\texttherefore] There are exactly two things that are either~$F$ or~$G$.
+	\end{earg}
 And offer a proof of it.
 %\begin{ebullet}
 %\item  $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr], \exists x \bigl[\atom{G}{x} \eand \forall y (\atom{G}{y} \eif x = y)\bigr], \forall x (\enot\atom{F}{x} \eor \enot \atom{G}{x}) \proves \exists x\, \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = y \eor x = z))\bigr]$
@@ -735,7 +738,7 @@ And offer a proof of it.
 
 
 \chapter{Derived rules}\label{s:DerivedFOL}
-As in the case of TFL, we first introduced some rules for FOL as basic (in \S\ref{s:BasicFOL}), and then added some further rules for conversion of quantifiers (in \S\ref{s:CQ}). In fact, the CQ rules should be regarded as \emph{derived} rules, for they can be derived from the  \emph{basic} rules of \S\ref{s:BasicFOL}. (The point here is as in \S\ref{s:Derived}.) Here is a justification for the first CQ rule:
+As in the case of TFL, we first introduced some rules for FOL as basic (in \cref{s:BasicFOL}), and then added some further rules for conversion of quantifiers (in \cref{s:CQ}). In fact, the CQ rules should be regarded as \emph{derived} rules, for they can be derived from the  \emph{basic} rules of \cref{s:BasicFOL}. (The point here is as in \cref{s:Derived}.) Here is a justification for the first CQ rule:
 \begin{fitchproof}
 	\hypo{An}{\forall x\, \enot \atom{A}{x}}\PR
 	\open

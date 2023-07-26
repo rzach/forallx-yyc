@@ -189,23 +189,23 @@ The connectives of TFL are jointly functionally complete. Indeed, the following 
 \item\label{expressive:eif} `$\enot$' and `$\eif$'
 \end{compactlist}}
 
-Given any truth table, we can use the method of proving the DNF Theorem (or the CNF Theorem) via truth tables from chapter~\ref{c:NormalForms}, to write down a scheme which has the same truth table. For example, employing the truth table method for proving the DNF Theorem, we find that the following scheme has the same characteristic truth table as $\heartsuit(A,B,C)$, above:
+Given any truth table, we can use the method of proving the DNF Theorem (or the CNF Theorem) via truth tables from \cref{c:NormalForms}, to write down a scheme which has the same truth table. For example, employing the truth table method for proving the DNF Theorem, we find that the following scheme has the same characteristic truth table as $\heartsuit(A,B,C)$, above:
 		$$(A \eand B \eand \enot C) \eor (A \eand \enot B \eand C) \eor (\enot A \eand B \eand \enot C)$$			
 It follows that the connectives of TFL are jointly functionally complete. We now prove each of the subsidiary results.
 	
-\emph{Subsidiary Result \ref{expressive:eor}: functional completeness of `$\enot$' and `$\eor$'.} Observe that the scheme that we generate, using the truth table method of proving the DNF Theorem, will only contain the connectives `$\enot$', `$\eand$' and `$\eor$'. So it suffices to show that there is an equivalent scheme which contains only `$\enot$' and `$\eor$'. To demonstrate this, we simply consider that
+\emph{Subsidiary Result \ref*{expressive:eor}: functional completeness of `$\enot$' and `$\eor$'.} Observe that the scheme that we generate, using the truth table method of proving the DNF Theorem, will only contain the connectives `$\enot$', `$\eand$' and `$\eor$'. So it suffices to show that there is an equivalent scheme which contains only `$\enot$' and `$\eor$'. To demonstrate this, we simply consider that
 		\begin{align*}
 		(\metav{A} \eand \metav{B}) & \text{\quad and \quad} \enot(\enot \metav{A} \eor\enot \metav{B})
 		\end{align*}
 		are logically equivalent.
 
-\emph{Subsidiary Result \ref{expressive:eand}: functional completeness of `$\enot$' and `$\eand$'.} Exactly as in Subsidiary Result~\ref{expressive:eor}, making use of the fact that
+\emph{Subsidiary Result \ref*{expressive:eand}: functional completeness of `$\enot$' and `$\eand$'.} Exactly as in Subsidiary Result~\ref*{expressive:eor}, making use of the fact that
 		\begin{align*}
 		(\metav{A} \eor \metav{B}) & \text{\quad and \quad}\enot(\enot \metav{A} \eand\enot \metav{B})
 		\end{align*}
 are logically equivalent.
 
-\emph{Subsidiary Result \ref{expressive:eif}: functional completeness of `$\enot$' and `$\eif$'.} Exactly as in Subsidiary Result~\ref{expressive:eor}, making use of these equivalences instead:
+\emph{Subsidiary Result \ref*{expressive:eif}: functional completeness of `$\enot$' and `$\eif$'.} Exactly as in Subsidiary Result~\ref*{expressive:eor}, making use of these equivalences instead:
 		\begin{align*}
 		(\metav{A} \eor \metav{B}) &\text{\quad and \quad} (\enot \metav{A} \eif \metav{B})\\
 		(\metav{A} \eand \metav{B}) &\text{\quad and \quad} \enot(\metav{A} \eif \enot\metav{B})
@@ -241,7 +241,7 @@ The Functional Completeness Theorem tells us that `$\enot$' and `$\eor$' are joi
 			\enot \metav{A} &\text{\quad and \quad} (\metav{A} \uparrow \metav{A})\\
 			(\metav{A} \eor \metav{B}) & \text{\quad and \quad} ((\metav{A} \uparrow \metav{A}) \uparrow (\metav{B} \uparrow \metav{B}))
 		\end{align*}
-to the Subsidiary Result~\ref{expressive:eor}.
+to the Subsidiary Result~\ref*{expressive:eor}.
 
 Similarly, we can consider the connective `$\downarrow$':
 \begin{center}
@@ -263,7 +263,7 @@ As in the previous result for $\uparrow$, although invoking the equivalences:
 			\enot \metav{A} &\text{\quad and \quad} (\metav{A} \downarrow \metav{A})\\
 			(\metav{A} \eand \metav{B}) & \text{\quad and \quad} ((\metav{A} \downarrow \metav{A}) \downarrow (\metav{B} \downarrow \metav{B}))
 		\end{align*}
-and Subsidiary Result~\ref{expressive:eand}.
+and Subsidiary Result~\ref*{expressive:eand}.
 
 
 \section{Failures of functional completeness}
@@ -295,7 +295,7 @@ This is of course harder to prove than for the primitive connectives. For instan
 
 \section{Substitutability of equivalents}
 
-Recall from \S\ref{sec:equivalent} that $\metav{P}$ and $\metav{Q}$ are equivalent (in TFL) iff, for every valuation, their truth values agree.  We have seen many examples of this and used both truth tables and natural dedcution proofs to establish such equivalences.  In chapter~\ref{c:NormalForms} we've even proved that ever sentence of TFL is equivalent to one in conjunctive and one in disjunctive normal form.  If $\metav{P}$ and $\metav{Q}$ are equivalent, they always have the same truth value, either one entails the other, and from either one you can prove the other.
+Recall from \cref{sec:equivalent} that $\metav{P}$ and $\metav{Q}$ are equivalent (in TFL) iff, for every valuation, their truth values agree.  We have seen many examples of this and used both truth tables and natural dedcution proofs to establish such equivalences.  In \cref{c:NormalForms} we've even proved that ever sentence of TFL is equivalent to one in conjunctive and one in disjunctive normal form.  If $\metav{P}$ and $\metav{Q}$ are equivalent, they always have the same truth value, either one entails the other, and from either one you can prove the other.
 
 Equivalent sentences are not the same, of course: the sentences $\enot\enot A$ and~$A$ may always have the same truth value, but the first starts with the `$\enot$' symbol while the second doesn't.  But you may wonder if it's always true that we can replace one of a pair of equivalent sentences by the other, and the results will be equivalent, too.  For instance, consider $\enot\enot A \eif B$ and $A \eif B$.  The second results from the first by replacing `$\enot\enot A$' by~`$A$'.  And these two sentences are also equivalent.
 
@@ -351,7 +351,7 @@ Now consider the sentence `$\enot(R \eor (S \eand T))$'. We will find an equival
 \end{align*}
 We've highlighted the sentence replaced, and those matching the $\metav{P}$ and~$\metav{Q}$ in De Morgan's Laws for clarity, but this is not necessary, and we won't keep doing it.
 
-In table~\ref{tab:equivalences} we've given a list of basic equivalences you can use for such chains of equivalences. The labels abbreviate the customary name for the respective logical laws: double negation (DN), De Morgan (DeM), commutativity (Comm), distributivity (Dist), associativity (Assoc), idempotence (Id), and absorption (Abs).
+In \cref{tab:equivalences} we've given a list of basic equivalences you can use for such chains of equivalences. The labels abbreviate the customary name for the respective logical laws: double negation (DN), De Morgan (DeM), commutativity (Comm), distributivity (Dist), associativity (Assoc), idempotence (Id), and absorption (Abs).
 
 \begin{table}
 	\begin{align*}
@@ -386,7 +386,7 @@ In table~\ref{tab:equivalences} we've given a list of basic equivalences you can
 
 \section{Finding equivalent normal forms}
 
-In chapter~\ref{c:NormalForms} we showed that every sentence of TFL is equivalent to one in disjunctive normal form (DNF) and to one in conjunctive normal form (CNF).  We did this by giving a method to construct a sentences in DNF or CNF equivalent to the original sentence by first constructing a truth table, and then ``reading off'' a sentence in DNF or CNF from the truth table.  This method has two drawbacks. The first one is that the resulting sentences in DNF or CNF are not always the shortest ones.  The second one is that the method itself becomes hard to apply when the sentence you start with contains more than a handful of sentence letters (since the truth table for a sentence with $n$ sentence letters has $2^n$ lines).
+In \cref{c:NormalForms} we showed that every sentence of TFL is equivalent to one in disjunctive normal form (DNF) and to one in conjunctive normal form (CNF).  We did this by giving a method to construct a sentences in DNF or CNF equivalent to the original sentence by first constructing a truth table, and then ``reading off'' a sentence in DNF or CNF from the truth table.  This method has two drawbacks. The first one is that the resulting sentences in DNF or CNF are not always the shortest ones.  The second one is that the method itself becomes hard to apply when the sentence you start with contains more than a handful of sentence letters (since the truth table for a sentence with $n$ sentence letters has $2^n$ lines).
 
 We can use chains of equivalences as an alternative method: To find a sentence in~DNF, we can successively apply basic equivalences until we have found an equivalent sentence that is in~DNF. Recall the conditions a sentence in DNF must satisfy:
 \begin{compactlist}
@@ -417,7 +417,7 @@ Condition (\textsc{dnf1}) says that we must remove all `$\eif$' and~`$\eiff$' sy
 & ((A \eand C) \eor (A \eand \enot A)) \eor ((\enot B \eand \enot A) \eor (\enot B \eand C)) && \text{Comm}\\
 & (A \eand C) \eor ((\enot B \eand \enot A) \eor (\enot B \eand C)) && \text{Simp}
 \end{align*}
-The final result is still in DNF, but a bit simpler still.  It is also much simpler than the DNF we would have obtained by the method of chapter~\ref{c:NormalForms}. In fact, the sentence we started with could have been the $\metav{S}$ of \S\ref{s:DNFTruthTable}---it has exactly the truth table used as an example there. The DNF we found there (\ifHTMLtarget in section~\ref{s:DNFTruthTable}\else on p.~\pageref{longDNF}\fi), was (with all necessary brackets):
+The final result is still in DNF, but a bit simpler still.  It is also much simpler than the DNF we would have obtained by the method of \cref{c:NormalForms}. In fact, the sentence we started with could have been the $\metav{S}$ of \cref{s:DNFTruthTable}---it has exactly the truth table used as an example there. The DNF we found there (\ifHTMLtarget in section~\cref{s:DNFTruthTable}\else on p.~\pageref{longDNF}\fi), was (with all necessary brackets):
 $$((((A \eand B) \eand C) \eor ((A \eand \enot B) \eand C)) \eor ((\enot A \eand \enot B) \eand C)) \eor ((\enot A \eand \enot B) \eand \enot C)$$
 
 \practiceproblems
@@ -436,7 +436,7 @@ For each sentence, find an equivalent sentence in DNF and one in CNF by giving a
 
 \chapter{Soundness}\label{ch:Soundness}
 
-In this chapter we relate TFL's semantics to its natural deduction \emph{proof system} (as defined in Part~\ref{ch.NDTFL}). We will prove that the formal proof system is safe: you can only prove sentences from premises from which they actually follow.
+In this chapter we relate TFL's semantics to its natural deduction \emph{proof system} (as defined in \cref{ch.NDTFL}). We will prove that the formal proof system is safe: you can only prove sentences from premises from which they actually follow.
 Intuitively, a formal proof system is sound \ifeff{} it does not allow you to prove any invalid arguments. This is obviously a highly desirable property. It tells us that our proof system will never lead us astray. Indeed, if our proof system were not sound, then we would not be able to trust our proofs. The aim of this chapter is to prove that our proof system is sound.
 
 Let's make the idea more precise. We'll abbreviate a list of sentences using the greek letter $\Gamma$ (`gamma'). A formal proof system is \define{sound} (relative to a given semantics) \emph{\ifeff}, whenever there is a formal proof of $\metav{C}$ from assumptions among $\Gamma$, then $\Gamma$ genuinely entails $\metav{C}$ (given that semantics). Otherwise put, to prove that TFL's proof system is sound, we need to prove the following

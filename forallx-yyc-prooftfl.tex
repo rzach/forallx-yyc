@@ -5,7 +5,7 @@
 
 \chapter{The very idea of natural deduction}\label{s:NDVeryIdea}
 
-Way back in \S\ref{s:Valid}, we said that an argument is valid \ifeff{} there is no case in which all of the premises are true and the conclusion is false.
+Way back in \cref{s:Valid}, we said that an argument is valid \ifeff{} there is no case in which all of the premises are true and the conclusion is false.
 
 In the case of TFL, this led us to develop truth tables. Each line of a complete truth table corresponds to a valuation. So, when faced with a TFL argument, we have a very direct way to assess whether there is a valuation on which the premises are true and the conclusion is false: just thrash through the truth table.
 
@@ -56,7 +56,7 @@ To test this argument for validity, you might use a 1{,}024-line truth table. If
 \fi
 This argument is also valid---as you can probably tell---but to test it requires a truth table with $2^{20} = 1{,}048{,}576$ lines. In principle, we can set a machine to grind through truth tables and report back when it is finished. In practice, complicated arguments in TFL can become \emph{intractable} if we use truth tables.
 
-When we get to first-order logic (FOL) (beginning in chapter \ref{s:FOLBuildingBlocks}), though, the problem gets dramatically worse. There is nothing like the truth table test for FOL. To assess whether or not an argument is valid, we have to reason about \emph{all} interpretations, but, as we will see, there are infinitely many possible interpretations. We cannot even in principle set a machine to grind through infinitely many possible interpretations and report back when it is finished: it will \emph{never} finish. We either need to come up with some more efficient way of reasoning about all interpretations, or we need to look for something different.
+When we get to first-order logic (FOL) (beginning in \cref{s:FOLBuildingBlocks}), though, the problem gets dramatically worse. There is nothing like the truth table test for FOL. To assess whether or not an argument is valid, we have to reason about \emph{all} interpretations, but, as we will see, there are infinitely many possible interpretations. We cannot even in principle set a machine to grind through infinitely many possible interpretations and report back when it is finished: it will \emph{never} finish. We either need to come up with some more efficient way of reasoning about all interpretations, or we need to look for something different.
 
 There are, indeed, systems that codify ways to reason about all possible interpretations. They were developed in the 1950s by Evert Beth and Jaakko Hintikka, but we will not follow this path. We will, instead, look to natural deduction.
 
@@ -122,7 +122,7 @@ Here is a general expression of the rule:
 \end{fitchproof}}
 The point is that, if any sentence $\metav{A}$ occurs on some line, then we can repeat $\metav{A}$ on later lines. Each line of our proof must be justified by some rule, and here we have `R $m$'. This means: Reiteration, applied to line~$m$.
 
-Two things need emphasizing. First `$\metav{A}$' is not a sentence of TFL. Rather, it a symbol in the metalanguage, which we use when we want to talk about any sentence of TFL (see \S\ref{s:UseMention}). Second, and similarly, `$m$' is not a symbol that will appear on a proof. Rather, it is a symbol in the metalanguage, which we use when we want to talk about any line number of a proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth. But when we define the rule, we use variables like `$m$' to underscore the point that the rule may be applied at any point.
+Two things need emphasizing. First `$\metav{A}$' is not a sentence of TFL. Rather, it a symbol in the metalanguage, which we use when we want to talk about any sentence of TFL (see \cref{s:UseMention}). Second, and similarly, `$m$' is not a symbol that will appear on a proof. Rather, it is a symbol in the metalanguage, which we use when we want to talk about any line number of a proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth. But when we define the rule, we use variables like `$m$' to underscore the point that the rule may be applied at any point.
 
 \section{Conjunction}
 Suppose we want to show that Ludwig is both reactionary and libertarian. One obvious way to do this would be as follows: first we show that Ludwig is reactionary; then we show that Ludwig is libertarian; then we put these two demonstrations together, to obtain the conjunction.
@@ -151,7 +151,7 @@ with the citation reversed, to reflect the order of the conjuncts. More generall
 	\have[n]{b}{\metav{B}}
 	\have[\ ]{c}{\metav{A}\eand\metav{B}} \ai{a, b}
 \end{fitchproof}}
-To be clear, the statement of the rule is \emph{schematic}. It is not itself a proof.  `$\metav{A}$' and `$\metav{B}$' are not sentences of TFL. Rather, they are symbols in the metalanguage, which we use when we want to talk about any sentence of TFL (see \S\ref{s:UseMention}). Similarly, `$m$' and `$n$' are not numerals that will appear in any actual proof. Rather, they are symbols in the metalanguage, which we use when we want to talk about any line number of any proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth, but when we define the rule, we use variables to emphasize that the rule may be applied at any point. The rule requires only that we have both conjuncts available to us somewhere earlier in the proof. They can be separated from one another, and they can appear in any order.
+To be clear, the statement of the rule is \emph{schematic}. It is not itself a proof.  `$\metav{A}$' and `$\metav{B}$' are not sentences of TFL. Rather, they are symbols in the metalanguage, which we use when we want to talk about any sentence of TFL (see \cref{s:UseMention}). Similarly, `$m$' and `$n$' are not numerals that will appear in any actual proof. Rather, they are symbols in the metalanguage, which we use when we want to talk about any line number of any proof. In an actual proof, the lines are numbered `$1$', `$2$', `$3$', and so forth, but when we define the rule, we use variables to emphasize that the rule may be applied at any point. The rule requires only that we have both conjuncts available to us somewhere earlier in the proof. They can be separated from one another, and they can appear in any order.
 
 The rule is called `conjunction \emph{introduction}' because it introduces the symbol `$\eand$' into our proof where it may have been absent. Correspondingly, we have a rule that \emph{eliminates} that symbol.  Suppose you have shown that Ludwig is both reactionary and libertarian. You are entitled to conclude that Ludwig is reactionary. Equally, you are entitled to conclude that Ludwig is libertarian. Putting this together, we obtain our conjunction elimination rule(s):
 \factoidbox{
@@ -192,7 +192,7 @@ So by applying the {\eand}I rule to lines 3 and 2 (in that order), we arrive at 
 \end{fitchproof}
 This is a very simple proof, but it shows how we can chain rules of proof together into longer proofs. In passing, note that investigating this argument with a truth table would have required 256 lines; our formal proof required only four lines.
 
-It is worth giving another example. Back in \S\ref{s:MoreBracketingConventions}, we noted that this argument is valid:
+It is worth giving another example. Back in \cref{s:MoreBracketingConventions}, we noted that this argument is valid:
 	$$A \eand (B \eand C) \therefore (A \eand B) \eand C$$
 To provide a proof corresponding to this argument, we start by writing:
 \begin{fitchproof}
@@ -242,9 +242,10 @@ This argument is certainly valid, and it suggests a straightforward conditional 
 This rule is also sometimes called \emph{modus ponens}. Again, this is an elimination rule, because it allows us to obtain a sentence that may not contain `$\eif$', having started with a sentence that did contain `$\eif$'. Note that the conditional $\metav{A}\eif\metav{B}$ and the antecedent~$\metav{A}$ can be separated from one another in the proof, and they can appear in any order. However, in the citation for $\eif$E, we always cite the conditional first, followed by the antecedent.
 
 The rule for conditional introduction is also quite easy to motivate. The following argument should be valid:
-	\begin{quote}
-		Ludwig is reactionary. Therefore if Ludwig is libertarian, then Ludwig is both reactionary \emph{and} libertarian.
-	\end{quote}
+	\begin{earg}
+		\item Ludwig is reactionary. 
+		\item[\texttherefore] If Ludwig is libertarian, then Ludwig is both reactionary \emph{and} libertarian.
+	\end{earg}
 If someone doubted that this was valid, we might try to convince them otherwise by explaining ourselves as follows:
 	\begin{quote}
 		Assume that Ludwig is reactionary. Now, \emph{additionally} assume that Ludwig is libertarian. Then by conjunction introduction---which we just discussed---Ludwig is both reactionary and libertarian. Of course, that's conditional on the assumption that Ludwig is libertarian. But this just means that, if Ludwig is libertarian, then he is both reactionary and libertarian.
@@ -558,7 +559,7 @@ Here is a proof corresponding to this argument:
 		\close
 	\have{con}{(A \eand B) \eor (A \eand C)}\oe{boc, b-abo, c-aco}
 	\end{fitchproof}
-Don't be alarmed if you think that you wouldn't have been able to come up with this proof yourself. The ability to come up with novel proofs comes with practice, and we'll cover some strategies for finding proofs in \S\ref{s:stratTFL}. The key question at this stage is whether, looking at the proof, you can see that it conforms to the rules that we have laid down. That just involves checking every line, and making sure that it is justified in accordance with the rules we have laid down.
+Don't be alarmed if you think that you wouldn't have been able to come up with this proof yourself. The ability to come up with novel proofs comes with practice, and we'll cover some strategies for finding proofs in \cref{s:stratTFL}. The key question at this stage is whether, looking at the proof, you can see that it conforms to the rules that we have laid down. That just involves checking every line, and making sure that it is justified in accordance with the rules we have laid down.
 
 
 \section{Contradiction and negation}
@@ -1170,7 +1171,7 @@ Use the strategies to find proofs for each one of the following arguments and se
 These all will require the IP strategy. The last three especially are quite hard!
 
 \chapter{Additional rules for TFL}\label{s:Further}
-In \S\ref{s:BasicTFL}, we introduced the basic rules of our proof system for TFL. In this section, we will add some additional rules to our system. Our extended proof system is a bit easier to work with. (However, in \S\ref{s:Derived} we will see that they are not strictly speaking \emph{necessary}.)
+In \cref{s:BasicTFL}, we introduced the basic rules of our proof system for TFL. In this section, we will add some additional rules to our system. Our extended proof system is a bit easier to work with. (However, in \cref{s:Derived} we will see that they are not strictly speaking \emph{necessary}.)
 
 % \section{Reiteration}
 % The first additional rule is \emph{reiteration} (R). This just allows us to repeat ourselves:
@@ -1178,7 +1179,7 @@ In \S\ref{s:BasicTFL}, we introduced the basic rules of our proof system for TFL
 % 	\have[m]{a}{\metav{A}}
 % 	\have[\ ]{b}{\metav{A}} \by{R}{a}
 % \end{fitchproof}}
-% Such a rule is obviously legitimate; we could have used it in our proof in \S\ref{sec:backred}:
+% Such a rule is obviously legitimate; we could have used it in our proof in \cref{sec:backred}:
 % \begin{fitchproof}
 % 	\hypo{1}{A \eor B}
 % 	\hypo{7}{\enot A}
@@ -1197,9 +1198,11 @@ In \S\ref{s:BasicTFL}, we introduced the basic rules of our proof system for TFL
 
 \section{Disjunctive syllogism}
 Here is a very natural argument form.
-	\begin{quote}
-		Elizabeth is either in Massachusetts or in DC. She is not in DC. So, she is in Massachusetts.
-	\end{quote}
+	\begin{earg}
+		\item Elizabeth is either in Massachusetts or in DC. 
+		\item She is not in DC. 
+		\item[\texttherefore] She is in Massachusetts.
+	\end{earg}
 This is called \emph{disjunctive syllogism}. We add it to our proof system as follows:
 \factoidbox{\begin{fitchproof}
 	\have[m]{ab}{\metav{A} \eor \metav{B}}
@@ -1216,9 +1219,12 @@ As usual, the disjunction and the negation of one disjunct may occur in either o
 
 \section{Modus tollens}
 Another useful pattern of inference is embodied in the following argument:
-	\begin{quote}
-		If Hilary has won the election, then she is in the White House. She is not in the White House. So she has not won the election.
-	\end{quote}
+	\begin{earg}
+		\item If Hilary has won the election, then she is in the White
+		House. 
+		\item She is not in the White House. 
+		\item[\texttherefore] She has not won the election.
+	\end{earg}
 This inference pattern is called \emph{modus tollens}. The corresponding rule is:
 \factoidbox{\begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eif\metav{B}}
@@ -1380,7 +1386,7 @@ In this chapter we will introduce some new vocabulary. The following expression:
 $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \proves \metav{C}$$
 means that there is some proof which ends with $\metav{C}$ whose undischarged assumptions are among $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$. When we want to say that it is \emph{not} the case that there is some proof which ends with $\metav{C}$ from $\metav{A}_1$, $\metav{A}_2$, \dots,~$\metav{A}_n$, we write:  $$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \nproves \metav{C}$$ 
 
-The symbol `$\proves$' is called the \emph{single turnstile}. We want to emphasize that this is not the {double turnstile} symbol (`$\entails$') that we introduced in chapter~\ref{s:SemanticConcepts} to symbolize entailment. The single turnstile, `$\proves$', concerns the existence of proofs; the double turnstile, `$\entails$', concerns the existence of valuations (or interpretations, when used for FOL). \emph{They are very different notions.}
+The symbol `$\proves$' is called the \emph{single turnstile}. We want to emphasize that this is not the {double turnstile} symbol (`$\entails$') that we introduced in \cref{s:SemanticConcepts} to symbolize entailment. The single turnstile, `$\proves$', concerns the existence of proofs; the double turnstile, `$\entails$', concerns the existence of valuations (or interpretations, when used for FOL). \emph{They are very different notions.}
 
 Armed with our `$\proves$' symbol, we can introduce some more terminology. To say that there is a proof of $\metav{A}$ with no undischarged assumptions, we write: ${} \proves \metav{A}$. In this case, we say that $\metav{A}$ is a \define{theorem}.
 	\factoidbox{\label{def:syntactic_tautology_in_sl}
@@ -1506,14 +1512,14 @@ If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}
 
 
 \chapter{Derived rules}\label{s:Derived}
-In this section, we will see why we introduced the rules of our proof system in two separate batches. In particular, we want to show that the additional rules of \S\ref{s:Further} are not strictly speaking necessary, but can be derived from the basic rules of \S\ref{s:BasicTFL}.
+In this section, we will see why we introduced the rules of our proof system in two separate batches. In particular, we want to show that the additional rules of \cref{s:Further} are not strictly speaking necessary, but can be derived from the basic rules of \cref{s:BasicTFL}.
 
 \section{Derivation of Reiteration}
 To illustrate what it means to derive a \emph{rule} from other rules, first consider reiteration. It is a basic rule of our system, but it is also not necessary. Suppose you have some sentence on some line of your deduction:
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
 \end{fitchproof}
-You now want to repeat yourself, on some line $k$. You could just invoke the rule~R. But equally well, you can do this with other basic rules of \S\ref{s:BasicTFL}:
+You now want to repeat yourself, on some line $k$. You could just invoke the rule~R. But equally well, you can do this with other basic rules of \cref{s:BasicTFL}:
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}}
 	\have[k]{aa}{\metav{A} \eand \metav{A}}\ai{a, a}
@@ -1521,7 +1527,7 @@ You now want to repeat yourself, on some line $k$. You could just invoke the rul
 \end{fitchproof}
 To be clear: this is not a proof. Rather, it is a proof \emph{scheme}. After all, it uses a variable, `$\metav{A}$', rather than a sentence of TFL, but the point is simple: Whatever sentences of TFL we plugged in for `$\metav{A}$', and whatever lines we were working on, we could produce a bona fide proof. So you can think of this as a recipe for producing proofs.
 
-Indeed, it is a recipe which shows us the following: anything we can prove using the rule R, we can prove (with one more line) using just the basic rules of \S\ref{s:BasicTFL} without~R. That is what it means to say that the rule~R can be derived from the other basic rules: anything that can be justified using~R can be justified using only the other basic rules.
+Indeed, it is a recipe which shows us the following: anything we can prove using the rule R, we can prove (with one more line) using just the basic rules of \cref{s:BasicTFL} without~R. That is what it means to say that the rule~R can be derived from the other basic rules: anything that can be justified using~R can be justified using only the other basic rules.
 
 
 \section{Derivation of Disjunctive Syllogism}
@@ -1530,7 +1536,7 @@ Suppose that you are in a proof, and you have something of this form:
 	\have[m]{ab}{\metav{A}\eor\metav{B}}
 	\have[n]{na}{\enot \metav{A}}
 \end{fitchproof}
-You now want, on line $k$, to prove $\metav{B}$. You can do this with the rule of DS, introduced in \S\ref{s:Further}, but equally well, you can do this with the \emph{basic} rules of \S\ref{s:BasicTFL}:
+You now want, on line $k$, to prove $\metav{B}$. You can do this with the rule of DS, introduced in \cref{s:Further}, but equally well, you can do this with the \emph{basic} rules of \cref{s:BasicTFL}:
 	\begin{fitchproof}
 		\have[m]{ab}{\metav{A}\eor\metav{B}}
 		\have[n]{na}{\enot \metav{A}}
@@ -1553,7 +1559,7 @@ Suppose you have the following in your proof:
 	\have[m]{ab}{\metav{A}\eif\metav{B}}
 	\have[n]{a}{\enot\metav{B}}
 \end{fitchproof}
-You now want, on line $k$, to prove $\enot \metav{A}$. You can do this with the rule of MT, introduced in \S\ref{s:Further}. Equally well, you can do this with the \emph{basic} rules of \S\ref{s:BasicTFL}:
+You now want, on line $k$, to prove $\enot \metav{A}$. You can do this with the rule of MT, introduced in \cref{s:Further}. Equally well, you can do this with the \emph{basic} rules of \cref{s:BasicTFL}:
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eif\metav{B}}
 	\have[n]{nb}{\enot\metav{B}}
@@ -1564,7 +1570,7 @@ You now want, on line $k$, to prove $\enot \metav{A}$. You can do this with the 
 		\close
 	\have{no}{\enot\metav{A}}\ni{a-nb1}
 \end{fitchproof}
-Again, the rule of MT can be derived from the \emph{basic} rules of \S\ref{s:BasicTFL}.
+Again, the rule of MT can be derived from the \emph{basic} rules of \cref{s:BasicTFL}.
 
 \section{Derivation of Double-Negation Elimination}
 Consider the following deduction scheme:
@@ -1576,7 +1582,7 @@ Consider the following deduction scheme:
 	\close
 	\have{con}{\metav{A}}\ip{a-a1}
 \end{fitchproof}
-Again,  we can derive the DNE rule from the \emph{basic} rules of \S\ref{s:BasicTFL}.
+Again,  we can derive the DNE rule from the \emph{basic} rules of \cref{s:BasicTFL}.
 
 \section{Derivation of Excluded Middle}
 Suppose you want to prove something using the LEM rule, i.e., you have in your proof
@@ -1591,8 +1597,8 @@ Suppose you want to prove something using the LEM rule, i.e., you have in your p
   \close
 \end{fitchproof}
 You now want, on line $l+1$, to prove $\metav{B}$. The rule LEM from
-\S\ref{s:Further} would allow you to do it. But can you do this with
-the \emph{basic} rules of \S\ref{s:BasicTFL}?
+\cref{s:Further} would allow you to do it. But can you do this with
+the \emph{basic} rules of \cref{s:BasicTFL}?
 
 One option is to first prove $\metav{A} \eor \enot\metav{A}$, and then apply $\eor$E, i.e., proof by cases:
 \begin{fitchproof}
@@ -1608,7 +1614,7 @@ One option is to first prove $\metav{A} \eor \enot\metav{A}$, and then apply $\e
   \have[i]{tnd}{\metav{A} \eor \enot \metav{A}}
   \have[i+1]{fin}{\metav{B}}\oe{tnd, a-aaa,b-bbb}
 \end{fitchproof}
-(We gave a proof of $\metav{A} \eor \enot\metav{A}$ using only our basic rules in \S\ref{s:proofLEM}.)
+(We gave a proof of $\metav{A} \eor \enot\metav{A}$ using only our basic rules in \cref{s:proofLEM}.)
 
 Here is another way that is a bit more complicated than the ones before. What you have to do is embed your two subproofs inside another subproof. The assumption of the subproof will be $\enot \metav{B}$, and the last line will be $\ered$. Thus, the complete subproof is the kind you need to conclude \metav{B} using IP. Inside the proof, you'd have to do a bit more work to get~$\ered$:
 \begin{fitchproof}
@@ -1686,7 +1692,7 @@ Provide proof schemes that justify the addition of the third and fourth De Morga
 \
 
 \problempart
-The proofs you offered in response to the practice exercises of \S\S\ref{s:Further}--\ref{s:ProofTheoreticConcepts} used derived rules. Replace the use of derived rules, in such proofs, with only basic rules. You will find some `repetition' in the resulting proofs; in such cases, offer a streamlined proof using only basic rules.  (This will give you a sense, both of the power of derived rules, and of how all the rules interact.)
+The proofs you offered in response to the practice exercises of \crefrange{s:Further}{s:ProofTheoreticConcepts} used derived rules. Replace the use of derived rules, in such proofs, with only basic rules. You will find some `repetition' in the resulting proofs; in such cases, offer a streamlined proof using only basic rules.  (This will give you a sense, both of the power of derived rules, and of how all the rules interact.)
 
 \
 
@@ -1715,11 +1721,11 @@ Give a proof of the first De Morgan rule, but using only the basic rules, in par
 \chapter{Soundness and completeness}
 \label{sec:soundness_and_completeness}
 
-In \S\ref{s:ProofTheoreticConcepts}, we saw that we could use derivations to test for the same concepts we used truth tables to test for. Not only could we use derivations to prove that an argument is valid, we could also use them to test if a sentence is a tautology or a pair of sentences are equivalent. We also started using the single turnstile the same way we used the double turnstile. If we could prove that \metav{A} was a tautology using a truth table, we wrote $\entails \metav{A}$, and if we could prove it using a derivation, we wrote $\proves \metav{A}$.
+In \cref{s:ProofTheoreticConcepts}, we saw that we could use derivations to test for the same concepts we used truth tables to test for. Not only could we use derivations to prove that an argument is valid, we could also use them to test if a sentence is a tautology or a pair of sentences are equivalent. We also started using the single turnstile the same way we used the double turnstile. If we could prove that \metav{A} was a tautology using a truth table, we wrote $\entails \metav{A}$, and if we could prove it using a derivation, we wrote $\proves \metav{A}$.
 
 You may have wondered at that point if the two kinds of turnstiles always worked the same way. If you can show that \metav{A} is a tautology using truth tables, can you also always show that it is a theorem using a derivation? Is the reverse true? Are these things also true for valid arguments and pairs of equivalent sentences? As it turns out, the answer to all these questions and many more like them is yes. We can show this by defining all these concepts separately and then proving them equivalent. That is, we imagine that we actually have two notions of validity, valid$_{\entails}$ and  valid$_{\proves}$ and then show that the two concepts always work the same way.
 
-To begin with, we need to define all of our logical concepts separately for truth tables and derivations. A lot of this work has already been done. We handled all of the truth table definitions in \S\ref{s:SemanticConcepts}. We have also already given proof-theoretic definitions for theorems and pairs of logically equivalent sentences. The other definitions follow naturally. For most logical properties we can devise a test using derivations, and those that we cannot test for directly can be defined in terms of the concepts that we can define.
+To begin with, we need to define all of our logical concepts separately for truth tables and derivations. A lot of this work has already been done. We handled all of the truth table definitions in \cref{s:SemanticConcepts}. We have also already given proof-theoretic definitions for theorems and pairs of logically equivalent sentences. The other definitions follow naturally. For most logical properties we can devise a test using derivations, and those that we cannot test for directly can be defined in terms of the concepts that we can define.
 
 For instance, we defined a theorem as a sentence that can be derived
 without any premises (p.~\pageref{def:syntactic_tautology_in_sl}).
@@ -1740,7 +1746,7 @@ theorem nor an inconsistent sentence.
 A collection of sentences is \define{inconsistent in TFL} \label{def:syntactically_inconsistent_ in_sl} if and only if one can derive the contradiction~$\ered$ from them. Consistency, on the other hand, is like contingency, in that we do not have a practical finite method to test for it directly. So again, we have to define a term negatively. A collection of sentences is \define{consistent in TFL} \label{def:syntactically consistent in SL} if and only if they are not inconsistent.
     
 
-Finally, an argument is \define{provably valid in TFL} \label{def:syntactically_valid_in_SL} if and only if there is a derivation of its conclusion from its premises. All of these definitions are given in Table \ref{table:truth_tables_or_derivations}.
+Finally, an argument is \define{provably valid in TFL} \label{def:syntactically_valid_in_SL} if and only if there is a derivation of its conclusion from its premises. All of these definitions are given in \cref{table:truth_tables_or_derivations}.
 
 \def\tmptable{\textbf{Concept} 		&	\textbf{Truth table (semantic) definition} 	&	\textbf{Proof-theoretic (syntactic) definition} \\ \hline \hline
 
@@ -1852,7 +1858,7 @@ In order to show that the proof system is sound, we would need to show
 this for the other inference rules. Since the derived rules are
 consequences of the basic rules, it would suffice to provide similar
 arguments for the 11 other basic rules. You can find the details of
-this proof worked out in chapter~\ref{ch:Soundness}.
+this proof worked out in \cref{ch:Soundness}.
 
 So we have shown that $\metav{A} \proves \metav{B}$ implies $\metav{A} \entails \metav{B}.$ What about the other direction, that is, why think that \emph{every} argument that can be shown valid using truth tables can also be proven using a derivation? 
 
@@ -1866,7 +1872,7 @@ This is the problem of completeness. A proof system has the property of  \define
 
 Now that we know that the truth table method is interchangeable with the method of derivations, you can chose which method you want to use for any given problem. Students often prefer to use truth tables, because they can be produced  purely mechanically, and that seems `easier'. However, we have already seen that truth tables become impossibly large after just a few sentence letters. On the other hand, there are a couple situations where using proofs simply isn't possible. We syntactically defined a contingent sentence as a sentence that couldn't be proven to be a tautology or a contradiction. There is no practical way to prove this kind of negative statement. We will never know if there isn't some proof out there that a statement is a contradiction and we just haven't found it yet. We have nothing to do in this situation but resort to truth tables. Similarly, we can use derivations to prove two sentences equivalent, but what if we want to prove that they are \emph{not} equivalent? We have no way of proving that we will never find the relevant proof. So we have to fall back on truth tables again.
 
-Table \ref{table.ProofOrModel} summarizes when it is best to give proofs 
+\Cref{table.ProofOrModel} summarizes when it is best to give proofs 
 and when it is best to give truth tables.
 
 \def\tmptable{\textbf{Logical property} 	&	\textbf{To prove it present} 	&	\textbf{To prove it absent} \\ \hline \hline

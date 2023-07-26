@@ -50,7 +50,7 @@ This valid argument has a structure which we might represent thus:
 	\end{earg}
 These examples illustrate an important idea, which we might describe as \emph{validity in virtue of form}. The validity of the arguments just considered has nothing very much to do with the meanings of English expressions like `Jenny is miserable', `Dipan is an avid reader of Tolstoy', or `Jim acted in lots of plays'. If it has to do with meanings at all, it is with the meanings of phrases like `and', `or', `not,' and `if \ldots, then \ldots'.
 
-In Parts \ref{ch.TFL}--\ref{ch.NDTFL}, we are going to develop a formal language which allows us to symbolize many arguments in such a way as to show that they are valid in virtue of their form. That language will be \emph{truth-functional logic}, or TFL.
+In \crefrange{ch.TFL}{ch.NDTFL}, we are going to develop a formal language which allows us to symbolize many arguments in such a way as to show that they are valid in virtue of their form. That language will be \emph{truth-functional logic}, or TFL.
 
 \section{Validity for special reasons}
 There are plenty of arguments that are valid, but not for reasons relating to their form. Take an example:
@@ -79,7 +79,7 @@ The important moral can be stated as follows. \emph{At best, TFL will help us to
 
 \section{Atomic sentences}
 
-We started isolating the form of an argument, in \S\ref{s:ValidityInVirtueOfForm}, by replacing  \emph{subsentences} of sentences with individual letters. Thus in the first example of this section, `it is raining outside' is a subsentence of `If it is raining outside, then Jenny is miserable', and we replaced this subsentence with `$A$'.
+We started isolating the form of an argument, in \cref{s:ValidityInVirtueOfForm}, by replacing  \emph{subsentences} of sentences with individual letters. Thus in the first example of this section, `it is raining outside' is a subsentence of `If it is raining outside, then Jenny is miserable', and we replaced this subsentence with `$A$'.
 
 Our artificial language, TFL, pursues this idea absolutely ruthlessly. We start with some \emph{sentence letters}. These will be the basic building blocks out of which more complex sentences are built. We will use single uppercase letters as sentence letters of TFL. There are only twenty-six letters of the alphabet, but there is no limit to the number of sentence letters that we might want to consider. By adding subscripts to letters, we obtain new sentence letters. So, here are five different sentence letters of TFL:
 	$$A, P, P_1, P_2, A_{234}$$
@@ -148,13 +148,13 @@ Consider how we might symbolize these sentences:
 	\item\label{not2} It is not the case that Mary is in Barcelona.
 	\item\label{not3} Mary is not in Barcelona.
 	\end{enumerate}
-In order to symbolize sentence \ref{not1}, we will need a sentence letter. We might offer this symbolization key:
+In order to symbolize \cref*{not1}, we will need a sentence letter. We might offer this symbolization key:
 	\begin{ekey}
 		\item[B] Mary is in Barcelona.
 	\end{ekey}
-Since sentence \ref{not2} is obviously related to sentence \ref{not1}, we will not want to symbolize it with a completely different sentence letter. Roughly, sentence \ref{not2} means something like `It is not the case that~$B$'. In order to symbolize this, we need a symbol for negation. We will use `\enot'. Now we can symbolize sentence \ref{not2} with `$\enot B$'.
+Since \cref*{not2} is obviously related to \cref*{not1}, we will not want to symbolize it with a completely different sentence letter. Roughly, \cref*{not2} means something like `It is not the case that~$B$'. In order to symbolize this, we need a symbol for negation. We will use `\enot'. Now we can symbolize \cref*{not2} with `$\enot B$'.
 
-Sentence \ref{not3} also contains the word `not', and it is obviously equivalent to sentence \ref{not2}. As such, we can also symbolize it with `$\enot B$'.
+\Cref*{not3} also contains the word `not', and it is obviously equivalent to \cref*{not2}. As such, we can also symbolize it with `$\enot B$'.
 \factoidbox{
 A sentence can be symbolized as $\enot\metav{A}$ if it can be paraphrased in English as `It is not the case that\ldots'.
 }
@@ -168,16 +168,16 @@ Let us use the following representation key:
 	\begin{ekey}
 		\item[R] The widget is replaceable
 	\end{ekey}
-Sentence \ref{not4} can now be symbolized by `$R$'. Moving on to sentence \ref{not5}: saying the widget is irreplaceable means that it is not the case that the widget is replaceable. So even though sentence \ref{not5} does not contain the word `not', we will symbolize it as follows: `$\enot R$'.
+\Cref*{not4} can now be symbolized by `$R$'. Moving on to \cref*{not5}: saying the widget is irreplaceable means that it is not the case that the widget is replaceable. So even though \cref*{not5} does not contain the word `not', we will symbolize it as follows: `$\enot R$'.
 
-Sentence \ref{not5b} can be paraphrased as `It is not the case that the widget is irreplaceable.' Which can again be paraphrased as `It is not the case that it is not the case that the widget is replaceable'. So we might symbolize this English sentence with the TFL sentence `$\enot\enot R$'.
+\Cref*{not5b} can be paraphrased as `It is not the case that the widget is irreplaceable.' Which can again be paraphrased as `It is not the case that it is not the case that the widget is replaceable'. So we might symbolize this English sentence with the TFL sentence `$\enot\enot R$'.
 
 But some care is needed when handling negations. Consider:
 	\begin{enumerate}
 		\item\label{not6} Jane is happy.
 		\item\label{not7} Jane is unhappy.
 	\end{enumerate}
-If we let the TFL-sentence `$H$' symbolize  `Jane is happy', then we can symbolize sentence \ref{not6} as `$H$'. However, it would be a mistake to symbolize sentence \ref{not7} with `$\enot{H}$'. If Jane is unhappy, then she is not happy; but sentence \ref{not7} does not mean the same thing as `It is not the case that Jane is happy'. Jane might be neither happy nor unhappy; she might be in a state of blank indifference. In order to symbolize sentence \ref{not7}, then, we would need a new sentence letter of TFL.
+If we let the TFL-sentence `$H$' symbolize  `Jane is happy', then we can symbolize \cref*{not6} as `$H$'. However, it would be a mistake to symbolize \cref*{not7} with `$\enot{H}$'. If Jane is unhappy, then she is not happy; but \cref*{not7} does not mean the same thing as `It is not the case that Jane is happy'. Jane might be neither happy nor unhappy; she might be in a state of blank indifference. In order to symbolize \cref*{not7}, then, we would need a new sentence letter of TFL.
 \newglossaryentry{negation}
 {
 name=negation,
@@ -193,12 +193,12 @@ Consider these sentences:
 		\item\label{and2}Barbara is athletic.
 		\item\label{and3}Adam is athletic, and also Barbara is athletic.
 	\end{enumerate}
-We will need separate sentence letters of TFL to symbolize sentences \ref{and1} and \ref{and2}; perhaps
+We will need separate sentence letters of TFL to symbolize \cref*{and1,and2}; perhaps
 	\begin{ekey}
 		\item[A] Adam is athletic.
 		\item[B] Barbara is athletic.
 	\end{ekey}
-Sentence \ref{and1} can now be symbolized as `$A$', and sentence \ref{and2} can be symbolized as `$B$'. Sentence \ref{and3} roughly says `A and B'. We need another symbol, to deal with `and'. We will use `\eand'. Thus we will symbolize it as `$(A\eand B)$'. This connective is called \define{conjunction}. We also say that `$A$' and `$B$' are the two \define{conjuncts} of the conjunction `$(A \eand B)$'.
+\Cref*{and1} can now be symbolized as `$A$', and \cref*{and2} can be symbolized as `$B$'. \Cref*{and3} roughly says `A and B'. We need another symbol, to deal with `and'. We will use `\eand'. Thus we will symbolize it as `$(A\eand B)$'. This connective is called \define{conjunction}. We also say that `$A$' and `$B$' are the two \define{conjuncts} of the conjunction `$(A \eand B)$'.
 \newglossaryentry{conjunction}
 {
 name=conjunction,
@@ -212,7 +212,7 @@ description={A sentence joined to another by a \gls{conjunction}}
 }
 
 
-Notice that we make no attempt to symbolize the word `also' in sentence \ref{and3}. Words like `both' and `also' function to draw our attention to the fact that two things are being conjoined. Maybe they affect the emphasis of a sentence, but we will not (and cannot) symbolize such things in TFL.
+Notice that we make no attempt to symbolize the word `also' in \cref*{and3}. Words like `both' and `also' function to draw our attention to the fact that two things are being conjoined. Maybe they affect the emphasis of a sentence, but we will not (and cannot) symbolize such things in TFL.
 
 Some more examples will bring out this point:
 	\begin{enumerate}
@@ -221,13 +221,13 @@ Some more examples will bring out this point:
 		\item\label{and6}Although Barbara is energetic, she is not athletic.
 	\item\label{and7}Adam is athletic, but Barbara is more athletic than him.
 	\end{enumerate}
-Sentence \ref{and4} is obviously a conjunction. The sentence says two things (about Barbara). In English, it is permissible to refer to Barbara only once. It \emph{might} be tempting to think that we need to symbolize sentence \ref{and4} with something along the lines of `$B$ and energetic'. This would be a mistake. Once we symbolize part of a sentence as `$B$', any further structure is lost, as `$B$' is a sentence letter of TFL. Conversely, `energetic' is not an English sentence at all. What we are aiming for is something like `$B$ and Barbara is energetic'. So we need to add another sentence letter to the symbolization key. Let `$E$' symbolize `Barbara is energetic'. Now the entire sentence can be symbolized as `$(B\eand E)$'.
+\Cref*{and4} is obviously a conjunction. The sentence says two things (about Barbara). In English, it is permissible to refer to Barbara only once. It \emph{might} be tempting to think that we need to symbolize \cref*{and4} with something along the lines of `$B$ and energetic'. This would be a mistake. Once we symbolize part of a sentence as `$B$', any further structure is lost, as `$B$' is a sentence letter of TFL. Conversely, `energetic' is not an English sentence at all. What we are aiming for is something like `$B$ and Barbara is energetic'. So we need to add another sentence letter to the symbolization key. Let `$E$' symbolize `Barbara is energetic'. Now the entire sentence can be symbolized as `$(B\eand E)$'.
 
-Sentence \ref{and5} says one thing about two different subjects. It says of both Barbara and Adam that they are athletic, even though in English we use the word `athletic' only once. The sentence can be paraphrased as `Barbara is athletic, and Adam is athletic'. We can symbolize this in TFL as `$(B\eand A)$', using the same symbolization key that we have been using.
+\Cref*{and5} says one thing about two different subjects. It says of both Barbara and Adam that they are athletic, even though in English we use the word `athletic' only once. The sentence can be paraphrased as `Barbara is athletic, and Adam is athletic'. We can symbolize this in TFL as `$(B\eand A)$', using the same symbolization key that we have been using.
 
-Sentence \ref{and6} is slightly more complicated. The word `although' sets up a contrast between the first part of the sentence and the second part. Nevertheless, the sentence tells us both that Barbara is energetic and that she is not athletic. In order to make each of the conjuncts a sentence letter, we need to replace `she' with `Barbara'. So we can paraphrase sentence \ref{and6} as, `\emph{Both} Barbara is energetic, \emph{and} Barbara is not athletic'. The second conjunct contains a negation, so we paraphrase further: `\emph{Both} Barbara is energetic \emph{and} \emph{it is not the case that} Barbara is athletic'. Now we can symbolize this with the TFL sentence `$(E\eand\enot B)$'. Note that we have lost all sorts of nuance in this symbolization. There is a distinct difference in tone between sentence \ref{and6} and `Both Barbara is energetic and it is not the case that Barbara is athletic'. TFL does not (and cannot) preserve these nuances.
+\Cref{and6} is slightly more complicated. The word `although' sets up a contrast between the first part of the sentence and the second part. Nevertheless, the sentence tells us both that Barbara is energetic and that she is not athletic. In order to make each of the conjuncts a sentence letter, we need to replace `she' with `Barbara'. So we can paraphrase \cref*{and6} as, `\emph{Both} Barbara is energetic, \emph{and} Barbara is not athletic'. The second conjunct contains a negation, so we paraphrase further: `\emph{Both} Barbara is energetic \emph{and} \emph{it is not the case that} Barbara is athletic'. Now we can symbolize this with the TFL sentence `$(E\eand\enot B)$'. Note that we have lost all sorts of nuance in this symbolization. There is a distinct difference in tone between \cref*{and6} and `Both Barbara is energetic and it is not the case that Barbara is athletic'. TFL does not (and cannot) preserve these nuances.
 
-Sentence \ref{and7} raises similar issues. There is a contrastive structure, but this is not something that TFL can deal with. So we can paraphrase the sentence as `\emph{Both} Adam is athletic, \emph{and} Barbara is more athletic than Adam'. (Notice that we once again replace the pronoun `him' with `Adam'.) How should we deal with the second conjunct? We already have the sentence letter `$A$', which is being used to symbolize `Adam is athletic', and the sentence `$B$' which is being used to symbolize `Barbara is athletic'; but neither of these concerns their relative athleticity. So, to symbolize the entire sentence, we need a new sentence letter. Let the TFL sentence `$R$' symbolize the English sentence `Barbara is more athletic than Adam'. Now we can symbolize sentence \ref{and7} by `$(A \eand R)$'.
+\Cref{and7} raises similar issues. There is a contrastive structure, but this is not something that TFL can deal with. So we can paraphrase the sentence as `\emph{Both} Adam is athletic, \emph{and} Barbara is more athletic than Adam'. (Notice that we once again replace the pronoun `him' with `Adam'.) How should we deal with the second conjunct? We already have the sentence letter `$A$', which is being used to symbolize `Adam is athletic', and the sentence `$B$' which is being used to symbolize `Barbara is athletic'; but neither of these concerns their relative athleticity. So, to symbolize the entire sentence, we need a new sentence letter. Let the TFL sentence `$R$' symbolize the English sentence `Barbara is more athletic than Adam'. Now we can symbolize \cref*{and7} by `$(A \eand R)$'.
 	\factoidbox{
 		A sentence can be symbolized as $(\metav{A}\eand\metav{B})$ if it can be paraphrased in English as `Both\ldots, and\ldots', or as `\ldots, but \ldots', or as `although \ldots, \ldots'.
 	}
@@ -236,14 +236,14 @@ You might be wondering why we put brackets around the conjunctions. The reason c
 		\item\label{negcon1} It's not the case that you will get both soup and salad.
 		\item\label{negcon2} You will not get soup but you will get salad.
 	\end{enumerate}
-Sentence \ref{negcon1} can be paraphrased as `It is not the case that: both you will get soup and you will get salad'. Using this symbolization key:
+\Cref*{negcon1} can be paraphrased as `It is not the case that: both you will get soup and you will get salad'. Using this symbolization key:
 	\begin{ekey}
 		\item[\ensuremath{S_1}] You will get soup.
 		\item[\ensuremath{S_2}] You will get salad.
 	\end{ekey}
-we would symbolize `both you will get soup and you will get salad' as `$(S_1 \eand S_2)$'. To symbolize sentence \ref{negcon1}, then, we simply negate the whole sentence, thus: `$\enot (S_1 \eand S_2)$'.
+we would symbolize `both you will get soup and you will get salad' as `$(S_1 \eand S_2)$'. To symbolize \cref*{negcon1}, then, we simply negate the whole sentence, thus: `$\enot (S_1 \eand S_2)$'.
 
-Sentence \ref{negcon2} is a conjunction: you \emph{will not} get soup, and you \emph{will} get salad. `You will not get soup' is symbolized by `$\enot S_1$'. So to symbolize sentence \ref{negcon2} itself, we offer `$(\enot S_1 \eand S_2)$'.
+\Cref*{negcon2} is a conjunction: you \emph{will not} get soup, and you \emph{will} get salad. `You will not get soup' is symbolized by `$\enot S_1$'. So to symbolize \cref*{negcon2} itself, we offer `$(\enot S_1 \eand S_2)$'.
 
 These English sentences are very different, and their symbolizations differ accordingly. In one of them, the entire conjunction is negated. In the other, just one conjunct is negated. Brackets help us to keep track of things like the \emph{scope} of the negation.
 
@@ -260,7 +260,7 @@ For these sentences we can use this symbolization key:
 		\item[O] Omar will play videogames.
 		\item[M] Fatima will watch movies.
 	\end{ekey}
-However, we will again need to introduce a new symbol. Sentence \ref{or1} is symbolized by `$(F \eor M)$'. The connective is called \define{disjunction}. We also say that `$F$' and `$M$' are the \define{disjuncts} of the disjunction `$(F \eor M)$'.
+However, we will again need to introduce a new symbol. \Cref*{or1} is symbolized by `$(F \eor M)$'. The connective is called \define{disjunction}. We also say that `$F$' and `$M$' are the \define{disjuncts} of the disjunction `$(F \eor M)$'.
 
 \newglossaryentry{disjunction}
 {
@@ -274,13 +274,13 @@ name=disjunct,
 description={A sentence joined to another by a \gls{disjunction}}
 }
 
-Sentence \ref{or2} is only slightly more complicated. There are two subjects, but the English sentence only gives the verb once. However, we can paraphrase sentence \ref{or2} as `Either Fatima will play videogames, or Omar will play videogames'. Now we can obviously symbolize it by `$(F \eor O)$' again.
+\Cref*{or2} is only slightly more complicated. There are two subjects, but the English sentence only gives the verb once. However, we can paraphrase \cref*{or2} as `Either Fatima will play videogames, or Omar will play videogames'. Now we can obviously symbolize it by `$(F \eor O)$' again.
 	\factoidbox{
 		A sentence can be symbolized as $(\metav{A}\eor\metav{B})$ if it can be paraphrased in English as `Either\ldots, or\ldots.'
 	}
 Sometimes in English, the word `or' is used in a way that excludes the possibility that both disjuncts are true. This is called an \define{exclusive or}.  An \emph{exclusive or} is clearly intended when it says, on a restaurant menu, `Entrees come with either soup or salad': you may have soup; you may have salad; but, if you want \emph{both} soup \emph{and} salad, then you have to pay extra.
 
-At other times, the word `or' allows for the possibility that both disjuncts might be true. This is probably the case with sentence \ref{or2}, above. Fatima might play videogames alone, Omar might play videogames alone, or they might both play. Sentence~\ref{or2} merely says that \emph{at least} one of them plays videogames. This is an \define{inclusive or}. The TFL symbol `\eor' always symbolizes an \emph{inclusive or}.
+At other times, the word `or' allows for the possibility that both disjuncts might be true. This is probably the case with \cref{or2}, above. Fatima might play videogames alone, Omar might play videogames alone, or they might both play. \Cref*{or2} merely says that \emph{at least} one of them plays videogames. This is an \define{inclusive or}. The TFL symbol `\eor' always symbolizes an \emph{inclusive or}.
 
 It will also help to see how negation interacts with disjunction. Consider: 
 	\begin{enumerate}
@@ -288,11 +288,11 @@ It will also help to see how negation interacts with disjunction. Consider:
 		\item\label{or4} You will have neither soup nor salad.
 		\item\label{or.xor} You get either soup or salad, but not both.
 	\end{enumerate}
-Using the same symbolization key as before, sentence \ref{or3} can be paraphrased in this way: `\emph{Either} it is not the case that you get soup, \emph{or} it is not the case that you get salad'. To symbolize this in TFL, we need both disjunction and negation. `It is not the case that you get soup' is symbolized by `$\enot S_1$'. `It is not the case that you get salad' is symbolized by `$\enot S_2$'. So sentence \ref{or3} itself is symbolized by `$(\enot S_1 \eor \enot S_2)$'.
+Using the same symbolization key as before, \cref*{or3} can be paraphrased in this way: `\emph{Either} it is not the case that you get soup, \emph{or} it is not the case that you get salad'. To symbolize this in TFL, we need both disjunction and negation. `It is not the case that you get soup' is symbolized by `$\enot S_1$'. `It is not the case that you get salad' is symbolized by `$\enot S_2$'. So \cref*{or3} itself is symbolized by `$(\enot S_1 \eor \enot S_2)$'.
 
-Sentence \ref{or4} also requires negation. It can be paraphrased as, `\emph{It is not the case that:} either you get soup or you get salad'. Since this negates the entire disjunction, we symbolize sentence \ref{or4} with `$\enot (S_1 \eor S_2)$'.
+\Cref{or4} also requires negation. It can be paraphrased as, `\emph{It is not the case that:} either you get soup or you get salad'. Since this negates the entire disjunction, we symbolize \cref*{or4} with `$\enot (S_1 \eor S_2)$'.
 
-Sentence \ref{or.xor} is an \emph{exclusive or}. We can break the sentence into two parts. The first part says that you get one or the other. We symbolize this as `$(S_1 \eor S_2)$'. The second part says that you do not get both. We can paraphrase this as: `It is not the case both that you get soup and that you get salad'. Using both negation and conjunction, we symbolize this with `$\enot(S_1 \eand S_2)$'. Now we just need to put the two parts together. As we saw above, `but' can usually be symbolized with `$\eand$'. So sentence \ref{or.xor} can be symbolized as `$((S_1 \eor S_2) \eand \enot(S_1 \eand S_2))$'.
+\Cref{or.xor} is an \emph{exclusive or}. We can break the sentence into two parts. The first part says that you get one or the other. We symbolize this as `$(S_1 \eor S_2)$'. The second part says that you do not get both. We can paraphrase this as: `It is not the case both that you get soup and that you get salad'. Using both negation and conjunction, we symbolize this with `$\enot(S_1 \eand S_2)$'. Now we just need to put the two parts together. As we saw above, `but' can usually be symbolized with `$\eand$'. So \cref*{or.xor} can be symbolized as `$((S_1 \eor S_2) \eand \enot(S_1 \eand S_2))$'.
 
 This last example shows something important. Although the TFL symbol `\eor' always symbolizes \emph{inclusive or}, we can symbolize an \emph{exclusive or} in {TFL}. We just have to use a few other symbols as well.
 
@@ -307,7 +307,7 @@ Let's use the following symbolization key:
 		\item[P] Jean is in Paris.
 		\item[F] Jean is in France
 	\end{ekey}
-Sentence \ref{if1} is roughly of this form: `if $P$, then $F$'. We will use the symbol `\eif' to symbolize this `if\ldots, then\ldots' structure. So we symbolize sentence \ref{if1} by `$(P\eif F)$'. The connective is called \define{the conditional}. Here, `$P$' is called the \define{antecedent} of the conditional `$(P \eif F)$', and `$F$' is called the \define{consequent}.
+\Cref*{if1} is roughly of this form: `if $P$, then $F$'. We will use the symbol `\eif' to symbolize this `if\ldots, then\ldots' structure. So we symbolize \cref*{if1} by `$(P\eif F)$'. The connective is called \define{the conditional}. Here, `$P$' is called the \define{antecedent} of the conditional `$(P \eif F)$', and `$F$' is called the \define{consequent}.
 
 \newglossaryentry{conditional}
 {
@@ -328,9 +328,9 @@ name=consequent,
 description={The sentence on the right side of a \gls{conditional}}
 }
 
-Sentence \ref{if2} is also a conditional. Since the word `if' appears in the second half of the sentence, it might be tempting to symbolize this in the same way as sentence \ref{if1}. That would be a mistake. Your knowledge of geography tells you that sentence \ref{if1} is unproblematically true: there is no way for Jean to be in Paris that doesn't involve Jean being in France. But sentence \ref{if2} is not so straightforward: were  Jean in Dieppe, Lyon, or Toulouse, Jean would be in France without being in Paris, thereby rendering sentence \ref{if2} false. Since geography alone dictates the truth of sentence \ref{if1}, whereas travel plans (say) are needed to know the truth of sentence \ref{if2}, they must mean different things.
+\Cref{if2} is also a conditional. Since the word `if' appears in the second half of the sentence, it might be tempting to symbolize this in the same way as \cref*{if1}. That would be a mistake. Your knowledge of geography tells you that \cref*{if1} is unproblematically true: there is no way for Jean to be in Paris that doesn't involve Jean being in France. But \cref*{if2} is not so straightforward: were  Jean in Dieppe, Lyon, or Toulouse, Jean would be in France without being in Paris, thereby rendering \cref*{if2} false. Since geography alone dictates the truth of \cref*{if1}, whereas travel plans (say) are needed to know the truth of \cref*{if2}, they must mean different things.
 
-In fact, sentence \ref{if2} can be paraphrased as `If Jean is in France, then Jean is in Paris'. So we can symbolize it by `$(F \eif P)$'.
+In fact, \cref*{if2} can be paraphrased as `If Jean is in France, then Jean is in Paris'. So we can symbolize it by `$(F \eif P)$'.
 	\factoidbox{
 		A sentence can be symbolized as $(\metav{A} \eif \metav{B})$ if it can be paraphrased in English as `If A, then B' or `A only if B'.
 	}
@@ -342,7 +342,7 @@ In fact, sentence \ref{if2} can be paraphrased as `If Jean is in France, then Je
 	\end{enumerate}
 If we think about it, all four of these sentences mean the same as  `If Jean is in Paris, then Jean is in France'. So they can all be symbolized by `$(P \eif F)$'.
 
-It is important to bear in mind that the connective `\eif' tells us only that, if the antecedent is true, then the consequent is true. It says nothing about a \emph{causal} connection between two events (for example). In fact, we lose a huge amount when we use `$\eif$' to symbolize English conditionals. We will return to this in \S\ref{s:IndicativeSubjunctive} and~\S\ref{s:ParadoxesOfMaterialConditional}.
+It is important to bear in mind that the connective `\eif' tells us only that, if the antecedent is true, then the consequent is true. It says nothing about a \emph{causal} connection between two events (for example). In fact, we lose a huge amount when we use `$\eif$' to symbolize English conditionals. We will return to this in \cref{s:IndicativeSubjunctive} and~\cref{s:ParadoxesOfMaterialConditional}.
 
 \section{Biconditional}
 Consider these sentences:
@@ -356,10 +356,10 @@ We will use the following symbolization key:
 		\item[D] Laika is a dog
 		\item[M] Laika is a mammal
 	\end{ekey}
-For reasons discussed above, sentence \ref{iff1} can be symbolized by `$(D \eif M)$'.
+For reasons discussed above, \cref*{iff1} can be symbolized by `$(D \eif M)$'.
 
 
-Sentence \ref{iff3} says something stronger than either \ref{iff1} or \ref{iff2}. It can be paraphrased as `Laika is a dog if Laika is a mammal, and Laika is a dog only if Laika is a mammal'. This is just the conjunction of sentences \ref{iff1} and~\ref{iff2}. So we can symbolize it as `$(D \eif M) \eand (M \eif D)$'. We call this a \define{biconditional}, because it amounts to stating both directions of the conditional.
+\Cref*{iff3} says something stronger than either \cref*{iff1} or \cref*{iff2}. It can be paraphrased as `Laika is a dog if Laika is a mammal, and Laika is a dog only if Laika is a mammal'. This is just the conjunction of \cref*{iff1,iff2}. So we can symbolize it as `$(D \eif M) \eand (M \eif D)$'. We call this a \define{biconditional}, because it amounts to stating both directions of the conditional.
 
 \newglossaryentry{biconditional}
 {
@@ -367,7 +367,7 @@ name=biconditional,
 description={The symbol \eiff, used to represent words and phrases that function like the English phrase ``if and only if''; or a sentence formed using this connective}
 }
 
-We could treat every biconditional this way. So, just as we do not need a new TFL symbol to deal with \emph{exclusive or}, we do not really need a new TFL symbol to deal with biconditionals. Because the biconditional occurs so often, however, we will use the symbol `\eiff' for it. We can then symbolize sentence \ref{iff3} with the TFL sentence `$(D \eiff M)$'.
+We could treat every biconditional this way. So, just as we do not need a new TFL symbol to deal with \emph{exclusive or}, we do not really need a new TFL symbol to deal with biconditionals. Because the biconditional occurs so often, however, we will use the symbol `\eiff' for it. We can then symbolize \cref*{iff3} with the TFL sentence `$(D \eiff M)$'.
 
 The expression `if and only if' occurs a lot especially in philosophy, mathematics, and logic. For brevity, we can abbreviate it with the snappier word `iff'. We will follow this practice. So `if' with only \emph{one} `f' is the English conditional. But `iff' with \emph{two} `f's is the English biconditional. Armed with this we can say:
 	\factoidbox{
@@ -393,7 +393,7 @@ Equally, both sentences mean that if you do not catch a cold, then you must have
 
 Equally, both sentences mean that either you will wear a jacket or you will catch a cold. With this in mind, we might symbolize them as `$(J \eor D)$'.
 
-All three are correct symbolizations. Indeed, in chapter \ref{s:SemanticConcepts} we will see that all three symbolizations are equivalent in TFL.
+All three are correct symbolizations. Indeed, in \cref{s:SemanticConcepts} we will see that all three symbolizations are equivalent in TFL.
 % TODO: it might be useful to reference exercise 11.F.3 explicitly
 % here, since the point is not discussed in the main text
 	\factoidbox{
@@ -599,7 +599,7 @@ Given what we just said, `$(A \eand B)$' is an expression of TFL, and so is `$\l
 
 Obviously, individual sentence letters like `$A$' and `$G_{13}$' should count as sentences. (We'll also call them \emph{atomic} sentences.) We can form further sentences out of these by using the various connectives. Using negation, we can get `$\enot A$' and `$\enot G_{13}$'. Using conjunction, we can get `$(A \eand G_{13})$', `$(G_{13} \eand A)$', `$(A \eand A)$', and `$(G_{13} \eand G_{13})$'. We could also apply negation repeatedly to get sentences like `$\enot \enot A$' or apply negation along with conjunction to get sentences like `$\enot(A \eand G_{13})$' and `$\enot(G_{13} \eand \enot G_{13})$'. The possible combinations are endless, even starting with just these two sentence letters, and there are infinitely many sentence letters. So there is no point in trying to list all the sentences one by one.
 
-Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: Given any sentence \metav{A} of TFL, $\enot\metav{A}$ is a sentence of TFL. (Why the funny fonts? We return to this in \S\ref{s:Metavariables}.)
+Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: Given any sentence \metav{A} of TFL, $\enot\metav{A}$ is a sentence of TFL. (Why the funny fonts? We return to this in \cref{s:Metavariables}.)
 
 We can say similar things for each of the other connectives. For instance, if \metav{A} and \metav{B} are sentences of TFL, then $(\metav{A}\eand\metav{B})$ is a sentence of TFL. Providing clauses like this for all of the connectives, we arrive at the following formal definition for a \define{sentence of TFL}:
 	\factoidbox{\label{TFLsentences}
@@ -616,7 +616,7 @@ We can say similar things for each of the other connectives. For instance, if \m
 \newglossaryentry{sentence of TFL}
 {
 name=sentence (of TFL),
-description={A string of symbols in TFL that can be built up according to the inductive rules given \ifHTMLtarget in section~\ref{s:Sentences}\else on p.~\pageref{TFLsentences}\fi}
+description={A string of symbols in TFL that can be built up according to the inductive rules given \ifHTMLtarget in \cref{s:Sentences}\else on p.~\pageref{TFLsentences}\fi}
 }
 
 Definitions like this are called \emph{inductive}. Inductive definitions begin with some specifiable base elements, and then present ways to generate indefinitely many more elements by compounding together previously established ones. To give you a better idea of what an inductive definition is, we can give an inductive definition of the idea of \emph{an ancestor of mine}. We specify a base clause.
@@ -644,11 +644,11 @@ As a general rule, you can find the main logical operator for a sentence by usin
 	\item Otherwise, start counting the brackets. For each open-bracket, i.e., `(', add $1$; for each closing-bracket, i.e., `$)$', subtract $1$. When your count is at exactly $1$, the first operator you hit (\emph{apart} from a `$\enot$') is the main logical operator.
 \end{itemize}
 
-(Note: if you do use this method, then make sure to include \emph{all} the brackets in the sentence, rather than omitting some as per the conventions of \S\ref{TFLconventions}!)
+(Note: if you do use this method, then make sure to include \emph{all} the brackets in the sentence, rather than omitting some as per the conventions of \cref{TFLconventions}!)
 
-The inductive structure of sentences in TFL will be important when we consider the circumstances under which a particular sentence would be true or false. The sentence `$\enot \enot \enot D$' is true if and only if the sentence `$\enot \enot D$' is false, and so on through the structure of the sentence, until we arrive at the atomic components. We will return to this point in Part~\ref{ch.TruthTables}.
+The inductive structure of sentences in TFL will be important when we consider the circumstances under which a particular sentence would be true or false. The sentence `$\enot \enot \enot D$' is true if and only if the sentence `$\enot \enot D$' is false, and so on through the structure of the sentence, until we arrive at the atomic components. We will return to this point in \cref{ch.TruthTables}.
 
-The inductive structure of sentences in TFL also allows us to give a formal definition of the \emph{scope} of a negation (mentioned in \S\ref{s:ConnectiveConjunction}). The scope of a `$\enot$' is the subsentence for which `$\enot$' is the main logical operator. Consider a sentence like:
+The inductive structure of sentences in TFL also allows us to give a formal definition of the \emph{scope} of a negation (mentioned in \cref{s:ConnectiveConjunction}). The scope of a `$\enot$' is the subsentence for which `$\enot$' is the main logical operator. Consider a sentence like:
 $$(P \eand (\enot (R \eand B) \eiff Q))$$
 which was constructed by conjoining `$P$' with `$ (\enot (R \eand B) \eiff Q)$'. This last sentence was constructed by placing a biconditional between `$\enot (R \eand B)$' and `$Q$'. The former of these sentences---a subsentence of our original sentence---is a sentence for which `$\enot$' is the main logical operator. So the scope of the negation is just `$\enot(R \eand B)$'. More generally:
 	\factoidbox{The \define{scope} of a connective (in a sentence) is the subsentence for which that connective is the main logical operator.}
@@ -656,7 +656,7 @@ which was constructed by conjoining `$P$' with `$ (\enot (R \eand B) \eiff Q)$'.
 
 \section{Bracketing conventions}
 \label{TFLconventions}
-Strictly speaking, the brackets in `$(Q \eand R)$' are an indispensable part of the sentence. Part of this is because we might use `$(Q \eand R)$' as a subsentence in a more complicated sentence. For example, we might want to negate `$(Q \eand R)$', obtaining `$\enot(Q \eand R)$'. If we just had `$Q \eand R$' without the brackets and put a negation in front of it, we would have `$\enot Q \eand R$'. It is most natural to read this as meaning the same thing as `$(\enot Q \eand R)$', but as we saw in  \S\ref{s:ConnectiveConjunction}, this is very different from `$\enot(Q\eand R)$'.
+Strictly speaking, the brackets in `$(Q \eand R)$' are an indispensable part of the sentence. Part of this is because we might use `$(Q \eand R)$' as a subsentence in a more complicated sentence. For example, we might want to negate `$(Q \eand R)$', obtaining `$\enot(Q \eand R)$'. If we just had `$Q \eand R$' without the brackets and put a negation in front of it, we would have `$\enot Q \eand R$'. It is most natural to read this as meaning the same thing as `$(\enot Q \eand R)$', but as we saw in  \cref{s:ConnectiveConjunction}, this is very different from `$\enot(Q\eand R)$'.
 
 Strictly speaking, then, `$Q \eand R$' is \emph{not} a sentence. It is a mere \emph{expression}.
 
@@ -747,12 +747,12 @@ These kinds of ambiguities are called \emph{scope ambiguities}, since they depen
 	\item\label{scamb1} \textit{Avengers: Endgame} is not: both long and boring.
 	\item\label{scamb2} \textit{Avengers: Endgame} is both: not long and boring.
 \end{enumerate}
-Sentence~\ref{scamb2} is certainly false, since \textit{Avengers: Endgame} is over three hours long. Whether you think~\ref{scamb1} is true depends on if you think it is boring or not. We can use the symbolization key:
+\Cref*{scamb2} is certainly false, since \textit{Avengers: Endgame} is over three hours long. Whether you think~\cref*{scamb1} is true depends on if you think it is boring or not. We can use the symbolization key:
 \begin{ekey}
 	\item[B] \textit{Avengers: Endgame} is boring.
 	\item[L] \textit{Avengers: Endgame} is long.
 \end{ekey}
-Sentence~\ref{scamb1} can now be symbolized as `$\enot(L \eand B)$', whereas sentence~\ref{scamb2} would be `$\enot L \eand B$'. In the first case, the `\eand' is in the scope of `\enot', in the second case `\enot' is in the scope of `\eand'.
+\Cref*{scamb1} can now be symbolized as `$\enot(L \eand B)$', whereas \cref*{scamb2} would be `$\enot L \eand B$'. In the first case, the `\eand' is in the scope of `\enot', in the second case `\enot' is in the scope of `\eand'.
 
 The sentence `Tai Lung is small and dangerous or stealthy' is ambiguous between:
 \begin{enumerate}
@@ -765,7 +765,7 @@ We can use the following symbolization key:
 	\item[S] Tai Lung is small.
 	\item[T] Tai Lung is stealthy.
 \end{ekey}
-The symbolization of sentence~\ref{scamb3} is `$(S \eand D) \eor T$' and that of sentence~\ref{scamb4} is `$S \eand (D \eor T)$'. In the first, `\eand' is in the scope of `\eor', and in the second `\eor' is in the scope of `\eand'.
+The symbolization of \cref*{scamb3} is `$(S \eand D) \eor T$' and that of \cref*{scamb4} is `$S \eand (D \eor T)$'. In the first, `\eand' is in the scope of `\eor', and in the second `\eor' is in the scope of `\eand'.
 
 \practiceproblems
 \solutions
@@ -846,7 +846,7 @@ The general point is that, whenever we want to talk in English about some specif
 
 
 \section{Metavariables}\label{s:Metavariables}
-However, we do not just want to talk about \emph{specific} expressions of TFL. We also want to be able to talk about \emph{any arbitrary} sentence of TFL. Indeed, we had to do this in \S\ref{s:Sentences}, when we presented the inductive definition of a sentence of TFL. We used uppercase script letters to do this, namely:
+However, we do not just want to talk about \emph{specific} expressions of TFL. We also want to be able to talk about \emph{any arbitrary} sentence of TFL. Indeed, we had to do this in \cref{s:Sentences}, when we presented the inductive definition of a sentence of TFL. We used uppercase script letters to do this, namely:
 	$$\metav{A}, \metav{B}, \metav{C}, \metav{D}, \ldots$$
 These symbols do not belong to TFL. Rather, they are part of our (augmented) metalanguage that we use to talk about \emph{any} expression of TFL. To explain why we need them, recall the second clause of the recursive definition of a sentence of TFL:
 	\begin{compactlist}
@@ -891,7 +891,7 @@ and similarly, for expressions like `$(\metav{A} \eand \metav{B})$', `$(\metav{A
 
 
 \section{Quotation conventions for arguments}
-One of our main purposes for using TFL is to study arguments, and that will be our concern in part \ref{ch.TruthTables}. In English, the premises of an argument are often expressed by individual sentences, and the conclusion by a further sentence. Since we can symbolize English sentences, we can symbolize English arguments using TFL.
+One of our main purposes for using TFL is to study arguments, and that will be our concern in \cref{ch.TruthTables}. In English, the premises of an argument are often expressed by individual sentences, and the conclusion by a further sentence. Since we can symbolize English sentences, we can symbolize English arguments using TFL.
 
 Or rather, we can use TFL to symbolize each of the \emph{sentences} used in an English argument. However, TFL itself has no way to flag some of them as the \emph{premises} and another as the \emph{conclusion} of an argument.  (Contrast this with natural English, which uses words like `so', `therefore', etc., to mark that a sentence is the \emph{conclusion} of an argument.)
 
