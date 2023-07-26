@@ -740,32 +740,32 @@ And offer a proof of it.
 \chapter{Derived rules}\label{s:DerivedFOL}
 As in the case of TFL, we first introduced some rules for FOL as basic (in \cref{s:BasicFOL}), and then added some further rules for conversion of quantifiers (in \cref{s:CQ}). In fact, the CQ rules should be regarded as \emph{derived} rules, for they can be derived from the  \emph{basic} rules of \cref{s:BasicFOL}. (The point here is as in \cref{s:Derived}.) Here is a justification for the first CQ rule:
 \begin{fitchproof}
-	\hypo{An}{\forall x\, \enot \atom{A}{x}}\PR
+	\have[m]{An}{\forall x\, \enot \atom{A}{x}}
 	\open
-		\hypo{E}{\exists x\, \atom{A}{x}}\AS
+		\hypo[m+1]{E}{\exists x\, \atom{A}{x}}\AS
 		\open
-			\hypo{c}{\atom{A}{c}}\AS
-			\have{nc}{\enot \atom{A}{c}}\Ae{An}
-			\have{red}{\ered}\ne{nc,c}
+			\hypo[m+2]{c}{\atom{A}{c}}\AS
+			\have[m+3]{nc}{\enot \atom{A}{c}}\Ae{An}
+			\have[m+4]{red}{\ered}\ne{nc,c}
 		\close
-		\have{red2}{\ered}\Ee{E,c-red}
+		\have[m+5]{red2}{\ered}\Ee{E,(c)-(red)}
 	\close
-	\have{dada}{\enot \exists x\, \atom{A}{x}}\ni{E-red2}
+	\have[m+6]{dada}{\enot \exists x\, \atom{A}{x}}\ni{(E)-(red2)}
 \end{fitchproof}
 %You will note that on line 3 I have written `for $\exists$E'. This is not technically a part of the proof. It is just a reminder---to me and to you---of why I have bothered to introduce `$\enot \atom{A}{c}$' out of the blue. You might find it helpful to add similar annotations to assumptions when performing proofs. But do not add annotations on lines other than assumptions: the proof requires its own citation, and your annotations will clutter it.
 Here is a justification of the third CQ rule:
 \begin{fitchproof}
-	\hypo{nEna}{\exists x\, \enot \atom{A}{x}}\PR
+	\have[m]{nEna}{\exists x\, \enot \atom{A}{x}}\PR
 	\open
-		\hypo{Aa}{\forall x\, \atom{A}{x}}\AS
+		\hypo[m+1]{Aa}{\forall x\, \atom{A}{x}}\AS
 		\open
-			\hypo{nac}{\enot \atom{A}{c}}\AS
-			\have{a}{\atom{A}{c}}\Ae{Aa}
-			\have{con}{\ered}\ne{nac,a}
+			\hypo[m+2]{nac}{\enot \atom{A}{c}}\AS
+			\have[m+3]{a}{\atom{A}{c}}\Ae{Aa}
+			\have[m+4]{con}{\ered}\ne{nac,a}
 		\close
-		\have{con1}{\ered}\Ee{nEna, nac-con}
+		\have[m+5]{con1}{\ered}\Ee{nEna, (nac)-(con)}
 	\close
-	\have{dada}{\enot \forall x\, \atom{A}{x}}\ni{Aa-con1}
+	\have[m+6]{dada}{\enot \forall x\, \atom{A}{x}}\ni{(Aa)-(con1)}
 \end{fitchproof}
 This explains why the CQ rules can be treated as derived. Similar justifications can be offered for the other two CQ rules.
 
