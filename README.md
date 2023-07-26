@@ -29,6 +29,17 @@ Dortmund](https://github.com/sbwimmer/forallx-do)) and Portuguese
 ([Para Tod*x*s:
 Natal](https://github.com/Grupo-de-Estudos-em-Logica-da-UFRN/Para-Todxs-Natal)).
 
+## Read online
+
+The book is available in HTML [to read
+online](https://forallx.openlogicproject.org/html/).
+
+The HTML conversion is experimental. If you find issues in it,
+especially issues that affect screen readers, please report it by
+[filing an issue](https://github.com/rzach/forallx-yyc/issues) or send
+an email to [Richard Zach](mailto:rzach@ucalgary.ca). Note that
+solutions are not yet included in the HTML version.
+
 ## Download
 
 You can download PDFs of the **most current version under development** here:
@@ -44,17 +55,19 @@ You can download PDFs of the **most current version under development** here:
   - [`forallxyyc-solutions.pdf`](https://forallx.openlogicproject.org/forallxyyc-solutions.pdf)
     (solutions booklet)
 
-The book is also available in HTML in [a single large
-file](https://forallx.openlogicproject.org/forallxyyc.html) or [broken
-into chapters](https://forallx.openlogicproject.org/html/) for easier
-online reading. The HTML versions are produced using
-[LaTeXML](http://dlmf.nist.gov/LaTeXML/), and the conversion is not
-perfect. In particular, proofs are not rendered quite properly.
+The a [SCORM](https://adlnet.gov/past-projects/scorm/) ZIP package of
+HTML bundled with plain and accessible versions of the PDF is
+available here:
+
+  - [SCORM.forallxyyc.zip](https://forallx.openlogicproject.org/SCORM.forallxyyc.zip)
+
+You can use this file to easily provide the entire text inside your
+LMS (Canvas, Moodle, D2L/Brightspace).
 
 **Note that these files change whenever the source files change.** So
-if you use the text in a course, better to download the PDFs and make
-them available to students directly rather than to link here, to avoid
-mismatches between versions.
+if you use the text in a course, it is best to download the PDFs or
+the SCORM package and make them available to students directly rather
+than to link here, to avoid mismatches between versions.
 
 PDFs of the **Fall 2021** edition are archived here:
 
