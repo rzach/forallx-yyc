@@ -39,8 +39,14 @@ Just like TFL, ML starts with an infinite stock of \emph{atoms}. These are writt
 	\item Nothing else is a sentence of ML.
 \end{compactlist}
 Here are some examples of ML sentences:
-\[A,\;P\eor Q,\;\ebox A,\;C\eor \ebox D,\;\ebox\ebox (A\eif R),\;\ebox\ediamond (S\eand (Z\eiff (\ebox W \eor \ediamond Q)))
-\]
+\begin{align*}
+	& A\\
+	& P\eor Q\\
+	& \ebox A\\
+	& C\eor \ebox D\\
+	& \ebox\ebox (A\eif R)\\
+	& \ebox\ediamond (S\eand (Z\eiff (\ebox W \eor \ediamond Q)))
+\end{align*}
 
 \chapter{Natural deduction for ML}
 \label{Proof}
@@ -425,6 +431,7 @@ So, there we have it. An interpretation for ML consists of three things: a colle
 
 Let's look at an example. It is often helpful to present interpretations of ML as diagrams, like this:
 \begin{center}
+	\begin{arialabel}{The numbers 1 and 2 are connected by arrows. There are arrows from 1 to itself, and from 2 to 1. Node 1 is labelled by A and not-B. Node 2 is labelled by not-A and B.}
 	\begin{tikzpicture}
 		\node (atom1) at (0,1) {1};
 		\node (atom2) at (3,1) {2};
@@ -438,6 +445,7 @@ Let's look at an example. It is often helpful to present interpretations of ML a
 		\draw (-0.8,-1.2) rectangle (0.4,0.5);
 		\draw (2.4,-1.2) rectangle (3.6,0.5);
 	\end{tikzpicture}
+\end{arialabel}
 \end{center}
 Here is how to read the interpretation off from this diagram. It contains just two worlds, 1 and 2. The arrows between the worlds indicate the accessibility relation. So 1 and 2 both access 1, but neither 1 nor 2 accesses 2. The boxes at each world let us know which atomic sentences are true at each world: $A$ is true at 1 but false at 2; $B$ is false at 1 but true at 2. You may only write an atomic sentence or the negation of an atomic sentence into one of these boxes. We can figure out what truth-values the more complex sentences get at each world from that. For example, on this interpretation all of the following sentences are true at $w_1$:
 \[
@@ -456,15 +464,13 @@ You will get the chance to cook up some interpretations of your own shortly, whe
 
 We can now extend all of the semantic concepts of TFL to cover ML:
 \factoidbox{
-	\begin{itemize}
-		\item  $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is \define{modally valid} \ifeff{} there is no world in any interpretation at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
+		$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is \define{modally valid} \ifeff{} there is no world in any interpretation at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
 
-		\item $\metav{A}$ is a \define{modal truth} \ifeff{} $\metav{A}$ is true at every world in every interpretation.
+		\medskip\noindent $\metav{A}$ is a \define{modal truth} \ifeff{} $\metav{A}$ is true at every world in every interpretation.
 
-		\item $\metav{A}$ is a \define{modal contradiction} \ifeff{} $\metav{A}$ is false at every world in every interpretation.
+		\medskip\noindent $\metav{A}$ is a \define{modal contradiction} \ifeff{} $\metav{A}$ is false at every world in every interpretation.
 
-		\item $\metav{A}$ is \define{modally satisfiable} \ifeff{} $\metav{A}$ is true at some world in some interpretation.
-	\end{itemize}
+		\medskip\noindent $\metav{A}$ is \define{modally satisfiable} \ifeff{} $\metav{A}$ is true at some world in some interpretation.
 }
 (From now on we will drop the explicit `modal' qualifications, since they can be taken as read.)
 
@@ -474,6 +480,7 @@ Let's get more of a feel for this semantics by presenting some counter-interpret
 \[\enot A\entails_\mlK \enot \ediamond A\]
 In order to present a counter-interpretation to this claim, we need to cook up an interpretation which makes $\enot A$ true at some world $w$, and $\enot\ediamond A$ false at $w$. Here is one such interpretation, presented diagrammatically:
 \begin{center}
+\begin{arialabel}{The numbers 1 and 2 are connected by an arrow from 1 to 2. Node 1 is labelled not-A and node 2 is labelled A.}
 	\begin{tikzpicture}
 		\node (atom1) at (0,1) {1};
 		\node (atom2) at (3,1) {2};
@@ -483,6 +490,7 @@ In order to present a counter-interpretation to this claim, we need to cook up a
 		\draw (-0.8,-0.6) rectangle (0.4,0.5);
 		\draw (2.4,-0.6) rectangle (3.6,0.5);
 	\end{tikzpicture}
+\end{arialabel}
 \end{center}
 It is easy to see that this will work as a counter-interpretation for our claim. First, $\enot A$ is true at world $1$. And second, $\enot\ediamond A$ is false at $1$: $A$ is true at $2$, and $2$ is accessible from $1$. So there is some world in this interpretation where $\enot A$ is true and $\enot\ediamond A$ is false, so it is not the case that $\enot A\entails_\mlK\enot\ediamond A$.
 

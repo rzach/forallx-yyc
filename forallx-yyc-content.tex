@@ -1,6 +1,7 @@
 \frontmatter
 
 \ifHTMLtarget
+  \maketitle
   \tableofcontents
   \input{forallx-yyc-frontmatter}
 \else
@@ -26,10 +27,10 @@
 \input{forallx-yyc-ml}
 \input{forallx-yyc-metatheory}
 
-\appendix
 \part*{Appendices}
 \addcontentsline{toc}{part}{Appendices}
 \addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
+\appendix
 
 \input{forallx-yyc-notation} % RZ for some reason, with an \input here the TOC gets messed up
 \input{forallx-yyc-alternatives}

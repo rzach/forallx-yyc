@@ -51,11 +51,13 @@ Only $F$s are $G$s & $\forall x(\atom{G}{x} \eif \atom{F}{x})$\\
 \\
 \multicolumn{2}{c}{\textsc{Identity}}\\ \\
 Only $c$ is $G$ & $\forall x(\atom{G}{x} \eiff x=c)$\\
-Everything other than $c$ is $G$ & $\forall x(\enot x = c \eif \atom{G}{x} )$\\
-Everything except $c$ is $G$ & $\forall x(\enot x = c \eiff \atom{G}{x} )$\\
+Everything other &\\ than $c$ 
+is $G$ & $\forall x(\enot x = c \eif \atom{G}{x} )$\\
+Everything \\except $c$ 
+ is $G$ & $\forall x(\enot x = c \eiff \atom{G}{x} )$\\
 %$j$ is more $R$ than anyone else. & $\forall x(x\neq j \eif Rjx)$\\
 The $F$ is $G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \atom{G}{x} )$\\
-It is not the case that\\
+It is not the case \\ that
  the $F$ is $G$ & $\enot\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \atom{G}{x} )$\\
 The $F$ is non-$G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \enot \atom{G}{x} )$
 \end{tabular*}
@@ -90,12 +92,12 @@ The $F$ is non-$G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y
 	two & $\exists x_1\exists x_2(\atom{F}{x_1} \eand \atom{F}{x_2}
 	\eand \enot x_1  = x_2)$\\
 	three & $\exists x_1\exists x_2\exists x_3(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand {}$\\
-	& $\enot x_1 = x_2 \eand\enot x_1 = x_3 \eand \enot x_2 = x_3)$\\
+	& \quad$\enot x_1 = x_2 \eand\enot x_1 = x_3 \eand \enot x_2 = x_3)$\\
 	four & $\exists x_1\exists x_2\exists x_3\exists x_4 (\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4} \eand {}$\\
-	& $\enot x_1 = x_2 \eand \enot x_1 = x_3 \eand \enot x_1 = x_4 \eand {}$\\
-	& $ \enot x_2 = x_3 \eand \enot x_2 = x_4 \eand \enot x_3 = x_4)$\\
+	& \quad $\enot x_1 = x_2 \eand \enot x_1 = x_3 \eand \enot x_1 = x_4 \eand {}$\\
+	& \qquad$ \enot x_2 = x_3 \eand \enot x_2 = x_4 \eand \enot x_3 = x_4)$\\
 	$n$ & $\exists x_1\ldots\exists x_n(\atom{F}{x_1} \eand \ldots \eand \atom{F}{x_n} \eand {}$\\
-	& $\enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1} = x_n)$ 
+	& \quad$\enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1} = x_n)$ 
 \end{tabular*}
 \fi
 
@@ -103,6 +105,8 @@ The $F$ is non-$G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y
 \label{summary.atmost}
 
 One way to say `there are at most $n$ $F$s' is to put a negation sign in front of the symbolization for `there are at least $n+1$ $F$s'. Equivalently, we can offer:
+
+\noindent
 \ifHTMLtarget
 \begin{tabular*}{\textwidth}{rl}
 	one & $\forall x_1\forall x_2\bigl[(\atom{F}{x_1} \eand
@@ -115,13 +119,13 @@ One way to say `there are at most $n$ $F$s' is to put a negation sign in front o
 \begin{tabular*}{\textwidth}{rl}
 	one & $\forall x_1\forall x_2\bigl[(\atom{F}{x_1} \eand
 	\atom{F}{x_2}) \eif x_1=x_2\bigr]$\\
-	two & $\forall x_1\forall x_2\forall x_3\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3}) \eif {}$\\ & $(x_1=x_2 \eor x_1=x_3 \eor x_2=x_3)\bigr]$\\
+	two & $\forall x_1\forall x_2\forall x_3\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3}) \eif {}$\\ & \quad$(x_1=x_2 \eor x_1=x_3 \eor x_2=x_3)\bigr]$\\
 	three & $\forall x_1\forall x_2\forall x_3\forall x_4\bigl[(\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand \atom{F}{x_4}) \eif {}$\\
-	& $(x_1=x_2 \eor x_1=x_3 \eor x_1=x_4 \eor {}$\\
-	& $x_2=x_3 \eor x_2=x_4 \eor x_3=x_4)\bigr]$\\
+	& \quad$(x_1=x_2 \eor x_1=x_3 \eor x_1=x_4 \eor {}$\\
+	& \qquad$x_2=x_3 \eor x_2=x_4 \eor x_3=x_4)\bigr]$\\
 	$n$ & $\forall x_1\ldots\forall x_{n+1}
 	\bigl[(\atom{F}{x_1} \eand \ldots \eand \atom{F}{x_{n+1}}) \eif {}$\\
-	& $(x_1=x_2 \eor \ldots \eor x_n=x_{n+1})\bigr]$ 
+	& \quad$(x_1=x_2 \eor \ldots \eor x_n=x_{n+1})\bigr]$ 
 \end{tabular*}
 \fi
 
@@ -130,6 +134,8 @@ One way to say `there are at most $n$ $F$s' is to put a negation sign in front o
 \label{summary.exactly}
 
 One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizations above and say `there are at least $n$ $F$s and there are at most $n$ $F$s.' The following equivalent formulas are shorter:
+
+\noindent
 \ifHTMLtarget
 \begin{tabular*}{\textwidth}{rl}
 	zero & $\forall x\,\enot \atom{F}{x}$\\
@@ -143,13 +149,13 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	zero & $\forall x\,\enot \atom{F}{x}$\\
 	one & $\exists x\bigl[\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x = y)\bigr]$\\
 	two & $\exists x_1\exists x_2\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand {}$\\
-	& $\enot x_1 = x_2 \eand \forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor y = x_2)\bigr) \bigr]$\\
+	& \quad$\enot x_1 = x_2 \eand \forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor y = x_2)\bigr) \bigr]$\\
 	three & $\exists x_1\exists x_2\exists x_3\bigl[\atom{F}{x_1} \eand \atom{F}{x_2} \eand \atom{F}{x_3} \eand {}$\\
-	& $\enot x_1 =  x_2 \eand \enot  x_1 = x_3 \eand \enot x_2 = x_3 \eand {}$\\
-	& $\forall y\bigl(\atom{F}{y} \eif (y = x_1 \eor y = x_2 \eor y =  x_3)\bigr) \bigr]$\\
+	& \quad$\enot x_1 =  x_2 \eand \enot  x_1 = x_3 \eand \enot x_2 = x_3 \eand {}$\\
+	& \qquad$\forall y\bigl(\atom{F}{y} \eif (y = x_1 \eor y = x_2 \eor y =  x_3)\bigr) \bigr]$\\
 	$n$ & $\exists x_1\ldots\exists x_n\bigl[\atom{F}{x_1} \eand\ldots\eand \atom{F}{x_n}  \eand {}$\\
-	&$ \enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1}= x_n \eand \phantom{.}$\\
-	& $\forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor \ldots \eor y= x_n)\bigr)\bigr]$ 
+	& \quad$\enot x_1 = x_2 \eand\ldots\eand \enot x_{n-1}= x_n \eand {}$\\
+	& \qquad$\forall y\bigl(\atom{F}{y} \eif (y= x_1 \eor \ldots \eor y= x_n)\bigr)\bigr]$ 
 \end{tabular*}
 \fi
 %\item[one] $\exists x\forall y\bigl[\atom{F}{x} \eand (\atom{F}{y} \eif y = x)\bigr]$
@@ -161,6 +167,13 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 \label{ProofRules}
 \newpage\section{Basic deduction rules for TFL}
 
+% \mathem is an empty box the same width as $m$; used to align rules
+% properly
+\newlength{\mathemwd}
+\settowidth{\mathemwd}{\mbox{\small$m$}}
+\def\mathem{{\hbox to\mathemwd{}}}
+
+% If compiling to PDF, make all the rules small(er) and avoid left margin
 \ifHTMLtarget\else
 \renewenvironment{fitchproof}
 	{\noindent\par\noindent\small$\begin{nd}}
@@ -196,8 +209,8 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 \begin{fitchproof}
 	\open
-		\hypo[i]{a}{\metav{A}}\AS
-		\have[j]{b}{\metav{B}}
+		\hypo[m]{a}{\metav{A}}\AS
+		\have[n]{b}{\metav{B}}
 	\close
 	\have[\ ]{ab}{\metav{A}\eif\metav{B}}\ci{a-b}
 \end{fitchproof}
@@ -211,8 +224,8 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 \begin{fitchproof}
 \open
-	\hypo[i]{a}{\metav{A}}\AS
-	\have[j]{nb}{\ered}
+	\hypo[m]{a}{\metav{A}}\AS
+	\have[n]{nb}{\ered}
 \close
 \have[\ ]{na}{\enot\metav{A}}\ni{a-nb}
 \end{fitchproof}
@@ -229,7 +242,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\hypo[i]{a}{\enot\metav{A}}\AS
 	\have[j]{nb}{\ered}
 \close
-\have[\ ]{na}{\metav{A}}\ip{a-nb}
+\have[\mathem]{na}{\metav{A}}\ip{a-nb}
 \end{fitchproof}
 
 
@@ -260,7 +273,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 		\hypo[k]{b}{\metav{B}}\AS
 		\have[l]{c2}{\metav{C}}
 	\close
-	\have[\ ]{c}{\metav{C}} \oe{ab,a-c1, b-c2}
+	\have[\mathem]{c}{\metav{C}} \oe{ab,a-c1, b-c2}
 \end{fitchproof}
 
 \subsection*{Biconditional}
@@ -274,7 +287,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 		\hypo[k]{b2}{\metav{B}}\AS
 		\have[l]{a2}{\metav{A}}
 	\close
-	\have[\ ]{ab}{\metav{A}\eiff\metav{B}}\bi{a1-b1,b2-a2}
+	\have[\mathem]{ab}{\metav{A}\eiff\metav{B}}\bi{a1-b1,b2-a2}
 \end{fitchproof}
 \begin{fitchproof}
 	\have[m]{ab}{\metav{A}\eiff\metav{B}}
@@ -289,7 +302,6 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 
 \end{multicols}
 
-\newpage
 \section{Derived rules for TFL}
 \begin{multicols}{2}
 \subsection*{Disjunctive syllogism}
@@ -329,7 +341,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 			\hypo[k]{b}{\enot\metav{A}}\AS
 			\have[l]{c2}{\metav{B}}
 		\close
-		\have[\ ]{ab}{\metav{B}}\tnd{a-c1,b-c2}
+		\have[\mathem]{ab}{\metav{B}}\tnd{a-c1,b-c2}
 	\end{fitchproof}
 
 %
@@ -360,7 +372,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 \end{fitchproof}
 \end{multicols}
 
-\newpage
+%\newpage
 
 \section{Basic deduction rules for FOL}
 
@@ -378,13 +390,12 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
 	\have[\ ]{c}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)} \Ai{a}
 \end{fitchproof}
-
-\medskip\begin{raggedright}
+\begin{raggedright}
 \metav{c} must not occur in any undischarged assumption
-
-%\metav{x} must not occur in\\ $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$
 \end{raggedright}
+\end{multicols}
 
+\begin{multicols}{2}
 \subsection*{Existential introduction}
 
 \begin{fitchproof}
@@ -392,10 +403,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\have[\ ]{c}{\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)}\Ei{a}
 \end{fitchproof}
 
-% \medskip\begin{raggedright}
-% %\noindent \metav{x} must not occur in\\ $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$
-% \end{raggedright}
-% %\noindent You can replace one or more instance of \metav{c} with \metav{x}.
+\vfill\null\columnbreak
 
 \subsection*{Existential elimination}
 
@@ -407,16 +415,14 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\close
 	\have[\ ]{d}{\metav{B}}\Ee{a,b-c}
 \end{fitchproof}
-
-\medskip\begin{raggedright}
-\noindent \metav{c} must not occur in any undischarged assumption, in $\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$, or in \metav{B}\end{raggedright}\vfill\columnbreak
-
+\begin{raggedright}
+\noindent \metav{c} must not occur in any undischarged assumption, in $\exists \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$, or in \metav{B}\end{raggedright}
 \end{multicols}
 
 \subsection*{Identity introduction}
 
 \begin{fitchproof}
-	\have[\ \,\,\,]{x}{\metav{c}=\metav{c}} \by{=I}{}
+	\have[\mathem]{x}{\metav{c}=\metav{c}} \by{=I}{}
 \end{fitchproof}
 
 
@@ -435,7 +441,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 \end{fitchproof}
 \end{multicols}
 
-\begin{minipage}{\textwidth} % hack to keep section header with table
+%\begin{minipage}{\textwidth} % hack to keep section header with table
 \section{Derived rules for FOL}
 
 \begin{multicols}{2}
@@ -456,7 +462,7 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 	\have[\ ]{ac}{\exists \metav{x}\enot \metav{A}}\cq{m}
 \end{fitchproof}
 \end{multicols}
-\end{minipage}
+%\end{minipage}
 
 \section{Rules for chains of equivalences}
 

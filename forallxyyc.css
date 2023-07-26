@@ -1,11 +1,16 @@
 /* forallxyyc.css -- style sheet to fix spacing etc. in BookML and LaTeXML styles
 Must be passed to LaTeXML and BookML */
 
+/* hide the "blank" text in \blank's */
+
 span.fxblank {
   display: inline-block;
   height: 0px;
   overflow: hidden;
 }
+
+/* make <dd>'s (i.e., the description environment used by earg appear
+nicely */
 
 dl.ltx_description dt,
 dt span.ltx_tag {
@@ -26,3 +31,12 @@ dd, dd p.ltx_p {
 dl.ltx_description {
   margin-left: 0.5em;
 }
+
+/* fix LaTeXML.css handling of paras inside list items without tags */
+
+.ltx_item + .ltx_para .ltx_p  { display:inline; }
+
+/* fix bookml/gitbook/css/style.css clipping SVG images to the box
+computed by LaTeXML */
+
+svg:not(:root){overflow:reset}

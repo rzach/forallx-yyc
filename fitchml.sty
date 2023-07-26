@@ -1,7 +1,15 @@
 % fitchml.sty -- patch fitch.sty for better HTML output with LaTeXML
 
 \ProvidesPackage{fitchml}
+
+% all of this only makes sense if we're compiling to HTML
+\iflatexml\else\endinput\fi
+
 \RequirePackage{fitch}
+
+\renewenvironment{fitchproof}
+	{\noindent\par\noindent\begin{nd}}
+	{\end{nd}\par\noindent\ignorespacesafterend}
 
 {\chardef\x=\catcode`\*
 \catcode`\*=11

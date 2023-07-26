@@ -40,13 +40,13 @@ table.fitch td.fml-just, table.fitch th.fml-just {
 
 div.fml-fmla {
   display: inline-block;
-  overflow: scroll;
+  overflow: visible;
   padding-left: 1ex;
   padding-right: 1ex; 
 }
 div.fml-as {
   display: inline-block;
-  overflow: scroll;
+  overflow: visible;
   border-bottom: 1pt solid black; 
   padding-left: 1ex;
   padding-right: 1ex;
@@ -54,7 +54,7 @@ div.fml-as {
 div.fml-just {
   display: inline-block;
   max-width: 100%;
-  overflow: auto;
+  overflow: visible;
 }
 div.fml-scope {
   display: inline;

@@ -4,7 +4,6 @@
 
 \documentclass{book}
 \usepackage{bookml/bookml}
-%\iflatexml\else\latexmltrue\fi % ensure \iflatexml is true
 
 \RequirePackage{xcolor,tabularx}
 \definecolor{lyallpink}{RGB}{222,31,149}
@@ -13,21 +12,13 @@
 \colorlet{ltleadbeater}{lyallpink!50}
 \colorlet{vltleadbeater}{lyallpink!3}
 
-\usepackage{forallxyyc-html}
 \usepackage{forallxyyc}
+\usepackage{forallxyyc-html}
 \usepackage{gitinfo2}
 
-\iflatexml
-  \usepackage{fitchml}% patch fitch for HTML
-  \renewenvironment{fitchproof}
-	{\begin{nd}}
-	{\end{nd}}
-\fi
+\usepackage{fitchml}% patch fitch for HTML
 
 \HTMLtargettrue
-
-\let\emph\textbf
-\renewcommand*{\define}[1]{\textbf{\color{dkleadbeater}#1}}
 
 \title{forall x: Calgary. An Introduction to Formal Logic}
 
@@ -44,8 +35,6 @@ Richard Zach}
 \bmlAltFormat{forallxyyc-accessible.pdf}{PDF (accessible)}
 
 \begin{document}
-
-\maketitle
 
 \input{forallx-yyc-content}
 

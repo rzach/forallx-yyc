@@ -11,9 +11,9 @@ Recall that TFL is a truth-functional language. Its connectives are all truth-fu
 		\item[P] Big Ben is in London.
 	\end{ekey}
  But recall from \S\ref{s:TruthFunctionality} that this is \emph{just} a means of specifying `$P$'s truth value; the symbolization key statement amounts to something like the following stipulation: 
-	\begin{ebullet}
+	\begin{itemize}
 		\item The TFL sentence `$P$' is true \ifeff{} Big Ben is in London.
-	\end{ebullet}
+	\end{itemize}
 And we emphasized in \S\ref{s:TruthFunctionality} that TFL cannot handle differences in meaning that go beyond mere differences in truth value.
 
 \section{Symbolizing versus translating}
@@ -25,13 +25,13 @@ To unpack this a bit, consider this symbolization key:
 		\item[\atom{C}{x}] \gap{x} teaches Logic III in Calgary
 	\end{ekey} 
 This stipulation does not carry the \emph{meaning} of the English predicate across into our FOL predicate. We are simply stipulating something like this:
-	\begin{ebullet}
+	\begin{itemize}
 		\item `$\atom{C}{x}$' and `\gap{x} teaches Logic III in Calgary' are to be \emph{true of} exactly the same things.
-	\end{ebullet}
+	\end{itemize}
 So, in particular:
-	\begin{ebullet}
+	\begin{itemize}
 		\item `$\atom{C}{x}$' is to be true of exactly those things which teach Logic III in Calgary (whatever those things might be).
-	\end{ebullet}
+	\end{itemize}
 This is an indirect way of stipulating which things a predicate is true of.
 
 Alternatively, we can stipulate predicate extensions directly. For example, we can stipulate that `$\atom{C}{x}$' is to be true of Richard Zach, and Richard Zach alone. As it happens, this direct stipulation would have the same effect as the indirect stipulation, since Richard, and Richard alone, teaches Logic~III in Calgary. Note, however, that the English predicates `\blank\ is Richard Zach' and `\blank\ teaches Logic III in Calgary' have very different meanings!
@@ -42,11 +42,11 @@ This is why we speak of \emph{symbolizing} English sentences in FOL. It is doubt
 
 \section{Extensions}\label{sec:extensions}
 We can stipulate directly what predicates are to be true of. And our stipulations can be as arbitrary as we like. For example, we could stipulate that `$\atom{H}{x}$' should be true of, and only of, the following objects:
-	\begin{center}
-		Justin Trudeau\\
-		the number $\pi$\\
-		every top-F key on every piano ever made
-	\end{center}
+	\begin{itemize}
+		\item Justin Trudeau
+		\item the number $\pi$
+		\item every top-F key on every piano ever made
+	\end{itemize}
 Armed with this interpretation of `$\atom{H}{x}$', suppose we now add to our symbolization key:
 	\begin{ekey}
 		\item[j] Justin Trudeau
@@ -68,23 +68,23 @@ All of this is quite easy to understand when it comes to one-place predicates, b
 		\item[\atom{L}{x,y}] \gap{x} loves \gap{y}
 	\end{ekey}
 Given what we said above, this symbolization key should be read as saying:
-	\begin{earg}
-		\item[\textbullet] `$\atom{L}{x,y}$' and `\gap{x} loves \gap{y}' are to be true of exactly the same things.
-	\end{earg}
+	\begin{itemize}
+		\item `$\atom{L}{x,y}$' and `\gap{x} loves \gap{y}' are to be true of exactly the same things.
+	\end{itemize}
 So, in particular:
-	\begin{earg}
-		\item[\textbullet] `$\atom{L}{x,y}$' is to be true of x and y (in that order) \ifeff{} x loves y.
-	\end{earg}
+	\begin{itemize}
+		\item `$\atom{L}{x,y}$' is to be true of x and y (in that order) \ifeff{} x loves y.
+	\end{itemize}
 It is important that we insist upon the order here, since love---famously---is not always reciprocated. (Note that `x' and `y' on the right here are symbols of augmented English, and that they are being \emph{used}. By contrast, `$x$' and `$y$' in `$\atom{L}{x,y}$' are symbols of FOL, and they are being \emph{mentioned}.)
 
 That is an indirect stipulation. What about a direct stipulation? This is also tricky. If we \emph{simply} list objects that fall under `$\atom{L}{x,y}$', we will not know whether they are the lover or the beloved (or both). We have to find a way to include the order in our explicit stipulation.
 
 To do this, we can specify that two-place predicates are true of \emph{pairs} of objects, where the order of the pair is important. Thus we might stipulate that `$\atom{B}{x,y}$' is to be true of, and only of, the following pairs of objects:
-	\begin{center}
-		\ntuple{Lenin, Marx}\\
-		\ntuple{de Beauvoir, Sartre}\\
-		\ntuple{Sartre, de Beauvoir}
-	\end{center}
+	\begin{itemize}
+		\item \ntuple{Lenin, Marx}
+		\item \ntuple{de Beauvoir, Sartre}
+		\item \ntuple{Sartre, de Beauvoir}
+	\end{itemize}
 Here the angle-brackets keep us informed concerning order. Suppose we now add the following stipulations:
 	\begin{ekey}
 		\item[l] Lenin
@@ -112,24 +112,26 @@ If two names refer to the same object, then swapping one name for another will n
 Some philosophers have believed the reverse of this claim. That is, they have believed that when exactly the same sentences (not containing `$=$') are true of $a$ and $b$, then $a$ and $b$ are the very same object. This is a highly controversial philosophical claim---sometimes called the \emph{identity of indiscernibles}---and our logic will not subscribe to it; we allow that exactly the same things might be true of two \emph{distinct} objects.  
 
 To bring this out, consider the following interpretation:
-	\begin{ebullet}
-		\item[\text{domain}:] P.~D.\ Magnus, Tim Button
-		\item[$a$:] P.~D.\ Magnus
-		\item[$b$:] Tim Button
-		\item For every primitive predicate we care to consider, that predicate is true of \emph{nothing}.
-	\end{ebullet}
+	\begin{ekey}
+		\item[\text{domain}] P.~D.\ Magnus, Tim Button
+		\item[a] P.~D.\ Magnus
+		\item[b] Tim Button
+		\item[\atom{\metav{R}}{x_1,\dots, x_n}] For every primitive
+		predicate \metav{R} we care to consider, that predicate is true of
+		\emph{nothing}.
+	\end{ekey}
 Suppose `$A$' is a one-place predicate; then `$\atom{A}{a}$' is false and `$\atom{A}{b}$' is false, so `$\atom{A}{a} \eiff \atom{A}{b}$' is true. Similarly, if `$R$' is a two-place predicate, then `$\atom{R}{a,a}$' is false and `$\atom{R}{a,b}$' is false, so that `$\atom{R}{a,a} \eiff \atom{R}{a,b}$' is true. And so it goes: every atomic sentence not involving `$=$' is false, so every biconditional linking such sentences is true. For all that, Tim Button and P.~D.\ Magnus are two distinct people, not one and the same!
 
 \section{Interpretations}
 We defined a \define{valuation} in TFL as any assignment of truth and falsity to sentence letters. In FOL, we are going to define an \define{interpretation} as consisting of four things:
-	\begin{ebullet}
-		\item the specification of a domain
-		\item for each sentence letter we care to consider, a truth value
-		\item for each name that we care to consider, an assignment of exactly one object within the domain
+	\begin{compactlist}
+		\item the specification of a domain;
+		\item for each sentence letter we care to consider, a truth value;
+		\item for each name that we care to consider, an assignment of exactly one object within the domain;
 		\item for each predicate that we care to consider (apart from
 		`$=$'), a specification of what things (in what order) the
 		predicate is to be true of.
-	\end{ebullet}
+	\end{compactlist}
 We don't need to specify anything for`$=$', since it has a
 \emph{fixed} meaning, namely that of identity. Everything is identical
 to itself, and only to itself. 
@@ -154,6 +156,9 @@ We could have specified the same extension (on this particular domain) by giving
 
 However, it is sometimes also convenient to present an interpretation \emph{diagrammatically}. To illustrate (literally): suppose we want to consider just a single two-place predicate, `$\atom{R}{x,y}$'. Then we can represent it just by drawing an arrow between two objects, and stipulate that `$\atom{R}{x,y}$' is to hold of $x$ and $y$ just in case there is an arrow running from $x$ to $y$ in our diagram. As an example, we might offer:
 \begin{center}
+\begin{arialabel}{The numbers 1, 2, 3, and 4 are connected
+	by arrows. There are arrows from 1 to 2 and 3, from 2 to 3, from 3 to
+	4, and from 4 to 1.}
 \begin{tikzpicture}
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
@@ -165,6 +170,7 @@ However, it is sometimes also convenient to present an interpretation \emph{diag
 \draw[->, thick] (atom4)--(atom1);
 \draw[->, thick] (atom1) -- (atom3);
 \end{tikzpicture}
+\end{arialabel}
 \end{center}
 This diagram could be used to describe an interpretation whose domain is the first four positive whole numbers, and which interprets `$\atom{R}{x,y}$' as being true of and only of:
 	\begin{center}
@@ -177,6 +183,8 @@ This diagram could be used to describe an interpretation whose domain is the fir
 Equally we might offer this diagram:
 
 \begin{center}
+\begin{arialabel}{The numbers 1, 3, and 4 are connected by arrows.
+There are arrows from 1 to 3 and to itself, and from 3 to 1, 4 and itself. The number 2 is included but has no arrows coming in or going out.}
 \begin{tikzpicture}
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
@@ -187,6 +195,7 @@ Equally we might offer this diagram:
 \draw[->, thick] (atom3)+(0.15,-0.15) arc (-150:150:.3); 
 \draw[<->, thick] (atom1) -- (atom3);
 \end{tikzpicture}
+\end{arialabel}
 \end{center}
 
 The interpretation specified by this diagram can also be given by listing what's in the domain and in the extension of~`$\atom{R}{x,y}$':
@@ -205,11 +214,11 @@ If we wanted, we could make our diagrams more complex. For example, we could add
 We have introduced you to interpretations. Since, among other things, they tell us which predicates are true of which objects, they will provide us with an account of the truth of atomic sentences. However, we now need to say, precisely, what it is for an arbitrary FOL sentence to be true or false in an interpretation.
 
 We know from \S\ref{s:FOLSentences} that there are three kinds of sentence in FOL: 
-	\begin{ebullet}
-		\item atomic sentences
-		\item sentences whose main logical operator is a sentential connective
-		\item sentences whose main logical operator is a quantifier
-	\end{ebullet}
+	\begin{compactlist}
+		\item atomic sentences,
+		\item sentences whose main logical operator is a sentential connective,
+		\item sentences whose main logical operator is a quantifier.
+	\end{compactlist}
 We need to explain truth for all three kinds of sentence.
 
 We will provide a completely general explanation in this section. However, to try to keep the explanation comprehensible, we will, at several points, use the following interpretation:
@@ -230,12 +239,12 @@ Likewise, on this interpretation, `$\atom{R}{a,b}$' is true \ifeff{} the object 
 Dealing with atomic sentences, then, is very intuitive. When \metav{R} is an $n$-place predicate and $\metav{a}_1$, $\metav{a}_{2}$, \dots, $\metav{a}_{n}$ are names, 
 
 	\factoidbox{
-		The sentence $\atom{\metav{R}}{\metav{a}_{1},\metav{a}_{2},\dots,\metav{a}_{n}}$ is true in an interpretation \textbf{\ifeff}\\
+		The sentence $\atom{\metav{R}}{\metav{a}_{1},\metav{a}_{2},\dots,\metav{a}_{n}}$ is true in an interpretation \textbf{\ifeff}
 		$\metav{R}$ is true of the objects named by $\metav{a}_{1}$, $\metav{a}_{2}$, \dots, $\metav{a}_{n}$ (in that order) in that interpretation.
 	}
 Recall, though, that there is a special kind of atomic sentence: two names connected by an identity sign constitute an atomic sentence. This kind of atomic sentence is also easy to handle. Where \metav{a} and \metav{b} are any names, 
 	\factoidbox{
-		$\metav{a} = \metav{b}$ is true in an interpretation \textbf{\ifeff}\\
+		$\metav{a} = \metav{b}$ is true in an interpretation \textbf{\ifeff}
 		 \metav{a} and \metav{b} name the very same object in that interpretation
 	}
 So in our go-to interpretation, `$a = b$' is false, since Aristotle is distinct from Beyonc\'e.
@@ -244,31 +253,24 @@ So in our go-to interpretation, `$a = b$' is false, since Aristotle is distinct 
 \section{Sentential connectives}
 We saw in \S\ref{s:FOLSentences} that FOL sentences can be built up from simpler ones using the truth-functional connectives that were familiar from TFL. The rules governing these truth-functional connectives are \emph{exactly} the same as they were when we considered TFL. Here they are:
 	\factoidbox{
-		\begin{itemize}
-		\item $\metav{A} \eand \metav{B}$ is true in an interpretation \textbf{\ifeff}\\ both $\metav{A}$ is true and $\metav{B}$ is true in that interpretation.
+		$\metav{A} \eand \metav{B}$ is true in an interpretation \textbf{\ifeff} both $\metav{A}$ is true and $\metav{B}$ is true in that interpretation.
 		
-		\medskip
-		
-		\item $\metav{A} \eor \metav{B}$ is true in an interpretation \textbf{\ifeff}\\ either $\metav{A}$ is true or $\metav{B}$ is true in that interpretation.
+		\medskip\noindent $\metav{A} \eor \metav{B}$ is true in an interpretation \textbf{\ifeff} either $\metav{A}$ is true or $\metav{B}$ is true in that interpretation.
 
-		\medskip
-		\item $\enot \metav{A}$ is true in an interpretation \textbf{\ifeff} \\$\metav{A}$ is false in that interpretation.
+		\medskip\noindent $\enot \metav{A}$ is true in an interpretation \textbf{\ifeff} $\metav{A}$ is false in that interpretation.
 
-		\medskip
-		\item $\metav{A} \eif \metav{B}$ is true in an interpretation \textbf{\ifeff}\\ either $\metav{A}$ is false or $\metav{B}$ is true in that interpretation.
+		\medskip\noindent $\metav{A} \eif \metav{B}$ is true in an interpretation \textbf{\ifeff} either $\metav{A}$ is false or $\metav{B}$ is true in that interpretation.
 
-		\medskip
-		\item $\metav{A} \eiff \metav{B}$ is true in an interpretation \textbf{\ifeff} \\$\metav{A}$ has the same truth value as $\metav{B}$ in that interpretation.
-	\end{itemize}
+		\medskip\noindent $\metav{A} \eiff \metav{B}$ is true in an interpretation \textbf{\ifeff} $\metav{A}$ has the same truth value as $\metav{B}$ in that interpretation.
 	}
 This presents the very same information as the characteristic truth tables for the connectives; it just does so in a slightly different way. Some examples will probably help to illustrate the idea. (Make sure you understand them!) On our go-to interpretation:
-	\begin{earg}
-		\item[\textbullet] `$a = a \eand \atom{P}{a}$' is true
-		\item[\textbullet] `$\atom{R}{a,b} \eand \atom{P}{b}$' is false because, although `$\atom{R}{a,b}$' is true, `$\atom{P}{b}$' is false
-		\item[\textbullet] `$a = b \eor \atom{P}{a}$' is true
-		\item[\textbullet] `$\enot a = b$' is true
-		\item[\textbullet] `$\atom{P}{a} \eand \enot( a= b \eand \atom{R}{a,b})$' is true, because `$\atom{P}{a}$' is true and `$a = b$' is false
-	\end{earg}
+	\begin{itemize}
+		\item `$a = a \eand \atom{P}{a}$' is true.
+		\item `$\atom{R}{a,b} \eand \atom{P}{b}$' is false because, although `$\atom{R}{a,b}$' is true, `$\atom{P}{b}$' is false.
+		\item `$a = b \eor \atom{P}{a}$' is true.
+		\item `$\enot a = b$' is true.
+		\item `$\atom{P}{a} \eand \enot( a= b \eand \atom{R}{a,b})$' is true, because `$\atom{P}{a}$' is true and `$a = b$' is false.
+	\end{itemize}
 Make sure you understand these examples.
 
 \ifHTMLtarget
@@ -318,10 +320,11 @@ with the instantiating name `$e$' and instantiated variable~`$y$'.
 Our interpretation will include a specification of which names correspond to which objects in the domain. Take any object in the domain, say, $d$, and a name $\metav{c}$ which is not already assigned by the interpretation. If our interpretation is $\mathbf{I}$, then we can consider the interpretation $\mathbf{I}[d/\metav{c}]$ which is just like $\mathbf{I}$ except it \emph{also} assigns the name $\metav{c}$ to the object~$d$. Then we can say that $d$ \define{satisfies} the formula $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in the interpretation~$\mathbf{I}$ if, and only if, $\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in $\mathbf{I}[d/\metav{c}]$. (If $d$ satisfies $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ we also say that $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ is \emph{true of}~$d$.) 
 
 \factoidbox{
-	\begin{itemize}
-		\item The interpretation $\mathbf{I}[d/\metav{c}]$ is just like the interpretation $\mathbf{I}$ except it also assigns the name $\metav{c}$ to the object~$d$.
-		\item An object $d$ \define{satisfies} $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in interpretation~$\mathbf{I}$ \textbf{\ifeff} $\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in $\mathbf{I}[d/\metav{c}]$.
-	\end{itemize}
+		The interpretation $\mathbf{I}[d/\metav{c}]$ is just like the
+		interpretation $\mathbf{I}$ except it also assigns the name
+		$\metav{c}$ to the object~$d$.
+		
+		\medskip\noindent An object $d$ \define{satisfies} $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in interpretation~$\mathbf{I}$ \textbf{\ifeff}\\ $\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in $\mathbf{I}[d/\metav{c}]$.
 }
 
 So, for instance, Socrates satisfies the formula~$\atom{P}{x}$ since $\atom{P}{c}$ is true in the interpretation $\mathbf{I}[\text{Socrates}/c]$, i.e., the interpretation:
@@ -348,13 +351,12 @@ satisifes $\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$, i.e.,
 $\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$ is true in
 $\mathbf{I}[d/\metav{c}]$ for some object~$d$.
 	\factoidbox{
-		\begin{itemize}
-			\item $\forall \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff}\\ 
+		$\forall \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff}
 		every object in the domain satisfies $\metav{A}(\ldots
 		\metav{x} \ldots \metav{x}\ldots)$.
-		\item $\exists \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff}\\ at least one object in the domain satisfies
+		
+		\medskip\noindent $\exists \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff} at least one object in the domain satisfies
 		$\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$.
-		\end{itemize}
 	}
 To be clear: all this is doing is formalizing (very pedantically) the intuitive idea expressed on the previous page. The result is a bit ugly, and the final definition might look a bit opaque. Hopefully, though, the \emph{spirit} of the idea is clear.
 
@@ -398,13 +400,13 @@ z})$' expresses `\gap{x} and \gap{y} taught the same people'.
 \problempart
 \label{pr.TorF1}
 Consider the following interpretation:
-	\begin{ebullet}
+	\begin{itemize}
 		\item The domain comprises only Corwin and Benedict
 		\item `$\atom{A}{x}$' is to be true of both Corwin and Benedict
 		\item `$\atom{B}{x}$' is to be true of Benedict only
 		\item `$\atom{N}{x}$' is to be true of no one
 		\item `$c$' is to refer to Corwin
-	\end{ebullet}
+	\end{itemize}
 Determine whether each of the following sentences is true or false in that interpretation:
 \begin{compactlist}
 \item $\atom{B}{c} $
@@ -452,6 +454,7 @@ Determine whether each of the following sentences is true or false in that inter
 \label{pr.TorF3}
 Following the diagram conventions introduced at the end of \S\ref{s:Interpretations}, consider the following interpretation:	
 \begin{center}
+\begin{arialabel}{The numbers 1, 2, 3, 4, and 5 are connected by arrows. There are arrows from 1 to 2, 3, 4, 5, and to itself, from 2 to 5, from 5 to itself, and from 4 to 1. There is no arrow leaving 3.}
 \begin{tikzpicture}
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
@@ -466,6 +469,7 @@ Following the diagram conventions introduced at the end of \S\ref{s:Interpretati
 \draw[->, thick] (atom1) -- (atom6);
 \draw[->, thick] (atom2) -- (atom6);
 \end{tikzpicture}
+\end{arialabel}
 \end{center}
 Determine whether each of the following sentences is true or false in that interpretation:
 \begin{compactlist}
@@ -496,15 +500,15 @@ means that \metav{A} is true in every interpretation.
 
 The other logical notions also have corresponding definitions in FOL:
 
-\begin{itemize}
-\item An FOL sentence $\metav{A}$ is a \define{validity} \ifeff{} $\metav{A}$ is true in every interpretation; i.e.,  $\entails\metav{A}$.
+\factoidbox{
+An FOL sentence $\metav{A}$ is a \define{validity} \ifeff{} $\metav{A}$ is true in every interpretation; i.e.,  $\entails\metav{A}$.
 \newglossaryentry{validity}
 {
 name=validity,
 description={A \gls{sentence of FOL} that is true in every \gls{interpretation}}
 }
 
-\item $\metav{A}$ is a \define{contradiction} \ifeff{} $\metav{A}$ is false in every interpretation; i.e., $\entails\enot\metav{A}$.
+\medskip\noindent$\metav{A}$ is a \define{contradiction} \ifeff{} $\metav{A}$ is false in every interpretation; i.e., $\entails\enot\metav{A}$.
 \newglossaryentry{contradiction of FOL}
 {
   name=contradiction (of FOL),
@@ -512,7 +516,7 @@ description={A \gls{sentence of FOL} that is true in every \gls{interpretation}}
 description={A \gls{sentence of FOL} that is false in every \gls{interpretation}}
 }
   
-\item $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ is \define{valid in FOL} \ifeff{} there is no interpretation in which all of the premises are true and the conclusion is false; i.e., $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n \entails\metav{C}$. It is \define{invalid in FOL} otherwise.
+\medskip\noindent $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ is \define{valid in FOL} \ifeff{} there is no interpretation in which all of the premises are true and the conclusion is false; i.e., $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n \entails\metav{C}$. It is \define{invalid in FOL} otherwise.
 \newglossaryentry{valid in FOL}
 {
   name=validity of arguments (in FOL),
@@ -520,7 +524,7 @@ description={A \gls{sentence of FOL} that is false in every \gls{interpretation}
 description={A property held by arguments; an argument is valid if and only if no \gls{interpretation} makes all premises true and the conclusion false}
 }
 
-\item Two FOL sentences \metav{A} and \metav{B} are \define{equivalent} \ifeff{} they are true in exactly the same interpretations as each other; i.e., both $\metav{A}\entails\metav{B}$ and $\metav{B}\entails\metav{A}$.
+\medskip\noindent Two FOL sentences \metav{A} and \metav{B} are \define{equivalent} \ifeff{} they are true in exactly the same interpretations as each other; i.e., both $\metav{A}\entails\metav{B}$ and $\metav{B}\entails\metav{A}$.
 
 \newglossaryentry{equivalent in FOL}
 {
@@ -529,14 +533,14 @@ description={A property held by arguments; an argument is valid if and only if n
 description={A property held by pairs of \glspl{sentence of FOL} if and only if the sentences have the same truth value in every \gls{interpretation}}
 }
 
-\item The FOL sentences $\metav{A}_1$, $\metav{A}_2$, \dots, $\metav{A}_n$ are \define{jointly satisfiable} \ifeff{} some interpretation makes all of them true. They are \define{jointly unsatisfiable} \ifeff{} there is no such interpretation.
+\medskip\noindent The FOL sentences $\metav{A}_1$, $\metav{A}_2$, \dots, $\metav{A}_n$ are \define{jointly satisfiable} \ifeff{} some interpretation makes all of them true. They are \define{jointly unsatisfiable} \ifeff{} there is no such interpretation.
 \newglossaryentry{satisfiable in FOL}
 {
   name=satisfiability (in FOL),
   text=jointly satisfiable,
 description={A property held by \glspl{sentence of FOL} if and only if some \gls{interpretation} makes all the sentences true}
 }
-\end{itemize}
+}
 
 \chapter{Using interpretations}
 \label{sec.UsingModels}
@@ -573,7 +577,7 @@ This shows that there is an interpretation where `$\exists x\atom{A}{x,x} \eif \
 	\factoidbox{
 		To show that $\metav{A}$ is not a validity, it suffices to find an interpretation where $\metav{A}$ is false.
 		
-		To show that $\metav{A}$ is not a contradiction, it suffices to find an interpretation where $\metav{A}$ is true.
+		\medskip\noindent To show that $\metav{A}$ is not a contradiction, it suffices to find an interpretation where $\metav{A}$ is true.
 	}
 
 \section{Logical equivalence}
@@ -618,6 +622,7 @@ The premise is clearly true on this interpretation. Anyone in the domain is a Ca
 
 For our third example, we'll mix things up a bit. In \S\ref{s:Interpretations}, we described how we can present some interpretations using diagrams. For example:
 \begin{center}
+	\begin{arialabel}{The numbers 1, 2, and 3 are connected by arrows. There are arrows from 1 to 2, 3, and to itself, and from 2 to 3. There is no arrow leaving 3.}
 	\begin{tikzpicture}
 	\node (atom1) at (0,2) {1};
 	\node (atom2) at (2,2) {2};
@@ -626,7 +631,8 @@ For our third example, we'll mix things up a bit. In \S\ref{s:Interpretations}, 
 	\draw[->, thick] (atom1)--(atom3);
 	\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3); 
 	\draw[->, thick] (atom2) -- (atom3);
-	\end{tikzpicture}
+\end{tikzpicture}
+\end{arialabel}
 \end{center}
 Using the conventions employed in \S\ref{s:Interpretations}, the domain of this interpretation is the first three positive whole numbers, and `$\atom{R}{x,y}$' is true of x and y just in case there is an arrow from x to y in our diagram. Here are some sentences that the interpretation makes true:
 \begin{ebullet}
@@ -646,12 +652,12 @@ and many more besides.
 
 \factoidbox{
 	If some interpretation makes all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$  true and $\metav{C}$ is false, then:
-	\begin{ebullet}
+	\begin{compactlist}
 		\item$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ is \emph{invalid}; and
 	\item $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \nentails \metav{C}$; and
 	\item 
 	And $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n, \enot \metav{C}$ are jointly satisfiable.
-\end{ebullet}}
+\end{compactlist}}
 An interpretation which refutes a claim---to logical truth, say, or to entailment---is called a \emph{counter-interpretation}, or a \emph{counter-model}.
 
 We'll close this section, though, with a caution about the relationship between (in)validity and (non)entailment. Recall FOL's limitations: it is an extensional language; it ignores issues of vagueness; and it cannot handle cases of validity for `special reasons'. To take one illustration of these issues, consider this natural-language argument: 
@@ -748,19 +754,19 @@ Note another feature of the argument. Since the sentence in question contained n
 
 Let's have another example. The sentence `$\forall x(\atom{R}{x,x}\eor\enot \atom{R}{x,x})$' should obviously be a validity. However, saying \emph{precisely} why is quite tricky. We cannot say that `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$' is true in every interpretation, since `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$' is not even a \emph{sentence} of FOL (remember that `$x$' is a variable, not a name). Instead, we should say something like this:
 	\begin{quote}
-		Consider some arbitrary interpretation. $\forall x(\atom{R}{x,x}\eor \enot\atom{R}{x,x})$ is true in our interpretation \ifeff{} $\atom{R}{x,x}\eor\enot\atom{R}{x,x}$ is satisfied by every object of its domain. Consider some arbitrary member of the domain, which, for convenience, we will call Fred. Either Fred satisfies $\atom{R}{x,x}$ or it does not. If Fred satisfies `$\atom{R}{x,x}$', then Fred also satisfies `$\atom{R}{x,x} \eor \enot \atom{R}{x,x}$'. If Fred does not satisfy `$\atom{R}{x,x}$', it \emph{does} satisfy `$\enot\atom{R}{x,x}$' and so also `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'.\footnote{We use here the fact that the truth conditions for connectives also apply to satisfaction: $a$ satisfies $\metav{A}(\metav{x}) \lor \metav{B}(\metav{x})$ \ifeff{} $a$ satisfies $\metav{A}(\metav{x})$ or $\metav{B}(\metav{x})$, etc.} So either way, Fred satisfies `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'. Since there was nothing special about Fred---we might have chosen any object---we see that every object in the domain satisfies `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'. So `$\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$' is true in our interpretation. But we chose our interpretation arbitrarily, so `$\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$' is true in every interpretation. It is therefore a validity.
+		Consider some arbitrary interpretation. `$\forall x(\atom{R}{x,x}\eor \enot\atom{R}{x,x})$' is true in our interpretation \ifeff{} `$\atom{R}{x,x}\eor\enot\atom{R}{x,x}$' is satisfied by every object of its domain. Consider some arbitrary member of the domain, which, for convenience, we will call Fred. Either Fred satisfies `$\atom{R}{x,x}$' or it does not. If Fred satisfies `$\atom{R}{x,x}$', then Fred also satisfies `$\atom{R}{x,x} \eor \enot \atom{R}{x,x}$'. If Fred does not satisfy `$\atom{R}{x,x}$', it \emph{does} satisfy `$\enot\atom{R}{x,x}$' and so also `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'.\footnote{We use here the fact that the truth conditions for connectives also apply to satisfaction: $a$ satisfies $\metav{A}(\metav{x}) \lor \metav{B}(\metav{x})$ \ifeff{} $a$ satisfies $\metav{A}(\metav{x})$ or $\metav{B}(\metav{x})$, etc.} So either way, Fred satisfies `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'. Since there was nothing special about Fred---we might have chosen any object---we see that every object in the domain satisfies `$\atom{R}{x,x} \eor\enot \atom{R}{x,x}$'. So `$\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$' is true in our interpretation. But we chose our interpretation arbitrarily, so `$\forall x (\atom{R}{x,x} \eor\enot \atom{R}{x,x})$' is true in every interpretation. It is therefore a validity.
 	\end{quote}
 This is quite long-winded, but, as things stand, there is no alternative. In order to show that a sentence is a validity, we must reason about \emph{all} interpretations.
 
 \section{Other cases}
 Similar points hold of other cases too. Thus, we must reason about all interpretations if we want to show:
-	\begin{ebullet}
-		\item that a sentence is a contradiction; for this requires that it is false in \emph{every} interpretation.
-		\item that two sentences are logically equivalent; for this requires that they have the same truth value in \emph{every} interpretation.
-		\item that some sentences are jointly unsatisfiable; for this requires that there is no interpretation in which all of those sentences are true together; i.e., that, in \emph{every} interpretation, at  least one of those sentences is false.
-		\item that an argument is valid; for this requires that the conclusion is true in \emph{every} interpretation where the premises are true.
+	\begin{itemize}
+		\item that a sentence is a contradiction (this requires that it is false in \emph{every} interpretation);
+		\item that two sentences are logically equivalent (this requires that they have the same truth value in \emph{every} interpretation);
+		\item that some sentences are jointly unsatisfiable (this requires that there is no interpretation in which all of those sentences are true together, i.e., that, in \emph{every} interpretation, at  least one of those sentences is false);
+		\item that an argument is valid (this requires that the conclusion is true in \emph{every} interpretation where the premises are true);
 		\item that some sentences entail another sentence.
-	\end{ebullet}
+	\end{itemize}
 The problem is that, with the tools available to you so far, reasoning about all interpretations is a serious challenge! For a final example, here is a perfectly obvious entailment:
 	$$\forall x(\atom{H}{x} \eand \atom{J}{x}) \entails \forall x\, \atom{H}{x}$$
 After all, if everything is both $H$ and $J$, then everything is~$H$.

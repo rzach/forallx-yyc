@@ -131,7 +131,7 @@
 \newcommand*{\closentuple}{\rangle}
 \newcommand*{\ntuple}[1]{\ensuremath{\mathopen{\openntuple}}#1\ensuremath{\mathclose{\closentuple}}} 
 % definitions
-\newcommand*{\define}[1]{\textsc{\lowercase{\color{leadbeater}#1}}}
+\newcommand*{\define}[1]{\textsc{\lowercase{\color{dkleadbeater}#1}}}
 
 %    ****************************************
 %    *          LIST  ENVIRONMENTS          *
@@ -145,10 +145,9 @@
 % {\setcounter{OLDeargnum}{\arabic{eargnum}}\end{list}}
 
 \iflatexml
-%\DeclareUnicodeCharacter{25B9}{$\triangleright$}
-\setlist[itemize]{label=▹}
+\setlist[itemize]{label=‣,noitemsep}
 \else
-\setlist[itemize]{label=$\triangleright$}
+\setlist[itemize]{label=$\triangleright$,noitemsep}
 \fi
 
 % earg -- an unordered list for arguments, no labels
@@ -359,12 +358,18 @@
 %    ****************************************
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thepart}{\Roman{part}}
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
 
 \setcounter{tocdepth}{0} %TB: only chapters and sections to appear
 
 \setlength{\columnsep}{2em} % Sets 2em space between columns when calling multicol 
 
 \newcommand\myanswer[1]{\textcolor{dkleadbeater}{#1}} % TB: puts model answers in blue
+
+\iflatexml
+  \newenvironment{arialabel}[1]{\<div aria-label="#1">\<div aria-hidden="true" class="ltx\_centering">}{\</div>\</div>}
+\else
+  \newenvironment{arialabel}[1]{}{}
+\fi
 
 \IfFileExists{forallxyyc-local.sty}{\usepackage{forallxyyc-local}}{}

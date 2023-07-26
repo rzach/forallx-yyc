@@ -131,7 +131,14 @@ Other textbooks will understand this as a stipulation that the TFL sentence `$L$
 
 
 \section{Indicative versus subjunctive conditionals}\label{s:IndicativeSubjunctive}
-We want to bring home the point that TFL can \emph{only} deal with truth functions by considering the case of the conditional. When we introduced the characteristic truth table for the material conditional in \S\ref{s:CharacteristicTruthTables}, we did not say anything to justify it. Let's now offer a justification, which follows Dorothy Edgington.\footnote{Dorothy Edgington, `Conditionals', 2014, in the \textit{Stanford Encyclopedia of Philosophy} (\url{https://plato.stanford.edu/archives/win2014/entries/conditionals/}).} 
+We want to bring home the point that TFL can \emph{only} deal with
+truth functions by considering the case of the conditional. When we
+introduced the characteristic truth table for the material conditional
+in \S\ref{s:CharacteristicTruthTables}, we did not say anything to
+justify it. Let's now offer a justification, which follows Dorothy
+Edgington.\footnote{Dorothy Edgington, `Conditionals',
+\textit{Stanford Encyclopedia of Philosophy} (Fall 2020)
+(\url{https://plato.stanford.edu/archives/fall2020/entries/conditionals/}).} 
 
 Suppose that Lara has drawn some shapes on a piece of paper, and coloured some of them in. We have not seen them, but nevertheless claim:
 	\begin{quote}
@@ -139,17 +146,14 @@ Suppose that Lara has drawn some shapes on a piece of paper, and coloured some o
 	\end{quote}
 As it happens, Lara has drawn the following:
 \begin{center}
-\begin{bmlimage}
+\begin{arialabel}{There are three shapes: the first shape is a grey circle labelled A, some empty space, the second shape is a white circle labelled C, and the fourth a white square labelled D.}
 \begin{tikzpicture}
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, diamond, phantom_shape] (cat2)  { } ;
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C} ;
 	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
-\end{bmlimage}\bmlDescription{There are three shapes: the first shape is
-a grey circle labelled A, some empty space, the
-second shape is a white circle labelled C, and the fourth a white square
-labelled D.}
+\end{arialabel}
 \end{center}
 In this case, our claim is surely true.  Shapes C and D are not grey, and so can hardly present \emph{counterexamples} to our claim. Shape A \emph{is} grey, but fortunately it is also circular. So our claim has no counterexamples. It must be true. That means that each of the following \emph{instances} of our claim must be true too:
 	\begin{ebullet}
@@ -159,17 +163,17 @@ In this case, our claim is surely true.  Shapes C and D are not grey, and so can
 	\end{ebullet}
 However, if Lara had drawn a fourth shape, thus:
 \begin{center}
-\begin{bmlimage}
+\begin{arialabel}{There are four shapes: the first shape is
+	a grey circle labelled A, the second a grey square labelled B, the
+	third a white circle labelled C, and the fourth a white square
+	labelled D.}
 \begin{tikzpicture}
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, grey_shape] (cat2)  {B};
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C};
 	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
-\end{bmlimage}\bmlDescription{There are four shapes: the first shape is
-a grey circle labelled A, the second a grey square labelled B, the
-third a white circle labelled C, and the fourth a white square
-labelled D.}
+\end{arialabel}
 \end{center}
 then our claim would have been false. So this claim must also be false:
 	\begin{ebullet}
