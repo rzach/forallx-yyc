@@ -145,6 +145,7 @@ Suppose that Lara has drawn some shapes on a piece of paper, and coloured some o
 		If any shape is grey, then that shape is also circular.
 	\end{quote}
 As it happens, Lara has drawn the following:
+
 \begin{center}
 \begin{arialabel}{There are three shapes: the first shape is a grey circle labelled A, some empty space, the second shape is a white circle labelled C, and the fourth a white square labelled D.}
 \begin{tikzpicture}
@@ -155,13 +156,21 @@ As it happens, Lara has drawn the following:
 \end{tikzpicture}
 \end{arialabel}
 \end{center}
-In this case, our claim is surely true.  Shapes C and D are not grey, and so can hardly present \emph{counterexamples} to our claim. Shape A \emph{is} grey, but fortunately it is also circular. So our claim has no counterexamples. It must be true. That means that each of the following \emph{instances} of our claim must be true too:
-	\begin{ebullet}
-		\item If A is grey, then it is circular \hfill (true antecedent, true consequent)
-		\item If C is grey, then it is circular\hfill (false antecedent, true consequent)
-		\item If D is grey, then it is circular \hfill (false antecedent, false consequent)
-	\end{ebullet}
+
+\noindent In this case, our claim is surely true.  Shapes C and D are not grey, and so can hardly present \emph{counterexamples} to our claim. Shape A \emph{is} grey, but fortunately it is also circular. So our claim has no counterexamples. It must be true. That means that each of the following \emph{instances} of our claim must be true too:
+	\begin{itemize}
+		\item If A is grey, then it is circular
+
+		\qquad (true antecedent, true consequent)
+		\item If C is grey, then it is circular
+
+		\qquad (false antecedent, true consequent)
+		\item If D is grey, then it is circular
+
+		\qquad (false antecedent, false consequent)
+	\end{itemize}
 However, if Lara had drawn a fourth shape, thus:
+
 \begin{center}
 \begin{arialabel}{There are four shapes: the first shape is
 	a grey circle labelled A, the second a grey square labelled B, the
@@ -175,11 +184,14 @@ However, if Lara had drawn a fourth shape, thus:
 \end{tikzpicture}
 \end{arialabel}
 \end{center}
-then our claim would have been false. So this claim must also be false:
-	\begin{ebullet}
-		\item If B is grey, then it is circular \hfill (true antecedent, false consequent)
-	\end{ebullet}
-Now, recall that every connective of TFL has to be truth-functional. This means that merely the truth values of the antecedent and consequent must uniquely determine the truth value of the conditional as a whole. Thus, from the truth values of our four claims---which provide us with all possible combinations of truth and falsity in antecedent and consequent---we can read off the truth table for the material conditional.
+
+\noindent then our claim would have been false. So this claim must also be false:
+	\begin{itemize}
+		\item If B is grey, then it is circular
+
+		\qquad (true antecedent, false consequent)
+	\end{itemize}
+Now, recall that every connective of TFL has to be truth-functional. This means that the truth values of the antecedent and consequent alone must uniquely determine the truth value of the conditional as a whole. Thus, from the truth values of our four claims---which provide us with all possible combinations of truth and falsity in antecedent and consequent---we can read off the truth table for the material conditional.
 
 What this argument shows is that `$\eif$' is the \emph{best} candidate for a truth-functional conditional. Otherwise put, \emph{it is the best conditional that TFL can provide}. But is it any good, as a surrogate for the conditionals we use in everyday language? Consider two sentences:
 	\begin{enumerate}
@@ -955,9 +967,9 @@ Answer each of the questions below and justify your answer.
 \end{compactlist}
 \problempart 
 Consider the following principle:
-	\begin{ebullet}
-		\item Suppose $\metav{A}$ and $\metav{B}$ are logically equivalent. Suppose an argument contains $\metav{A}$ (either as a premise, or as the conclusion). The validity of the argument would be unaffected, if we replaced $\metav{A}$ with $\metav{B}$.
-	\end{ebullet}
+	\begin{quote}
+		Suppose $\metav{A}$ and $\metav{B}$ are logically equivalent. Suppose an argument contains $\metav{A}$ (either as a premise, or as the conclusion). The validity of the argument would be unaffected, if we replaced $\metav{A}$ with $\metav{B}$.
+	\end{quote}
 Is this principle correct? Explain your answer.
 
 

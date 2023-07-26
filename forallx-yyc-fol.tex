@@ -1196,9 +1196,12 @@ Symbolize this sentence, using `$\atom{F}{x}$' for `\gap{x} is an officer'.  Are
 \problempart 
 Explain why:
 	\begin{compactlist}
-		\item   `$\exists x \forall y(\atom{A}{y} \eiff x= y)$' is a good symbolization of `there is exactly one apple'.
-		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall z(\atom{A}{z} \eiff (x= z \eor y = z))\bigr]$' is a good symbolization of `there are exactly two apples'.
-	\end{compactlist}		
+		\item `$\exists x \forall y(\atom{A}{y} \eiff x= y)$' is a good
+		symbolization of `there is exactly one apple'.
+		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall
+		z(\atom{A}{z} \eiff (x= z \eor y = z))\bigr]$' is a good
+		symbolization of `there are exactly two apples'.
+	\end{compactlist}
 
 
 \chapter{Sentences of FOL}\label{s:FOLSentences}
@@ -1612,10 +1615,10 @@ symbolize the following sentences in FOL:
 
 \problempart
 In this chapter, we symbolized `Nick is the traitor' by `$\exists x (\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) \eand x = n)$'. Explain why these would be equally good symbolisations:
-	\begin{ebullet}
+	\begin{itemize}
 		\item $\atom{T}{n} \eand \forall y(\atom{T}{y} \eif n = y)$
 		\item $\forall y(\atom{T}{y} \eiff y = n)$
-	\end{ebullet}
+	\end{itemize}
 
 
 \chapter{Ambiguity}\label{s:ambiguityFOL}

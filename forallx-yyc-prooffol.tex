@@ -114,7 +114,7 @@ This argument should \emph{obviously} be valid. After all, alphabetical variatio
 	\hypo{x}{\forall x\, \atom{F}{x}} \PR
 	\have{a}{\atom{F}{a}} \Ae{x}
 \end{fitchproof}
-We have proved `$\atom{F}{a}$'. And, of course, nothing stops us from using the same justification to prove `$\atom{F}{b}$', `$\atom{F}{c}$', \ldots, `$\atom{F}{j_2}$', \ldots, `$\atom{F}{r_{79002}}$, \dots, and so on until we run out of space, time, or patience. But reflecting on this, we see that there is a way to prove $F\metav{c}$, for any name \metav{c}. And if we can do it for \emph{any} thing, we should surely be able to say that `$F$' is true of \emph{everything}. This therefore justifies us in inferring `$\forall y\,\atom{F}{y}$', thus:
+We have proved `$\atom{F}{a}$'. And, of course, nothing stops us from using the same justification to prove `$\atom{F}{b}$', `$\atom{F}{c}$', \ldots, `$\atom{F}{j_2}$', \ldots, `$\atom{F}{r_{79002}}$, \dots, and so on until we run out of space, time, or patience. But reflecting on this, we see that there is a way to prove $\atom{F}{\metav{c}}$, for any name \metav{c}. And if we can do it for \emph{any} thing, we should surely be able to say that `$F$' is true of \emph{everything}. This therefore justifies us in inferring `$\forall y\,\atom{F}{y}$', thus:
 \begin{fitchproof}
 	\hypo{x}{\forall x\, \atom{F}{x}}\PR
 	\have{a}{\atom{F}{a}} \Ae{x}
@@ -136,7 +136,7 @@ constraint. This constraint ensures that we are always reasoning at a sufficient
 To see the constraint in action, consider this terrible argument:
 	\begin{earg}
 		\item Everyone loves Kylie Minogue.
-		\item[\texttherefore] therefore everyone loves themselves.
+		\item[\texttherefore] Everyone loves themselves.
 	\end{earg}
 We might symbolize this obviously invalid inference pattern as:
 $$\forall x\,\atom{L}{x,k} \therefore \forall x\,\atom{L}{x,x}$$
@@ -162,7 +162,7 @@ This tells us that `$\forall z (\atom{G}{z} \eif \atom{G}{z})$' is a \emph{theor
 We should emphasize one last point. As per the conventions of \cref{s:MainLogicalOperatorQuantifier}, the use of $\forall$I requires that we are replacing \emph{every} instance of the name \metav{c} in $\metav{A}(\ldots \metav{c}\ldots\metav{c}\ldots)$ with the variable \metav{x}. If we only replace \emph{some} names and not others, we end up `proving' silly things. For example, consider the argument:
 	\begin{earg}
 	\item Everyone is as old as themselves.
-	\item[\texttherefore] so everyone is as old as Judi Dench.
+	\item[\texttherefore] Everyone is as old as Judi Dench.
 	\end{earg}
 We might symbolize this as follows:
 $$\forall x\,\atom{O}{x,x} \therefore \forall x\,\atom{O}{x,d}$$
@@ -704,19 +704,19 @@ is true.
 
 \problempart
 Show that the following are provably equivalent:
-\begin{ebullet}
+\begin{itemize}
 \item $\exists x \bigl([\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)] \eand x = n\bigr)$
 \item $\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)$
-\end{ebullet}
+\end{itemize}
 And hence that both have a decent claim to symbolize the English sentence `Nick is the~$F$'.\\
 
 \problempart
 In \cref{sec.identity}, we claimed that the following are logically equivalent symbolizations of the English sentence `there is exactly one $F$':
-\begin{ebullet}
+\begin{itemize}
 \item $\exists x\,\atom{F}{x} \eand \forall x\, \forall y \bigl[(\atom{F}{x} \eand \atom{F}{y}) \eif x = y\bigr]$
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
 \item $\exists x\, \forall y (\atom{F}{y} \eiff x = y)$
-\end{ebullet}
+\end{itemize}
 Show that they are all provably equivalent. (\emph{Hint}: to show that three claims are provably equivalent, it suffices to show that the first proves the second, the second proves the third and the third proves the first; think about why.)
 
 
@@ -730,9 +730,9 @@ Symbolize the following argument
 		\item[\texttherefore] There are exactly two things that are either~$F$ or~$G$.
 	\end{earg}
 And offer a proof of it.
-%\begin{ebullet}
+%\begin{itemize}
 %\item  $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr], \exists x \bigl[\atom{G}{x} \eand \forall y (\atom{G}{y} \eif x = y)\bigr], \forall x (\enot\atom{F}{x} \eor \enot \atom{G}{x}) \proves \exists x\, \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = y \eor x = z))\bigr]$
-%\end{ebullet}
+%\end{itemize}
 
 
 
@@ -800,14 +800,14 @@ More generally, we have the following powerful result:
 \proves\metav{B}$ \textbf{\ifeff} $\metav{A}_1, \metav{A}_2, \ldots,
 \metav{A}_n \entails\metav{B}$}
 This shows that, whilst provability and entailment are \emph{different} notions, they are extensionally equivalent. As such:
-	\begin{ebullet}
+	\factoidbox{\begin{itemize}
 		\item An argument is \emph{valid} \ifeff{} \emph{the conclusion can be proved from the premises}.
 		\item A sentence is a \emph{validity} \ifeff{} it is a \emph{theorem}.
 		\item Two sentences are \emph{equivalent} \ifeff{} they are
 		\emph{provably equivalent}.
 		\item Sentences are \emph{jointly satisfiable} \ifeff{} they are
 		\emph{jointly consistent}.
-	\end{ebullet}
+	\end{itemize}}
 For this reason, you can pick and choose when to think in terms of proofs and when to think in terms of valuations/interpretations, doing whichever is easier for a given task. The table on the next page summarizes which is (usually) easier.
 
 It is intuitive that provability and semantic entailment should agree. But---let us repeat this---do not be fooled by the similarity of the symbols `$\entails$' and `$\proves$'. These two symbols have very different meanings. The fact that provability and semantic entailment agree is not an easy result to come by.

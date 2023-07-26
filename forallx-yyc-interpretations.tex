@@ -423,14 +423,14 @@ Determine whether each of the following sentences is true or false in that inter
 \problempart
 \label{pr.TorF2}
 Consider the following interpretation:	
-	\begin{ebullet}
+	\begin{itemize}
 		\item The domain comprises only Lemmy, Courtney and Eddy
 		\item `$\atom{G}{x}$' is to be true of Lemmy, Courtney and Eddy.
 		\item `$\atom{H}{x}$' is to be true of and only of Courtney
 		\item `$\atom{M}{x}$' is to be true of and only of Lemmy and Eddy
 		\item `$c$' is to refer to Courtney
 		\item `$e$' is to refer to Eddy
-	\end{ebullet}
+	\end{itemize}
 Determine whether each of the following sentences is true or false in that interpretation:
 \begin{compactlist}
 \item $\atom{H}{c} $
@@ -635,14 +635,14 @@ For our third example, we'll mix things up a bit. In \cref{s:Interpretations}, w
 \end{arialabel}
 \end{center}
 Using the conventions employed in \cref{s:Interpretations}, the domain of this interpretation is the first three positive whole numbers, and `$\atom{R}{x,y}$' is true of x and y just in case there is an arrow from x to y in our diagram. Here are some sentences that the interpretation makes true:
-\begin{ebullet}
+\begin{itemize}
 	\item `$\forall x \exists y\, \atom{R}{y,x}$' 
 	\item `$\exists x \forall y\, \atom{R}{x,y}$' \hfill witness 1
 	\item `$\exists x \forall y (\atom{R}{y,x} \eiff x = y)$' \hfill witness 1
 	\item `$\exists x \exists y \exists z ((\enot y = z \eand \atom{R}{x,y}) \eand \atom{R}{z,x})$' \hfill witness 2
 	\item `$\exists x \forall y\, \enot \atom{R}{x,y}$' \hfill witness 3
 	\item `$\exists x (\exists y\, \atom{R}{y,x} \eand \enot \exists y\, \atom{R}{x,y})$' \hfill witness 3
-\end{ebullet}
+\end{itemize}
 This immediately shows that all of the preceding six sentences are jointly satisfiable. We can use this observation to generate \emph{invalid} arguments, e.g.:
 \begin{align*}
 	\forall x \exists y\, \atom{R}{y,x}, \exists x \forall y\, \atom{R}{x,y}  &\therefore  \forall x \exists y\, \atom{R}{x,y}\\

@@ -405,32 +405,32 @@ symbolize the following sentences in FOL:
 %\end{compactlist}
 
 \problempart Consider the sentence,
-\begin{compactlist}[start=19,ref=\arabic*]
+\begin{enumerate}[start=19,ref=\arabic*]
 	\item\label{except2} Every officer except Pavel owes money to Hikaru.
-\end{compactlist}
+\end{enumerate}
 Symbolize this sentence, using `$\atom{F}{x}$' for `\gap{x} is an officer'.  Are you confident that your symbolization is true if, and only if, \cref*{except2} is true?  What happens if every officer owes money to Hikaru, Pavel does not, but Pavel isn't an officer? \myanswer{Most people, including most linguists thinking about `except', read \cref*{except2} as entailing all three of the following:
-\begin{compactlist}
+\begin{enumerate}
 	\item Every officer who is not Pavel owes money to Hikaru
 	\item Pavel does not owe money to Hikaru
 	\item Pavel is an officer
-\end{compactlist}
+\end{enumerate}
 So it can be symbolized as `$\forall x((\atom{F}{x} \eand \enot x = p) \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h} \eand \atom{F}{p}$'.}
 
 \problempart Explain why:
-	\begin{ebullet}
-		\item   `$\exists x \forall y(\atom{A}{y} \eiff x= y)$' is a good symbolization of `there is exactly one apple'.
+	\begin{compactlist}
+		\item `$\exists x \forall y(\atom{A}{y} \eiff x= y)$' is a good symbolization of `there is exactly one apple'.
 		\item[] \myanswer{We might naturally read this in English thus: 
-		\begin{ebullet}
+		\begin{itemize}
 			\item There is something, $x$, such that, if you choose any object at all, if you chose an apple then you chose $x$ itself, and if you chose $x$ itself then you chose an apple.
-		\end{ebullet}
+		\end{itemize}
 		The $x$ in question must therefore be the one and only thing which is an apple.}
 		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall z(\atom{A}{z} \eiff (x= z \eor y = z)\bigr]$' is a good symbolization of `there are exactly two apples'.
 		\item[] \myanswer{Similarly to the above, we might naturally read this in English thus: 
-		\begin{ebullet}
+		\begin{itemize}
 			\item There are two distinct things, $x$ and $y$, such that if you choose any object at all, if you chose an apple then you either chose $x$ or $y$, and if you chose either $x$ or $y$ then you chose an apple.
-		\end{ebullet}
+		\end{itemize}
 		The $x$ and $y$ in question must therefore be the only things which are apples, and since they are distinct, there are two of them.}
-	\end{ebullet}		
+	\end{compactlist}
 
 
 \chapter{Sentences of FOL}\setcounter{ProbPart}{0}
@@ -561,11 +561,11 @@ symbolize the following sentences in FOL:
 
 \problempart
 In this chapter, we symbolized `Nick is the traitor' by `$\exists x (\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) \eand x = n)$'. Explain why these would be equally good symbolisations:
-	\begin{ebullet}
+	\begin{itemize}
 		\item $\atom{T}{n} \eand \forall y(\atom{T}{y} \eif n = y)$
 		\item[] \myanswer{This sentence requires that Nick is a traitor, and that Nick alone is a traitor. Otherwise put, there is one and only one traitor, namely, Nick. Otherwise put: Nick is the traitor.}
 		\item $\forall y(\atom{T}{y} \eiff y = n)$
 		\item[] \myanswer{This sentence can be understood thus: Take anything you like; now, if you chose a traitor, you chose Nick, and if you chose Nick, you chose a traitor. So there is one and only one traitor, namely, Nick, as required.}
-	\end{ebullet}
+	\end{itemize}
 
 \stepcounter{chapter} % Ambiguity
