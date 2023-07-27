@@ -389,15 +389,20 @@ To symbolize these sentences, we will have to add a new name to the symbolizatio
 	\end{ekey}
 \Cref*{qscope1} is a conditional, whose antecedent is `everyone is a bassist', so we will symbolize it with `$\forall x\, \atom{B}{x} \eif \atom{B}{l}$'. This sentence is \emph{necessarily} true: if \emph{everyone} is indeed a bassist, then take anyone you like---for example Lars---and he will be a bassist.
 
-\Cref*{qscope2}, by contrast, might best be paraphrased by
-`every person $x$ is such that, if $x$ is a bassist, then Lars is a
-bassist'. This is symbolized by `$\forall x (\atom{B}{x} \eif
-\atom{B}{l})$'. This sentence can well be false. For instance,
-Kim Deal is a bassist. So
-`$\atom{B}{k}$' is true. Suppose that Lars is not a bassist (say, he's
-a drummer instead), so `$\atom{B}{l}$' is false. Accordingly,
+\Cref*{qscope2}, by contrast, might best be paraphrased by `every
+person $x$ is such that, if $x$ is a bassist, then Lars is a bassist'.
+This is symbolized by `$\forall x (\atom{B}{x} \eif \atom{B}{l})$'.
+This sentence can well be false. For instance, Kim Deal is a bassist.
+So `$\atom{B}{k}$' is true. Suppose that Lars is not a bassist (say,
+he's a drummer instead), so `$\atom{B}{l}$' is false. Accordingly,
 `$\atom{B}{k} \eif \atom{B}{l}$' will be false, so `$\forall x
-(\atom{B}{x} \eif \atom{B}{l})$' will be false as well.
+(\atom{B}{x} \eif \atom{B}{l})$' will be false as well. This example
+shows something else: `$\forall x (\atom{B}{x} \eif \atom{B}{l})$' is
+false exactly when $\exists x\,\atom{B}{x} \eif \atom{B}{l}$ is false;
+they are equivalent. Recalling the lesson about how to symbolize `any'
+in \cref{anyone1} from the previous section, we can conclude that
+\cref*{qscope2} is just a convoluted way of saying ``Lars is a bassist,
+if anyone is''.
 
 In short, `$\forall x \atom{B}{x} \eif \atom{B}{l}$' and `$\forall x (\atom{B}{x} \eif \atom{B}{l})$' are very different sentences. We can explain the difference in terms of the \emph{scope} of the quantifier. The scope of quantification is very much like the scope of negation, which we considered when discussing TFL, and it will help to explain it in this way.
 
