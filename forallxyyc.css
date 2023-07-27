@@ -9,6 +9,11 @@ span.fxblank {
   overflow: hidden;
 }
 
+img.fxcover {
+  border: 1px solid black !important;
+  margin-left: 2em;
+}
+
 /* make <dd>'s (i.e., the description environment used by earg appear
 nicely */
 

@@ -5,7 +5,7 @@
 \documentclass{book}
 \usepackage{bookml/bookml}
 
-\RequirePackage{xcolor,tabularx}
+\RequirePackage{xcolor,tabularx,wrapfig}
 \definecolor{lyallpink}{RGB}{222,31,149}
 \colorlet{leadbeater}{lyallpink}
 \colorlet{dkleadbeater}{lyallpink!80!black}
@@ -35,6 +35,11 @@ Richard Zach}
 \bmlAltFormat{forallxyyc-accessible.pdf}{PDF (accessible)}
 
 \begin{document}
+
+\begin{wrapfigure}{r}{.4\textwidth}
+\includegraphics[width=.4\textwidth,alt={Book
+cover}]{forallxyyc.png}\bmlPlusClass{bml_no_invert fxcover}
+\end{wrapfigure}
 
 \input{forallx-yyc-content}
 
