@@ -227,11 +227,46 @@ Some more examples will bring out this point:
 
 \Cref{and6} is slightly more complicated. The word `although' sets up a contrast between the first part of the sentence and the second part. Nevertheless, the sentence tells us both that Barbara is energetic and that she is not athletic. In order to make each of the conjuncts a sentence letter, we need to replace `she' with `Barbara'. So we can paraphrase \cref*{and6} as, `\emph{Both} Barbara is energetic, \emph{and} Barbara is not athletic'. The second conjunct contains a negation, so we paraphrase further: `\emph{Both} Barbara is energetic \emph{and} \emph{it is not the case that} Barbara is athletic'. Now we can symbolize this with the TFL sentence `$(E\eand\enot B)$'. Note that we have lost all sorts of nuance in this symbolization. There is a distinct difference in tone between \cref*{and6} and `Both Barbara is energetic and it is not the case that Barbara is athletic'. TFL does not (and cannot) preserve these nuances.
 
-\Cref{and7} raises similar issues. There is a contrastive structure, but this is not something that TFL can deal with. So we can paraphrase the sentence as `\emph{Both} Adam is athletic, \emph{and} Barbara is more athletic than Adam'. (Notice that we once again replace the pronoun `him' with `Adam'.) How should we deal with the second conjunct? We already have the sentence letter `$A$', which is being used to symbolize `Adam is athletic', and the sentence `$B$' which is being used to symbolize `Barbara is athletic'; but neither of these concerns their relative athleticity. So, to symbolize the entire sentence, we need a new sentence letter. Let the TFL sentence `$R$' symbolize the English sentence `Barbara is more athletic than Adam'. Now we can symbolize \cref*{and7} by `$(A \eand R)$'.
-	\factoidbox{
-		A sentence can be symbolized as $(\metav{A}\eand\metav{B})$ if it can be paraphrased in English as `Both\ldots, and\ldots', or as `\ldots, but \ldots', or as `although \ldots, \ldots'.
-	}
-You might be wondering why we put brackets around the conjunctions. The reason can be brought out by thinking about how negation interacts with conjunction. Consider:
+\Cref{and7} raises similar issues. The word `but' suggests a contrast
+or difference, but this is not something that TFL can deal with. All
+we can do is paraphrase the sentence as `\emph{Both} Adam is athletic,
+\emph{and} Barbara is more athletic than Adam'. (Notice that we once
+again replace the pronoun `him' with `Adam'.) How should we deal with
+the second conjunct? We already have the sentence letter `$A$', which
+is being used to symbolize `Adam is athletic', and the sentence `$B$'
+which is being used to symbolize `Barbara is athletic'; but neither of
+these concerns their relative athleticity. So, to symbolize the entire
+sentence, we need a new sentence letter. Let the TFL sentence `$R$'
+symbolize the English sentence `Barbara is more athletic than Adam'.
+Now we can symbolize \cref*{and7} by `$(A \eand R)$'. 
+\factoidbox{A
+sentence can be symbolized as $(\metav{A}\eand\metav{B})$ if it can be
+paraphrased in English as `Both\ldots, and\ldots', or as `\ldots, but
+\ldots', or as `although \ldots, \ldots'.} 
+
+We noted above that the contrast suggested by `but' cannot be captured
+in TFL, and that we simply ignore it. A phenomenon that cannot simply
+be ignored is temporal order. E.g., consider:
+\begin{enumerate}
+	\item\label{stoodfirst} Harry stood up and objected to the proposal.
+	\item\label{stoodsecond} Harry objected to the proposal and stood up.
+\end{enumerate}
+If Harry stood up \emph{after} he objected, \cref*{stoodsecond} is true
+but \cref*{stoodfirst} is false---the use of `and' here is
+\emph{asymmetric}. The symbol `\eand' of TFL, however, is always
+symmetric (or ``commutative'' as logicians say). TFL cannot deal with
+asymmetric `and'. We'll assume for all our examples and exercises
+that `and' is symmetric.\footnote{On symmetric and asymmetric
+conjunction in linguistics, see, e.g., Robin Lakoff, ``If's,
+and's, and but's about conjunction,'' in: C. J. Fillmore and D. T.
+Langendoen (eds.), \textit{Studies in Linguistic Semantics}, 
+Holt, Rinehart \& Winston, 1971, and Susan Schmerling, ``Asymmetric
+conjunction and rules of conversation,'' in: P. Cole and J. L.
+Morgan (eds.), \textit{Speech Acts}, Brill, 1975, pp.~211--31.}
+
+You might be wondering why
+we put brackets around the conjunctions. The reason can be brought out
+by thinking about how negation interacts with conjunction. Consider:
 	\begin{enumerate}
 		\item\label{negcon1} It's not the case that you will get both soup and salad.
 		\item\label{negcon2} You will not get soup but you will get salad.

@@ -37,7 +37,9 @@ F & T & F\\
 F & F & F
 \end{tabular}
 \end{center}
-Note that conjunction is \emph{symmetrical}. The truth value for $\metav{A} \eand \metav{B}$ is always the same as the truth value for $\metav{B} \eand \metav{A}$.  
+Note that the truth value for $\metav{A} \eand \metav{B}$ is always
+the same as the truth value for $\metav{B} \eand \metav{A}$.
+Connectives that have this property are called \emph{commutative}.
 
 \paragraph{Disjunction} Recall that `$\eor$' always represents inclusive or. So, for any sentences \metav{A} and \metav{B}, $\metav{A}\eor \metav{B}$ is true if and only if either \metav{A} or \metav{B} is true. We can summarize this in the {characteristic truth table} for disjunction:
 \begin{center}
@@ -50,7 +52,7 @@ F & T & T\\
 F & F & F
 \end{tabular}
 \end{center}
-Like conjunction, disjunction is symmetrical.
+Like conjunction, disjunction is commutative.
 
 \paragraph{Conditional} We're just going to come clean and admit it: Conditionals are a mess in TFL. Exactly how much of a mess they are is \emph{philosophically} contentious. We'll discuss a few of the subtleties in \cref{s:IndicativeSubjunctive,s:ParadoxesOfMaterialConditional}. For now, we are going to stipulate the following: $\metav{A}\eif\metav{B}$ is false if and only if \metav{A} is true and \metav{B} is false. We can summarize this with a characteristic truth table for the conditional.
 \begin{center}
@@ -63,7 +65,7 @@ F & T & T\\
 F & F & T
 \end{tabular}
 \end{center}
-The conditional is \emph{asymmetric}. You cannot swap the antecedent and consequent without changing the meaning of the sentence; $\metav{A}\eif\metav{B}$ and $\metav{B} \eif \metav{A}$ have different truth tables.
+The conditional is \emph{not commutative}. You cannot swap the antecedent and consequent without changing the meaning of the sentence; $\metav{A}\eif\metav{B}$ and $\metav{B} \eif \metav{A}$ have different truth tables.
 
 \paragraph{Biconditional} Since a biconditional is to be the same as the conjunction of the conditionals running in both directions, we will want the truth table for the biconditional to be:
 \begin{center}
@@ -76,7 +78,7 @@ F & T & F\\
 F & F & T
 \end{tabular}
 \end{center}
-Unsurprisingly, the biconditional is symmetrical.
+Unsurprisingly, the biconditional is commutative.
 
 \chapter{Truth-functional connectives}
 \label{s:TruthFunctionality}
