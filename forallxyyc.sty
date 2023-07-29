@@ -118,9 +118,10 @@
 \fi
 \newcommand*{\gap}[1]{\blank$_{#1}$} % TB: used for keys, to avoid use/mention confusion
 
-% make SRs read out "iff" as "if-f"
+% make SRs read out "iff" as "if-f" by putting in invisible U+2060
+% https://en.wikipedia.org/wiki/Word_joiner
 \iflatexml
-\newcommand*{\ifeff}{\<span aria-label="if-f">iff\</span>}
+\newcommand*{\ifeff}{if⁠f}
 \else
 \newcommand*{\ifeff}{iff}
 \fi
@@ -371,6 +372,8 @@
 
 \newcommand\myanswer[1]{\textcolor{dkleadbeater}{#1}} % TB: puts model answers in blue
 
+% aria-label environment to provide accessible descriptions for inline
+% SVG diagrams
 \iflatexml
   \newenvironment{arialabel}[1]{\<div aria-label="#1">\<div aria-hidden="true" class="ltx\_centering">}{\</div>\</div>}
 \else

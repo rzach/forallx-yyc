@@ -18,8 +18,7 @@
 
 % A counter to keep track of subproof levels
 \newcounter{nd*scope}
-% toggles used to insert "open subproof" and "close subproof" aria
-% labels
+% toggles used to insert "open subproof" and "close subproof" 
 \newif\iffmlOpen
 \fmlOpenfalse
 \newif\iffmlClose
@@ -51,14 +50,14 @@
 \def\nd*scope{%
   \<td class="fml-subproof">\<div>%
   \iffmlClose
-    \<span aria-label="close subproof">\</span>%
+    close subproof,
     \global\fmlClosefalse
   \fi
-  \arabic{nd*scope}%
   \iffmlOpen
-    \<span aria-label="open subproof">\</span>%
+    open subproof,
     \global\fmlOpenfalse
   \fi
+  \arabic{nd*scope}%
   \</div>\</td>}
 % cant get this to work
 \def\nd*just#1{%
