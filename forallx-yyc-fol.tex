@@ -1215,17 +1215,18 @@ We know how to represent English sentences in FOL. The time has finally come to 
 \section{Expressions}
 There are six kinds of symbols in FOL:
 
-\begin{description}
-\item[Predicates] $A,B,C,\ldots,Z$, or 
-with subscripts, as needed: $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$
-\item[Names] $a,b,c,\ldots, r$, or
-with subscripts, as needed $a_1, b_{224}, h_7, m_{32},\ldots$
-\item[Variables] $s, t, u, v, w, x,y,z$, or
-with subscripts, as needed $x_1, y_1, z_1, x_2,\ldots$
-\item[Connectives]  $\enot,\eand,\eor,\eif,\eiff$
-\item[Brackets] ( , )
-\item[Quantifiers]  $\forall, \exists$
-\end{description}
+\begin{compactlist}
+\item \textbf{Predicates:} $A$, $B$, $C$, \dots, $Z$, or 
+with subscripts, as needed: $A_1$, $B_1$, $Z_1$, $A_2$, $A_{25}$,
+$J_{375}$, \dots
+\item \textbf{Names:} $a$, $b$, $c$, \dots, $r$, or
+with subscripts, as needed: $a_1$, $b_{224}$, $h_7$, $m_{32}$, \dots
+\item \textbf{Variables:} $s$, $t$, $u$, $v$, $w$, $x$, $y$, $z$, or
+with subscripts, as needed: $x_1$, $y_1$, $z_1$, $x_2$, \dots
+\item \textbf{Connectives:}  $\enot$, $\eand$, $\eor$, $\eif$, $\eiff$
+\item \textbf{Brackets:} ( , )
+\item \textbf{Quantifiers:}  $\forall$, $\exists$
+\end{compactlist}
 We define an \define{expression of FOL} as any string of symbols of FOL. Take any of the symbols of FOL and write them down, in any order, and you have an expression.
 
 \section{Terms and formulas}
@@ -1261,12 +1262,14 @@ Note that we consider sentence letters also formulas of FOL, so every sentence o
 
 
 The use of script letters here follows the conventions laid down in \cref{s:UseMention}. So, `$\metav{R}$' is not itself a predicate of FOL. Rather, it is a symbol of our metalanguage (augmented English) that we use to talk about any predicate of FOL. Similarly, `$\metav{t}_1$' is not a term of FOL, but a symbol of the metalanguage that we can use to talk about any term of FOL. So, where `$F$' is a one-place predicate, `$G$' is a three-place predicate, and `$S$' is a six-place predicate, here are some atomic formulas:
-	\begin{align*}
-		& D &&  \atom{F}{a}\\
-		& x = a && \atom{G}{x,a,y}\\
-		& a = b && \atom{G}{a,a,a}\\
-		& \atom{F}{x} && \atom{S}{x_1, x_2, a, b, y, x_1}\\
-	\end{align*}
+	\begin{center}
+		\begin{tabular}{l@{\qquad\qquad}l}
+		$D$ & $\atom{F}{a}$\\
+		$x = a$ & $\atom{G}{x,a,y}$\\
+		$a = b$ & $\atom{G}{a,a,a}$\\
+		$\atom{F}{x}$ & $\atom{S}{x_1, x_2, a, b, y, x_1}$
+	\end{tabular}
+\end{center}
 Once we know what atomic formulas are, we can offer recursion clauses to define arbitrary formulas. The first few clauses are exactly analogous to those in the definition of `sentence of TFL'.
 	\factoidbox{
 	\begin{compactlist}
@@ -1290,11 +1293,11 @@ So, assuming again that `$F$' is a one-place predicate, `$G$' is a three-place p
 		& \atom{F}{x}\\
 		& \atom{G}{a,y,z}\\
 		& \atom{S}{y,z,y,a,y,x}\\
-		(\atom{G}{a,y,z} \eif {}& \atom{S}{y,z,y,a,y,x})\\
-		\forall z (\atom{G}{a,y,z} \eif {}& \atom{S}{y,z,y,a,y,x})\\
-		\atom{F}{x} \eand \forall z (\atom{G}{a,y,z} \eif {}& \atom{S}{y,z,y,a,y,x})\\
-		\exists y (\atom{F}{x} \eand \forall z (\atom{G}{a,y,z} \eif {}& \atom{S}{y,z,y,a,y,x}))\\
-		\forall x \exists y (\atom{F}{x} \eand \forall z (\atom{G}{a,y,z} \eif {}& \atom{S}{y,z,y,a,y,x}))
+		(\atom{G}{a,y,z} \eif \,& \atom{S}{y,z,y,a,y,x})\\
+		\forall z (\atom{G}{a,y,z} \eif \,& \atom{S}{y,z,y,a,y,x})\\
+		\atom{F}{x} \eand \forall z (\atom{G}{a,y,z} \eif \,& \atom{S}{y,z,y,a,y,x})\\
+		\exists y (\atom{F}{x} \eand \forall z (\atom{G}{a,y,z} \eif \,& \atom{S}{y,z,y,a,y,x}))\\
+		\forall x \exists y (\atom{F}{x} \eand \forall z (\atom{G}{a,y,z} \eif \,& \atom{S}{y,z,y,a,y,x}))
 	\end{align*}
 %However, this is \emph{not} a formula:
 %	\begin{center}
