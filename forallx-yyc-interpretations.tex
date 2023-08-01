@@ -302,11 +302,12 @@ If you have understood these three examples, that's what matters. It provides th
 
 Strictly speaking, though, we still need to \emph{give} that definition. The result, sadly, is a bit ugly, and requires a few new definitions. Brace yourself!
 
-Suppose that \metav{A} is a formula containing at least one occurrence of the variable \metav{x}, and that $\metav{x}$ is free in $\metav{A}$. We will write this thus:
+Suppose that \metav{A} is a formula, which usually contains at least
+one free occurrence of the variable \metav{x}, and possibly more than one. We will write this thus:
 $$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$$
 Suppose also that \metav{c} is a name. Then we will write:
 $$\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$$
-for the formula we obtain by replacing \emph{every} occurrence of $\metav{x}$ in \metav{A} with~$\metav{c}$. The resulting formula is called a \define{substitution instance} of $\forall \metav{x}\metav{A}$ and $\exists\metav{x}\metav{A}$.  Also, $\metav{c}$ is called the \define{instantiating name}. So:
+for the formula we obtain by replacing \emph{every} free occurrence of $\metav{x}$ in \metav{A} with~$\metav{c}$. The resulting formula is called a \define{substitution instance} of $\forall \metav{x}\metav{A}$ and $\exists\metav{x}\metav{A}$.  Also, $\metav{c}$ is called the \define{instantiating name}. So:
 	$$\exists x (\atom{R}{e,x} \eiff \atom{F}{x})$$
 is a substitution instance of 
 	$$\forall y \exists x (\atom{R}{y,x} \eiff \atom{F}{x})$$
@@ -316,6 +317,16 @@ with the instantiating name `$e$' and instantiated variable~`$y$'.
   name = substitution instance,
   description = {The result of replacing every free occurrence of a \gls{variable} in a \gls{formula} with a \gls{name}}
 }
+
+A brief aside: when substituting names for variables, we only allow
+the replacement of \emph{free} variables. This is necessary since we
+allow formulas such as `$\exists x(\forall x\,\atom{F}{x} \eif
+\atom{G}{x})$', where different quantifiers bind the same variables.
+We consider only `$\forall x\,\atom{F}{x} \eif \atom{G}{e}$' as a
+susbstitution instance of this formula, and not `$\atom{F}{e} \eif
+\atom{G}{e}$', because the `$x$' in `$\atom{F}{x}$' is not free---it
+is bound by `$\forall x$'. (You may want to review \cref{s:FreeVars}
+in this connection.)
 
 Our interpretation will include a specification of which names correspond to which objects in the domain. Take any object in the domain, say, $d$, and a name $\metav{c}$ which is not already assigned by the interpretation. If our interpretation is $\mathbf{I}$, then we can consider the interpretation $\mathbf{I}[d/\metav{c}]$ which is just like $\mathbf{I}$ except it \emph{also} assigns the name $\metav{c}$ to the object~$d$. Then we can say that $d$ \define{satisfies} the formula $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in the interpretation~$\mathbf{I}$ if, and only if, $\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in $\mathbf{I}[d/\metav{c}]$. (If $d$ satisfies $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ we also say that $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ is \emph{true of}~$d$.) 
 
@@ -339,7 +350,7 @@ So, for instance, Socrates satisfies the formula~$\atom{P}{x}$ since $\atom{P}{c
 
 Armed with this notation, the rough idea is as follows. The sentence
 $\forall \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$
-will be true in $\mathbf{I}$ iff, for any object~$d$ in the domain,
+will be true in $\mathbf{I}$ \ifeff, for any object~$d$ in the domain,
 $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ is true in
 $\mathbf{I}[d/\metav{c}]$, i.e., no matter what object (in the domain)
 we name with $\metav{c}$. In other words, $\forall \metav{x}
@@ -354,7 +365,7 @@ $\mathbf{I}[d/\metav{c}]$ for some object~$d$.
 		$\forall \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff}
 		every object in the domain satisfies $\metav{A}(\ldots
 		\metav{x} \ldots \metav{x}\ldots)$.
-		
+
 		\medskip\noindent $\exists \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff} at least one object in the domain satisfies
 		$\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$.
 	}

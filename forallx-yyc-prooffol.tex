@@ -8,36 +8,42 @@
 The language of FOL makes use of all of the connectives of TFL. So proofs in FOL will use all of the basic and derived rules from \cref{ch.NDTFL}. We will also use the proof-theoretic notions (particularly, the symbol `$\proves$') introduced there. However, we will also need some new basic rules to govern the quantifiers, and to govern the identity sign.
 
 
-\section{Universal elimination}
+\section{Universal elimination}\label{s:forallElim}
 
 From the claim that everything is~$F$, you can infer that any particular thing is~$F$. You name it; it's~$F$. So the following should be fine:
 \begin{fitchproof}
 	\hypo{a}{\forall x\,\atom{R}{x,x,d}}\PR
 	\have{c}{\atom{R}{a,a,d}} \Ae{a}
 \end{fitchproof}
-We obtained line 2 by dropping the universal quantifier and replacing every instance of `$x$' with `$a$'. Equally, the following should be allowed:
+We obtained line~$2$ by dropping the universal quantifier and replacing every instance of `$x$' with `$a$'. Equally, the following should be allowed:
 \begin{fitchproof}
 	\hypo{a}{\forall x\,\atom{R}{x,x,d}}\PR
 	\have{c}{\atom{R}{d,d,d}} \Ae{a}
 \end{fitchproof}
-We obtained line 2 here by dropping the universal quantifier and replacing every instance of `$x$' with `$d$'. We could have done the same with any other name we wanted.
+We obtained line~$2$ here by dropping the universal quantifier and replacing every instance of `$x$' with~`$d$'. We could have done the same with any other name we wanted.
 
 This motivates the universal elimination rule ($\forall$E):
+
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)}
 	\have[\ ]{c}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)} \Ae{a}
 \end{fitchproof}}
-The notation here was introduced in \cref{s:TruthFOL}. The point is that you can obtain any \emph{substitution instance} of a universally quantified formula: replace every instance of the quantified variable with any name you like.
+
+The notation here was introduced in \cref{s:TruthFOL}. The point is
+that you can obtain any \emph{substitution instance} of a universally
+quantified formula: replace every free occurrence of the quantified
+variable with any name you like.
 
 We should emphasize that (as with every elimination rule) you can only apply the $\forall$E rule when the universal quantifier is the main logical operator. So the following is \emph{banned}:
 \begin{fitchproof}
 	\hypo{a}{\forall x\,\atom{B}{x} \eif \atom{B}{k}}\PR
 	\have{c}{\atom{B}{b} \eif \atom{B}{k}}\by{naughy attempt to invoke $\forall$E}{a}
 \end{fitchproof}
-This is illegitimate, since `$\forall x$' is not the main logical operator in line~1. (If you need a reminder as to why this sort of inference should be banned, reread \cref{s:MoreMonadic}.)
+This is illegitimate, since `$\forall x$' is not the main logical operator in line~$1$. (If you need a reminder as to why this sort of inference should be banned, reread \cref{s:MoreMonadic}.)
 
-\section{Existential introduction}
+\section{Existential introduction}\label{s:existsIntro}
+
 From the claim that some particular thing is~$F$, you can infer that something is~$F$. So we ought to allow:
 \begin{fitchproof}
 	\hypo{a}{\atom{R}{a,a,d}}\PR
@@ -55,7 +61,14 @@ Here we have replaced both instances of the name `$a$' with a variable, and then
 \end{fitchproof}
 Here we have replaced \emph{one} instance of the name `$a$' with a variable, and then existentially generalized. These observations motivate our introduction rule, although to explain it, we will need to introduce some new notation.
 
-Where $\metav{A}$ is a sentence containing the name $\metav{c}$, we can emphasize this by writing `$\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$'. We will write `$\metav{A}(\ldots \metav{x} \ldots \metav{c}\ldots)$' to indicate any formula obtained by replacing \emph{some or all} of the instances of the name \metav{c} with the variable \metav{x}. Armed with this, our introduction rule is:
+Where $\metav{A}$ is a sentence containing the name $\metav{c}$, we
+can emphasize this by writing `$\metav{A}(\ldots \metav{c} \ldots
+\metav{c}\ldots)$'. We will write `$\metav{A}(\ldots \metav{x} \ldots
+\metav{c}\ldots)$' to indicate any formula obtained by replacing
+\emph{some or all} of the instances of the name \metav{c} with the
+variable~\metav{x} (provided provided $\metav{c}$, wherever it is
+replaced, does not occur in the scope of a quantifier
+binding~$\metav{x}$). Armed with this, our introduction rule is:
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
@@ -101,8 +114,8 @@ If we get what we want on all three counts, then we have to countenance that $\f
 
 Before we start thinking about which to surrender, we might want to ask how \emph{much} of a cheat this is. Granted, it may make it harder to engage in theological debates about why there is something rather than nothing. But the rest of the time, we will get along just fine. So maybe we should just regard our proof system (and FOL, more generally) as having a very slightly limited purview. If we ever want to allow for the possibility of \emph{nothing}, then we will have to cast around for a more complicated proof system. But for as long as we are content to ignore that possibility, our proof system is perfectly in order. (As, similarly, is the stipulation that every domain must contain at least one object.)
 
+\section{Universal introduction}\label{s:forallIntro}
 
-\section{Universal introduction}
 Suppose you had shown of each particular thing that it is F (and that there are no other things to consider). Then you would be justified in claiming that everything is F. This would motivate the following proof rule. If you had established each and every single substitution instance of `$\forall x\,\atom{F}{x}$', then you can infer `$\forall x\,\atom{F}{x}$'.
 
 Unfortunately, that rule would be utterly unusable. To establish each and every single substitution instance would require proving `$\atom{F}{a}$', `$\atom{F}{b}$', \dots, `$\atom{F}{j_2}$', \dots, `$\atom{F}{r_{79002}}$', \ldots, and so on. Indeed, since there are infinitely many names in FOL, this process would never come to an end. So we could never apply that rule. We need to be a bit more cunning in coming up with our rule for introducing universal quantification.
@@ -114,7 +127,7 @@ This argument should \emph{obviously} be valid. After all, alphabetical variatio
 	\hypo{x}{\forall x\, \atom{F}{x}} \PR
 	\have{a}{\atom{F}{a}} \Ae{x}
 \end{fitchproof}
-We have proved `$\atom{F}{a}$'. And, of course, nothing stops us from using the same justification to prove `$\atom{F}{b}$', `$\atom{F}{c}$', \ldots, `$\atom{F}{j_2}$', \ldots, `$\atom{F}{r_{79002}}$, \dots, and so on until we run out of space, time, or patience. But reflecting on this, we see that there is a way to prove $\atom{F}{\metav{c}}$, for any name \metav{c}. And if we can do it for \emph{any} thing, we should surely be able to say that `$F$' is true of \emph{everything}. This therefore justifies us in inferring `$\forall y\,\atom{F}{y}$', thus:
+We have proved `$\atom{F}{a}$'. And, of course, nothing stops us from using the same justification to prove `$\atom{F}{b}$', `$\atom{F}{c}$', \ldots, `$\atom{F}{j_2}$', \ldots, `$\atom{F}{r_{79002}}$, \dots, and so on until we run out of space, time, or patience. But reflecting on this, we see that there is a way to prove $\atom{F}{\metav{c}}$, for any name~\metav{c}. And if we can do it for \emph{any} thing, we should surely be able to say that `$F$' is true of \emph{everything}. This therefore justifies us in inferring `$\forall y\,\atom{F}{y}$', thus:
 \begin{fitchproof}
 	\hypo{x}{\forall x\, \atom{F}{x}}\PR
 	\have{a}{\atom{F}{a}} \Ae{x}
@@ -126,12 +139,33 @@ The crucial thought here is that `$a$' was just some \emph{arbitrary} name. Ther
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
 	\have[\ ]{c}{\forall \metav{x}\,\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)} \Ai{a}
 \end{fitchproof}
-	\metav{c} must not occur in any undischarged assumption%\\ 
-	%\metav{x} must not occur in $\metav{A}(\ldots \metav{c} \ldots
-	%\metav{c}\ldots)$
-	}
-A crucial aspect of this rule, though, is bound up in the %first 
-constraint. This constraint ensures that we are always reasoning at a sufficiently general level.
+where the name \metav{c} must not occur in a premise or an undischarged
+assumption.%\\ 
+%\metav{x} must not occur in $\metav{A}(\ldots \metav{c} \ldots
+%\metav{c}\ldots)$
+}
+
+In \cref{s:MainLogicalOperatorQuantifier}, we introduced a convention
+for indicating \emph{substitution instances}: We said that if
+$\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$ is a formula,
+then $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ is the
+result of replacing \emph{every} free occurrence of $\metav{x}$ in
+$\metav{A}$ by~$\metav{c}$. To state our $\forall$I rule, we are using
+the same convention, except in the other direction: If
+$\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ is a formula,
+then $\metav{A}(\ldots \metav{x} \ldots \metav{x}\ldots)$ is the
+result of replacing \emph{every} occurrence of~$\metav{c}$ in it
+by~$\metav{x}$. (This is only allowed as long as $\metav{c}$ does not
+occur in the scope of a quantifier binding~$\metav{x}$ in~$\metav{A}$.)
+
+There are a two important things to watch out for in applying the
+$\forall$I rule. If we are not careful with the choice of
+name~$\metav{c}$ and its replacement by~$\metav{x}$ we are at risk of
+making some incorrect inferences.
+
+The constraint on the $\forall$I rule requires that \metav{c} must not
+occur in a premise or an undischarged assumption. This constraint
+ensures that we are always reasoning at a sufficiently general level.
 %\footnote{Recall from \cref{s:BasicTFL} that we are treating `$\ered$' as a canonical contradiction. But if it were the canonical contradiction as involving some \emph{constant}, it might interfere with the constraint mentioned here. To avoid such problems, we will treat `$\ered$' as a canonical contradiction \emph{that involves no particular names}.} 
 To see the constraint in action, consider this terrible argument:
 	\begin{earg}
@@ -145,8 +179,8 @@ Now, suppose we tried to offer a proof that vindicates this argument:
 	\hypo{x}{\forall x\, \atom{L}{x,k}}\PR
 	\have{a}{\atom{L}{k,k}} \Ae{x}
 	\have{y}{\forall x\, \atom{L}{x,x}} \by{naughty attempt to invoke $\forall$I}{a}
-\end{fitchproof}\noindent
-This is not allowed, because `$k$' occurred already in an undischarged assumption, namely, on line 1. The crucial point is that, if we have made any assumptions about the object we are working with, then we are not reasoning generally enough to license $\forall$I.
+\end{fitchproof}
+This is not allowed, because `$k$' occurred already in a premise, namely, on line~$1$. The crucial point is that, if we have made any assumptions about the object we are working with, then we are not reasoning generally enough to license $\forall$I.
 
 Although the name may not occur in any \emph{undischarged} assumption, it may occur in a \emph{discharged} assumption. That is, it may occur in a subproof that we have already closed. For example, this is just fine:
 \begin{fitchproof}
@@ -159,7 +193,8 @@ Although the name may not occur in any \emph{undischarged} assumption, it may oc
 \end{fitchproof}
 This tells us that `$\forall z (\atom{G}{z} \eif \atom{G}{z})$' is a \emph{theorem}. And that is as it should be.
 
-We should emphasize one last point. As per the conventions of \cref{s:MainLogicalOperatorQuantifier}, the use of $\forall$I requires that we are replacing \emph{every} instance of the name \metav{c} in $\metav{A}(\ldots \metav{c}\ldots\metav{c}\ldots)$ with the variable \metav{x}. If we only replace \emph{some} names and not others, we end up `proving' silly things. For example, consider the argument:
+If we only replace \emph{some} names and not others, we end up
+`proving' silly things. For example, consider the argument:
 	\begin{earg}
 	\item Everyone is as old as themselves.
 	\item[\texttherefore] Everyone is as old as Judi Dench.
@@ -170,11 +205,14 @@ But now suppose we tried to \emph{vindicate} this terrible argument with the fol
 \begin{fitchproof}
 	\hypo{x}{\forall x\, \atom{O}{x,x}}\PR
 	\have{a}{\atom{O}{d,d}}\Ae{x}
-	\have{y}{\forall x\, \atom{O}{x,d}}\by{naughty attempt to invoke $\forall$I}{a}	
+	\have{y}{\forall x\, \atom{O}{x,d}}\by{naughty attempt to invoke $\forall$I}{a}
 \end{fitchproof}
-Fortunately, our rules do not allow for us to do this: the attempted proof is banned, since it doesn't replace \emph{every} occurrence of `$d$' in line $2$ with an `$x$'.
+Fortunately, our rules do not allow us to do this: the attempted proof
+is banned, since it doesn't replace \emph{every} occurrence of `$d$'
+in line $2$ with an~`$x$'.
 
-\section{Existential elimination}
+\section{Existential elimination}\label{s:existsElim}
+
 Suppose we know that \emph{something} is~$F$. The problem is that simply knowing this does not tell us which thing is~$F$. So it would seem that from `$\exists x\,\atom{F}{x}$' we cannot immediately conclude `$\atom{F}{a}$', `$\atom{F}{e_{23}}$', or any other substitution instance of the sentence. What can we do?
 
 Suppose we know that something is~$F$, and that everything which is~$F$ is also~$G$. In (almost) natural English, we might reason thus:
@@ -251,7 +289,123 @@ The last line of the proof is not allowed. The name that we used in our substitu
 \end{fitchproof}
 The last line is still not allowed. For the name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$', namely `$b$', occurs in an undischarged assumption, namely line~$1$.
 
+Finally, consider this `proof':
+\begin{fitchproof}
+	\hypo{nf}{\exists x\, \atom{L}{a, x}}\PR
+	\open
+		\hypo{na}{\atom{L}{a, a}}\AS
+		\have{con1}{\exists x\,\atom{L}{x,x}}\Ei{na}		
+	\close
+\ifHTMLtarget
+	\have{econ1}{\exists x\,\atom{L}{x,x}}\by{naughty attempt to invoke $\exists$E }{nf, na-con1}
+\else
+	\have{econ1}{\exists x\,\atom{L}{x,x}}\by{naughty attempt}{}
+	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con1}
+\fi
+\end{fitchproof}
+Here the name `$a$' violates the second condition of the $\exists$E
+rule: it occurs in `$\exists x\, \atom{L}{a, x}$' on line~$1$. And we
+have to prevent this from being a proof, since it is invalid: `Someone
+likes themselves' does not follow from `Alex likes someone'.
+
 The moral of the story is this. \emph{If you want to squeeze information out of an existential quantifier, choose a new name for your substitution instance.} That way, you can guarantee that you meet all the constraints on the rule for $\exists$E.
+
+\section{Quantifier rules and vacuous quantification}
+
+There is a subtle issue in our quantifier rules that has to do with an
+aspect of the way we have specified the rules of our syntax, namely
+the possibility of \emph{vacuous quantification} (see the end of
+\cref{s:FreeVars}). In \cref{s:forallElim,s:existsElim} we made use of
+the substitution notation of \cref{s:TruthFOL}: $\metav{A}(\ldots
+\metav{c} \ldots \metav{c} \ldots)$ is the formula obtained by
+replacing every \emph{free} occurrence of $\metav{x}$ in $\metav{A}$
+with~$\metav{c}$. Here, we emphasize the `free' for a reason. It means
+you cannot always replace \emph{every} occurrence of~$\metav{x}$. For
+instance, this would be incorrect:
+\begin{fitchproof}
+	\hypo{a}{\forall x(\atom{F}{x} \land \exists x\,\atom{G}{x})}\PR
+	\ifHTMLtarget
+	\have{e}{\atom{F}{a} \land \exists x\,\atom{G}{a}}\by{naughty attempt to invoke $\forall$E}{a}
+\else
+	\have{e}{\atom{F}{a} \land \exists x\,\atom{G}{a}}\by{naughty attempt}{}
+	\have[\ ]{x}{}\by{to invoke $\forall$E}{a}
+\fi
+\end{fitchproof}
+On line $2$, we have formed the substitution instance incorrectly: we
+replaced the `$x$' in both `$\atom{F}{x}$' and in `$\atom{G}{x}$'
+by~`$a$', but only the first one is a free occurrence---the other one
+is bound by~`$\exists x$'. Not only would this violate a restriction
+on substitution, it would allow us to `prove' an invalid argument.
+Since `$\exists x\,\atom{G}{a}$' is a case of vacuous quantification,
+it is equivalent to just `$\atom{G}{a}$'. Furthermore, line~$1$ is
+equivalent to `$\forall x(\atom{F}{x} \land \exists y\,\atom{G}{y})$'.
+It should be easy to see that this does not entail `$\atom{F}{a} \land
+\atom{G}{a}$'. You're unlikely to encounter such a case (unless you
+have a devious instructor): your exercises will likely only involve
+sentences like `$\forall x(\atom{F}{x} \land \exists
+y\,\atom{G}{y})$', with variables nicely kept separate.
+
+
+In \cref{s:existsIntro}, we said that we use `$\metav{A}(\ldots
+\metav{x} \ldots \metav{c}\ldots)$' to indicate any formula obtained
+by replacing \emph{some or all} of the instances of the name \metav{c}
+with the variable~\metav{x} \emph{provided provided $\metav{c}$,
+wherever it is replaced, does not occur in the scope of a quantifier
+binding~$\metav{x}$}. The emphasized restriction prohibiting the
+replacement of $\metav{c}$ in some cases is somewhat subtle. You
+probably will never find yourself in a situation where you run the
+risk of violating it. But it is needed to make the rule correct.
+Since we allow vacuous quantification, for instance, `$\exists
+x\forall x\,\atom{L}{x,x}$' is a legal sentence of FOL. It's just that
+in it, the first `$\exists x$' doesn't do any work, and the sentence
+is equivalent to just `$\forall x\,\atom{L}{x,x}$'. Now, `$\forall
+x\,\atom{L}{x,x}$' \emph{could} be obtained from `$\forall
+x\,\atom{L}{a,x}$' by replacing the name~`$a$' by the variable~`$x$'
+if we weren't careful and overlooked that here `$a$' \emph{does} occur
+in the scope of~`$\forall x$'. Without the restriction, the following
+would then be allowed:
+\begin{fitchproof}
+		\hypo{a}{\forall x\, \atom{L}{a,x}}\PR
+		\ifHTMLtarget
+		\have{e}{\exists x\, \forall x\, \atom{L}{x,x}}\by{naughty attempt to invoke $\exists$I}{a}
+	\else
+		\have{e}{\exists x\, \forall x\, \atom{L}{x,x}}\by{naughty attempt}{}
+		\have[\ ]{x}{}\by{to invoke $\exists$I}{a}
+	\fi\end{fitchproof}
+But since `$\exists x\, \forall x\, \atom{L}{x,x}$' is equivalent to
+just `$\forall x\, \atom{L}{x,x}$', this would be an invalid inference.
+To see why, read `$L$' as `likes': From `Alex likes everyone' it does
+not follow that everyone likes everyone.
+
+Similarly, in \cref{s:forallIntro}, we said that $\metav{A}(\ldots
+\metav{x} \ldots \metav{x}\ldots)$ is the result of replacing
+\emph{every} occurrence of~$\metav{c}$ in $\metav{A}(\ldots \metav{c}
+\ldots \metav{c}\ldots)$ by~$\metav{x}$, but that \emph{this is only
+allowed as long as $\metav{c}$ does not occur in the scope of a
+quantifier binding~$\metav{x}$ in~$\metav{A}$}. Like the constraint
+involved in the statement of the $\exists$I rule, it does not often
+happen that you'd risk violating it in practice. But here's why it's
+important. Again, since we allow vacuous quantification, `$\forall
+x\exists x\,\atom{L}{x,x}$' is a legal sentence of FOL. However,
+`$\forall x\exists x\,\atom{L}{x,x}$' can be obtained from `$\forall
+x\,\atom{L}{a,x}$' by replacing the name~`$a$' by the variable~`$x$'
+everywhere. This violates the restriction we included, though: `$a$'
+does occur in the scope of~`$\forall x$' in this case. Without the
+restriction, the following would be allowed:
+\begin{fitchproof}
+	\hypo{p}{\forall y\exists x\,\atom{L}{y,x}}\PR
+	\have{a}{\exists x\, \atom{L}{a,x}}\Ae{p}
+\ifHTMLtarget
+	\have{e}{\forall x\, \exists x\, \atom{L}{x,x}}\by{naughty attempt to invoke $\forall$I}{a}
+\else
+\have{e}{\forall x\, \exists x\, \atom{L}{x,x}}\by{naughty attempt}{}
+	\have[\ ]{x}{}\by{to invoke $\forall$I}{a}
+\fi
+\end{fitchproof}
+But since `$\forall x\, \exists x\, \atom{L}{x,x}$' is equivalent to
+just `$\exists x\, \atom{L}{x,x}$', this would be an invalid
+inference: `Someone likes themselves' does not follow from `Everyone
+likes someone'.
 
 \practiceproblems
 \problempart
@@ -667,7 +821,7 @@ To see the rules in action, we will prove some quick results. First, we will pro
 	\have{ayya}{\forall y (a = y \eif y = a)}\Ai{abba}
 	\have{xyyx}{\forall x\, \forall y (x = y \eif y = x)}\Ai{ayya}
 \end{fitchproof}
-We obtain line 3 by replacing one instance of `$a$' in line 2 with an instance of `$b$'; this is justified given `$a= b$'.
+We obtain line~$3$ by replacing one instance of `$a$' in line~$2$ with an instance of~`$b$'; this is justified given `$a= b$'.
 
 Second, we will prove that identity is \emph{transitive}:
 \begin{fitchproof}
@@ -682,7 +836,7 @@ Second, we will prove that identity is \emph{transitive}:
 	\have{cony}{\forall y\,\forall z((a = y \eand y = z) \eif a = z)}\Ai{conz}
 	\have{conx}{\forall x\,\forall y \forall z((x = y \eand y = z) \eif x = z)}\Ai{cony}
 \end{fitchproof}
-We obtain line 4 by replacing `$b$' in line 3 with `$a$'; this is justified given `$a= b$'.
+We obtain line~$4$ by replacing `$b$' in line~$3$ with `$a$'; this is justified given `$a= b$'.
 
 \practiceproblems
 \problempart

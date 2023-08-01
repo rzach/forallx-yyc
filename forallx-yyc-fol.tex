@@ -1279,10 +1279,10 @@ Once we know what atomic formulas are, we can offer recursion clauses to define 
 		\item If \metav{A} and \metav{B} are formulas, then $(\metav{A}\eor\metav{B})$ is a formula.
 		\item If \metav{A} and \metav{B} are formulas, then $(\metav{A}\eif\metav{B})$ is a formula.
 		\item If \metav{A} and \metav{B} are formulas, then $(\metav{A}\eiff\metav{B})$ is a formula.
-		\item If \metav{A} is a formula and \metav{x} is a variable,
+		\item\label{formForall} If \metav{A} is a formula and \metav{x} is a variable,
 		% \metav{A} contains at least one occurrence of \metav{x}, and \metav{A} contains neither $\forall \metav{x}$ nor $\exists \metav{x}$, 
 		then $\forall\metav{x}\,\metav{A}$ is a formula.
-		\item If \metav{A} is a formula and \metav{x} is a variable, 
+		\item\label{formExists} If \metav{A} is a formula and \metav{x} is a variable, 
 		%\metav{A} contains at least one occurrence of \metav{x}, and \metav{A} contains neither $\forall \metav{x}$ nor $\exists \metav{x}$, 
 		then $\exists\metav{x}\,\metav{A}$ is a formula.
 		\item Nothing else is a formula.
@@ -1327,7 +1327,8 @@ So we can graphically illustrate the scope of the quantifiers in the preceding e
   description = {The subformula of a \gls{sentence of TFL} or a \gls{formula} of FOL for which the \gls{main logical operator} is the operator}
 }
 
-\section{Sentences and free variables}
+\section{Sentences and free variables}\label{s:FreeVars}
+
 Recall that we are largely concerned in logic with assertoric sentences: sentences that can be either true or false. Many formulas are not sentences. Consider the following symbolization key:
 	\begin{ekey}
 		\item[\text{domain}] people
@@ -1357,8 +1358,9 @@ For example, consider the formula
 	$$(\forall x(\atom{E}{x} \eor \atom{D}{y}) \eif \exists z(\atom{E}{x} \eif \atom{L}{z,x}))$$
 The scope of the universal quantifier `$\forall x$' is `$\forall x (\atom{E}{x} \eor \atom{D}{y})$', so the first `$x$' is bound by the universal quantifier. However, the second and third occurrence of `$x$' are free. Equally, the `$y$' is free. The scope of the existential quantifier `$\exists z$' is `$(\atom{E}{x} \eif \atom{L}{z,x})$', so `$z$' is bound.
 
-Finally we can say the following.	
-	\factoidbox{	
+Formulas that do not have free variables, i.e., every variable is
+bound, are called \define{sentences}. Only sentences can be true or false.
+\factoidbox{	
 		A \define{sentence} of FOL is any formula of FOL that contains no free variables.
 	}
 
@@ -1367,6 +1369,39 @@ Finally we can say the following.
 	text = sentence of FOL,
 	description = {A \gls{formula} of FOL which has no \glspl{free variable}}
 }
+
+Note that in the formation rules given in \cref{s:TermsFormulas},
+specifically in the clauses for $\forall$ and~$\exists$, we did not
+require that the variable~$\metav{x}$ in $\forall\metav{x}\,
+\metav{A}$ and $\exists\metav{x}\,\metav{A}$ does not \emph{already}
+occur as a bound variable in~$\metav{A}$. So we allow, for instance,
+`$\exists x(\forall x\,\atom{F}{x} \eif \atom{G}{x})$' as a sentence. We
+won't be meeting such special cases often, since we can always rename
+bound variables to obtain an equivalent sentence that avoids such
+weirdness; in this case, e.g., `$\exists x(\forall y\,\atom{F}{y} \eif
+\atom{G}{x})$'. But since it is allowed to happen, we should clarify
+which quantifiers bind which variables: An occurrence of a bound
+variable is always bound by the quantifier with the same matching
+variable that is closest to it. By ``closest'' we mean: it is the main
+logical operator of the smallest subformula into the scope of which
+the occurrence of the variable falls. So in our previous example,
+`$\forall x$' binds the occurrence of~$x$ in `$\atom{F}{x}$', since it is
+the main logical operator of `$\forall x\,\atom{F}{x}$'. The `$\forall x$'
+does not bind the `$x$' in~`$\atom{G}{x}$', however. The `$\exists x$' does
+not bind the `$x$' in `$\atom{F}{x}$', but it does bind the `$x$'
+in~`$\atom{G}{x}$'.
+
+The rules also do not require that the bound variable~$\metav{x}$
+\emph{actually occurs} free in $\metav{A}$ (or even at all). So our
+rules also allow `$\exists x\,\atom{F}{a}$' and `$\exists x\forall
+x\,\atom{G}{x}$' as formulas. In each case, the `$\exists x$' does not
+bind~`$x$', because `$x$' does not occur free in `$\atom{F}{a}$' or in
+`$\forall x\,\atom{G}{x}$'. In the former case, `$x$' does not occur at
+all; in the latter, it is already bound by~`$\forall x$'. This is called
+\define{vacuous quantification}. It rarely appears in practice, and
+isn't harmful. The two sentences are equivalent to the sentences
+without the `$\exists x$', i.e., to `$\atom{F}{a}$' and~`$\forall
+x\,\atom{G}{x}$'.
 
 \section{Bracketing conventions}
 
