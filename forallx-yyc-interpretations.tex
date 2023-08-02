@@ -253,15 +253,19 @@ So in our go-to interpretation, `$a = b$' is false, since Aristotle is distinct 
 \section{Sentential connectives}
 We saw in \cref{s:FOLSentences} that FOL sentences can be built up from simpler ones using the truth-functional connectives that were familiar from TFL. The rules governing these truth-functional connectives are \emph{exactly} the same as they were when we considered TFL. Here they are:
 	\factoidbox{
-		$\metav{A} \eand \metav{B}$ is true in an interpretation \textbf{\ifeff} both $\metav{A}$ is true and $\metav{B}$ is true in that interpretation.
+		\begin{factoiditems}
+		\item $\metav{A} \eand \metav{B}$ is true in an interpretation \textbf{\ifeff} both $\metav{A}$ is true and $\metav{B}$ is true in that interpretation.
 
-		\medskip\noindent $\metav{A} \eor \metav{B}$ is true in an interpretation \textbf{\ifeff} either $\metav{A}$ is true or $\metav{B}$ is true in that interpretation.
+		\item $\metav{A} \eor \metav{B}$ is true in an interpretation \textbf{\ifeff} either $\metav{A}$ is true or $\metav{B}$ is true in that interpretation.
 
-		\medskip\noindent $\enot \metav{A}$ is true in an interpretation \textbf{\ifeff} $\metav{A}$ is false in that interpretation.
+		\item $\enot \metav{A}$ is true in an interpretation \textbf{\ifeff} $\metav{A}$ is false in that interpretation.
 
-		\medskip\noindent $\metav{A} \eif \metav{B}$ is true in an interpretation \textbf{\ifeff} either $\metav{A}$ is false or $\metav{B}$ is true in that interpretation.
+		\item $\metav{A} \eif \metav{B}$ is true in an interpretation \textbf{\ifeff} either $\metav{A}$ is false or $\metav{B}$ is true in that interpretation.
 
-		\medskip\noindent $\metav{A} \eiff \metav{B}$ is true in an interpretation \textbf{\ifeff} $\metav{A}$ has the same truth value as $\metav{B}$ in that interpretation.
+		\item $\metav{A} \eiff \metav{B}$ is true in an
+		interpretation \textbf{\ifeff} $\metav{A}$ has the same truth
+		value as $\metav{B}$ in that interpretation.
+		\end{factoiditems}
 	}
 This presents the very same information as the characteristic truth tables for the connectives; it just does so in a slightly different way. Some examples will probably help to illustrate the idea. (Make sure you understand them!) On our go-to interpretation:
 	\begin{itemize}
@@ -331,11 +335,17 @@ in this connection.)
 Our interpretation will include a specification of which names correspond to which objects in the domain. Take any object in the domain, say, $d$, and a name $\metav{c}$ which is not already assigned by the interpretation. If our interpretation is $\mathbf{I}$, then we can consider the interpretation $\mathbf{I}[d/\metav{c}]$ which is just like $\mathbf{I}$ except it \emph{also} assigns the name $\metav{c}$ to the object~$d$. Then we can say that $d$ \define{satisfies} the formula $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in the interpretation~$\mathbf{I}$ if, and only if, $\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in $\mathbf{I}[d/\metav{c}]$. (If $d$ satisfies $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ we also say that $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ is \emph{true of}~$d$.) 
 
 \factoidbox{
-		The interpretation $\mathbf{I}[d/\metav{c}]$ is just like the
+	\begin{factoiditems}
+		\item The interpretation $\mathbf{I}[d/\metav{c}]$ is just like the
 		interpretation $\mathbf{I}$ except it also assigns the name
 		$\metav{c}$ to the object~$d$.
-		
-		\medskip\noindent An object $d$ \define{satisfies} $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in interpretation~$\mathbf{I}$ \textbf{\ifeff}\\ $\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in $\mathbf{I}[d/\metav{c}]$.
+
+		\item An object $d$ \define{satisfies}
+		$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in
+		interpretation~$\mathbf{I}$ \textbf{\ifeff}
+		$\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in
+		$\mathbf{I}[d/\metav{c}]$.
+	\end{factoiditems}
 }
 
 So, for instance, Socrates satisfies the formula~$\atom{P}{x}$ since $\atom{P}{c}$ is true in the interpretation $\mathbf{I}[\text{Socrates}/c]$, i.e., the interpretation:
@@ -362,12 +372,14 @@ satisifes $\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$, i.e.,
 $\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$ is true in
 $\mathbf{I}[d/\metav{c}]$ for some object~$d$.
 	\factoidbox{
-		$\forall \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff}
+		\begin{factoiditems}
+		\item $\forall \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff}
 		every object in the domain satisfies $\metav{A}(\ldots
 		\metav{x} \ldots \metav{x}\ldots)$.
 
-		\medskip\noindent $\exists \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff} at least one object in the domain satisfies
+		\item $\exists \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff} at least one object in the domain satisfies
 		$\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$.
+		\end{factoiditems}
 	}
 To be clear: all this is doing is formalizing (very pedantically) the intuitive idea expressed on the previous page. The result is a bit ugly, and the final definition might look a bit opaque. Hopefully, though, the \emph{spirit} of the idea is clear.
 
@@ -512,14 +524,18 @@ means that \metav{A} is true in every interpretation.
 The other logical notions also have corresponding definitions in FOL:
 
 \factoidbox{
-An FOL sentence $\metav{A}$ is a \define{validity} \ifeff{} $\metav{A}$ is true in every interpretation; i.e.,  $\entails\metav{A}$.
+	\begin{factoiditems}
+		\item An FOL sentence $\metav{A}$ is a \define{validity} \ifeff{}
+		$\metav{A}$ is true in every interpretation; i.e.,
+		$\entails\metav{A}$.
 \newglossaryentry{validity}
 {
 name=validity,
 description={A \gls{sentence of FOL} that is true in every \gls{interpretation}}
 }
 
-\medskip\noindent$\metav{A}$ is a \define{contradiction} \ifeff{} $\metav{A}$ is false in every interpretation; i.e., $\entails\enot\metav{A}$.
+		\item $\metav{A}$ is a \define{contradiction} \ifeff{} $\metav{A}$
+		is false in every interpretation; i.e., $\entails\enot\metav{A}$.
 \newglossaryentry{contradiction of FOL}
 {
   name=contradiction (of FOL),
@@ -527,7 +543,12 @@ description={A \gls{sentence of FOL} that is true in every \gls{interpretation}}
 description={A \gls{sentence of FOL} that is false in every \gls{interpretation}}
 }
   
-\medskip\noindent $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$ is \define{valid in FOL} \ifeff{} there is no interpretation in which all of the premises are true and the conclusion is false; i.e., $\metav{A}_1,\metav{A}_2,\ldots, \metav{A}_n \entails\metav{C}$. It is \define{invalid in FOL} otherwise.
+		\item $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore
+		\metav{C}$ is \define{valid in FOL} \ifeff{} there is no
+		interpretation in which all of the premises are true and the
+		conclusion is false; i.e., $\metav{A}_1,\metav{A}_2,\ldots,
+		\metav{A}_n \entails\metav{C}$. It is \define{invalid in FOL}
+		otherwise.
 \newglossaryentry{valid in FOL}
 {
   name=validity of arguments (in FOL),
@@ -535,7 +556,10 @@ description={A \gls{sentence of FOL} that is false in every \gls{interpretation}
 description={A property held by arguments; an argument is valid if and only if no \gls{interpretation} makes all premises true and the conclusion false}
 }
 
-\medskip\noindent Two FOL sentences \metav{A} and \metav{B} are \define{equivalent} \ifeff{} they are true in exactly the same interpretations as each other; i.e., both $\metav{A}\entails\metav{B}$ and $\metav{B}\entails\metav{A}$.
+		\item Two FOL sentences \metav{A} and \metav{B} are
+		\define{equivalent} \ifeff{} they are true in exactly the same
+		interpretations as each other; i.e., both
+		$\metav{A}\entails\metav{B}$ and $\metav{B}\entails\metav{A}$.
 
 \newglossaryentry{equivalent in FOL}
 {
@@ -544,13 +568,17 @@ description={A property held by arguments; an argument is valid if and only if n
 description={A property held by pairs of \glspl{sentence of FOL} if and only if the sentences have the same truth value in every \gls{interpretation}}
 }
 
-\medskip\noindent The FOL sentences $\metav{A}_1$, $\metav{A}_2$, \dots, $\metav{A}_n$ are \define{jointly satisfiable} \ifeff{} some interpretation makes all of them true. They are \define{jointly unsatisfiable} \ifeff{} there is no such interpretation.
+		\item The FOL sentences $\metav{A}_1$, $\metav{A}_2$, \dots,
+		$\metav{A}_n$ are \define{jointly satisfiable} \ifeff{} some
+		interpretation makes all of them true. They are \define{jointly
+		unsatisfiable} \ifeff{} there is no such interpretation.
 \newglossaryentry{satisfiable in FOL}
 {
   name=satisfiability (in FOL),
   text=jointly satisfiable,
 description={A property held by \glspl{sentence of FOL} if and only if some \gls{interpretation} makes all the sentences true}
 }
+	\end{factoiditems}
 }
 
 \chapter{Using interpretations}
@@ -586,9 +614,13 @@ We can just as easily show that `$\exists x\atom{A}{x,x} \eif \atom{B}{d}$' is n
 	\end{ekey}
 This shows that there is an interpretation where `$\exists x\atom{A}{x,x} \eif \atom{B}{d}$' is true. So `$\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$' is not a contradiction.
 	\factoidbox{
-		To show that $\metav{A}$ is not a validity, it suffices to find an interpretation where $\metav{A}$ is false.
-		
-		\medskip\noindent To show that $\metav{A}$ is not a contradiction, it suffices to find an interpretation where $\metav{A}$ is true.
+		\begin{factoiditems}
+			\item To show that $\metav{A}$ is not a validity, it suffices to
+			find an interpretation where $\metav{A}$ is false.
+
+			\item To show that $\metav{A}$ is not a contradiction, it
+			suffices to find an interpretation where $\metav{A}$ is true.
+		\end{factoiditems}
 	}
 
 \section{Logical equivalence}

@@ -150,10 +150,14 @@
 % {\begin{list}{\arabic{eargnum}.}{\usecounter{eargnum}\itemsep=0pt \parsep=0pt}}%
 % {\setcounter{OLDeargnum}{\arabic{eargnum}}\end{list}}
 
+\newlist{factoiditems}{itemize}{1}
+
 \iflatexml
 \setlist[itemize]{label=‣,noitemsep}
+\setlist[factoiditems]{label=‣}
 \else
 \setlist[itemize]{label=$\triangleright$,noitemsep}
+\setlist[factoiditems]{label=$\triangleright$,labelindent=0pt,leftmargin=*}
 \fi
 
 % earg -- an unordered list for arguments, no labels

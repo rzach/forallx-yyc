@@ -26,8 +26,9 @@ In order to do modal logic, we have to do two things. First, we want to learn ho
 
 The language of ML is an extension of TFL. We could have started with FOL, which would have given us Quantified Modal Logic (QML). QML is much more powerful than ML, but it is also much, much more complicated. So we are going to keep things simple, and start with TFL.
 
-Just like TFL, ML starts with an infinite stock of \emph{atoms}. These are written as capital letters, with or without numerical subscripts: $A$, $B$, \dots  $A_1$, $B_1$, \dots  We then take all of the rules about how to make sentences from TFL, and add two more for $\ebox$ and $\ediamond$:
-\begin{compactlist}
+Just like TFL, ML starts with an infinite stock of \emph{atoms}. These are written as capital letters, with or without numerical subscripts: $A$, $B$, \dots  $A_1$, $B_1$, \dots  We then take all of the rules about how to make sentences from TFL, and add two more for $\ebox$ and~$\ediamond$:
+\factoidbox{
+\begin{compactlist}[labelindent=0pt,leftmargin=*]
 	\item Every atom of ML is a sentence of ML.
 	\item If $\metav{A}$ is a sentence of ML, then $\enot\metav{A}$ is a sentence of ML.
 	\item If $\metav{A}$ and $\metav{B}$ are sentences of ML, then $(\metav{A}\eand\metav{B})$ is a sentence of ML.
@@ -37,7 +38,7 @@ Just like TFL, ML starts with an infinite stock of \emph{atoms}. These are writt
 	\item If $\metav{A}$ is a sentence of ML, then $\ebox\metav{A}$ is a sentence of ML.
 	\item If $\metav{A}$ is a sentence of ML, then $\ediamond\metav{A}$ is a sentence of ML.
 	\item Nothing else is a sentence of ML.
-\end{compactlist}
+\end{compactlist}}
 Here are some examples of ML sentences:
 \begin{align*}
 	& A\\
@@ -304,7 +305,7 @@ This rule allows us to show, for instance, that $\ediamond\ebox A\proves_\mlSfiv
 
 So, as well as adding boxes in front of diamonds, we can also delete diamonds in front of boxes.
 
-We got \mlSfive{} just by adding the rule R$\mathbf{5}$ rule to \mlSfour. In fact, we could have added rule R$\mathbf{5}$ to \mlT{} alone, and leave out rule R$\mathbf{4}$). Everything we can prove by rule R$\mathbf{4}$ can also be proved using R\mlT{} together with R$\mathbf{5}$. For instance, here is a proof that shows $\ebox A \proves_\mlSfive  \ebox\ebox A$ without using R$\mathbf{4}$:
+We got \mlSfive{} just by adding the rule R$\mathbf{5}$ rule to \mlSfour. In fact, we could have added rule R$\mathbf{5}$ to \mlT{} alone, and leave out rule R$\mathbf{4}$). Everything we can prove by rule R$\mathbf{4}$ can also be proved using R\mlT{} together with R$\mathbf{5}$. For instance, here is a proof that shows $\ebox A \proves_\mlSfive  \ebox\ebox A$ without using~R$\mathbf{4}$:
 \begin{fitchproof}
 	\hypo{1}{\ebox A}\PR
 	\open
@@ -464,14 +465,23 @@ You will get the chance to cook up some interpretations of your own shortly, whe
 
 We can now extend all of the semantic concepts of TFL to cover ML:
 \factoidbox{
-		$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is \define{modally valid} \ifeff{} there is no world in any interpretation at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
+	\begin{factoiditems}
+		\item $\metav{A}_1,\metav{A}_2, \dots
+		\metav{A}_n\therefore\metav{C}$ is \define{modally valid} \ifeff{}
+		there is no world in any interpretation at which
+		$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and
+		$\metav{C}$ is false.
 
-		\medskip\noindent $\metav{A}$ is a \define{modal truth} \ifeff{} $\metav{A}$ is true at every world in every interpretation.
+		\item $\metav{A}$ is a \define{modal truth} \ifeff{} $\metav{A}$
+		is true at every world in every interpretation.
 
-		\medskip\noindent $\metav{A}$ is a \define{modal contradiction} \ifeff{} $\metav{A}$ is false at every world in every interpretation.
+		\item $\metav{A}$ is a \define{modal contradiction} \ifeff{}
+		$\metav{A}$ is false at every world in every interpretation.
 
-		\medskip\noindent $\metav{A}$ is \define{modally satisfiable} \ifeff{} $\metav{A}$ is true at some world in some interpretation.
-}
+		\item $\metav{A}$ is \define{modally satisfiable} \ifeff{}
+		$\metav{A}$ is true at some world in some interpretation.
+	\end{factoiditems}
+		}
 (From now on we will drop the explicit `modal' qualifications, since they can be taken as read.)
 
 We can also extend our use of $\entails$. However, we need to add subscripts again, just as we did with $\proves$. So, when we want to say that $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\therefore\metav{C}$ is valid, we will write: $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlK\metav{C}$.

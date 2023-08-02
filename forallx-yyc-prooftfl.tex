@@ -350,10 +350,10 @@ We can describe the process of making an additional assumption as one of perform
 
 When we are working within the subproof, we can refer to the additional assumption that we made in introducing the subproof, and to anything that we obtained from our original assumptions. (After all, those original assumptions are still in effect.) At some point though, we will want to stop working with the additional assumption: we will want to return from the subproof to the main proof. To indicate that we have returned to the main proof, the vertical line for the subproof comes to an end. At this point, we say that the subproof is \define{closed}. Having closed a subproof, we have set aside the additional assumption, so it will be illegitimate to draw upon anything that depends upon that additional assumption. Thus we stipulate:
 \factoidbox{To cite an individual line when applying a rule:
-\begin{numberlist}
+\begin{compactlist}
 \item the line must come before the line where the rule is applied, but 
 \item not occur within a subproof that has been closed before the line where the rule is applied.
-\end{numberlist}}
+\end{compactlist}}
 This stipulation rules out the disastrous attempted proof above. The application of rule $\eif$E on line~$5$ requires that we cite two individual lines from earlier in the proof. One of these lines (namely, line~$3$) occurs within a subproof (lines $2$--$3$). By line $5$, where we have to cite line $3$, the subproof has been closed. This is illegitimate: we are not allowed to cite line $3$ on line $5$.
 
 Closing a subproof is called \define{discharging} the assumptions of that subproof. So we can put the point this way: \emph{you cannot refer back to anything that was obtained using discharged assumptions}.
@@ -419,11 +419,11 @@ Here is one further case we have to exclude:
 Here we are trying to cite a subproof that begins on line~$2$ and ends on line~$5$---but the sentence on line~$5$ depends not only on the assumption on line~$2$, but also on one another assumption (line~$3$) which we have not discharged at the end of the subproof. The subproof started on line~$3$ is still open at line~$3$. But $\eif$I requires that the last line of the subproof \emph{only} relies on the assumption of the subproof being cited, i.e., the subproof beginning on line~$2$ (and anything before it), and not on assumptions of any subproofs within it. In particular, the last line of the subproof cited must not itself lie within a nested subproof.
 
 \factoidbox{To cite a subproof when applying a rule:
-\begin{numberlist} 
+\begin{compactlist} 
 \item the cited subproof must come entirely before the application of the rule where it is cited, 
 \item the cited subproof must not lie within some other closed subproof which is closed at the line it is cited, and 
 \item the last line of the cited subproof must not occur inside a nested subproof.
-\end{numberlist}}
+\end{compactlist}}
 
 One last point to emphasize how rules can be applied: where a rule requires you to cite an individual line, you cannot cite a subproof instead; and where it requires you to cite a subproof, you cannot cite an individual line instead. So for instance, this is incorrect:
 \begin{fitchproof}

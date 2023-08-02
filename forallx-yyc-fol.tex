@@ -1244,7 +1244,7 @@ So, here are some terms:
 	$$a, b, x, x_1, x_2, y, y_{254}, z$$
 Next we need to define atomic formulas.
 	\factoidbox{
-		\begin{compactlist}
+		\begin{compactlist}[labelindent=0pt,leftmargin=*]
 		\item Any sentence letter is an atomic formula.
 		\item If $\metav{R}$ is an $n$-place predicate and $\metav{t}_1, \metav{t}_2, \ldots, \metav{t}_n$ are terms, then $\atom{\metav{R}}{\metav{t}_1, \metav{t}_2, \ldots, \metav{t}_n}$ is an atomic formula.
 		\item If $\metav{t}_1$ and $\metav{t}_2$ are terms, then $\metav{t}_1 = \metav{t}_2$ is an atomic formula.
@@ -1275,7 +1275,7 @@ The use of script letters here follows the conventions laid down in \cref{s:UseM
 \end{center}
 Once we know what atomic formulas are, we can offer recursion clauses to define arbitrary formulas. The first few clauses are exactly analogous to those in the definition of `sentence of TFL'.
 	\factoidbox{
-	\begin{compactlist}
+	\begin{compactlist}[labelindent=0pt,leftmargin=*]
 		\item Every atomic formula is a formula.
 		\item If \metav{A} is a formula, then $\enot\metav{A}$ is a formula.
 		\item If \metav{A} and \metav{B} are formulas, then $(\metav{A}\eand\metav{B})$ is a formula.
@@ -1311,14 +1311,20 @@ So, assuming again that `$F$' is a one-place predicate, `$G$' is a three-place p
 %These constraints have the effect of ensuring that variables only serve one master at any one time (see \cref{s:MultipleGenerality}). In fact, w
 We can now give a formal definition of scope, which incorporates the definition of the scope of a quantifier. Here we follow the case of TFL, though we note that a logical operator can be either a connective or a quantifier:
 	\factoidbox{
-		The \define{main logical operator} in a formula is the operator that was introduced most recently, when that formula was constructed using the recursion rules.
-		
-\bigskip
-
-		The \define{scope} of a logical operator in a formula is the subformula for which that operator is the main logical operator.
-	}
-So we can graphically illustrate the scope of the quantifiers in the preceding example thus:
-	$$\overbrace{\forall x \overbrace{\exists y (\atom{F}{x} \eiff \overbrace{\forall z (\atom{G}{a,y,z} \eif \atom{S}{y,z,y,a,y,x})}^{\text{scope of `}\forall z\text{'}}}^{\text{scope of `}\exists y\text{'}})}^{\text{scope of `$\forall x$'}}$$
+		\begin{factoiditems}
+		\item The \define{main logical operator} in a formula is the
+		operator that was introduced most recently, when that formula was
+		constructed using the recursion rules.
+		\item The \define{scope} of a logical operator in a formula is the
+	subformula for which that operator is the main logical operator. 
+\end{factoiditems}}
+So we can graphically illustrate the scope of the quantifiers in the
+preceding example thus:
+$$\overbrace{\forall x \overbrace{\exists y (\atom{F}{x} \eiff
+\overbrace{\forall z (\atom{G}{a,y,z} \eif
+\atom{S}{y,z,y,a,y,x})}^{\text{scope of `}\forall
+z\text{'}}}^{\text{scope of `}\exists y\text{'}})}^{\text{scope of
+`$\forall x$'}}$$
 
 \newglossaryentry{main logical operator}{
   name = main logical operator,
