@@ -1804,63 +1804,23 @@ name=soundness,
 description={A property held by logical systems if and only if $\proves $ implies $\entails $}
 }
 
-This argument from $\proves $ to $\entails $ is the problem of \define{\gls{soundness}}. \label{def:soundness} A proof system is \define{sound} if there are no derivations of arguments that can be shown invalid by truth tables. \label{def_Soundness} Demonstrating that the proof system is sound would require showing that \emph{any} possible proof is the proof of a valid argument. It would not be enough simply to succeed when trying to prove many valid arguments and to fail when trying to prove invalid ones.
+This argument from $\proves $ to $\entails $ is the problem of
+\define{\gls{soundness}}. \label{def:soundness} A proof system is
+\define{sound} if there are no derivations of arguments that can be
+shown invalid by truth tables. \label{def_Soundness} Demonstrating
+that the proof system is sound would require showing that \emph{any}
+possible proof is the proof of a valid argument. It would not be
+enough simply to succeed when trying to prove many valid arguments and
+to fail when trying to prove invalid ones. The proof itself requires
+some care. In a nutshell, it involves showing that every inference
+rule preserves the property that its conclusion is entailed by the
+premises of the proof together with whatever assumptions are open. You
+can find the details of this proof worked out in \cref{ch:Soundness}. 
 
-The proof that we will sketch depends on the fact that we initially
-defined a sentence of TFL using an inductive definition (see
-p.~\pageref{TFLsentences}). We could have also used inductive
-definitions to define a proper proof in TFL and a proper truth table
-(although we didn't.) If we had these definitions, we could then use an
-\emph{inductive proof} to show the soundness of TFL. An inductive
-proof works the same way as an inductive definition. With the
-inductive definition, we identified a group of base elements that were
-stipulated to be examples of the thing we were trying to define. In
-the case of a TFL sentence, the base class was the set of sentence
-letters $A$, $B$, $C$, \dots. We just announced that these were
-sentences. The second step of an inductive definition is to say that
-anything that is built up from your base class using certain rules
-also counts as an example of the thing you are defining. In the case
-of a definition of a sentence, the rules corresponded to the five
-sentential connectives (see p.~\pageref{TFLsentences}). Once you have
-established an inductive definition, you can use that definition to
-show that all the members of the class you have defined have a certain
-property. You simply prove that the property is true of the members of
-the base class, and then you prove that the rules for extending the
-base class don't change the property. This is what it means to give an
-inductive proof.
-
-Even though we don't have an inductive definition of a proof in TFL, we can sketch how an inductive proof of the soundness of TFL would go. Imagine a base class of one-line proofs, one for each of our eleven rules of inference. The members of this class would look like this $\metav{A}, \metav{B} \proves  \metav{A} \eand \metav{B}$; $\metav{A} \eand \metav{B} \proves \metav{A}$; $\metav{A} \eor \metav{B}, \enot\metav{A} \proves  \metav{B}$ \ldots{} etc. Since some rules have a couple different forms, we would have to have add some members to this base class, for instance $\metav{A} \eand \metav{B} \proves  \metav{B}$ Notice that these are all statements in the metalanguage. The proof that TFL is sound is not a part of TFL, because TFL does not have the power to talk about itself.
-
-You can use truth tables to prove to yourself that each of these one-line proofs in this base class is valid$_{\entails}$. For instance the proof $\metav{A}, \metav{B} \proves \metav{A} \eand \metav{B}$ corresponds to a truth table that shows $\metav{A}, \metav{B} \entails  \metav{A} \eand \metav{B}$ This establishes the first part of our inductive proof.
-
-The next step is to show that adding lines to any proof will never
-change a valid$_{\entails}$ proof into an invalid$_{\entails}$ one. We
-would need to do this for each of our eleven basic rules of inference.
-So, for instance, for \eand{I} we need to show that for any proof that
-shows that $\metav{A}_{1}$, \dots, $\metav{A}_{n} \proves  \metav {B}$,
-adding a line where we use \eand{I} to infer $\metav{C} \eand
-\metav{D}$, where $\metav{C} \eand \metav{D}$ can be legitimately
-inferred from $\metav{A}_{1}$, \dots, $\metav{A}_{n}$,~$\metav{B}$,
-would result in a valid proof. But wait, if we
-can legitimately derive $\metav{C} \eand \metav{D}$ at the end of the
-given proof, then $\metav{C}$ and $\metav{D}$ must be already available
-in the proof. They are either already among $\metav{A}_{1}$, \dots,
-$\metav{A}_{n}$,~$\metav {B}$, or can be legitimately derived from
-them. As such, any truth table line in which the premises are true
-must be a truth table line in which \metav{C} and \metav{D} are true.
-According to the characteristic truth table for \eand, this means that
-$\metav{C} \eand \metav{D}$ is also true on that line. Therefore,
-$\metav{C} \eand \metav{D}$ validly follows from the premises. This
-means that using the {\eand}I rule to extend a valid proof produces
-another valid proof.
-
-In order to show that the proof system is sound, we would need to show
-this for the other inference rules. Since the derived rules are
-consequences of the basic rules, it would suffice to provide similar
-arguments for the 11 other basic rules. You can find the details of
-this proof worked out in \cref{ch:Soundness}.
-
-So we have shown that $\metav{A} \proves \metav{B}$ implies $\metav{A} \entails \metav{B}.$ What about the other direction, that is, why think that \emph{every} argument that can be shown valid using truth tables can also be proven using a derivation? 
+Soundness means that $\metav{A} \proves \metav{B}$ implies $\metav{A}
+\entails \metav{B}.$ What about the other direction, that is, why
+think that \emph{every} argument that can be shown valid using truth
+tables can also be proven using a derivation? 
 
 \newglossaryentry{completeness}
 {
@@ -1870,7 +1830,7 @@ description={A property held by logical systems if and only if $\entails $ impli
 
 This is the problem of completeness. A proof system has the property of  \define{\gls{completeness}} \label{def:completeness} if and only if there is a derivation of every semantically valid argument. Proving that a system is complete is generally harder than proving that it is sound. Proving that a system is sound amounts to showing that all of the rules of your proof system work the way they are supposed to. Showing that a system is complete means showing that you have included \emph{all} the rules you need, that you haven't left any out. Showing this is beyond the scope of this book. The important point is that, happily, the proof system for TFL is both sound and complete. This is not the case for all proof systems or all formal languages. Because it is true of TFL, we can choose to give proofs or give truth tables---whichever is easier for the task at hand.
 
-Now that we know that the truth table method is interchangeable with the method of derivations, you can chose which method you want to use for any given problem. Students often prefer to use truth tables, because they can be produced  purely mechanically, and that seems `easier'. However, we have already seen that truth tables become impossibly large after just a few sentence letters. On the other hand, there are a couple situations where using proofs simply isn't possible. We syntactically defined a contingent sentence as a sentence that couldn't be proven to be a tautology or a contradiction. There is no practical way to prove this kind of negative statement. We will never know if there isn't some proof out there that a statement is a contradiction and we just haven't found it yet. We have nothing to do in this situation but resort to truth tables. Similarly, we can use derivations to prove two sentences equivalent, but what if we want to prove that they are \emph{not} equivalent? We have no way of proving that we will never find the relevant proof. So we have to fall back on truth tables again.
+Now that we know that the truth table method is interchangeable with the method of derivations, you can chose which method you want to use for any given problem. Students often prefer to use truth tables, because they can be produced purely mechanically, and that seems `easier'. However, we have already seen that truth tables become impossibly large after just a few sentence letters. On the other hand, there are a couple situations where using proofs simply isn't possible. We syntactically defined a contingent sentence as a sentence that couldn't be proven to be a tautology or a contradiction. There is no practical way to prove this kind of negative statement. We will never know if there isn't some proof out there that a statement is a contradiction and we just haven't found it yet. We have nothing to do in this situation but resort to truth tables. Similarly, we can use derivations to prove two sentences equivalent, but what if we want to prove that they are \emph{not} equivalent? We have no way of proving that we will never find the relevant proof. So we have to fall back on truth tables again.
 
 \Cref{table.ProofOrModel} summarizes when it is best to give proofs 
 and when it is best to give truth tables.
