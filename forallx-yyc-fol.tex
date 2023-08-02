@@ -627,7 +627,7 @@ But the relationship between `Imre loves Karl' and `Karl is loved by Imre' highl
 \end{ekey}
 The entry for `$M$' uses exactly the same English word---`loves'---as the entry for `$L$'. \emph{But the gaps have been swapped around!} (Just look closely at the subscripts.) And this \emph{matters}.
 
-To explain: when we see a sentence like `$\atom{L}{k,i}$', we are being told to take the \emph{first} name (i.e., `$k$') and associate its value (i.e., Karl) with the gap labelled `$x$', then take the \emph{second} name (i.e., `$i$') and associate its value (i.e., Imre) with the gap labelled `$y$', and so come up with: \emph{Karl loves Imre}. The sentence `$\atom{M}{i,k}$' also tells us to take the \emph{first} name (i.e., `$i$') and plug its value into the gap labelled `$x$', and take the \emph{second} name (i.e., `$k$) and plug its value into the gap labelled `$y$', and so come up with: \emph{Imre loves Karl}.
+To explain: when we see a sentence like `$\atom{L}{k,i}$', we are being told to take the \emph{first} name (i.e., `$k$') and associate its value (i.e., Karl) with the gap labelled `$x$', then take the \emph{second} name (i.e., `$i$') and associate its value (i.e., Imre) with the gap labelled `$y$', and so come up with: \emph{Karl loves Imre}. The sentence `$\atom{M}{i,k}$' also tells us to take the \emph{first} name (i.e., `$i$') and plug its value into the gap labelled `$x$', and take the \emph{second} name (i.e., `$k$') and plug its value into the gap labelled `$y$', and so come up with: \emph{Imre loves Karl}.
 
 So, `$\atom{L}{i,k}$' and `$\atom{M}{k,i}$' both symbolize `Imre loves Karl', whereas `$\atom{L}{k,i}$' and `$\atom{M}{i,k}$' both symbolize `Karl loves Imre'. Since love can be unrequited, these are different claims.
 
@@ -648,9 +648,13 @@ Consider the sentence `everyone loves someone'. This is potentially ambiguous. I
 		\item\label{lovecycle} For every person x, there is some person that x loves.
 		\item\label{loveconverge} There is some particular person whom every person loves.
 	\end{enumerate}
-\Cref*{lovecycle} can be symbolized by `$\forall x \exists y\, \atom{L}{x,y}$', and would be true of a love-triangle. For example, suppose that our domain of discourse is restricted to Imre, Juan and Karl. Suppose also that Karl loves Imre but not Juan, that Imre loves Juan but not Karl, and that Juan loves Karl but not Imre. Then \cref*{lovecycle} is true.
+\Cref*{lovecycle} can be symbolized by `$\forall x \exists y\, \atom{L}{x,y}$'. Suppose that our domain of discourse is restricted to Imre, Juan and Karl. Suppose also that Karl loves Imre but not Juan, that Imre loves Juan but not Karl, and that Juan loves Karl but not Imre. Then \cref*{lovecycle} is true.
 
-\Cref*{loveconverge} is symbolized by `$\exists y \forall x\, \atom{L}{x,y}$'. \Cref{loveconverge} is \emph{not} true in the situation just described. Again, suppose that our domain of discourse is restricted to Imre, Juan and Karl. Then all of Juan, Imre and Karl must converge on (at least) one object of love.
+\Cref*{loveconverge} is symbolized by `$\exists y \forall x\,
+\atom{L}{x,y}$'. \Cref{loveconverge} is \emph{not} true in the
+situation just described, since no single person is loved by everyone.
+All three of Juan, Imre and Karl would have to converge on (at least)
+one object of love.
 
 The point of the example is to illustrate that the order of the quantifiers matters a great deal. Indeed, to switch them around is called a \emph{quantifier shift fallacy}. Here is an example, which comes up in various forms throughout the philosophical literature:
 	\begin{earg}
@@ -663,7 +667,6 @@ This argument form is obviously invalid. It's just as bad as:\footnote{Thanks to
 		\item[\texttherefore] There is a day for all the dogs. \hfill ($\exists \forall$)
 	\end{earg}
 
-   
 The order of quantifiers is also important in definitions in mathematics.  For instance, there is a big difference between pointwise and uniform continuity of functions:
 \begin{itemize}
 \item A function $f$ is \emph{pointwise continuous} if
