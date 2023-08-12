@@ -865,3 +865,120 @@ entailment? & all interpretations & one counter-interpretation\\
 \label{table.ModelOrArgument}
 
 You might want to compare this table with the table at the end of \cref{s:PartialTruthTable}. The key difference resides in the fact that TFL concerns truth tables, whereas FOL concerns interpretations. This difference is deeply important, since each truth-table only ever has finitely many lines, so that a complete truth table is a relatively tractable object. By contrast, there are infinitely many interpretations for any given sentence(s), so that reasoning about all interpretations can be a deeply tricky business.
+
+\chapter{Properties of relations}
+
+Symbolization keys allow us to assign two-place predicate symbols like
+`$\atom{R}{x,y}$' to English predicates with two gaps, e.g., `\gap{x}
+is older than \gap{y}'. This allows us to symbolize arguments such as:
+\begin{earg}
+	\item Rudolf is older than Kurt.
+	\item Kurt is older than Julia.
+	\item[\texttherefore] Rudolf is older than Julia.
+\end{earg}
+This argument is valid, but its symbolization in FOL,
+\begin{earg}
+	\item $\atom{R}{r,k}$
+	\item $\atom{R}{k,j}$
+	\item[\texttherefore] $\atom{R}{r,j}$
+\end{earg}
+is not. That's because the validity of the argument depends on a
+property of the relation `$x$ is older than $y$', namely that if some
+person $x$ is older than a person~$y$, and $y$ is also older than~$z$,
+then $x$ must be older than $z$. This property of `older than' is
+called \define{transitivity}. We can symbolize this property
+\emph{itself} in FOL as:
+\[
+	\forall x\forall y\forall z((\atom{R}{x,y} \eand \atom{R}{y,z}) \eif
+	\atom{R}{x,z})
+\]
+Whenever the validity of an argument \emph{only} depends on a property
+of a relation involved, and this property can be symbolized in FOL, we
+can add this symbolization to the argument and obtain an argument that
+is in fact valid in FOL:
+\begin{earg}
+	\item $\forall x\forall y\forall z((\atom{R}{x,y} \eand \atom{R}{y,z}) \eif
+	\atom{R}{x,z})$
+	\item $\atom{R}{r,k}$
+	\item $\atom{R}{k,j}$
+	\item[\texttherefore] $\atom{R}{r,j}$
+\end{earg}
+
+Properties of relations such as transitivity are important concepts
+especially in applications of logic in the sciences. For instance,
+order relations between numbers such as $<$ and $\le$ (and also $>$
+and $\ge$) are transitive. The identity relation~$=$ is also
+transitive.
+
+There are other properties of relations that are important enough to
+have names, and often show up in applications. Here are some:
+
+\factoidbox{
+	\begin{factoiditems}
+		\item A relation $R$ is \define{transitive} \ifeff{} it is the case
+		that whenever $\atom{R}{x,y}$ and $\atom{R}{y,z}$ then also~$\atom{R}{x,z}$.
+		\item A relation $R$ is \define{reflexive} \ifeff{} for any~$x$,
+		$\atom{R}{x,x}$ holds.
+		\item A relation $R$ is \define{symmetric} \ifeff{} whenever
+		$\atom{R}{x,y}$ holds, so does $\atom{R}{y,x}$.
+		\item A relation $R$ is \define{anti-symmetric} \ifeff{} for no two
+		\emph{different} $x$ and $y$, $\atom{R}{x,y}$ and $\atom{R}{y,x}$
+		both hold.
+	\end{factoiditems}}
+
+\newglossaryentry{transitive}
+{
+  name=transitivity,
+  text = transitive,
+  description={The property a relation~$R$ has \ifeff{} it is the case
+  that whenever $\atom{R}{x,y}$ and $\atom{R}{y,z}$ then also~$\atom{R}{x,z}$}
+}
+\newglossaryentry{reflexive}
+{
+  name=reflexivity,
+  text = reflexive,
+  description={The property a relation~$R$ has \ifeff{} for any~$x$, $\atom{R}{x,x}$ holds}
+}
+\newglossaryentry{symmetric}
+{
+  name=symmetry,
+  text = symmetric,
+  description={The property a relation~$R$ has \ifeff{} it is the case
+  that whenever $\atom{R}{x,y}$ holds, so does $\atom{R}{y,x}$}
+}
+\newglossaryentry{anti-symmetric}
+{
+  name=anti-symmetry,
+  text = refleanti-symmetricxive,
+  description={The property a relation~$R$ has \ifeff{} for no two
+	\emph{different} $x$ and $y$, $\atom{R}{x,y}$ and $\atom{R}{y,x}$
+	both hold}
+}
+
+We have already seen that transitivity can be symbolized in FOL. The
+others can, too:
+\begin{itemize}
+	\item $R$ is reflexive: $\forall x\,\atom{R}{x,x}$
+	\item $R$ is symmetric: \[\forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,z})\]
+	\item $R$ is anti-symmetric: \[\lnot\exists x\exists y((\atom{R}{x,y}
+	\eand \atom{R}{y,x}) \eand \enot x=y)\] or, equivalently, \[\forall x\forall y((\atom{R}{x,y}
+	\eand \atom{R}{y,x}) \eif x=y)\]
+\end{itemize}
+
+Relations expressing an equivalence in some respect are reflexive,
+e.g., `is the same age as', `is as tall as', and the most stringent
+equivalence of them all, identity~$=$. They are also symmetric: e.g.,
+whenever $x$ is as tall as~$y$, then $y$ is as tall as~$x$. In fact,
+relations that are reflexive, symmetric, and transitive are called
+\define{equivalence relations}.
+
+Equivalences aren't the only symmetric relations. For instance, `is a
+sibling of' is symmetric, but it is not reflexive (as no one is their own
+sibling).
+
+Relations that are reflexive, transitive, and anti-symmetric are
+called \define{partial orders}. For instance, $\le$ and $\ge$ are
+partial orders. The relation `is no older than', by contrast, is
+reflexive and transitive, but not anti-symmetric.
+
+
