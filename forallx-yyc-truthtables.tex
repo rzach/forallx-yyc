@@ -576,7 +576,7 @@ If you want additional practice, you can construct truth tables for any of the s
 \chapter{Semantic concepts}
 \label{s:SemanticConcepts}
 
-In the previous section, we introduced the idea of a valuation and showed how to determine the truth value of any TFL sentence, on any valuation, using a truth table. In this section, we will introduce some related ideas, and show how to use truth tables to test whether or not they apply.
+In the previous chapter, we introduced the idea of a valuation and showed how to determine the truth value of any TFL sentence, on any valuation, using a truth table. In this chapter, we will introduce some related ideas, and show how to use truth tables to test whether or not they apply.
 
 
 \section{Tautologies and contradictions}
@@ -706,35 +706,6 @@ is invalid; consequently, it must be valid.
 In short, we have a way to test for the validity of English arguments. First, we symbolize them in TFL; then we test for entailment in TFL using truth tables.
 
 
-\section{The limits of these tests}\label{s:ParadoxesOfMaterialConditional}
-This is an important milestone: a test for the validity of arguments! However, we should not get carried away just yet. It is important to understand the \emph{limits} of our achievement. We will illustrate these limits with four examples.
-
-First, consider the argument: 
-	\begin{earg}
-		\item Daisy has four legs.
-		\item[\texttherefore] Daisy has more than two legs.
-	\end{earg}
-To symbolize this argument in TFL, we would have to use two different sentence letters---perhaps `$F$'  and `$T$'---for the premise and the conclusion respectively. Now, it is obvious that `$F$' does not entail~`$T$'. But the English argument is surely valid!
-
-Second, consider the sentence:
-	\begin{enumerate}
-		\item\label{n:JanBald} Jan is neither bald nor not-bald.
-	\end{enumerate}
-To symbolize this sentence in TFL, we would offer something like `$\enot J \eand \enot \enot J$'. This a contradiction (check this with a truth-table), but \cref*{n:JanBald} does not itself seem like a contradiction; for we might have happily added `Jan is on the borderline of baldness'!
-
-Third, consider the following sentence:
-	\begin{enumerate}
-	\item\label{n:GodParadox}	It's not the case that, if God exists, She answers malevolent prayers.
-	\end{enumerate}
-Symbolizing this in TFL, we would offer something like `$\enot (G \eif M)$'. Now, `$\enot (G \eif M)$' entails `$G$' (again, check this with a truth table). So if we symbolize \cref*{n:GodParadox} in TFL, it seems to entail that God exists. But that's strange: surely even an atheist can accept \cref*{n:GodParadox}, without contradicting herself!
-
-One lesson of this is that the symbolization of \cref*{n:GodParadox} as `$\enot(G \eif M)$' shows that \cref*{n:GodParadox} does not express what we intend. Perhaps we should rephrase it as
-	\begin{enumerate}
-	\item\label{n:GodParadox2} If God exists, She does not answer malevolent prayers.
-	\end{enumerate}
-and symbolize \cref*{n:GodParadox2} as `$G \eif \enot M$'.  Now, if atheists are right, and there is no God, then `$G$' is false and so `$G \eif \enot M$' is true, and the puzzle disappears. However, if `$G$' is false, `$G \eif M$', i.e., `If God exists, She answers malevolent prayers', is \emph{also} true!
-                
-In different ways, these four examples highlight some of the limits of working with a language (like TFL) that can \emph{only} handle truth-functional connectives. Moreover, these limits give rise to some interesting questions in philosophical logic. The case of Jan's baldness (or otherwise) raises the general question of what logic we should use when dealing with \emph{vague} discourse. The case of the atheist raises the question of how to deal with the (so-called) \emph{paradoxes of the material conditional}. Part of the purpose of this book is to equip you with the tools to explore these questions of \emph{philosophical logic}. But we have to walk before we can run; we have to become proficient in using TFL, before we can adequately discuss its limits, and consider alternatives.
 
 \section{The double turnstile}
 In what follow, we will use the notion of entailment rather a lot in this book. It will help us, then, to introduce a symbol that abbreviates it. Rather than saying that the TFL sentences $\metav{A}_1$, $\metav{A}_2$, \dots{} and $\metav{A}_n$ together entail $\metav{C}$, we will abbreviate this by:
@@ -980,10 +951,96 @@ Consider the following principle:
 	\end{quote}
 Is this principle correct? Explain your answer.
 
+\chapter{Limitations of TFL}\label{s:ParadoxesOfMaterialConditional}
 
+We have reached an important milestone: a test for the validity of
+arguments! However, we should not get carried away just yet. It is
+important to understand the \emph{limits} of our achievement. We will
+illustrate these limits with four examples.
+
+First, consider the argument: 
+	\begin{earg}
+		\item Daisy has four legs.
+		\item[\texttherefore] Daisy has more than two legs.
+	\end{earg}
+To symbolize this argument in TFL, we would have to use two different sentence letters---perhaps `$F$'  and `$T$'---for the premise and the conclusion respectively. Now, it is obvious that `$F$' does not entail~`$T$'. But the English argument is surely valid!
+
+Second, consider the sentence:
+	\begin{enumerate}
+		\item\label{n:JanBald} Jan is neither bald nor not bald.
+	\end{enumerate}
+To symbolize this sentence in TFL, we would offer something like
+`$\enot J \eand \enot \enot J$'. This a contradiction (check this with
+a truth-table), but \cref*{n:JanBald} does not itself seem like a
+contradiction: we might have happily added `Jan is on the borderline
+of baldness'!
+
+Third, consider the following sentence:
+	\begin{enumerate}
+	\item\label{n:GodParadox}	It's not the case that, if God exists, She answers malevolent prayers.
+	\end{enumerate}
+Symbolizing this in TFL, we would offer something like `$\enot (G \eif M)$'. Now, `$\enot (G \eif M)$' entails `$G$' (again, check this with a truth table). So if we symbolize \cref*{n:GodParadox} in TFL, it seems to entail that God exists. But that's strange: surely even an atheist can accept \cref*{n:GodParadox}, without contradicting herself!
+
+One lesson of this is that the symbolization of \cref*{n:GodParadox} as `$\enot(G \eif M)$' shows that \cref*{n:GodParadox} does not express what we intend. Perhaps we should rephrase it as
+	\begin{enumerate}
+	\item\label{n:GodParadox2} If God exists, She does not answer malevolent prayers.
+	\end{enumerate}
+and symbolize \cref*{n:GodParadox2} as `$G \eif \enot M$'.  Now, if atheists are right, and there is no God, then `$G$' is false and so `$G \eif \enot M$' is true, and the puzzle disappears. However, if `$G$' is false, `$G \eif M$', i.e., `If God exists, She answers malevolent prayers', is \emph{also} true!
+
+In different ways, these four examples highlight some of the limits of
+TFL, symbolization of English in TFL, and the tests based on truth
+tables we've devised. Our first example showed that TFL is not
+expressive enough to symbolize everything we might want to in a way
+that allows us to apply our logical toolkit to even the best possible
+symbolization. We will see later (\cref{sec.identity}) that we
+\emph{can} properly symbolize `Daisy has four legs' in the more
+expressive language FOL, and then the test we will devise for FOL will
+apply (and give the correct answer).
+
+In \cref{n:JanBald} we similarly had an example where the
+straightforward symbolization in TFL does not quite work. The best we
+can do in TFL is to symbolize `Jan is not bald' using its own sentence
+letter, say,~`$N$' (contrary to our standing practice). But this also
+does not work. For instance, we would then symbolize `Jan is both bald
+and isn't' as `$J \eand N$'. But `Jan is both bald and isn't' arguably
+is a self-contradiction, yet the alternate symbolization `$J \eand N$'
+is not. Some logicians have proposed that in cases of sentences
+like `Jan is bald' which allow borderline cases, we have to adjust our
+semantics and allow that the sentence letter~`$J$' that symbolizes it
+should be allowed to take truth values other than $\TTbf{T}$ and
+$\TTbf{F}$. But this is by no means universally accepted.
+
+\Cref{n:GodParadox} also showed that symbolization is often tricky,
+and that the straightforward symbolization of and English sentence
+sometimes does not capture its intended truth conditions. But even our
+improvement, \cref{n:GodParadox2}, and its symbolization `$G \eif
+\enot M$' turned out to not be good enough. The phenomenon we
+encountered here is one of the so-called paradoxes of the material
+conditional. The paradox is that material conditionals like `$G \eif
+\enot M$' and `$G \eif \enot M$' are true whenever their
+antecedent~`$G$' is false, even though intuitively the two sentences
+`If God exists, She answers malevolent prayers' and `If God exists,
+She does \emph{not} answer malevolent prayers' should not both be true. This
+indicates that the `if \dots then' in these two examples is not
+properly captured by the TFL connective~`\eif'. The
+truth-functionality of TFL here is a real limitation. The solution
+would be to treat `if \dots then' in this case as a subjunctive
+conditional (see \cref{s:IndicativeSubjunctive}), but TFL cannot
+capture those.\footnote{Logicians have devised logics that deal with
+subjunctive conditionals better. They are called `conditional logics'
+or `logics of counterfactuals'.}
+
+The case of Jan's baldness (or otherwise) raises the general question
+of what logic we should use when dealing with \emph{vague} discourse.
+The case of the atheist raises the question of how to deal with the
+(so-called) \emph{paradoxes of the material conditional}. Part of the
+purpose of this book is to equip you with the tools to explore these
+questions of \emph{philosophical logic}. But we have to walk before we
+can run; we have to become proficient in using TFL, before we can
+adequately discuss its limits, and consider alternatives.
 
 \chapter{Truth table shortcuts}
-With practice, you will quickly become adept at filling out truth tables. In this section, we consider (and justify) some shortcuts which will help you along the way.
+With practice, you will quickly become adept at filling out truth tables. In this chapter, we consider (and justify) some shortcuts which will help you along the way.
 
 \section{Working through truth tables}
 You will quickly find that you do not need to copy the truth value of each sentence letter, but can simply refer back to them. So you can speed things up by writing:
