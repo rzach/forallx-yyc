@@ -12,7 +12,7 @@ Provide proofs for all of the following:
 \item $\Box (A\eand B)\vdash_\mlK \Box A \eand \Box B$
 
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\Box (A \eand B)}
 \open
 \hypo{2}{\ebox}
@@ -27,13 +27,13 @@ Provide proofs for all of the following:
 \close
 \have{9}{\ebox B}\boxi{6-8}
 \have{10}{\Box A \eand \Box B}\ai{5,9}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\Box A\eand\Box B\vdash_\mlK \Box( A \eand  B)$
 
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\Box A \eand \Box B}
 \have{2}{\Box A}\ae{1}
 \have{3}{\Box B}\ae{1}
@@ -44,13 +44,13 @@ Provide proofs for all of the following:
 \have{7}{A\eand B}\ai{5,6}
 \close
 \have{8}{\Box (A\eand B)}\boxi{4-7}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\Box A\eor\Box B\vdash_\mlK \Box( A \eor  B)$
 
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\Box A \eor \Box B}
 \open
 \hypo{2}{\Box A}
@@ -71,12 +71,12 @@ Provide proofs for all of the following:
 \have{11}{\Box (A\eor B)}\boxi{8-10}
 \close
 \have{12}{\Box(A\eor B)}\oe{1,2-6,7-11}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\Box (A \eiff B)\vdash_\mlK  \Box A \eiff \Box B$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\Box(A\eiff B)}
 \open
 \hypo{2}{\Box A}
@@ -99,7 +99,7 @@ Provide proofs for all of the following:
 \have{13}{\ebox A}\boxi{9-12}
 \close
 \have{14}{\Box A \eiff \Box B}\bi{2-7, 8-13}
-\end{nd}\]
+\end{fitchproof}
 }
 \end{compactlist}
 
@@ -108,7 +108,7 @@ Provide proofs for the following (without using Modal Conversion!):
 \begin{compactlist}
 \item $\enot\Box A\vdash_\mlK  \Diamond \enot A$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\enot\Box A}
 \open
 \hypo{2}{\ebox\enot\enot A}
@@ -122,12 +122,12 @@ Provide proofs for the following (without using Modal Conversion!):
 \close
 \have{8}{\enot\Box\enot\enot A}\ni{2-6}
 \have{9}{\Diamond\enot A}\diadf{8}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\Diamond\enot A\vdash_\mlK \enot \Box A$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\Diamond\enot A}
 \have{2}{\enot\Box\enot \enot A}\diadf{1}
 \open
@@ -145,13 +145,13 @@ Provide proofs for the following (without using Modal Conversion!):
 \have{10}{\ered}\ne{2,9}
 \close
 \have{11}{\enot\Box A}\ni{3-10}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\enot\Diamond A\vdash_\mlK \Box\enot A$
 
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\enot\Diamond A}
 \open
 \hypo{2}{\enot\Box\enot A}
@@ -160,12 +160,12 @@ Provide proofs for the following (without using Modal Conversion!):
 \close
 \have{5}{\enot\enot\Box\enot A}\ni{2-4}
 \have{6}{\Box \enot A}\dne{5}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\Box\enot A\vdash_\mlK \enot\Diamond A$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\Box\enot A}
 \open
 \hypo{2}{\Diamond A}
@@ -173,7 +173,7 @@ Provide proofs for the following (without using Modal Conversion!):
 \have{4}{\bot}\ne{1,3}
 \close
 \have{5}{\enot\Diamond A}\by{$\enot$I}{2-4}
-\end{nd}\]
+\end{fitchproof}
 }
 \end{compactlist}
 
@@ -182,7 +182,7 @@ Provide proofs of the following (and now feel free to use Modal Conversion!):
 \begin{compactlist}
 \item $\Box(A\eif B), \Diamond A \vdash_\mlK  \Diamond B$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \have{1}{\Box(A\eif B)}
 \hypo{2}{\Diamond A}
 \have{3}{\enot\Box\enot A}\diadf{2}
@@ -199,12 +199,12 @@ Provide proofs of the following (and now feel free to use Modal Conversion!):
 \close
 \have{11}{\enot\Box\enot B}\ni{4-10}
 \have{12}{\Diamond B}\diadf{11}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\Box A \vdash_\mlK  \enot\Diamond\enot A$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\Box A}
 \open
 \hypo{2}{\Diamond\enot A}
@@ -212,12 +212,12 @@ Provide proofs of the following (and now feel free to use Modal Conversion!):
 \have{4}{\bot}\ne{1,3}
 \close
 \have{5}{\enot\Diamond\enot A}\ni{2-4}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\enot\Diamond\enot A \vdash_\mlK  \Box A$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\enot\Diamond\enot A}
 \have{2}{\Box\enot\enot A}\mc{1}
 \open
@@ -226,7 +226,7 @@ Provide proofs of the following (and now feel free to use Modal Conversion!):
 \have{5}{A}\dne{4}
 \close
 \have{6}{\Box A}\boxi{3-5}
-\end{nd}\]
+\end{fitchproof}
 }
 \end{compactlist}
 
@@ -235,7 +235,7 @@ Provide proofs for the following:
 \begin{compactlist}
 \item $P\vdash_\mlT \Diamond P$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{P}
 \open
 \hypo{3}{\Box \enot P}
@@ -244,12 +244,12 @@ Provide proofs for the following:
 \close
 \have{6}{\enot\Box\enot P}\ni{3-5}
 \have{7}{\Diamond P}\diadf{6}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\vdash_\mlT  (A\eand B)\eor(\enot \Box A\eor\enot\Box B)$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \open
 \hypo{1}{\Box A\eand\Box B}
 \have{2}{\Box A}\ae{1}
@@ -265,7 +265,7 @@ Provide proofs for the following:
 \have{10}{(A\eand B)\eor (\enot\Box A \eor \enot\Box B)}\oi{9}
 \close
 \have{11}{(A\eand B)\eor (\enot\Box A \eor \enot\Box B)}\tnd{1-7,8-10}
-\end{nd}\]
+\end{fitchproof}
 }
 \end{compactlist}
 
@@ -275,7 +275,7 @@ Provide proofs for the following:
 \item $\Box(\Box A\eif B), \Box (\Box B\eif C), \Box A \vdash_\mlSfour \Box\Box C$
 
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \have{1}{\Box(\Box A \eif B)}
 \have{2}{\Box(\Box B\eif C)}
 \hypo{3}{\Box A}
@@ -301,12 +301,12 @@ Provide proofs for the following:
 \have{18}{\Box C}\boxi{8-17}
 \close
 \have{19}{\Box \Box C}\boxi{4-18}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\Box A \vdash_\mlSfour  \Box(\Box A \eor B)$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\Box A}
 \open
 \hypo{2}{\ebox}
@@ -314,12 +314,12 @@ Provide proofs for the following:
 \have{4}{\Box A \eor B}\oi{4}
 \close
 \have{5}{\Box(\Box A \eor B)}\boxi{2-4}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\Diamond \Diamond A \vdash_\mlSfour  \Diamond A$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\Diamond\Diamond A}
 \open
 \hypo{2}{\ebox\enot A}
@@ -334,7 +334,7 @@ Provide proofs for the following:
 \close
 \have{14}{\enot\ebox\enot A}\ni{2-13}
 \have{15}{\Diamond A}\diadf{14}
-\end{nd}\]
+\end{fitchproof}
 }
 \end{compactlist}
 
@@ -343,7 +343,7 @@ Provide proofs for the following:
 \begin{compactlist}
 \item $\enot\Box\enot A, \Diamond B\vdash_\mlSfive\Box(\Diamond A \eand \Diamond B)$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \have{1}{\enot\Box\enot A}
 \hypo{2}{\Diamond B}
 \have{3}{\enot\ebox\enot B}\diadf{2}
@@ -356,12 +356,12 @@ Provide proofs for the following:
 \have{10}{\Diamond A \eand \Diamond B}\ai{6,8}
 \close
 \have{11}{\Box(\Diamond A \eand \Diamond B)}\boxi{4-10}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $A\vdash_\mlSfive\Box\ediamond A$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{A}
 \open
 \hypo{2}{\ebox\enot A}
@@ -375,12 +375,12 @@ Provide proofs for the following:
 \have{8}{\Diamond A}\diadf{7}
 \close
 \have{9}{\Box\Diamond A}\boxi{6-8}
-\end{nd}\]
+\end{fitchproof}
 }
 
 \item $\ediamond\ediamond A\vdash_\mlSfive\ediamond A$
 \myanswer{
-\[\begin{nd}
+\begin{fitchproof}
 \hypo{1}{\ediamond\ediamond A}
 \have{2}{\enot\ebox\enot \ediamond A}\diadf{1}
 \open
@@ -406,7 +406,7 @@ Provide proofs for the following:
 \close
 \have{16}{\ebox\ediamond A}\boxi{3-15}
 \have{17}{\ediamond A}\rt{16}
-\end{nd}\]
+\end{fitchproof}
 }
 \end{compactlist}
 

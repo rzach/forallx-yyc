@@ -49,7 +49,7 @@ Explain why these two `proofs' are incorrect. Also, provide interpretations whic
 \label{pr.justifyFOLproof}
 The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into bona fide proofs.
 \begin{compactlist}
-\item\begin{fitchproof}
+\item \myanswer{\begin{fitchproof}
 \hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}
 \hypo{p2}{\forall x\enot \atom{R}{m,x}}
 \have{3}{\exists y(\atom{R}{m,y} \eor \atom{R}{y,m})}\Ae{p1}
@@ -60,9 +60,9 @@ The following three proofs are missing their citations (rule and line numbers). 
 		\have{a4}{\exists x\,\atom{R}{x,m}}\Ei{a3}
 	\close
 \have{n}{\exists x\,\atom{R}{x,m}}\Ee{3, a1-a4}
-\end{fitchproof}
+\end{fitchproof}}
 
-\item\begin{fitchproof}
+\item \myanswer{\begin{fitchproof}
 \hypo{1}{\forall x(\exists y\,\atom{L}{x,y} \eif \forall z\atom{L}{z,x})}
 \hypo{2}{\atom{L}{a,b}}
 \have{3}{\exists y\,\atom{L}{a,y} \eif \forall z\atom{L}{z,a}}\Ae{1}
@@ -74,9 +74,9 @@ The following three proofs are missing their citations (rule and line numbers). 
 \have{9}{\forall z \atom{L}{z,c}}\ce{7, 8}
 \have{10}{\atom{L}{c,c}}\Ae{9}
 \have{11}{\forall x\,\atom{L}{x,x}}\Ai{10}
-\end{fitchproof}
+\end{fitchproof}}
 
-\item\begin{fitchproof}
+\item \myanswer{\begin{fitchproof}
 \hypo{a}{\forall x(\atom{J}{x} \eif \atom{K}{x})}
 \hypo{b}{\exists x\forall y\,\atom{L}{x,y}}
 \hypo{c}{\forall x\,\atom{J}{x}}
@@ -90,7 +90,7 @@ The following three proofs are missing their citations (rule and line numbers). 
 	\have{5}{\exists x(\atom{K}{x} \eand \atom{L}{x,x})}\Ei{4}
 \close
 \have{j}{\exists x(\atom{K}{x} \eand \atom{L}{x,x})}\Ee{b, 2-5}
-\end{fitchproof}
+\end{fitchproof}}
 \end{compactlist}
 
 
@@ -357,7 +357,7 @@ is true.
 \end{fitchproof}}
 
 
-\item $Na \eif \forall x(\atom{M}{x} \eiff \atom{M}{a}), \atom{M}{a}, \enot \atom{M}{b}\proves \enot \atom{N}{a}$
+\item $\atom{N}{a} \eif \forall x(\atom{M}{x} \eiff \atom{M}{a}), \atom{M}{a}, \enot \atom{M}{b}\proves \enot \atom{N}{a}$
 \myanswer{\begin{fitchproof}
 \hypo{nAmm}{\atom{N}{a} \eif \forall x(\atom{M}{x} \eiff \atom{M}{a})}
 \hypo{m}{\atom{M}{a}}
@@ -392,7 +392,7 @@ is true.
 \have{AAbi}{\forall x \forall y (\atom{G}{x,y} \eiff \atom{G}{y,x})}\Ai{Abi}
 \end{fitchproof}}
 
-\item $\forall x(\enot \atom{M}{x} \eor \atom{L}{j,x}), \forall x(Bx\eif \atom{L}{j,x}), \forall x(Mx\eor \atom{B}{x})\proves \forall xLjx$
+\item $\forall x(\enot \atom{M}{x} \eor \atom{L}{j,x}), \forall x(\atom{B}{x}\eif \atom{L}{j,x}), \forall x(\atom{M}{x}\eor \atom{B}{x})\proves \forall x\,\atom{L}{j,x}$
 \myanswer{\begin{fitchproof}
 \hypo{Anmlj}{\forall x (\enot \atom{M}{x} \eor \atom{L}{j,x})}
 \hypo{Ablj}{\forall x (\atom{B}{x} \eif \atom{L}{j,x})}
@@ -426,9 +426,9 @@ likes.
 \myanswer{Symbolization key:
 \begin{ekey}
 \item[\text{domain}] all people
-\item[Lxy] \gap{x} likes \gap{y}
+\item[\atom{L}{x,y}] \gap{x} likes \gap{y}
 \end{ekey}
-$\exists x \forall y(\forall z(\atom{L}{x,z} \eif \atom{L}{y,z}) \eif \atom{L}{x,y}) \therefore \exists x  Lxx$
+$\exists x \forall y(\forall z(\atom{L}{x,z} \eif \atom{L}{y,z}) \eif \atom{L}{x,y}) \therefore \exists x  \,\atom{L}{x,x}$
 \begin{fitchproof}
 \hypo{1}{\exists x\forall y(\forall z(\atom{L}{x,z} \eif \atom{L}{y,z}) \eif \atom{L}{x,y})}
 \open
@@ -449,7 +449,7 @@ $\exists x \forall y(\forall z(\atom{L}{x,z} \eif \atom{L}{y,z}) \eif \atom{L}{x
 \problempart
 Show that each pair of sentences is provably equivalent.
 \begin{compactlist}
-\item $\forall x (Ax\eif \enot \atom{B}{x})$, $\enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
+\item $\forall x (\atom{A}{x}\eif \enot \atom{B}{x})$, $\enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot \atom{A}{x}\eif \atom{B}{d})$, $\forall x\,\atom{A}{x} \eor \atom{B}{d}$
 \item $\exists x\,\atom{P}{x} \eif \atom{Q}{c}$, $\forall x (\atom{P}{x} \eif \atom{Q}{c})$
 \end{compactlist}
@@ -461,9 +461,9 @@ Show that each pair of sentences is provably equivalent.
 For each of the following pairs of sentences: If they are provably equivalent, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
 \begin{compactlist}
 \item $\forall x\,\atom{P}{x} \eif \atom{Q}{c}, \forall x (\atom{P}{x} \eif \atom{Q}{c})$ \hfill \myanswer{Not logically equivalent}
-\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$c$' name $1$. Let `$Px$' be true of and only of $1$. Let `$Qx$' be true of, and only of, $2$.}
-\item $\forall x\forall y \forall z Bxyz, \forall x\,\atom{B}{x,x}x$\hfill \myanswer{Not logically equivalent}
-\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$Bxyz$' be true of, and only of, \ntuple{1,1,1} and \ntuple{2,2,2}.}
+\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$c$' name $1$. Let `$\atom{P}{x}$' be true of and only of $1$. Let `$\atom{Q}{x}$' be true of, and only of, $2$.}
+\item $\forall x\forall y \forall z \atom{B}{x,y,z}, \forall x\,\atom{B}{x,x,x}$\hfill \myanswer{Not logically equivalent}
+\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$\atom{B}{x,y,z}$' be true of, and only of, \ntuple{1,1,1} and \ntuple{2,2,2}.}
 \item $\forall x\forall y\,\atom{D}{x,y}, \forall y\forall x\,\atom{D}{x,y}$ \hfill \myanswer{Provably equivalent\begin{multicols}{2}
 \begin{fitchproof}
 \hypo{AAd}{\forall x \forall y\,\atom{D}{x,y}}
@@ -545,7 +545,7 @@ For each of the following arguments: If it is valid in FOL, give a proof. If it 
 \end{fitchproof}}
 \item $\exists x(\atom{D}{x} \eor \atom{E}{x}), \forall x(\atom{D}{x} \eif \atom{F}{x}) \therefore \exists x(\atom{D}{x} \eand \atom{F}{x})$ \hfill \myanswer{Invalid\\
 Counter-interpretation: let the domain be the number $1$ . Let `$Dx$' hold of nothing. Let both `$Ex$' and `$Fx$' hold of everything.}
-\item $\forall x\forall y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore Rjj$ \hfill \myanswer{Valid
+\item $\forall x\forall y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore \atom{R}{j,j}$ \hfill \myanswer{Valid
 \begin{fitchproof}
 \hypo{AArr}{\forall x \forall y (\atom{R}{x,y} \eor \atom{R}{y,x})}
 \have{Arr}{\forall y (\atom{R}{j,y} \eor \atom{R}{y,j})}\Ae{AArr}
@@ -561,7 +561,7 @@ Counter-interpretation: let the domain be the number $1$ . Let `$Dx$' hold of no
 \have{r5}{\atom{R}{j,j}}\oe{rr, r1-r2, r3-r4}
 \end{fitchproof}}
 
-\item $\exists x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore Rjj$ \hfill \myanswer{Invalid\\
+\item $\exists x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore \atom{R}{j,j}$ \hfill \myanswer{Invalid\\
 Counter-interpretation: consider the following diagram, allowing `$j$' to name $2$.
 \begin{center}
 \begin{tikzpicture}
@@ -573,7 +573,7 @@ Counter-interpretation: consider the following diagram, allowing `$j$' to name $
 \end{tikzpicture}
 \end{center}}
 \item $\forall x\,\atom{P}{x} \eif \forall x\,\atom{Q}{x}, \exists x \enot \atom{P}{x} \therefore \exists x \enot \atom{Q}{x}$ \hfill \myanswer{Invalid\\
-Counter-interpretation: let the domain be the number $1$. Let `$Px$' be true of nothing. Let `$Qx$' be true of everything.}
+Counter-interpretation: let the domain be the number $1$. Let `$\atom{P}{x}$' be true of nothing. Let `$\atom{Q}{x}$' be true of everything.}
 
 \item $\exists x\,\atom{M}{x} \eif \exists x\,\atom{N}{x}$, $\enot \exists x\,\atom{N}{x}\therefore  \forall x \enot \atom{M}{x}$\hfill \myanswer{Valid\\
 \begin{fitchproof}
@@ -643,10 +643,9 @@ Show in each case that the sentences are inconsistent:
 \problempart
 Show that each pair of sentences is provably equivalent: %TB: Again, have to do some manual numbering to make the multicols have enough space.
 
-\
-
-1.  $\forall x (Ax\eif \enot \atom{B}{x}), \enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
-\myanswer{\begin{multicols}{2}
+\begin{compactlist}
+\item $\forall x (\atom{A}{x} \eif \enot \atom{B}{x}), \enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
+\myanswer{
 \begin{fitchproof}
 \hypo{Aanb}{\forall x (\atom{A}{x} \eif \enot \atom{B}{x})}
 \open
@@ -679,9 +678,9 @@ Show that each pair of sentences is provably equivalent: %TB: Again, have to do 
 \have{anb}{\atom{A}{a} \eif \enot \atom{B}{a}}\ci{a-nb}
 \have{Aanb}{\forall x (\atom{A}{x} \eif \enot \atom{B}{x})}\Ai{anb}		
 \end{fitchproof}
-\end{multicols}}
-2. $\forall x (\enot \atom{A}{x}\eif \atom{B}{d}), \forall x\,\atom{A}{x} \eor \atom{B}{d}$
-\myanswer{\begin{multicols}{2}
+}
+\item $\forall x (\enot \atom{A}{x}\eif \atom{B}{d}), \forall x\,\atom{A}{x} \eor \atom{B}{d}$
+\myanswer{
 \begin{fitchproof}
 \hypo{Anab}{\forall x(\enot \atom{A}{x} \eif \atom{B}{d})}
 \have{nab}{\enot \atom{A}{a} \eif \atom{B}{d}}\Ae{Anab}
@@ -713,17 +712,16 @@ Show that each pair of sentences is provably equivalent: %TB: Again, have to do 
 \have{nab}{\enot \atom{A}{a} \eif \atom{B}{d}}\ci{na-b}
 \have{Anab}{\forall x (\atom{A}{x} \eif \atom{B}{d})}\Ai{nab}
 \end{fitchproof}
-\end{multicols}}
+}
+\end{compactlist}
+
 
 
 \problempart
-In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is provably equivalent: %TB: Again, manual line numbering to give multicols enough space.
-
-\
-
-1.  $\forall x (\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$ 
+In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is provably equivalent:
+\begin{compactlist}
+\item $\forall x (\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$ 
 \myanswer{
-\begin{multicols}{2}
 \begin{fitchproof}
 \hypo{Afg}{\forall x (\atom{F}{x} \eand \atom{G}{a})}
 \have{fg}{\atom{F}{b} \eand \atom{G}{a}}\Ae{Afg}
@@ -740,10 +738,9 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 \have{fg}{\atom{F}{b} \eand \atom{G}{a}}\ai{f, g}
 \have{Afg1}{\forall x (\atom{F}{x} \eand \atom{G}{a})}\Ai{fg}
 \end{fitchproof}
-\end{multicols}}
-2. $\exists x (\atom{F}{x} \eor \atom{G}{a}), \exists x\,\atom{F}{x} \eor \atom{G}{a}$
+}
+\item $\exists x (\atom{F}{x} \eor \atom{G}{a}), \exists x\,\atom{F}{x} \eor \atom{G}{a}$
 \myanswer{
-\begin{multicols}{2}
 \begin{fitchproof}
 \hypo{Efg}{\exists x (\atom{F}{x} \eor \atom{G}{a})}
 \open
@@ -779,9 +776,9 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 \close
 \have{Efg4}{\exists x (\atom{F}{x} \eor \atom{G}{a})}\oe{Efg, Ef-Efg2, g-Efg3}
 \end{fitchproof}
-\end{multicols}}
-3. $\forall x(\atom{G}{a} \eif \atom{F}{x}), \atom{G}{a} \eif \forall x\,\atom{F}{x}$
-\myanswer{\begin{multicols}{2}
+}
+\item $\forall x(\atom{G}{a} \eif \atom{F}{x}), \atom{G}{a} \eif \forall x\,\atom{F}{x}$
+\myanswer{
 \begin{fitchproof}
 \hypo{Agf}{\forall x(\atom{G}{a} \eif \atom{F}{x})}
 \have{gf}{\atom{G}{a} \eif \atom{F}{b}}\Ae{Agf}
@@ -802,10 +799,10 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 \have{gf}{\atom{G}{a} \eif \atom{F}{b}}\ci{g-f}
 \have{Agf}{\forall x (\atom{G}{a} \eif \atom{F}{x})}\Ai{gf}
 \end{fitchproof}
-\end{multicols}}
+}
 
-4. $\forall x(\atom{F}{x} \eif \atom{G}{a}), \exists x\,\atom{F}{x} \eif \atom{G}{a}$
-\myanswer{\begin{multicols}{2}
+\item $\forall x(\atom{F}{x} \eif \atom{G}{a}), \exists x\,\atom{F}{x} \eif \atom{G}{a}$
+\myanswer{
 \begin{fitchproof}
 \hypo{Afg}{\forall x(\atom{F}{x} \eif \atom{G}{a})}
 \open
@@ -829,9 +826,9 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 \have{fg}{\atom{F}{b} \eif \atom{G}{a}}\ci{f-g}
 \have{Afg}{\forall x(\atom{F}{x} \eif \atom{G}{a})}\Ai{fg}	
 \end{fitchproof}
-\end{multicols}}
-5. $\exists x(\atom{G}{a} \eif \atom{F}{x}), \atom{G}{a} \eif \exists x\,\atom{F}{x}$
-\myanswer{\begin{multicols}{2}
+}
+\item $\exists x(\atom{G}{a} \eif \atom{F}{x}), \atom{G}{a} \eif \exists x\,\atom{F}{x}$
+\myanswer{
 \begin{fitchproof}
 \hypo{Egf}{\exists x(\atom{G}{a} \eif \atom{F}{x})}
 \open
@@ -873,10 +870,10 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 \close
 \have{con}{\exists x (\atom{G}{a} \eif \atom{F}{x})}\tnd{g-Egf1, ng-Egf2}
 \end{fitchproof}
-\end{multicols}}
+}
 
-6. $\exists x(\atom{F}{x} \eif \atom{G}{a}), \forall x\,\atom{F}{x} \eif \atom{G}{a}$
-\myanswer{\begin{multicols}{2}
+\item $\exists x(\atom{F}{x} \eif \atom{G}{a}), \forall x\,\atom{F}{x} \eif \atom{G}{a}$
+\myanswer{
 \begin{fitchproof}
 \hypo{Efg}{\exists x (\atom{F}{x} \eif \atom{G}{a})}
 \open
@@ -919,8 +916,8 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 \close
 \have{Efg3}{\exists x (\atom{F}{x} \eif \atom{G}{a})}\tnd{Af-Efg, nAf-Efg2}
 \end{fitchproof}
-\end{multicols}}
-NB: the variable `$x$' does not occur in `$\atom{G}{a}$'. When all the quantifiers occur at the beginning of a sentence, that sentence is said to be in \emph{prenex normal form}. Together with the CQ rules, these equivalences are sometimes called \emph{prenexing rules}, since they give us a means for putting any sentence into prenex normal form.
+}
+\end{compactlist}
 
 \chapter{Rules for identity}\setcounter{ProbPart}{0}
 \problempart
@@ -1206,12 +1203,12 @@ Symbolize the following argument
 	\end{earg}
 And offer a proof of it.\\
 \myanswer{
-\begin{compactlist}
+\begin{earg}
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$ 
 \item $\exists x \bigl[\atom{G}{x} \eand \forall y ( \atom{G}{y} \eif x = y)\bigr]$
 \item $\forall x (\enot \atom{F}{x} \eor \enot \atom{G}{x}) \therefore \phantom{.}$
 \item[\texttherefore] $\exists x \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = z \eor y = z))\bigr]$
-\end{compactlist}}
+\end{earg}}
 
 \myanswer{\begin{fitchproof}
 \hypo{p1}{\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]}
