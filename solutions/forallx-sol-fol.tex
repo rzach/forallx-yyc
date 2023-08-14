@@ -80,10 +80,10 @@ symbolize the following sentences in FOL:
 Using this symbolization key:
 \begin{ekey}
 \item[\text{domain}] all animals
-\item[\atom{A}{x}] \gap{x} is an alligator.
-\item[\atom{M}{x}] \gap{x} is a monkey.
-\item[\atom{R}{x}] \gap{x} is a reptile.
-\item[\atom{Z}{x}] \gap{x} lives at the zoo.
+\item[\atom{A}{x}] \gap{x} is an alligator
+\item[\atom{M}{x}] \gap{x} is a monkey
+\item[\atom{R}{x}] \gap{x} is a reptile
+\item[\atom{Z}{x}] \gap{x} lives at the zoo
 \item[a] Amos
 \item[b] Bouncer
 \item[c] Cleo
@@ -271,11 +271,11 @@ Comment: I have assumed that `larger than any dog' here means `larger than every
 Using the symbolization key given, translate each English-language sentence into FOL.
 \begin{ekey}
 \item[\text{domain}] candies
-\item[\atom{C}{x}] \gap{x} has chocolate in it.
-\item[\atom{M}{x}] \gap{x} has marzipan in it.
-\item[\atom{S}{x}] \gap{x} has sugar in it.
-\item[\atom{T}{x}] Boris has tried \gap{x}.
-\item[\atom{B}{x,y}] \gap{x} is better than \gap{y}.
+\item[\atom{C}{x}] \gap{x} has chocolate in it
+\item[\atom{M}{x}] \gap{x} has marzipan in it
+\item[\atom{S}{x}] \gap{x} has sugar in it
+\item[\atom{T}{x}] Boris has tried \gap{x}
+\item[\atom{B}{x,y}] \gap{x} is better than \gap{y}
 \end{ekey}
 \begin{compactlist}
 \item Boris has never tried any candy.
@@ -294,11 +294,11 @@ Using the symbolization key given, translate each English-language sentence into
 Using the following symbolization key:
 \begin{ekey}
 \item[\text{domain}] people and dishes at a potluck
-\item[\atom{R}{x}] \gap{x} has run out.
-\item[\atom{T}{x}] \gap{x} is on the table.
-\item[\atom{F}{x}] \gap{x} is food.
-\item[\atom{P}{x}] \gap{x} is a person.
-\item[\atom{L}{x,y}] \gap{x} likes \gap{y}.
+\item[\atom{R}{x}] \gap{x} has run out
+\item[\atom{T}{x}] \gap{x} is on the table
+\item[\atom{F}{x}] \gap{x} is food
+\item[\atom{P}{x}] \gap{x} is a person
+\item[\atom{L}{x,y}] \gap{x} likes \gap{y}
 \item[e] Eli
 \item[f] Francesca
 \item[g] the guacamole
@@ -330,11 +330,11 @@ symbolize the following English sentences in FOL:
 Using the following symbolization key:
 \begin{ekey}
 \item[\text{domain}] people
-\item[\atom{D}{x}] \gap{x} dances ballet.
-\item[\atom{F}{x}] \gap{x} is female.
-\item[\atom{M}{x}] \gap{x} is male.
-\item[\atom{C}{x,y}] \gap{x} is a child of \gap{y}.
-\item[\atom{S}{x,y}] \gap{x} is a sibling of \gap{y}.
+\item[\atom{D}{x}] \gap{x} dances ballet
+\item[\atom{F}{x}] \gap{x} is female
+\item[\atom{M}{x}] \gap{x} is male
+\item[\atom{C}{x,y}] \gap{x} is a child of \gap{y}
+\item[\atom{S}{x,y}] \gap{x} is a sibling of \gap{y}
 \item[e] Elmer
 \item[j] Jane
 \item[p] Patrick
@@ -374,11 +374,11 @@ symbolize the following sentences in FOL:
 %Using the following symbolization key:
 %\begin{ekey}
 %\item[\text{domain}] candies
-%\item[\atom{C}{x}] \gap{x} has chocolate in it.
-%\item[\atom{M}{x}] \gap{x} has marzipan in it.
-%\item[\atom{S}{x}] \gap{x} has sugar in it.
-%\item[\atom{T}{x}] Boris has tried \gap{x}.
-%\item[\atom{B}{x,y}] \gap{x} is better than \gap{y}.
+%\item[\atom{C}{x}] \gap{x} has chocolate in it
+%\item[\atom{M}{x}] \gap{x} has marzipan in it
+%\item[\atom{S}{x}] \gap{x} has sugar in it
+%\item[\atom{T}{x}] Boris has tried \gap{x}
+%\item[\atom{B}{x,y}] \gap{x} is better than \gap{y}
 %\end{ekey}
 %symbolize the following English sentences in FOL:\\
 %\myanswer{Comment: these are deliberately tricky. What follows is the \emph{best} we can offer in FOL, for each of these sentences. Some are not great.}
@@ -410,9 +410,9 @@ symbolize the following sentences in FOL:
 \end{enumerate}
 Symbolize this sentence, using `$\atom{F}{x}$' for `\gap{x} is an officer'.  Are you confident that your symbolization is true if, and only if, \cref*{except2} is true?  What happens if every officer owes money to Hikaru, Pavel does not, but Pavel isn't an officer? \myanswer{Most people, including most linguists thinking about `except', read \cref*{except2} as entailing all three of the following:
 \begin{enumerate}
-	\item Every officer who is not Pavel owes money to Hikaru
-	\item Pavel does not owe money to Hikaru
-	\item Pavel is an officer
+	\item Every officer who is not Pavel owes money to Hikaru.
+	\item Pavel does not owe money to Hikaru.
+	\item Pavel is an officer.
 \end{enumerate}
 So it can be symbolized as `$\forall x((\atom{F}{x} \eand \enot x = p) \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h} \eand \atom{F}{p}$'.}
 
@@ -452,10 +452,10 @@ Identify which variables are bound and which are free.
 Using the following symbolization key:
 \begin{ekey}
 \item[\text{domain}] people
-\item[\atom{K}{x}] \gap{x} knows the combination to the safe.
-\item[\atom{S}{x}] \gap{x} is a spy.
-\item[\atom{V}{x}] \gap{x} is a vegetarian.
-\item[\atom{T}{x,y}] \gap{x} trusts \gap{y}.
+\item[\atom{K}{x}] \gap{x} knows the combination to the safe
+\item[\atom{S}{x}] \gap{x} is a spy
+\item[\atom{V}{x}] \gap{x} is a vegetarian
+\item[\atom{T}{x,y}] \gap{x} trusts \gap{y}
 \item[h] Hofthor
 \item[i] Ingmar
 \end{ekey}
@@ -485,13 +485,13 @@ Comment: the scope of negation is potentially ambiguous here; I have read it as 
 Using the following symbolization key:
 \begin{ekey}
 \item[\text{domain}] cards in a standard deck
-\item[\atom{B}{x}] \gap{x} is black.
-\item[\atom{C}{x}] \gap{x} is a club.
-\item[\atom{D}{x}] \gap{x} is a deuce.
-\item[\atom{J}{x}] \gap{x} is a jack.
-\item[\atom{M}{x}] \gap{x} is a man with an axe.
-\item[\atom{O}{x}] \gap{x} is one-eyed.
-\item[\atom{W}{x}] \gap{x} is wild.
+\item[\atom{B}{x}] \gap{x} is black
+\item[\atom{C}{x}] \gap{x} is a club
+\item[\atom{D}{x}] \gap{x} is a deuce
+\item[\atom{J}{x}] \gap{x} is a jack
+\item[\atom{M}{x}] \gap{x} is a man with an axe
+\item[\atom{O}{x}] \gap{x} is one-eyed
+\item[\atom{W}{x}] \gap{x} is wild
 \end{ekey}
 symbolize each sentence in FOL:
 \begin{compactlist}
@@ -533,10 +533,10 @@ Comment: if there is not exactly one deuce of clubs, then the above sentence is 
 \problempart Using the following symbolization key:
 \begin{ekey}
 \item[\text{domain}] animals in the world
-\item[\atom{B}{x}] \gap{x} is in Farmer Brown's field.
-\item[\atom{H}{x}] \gap{x} is a horse.
-\item[\atom{P}{x}] \gap{x} is a Pegasus.
-\item[\atom{W}{x}] \gap{x} has wings.
+\item[\atom{B}{x}] \gap{x} is in Farmer Brown's field
+\item[\atom{H}{x}] \gap{x} is a horse
+\item[\atom{P}{x}] \gap{x} is a Pegasus
+\item[\atom{W}{x}] \gap{x} has wings
 \end{ekey}
 symbolize the following sentences in FOL:
 \begin{compactlist}
@@ -568,4 +568,46 @@ In this chapter, we symbolized `Nick is the traitor' by `$\exists x (\atom{T}{x}
 		\item[] \myanswer{This sentence can be understood thus: Take anything you like; now, if you chose a traitor, you chose Nick, and if you chose Nick, you chose a traitor. So there is one and only one traitor, namely, Nick, as required.}
 	\end{itemize}
 
-\stepcounter{chapter} % Ambiguity
+\chapter{Ambiguity}
+\setcounter{ProbPart}{0}
+
+\practiceproblems
+\problempart
+Each of the following sentences is ambiguous. Provide a symbolization key for each, and symbolize all readings.
+\begin{compactlist}
+	\item No one likes a quitter.
+	\myanswer{\begin{ekey}
+		\item[\text{domain}] people
+		\item[\atom{Q}{x}] \gap{x} is a quitter
+		\item[\atom{L}{x,y}] \gap{x} likes \gap{y}
+	\end{ekey}}
+	\item[] \myanswer{$\forall x(\atom{Q}{x} \eif \forall y\,\enot\atom{L}{y,x})$
+	(all quitters are disliked by everyone)\\
+	$\exists x(\atom{Q}{x} \eand \forall y\,\enot\atom{L}{y,x})$ (A
+	specific quitter is disliked by everyone)}
+	\item CSI found only red hair at the scene.
+	\myanswer{\begin{ekey}
+		\item[\text{domain}] items of evidence
+		\item[\atom{R}{x}] \gap{x} is red
+		\item[\atom{H}{x}] \gap{x} is hair
+		\item[\atom{F}{x,y}] \gap{x} found \gap{y} (at the scene)
+		\item[c] CSI
+	\end{ekey}}
+	\item[] \myanswer{$\forall x(\atom{F}{c,x} \eif (\atom{R}{x} \eand \atom{H}{x}))$
+	(only hair was found, and it's all red)\\
+	$\forall x((\atom{F}{c,x}  \eand \atom{H}{x}) \eif \atom{R}{x})$
+	(only \emph{red} hair was found, but possibly other things that
+	aren't hair)}
+	\item Smith's murderer hasn't been arrested.
+	\myanswer{\begin{ekey}
+		\item[\text{domain}] people
+		\item[\atom{A}{x}] \gap{x} has been arrested
+		\item[\atom{M}{x,y}] \gap{x} murdered \gap{y}
+		\item[s] Smith
+	\end{ekey}}
+	\item[] \myanswer{$\exists x(\forall y(\atom{M}{y, s} \eiff y=x)
+	\eand \enot\atom{A}{x})$ (Smith's murderer has: not been arrested)\\
+	$\enot\exists x(\forall y(\atom{M}{y, s} \eiff y=x)
+	\eand \atom{A}{x})$ (It's not the case that Smith's murderer has
+	been arrested; in fact there may not be a ``Smith's murderer''.)}
+\end{compactlist}

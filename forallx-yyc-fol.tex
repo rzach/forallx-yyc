@@ -1641,13 +1641,13 @@ symbolize the following sentences in FOL:
 Using the following symbolization key:
 \begin{ekey}
 \item[\text{domain}] cards in a standard deck
-\item[\atom{B}{x}] \gap{x} is black.
-\item[\atom{C}{x}] \gap{x} is a club.
-\item[\atom{D}{x}] \gap{x} is a deuce.
-\item[\atom{J}{x}] \gap{x} is a jack.
-\item[\atom{M}{x}] \gap{x} is a man with an axe.
-\item[\atom{O}{x}] \gap{x} is one-eyed.
-\item[\atom{W}{x}] \gap{x} is wild.
+\item[\atom{B}{x}] \gap{x} is black
+\item[\atom{C}{x}] \gap{x} is a club
+\item[\atom{D}{x}] \gap{x} is a deuce
+\item[\atom{J}{x}] \gap{x} is a jack
+\item[\atom{M}{x}] \gap{x} is a man with an axe
+\item[\atom{O}{x}] \gap{x} is one-eyed
+\item[\atom{W}{x}] \gap{x} is wild
 \end{ekey}
 symbolize each sentence in FOL:
 \begin{compactlist}
@@ -1743,11 +1743,12 @@ This sentence is ambiguous.  In one interpretation, it means that there is a sin
 	& \exists x(\atom{M}{x} \eand \forall y(\atom{P}{y} \eif \atom{S}{y,x}))\\
 	& \forall y(\atom{P}{y} \eif \exists x(\atom{M}{x} \eand \atom{S}{y,x}))
 \end{align*}
-We assume here that the domain contains (at least) people and movies, and the symbolization key,
+We assume here that the domain contains (at least) people and movies,
+and the following symbolization key:
 \begin{ekey}
-	\item[\atom{P}{y}] \gap{y}~is a person, 
+	\item[\atom{P}{y}] \gap{y}~is a person
 	\item[\atom{M}{x}] \gap{x}~is a movie
-	\item[\atom{S}{y,x}] \gap{y}~went to see~\gap{x}.
+	\item[\atom{S}{y,x}] \gap{y}~went to see~\gap{x}
 \end{ekey}
 In the first reading, we say that the existential quantifier has \emph{wide scope} (and its scope contains the universal quantifier, which has \emph{narrow scope}), and the other way round in the second.
 
