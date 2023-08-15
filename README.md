@@ -8,17 +8,17 @@ _forall x: Calgary_ is a full-featured textbook on formal logic. It
 covers key notions of logic such as consequence and validity of
 arguments, the syntax of truth-functional propositional logic TFL and
 truth-table semantics, the syntax of first-order (predicate) logic FOL
-with identity (first-order interpretations), translating (formalizing)
-English in TFL and FOL, and Fitch-style natural deduction proof
-systems for both TFL and FOL. It also deals with some advanced topics
-such as modal logic, soundness, and functional completeness. Exercises
-with solutions are available. It is provided in PDF (for screen
-reading, printing, and a special version for dyslexics), HTML, and in
-LaTeX source code.
+with identity (first-order interpretations), symbolizing English in
+TFL and FOL, and Fitch-style natural deduction proof systems for both
+TFL and FOL. It also deals with some advanced topics such as modal
+logic, soundness, and functional completeness. Exercises with
+solutions are available. It is provided in PDF (for screen reading,
+printing, and a special version for dyslexics), HTML, and in LaTeX
+source code.
 
 Instructors wishing to adopt it should consider the open-source
 [Carnap](https://carnap.io/) system, which supports the notation and
-proof systems of *forall x: Calgary*. Check out the [sample
+proof systems of _forall x: Calgary_. Check out the [sample
 exercises](https://carnap.io/shared/rzach@ucalgary.ca/forall%20x:%20Calgary.md)
 for the book on carnap.io. (There is also an outdated and unsupported
 proof editor/checker for the proof system used available at
@@ -68,6 +68,8 @@ LMS (Canvas, Moodle, D2L/Brightspace).
 if you use the text in a course, it is best to download the PDFs or
 the SCORM package and make them available to students directly rather
 than to link here, to avoid mismatches between versions.
+
+Major changes between editions are listed in the [changelog](https://github.com/rzach/forallx-yyc/blob/master/CHANGELOG.md).
 
 PDFs of the **Fall 2021** edition are archived here:
 

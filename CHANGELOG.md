@@ -5,8 +5,7 @@
 - Fully accessible HTML version and SCORM packages using BookML
   ([issue 23](https://github.com/rzach/forallx-yyc/issues/23)). This
   required many changes under the hood; see the [blog post on
-  OLP](https://openlogicproject.org/2023/07/27/forall-x-now-in-html-for-extra-accessibility/)
-  for details.
+  technical details](https://richardzach.org/2023/07/converting-latex-to-html-technical-notes/).
 - New chapter 13 (Limitations of TFL) based in part on section 12.5 of
   F21 edition.
 - New chapter 35 (Properties of relations)
