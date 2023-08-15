@@ -24,7 +24,7 @@ Both arguments are valid, and there is a straightforward sense in which we can s
 		\item[] If $A$, then $C$
 		\item[\texttherefore] $C$
 	\end{earg}
-This looks like an excellent argument \emph{structure}. Indeed, surely any argument with this \emph{structure} will be valid, and this is not the only good argument structure. Consider an argument like:
+This looks like an excellent argument \emph{structure}. Indeed, surely any argument with this structure will be valid. And this is not the only good argument structure. Consider an argument like:
 	\begin{earg}
 		\item[] Jenny is either happy or sad.
 		\item[] Jenny is not happy.
@@ -53,27 +53,44 @@ These examples illustrate an important idea, which we might describe as \emph{va
 In \crefrange{ch.TFL}{ch.NDTFL}, we are going to develop a formal language which allows us to symbolize many arguments in such a way as to show that they are valid in virtue of their form. That language will be \emph{truth-functional logic}, or TFL.
 
 \section{Validity for special reasons}
-There are plenty of arguments that are valid, but not for reasons relating to their form. Take an example:
+
+In \cref{s:FormalValidity}, we first introduced the notion of formal
+validity, and contrasted it with other kinds of validity related to
+what kinds of counterexamples we consider. It bears repeating that
+there are plenty of arguments that are valid, but not for reasons
+relating to their form. Take an example:
 	\begin{earg}
 		\item[] Juanita is a vixen.
 		\item[\texttherefore] Juanita is a fox.
 	\end{earg}
-It is impossible for the premise to be true and the conclusion false. So the argument is valid. However, the validity is not related to the form of the argument. Here is an invalid argument with the same form:
+It is impossible for the premise to be true and the conclusion false,
+since `vixen' just means `female fox'. So the argument is
+(conceptually) valid. The validity is not explained by the form of the
+argument. To see this, we can give an invalid argument with the same
+form, e.g.:
 	\begin{earg}
 		\item[] Juanita is a vixen.
 		\item[\texttherefore] Juanita is a cathedral.
 	\end{earg}
-This might suggest that the validity of the first argument \emph{is} keyed to the meaning of the words `vixen' and `fox'. But, whether or not that is right, it is not simply the \emph{shape} of the argument that makes it valid. Equally, consider the argument:
+Equally, consider the argument:
 	\begin{earg}
 		\item[] The sculpture is green all over.
 		\item[\texttherefore] The sculpture is not red all over.
 	\end{earg}
-Again, it seems impossible for the premise to be true and the conclusion false, for nothing can be both green all over and red all over. So the argument is valid, but here is an invalid argument with the same form:
+Again, it seems there can be no case where the premise is true and the
+conclusion false, for nothing can be both green all over and red all
+over. So the argument is valid, but here is an invalid argument with
+the same form:
 	\begin{earg}
 		\item[] The sculpture is green all over.
 		\item[\texttherefore] The sculpture is not shiny all over.
 	\end{earg}
-The argument is invalid, since it is possible to be green all over and shiny all over. (One might paint their nails with an elegant shiny green varnish.) Plausibly, the validity of the first argument is keyed to the way that colours (or colour-words) interact, but, whether or not that is right, it is not simply the \emph{shape} of the argument that makes it valid.
+This argument is invalid, since it is possible to be green all over
+and shiny all over. (One might paint the sculpture with an elegant
+shiny green varnish.) Plausibly, the validity of the first argument is
+keyed to the way that colours (or colour-words) interact, but, whether
+or not that is right, it is not simply the \emph{form} of the
+argument alone that makes it valid.
 
 The important moral can be stated as follows. \emph{At best, TFL will help us to understand arguments that are valid due to their form.}
 
@@ -152,9 +169,9 @@ In order to symbolize \cref*{not1}, we will need a sentence letter. We might off
 	\begin{ekey}
 		\item[B] Mary is in Barcelona.
 	\end{ekey}
-Since \cref*{not2} is obviously related to \cref*{not1}, we will not want to symbolize it with a completely different sentence letter. Roughly, \cref*{not2} means something like `It is not the case that~$B$'. In order to symbolize this, we need a symbol for negation. We will use `\enot'. Now we can symbolize \cref*{not2} with `$\enot B$'.
+Since \cref*{not2} is obviously related to \cref*{not1}, we will not want to symbolize it with a completely different sentence letter. Roughly, \cref*{not2} means something like `It is not the case that~$B$'. In order to symbolize this, we need a symbol for negation. We will use~`\enot'. Now we can symbolize \cref*{not2} with~`$\enot B$'.
 
-\Cref*{not3} also contains the word `not', and it is obviously equivalent to \cref*{not2}. As such, we can also symbolize it with `$\enot B$'.
+\Cref*{not3} also contains the word `not', and it is obviously equivalent to \cref*{not2}. As such, we can also symbolize it with~`$\enot B$'.
 \factoidbox{
 A sentence can be symbolized as $\enot\metav{A}$ if it can be paraphrased in English as `It is not the case that\ldots'.
 }
@@ -168,9 +185,9 @@ Let us use the following representation key:
 	\begin{ekey}
 		\item[R] The widget is replaceable
 	\end{ekey}
-\Cref*{not4} can now be symbolized by `$R$'. Moving on to \cref*{not5}: saying the widget is irreplaceable means that it is not the case that the widget is replaceable. So even though \cref*{not5} does not contain the word `not', we will symbolize it as follows: `$\enot R$'.
+\Cref*{not4} can now be symbolized by `$R$'. Moving on to \cref*{not5}: saying the widget is irreplaceable means that it is not the case that the widget is replaceable. So even though \cref*{not5} does not contain the word `not', we will symbolize it as follows:~`$\enot R$'.
 
-\Cref*{not5b} can be paraphrased as `It is not the case that the widget is irreplaceable.' Which can again be paraphrased as `It is not the case that it is not the case that the widget is replaceable'. So we might symbolize this English sentence with the TFL sentence `$\enot\enot R$'.
+\Cref*{not5b} can be paraphrased as `It is not the case that the widget is irreplaceable.' Which can again be paraphrased as `It is not the case that it is not the case that the widget is replaceable'. So we might symbolize this English sentence with the TFL sentence~`$\enot\enot R$'.
 
 But some care is needed when handling negations. Consider:
 	\begin{enumerate}
@@ -342,7 +359,12 @@ Let's use the following symbolization key:
 		\item[P] Jean is in Paris
 		\item[F] Jean is in France
 	\end{ekey}
-\Cref*{if1} is roughly of this form: `if $P$, then $F$'. We will use the symbol `\eif' to symbolize this `if\ldots, then\ldots' structure. So we symbolize \cref*{if1} by `$(P\eif F)$'. The connective is called \define{the conditional}. Here, `$P$' is called the \define{antecedent} of the conditional `$(P \eif F)$', and `$F$' is called the \define{consequent}.
+\Cref*{if1} is roughly of this form: `if $P$, then $F$'. We will use
+the symbol `\eif' to symbolize this `if\ldots, then\ldots' structure.
+So we symbolize \cref*{if1} by `$(P\eif F)$'. The connective is called
+the \define{conditional}. Here, `$P$' is called the
+\define{antecedent} of the conditional `$(P \eif F)$', and `$F$' is
+called the \define{consequent}.
 
 \newglossaryentry{conditional}
 {
@@ -594,7 +616,7 @@ Define an \define{expression of TFL} as any string of symbols of TFL. So: write 
 \section{Sentences}\label{s:Sentences}
 Given what we just said, `$(A \eand B)$' is an expression of TFL, and so is `$\lnot)(\eor()\eand(\enot\enot())((B$'. But the former is a \emph{sentence}, and the latter is \emph{gibberish}. We want some rules to tell us which TFL expressions are sentences.
 
-Obviously, individual sentence letters like `$A$' and `$G_{13}$' should count as sentences. (We'll also call them \emph{atomic} sentences.) We can form further sentences out of these by using the various connectives. Using negation, we can get `$\enot A$' and `$\enot G_{13}$'. Using conjunction, we can get `$(A \eand G_{13})$', `$(G_{13} \eand A)$', `$(A \eand A)$', and `$(G_{13} \eand G_{13})$'. We could also apply negation repeatedly to get sentences like `$\enot \enot A$' or apply negation along with conjunction to get sentences like `$\enot(A \eand G_{13})$' and `$\enot(G_{13} \eand \enot G_{13})$'. The possible combinations are endless, even starting with just these two sentence letters, and there are infinitely many sentence letters. So there is no point in trying to list all the sentences one by one.
+Obviously, individual sentence letters like `$A$' and `$G_{13}$' should count as sentences. (We'll also call them \define{atomic} sentences.) We can form further sentences out of these by using the various connectives. Using negation, we can get `$\enot A$' and `$\enot G_{13}$'. Using conjunction, we can get `$(A \eand G_{13})$', `$(G_{13} \eand A)$', `$(A \eand A)$', and `$(G_{13} \eand G_{13})$'. We could also apply negation repeatedly to get sentences like `$\enot \enot A$' or apply negation along with conjunction to get sentences like `$\enot(A \eand G_{13})$' and `$\enot(G_{13} \eand \enot G_{13})$'. The possible combinations are endless, even starting with just these two sentence letters, and there are infinitely many sentence letters. So there is no point in trying to list all the sentences one by one.
 
 Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: Given any sentence \metav{A} of TFL, $\enot\metav{A}$ is a sentence of TFL. (Why the funny fonts? We return to this in \cref{s:Metavariables}.)
 
@@ -616,13 +638,17 @@ name=sentence (of TFL),
 description={A string of symbols in TFL that can be built up according to the inductive rules given \ifHTMLtarget in \cref{s:Sentences}\else on p.~\pageref{TFLsentences}\fi}
 }
 
-Definitions like this are called \emph{inductive}. Inductive definitions begin with some specifiable base elements, and then present ways to generate indefinitely many more elements by compounding together previously established ones. To give you a better idea of what an inductive definition is, we can give an inductive definition of the idea of \emph{an ancestor of mine}. We specify a base clause.
+Definitions like this are called \define{inductive}. Inductive definitions begin with some specifiable base elements, and then present ways to generate indefinitely many more elements by compounding together previously established ones. To give you a better idea of what an inductive definition is, we can give an inductive definition of the idea of \emph{an ancestor of mine}. We specify a base clause:
 	\begin{itemize}
 		\item My parents are ancestors of mine.
 	\end{itemize}
 and then offer further clauses like:
 	\begin{itemize}
 		\item If $x$ is an ancestor of mine, then $x$'s parents are ancestors of mine.
+	\end{itemize}
+Finally, we stipulate that \emph{only} what the base and inductive
+clauses say are ancestors of mine will count as such.
+	\begin{itemize}
 		\item Nothing else is an ancestor of mine.
 	\end{itemize}
 Using this definition, we can easily check to see whether someone is my ancestor: just check whether she is the parent of the parent of\ldots one of my parents. And the same is true for our inductive definition of sentences of TFL. Just as the inductive definition allows complex sentences to be built up from simpler parts, the definition allows us to decompose sentences into their simpler parts. Once we get down to sentence letters, then we know we are ok.
@@ -661,7 +687,7 @@ When working with TFL, however, it will make our lives easier if we are sometime
 
 First,  we allow ourselves to omit the \emph{outermost} brackets of a sentence. Thus we allow ourselves to write `$Q \eand R$' instead of the sentence `$(Q \eand R)$'. However, we must remember to put the brackets back in, when we want to embed the sentence into a more complicated sentence!
 
-Second, it can be a bit painful to stare at long sentences with many nested pairs of brackets. To make things a bit easier on the eyes, we will allow ourselves to use square brackets, `[' and `]', instead of rounded ones. So there is no logical difference between `$(P\eor Q)$' and `$[P\eor Q]$', for example.
+Second, it can be a bit painful to stare at long sentences with many nested pairs of brackets. To make things a bit easier on the eyes, we will allow ourselves to use square brackets, `[' and~`]', instead of rounded ones. So there is no logical difference between `$(P\eor Q)$' and `$[P\eor Q]$', for example.
 
 Combining these two conventions, we can rewrite the unwieldy sentence
 $$(((H \eif I) \eor (I \eif H)) \eand (J \eor K))$$
@@ -864,7 +890,7 @@ description={A variable in the metalanguage that can represent any sentence in t
 }
 But this last example raises a further complication, concerning quotation conventions. We did not include any quotation marks in the second clause of our inductive definition. Should we have done so?
 
-The problem is that the expression on the right-hand-side of this rule, i.e., `$\enot\metav{A}$', is not a sentence of English, since it contains `$\enot$'. So we might try to write:
+The problem is that the expression on the right-hand-side of this rule, i.e., `$\enot\metav{A}$', is not a sentence of English, since it contains~`$\enot$'. So we might try to write:
 	\begin{numberlist}
 		\item[2$''$.] If \metav{A} is a sentence, then `$\enot \metav{A}$' is a sentence.
 	\end{numberlist}

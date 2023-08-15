@@ -7,7 +7,7 @@
 \chapter{Arguments}
 \label{s:Arguments}
 
-Logic has \emph{many} uses, as mention in the~\hyperref[preface]{Preface}. What we will be focussing on here, is its use in evaluating arguments; sorting the good from the bad.
+Logic has \emph{many} uses, as mention in the~\hyperref[preface]{preface}. What we will be focussing on here is its use in evaluating arguments; sorting the good from the bad.
 
 In everyday language, we sometimes use the word `argument' to talk about belligerent shouting matches.  If you and a friend have an argument in this sense, things are not going well between the two of you. Logic is not concerned with such teeth-gnashing and hair-pulling. They are not arguments, in our sense; they are just disagreements.
 
@@ -128,7 +128,7 @@ So here's the first exercise. Highlight the phrase which expresses the conclusio
 
 \section{Consequence and validity}
 
-In \cref{s:Arguments}, we talked about arguments, i.e., a collection of sentences (the premises), followed by a single sentence (the conclusion). We said that some words, such as `therefore', indicate which sentence is supposed to be the conclusion. `Therefore', of course, suggests that there is a connection between the premises and the conclusion, namely that the conclusion \emph{follows from}, or \emph{is a consequence of}, the premises.
+In \cref{s:Arguments}, we talked about arguments, i.e., collections of sentences (the premises), followed by a single sentence (the conclusion). We said that some words, such as `therefore', indicate which sentence is supposed to be the conclusion. `Therefore', of course, suggests that there is a connection between the premises and the conclusion, namely that the conclusion \emph{follows from}, or \emph{is a consequence of}, the premises.
 
 This notion of consequence is one of the primary things logic is concerned with. One might even say that logic is the science of what follows from what.  Logic develops theories and tools that tell us when a sentence follows from some others.
 
@@ -203,7 +203,7 @@ If we're allowing only conceivable scenarios, this is also a valid argument. If 
 Depending on what kinds of cases we consider as potential counterexamples, then, we arrive at different notions of consequence and validity. We might call an argument \define{nomologically valid} if there are no counterexamples that don't violate the laws of nature, and an argument \define{conceptually valid} if there are no counterexamples that don't violate conceptual connections between words.
 For both of these notions of validity, aspects of the world (e.g., what the laws of nature are) and aspects of the meaning of the sentences in the argument (e.g., that ``ophthalmologist'' just means a kind of eye doctor) figure into whether an argument is valid.
 
-\section{Formal validity}
+\section{Formal validity}\label{s:FormalValidity}
 
 One distinguishing feature of \emph{logical} consequence, however, is that it should not depend on the content of the premises and conclusion, but only on their logical form. In other words, as logicians we want to develop a theory that can make finer-grained distinctions still. For instance, both
 \begin{earg}
@@ -468,7 +468,8 @@ description={A property held by a pair of sentences that, in every case, are eit
 
 \section*{Summary of logical notions}
 
-\begin{itemize}
+\factoidbox{
+\begin{factoiditems}
 \item An argument is \define{valid} if there is no case where the premises are all true and the conclusion is not; it is \define{invalid} otherwise.
 
 \item A \define{necessary truth} is a sentence that is true in every case.
@@ -480,8 +481,8 @@ description={A property held by a pair of sentences that, in every case, are eit
 \item Two sentences are \define{necessarily equivalent} if, in every case, they are both true or both false.
 
 \item A collection of sentences is \define{jointly possible} if there is a case where they are all true together; it is \define{jointly impossible} otherwise.
-\end{itemize}
-
+\end{factoiditems}
+}
 
 \practiceproblems
 \problempart
@@ -537,10 +538,10 @@ John Coltrane viewed music as an expression of spirituality.
 
 \noindent \problempart Consider the following sentences: 
 \begin{compactlist}%[label=(\alph*)]
-\item[G1] \label{itm:at_least_four}There are at least four giraffes at the wild animal park.
-\item[G2] \label{itm:exactly_seven} There are exactly seven gorillas at the wild animal park.
-\item[G3] \label{itm:not_more_than_two} There are not more than two Martians at the wild animal park.
-\item[G4] \label{itm:martians} Every giraffe at the wild animal park is a Martian.
+\item[G1.] \label{itm:at_least_four}There are at least four giraffes at the wild animal park.
+\item[G2.] \label{itm:exactly_seven} There are exactly seven gorillas at the wild animal park.
+\item[G3.] \label{itm:not_more_than_two} There are not more than two Martians at the wild animal park.
+\item[G4.] \label{itm:martians} Every giraffe at the wild animal park is a Martian.
 \end{compactlist}
 
 Now consider each of the following collections of sentences. Which are jointly possible? Which are jointly impossible?
@@ -553,10 +554,10 @@ Now consider each of the following collections of sentences. Which are jointly p
 
 \problempart Consider the following sentences.
 \begin{compactlist}%[label=(\alph*)]
-\item[M1] \label{itm:allmortal} All people are mortal.
-\item[M2] \label{itm:socperson} Socrates is a person.
-\item[M3] \label{itm:socnotdie} Socrates will never die.
-\item[M4] \label{itm:socmortal} Socrates is mortal.
+\item[M1.] \label{itm:allmortal} All people are mortal.
+\item[M2.] \label{itm:socperson} Socrates is a person.
+\item[M3.] \label{itm:socnotdie} Socrates will never die.
+\item[M4.] \label{itm:socmortal} Socrates is mortal.
 \end{compactlist}
 Which combinations of sentences are jointly possible? Mark each ``possible'' or ``impossible.''
 \begin{compactlist}

@@ -603,11 +603,11 @@ Each of the following sentences is ambiguous. Provide a symbolization key for ea
 		\item[\text{domain}] people
 		\item[\atom{A}{x}] \gap{x} has been arrested
 		\item[\atom{M}{x,y}] \gap{x} murdered \gap{y}
-		\item[s] Smith
+		\item[m] Smith
 	\end{ekey}}
-	\item[] \myanswer{$\exists x(\forall y(\atom{M}{y, s} \eiff y=x)
+	\item[] \myanswer{$\exists x(\forall y(\atom{M}{y, m} \eiff y=x)
 	\eand \enot\atom{A}{x})$ (Smith's murderer has: not been arrested)\\
-	$\enot\exists x(\forall y(\atom{M}{y, s} \eiff y=x)
+	$\enot\exists x(\forall y(\atom{M}{y, m} \eiff y=x)
 	\eand \atom{A}{x})$ (It's not the case that Smith's murderer has
 	been arrested; in fact there may not be a ``Smith's murderer''.)}
 \end{compactlist}

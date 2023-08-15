@@ -201,7 +201,7 @@ If we only replace \emph{some} names and not others, we end up
 	\end{earg}
 We might symbolize this as follows:
 $$\forall x\,\atom{O}{x,x} \therefore \forall x\,\atom{O}{x,d}$$
-But now suppose we tried to \emph{vindicate} this terrible argument with the following:
+But now suppose we tried to vindicate this terrible argument with the following:
 \begin{fitchproof}
 	\hypo{x}{\forall x\, \atom{O}{x,x}}\PR
 	\have{a}{\atom{O}{d,d}}\Ae{x}
@@ -257,8 +257,8 @@ $$\atom{L}{b}, \exists x\, \enot\atom{L}{x} \therefore \atom{L}{b} \eand \enot \
 Now, suppose we tried to offer a proof that vindicates this argument:
 \begin{fitchproof}
 	\hypo{f}{\atom{L}{b}}\PR
-	\hypo{nf}{\exists x\, \enot \atom{L}{x}}	
-	\open	
+	\hypo{nf}{\exists x\, \enot \atom{L}{x}}\PR
+	\open
 		\hypo{na}{\enot \atom{L}{b}}\AS
 		\have{con}{\atom{L}{b} \eand \enot \atom{L}{b}}\ai{f, na}
 	\close
@@ -433,11 +433,11 @@ Explain why these two `proofs' are \emph{incorrect}. Also, provide interpretatio
 The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into bona fide proofs.
 \begin{compactlist}
 \item \begin{fitchproof}
-\hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}\PR
-\hypo{p2}{\forall x\,\enot \atom{R}{m,x}}\PR
+\hypo{p1}{\forall x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x})}
+\hypo{p2}{\forall x\,\enot \atom{R}{m,x}}
 \have{3}{\exists y(\atom{R}{m,y} \eor \atom{R}{y,m})}{}
 	\open
-		\hypo{a1}{\atom{R}{m,a} \eor \atom{R}{a,m}}\AS
+		\hypo{a1}{\atom{R}{m,a} \eor \atom{R}{a,m}}
 		\have{a2}{\enot \atom{R}{m,a}}{}
 		\have{a3}{\atom{R}{a,m}}{}
 		\have{a4}{\exists x\, \atom{R}{x,m}}{}
@@ -446,8 +446,8 @@ The following three proofs are missing their citations (rule and line numbers). 
 \end{fitchproof}
 
 \item \begin{fitchproof}
-\hypo{1}{\forall x(\exists y\,\atom{L}{x,y} \eif \forall z\,\atom{L}{z,x})}\PR
-\hypo{2}{\atom{L}{a,b}}\PR
+\hypo{1}{\forall x(\exists y\,\atom{L}{x,y} \eif \forall z\,\atom{L}{z,x})}
+\hypo{2}{\atom{L}{a,b}}
 \have{3}{\exists y\,\atom{L}{a,y} \eif \forall z\atom{L}{z,a}}{}
 \have{4}{\exists y\, \atom{L}{a,y}} {}
 \have{5}{\forall z\, \atom{L}{z,a}} {}
@@ -460,11 +460,11 @@ The following three proofs are missing their citations (rule and line numbers). 
 \end{fitchproof}
 
 \item \begin{fitchproof}
-\hypo{a}{\forall x(\atom{J}{x} \eif \atom{K}{x})}\PR
-\hypo{b}{\exists x\,\forall y\, \atom{L}{x,y}}\PR
-\hypo{c}{\forall x\, \atom{J}{x}}\PR
+\hypo{a}{\forall x(\atom{J}{x} \eif \atom{K}{x})}
+\hypo{b}{\exists x\,\forall y\, \atom{L}{x,y}}
+\hypo{c}{\forall x\, \atom{J}{x}}
 \open
-	\hypo{2}{\forall y\, \atom{L}{a,y}}\AS
+	\hypo{2}{\forall y\, \atom{L}{a,y}}
 	\have{3}{\atom{L}{a,a}}{}
 	\have{d}{\atom{J}{a}}{}
 	\have{e}{\atom{J}{a} \eif \atom{K}{a}}{}
@@ -478,7 +478,11 @@ The following three proofs are missing their citations (rule and line numbers). 
 
 \problempart
 \label{pr.BarbaraEtc.proof1}
-In \cref{s:MoreMonadic} problem A, we considered fifteen syllogistic figures of Aristotelian logic. Provide proofs for each of the argument forms. NB: You will find it \emph{much} easier if you symbolize (for example) `No F is G' as `$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$'.
+In \hyperref[pr.BarbaraEtc]{exercise \ref*{s:MoreMonadic}A}, we
+considered fifteen syllogistic figures of Aristotelian logic. Provide
+proofs for each of the argument forms. NB: You will find it
+\emph{much} easier if you symbolize (for example) `No F is G' as
+`$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$'.
 
 \
 
@@ -909,7 +913,7 @@ As in the case of TFL, we first introduced some rules for FOL as basic (in \cref
 %You will note that on line 3 I have written `for $\exists$E'. This is not technically a part of the proof. It is just a reminder---to me and to you---of why I have bothered to introduce `$\enot \atom{A}{c}$' out of the blue. You might find it helpful to add similar annotations to assumptions when performing proofs. But do not add annotations on lines other than assumptions: the proof requires its own citation, and your annotations will clutter it.
 Here is a justification of the third CQ rule:
 \begin{fitchproof}
-	\have[m]{nEna}{\exists x\, \enot \atom{A}{x}}\PR
+	\have[m]{nEna}{\exists x\, \enot \atom{A}{x}}
 	\open
 		\hypo[m+1]{Aa}{\forall x\, \atom{A}{x}}\AS
 		\open

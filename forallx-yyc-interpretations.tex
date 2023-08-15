@@ -18,7 +18,10 @@ And we emphasized in \cref{s:TruthFunctionality} that TFL cannot handle differen
 
 \section{Symbolizing versus translating}
 
-FOL has some similar limitations. It gets beyond mere truth values, since it enables us to split up sentences into terms, predicates and quantifiers. This enables us to consider what is \emph{true of} some particular object, or of some or all objects. \emph{But that's it}.
+FOL has some similar limitations. It gets beyond mere truth values,
+since it enables us to split up sentences into terms, predicates and
+quantifiers. This enables us to consider what is \emph{true of} a
+particular object, or of some or all objects. \emph{But that's it}.
 
 To unpack this a bit, consider this symbolization key: 
 	\begin{ekey}
@@ -132,7 +135,7 @@ We defined a \define{valuation} in TFL as any assignment of truth and falsity to
 		`$=$'), a specification of what things (in what order) the
 		predicate is to be true of.
 	\end{compactlist}
-We don't need to specify anything for`$=$', since it has a
+We don't need to specify anything for~`$=$', since it has a
 \emph{fixed} meaning, namely that of identity. Everything is identical
 to itself, and only to itself. 
 
@@ -381,7 +384,7 @@ $\mathbf{I}[d/\metav{c}]$ for some object~$d$.
 		$\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$.
 		\end{factoiditems}
 	}
-To be clear: all this is doing is formalizing (very pedantically) the intuitive idea expressed on the previous page. The result is a bit ugly, and the final definition might look a bit opaque. Hopefully, though, the \emph{spirit} of the idea is clear.
+To be clear: all this is doing is formalizing (very pedantically) the intuitive idea expressed above. The result is a bit ugly, and the final definition might look a bit opaque. Hopefully, though, the \emph{spirit} of the idea is clear.
 
 \practiceproblems
 \solutions
@@ -710,7 +713,7 @@ Does this interpretation make the premise true? Yes it does! Note that `$\atom{G
 
 In passing, note that we have also shown that `$\exists x(\atom{G}{x} \eif \atom{G}{a})$' does \emph{not} entail `$\exists x\, \atom{G}{x} \eif \atom{G}{a}$', i.e., that $\exists x (\atom{G}{x} \eif \atom{G}{a}) \nentails \exists x\, \atom{G}{x} \eif \atom{G}{a}$. Equally, we have shown that the sentences `$\exists x (\atom{G}{x} \eif \atom{G}{a})$' and `$\enot (\exists x\, \atom{G}{x} \eif \atom{G}{a})$' are jointly satisfiable.
 
-Let's consider a second example. Consider:
+Let's consider a second example:
 $$\forall x \exists y\, \atom{L}{x,y} \therefore \exists y \forall x\, \atom{L}{x,y}$$
 Again, we want to show that this is invalid. To do this, we must make the premises true and the conclusion false. Here is a suggestion:
 \begin{ekey}
@@ -1011,7 +1014,9 @@ sibling).
 Relations that are reflexive, transitive, and anti-symmetric are
 called \define{partial orders}. For instance, $\le$ and $\ge$ are
 partial orders. The relation `is no older than', by contrast, is
-reflexive and transitive, but not anti-symmetric.
+reflexive and transitive, but not anti-symmetric. (Two different
+people can be of the same age, and so neither is older than the
+other.)
 
 \practiceproblems
 

@@ -93,11 +93,11 @@ If we combine our two symbolization keys, we can start to symbolize some English
 		\item\label{terms2a} Gregor and Marybeth are angry.
 		\item\label{terms2} If Elsa is angry, then so are Gregor and Marybeth.
 	\end{enumerate}
-\Cref{terms1} is straightforward: we symbolize it by `$\atom{A}{e}$'.
+\Cref*{terms1} is straightforward: we symbolize it by `$\atom{A}{e}$'.
 
-\Cref*{terms2a}: this is a conjunction of two simpler sentences. The simple sentences can be symbolized just by `$\atom{A}{g}$' and `$\atom{A}{m}$'. Then we help ourselves to our resources from TFL, and symbolize the entire sentence by `$\atom{A}{g} \eand \atom{A}{m}$'. This illustrates an important point: FOL has all of the truth-functional connectives of TFL.
+\Cref*{terms2a} is a conjunction of two simpler sentences. The simple sentences can be symbolized just by `$\atom{A}{g}$' and `$\atom{A}{m}$'. Then we help ourselves to our resources from TFL, and symbolize the entire sentence by `$\atom{A}{g} \eand \atom{A}{m}$'. This illustrates an important point: FOL has all of the truth-functional connectives of TFL.
 
-\Cref{terms2}: this is a conditional, whose antecedent is \cref*{terms1} and whose consequent is \cref*{terms2a}, so we can symbolize this with `$\atom{A}{e} \eif (\atom{A}{g} \eand \atom{A}{m})$'.
+\Cref*{terms2} is a conditional, whose antecedent is \cref*{terms1} and whose consequent is \cref*{terms2a}, so we can symbolize this with `$\atom{A}{e} \eif (\atom{A}{g} \eand \atom{A}{m})$'.
 
 \section{Quantifiers}
 We are now ready to introduce quantifiers. Consider these sentences:
@@ -121,9 +121,22 @@ A quantifier must always be followed by a \define{variable}. In FOL, variables a
 }
 
 
-It should be pointed out that there is no special reason to use `$x$' rather than some other variable. The sentences `$\forall x\, \atom{H}{x}$', `$\forall y\, \atom{H}{y}$', `$\forall z\, \atom{H}{z}$', and `$\forall x_5 \atom{H}{x_5}$' use different variables, but they will all be logically equivalent.
+It should be pointed out that there is no special reason to use `$x$'
+rather than some other variable. The sentences `$\forall x\,
+\atom{H}{x}$', `$\forall y\, \atom{H}{y}$', `$\forall z\,
+\atom{H}{z}$', and `$\forall x_5\, \atom{H}{x_5}$' use different
+variables, but they will all be logically equivalent.
 
-To symbolize \cref*{q.e}, we introduce another new symbol: the \define{existential quantifier}, `$\exists$'. Like the universal quantifier, the existential quantifier requires a variable. \Cref{q.e} can be symbolized by `$\exists x\,\atom{A}{x}$'. Whereas `$\forall x\,\atom{A}{x}$' is read naturally as `for all $x$, $x$ is angry', `$\exists x\,\atom{A}{x}$' is read naturally as `there is something, $x$, such that $x$ is angry'. Once again, the variable is a kind of placeholder; we could just as easily have symbolized \cref*{q.e} by `$\exists z\, \atom{A}{z}$', `$\exists w_{256}\, \atom{A}{w_{256}}$', or whatever.
+To symbolize \cref{q.e}, we introduce another new symbol: the
+\define{existential quantifier}, `$\exists$'. Like the universal
+quantifier, the existential quantifier requires a variable.
+\Cref*{q.e} can be symbolized by `$\exists x\,\atom{A}{x}$'. Whereas
+`$\forall x\,\atom{A}{x}$' is read naturally as `for all $x$, $x$ is
+angry', `$\exists x\,\atom{A}{x}$' is read naturally as `there is
+something, $x$, such that $x$ is angry'. Once again, the variable is a
+kind of placeholder; we could just as easily have symbolized
+\cref*{q.e} by `$\exists z\, \atom{A}{z}$', `$\exists w_{256}\,
+\atom{A}{w_{256}}$', or whatever.
 
 \newglossaryentry{existential quantifier}{
   name = existential quantifier,
@@ -254,7 +267,7 @@ Notice that we needed to use a conditional with the universal quantifier, but we
 	\factoidbox{
 		A sentence can be symbolized as $\exists x (\atom{\metav{F}}{x} \eand \atom{\metav{G}}{x})$ if it can be paraphrased in English as `some $F$ is~$G$'.
 	}		
-\Cref{quan3} can be paraphrased as, `It is not the case that every coin on the table is a dime'. So we can symbolize it by `$\enot \forall x(\atom{T}{x} \eif \atom{D}{x})$'. You might look at \cref*{quan3} and paraphrase it instead as, `Some coin on the table is not a dime'. You would then symbolize it by `$\exists x(\atom{T}{x} \eand \enot \atom{D}{x})$'. Although it is probably not immediately obvious yet, these two sentences are logically equivalent. (This is due to the logical equivalence between $\enot\forall x\,\metav{A}$ and $\exists x\enot\metav{A}$, mentioned in \cref{s:FOLBuildingBlocks}, along with the equivalence between $\enot(\metav{A}\eif\metav{B})$ and $\metav{A}\eand\enot\metav{B}$.)
+\Cref{quan3} can be paraphrased as, `It is not the case that every coin on the table is a dime'. So we can symbolize it by `$\enot \forall x(\atom{T}{x} \eif \atom{D}{x})$'. You might look at \cref*{quan3} and paraphrase it instead as, `Some coin on the table is not a dime'. You would then symbolize it by `$\exists x(\atom{T}{x} \eand \enot \atom{D}{x})$'. Although it is probably not immediately obvious yet, these two sentences are logically equivalent. (This is due to the logical equivalence between $\enot\forall x\,\metav{A}$ and $\exists x\,\enot\metav{A}$, mentioned in \cref{s:FOLBuildingBlocks}, along with the equivalence between $\enot(\metav{A}\eif\metav{B})$ and $\metav{A}\eand\enot\metav{B}$.)
 
 \Cref{quan4} can be paraphrased as, `It is not the case that there is some dime in my pocket'. This can be symbolized by `$\enot\exists x(\atom{P}{x} \eand \atom{D}{x})$'. It might also be paraphrased as, `Everything in my pocket is a non-dime', and then could be symbolized by `$\forall x(\atom{P}{x} \eif \enot \atom{D}{x})$'. Again the two symbolizations are logically equivalent; both are correct symbolizations of \cref*{quan4}.
 
@@ -292,7 +305,9 @@ It is possible to write the symbolization key for these sentences in this way:
 		\item[\atom{M}{x}] \gap{x} is a monkey.
 		\item[\atom{S}{x}] \gap{x} knows sign language.
 	\end{ekey}
-\Cref*{monkey1} can now be symbolized by `$\forall x(\atom{M}{x} \eif \atom{S}{x})$'. \Cref{monkey2} can be symbolized as `$\exists x(\atom{M}{x} \eand \atom{S}{x})$'.
+\Cref*{monkey1} can now be symbolized by `$\forall x(\atom{M}{x} \eif
+\atom{S}{x})$'. \Cref*{monkey2} can be symbolized as `$\exists
+x(\atom{M}{x} \eand \atom{S}{x})$'.
 
 It is tempting to say that \cref*{monkey1} \emph{entails} \cref*{monkey2}. That is, we might think that it is impossible that every monkey knows sign language unless some monkey knows sign language. But this would be a mistake. It is possible for the sentence `$\forall x(\atom{M}{x} \eif \atom{S}{x})$' to be true even though the sentence `$\exists x(\atom{M}{x} \eand \atom{S}{x})$' is false.
 
@@ -453,7 +468,10 @@ Next suppose that we want to symbolize this argument:
 \item Carol is a skilled surgeon and a tennis player. 
 \item[\texttherefore] Carol is a skilled tennis player.
 \end{earg}
-If we start with the symbolization key we used for the previous argument, we could add a predicate (let $\atom{T}{x}$ mean `$x$ is a tennis player') and a name (let $c$ mean Carol). Then the argument becomes:
+If we start with the symbolization key we used for the previous
+argument, we could add a predicate (let $\atom{T}{x}$ mean `$x$ is a
+tennis player') and a name (let `$c$' be a name for Carol). Then the
+argument becomes:
 \begin{earg}
 \item[] $(\atom{R}{c} \eand \atom{K}{c}) \eand \atom{T}{c}$
 \item[\texttherefore] $\atom{T}{c} \eand \atom{K}{c}$
@@ -474,7 +492,7 @@ Must we always distinguish between different ways of being skilled, good, bad, o
 
 \practiceproblems
 \problempart
-\label{pr.BarbaraEtc}
+\phantomsection\label{pr.BarbaraEtc}
 Here are the syllogistic figures identified by Aristotle and his successors, along with their medieval names:
 \begin{compactlist}
 	\item \textbf{Barbara.} All G are F. All H are G. So:  All H are F.
@@ -619,7 +637,14 @@ The point is that we need to keep track of the gaps in predicates, so that we ca
 	\item\label{terms5} Karl loves Imre, but not vice versa.
 	\item\label{terms6} Karl is loved by Imre.
 \end{enumerate}
-\Cref*{terms4} can be paraphrased as `Imre loves Imre', and so symbolized by `$\atom{L}{i,i}$'. \Cref{terms5} is a conjunction. We can paraphrase it as `Karl loves Imre, and Imre does not love Karl', and so symbolize it as `$\atom{L}{k,i} \eand \enot \atom{L}{i,k}$'. \Cref*{terms6} can be paraphrased by `Imre loves Karl', and so symbolized as `$\atom{L}{i,k}$'. In this last case, of course, we have lost the difference in \emph{tone} between the active and passive voice; but we have at least preserved the truth conditions.
+\Cref*{terms4} can be paraphrased as `Imre loves Imre', and so
+symbolized by `$\atom{L}{i,i}$'. \Cref*{terms5} is a conjunction. We
+can paraphrase it as `Karl loves Imre, and Imre does not love Karl',
+and so symbolize it as `$\atom{L}{k,i} \eand \enot \atom{L}{i,k}$'.
+\Cref*{terms6} can be paraphrased by `Imre loves Karl', and so
+symbolized as `$\atom{L}{i,k}$'. In this last case, of course, we have
+lost the difference in \emph{tone} between the active and passive
+voice; but we have at least preserved the truth conditions.
 
 But the relationship between `Imre loves Karl' and `Karl is loved by Imre' highlights something important. To see what, suppose we add another entry to our symbolization key:
 \begin{ekey}
@@ -627,7 +652,7 @@ But the relationship between `Imre loves Karl' and `Karl is loved by Imre' highl
 \end{ekey}
 The entry for `$M$' uses exactly the same English word---`loves'---as the entry for `$L$'. \emph{But the gaps have been swapped around!} (Just look closely at the subscripts.) And this \emph{matters}.
 
-To explain: when we see a sentence like `$\atom{L}{k,i}$', we are being told to take the \emph{first} name (i.e., `$k$') and associate its value (i.e., Karl) with the gap labelled `$x$', then take the \emph{second} name (i.e., `$i$') and associate its value (i.e., Imre) with the gap labelled `$y$', and so come up with: \emph{Karl loves Imre}. The sentence `$\atom{M}{i,k}$' also tells us to take the \emph{first} name (i.e., `$i$') and plug its value into the gap labelled `$x$', and take the \emph{second} name (i.e., `$k$') and plug its value into the gap labelled `$y$', and so come up with: \emph{Imre loves Karl}.
+To explain: when we see a sentence like `$\atom{L}{k,i}$', we are being told to take the \emph{first} name (i.e., `$k$') and associate its value (i.e., Karl) with the gap labelled `$x$', then take the \emph{second} name (i.e.,~`$i$') and associate its value (i.e., Imre) with the gap labelled `$y$', and so come up with: \emph{Karl loves Imre}. The sentence `$\atom{M}{i,k}$' also tells us to take the \emph{first} name (i.e., `$i$') and plug its value into the gap labelled `$x$', and take the \emph{second} name (i.e., `$k$') and plug its value into the gap labelled `$y$', and so come up with: \emph{Imre loves Karl}.
 
 So, `$\atom{L}{i,k}$' and `$\atom{M}{k,i}$' both symbolize `Imre loves Karl', whereas `$\atom{L}{k,i}$' and `$\atom{M}{i,k}$' both symbolize `Karl loves Imre'. Since love can be unrequited, these are different claims.
 
@@ -1066,7 +1091,7 @@ Let us add to our symbolization key:
 	\end{ekey}
 Now \cref*{else2} can be symbolized as `$p=c$'. This tells us that the names `$p$' and `$c$' both name the same thing.
 
-We can also now deal with \cref{else1b,else1c}. Both of these sentences can be  paraphrased as `Everyone who is not Pavel is owed money by Pavel'. Paraphrasing some more, we get: `For all $x$, if $x$ is not Pavel, then $x$ is owed money by Pavel'. Now that we are armed with our new identity symbol, we can symbolize this as `$\forall x (\enot x = p \eif \atom{O}{p,x})$'.
+We can also now deal with \cref{else1b,else1c}. Both of these sentences can be  paraphrased as `Everyone who is not Pavel is owed money by Pavel'. Paraphrasing some more, we get: `For all~$x$, if $x$ is not Pavel, then $x$ is owed money by Pavel'. Now that we are armed with our new identity symbol, we can symbolize this as `$\forall x (\enot x = p \eif \atom{O}{p,x})$'.
 
 This last sentence contains the formula `$\enot x = p$'. That might look a bit strange, because the symbol that comes immediately after the `$\enot$' is a variable, rather than a predicate, but this is not a problem. We are simply negating the entire formula `$x = p$'.
 
@@ -1109,7 +1134,16 @@ We will use the symbolization key:
 	\end{ekey}
 \Cref*{atleast1} does not require identity. It can be adequately symbolized by `$\exists x\, \atom{A}{x}$': There is an apple; perhaps many, but at least one.
 
-It might be tempting to also symbolize \cref*{atleast2} without identity. Yet consider the sentence `$\exists x \exists y(\atom{A}{x} \eand \atom{A}{y})$'. Roughly, this says that there is some apple $x$ in the domain and some apple $y$ in the domain. Since nothing precludes these from being one and the same apple, this would be true even if there were only one apple. In order to make sure that we are dealing with \emph{different} apples, we need an identity predicate. \Cref*{atleast2} needs to say that the two apples that exist are not identical, so it can be symbolized by `$\exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y)$'.
+It might be tempting to also symbolize \cref*{atleast2} without
+identity, namely as `$\exists x \exists y(\atom{A}{x} \eand
+\atom{A}{y})$'. Roughly, this says that there is some apple $x$ in the
+domain and some apple $y$ in the domain. Since nothing precludes these
+from being one and the same apple, this would be true even if there
+were only one apple. In order to make sure that we are dealing with
+\emph{different} apples, we need the identity predicate.
+\Cref*{atleast2} needs to say that the two apples that exist are not
+identical, so it can be symbolized by `$\exists x \exists
+y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y)$'.
 
 \Cref*{atleast3} requires talking about three different apples. Now we need three existential quantifiers, and we need to make sure that each will pick out something different: 
 \[
@@ -1123,36 +1157,70 @@ Now consider these sentences:
 	\item\label{atmost1} There is at most one apple.
 	\item\label{atmost2} There are at most two apples.
 \end{enumerate}
-\Cref*{atmost1} can be paraphrased as, `It is not the case that there are at least \emph{two} apples'. This is just the negation of \cref{atleast2}: 
-$$\enot \exists x \exists y[(\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y]$$
-But \cref*{atmost1} can also be approached in another way. It means that if you pick out an object and it's an apple, and then you pick out an object and it's also an apple, you must have picked out the same object both times. With this in mind, it can be symbolized by
-$$\forall x\forall y\bigl[(\atom{A}{x} \eand \atom{A}{y}) \eif x=y\bigr]$$
+\Cref*{atmost1} can be paraphrased as, `It is not the case that there
+are at least \emph{two} apples'. This is just the negation of
+\cref{atleast2}: 
+\[
+	\enot \exists x \exists y[(\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y]
+\]
+But \cref*{atmost1} can also be approached in another way. It means
+that if you pick out an object and it's an apple, and then you pick
+out an object and it's also an apple, you must have picked out the
+same object both times. With this in mind, \cref*{atmost1} can also be
+symbolized by:
+\[
+	\forall x\forall y\bigl[(\atom{A}{x} \eand \atom{A}{y}) \eif x=y\bigr]
+\]
 The two sentences will turn out to be logically equivalent.
 
-Similarly, \cref*{atmost2} can be approached in two equivalent ways. It can be paraphrased as, `It is not the case that there are \emph{three} or more distinct apples', so we can offer:
-$$\enot \exists x \exists y\exists z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eand ((\enot x = y \eand \enot x = z) \eand \enot y = z)\bigr]$$
-Alternatively we can read it as saying that if you pick out an apple, and an apple, and an apple, then you will have picked out (at least) one of these objects more than once. Thus:
-$$\forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eif ((x=y \eor x=z) \eor y=z)\bigr]$$
+Similarly, \cref*{atmost2} can be approached in two equivalent ways.
+It can be paraphrased as, `It is not the case that there are
+\emph{three} or more distinct apples', so we can offer:
+\[
+	\enot \exists x \exists y\exists z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eand ((\enot x = y \eand \enot x = z) \eand \enot y = z)\bigr]
+\]
+Alternatively we can read it as saying that if you pick out an apple,
+and an apple, and an apple, then you will have picked out (at least)
+one of these objects more than once. Thus:
+\[
+	\forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eif ((x=y \eor x=z) \eor y=z)\bigr]
+\]
 
 
 \section{There are exactly\ldots}\label{sec:exactlyn}
+
 We can now consider statements of exact numerical quantity, like:
 \begin{enumerate}
 \item\label{exactly1} There is exactly one apple.
 \item\label{exactly2} There are exactly two apples.
 \item\label{exactly3} There are exactly three apples.
 \end{enumerate}
-\Cref*{exactly1} can be paraphrased as, `There is \emph{at least} one apple and there is \emph{at most} one apple'. This is just the conjunction of \cref*{atleast1} and \cref{atmost1}. So we can offer:
-$$\exists x \atom{A}{x} \eand \forall x\forall y\bigl[(\atom{A}{x} \eand \atom{A}{y}) \eif x=y\bigr]$$
-But it is perhaps more straightforward to paraphrase \cref*{exactly1} as, `There is a thing $x$ which is an apple, and everything which is an apple is just $x$ itself'. Thought of in this way, we offer: 
+\Cref*{exactly1} can be paraphrased as, `There is \emph{at least} one
+apple and there is \emph{at most} one apple'. This is just the
+conjunction of \cref{atleast1} and \cref{atmost1}. So we can offer:
+\[
+	\exists x \atom{A}{x} \eand \forall x\forall y\bigl[(\atom{A}{x} \eand \atom{A}{y}) \eif x=y\bigr]
+\]
+But it is perhaps more straightforward to paraphrase \cref*{exactly1}
+as, `There is a thing $x$ which is an apple, and everything which is
+an apple is just $x$ itself'. Thought of in this way, we offer: 
 \[
 	\exists x\bigl[\atom{A}{x} \eand \forall y(\atom{A}{y} \eif x= y)\bigr]
 \]
-Similarly, \cref*{exactly2} may be paraphrased as, `There are \emph{at least} two apples, and there are \emph{at most} two apples'. Thus we could offer 
+Similarly, \cref*{exactly2} may be paraphrased as, `There are \emph{at
+least} two apples, and there are \emph{at most} two apples'. Thus we
+could offer
+\ifHTMLtarget
+\[\exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y) \eand 
+\forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y})
+\eand \atom{A}{z}) \eif ((x=y \eor x=z) \eor y=z)\bigr]
+\]
+\else
 \begin{multline*}
   \exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y) \eand {}\\
   \forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eif ((x=y \eor x=z) \eor y=z)\bigr]
 \end{multline*}
+\fi
 More efficiently, though, we can paraphrase it as `There are at least two different apples, and every apple is one of those two apples'. Then we offer:
 $$\exists x\exists y\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y) \eand \forall z(\atom{A}{z} \eif ( x= z \eor y = z))\bigr]$$
 Finally, consider these sentences:
@@ -1161,10 +1229,10 @@ Finally, consider these sentences:
 \item\label{exactly2objects} There are exactly two objects.
 \end{enumerate}
 It might be tempting to add a predicate to our symbolization key, to symbolize the English predicate `\blank\ is a thing' or `\blank\ is an object', but this is unnecessary. Words like `thing' and `object' do not sort wheat from chaff: they apply trivially to everything, which is to say, they apply trivially to every thing. So we can symbolize either sentence with either of the following:
-	\begin{align*}
-		\exists x \exists y\,\enot x = y & \eand  \enot \exists x \exists y \exists z ((\enot x = y \eand \enot y = z) \eand \enot x = z) \\
-		\exists x \exists y \bigl[\enot x = y & \eand \forall z(x=z \eor y = z)\bigr]
-	\end{align*}
+\begin{align*}
+	& \exists x \exists y\,\enot x = y \eand  \enot \exists x \exists y \exists z ((\enot x = y \eand \enot y = z) \eand \enot x = z) \\
+	& \exists x \exists y \bigl[\enot x = y \eand \forall z(x=z \eor y = z)\bigr]
+\end{align*}
 
 \practiceproblems
 
@@ -1338,15 +1406,27 @@ z\text{'}}}^{\text{scope of `}\exists y\text{'}})}^{\text{scope of
 
 \section{Sentences and free variables}\label{s:FreeVars}
 
-Recall that we are largely concerned in logic with assertoric sentences: sentences that can be either true or false. Many formulas are not sentences. Consider the following symbolization key:
+Recall that we are largely concerned in logic with assertoric
+sentences: sentences that can be either true or false. Many formulas
+are not sentences. Consider the following symbolization key:
 	\begin{ekey}
 		\item[\text{domain}] people
 		\item[\atom{L}{x,y}] \gap{x} loves \gap{y}
 		\item[b] Boris
 	\end{ekey}
-Consider the atomic formula `$\atom{L}{z,z}$'. All atomic formula are formulas, so `$\atom{L}{z,z}$' is a formula, but can it be true or false? You might think that it will be true just in case the person named by `$z$' loves themself, in the same way that `$\atom{L}{b,b}$' is true just in case Boris (the person named by `$b$') loves himself. \emph{However, `$z$' is a variable, and does not name anyone or any thing.}
+Consider the atomic formula `$\atom{L}{z,z}$'. All atomic formulas are
+formulas, so `$\atom{L}{z,z}$' is a formula, but can it be true or
+false? You might think that it will be true just in case the person
+named by `$z$' loves themself, in the same way that `$\atom{L}{b,b}$'
+is true just in case Boris (the person named by `$b$') loves himself.
+\emph{However, `$z$' is a variable, and does not name anyone or any
+thing.}
 
-Of course, if we put an existential quantifier out front, obtaining `$\exists z\atom{L}{z,z}$', then this would be true \ifeff{} someone loves themselves. Equally, if we wrote `$\forall z \atom{L}{z,z}$', this would be true \ifeff{} everyone loves themselves. The point is that we need a quantifier to tell us how to deal with a variable.
+Of course, if we put an existential quantifier out front, obtaining
+`$\exists z\,\atom{L}{z,z}$', then this would be true \ifeff{} someone
+loves themselves. Equally, if we wrote `$\forall z\, \atom{L}{z,z}$',
+this would be true \ifeff{} everyone loves themselves. The point is
+that we need a quantifier to tell us how to deal with a variable.
 
 Let's make this idea precise.
 	\factoidbox{
@@ -1362,7 +1442,6 @@ Let's make this idea precise.
   description = {An occurrence of a variable in a \gls{formula} which is not a \gls{bound variable}}
 }
 
-        
 For example, consider the formula
 	$$(\forall x(\atom{E}{x} \eor \atom{D}{y}) \eif \exists z(\atom{E}{x} \eif \atom{L}{z,x}))$$
 The scope of the universal quantifier `$\forall x$' is `$\forall x (\atom{E}{x} \eor \atom{D}{y})$', so the first `$x$' is bound by the universal quantifier. However, the second and third occurrence of `$x$' are free. Equally, the `$y$' is free. The scope of the existential quantifier `$\exists z$' is `$(\atom{E}{x} \eif \atom{L}{z,x})$', so `$z$' is bound.
@@ -1506,16 +1585,29 @@ Using these sorts of techniques, we can now symbolize \crefrange{traitor1}{trait
 \intertext{\Cref*{traitor2} poses no problems either:} 
 \exists x \bigl[\atom{T}{x} \eand \forall y(\atom{T}{y} \eif x = y) & \eand \atom{C}{x}\bigr].
 \end{align*}
-\Cref*{traitor3} is a little trickier, because it links two definite descriptions. But, deploying  Russell's analysis, it can be paraphrased by `there is exactly one traitor, $x$, and there is exactly one deputy, $y$, and $x = y$'. So we can symbolize it by: 
+\Cref*{traitor3} is a little trickier, because it links two definite
+descriptions. But, deploying  Russell's analysis, it can be
+paraphrased by `there is exactly one traitor, $x$, and there is
+exactly one deputy, $y$, and $x = y$'. So we can symbolize it by:
+\ifHTMLtarget
+\[
+	\exists x \exists y \bigl(\bigl[\atom{T}{x} \eand 
+	\forall z(\atom{T}{z} \eif x = z)\bigr] \eand 
+	\bigl[\atom{D}{y} \eand 
+	\forall z(\atom{D}{z} \eif y = z)\bigr] \eand x = y\bigr)
+\]
+\else
 \begin{multline*}
 	\exists x \exists y \bigl(\bigl[\atom{T}{x} \eand 
 	\forall z(\atom{T}{z} \eif x = z)\bigr] \eand {}\\
 	\bigl[\atom{D}{y} \eand 
 	\forall z(\atom{D}{z} \eif y = z)\bigr] \eand x = y\bigr)
 \end{multline*}
+\fi
 Note that the formula `$x = y$' must fall within the scope of both quantifiers!
 
 \section{Empty definite descriptions}
+
 One of the nice features of Russell's analysis is that it allows us to handle \emph{empty} definite descriptions neatly.
 
 France has no king at present. Now, if we were to introduce a name, `$k$', to name the present King of France, then everything would go wrong: remember from \cref{s:FOLBuildingBlocks} that a name must always pick out  some object in the domain, and whatever we choose as our domain, it will contain no present kings of France.
@@ -1557,22 +1649,43 @@ To symbolize sentences containing singular possessives such as `Smith's murderer
 	\item[$Domain$] people
 	\item[\atom{I}{x}] \gap{x} is insane 
 	\item[\atom{M}{x,y}] \gap{x} murdered \gap{y}
-	\item[s] Smith 
+	\item[m] Smith 
 \end{ekey}
-Our symbolization then reads, `$\exists x\bigl[\atom{M}{x,s} \eand \forall y(\atom{M}{y,s} \eif x=y) \eand \atom{I}{x}\bigr]$'.
+Our symbolization then reads, `$\exists x\bigl[\atom{M}{x,m} \eand \forall y(\atom{M}{y,m} \eif x=y) \eand \atom{I}{x}\bigr]$'.
 
-Two other determiners that we can extend Russell's analysis to are `both' and `neither'.  To say `both $F$s are~$G$' is to say that there are exactly two $F$s, and each of them is~$G$. To say that `neither $F$ is~$G$', is to also say that there are exactly two~$F$s, and neither of them is~$G$. In FOL, the symbolizations would read, respectively,
-\begin{earg}
-	\item[] $\exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand {}$
-	\item[]\qquad$\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \atom{G}{x} \eand \atom{G}{y}\bigr]$
-	\item[] $\exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand  {}$
-	\item[]\qquad$\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \enot \atom{G}{x} \eand \enot \atom{G}{y}\bigr]$
-\end{earg}
+Two other determiners that we can extend Russell's analysis to are
+`both' and `neither'.  To say `both $F$s are~$G$' is to say that there
+are exactly two $F$s, and each of them is~$G$. To say that `neither
+$F$ is~$G$', is to also say that there are exactly two~$F$s, and
+neither of them is~$G$. In FOL, the symbolizations would read,
+respectively,
+\ifHTMLtarget
+\begin{align*}
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand 
+	\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \atom{G}{x} \eand \atom{G}{y}\bigr]\\
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand 
+	\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \enot \atom{G}{x} \eand \enot \atom{G}{y}\bigr]
+\end{align*}
+\else
+\begin{align*}
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand {}\\
+	& \qquad \forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \atom{G}{x} \eand \atom{G}{y}\bigr]\\
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand  {}\\
+	& \qquad\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \enot \atom{G}{x} \eand \enot \atom{G}{y}\bigr]
+\end{align*}
+\fi
 Compare these symbolizations with the symbolizations of `exactly two $F$s are $G$s' from \cref{sec:exactlyn}, i.e., of `there are exactly two things that are both $F$ and~$G$':
-\begin{earg}
-	\item[] $\exists x\exists y\bigl[(\atom{F}{x} \eand \atom{G}{x}) \eand (\atom{F}{y} \eand \atom{G}{y}) \eand \enot x=y \eand {}$
-	\item[]\qquad$\forall z((\atom{F}{z} \eand \atom{G}{z}) \eif (x = z \lor y = z))\bigr]$
-\end{earg}
+\ifHTMLtarget
+	\[ 
+		\exists x\exists y\bigl[(\atom{F}{x} \eand \atom{G}{x}) \eand (\atom{F}{y} \eand \atom{G}{y}) \eand \enot x=y \eand 
+		\forall z((\atom{F}{z} \eand \atom{G}{z}) \eif (x = z \lor y = z))\bigr]
+	\]
+\else
+\begin{align*}
+	& \exists x\exists y\bigl[(\atom{F}{x} \eand \atom{G}{x}) \eand (\atom{F}{y} \eand \atom{G}{y}) \eand \enot x=y \eand {}\\
+	& \qquad\forall z((\atom{F}{z} \eand \atom{G}{z}) \eif (x = z \lor y = z))\bigr]
+\end{align*}
+\fi
 The difference between the symbolization of this and that of `both $F$s are~$G$s' lies in the antecedent of the conditional. For `exactly two $F$s are~$G$s', we only require that there are no $F$s \emph{that are also}~$G$s other than $x$ and~$y$, whereas for `both $F$s are~$G$s', there cannot be any $F$s, whether they are~$G$s or not, other than $x$ and~$y$. In other words, `both $F$s are~$G$s' implies that exactly two~$F$s are~$G$s. However, `exactly two $F$s are~$G$s' does not imply that both $F$s are~$G$s (there might be a third~$F$ which isn't a~$G$).
 
 \section{The adequacy of Russell's analysis}
@@ -1717,9 +1830,9 @@ Of course we can alternatively symbolize the two readings using existential quan
 \end{align*}
 
 In \cref{s:MoreMonadic} we discussed how to symbolize sentences involving `only'. Consider the sentence:
-\begin{earg}
+\begin{enumerate}
 	\item\label{onlyamb} Only young cats are playful.
-\end{earg} 
+\end{enumerate} 
 According to our schema, we would symbolize it this way:
 \[
 	\forall x(\atom{P}{x} \eif (\atom{Y}{x} \eand \atom{C}{x}))

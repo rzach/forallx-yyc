@@ -132,13 +132,19 @@ Our natural deduction system will capture this thought straightforwardly. In the
 		\item[R] Ludwig is reactionary
 		\item[L] Ludwig is libertarian
 	\end{ekey}
-Perhaps we are working through a proof, and we have obtained `$R$' on line 8 and `$L$' on line 15. Then on any subsequent line we can obtain `$R \eand L$' thus:
+Perhaps we are working through a proof, and we have obtained `$R$' on
+line~$8$ and `$L$' on line~$15$. Then on any subsequent line we can
+obtain `$R \eand L$' thus:
 \begin{fitchproof}
 	\have[8]{a}{R}
 	\have[15]{b}{L}
 	\have[\ ]{c}{R \eand L} \ai{a, b}
 \end{fitchproof}
-Note that every line of our proof must either be an assumption, or must be justified by some rule. We cite `$\eand$I 8, 15' here to indicate that the line is obtained by the rule of conjunction introduction ($\eand$I) applied to lines 8 and 15. We could equally well obtain:
+Note that every line of our proof must either be an assumption, or
+must be justified by some rule. We cite `$\eand$I $8$, $15$' here to
+indicate that the line is obtained by the rule of conjunction
+introduction ($\eand$I) applied to lines $8$ and~$15$. We could
+equally well obtain:
 \begin{fitchproof}
 	\have[8]{a}{R}
 	\have[15]{b}{L}
@@ -165,7 +171,7 @@ and equally:
 	\have[m]{ab}{\metav{A}\eand\metav{B}}
 	\have[\ ]{b}{\metav{B}} \ae{ab}
 \end{fitchproof}}
-The point is simply that, when you have a conjunction on some line of a proof, you can obtain either of the conjuncts by {\eand}E. One point is worth emphasising: you can only apply this rule when conjunction is the main logical operator. So you cannot infer `$D$' just from `$C \eor (D \eand E)$'!
+The point is simply that, when you have a conjunction on some line of a proof, you can obtain either of the conjuncts by~{\eand}E. One point is worth emphasising: you can only apply this rule when conjunction is the main logical operator. So you cannot infer `$D$' just from `$C \eor (D \eand E)$'!
 
 Even with just these two rules, we can start to see some of the power of our formal proof system. Consider:
 \begin{earg}
@@ -198,7 +204,7 @@ To provide a proof corresponding to this argument, we start by writing:
 \begin{fitchproof}
 	\hypo{ab}{A \eand (B \eand C)}\PR
 \end{fitchproof}
-From the premise, we can get each of the conjuncts by applying $\eand$E twice. We can then apply $\eand$E twice more, so our proof looks like:
+From the premise, we can get each of the conjuncts by applying~$\eand$E twice. We can then apply $\eand$E twice more, so our proof looks like:
 \begin{fitchproof}
 	\hypo{ab}{A \eand (B \eand C)}\PR
 	\have{a}{A} \ae{ab}
@@ -260,9 +266,15 @@ The next thing we did is to make an \emph{additional} assumption (`Ludwig is lib
 		\open
 			\hypo{l}{L}\AS
 	\end{fitchproof}
-Note that we are \emph{not} claiming, on line 2, to have proved `$L$' from line 1, so we do not write in any justification for the additional assumption on line 2. We do, however, need to mark that it is an additional assumption. We do this by drawing a line under it (to indicate that it is an assumption) and by indenting it with a further vertical line (to indicate that it is additional).
+Note that we are \emph{not} claiming, on line~$2$, to have proved
+`$L$' from line~$1$, so we do not write in any justification for the
+additional assumption on line~$2$. We do, however, need to mark that
+it is an additional assumption. We do this by drawing a line under it
+(to indicate that it is an assumption) and by indenting it with a
+further vertical line (to indicate that it is additional).
 
-With this extra assumption in place, we are in a position to use $\eand$I. So we can continue our proof:
+With this extra assumption in place, we are in a position to
+use~$\eand$I. So we can continue our proof:
 	\begin{fitchproof}
 		\hypo{r}{R}\PR
 		\open
@@ -280,7 +292,7 @@ So we have now shown that, on the additional assumption, `$L$', we can obtain `$
 			\close
 		\have{con}{L \eif (R \eand L)}\ci{l-rl}
 	\end{fitchproof}
-Observe that we have dropped back to using one vertical line on the left.  We have \emph{discharged} the additional assumption, `$L$', since the conditional itself follows just from our original assumption, `$R$'.
+Observe that we have dropped back to using one vertical line on the left.  We have \emph{discharged} the additional assumption, `$L$', since the conditional itself follows just from our original assumption,~`$R$'.
 
 The general pattern at work here is the following. We first make an additional assumption, $\metav{A}$; and from that additional assumption, we prove~$\metav{B}$. In that case, we know the following: If~$\metav{A}$ is true, then~$\metav{B}$ is true. This is wrapped up in the rule for conditional introduction:
 \factoidbox{
@@ -373,7 +385,10 @@ Once we have started thinking about what we can show by making additional assump
 \close
 \have{bcab}{B \eif (C \eif (A \eand B))}\ci{b-cab}
 \end{fitchproof}
-Notice that the citation on line~$4$ refers back to the initial assumption (on line 1) and an assumption of a subproof (on line~$2$). This is perfectly in order, since neither assumption has been discharged at the time (i.e., by line~$4$).
+Notice that the citation on line~$4$ refers back to the initial
+assumption (on line~$1$) and an assumption of a subproof (on
+line~$2$). This is perfectly in order, since neither assumption has
+been discharged at the time (i.e., by line~$4$).
 
 Again, though, we need to keep careful track of what we are assuming at any given moment. Suppose we tried to continue the proof as follows:
 \begin{fitchproof}
@@ -394,7 +409,10 @@ Again, though, we need to keep careful track of what we are assuming at any give
 	\have [\ ]{x}{} \by{to invoke $\eif$I}{c-ab}
 \fi
 \end{fitchproof}
-This would be awful. If we tell you that Anne is smart, you should not be able to infer that, if Cath is smart (symbolized by `$C$') then \emph{both} Anne is smart and Queen Boudica stood 20-feet tall! But this is just what such a proof would suggest, if it were permissible.
+This would be awful. If we tell you that Anne is smart, you should not
+be able to infer that, if Cath is smart (symbolized by `$C$') then
+\emph{both} Anne is smart and Queen Boudica stood 20~feet tall! But
+this is just what such a proof would suggest, if it were permissible.
 
 The essential problem is that the subproof that began with the assumption~`$C$' depended crucially on the fact that we had assumed `$B$' on line~$2$. By line~$6$, we have \emph{discharged} the assumption~`$B$': we have stopped asking ourselves what we could show, if we also assumed `$B$'. So it is simply cheating, to try to help ourselves (on line~$7$) to the subproof that began with the assumption~`$C$'. Thus we stipulate, much as before, that a subproof can only be cited on a line if it does not occur within some other subproof which is already closed at that line. The attempted disastrous proof violates this stipulation. The subproof of lines $3$--$4$ occurs within a subproof that ends on line~$5$. So it cannot be invoked on line~$7$.
 
@@ -449,14 +467,28 @@ Here, we have tried to justify $C$ on line~$6$ by the reiteration rule, but we h
 
 It is always permissible to open a subproof with any assumption. However, there is some strategy involved in picking a useful assumption. Starting a subproof with an arbitrary, wacky assumption would just waste lines of the proof. In order to obtain a conditional by {\eif}I, for instance, you must assume the antecedent of the conditional in a subproof.
 
-Equally, it is always permissible to close a subproof (and discharge its assumptions). However, it will not be helpful to do so until you have reached something useful. Once the subproof is closed, you can only cite the entire subproof in any justification. Those rules that call for a subproof or subproofs, in turn, require that the last line of the subproof is a sentence of some form or other. For instance, you are only allowed to cite a subproof for $\eif$I if the line you are justifying is of the form $\metav{A} \eif \metav{B}$, $\metav{A}$ is the assumption of your subproof, and $\metav{B}$ is the last line of your subproof.
+Equally, it is always permissible to close a subproof (and discharge
+its assumptions). However, it will not be helpful to do so until you
+have reached something useful. Once the subproof is closed, you can
+only cite the entire subproof in any justification. Those rules that
+call for a subproof or subproofs, in turn, require that the last line
+of the subproof is a sentence of some form or other. For instance, you
+are only allowed to cite a subproof for~$\eif$I if the line you are
+justifying is of the form $\metav{A} \eif \metav{B}$, $\metav{A}$ is
+the assumption of your subproof, and $\metav{B}$ is the last line of
+your subproof.
 
 
 \section{Biconditional}
-The rules for the biconditional will be like double-barrelled versions of the rules for the conditional.
 
-In order to prove `$F \eiff G$', for instance, you must be able to prove `$G$' on the assumption `$F$' \emph{and} prove `$F$' on the assumption `$G$'. The biconditional introduction rule ({\eiff}I) therefore requires two subproofs. Schematically, the rule works like this: 
-\factoidbox{
+The rules for the biconditional will be like double-barrelled versions
+of the rules for the conditional.
+
+In order to prove `$F \eiff G$', for instance, you must be able to
+prove `$G$' on the assumption `$F$' \emph{and} prove `$F$' on the
+assumption~`$G$'. The biconditional introduction rule ({\eiff}I)
+therefore requires two subproofs. Schematically, the rule works like
+this: \factoidbox{
 \begin{fitchproof}
 	\open
 		\hypo[i]{a1}{\metav{A}}\AS
@@ -863,20 +895,20 @@ Finally, to use a negated sentence $\enot \metav{A}$, you would apply $\enot$E. 
 
 Suppose we want to show that the argument $(A \eand B) \eor (A \eand C) \therefore A \eand (B \eor C)$ is valid. We start the proof by writing the premise and conclusion down. (On a piece of paper, you would want as much space as possible between them, so write the premises at the top of the sheet and the conclusion at the bottom.)
 \begin{fitchproof}
-   \hypo{1}{(A \eand B) \eor (A \eand C)}
+   \hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 \ellipsesline
   \have[n]{2}{A \eand (B \eor C)}
 \end{fitchproof}
 We now have two options: either work backward from the conclusion, or work forward from the premise. We'll pick the second strategy: we use the disjunction on line~$1$, and set up the subproofs we need for $\eor$E. The disjunction on line~$1$ has two disjuncts, $A \eand B$ and $A \eand C$. The goal sentence you want to prove is $A \eand (B \eor C)$. So in this case you have to set up two subproofs, one with assumption $A \eand B$ and last line $A \eand (B \eor C)$, the other with assumption $A \eand C$ and last line $A \eand (B \eor C)$. The justification for the conclusion on line~$n$ will be $\eor$E, citing the disjunction on line~$1$ and the two subproofs. So your proof now looks like this:
 \begin{fitchproof}
-	\hypo{1}{(A \eand B) \eor (A \eand C)}
+	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
-	\hypo{2}{A \eand B}
+	\hypo{2}{A \eand B}\AS
 	\ellipsesline 
 	\have[n]{6}{A \eand (B \eor C)}
 	\close
 	\open
-	\hypo{7}{A \eand C}
+	\hypo{7}{A \eand C}\AS
 	\ellipsesline
 	\have[m]{11}{A \eand (B \eor C)}
 	\close
@@ -884,9 +916,9 @@ We now have two options: either work backward from the conclusion, or work forwa
 \end{fitchproof}
 You now have two separate tasks, namely to fill in each of the two subproofs. In the first subproof, we now work backward from the conclusion $A \eand (B \eor C)$. That is a conjunction, so inside the first subproof, you will have two separate subgoals: proving $A$, and proving $B \eor C$. These subgoals will let you justify line~$n$ using~$\eand$I. Your proof now looks like this:
 \begin{fitchproof}
-	\hypo{1}{(A \eand B) \eor (A \eand C)}
+	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
-	\hypo{2}{A \eand B}
+	\hypo{2}{A \eand B}\AS
 	\ellipsesline
 	\have[i]{4}{A}
 	\ellipsesline
@@ -894,7 +926,7 @@ You now have two separate tasks, namely to fill in each of the two subproofs. In
 	\have[n]{6}{A \eand (B \eor C)}\ai{4,5}
 	\close
 	\open
-	\hypo{7}{A \eand C}
+	\hypo{7}{A \eand C}\AS
 	\ellipsesline
 	\have[m]{11}{A \eand (B \eor C)}
 	\close
@@ -902,16 +934,16 @@ You now have two separate tasks, namely to fill in each of the two subproofs. In
 \end{fitchproof}
 We immediately see that we can get line $i$ from line~$2$ by $\eand$E. So line~$i$ is actually line~$3$, and can be justified with $\eand$E from line~$2$. The other subgoal $B \eor C$ is a disjunction. We'll apply the strategy for working backward from a disjunctions to line $n-1$. We have a choice of which disjunct to pick as a subgoal, $B$ or~$C$. Picking $C$ wouldn't work and we'd end up having to backtrack. And you can already see that if you pick $B$ as a subgoal, you could get that by working forward again from the conjunction $A \eand B$ on line~$2$. So we can complete the first subproof as follows:
 \begin{fitchproof}
-	\hypo{1}{(A \eand B) \eor (A \eand C)}
+	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
-	\hypo{2}{A \eand B}
+	\hypo{2}{A \eand B}\AS
 	\have{3}{A}\ae{2}
 	\have{4}{B}\ae{2}
 	\have{5}{B \eor C}\oi{4}
 	\have{6}{A \eand (B \eor C)}\ai{3,5}
 	\close
 	\open
-	\hypo{7}{A \eand C}
+	\hypo{7}{A \eand C}\AS
 	\ellipsesline
 	\have[m]{11}{A \eand (B \eor C)}
 	\close
@@ -923,25 +955,25 @@ That's it for the first subproof. The second subproof is almost exactly the same
 
 Remember that when we started, we had the option of working forward from the premise, or working backward from the conclusion, and we picked the first option. The second option also leads to a proof, but it will look different.  The first steps would be to work backward from the conclusion and set up two subgoals, $A$ and $B \eor C$, and then work forward from the premise to prove them, e.g.,
 \begin{fitchproof}
-	\hypo{1}{(A \eand B) \eor (A \eand C)}
+	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
-	\hypo{2}{A \eand B}
+	\hypo{2}{A \eand B}\AS
 	\ellipsesline
 	\have[k]{3}{A}
 	\close
 	\open
-	\hypo{4}{A \eand C}
+	\hypo{4}{A \eand C}\AS
 	\ellipsesline
 	\have[n][-1]{5}{A}
 	\close
 	\have{6}{A}\oe{1,2-3,(4)-(5)}
 	\open
-	\hypo{7}{A \eand B}
+	\hypo{7}{A \eand B}\AS
 	\ellipsesline
 	\have[l]{8}{B \eor C}
 	\close
 	\open
-	\hypo{9}{A \eand C}
+	\hypo{9}{A \eand C}\AS
 	\ellipsesline
 	\have[m][-1]{10}{B \eor C}
 	\close
@@ -953,7 +985,7 @@ We'll leave you to fill in the missing pieces indicated by~$\vdots$.
 Let's give another example to illustrate how to apply the strategies to deal with conditionals and negation. The sentence $(A \eif B) \eif (\enot B \eif \enot A)$ is a tautology. Let's see if we can find a proof of it, from no premises, using the strategies. We first write the sentence at the bottom of a sheet of paper. Since working forward is not an option (there is nothing to work forward from), we work backward, and set up a subproof to establish the sentence we want, $(A \eif B) \eif (\enot B \eif \enot A)$, using $\eif$I. Its assumption must be the antecedent of the conditional we want to prove, i.e., $A \eif B$, and its last line the consequent, $\enot B \eif \enot A$.
 \begin{fitchproof}
 \open
-\hypo{1}{A \eif B}
+\hypo{1}{A \eif B}\AS
 \ellipsesline
 \have[n]{7}{\enot B \eif \enot A}
 \close
@@ -962,9 +994,9 @@ Let's give another example to illustrate how to apply the strategies to deal wit
 The new goal, $\enot B \eif \enot A$ is itself a conditional, so working backward we set up another subproof:
 \begin{fitchproof}
 	\open
-	\hypo{1}{A \eif B}
+	\hypo{1}{A \eif B}\AS
 	\open
-	\hypo{2}{\enot B}
+	\hypo{2}{\enot B}\AS
 	\ellipsesline
 	\have[n][-1]{6}{\enot A}
 	\close
@@ -975,9 +1007,9 @@ The new goal, $\enot B \eif \enot A$ is itself a conditional, so working backwar
 From $\enot A$ we again work backward. To do this, look at the $\enot$I rule. It requires a subproof with~$A$ as assumption, and $\ered$ as its last line. So the proof is now:
 \begin{fitchproof}
 	\open
-	\hypo{1}{A \eif B}
+	\hypo{1}{A \eif B}\AS
 	\open
-	\hypo{2}{\enot B}
+	\hypo{2}{\enot B}\AS
 	\open\hypo{3}{A}
 	\ellipsesline
 	\have[n][-2]{5}{\ered}
@@ -1001,9 +1033,9 @@ requires the antecedent~$A$ of the conditional, but that is also
 already available (on line~$3$). So we finish with:
 \begin{fitchproof}
 	\open
-	\hypo{1}{A \eif B}
+	\hypo{1}{A \eif B}\AS
 	\open
-	\hypo{2}{\enot B}
+	\hypo{2}{\enot B}\AS
 	\open\hypo{3}{A}
 	\have{4}{B}\ce{1,3}
 	\have{5}{\ered}\ne{2,4}
@@ -1546,7 +1578,7 @@ You now want, on line $k$, to prove $\metav{B}$. You can do this with the rule o
 			\have{b1}{\metav{B}}\re{red}
 		\close
 		\open
-			\hypo{b}{\metav{B}}
+			\hypo{b}{\metav{B}}\AS
 			\have{b2}{\metav{B}}\by{R}{b}
 		\close
 	\have{con}{\metav{B}}\oe{ab, a-b1, b-b2}

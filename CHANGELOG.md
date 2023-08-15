@@ -5,7 +5,11 @@
 - Fully accessible HTML version and SCORM packages using BookML
   ([issue 23](https://github.com/rzach/forallx-yyc/issues/23)). This
   required many changes under the hood; see the [blog post on
-  technical details](https://richardzach.org/2023/07/converting-latex-to-html-technical-notes/).
+  technical
+  details](https://richardzach.org/2023/07/converting-latex-to-html-technical-notes/).
+- Proofs now label premises by
+  PR and assumptions by AS (helps with accessibility, and makes
+  textbook match Carnap's conventions more closely).
 - New chapter 13 (Limitations of TFL) based in part on section 12.5 of
   F21 edition.
 - New chapter 35 (Properties of relations)
@@ -21,6 +25,9 @@
   variables, and added section 36.6 to explain what can go wrong if
   you're not careful with substitution ([issue
   77](https://github.com/rzach/forallx-yyc/issues/77))
+- Revisions to section 4.2 to bring it in line with the terminology of
+  chapter 3.
+- Added brief discussion of asymmetric use of “and” in section 5.2
 - Many minor revisons, fixed typos, and fixed formatting
 
 ## Changes in the Fall 2021 edition

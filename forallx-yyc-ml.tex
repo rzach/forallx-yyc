@@ -523,7 +523,7 @@ A few moments ago, we said that system \mlK{} is sound and complete. Where does 
 Does that mean that these systems are a waste of time? Not at all! These systems are only unsound \emph{relative to the definition of validity we gave above}. (Or to use symbols, they are unsound relative to $\entails_\mlK$.) So when we are dealing with these stronger modal systems, we just need to modify our definition of validity to fit. This is where accessibility relations come in really handy.
 
 When we introduced the idea of an accessibility relation, we said that it could be any relation between worlds that you like: you could have it relating every world to every world, no world to any world, or anything in between. That is how we were thinking of accessibility relations in our definition of $\entails_\mlK$. But if we wanted, we could start putting some restrictions on the accessibility relation. In particular, we might insist that it has to be \emph{reflexive}:
-\[\forall wRww\]
+\[\forall w\, Rww\]
 In English: every world accesses itself. Or in terms of relative possibility: every world is possible relative to itself. If we imposed this restriction, we could introduce a new consequence relation, $\entails_\mlT$, as follows:
 \factoidbox{
 	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlT \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a reflexive accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false
@@ -608,7 +608,7 @@ We would need to construct a world, $w_1$, at which $\enot\ebox\metav{A}$ was tr
 Now, if $\enot\ebox\metav{A}$ is true at $w_1$, then $w_1$ must access some world, $w_2$, at which $\metav{A}$ is false. Equally, if $\ebox \enot\ebox \metav{A}$ is false at $w_1$, then $w_1$ must access some world, $w_3$, at which $\enot\ebox \metav{A}$ is false. Since we are now insisting that the accessibility relation is an equivalence relation, and hence symmetric, we can infer that $w_3$ accesses $w_1$. Thus, $w_3$ accesses $w_1$, and $w_1$ accesses $w_2$. Again, since we are now insisting that the accessibility relation is an equivalence relation, and hence transitive, we can infer that $w_3$ accesses $w_2$. But earlier we said that $\enot\ebox \metav{A}$ is false at $w_3$, which implies that $\metav{A}$ is true at every world which $w_3$ accesses. So $\metav{A}$ is true \emph{and} false at $w_2$. Contradiction!
 
 In the definition of $\entails_\mlSfive $, we stipulated that the accessibility relation must be an equivalence relation. But it turns out that there is another way of getting a notion of validity fit for \mlSfive. Rather than stipulating that the accessibility relation be an equivalence relation, we can instead stipulate that it be a \emph{universal} relation:
-\[\forall w_1\forall w_2Rw_1w_2\]
+\[\forall w_1\forall w_2\, Rw_1w_2\]
 In English: every world accesses every world. Or in terms of relative possibility: every world is possible relative to every world. Using this restriction on the accessibility relation, we could have defined $\entails_\mlSfive $ like this:
 \factoidbox{
 	$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n\entails_\mlSfive  \metav{C}$ \ifeff{} there is no world in any interpretation \emph{which has a universal accessibility relation}, at which $\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and $\metav{C}$ is false.
