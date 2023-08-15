@@ -603,7 +603,39 @@ can be sometimes be expressed in an interpretation even if there is no
 explicit predicate symbol available for them. If that is the case, you
 can use a formula that expresses them (such as `$\exists
 z(\atom{T}{z,x} \land \atom{T}{z,y})$') to symbolize English sentences
-involving the predicate. 
+involving the predicate.
+
+\practiceproblems
+
+\problempart
+Given the following interpretation:
+\begin{ekey}
+	\item[\text{domain}] people
+	\item[\atom{W}{x}] \gap{x} is a woman (or girl)
+	\item[\atom{M}{x}] \gap{x} is a man (or boy)
+	\item[\atom{Y}{x,y}] \gap{x} is younger than \gap{y}
+	\item[\atom{O}{x,y}] \gap{x} is an offspring of \gap{y}
+	\item[d] Dana
+	\item[a] Alex
+\end{ekey}
+express the following relations:
+\begin{compactlist}
+	\item \gap{x} is older than \gap{y}
+	\item \gap{x} is \gap{y}'s mother
+	\item \gap{x} and \gap{y} are siblings (note that you can't be your
+	own sibling)
+	\item \gap{x} is \gap{y}'s brother
+\end{compactlist}
+
+\problempart
+Using the symbolization key from the previous
+exercise, symbolize the following sentences:
+\begin{compactlist}
+	\item Alex and Dana are sisters.
+	\item Fathers are older than their children.
+	\item Alex's parents are the same age.
+\end{compactlist}
+
 
 \chapter{Using interpretations}
 \label{sec.UsingModels}
@@ -629,14 +661,14 @@ Now `$\atom{A}{d,d}$' is true, so it is surely true that `$\exists x\, \atom{A}{
 	\end{ekey}
 Now we have an interpretation where `$\exists x\, \atom{A}{x,x}$' is true, but where `$\atom{B}{d}$' is false. So there is an interpretation where `$\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$' is false. So `$\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$' is not a validity.
 
-We can just as easily show that `$\exists x\atom{A}{x,x} \eif \atom{B}{d}$' is not a contradiction. We need only specify an interpretation in which `$\exists x\atom{A}{x,x} \eif \atom{B}{d}$' is true; i.e., an interpretation in which either `$\exists x\, \atom{A}{x,x}$' is false or `$\atom{B}{d}$' is true. Here is one:
+We can just as easily show that `$\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$' is not a contradiction. We need only specify an interpretation in which `$\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$' is true; i.e., an interpretation in which either `$\exists x\, \atom{A}{x,x}$' is false or `$\atom{B}{d}$' is true. Here is one:
 	\begin{ekey}
 		\item[\text{domain}] Paris
 		\item[d] Paris
 		\item[\atom{A}{x,y}] \gap{x} is identical with \gap{y}
 		\item[\atom{B}{x}] \gap{x} is in France
 	\end{ekey}
-This shows that there is an interpretation where `$\exists x\atom{A}{x,x} \eif \atom{B}{d}$' is true. So `$\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$' is not a contradiction.
+This shows that there is an interpretation where `$\exists x\,\atom{A}{x,x} \eif \atom{B}{d}$' is true. So `$\exists x\, \atom{A}{x,x} \eif \atom{B}{d}$' is not a contradiction.
 	\factoidbox{
 		\begin{factoiditems}
 			\item To show that $\metav{A}$ is not a validity, it suffices to
@@ -676,7 +708,7 @@ Given that Marx wrote \emph{The Communist Manifesto}, `$\atom{G}{a}$' is plainly
 
 Does this interpretation make the premise true? Yes it does! Note that `$\atom{G}{a} \eif \atom{G}{a}$' is true. (Indeed, it is a validity.) But then certainly `$\exists x (\atom{G}{x} \eif \atom{G}{a})$' is true, so the premise is true, and the conclusion is false, in this interpretation. The argument is therefore invalid.
 
-In passing, note that we have also shown that `$\exists x(\atom{G}{x} \eif \atom{G}{a})$' does \emph{not} entail `$\exists x\, \atom{G}{x} \eif \atom{G}{a}$', i.e., that $\exists x (\atom{G}{x} \eif \atom{G}{a}) \nentails \exists x \atom{G}{x} \eif \atom{G}{a}$. Equally, we have shown that the sentences `$\exists x (\atom{G}{x} \eif \atom{G}{a})$' and `$\enot (\exists x\, \atom{G}{x} \eif \atom{G}{a})$' are jointly satisfiable.
+In passing, note that we have also shown that `$\exists x(\atom{G}{x} \eif \atom{G}{a})$' does \emph{not} entail `$\exists x\, \atom{G}{x} \eif \atom{G}{a}$', i.e., that $\exists x (\atom{G}{x} \eif \atom{G}{a}) \nentails \exists x\, \atom{G}{x} \eif \atom{G}{a}$. Equally, we have shown that the sentences `$\exists x (\atom{G}{x} \eif \atom{G}{a})$' and `$\enot (\exists x\, \atom{G}{x} \eif \atom{G}{a})$' are jointly satisfiable.
 
 Let's consider a second example. Consider:
 $$\forall x \exists y\, \atom{L}{x,y} \therefore \exists y \forall x\, \atom{L}{x,y}$$
@@ -749,7 +781,7 @@ Show that each of the following is neither a validity nor a contradiction:
 \item \leftsolutions\ $\exists x\, \atom{T}{x,h}$
 \item \leftsolutions\ $\atom{P}{m}  \eand \enot\forall x\, \atom{P}{x}$
 \item $\forall z \atom{J}{z} \eiff \exists y\, \atom{J}{y}$
-\item $\forall x (\atom{W}{x,m,n} \eor \exists y\atom{L}{x,y})$
+\item $\forall x (\atom{W}{x,m,n} \eor \exists y\,\atom{L}{x,y})$
 \item $\exists x (\atom{G}{x} \eif \forall y\, \atom{M}{y})$
 \item $\exists x (x = h \eand x = i)$
 \end{compactlist}
@@ -866,7 +898,7 @@ entailment? & all interpretations & one counter-interpretation\\
 
 You might want to compare this table with the table at the end of \cref{s:PartialTruthTable}. The key difference resides in the fact that TFL concerns truth tables, whereas FOL concerns interpretations. This difference is deeply important, since each truth-table only ever has finitely many lines, so that a complete truth table is a relatively tractable object. By contrast, there are infinitely many interpretations for any given sentence(s), so that reasoning about all interpretations can be a deeply tricky business.
 
-\chapter{Properties of relations}
+\chapter{Properties of relations}\label{ch:PropRelations}
 
 Symbolization keys allow us to assign two-place predicate symbols like
 `$\atom{R}{x,y}$' to English predicates with two gaps, e.g., `\gap{x}
@@ -981,4 +1013,22 @@ called \define{partial orders}. For instance, $\le$ and $\ge$ are
 partial orders. The relation `is no older than', by contrast, is
 reflexive and transitive, but not anti-symmetric.
 
+\practiceproblems
+
+\problempart
+Give examples of relations with the following properties:
+\begin{compactlist}
+	\item Reflexive but not symmetric
+	\item Symmetric but not transitive
+	\item Transitive, symmetric, but not reflexive
+\end{compactlist}
+
+\problempart
+Show that a relation can be both symmetric and anti-symmetric by
+giving an interpretation that makes both of the following sentences
+true:
+\begin{align*}
+	& \forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,z})\\
+	& \forall x\forall y((\atom{R}{x,y} \eand \atom{R}{y,x}) \eif x=y)
+\end{align*}
 

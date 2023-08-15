@@ -94,7 +94,46 @@ Determine whether each of the following sentences is true or false in that inter
 \item $\exists x \exists y(\enot x = y \eand \atom{R}{x,y} \eand \forall z(\atom{R}{z,x} \eiff y = z))$ \hfill \myanswer{True}
 \end{compactlist}
 
-\stepcounter{chapter} % Semantic concepts
+\chapter{Semantic concepts}
+\setcounter{ProbPart}{0}
+
+\solutions
+\problempart
+Given the following interpretation:
+\begin{ekey}
+	\item[\text{domain}] people
+	\item[\atom{W}{x}] \gap{x} is a woman (or girl)
+	\item[\atom{M}{x}] \gap{x} is a man (or boy)
+	\item[\atom{Y}{x,y}] \gap{x} is younger than \gap{y}
+	\item[\atom{O}{x,y}] \gap{x} is an offspring of \gap{y}
+	\item[d] Dana
+	\item[a] Alex
+\end{ekey}
+express the following relations:
+\begin{compactlist}
+	\item \gap{x} is older than \gap{y} \hfill\myanswer{$\atom{Y}{y,x}$}
+	\item \gap{x} is \gap{y}'s mother \hfill\myanswer{$\atom{O}{y,x}
+	\eand \atom{W}{x}$}
+	\item \gap{x} and \gap{y} are siblings (note that you can't be your
+	own sibling) \hfill\myanswer{$\exists z(\atom{O}{x,z} \eand
+	\atom{O}{y,z}) \eand \enot x=y$}
+	\item \gap{x} is \gap{y}'s brother \hfill\myanswer{$\exists z(\atom{O}{x,z} \eand
+	\atom{O}{y,z}) \eand \enot x=y \eand \atom{M}{x}$}
+\end{compactlist}
+
+\problempart
+Using the symbolization key from the previous
+exercise, symbolize the following sentences:
+\begin{compactlist}
+	\item Alex and Dana are sisters. \hfill\myanswer{$\exists z(\atom{O}{a,z} \eand
+	\atom{O}{d,z}) \eand \enot a=d \eand \atom{W}{a} \eand \atom{W}{d}$}
+	\item Fathers are older than their children.
+	\hfill\myanswer{$\forall x\forall y((\atom{O}{x,y} \eand
+	\atom{M}{y}) \eif \atom{Y}{x,y})$}
+	\item Alex's parents are the same age. \hfill\myanswer{$\forall
+	x\forall y((\atom{O}{x,a} \eand
+	\atom{O}{y,a}) \eif \enot \atom{Y}{x,y})$}
+\end{compactlist}
 
 \chapter{Using Interpretations}\setcounter{ProbPart}{0}
 
@@ -149,7 +188,7 @@ And it is false in this model:
 	\item[m] Stan
 \end{ekey}}
 \item $\forall z\, \atom{J}{z} \eiff \exists y\,\atom{J}{y}$
-\item $\forall x (\atom{W}{x,m,n} \eor \exists y\atom{L}{x,y})$
+\item $\forall x (\atom{W}{x,m,n} \eor \exists y\,\atom{L}{x,y})$
 \item $\exists x (\atom{G}{x} \eif \forall y\,\atom{M}{y})$
 \item $\exists x (x = h \eand x = i)$
 \end{compactlist}
@@ -241,7 +280,7 @@ Show that the following sentences are jointly satisfiable:
 \item $\enot (\atom{M}{a} \eand \exists x\,\atom{A}{x}), Ma \eor \atom{F}{a}, \forall x(\atom{F}{x} \eif \atom{A}{x})$
 \item $\atom{M}{a} \eor \atom{M}{b}, \atom{M}{a} \eif \forall x \enot \atom{M}{x}$
 \item $\forall y\,\atom{G}{y}, \forall x (\atom{G}{x} \eif \atom{H}{x}), \exists y \enot \atom{I}{y}$
-\item $\exists x(\atom{B}{x} \eor \atom{A}{x}), \forall x \enot \atom{C}{x}, \forall x\bigl[(\atom{A}{x} \eand \atom{B}{x}) \eif Cx\bigr]$
+\item $\exists x(\atom{B}{x} \eor \atom{A}{x}), \forall x \enot \atom{C}{x}, \forall x\bigl[(\atom{A}{x} \eand \atom{B}{x}) \eif \atom{C}{x}\bigr]$
 \item $\exists x\,\atom{X}{x}, \exists x\,\atom{Y}{x}, \forall x(\atom{X}{x} \eiff \enot \atom{Y}{x})$
 \item $\forall x(\atom{P}{x} \eor \atom{Q}{x}), \exists x\enot(\atom{Q}{x} \eand \atom{P}{x})$
 \item $\exists z(\atom{N}{z} \eand \atom{O}{z,z}), \forall x\forall y(\atom{O}{x,y} \eif \atom{O}{y,x})$
@@ -277,4 +316,31 @@ Show that the following arguments are invalid:
 \end{compactlist}
 
 \stepcounter{chapter} % Reasoning about interpretations
-\stepcounter{chapter} % Properties of relations
+
+\chapter{Properties of relations}
+\setcounter{ProbPart}{0}
+
+\solutions
+\problempart
+Give examples of relations with the following properties:
+\begin{compactlist}
+	\item Reflexive but not symmetric \hfill\myanswer{\gap{x} is no
+	older than \gap{y}}
+	\item Symmetric but not transitive \hfill\myanswer{\gap{x} is within
+	1~km of \gap{y}}
+	\item Transitive, symmetric, but not reflexive
+	\hfill\myanswer{\gap{x} is a full (i.e., not half) sibling of \gap{y}}
+\end{compactlist}
+
+\problempart
+Show that a relation can be both symmetric and anti-symmetric by
+giving an interpretation that makes both of the following sentences
+true:
+\begin{align*}
+	& \forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,z})\\
+	& \forall x\forall y((\atom{R}{x,y} \eand \atom{R}{y,x}) \eif x=y)
+\end{align*}
+\myanswer{\begin{ekey}
+	\item[\text{domain}] $0$
+	\item[\atom{R}{x,y}] \ntuple{$0$, $0$}
+\end{ekey}}

@@ -489,7 +489,7 @@ For each of the following pairs of sentences: If they are provably equivalent, g
 \draw[<->, thick] (atom4)--(atom5);
 \end{tikzpicture}
 \end{center}}
-\item $\forall x (\atom{R}{c,a} \eiff \atom{R}{x,a}), Rca \eiff \forall x\,\atom{R}{x,a}$ \hfill \myanswer{Not logically equivalent}
+\item $\forall x (\atom{R}{c,a} \eiff \atom{R}{x,a}), \atom{R}{c,a} \eiff \forall x\,\atom{R}{x,a}$ \hfill \myanswer{Not logically equivalent}
 \\\myanswer{Counter-interpretation, consider the following diagram, allowing `$a$' to name 1 and `$c$' to name 2:
 \begin{center}
 \begin{tikzpicture}
@@ -695,7 +695,7 @@ Show that each pair of sentences is provably equivalent: %TB: Again, have to do 
 	\have{Aa}{\forall x\,\atom{A}{x}}\Ae{a}
 	\have{Aab1}{\forall x\,\atom{A}{x} \eor \atom{B}{d}}\oi{Aa}
 \close
-\have{Aab2}{\forall xAx \eor \atom{B}{d}}\tnd{b-Aab, nb-Aab1}
+\have{Aab2}{\forall x\,\atom{A}{x} \eor \atom{B}{d}}\tnd{b-Aab, nb-Aab1}
 \end{fitchproof}
 \begin{fitchproof}
 \hypo{Aab}{\forall x\,\atom{A}{x} \eor \atom{B}{d}}
@@ -925,7 +925,7 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 For each of the following claims, provide an FOL proof that shows it
 is true.
 \begin{compactlist}
-\item $Pa \eor \atom{Q}{b}, \atom{Q}{b} \eif b=c, \enot \atom{P}{a} \proves \atom{Q}{c}$
+\item $\atom{P}{a} \eor \atom{Q}{b}, \atom{Q}{b} \eif b=c, \enot \atom{P}{a} \proves \atom{Q}{c}$
 \myanswer{
 \begin{fitchproof}
 \hypo{pq}{\atom{P}{a} \eor \atom{Q}{b}}
