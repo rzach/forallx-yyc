@@ -14,8 +14,8 @@ TFL and FOL. It also deals with some advanced topics such as modal
 logic, soundness, and functional completeness. Exercises with
 solutions are available. It is provided in PDF (for screen reading,
 printing, and a special version for dyslexics), HTML (with additional
-(accessibility
-features)[https://forallx.openlogicproject.org/html/A4.html]), and in
+[accessibility
+features](https://forallx.openlogicproject.org/html/A4.html)), and in
 LaTeX source code.
 
 Instructors wishing to adopt it should consider the open-source
