@@ -13,8 +13,10 @@ TFL and FOL, and Fitch-style natural deduction proof systems for both
 TFL and FOL. It also deals with some advanced topics such as modal
 logic, soundness, and functional completeness. Exercises with
 solutions are available. It is provided in PDF (for screen reading,
-printing, and a special version for dyslexics), HTML, and in LaTeX
-source code.
+printing, and a special version for dyslexics), HTML (with additional
+(accessibility
+features)[https://forallx.openlogicproject.org/html/A4.html]), and in
+LaTeX source code.
 
 Instructors wishing to adopt it should consider the open-source
 [Carnap](https://carnap.io/) system, which supports the notation and
@@ -89,17 +91,17 @@ PDFs of the **Fall 2020** edition are archived here:
 
 ## Buy a Printed Copy
 
-If you'd like to purchase a nice paperback copy of the Fall 2021 edition, you can do so on
-Amazon ([US](https://www.amazon.com/dp/B097XGMP17) |
-[CA](https://www.amazon.ca/dp/B097XGMP17) |
-[UK](https://www.amazon.co.uk/dp/B097XGMP17) |
-[DE](https://www.amazon.de/dp/B097XGMP17) | 
-[AU](https://www.amazon.com.au/dp/B097XGMP17)), or use search in your
+If you'd like to purchase a nice paperback copy of the Fall 2023
+edition, you can do so on Amazon
+([US](https://www.amazon.com/dp/B0CH2B1ZFG) |
+[CA](https://www.amazon.ca/dp/B0CH2B1ZFG) |
+[UK](https://www.amazon.co.uk/dp/B0CH2B1ZFG) |
+[DE](https://www.amazon.de/dp/B0CH2B1ZFG) |
+[AU](https://www.amazon.com.au/dp/B0CH2B1ZFG)), or use search in your
 local Amazon store. Be sure to get the latest version that's available
-in print (Fall 2021). The version on Amazon usually is not as current
-as the PDF. (Specifically, to avoid a jump in prices due to Amazon's
-new pricing scheme, the F21 version on Amazon has not been updated to
-include the (minor) [corrections made after January 2022](https://github.com/rzach/forallx-yyc/compare/F21-kdp...rzach:forallx-yyc:master).
+in print (Fall 2023). The version on Amazon usually is not as current
+as the PDF. Changes are recorded in the
+[Changelog](https://github.com/rzach/forallx-yyc/blob/master/CHANGELOG.md).
 
 (The process for getting the book printed is described
 [here](https://openlogicproject.org/2015/11/22/getting-your-book-to-print/)
@@ -115,7 +117,8 @@ Clone the [GitHub repository](https://github.com/rzach/forallx-yyc) locally or d
   - `forallxyyc-print.tex` (b/w, for printing on Quarto stock)
   - `forallxyyc-letter.tex` (b/w, for printing on regular letter-size paper)
 
-You'll have to run `makeglossaries` to produce the glossary as well.
+You'll have to run `makeglossaries` to produce the glossary as well,
+or use `latexmk`.
 
 To make changes to the definitions in the preamble and `forallyyc.sty`
 file, put them in a file named `forallxyyc-local.sty`. For instance,
