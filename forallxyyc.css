@@ -9,6 +9,8 @@ span.fxblank {
   overflow: hidden;
 }
 
+/* draw a border around the book cover */
+
 img.fxcover {
   border: 1px solid black !important;
   margin-left: 2em;
@@ -41,16 +43,8 @@ dl.ltx_description {
 
 .ltx_item .ltx_para:first-child .ltx_p  { display:inline; }
 
-/* override gitbook/css/style.css size of p2's for paragraphs */
-.ltx_title_paragraph   { 
-  font-size:100% !important; 
-  font-style: italic;
-}
+/* fix LaTeXML.css spacing between {paragraph}s */
 
 .ltx_paragraph .ltx_title + .ltx_para .ltx_p {
   display: block;
 }
-/* fix bookml/gitbook/css/style.css clipping SVG images to the box
-computed by LaTeXML */
-
-svg:not(:root){overflow:reset}
