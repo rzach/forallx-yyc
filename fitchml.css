@@ -47,7 +47,7 @@ div.fml-fmla {
 div.fml-as {
   display: inline-block;
   overflow: visible;
-  border-bottom: 1pt solid black; 
+  border-bottom: 1pt solid; 
   padding-left: 1ex;
   padding-right: 1ex;
 }
@@ -59,7 +59,7 @@ div.fml-just {
 div.fml-scope {
   display: inline;
   height: 100%;
-  border-right: 1pt solid black; 
+  border-right: 1pt solid; 
   margin-left: 1em;
   padding-top: 1ex ;
   padding-right: 0; 
@@ -69,7 +69,7 @@ div.fml-scope {
 div.fml-scope-start {
   display: inline;
   height: 100%;
-  border-right: 1pt solid black; 
+  border-right: 1pt solid; 
   margin-left: 1em;
   padding-right: 0;
   padding-bottom: 1ex;
@@ -79,7 +79,7 @@ div.fml-scope-start {
 div.fml-scope-end {
   display: inline;
   height: 100%;
-  border-right: 1pt solid black; 
+  border-right: 1pt solid; 
   margin-left: 1em;
   padding-right: 0;
   padding-top: .5ex;

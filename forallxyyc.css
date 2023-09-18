@@ -12,7 +12,8 @@ span.fxblank {
 /* draw a border around the book cover */
 
 img.fxcover {
-  border: 1px solid black !important;
+  border: 1px solid !important;
+  background-color: white;
   margin-left: 2em;
 }
 
