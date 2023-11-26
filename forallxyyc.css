@@ -29,7 +29,7 @@ dt span.ltx_tag {
 
 dl.ltx_description dt {
   text-align: right;
-  width: 6em;
+  min-width: 6em;
 }
 
 dd, dd p.ltx_p {
