@@ -17,6 +17,14 @@ img.fxcover {
   margin-left: 2em;
 }
 
+/* style dfn tags */
+
+dfn {
+  font-style: italic;
+  font-weight: bold;
+  color: #B21978;
+}
+
 /* make <dd>'s (i.e., the description environment used by earg appear
 nicely */
 
