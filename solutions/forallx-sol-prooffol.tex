@@ -7,7 +7,7 @@
 \problempart
 Explain why these two `proofs' are incorrect. Also, provide interpretations which would invalidate the fallacious argument forms the `proofs' enshrine:
 \begin{multicols}{2}
-	\begin{fitchproof}
+	\begin{fitchproof}[arrayenv=tabular]
 		\hypo{Rxx}{\forall x\,\atom{R}{x,x}}
 		\have{Raa}{\atom{R}{a,a}}\Ae{Rxx}
 		\have{Ray}{\forall y\,\atom{R}{a,y}}\Ai{Raa}
@@ -24,7 +24,7 @@ Explain why these two `proofs' are incorrect. Also, provide interpretations whic
 \end{tikzpicture}
 \end{center}}
 \columnbreak
-	\begin{fitchproof}
+	\begin{fitchproof}[arrayenv=tabular]
 		\hypo{AE}{\forall x \exists y\,\atom{R}{x,y}}
 		\have{E}{\exists y\,\atom{R}{a,y}}\Ae{AE}
 		\open
@@ -103,8 +103,8 @@ proofs for each of the argument forms. NB: You will find it
 `$\forall x (\atom{F}{x} \eif \enot \atom{G}{x})$'. \\\myanswer{We
 prove the four Figure I syllogisms; the rest are \emph{extremely}
 similar.
-\begin{multicols}{2}
-\noindent \textbf{Barbara}
+\begin{compactlist}
+\item \textbf{Barbara}
 \begin{fitchproof}
 \hypo{gf}{\forall x (\atom{G}{x} \eif \atom{F}{x})}
 \hypo{hg}{\forall x (\atom{H}{x} \eif \atom{G}{x})}
@@ -118,10 +118,8 @@ similar.
 \have{hafa}{\atom{H}{a} \eif \atom{F}{a}}\ci{ha-fa}
 \have{con}{\forall x (\atom{H}{x} \eif \atom{F}{x})}\Ai{hafa}
 \end{fitchproof}
-\vfill
-\noindent\textbf{Celerant} is exactly as Barbara, replacing `$F$' with `$\enot F$' throughout.
-\columnbreak
-\\\textbf{Ferio} 
+\item\textbf{Celerant} is exactly as Barbara, replacing `$F$' with `$\enot F$' throughout.
+\item\textbf{Ferio} 
 \begin{fitchproof}
 \hypo{gnf}{\forall x (\atom{G}{x} \eif \enot \atom{F}{x})}
 \hypo{hg}{\exists x (\atom{H}{x} \eand  \atom{G}{x})}
@@ -136,7 +134,7 @@ similar.
 \close
 \have{con}{\exists x (\atom{H}{x} \eand \enot \atom{F}{x})}\Ee{hg, haga-hnf}
 \end{fitchproof}
-\\\textbf{Darii} is exactly as Ferio, replacing `$\enot F$' with `$F$' throughout.\end{multicols}}
+\item\textbf{Darii} is exactly as Ferio, replacing `$\enot F$' with `$F$' throughout.\end{compactlist}}
 
 \
 
@@ -470,14 +468,14 @@ For each of the following pairs of sentences: If they are provably equivalent, g
 \item $\forall x\forall y \forall z \atom{B}{x,y,z}, \forall x\,\atom{B}{x,x,x}$\hfill \myanswer{Not logically equivalent}
 \\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$\atom{B}{x,y,z}$' be true of, and only of, \ntuple{1,1,1} and \ntuple{2,2,2}.}
 \item $\forall x\forall y\,\atom{D}{x,y}, \forall y\forall x\,\atom{D}{x,y}$ \hfill \myanswer{Provably equivalent\begin{multicols}{2}
-\begin{fitchproof}
+\begin{fitchproof}[arrayenv=tabular]
 \hypo{AAd}{\forall x \forall y\,\atom{D}{x,y}}
 \have{Ad}{\forall y\,\atom{D}{a,y}}\Ae{AAd}
 \have{A}{\atom{D}{a,b}}\Ae{Ad}
 \have{Ad1}{\forall x\,\atom{D}{x,b}}\Ai{A}
 \have{AAd1}{\forall y \forall x\,\atom{D}{x,y}}\Ai{Ad1}
 \end{fitchproof}
-\begin{fitchproof}
+\begin{fitchproof}[arrayenv=tabular]
 \hypo{AAd}{\forall y \forall x\,\atom{D}{x,y}}
 \have{Ad}{\forall x\,\atom{D}{x,a}}\Ae{AAd}
 \have{A}{\atom{D}{b,a}}\Ae{Ad}
@@ -1091,7 +1089,8 @@ Show that the following are provably equivalent:
 \item $\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)$
 \end{itemize}
 And hence that both have a decent claim to symbolize the English sentence `Nick is the F'.
-\\\myanswer{In one direction:
+
+\noindent\myanswer{In one direction:
 \begin{fitchproof}
 \hypo{prem}{\exists x \bigl([\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)] \eand x = n\bigr)}
 \open
@@ -1105,7 +1104,9 @@ And hence that both have a decent claim to symbolize the English sentence `Nick 
 	\have{con1}{\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)}\ai{fn, prema4}
 \close
 \have{con}{\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)}\Ee{prem, prema-con1}
-\end{fitchproof}\\And now in the other:
+\end{fitchproof}}
+
+\myanswer{And now in the other:
 \begin{fitchproof}
 \hypo{prem}{\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)}
 \have{nin}{n = n}\ii{}
@@ -1215,7 +1216,8 @@ And offer a proof of it.\\
 \item[\texttherefore] $\exists x \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = z \eor y = z))\bigr]$
 \end{earg}}
 
-\myanswer{\begin{fitchproof}
+\myanswer{
+\begin{fitchproof}
 \hypo{p1}{\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]}
 \hypo{p2}{\exists x \bigl[\atom{G}{x} \eand \forall y ( \atom{G}{y} \eif x = y)\bigr]}
 \hypo{p3}{\forall x (\enot \atom{F}{x} \eor \enot \atom{G}{x})}
@@ -1264,8 +1266,10 @@ And offer a proof of it.\\
 
 \chapter{Derived rules}\setcounter{ProbPart}{0}
 \problempart
-Offer proofs which justify the addition of the second and fourth CQ rules as derived rules.\\
-\myanswer{Justification for the second rule:
+Offer proofs which justify the addition of the second and fourth CQ
+rules as derived rules.
+
+\noindent\myanswer{Justification for the second rule:
 \begin{fitchproof}
 	\hypo{nEa}{\enot \exists x\,\atom{A}{x}}
 	\open
@@ -1275,11 +1279,8 @@ Offer proofs which justify the addition of the second and fourth CQ rules as der
 	\close
 	\have{na}{\enot \atom{A}{a}}\ni{a-red}
 	\have{Ana}{\forall x \enot \atom{A}{x}}\Ai{na}
-\end{fitchproof}}
-
-\
-\\
-\myanswer{The fourth rule is harder to justify.  Here is a proof that
+\end{fitchproof}
+The fourth rule is harder to justify.  Here is a proof that
 is relatively straightforward, but uses the derived rule DNE:
 \begin{fitchproof}
 \hypo{nAa}{\enot \forall x\,\atom{A}{x}}
@@ -1297,7 +1298,7 @@ is relatively straightforward, but uses the derived rule DNE:
   \close
 \have{nnEna}{\enot \enot \exists x \enot \atom{A}{x}}\ni{nEna-abs2}
 \have{Ena2}{\exists x \enot \atom{A}{x}}\dne{nnEna}
-\end{fitchproof}\\
+\end{fitchproof}
 And here is a proof that does not use any derived rules:
 \begin{fitchproof}
 	\hypo{nAa}{\enot \forall x\,\atom{A}{x}} 

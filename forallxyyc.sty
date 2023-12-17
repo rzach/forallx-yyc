@@ -6,7 +6,7 @@
 \def\forallxversion{Fall 2023}
 \def\forallxshortversion{F23}
 
-\RequirePackage{amssymb,amsmath,pifont,rotating,fitch}
+\RequirePackage{amssymb,amsmath,pifont,rotating}
 \usepackage[cal=boondoxo]{mathalfa}
 \usepackage[german,english]{babel}
 \usepackage[utf8]{inputenc}
@@ -229,6 +229,7 @@
 %    *                PROOFS                *
 %    ****************************************
 
+\usepackage[arrayenv=tabular]{fitch}
 
 % I keep mixing up the \ce and \ae commands, so I define a less ambiguous
 % alternate set of commands
@@ -253,27 +254,8 @@
 
 % a command for indicating the goal in a proof or subproof
 \newcommand*{\want}[1]{\by{want \ensuremath{#1}}{}}
-% an environment that separates the proof from surrounding paragraphs
-\newenvironment{fitchproof}
-	{\begin{list}{}{\setlength{\leftmargin}{0pt}}\item$\begin{nd}}
-	{\end{nd}$\end{list}}
 
-% patch nd*by, nd*init from fitch.sty
-
-{\chardef\x=\catcode`\*
-\catcode`\*=11
-\global\let\nd*astcode\x}
-\catcode`\*=11
-\def\nd*by#1#2{\ifx\nd*x#2\nd*x\gdef\nd*byt{\mbox{#1}}\else\gdef\nd*byt{\mbox{#1 \ndref{#2}}}\fi}
-\def\nd*init{%
-  \let\open\nd*open%
-  \let\close\nd*close%
-  \let\hypo\nd*hypo%
-  \let\have\nd*have%
-  \let\hypocont\nd*hypocont%
-  \let\havecont\nd*havecont%
-  \let\by\nd*by%
-  \let\guard\nd*guard%
+\def\ndrules{
   \def\bi{\by{{\eiff}I}}%
   \def\be{\by{{\eiff}E}}%
   \def\ci{\by{{\eif}I}}%
@@ -307,9 +289,19 @@
   \def\rfour{\by{R$\mathbf{4}$}}%
   \def\rfive{\by{R$\mathbf{5}$}}%
   \def\ellipsesline{\have[ ]{}{\vdots}}%
-  \nddim{4.5ex}{3.5ex}{1.5ex}{.7em}{1em}{.5em}{1.5em}{.2mm}
-  }
-\catcode`\*=\nd*astcode
+}
+
+\setkeys{fitch}{
+  height=4.5ex,
+  topheight=3.5ex,
+  depth=1.5ex,
+  labelsep=.7em,
+  indent=1em,
+  hsep=.5em,
+  justsep=1.5em,
+  linethickness=.2mm,
+  arrayenv=tabular
+}
 
 %    ****************************************
 %    *            DIAGRAMS IN TIKZ           *

@@ -3,17 +3,18 @@
 %\label{ch.NDTFL}
 %\addtocontents{toc}{\protect\mbox{}\protect\hrulefill\par}
 
-\renewenvironment{fitchproof} %TB: make proofs smaller, since space is a premium here
-	{\noindent\par\noindent\small$\begin{nd}}
-	{\end{nd}$\noindent\normalsize\ignorespacesafterend}
+% \renewenvironment{fitchproof} %TB: make proofs smaller, since space is a premium here
+% 	{\noindent\par\noindent\small$\begin{nd}}
+% 	{\end{nd}$\noindent\normalsize\ignorespacesafterend}
 
 \stepcounter{chapter} % The very idea
 
 \chapter{Basic rules for TFL}\setcounter{ProbPart}{0}
+
 \problempart
 The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \begin{multicols}{2}
-\begin{fitchproof}
+\begin{fitchproof}[arrayenv=tabular]
 \hypo{abc}{(\enot L \land A) \eor L}
 \open
 \hypo{nla}{\enot L \eand A}
@@ -33,7 +34,7 @@ The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 \myanswer{$\enot$E on line~6 illicitly refers to a line from a closed subproof (line~3).}
 \hfill
 \columnbreak
-\begin{fitchproof}
+\begin{fitchproof}[arrayenv=tabular]
 \hypo{abc}{A \eand (B \eand C)}
 \hypo{bcd}{(B \eor C) \eif D}
 \have{b}{B}\ae{abc}
@@ -48,8 +49,7 @@ The following two `proofs' are \emph{incorrect}. Explain the mistakes they make.
 
 \problempart
 The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into \textit{bona fide} proofs. Additionally, write down the argument that corresponds to each proof.
-\newpage
-\begin{multicols}{2}
+
 \begin{fitchproof}
 \hypo{ps}{P \eand S}
 \hypo{nsor}{S \eif R}
@@ -58,9 +58,9 @@ The following three proofs are missing their citations (rule and line numbers). 
 \have{r}{R}\ce{nsor, s}
 \have{re}{R \eor E}\oi{r}
 \end{fitchproof}
-\\\myanswer{Corresponding argument: \\$P \eand S, S \eif R \therefore R \eor E$}
+\myanswer{Corresponding argument: \\$P \eand S, S \eif R \therefore R \eor E$}
 
-\bigskip
+\medskip
 
 \begin{fitchproof}
 \hypo{ad}{A \eif D}
@@ -72,9 +72,10 @@ The following three proofs are missing their citations (rule and line numbers). 
 \close
 \have{conc}{(A \eand B) \eif (D \eor E)}\ci{ab-de}
 \end{fitchproof}
-\\\myanswer{Corresponding argument: \\$A \eif D \therefore (A \eand B) \eif (D \eor E)$}
 
-\columnbreak
+\noindent\myanswer{Corresponding argument: \\$A \eif D \therefore (A \eand B) \eif (D \eor E)$}
+
+\medskip
 
 \begin{fitchproof}
 \hypo{nlcjol}{\enot L \eif (J \eor L)}
@@ -92,9 +93,11 @@ The following three proofs are missing their citations (rule and line numbers). 
 \close
 \have{conc}{J}\oe{jol, j-j2, l-j3}
 \end{fitchproof}
-\\\myanswer{Corresponding argument:\\
+
+\noindent\myanswer{Corresponding argument:\\
 $\enot L \eif (J \eor L), \enot L \therefore J$}
-\end{multicols}
+
+\
 
 \solutions
 \problempart
@@ -238,7 +241,6 @@ Give a proof for each of the following arguments:
 \have{con}{Q \eor E}\oe{qr, q-qe, r-qe1}
 \end{fitchproof}}
 
-\newpage
 \item $S\eiff T \therefore S\eiff (T\eor S)$
 \myanswer{\begin{fitchproof}
 \hypo{st}{S \eiff T}
@@ -305,7 +307,7 @@ Give a proof for each of the following arguments:
 \label{pr.justifyTFLproof}
 The following proofs are missing their citations (rule and line numbers). Add them wherever they are required:
 \begin{multicols}{2}
-\begin{fitchproof}
+\begin{fitchproof}[arrayenv=tabular]
 \hypo{1}{W \eif \enot B}
 \hypo{2}{A \eand W}
 \hypo{2b}{B \eor (J \eand K)}
@@ -315,7 +317,7 @@ The following proofs are missing their citations (rule and line numbers). Add th
 \have{6}{K}\ae{5}
 \end{fitchproof}
 \vfill
-\begin{fitchproof}
+\begin{fitchproof}[arrayenv=tabular]
 \hypo{1}{L \eiff \enot O}
 \hypo{2}{L \eor \enot O}
 \open
@@ -328,7 +330,7 @@ The following proofs are missing their citations (rule and line numbers). Add th
 \have{3}{L}\dne{3b}
 \end{fitchproof}
 \columnbreak
-\begin{fitchproof}
+\begin{fitchproof}[arrayenv=tabular]
 \hypo{1}{Z \eif (C \eand \enot N)}
 \hypo{2}{\enot Z \eif (N \eand \enot C)}
 \open
@@ -444,8 +446,6 @@ Show that each of the following sentences is a theorem:
 \close
 \have{con}{N \eor \enot N}\ip{ncon-bot2}
 \end{fitchproof}}
-
-\newpage
 \item $J \eiff [J\eor (L\eand\enot L)]$
 \myanswer{\begin{fitchproof}
 \open
@@ -574,14 +574,13 @@ Provide proofs to show each of the following:
 \end{fitchproof}}
 \end{compactlist}
 
-
+\setkeys{fitch}{arrayenv=tabular}
 
 \problempart
 Show that each of the following pairs of sentences are provably equivalent: %TB: a bit of a hack here, to try to get the multicols thing working nicer.
 
-\
-
-1. $R \eiff E$, $E \eiff R$
+\begin{compactlist}
+\item $R \eiff E$, $E \eiff R$
 \myanswer{\ignorespaces\begin{multicols}{2}
 \begin{fitchproof}
 \hypo{re}{R \eiff E}
@@ -607,7 +606,7 @@ Show that each of the following pairs of sentences are provably equivalent: %TB:
 \have{con}{R \eiff E}\bi{r1-e1, e-r}
 \end{fitchproof}
 \end{multicols}}
-2. $G$, $\enot\enot\enot\enot G$
+\item $G$, $\enot\enot\enot\enot G$
 \myanswer{\begin{multicols}{2}
 \begin{fitchproof}
 \hypo{g}{G}
@@ -623,7 +622,7 @@ Show that each of the following pairs of sentences are provably equivalent: %TB:
 \have{g}{G}\dne{nng}
 \end{fitchproof}
 \end{multicols}}
-3. $T\eif S$, $\enot S \eif \enot T$
+\item $T\eif S$, $\enot S \eif \enot T$
 \myanswer{\begin{multicols}{2}
 \begin{fitchproof}
 \hypo{ts}{T \eif S}
@@ -646,7 +645,7 @@ Show that each of the following pairs of sentences are provably equivalent: %TB:
 \close
 \have{ts}{T \eif S}\ci{t-s}
 \end{fitchproof}\end{multicols}}
-4. $U \eif I$, $\enot(U \eand \enot I)$
+\item $U \eif I$, $\enot(U \eand \enot I)$
 \myanswer{
 \begin{multicols}{2}
 \begin{fitchproof}
@@ -675,7 +674,7 @@ Show that each of the following pairs of sentences are provably equivalent: %TB:
 \have{ui}{U \eif I}\ci{u-i}
 \end{fitchproof}
 \end{multicols}}
-\newpage 5. $\enot (C \eif D), C \eand \enot D$
+\item $\enot (C \eif D), C \eand \enot D$
 \myanswer{\begin{multicols}{2}
 \begin{fitchproof}
 \hypo{cnd}{C \eand \enot D}
@@ -715,8 +714,10 @@ Show that each of the following pairs of sentences are provably equivalent: %TB:
 \have{cnd}{C \eand \enot D}\ai{c2, nd}
 \end{fitchproof}
 \end{multicols}}
-6. $\enot G \eiff H$, $\enot(G \eiff H)$ 
-\myanswer{\begin{multicols}{2}
+\setkeys{fitch}{arrayenv=longtable}
+
+\item $\enot G \eiff H$, $\enot(G \eiff H)$ 
+\myanswer{
 \begin{fitchproof}
 \hypo{ngh}{\enot G \eiff H}
 \open
@@ -776,8 +777,9 @@ Show that each of the following pairs of sentences are provably equivalent: %TB:
 	\have{ng1}{\enot G}\ni{g2-red3}
 \close
 \have{con}{\enot G \eiff H}\bi{ng-h2, h3-ng1}
-\end{fitchproof}
-\end{multicols}}
+\end{fitchproof}}
+\end{compactlist}
+\setkeys{fitch}{arrayenv=longtable}
 
 \problempart
 If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}\eand\metav{C})\proves\metav{B}$? What about $(\metav{A}\eor\metav{C})\proves\metav{B}$? Explain your answers.
@@ -794,7 +796,7 @@ If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}
 \have[m][1]{m}{\metav{A} \eiff \metav{B}}
 \have{b}{\metav{B}}\be{m, a}
 \end{fitchproof}
-\\This will show that $\metav{A} \proves \metav{B}$. In exactly the same way, we can show that $\metav{B} \proves \metav{A}$. So if we can show that $\metav{A} \eiff \metav{B}$ is a theorem, we can show that $\metav{A}$ and $\metav{B}$ are provably equivalent.}
+This will show that $\metav{A} \proves \metav{B}$. In exactly the same way, we can show that $\metav{B} \proves \metav{A}$. So if we can show that $\metav{A} \eiff \metav{B}$ is a theorem, we can show that $\metav{A}$ and $\metav{B}$ are provably equivalent.}
 
 \myanswer{Conversely, suppose we can show that $\metav{A}$ and $\metav{B}$ are provably equivalent. Then we can prove $\metav{B}$ from the assumption of $\metav{A}$ in $m$ lines, say, and prove $\metav{A}$ from the assumption of $\metav{B}$ in $n$ lines, say. Copying and pasting these proofs together (changing the line numbering where appropriate), we obtain:
 \begin{fitchproof}
@@ -808,7 +810,7 @@ If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}
 \close
 \have{ab}{\metav{A} \eiff \metav{B}}\bi{a-b1, b-a1}
 \end{fitchproof}
-\\Thus showing that $\metav{A} \eiff \metav{B}$ is a theorem.}
+This shows that $\metav{A} \eiff \metav{B}$ is a theorem.}
 
 \myanswer{There was nothing special about $\metav{A}$ and $\metav{B}$ in this. So what this shows is that the problem of showing that two sentences are provably equivalent is, essentially, the same problem as showing that a certain kind of sentence (a biconditional) is a theorem.}
 
