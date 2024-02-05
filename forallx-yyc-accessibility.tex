@@ -19,6 +19,20 @@ top of each page to select the font size, switch between serif and
 sans-serif font, and black-on-white, dark-on-sepia, or light-on-dark
 display options.
 
+The body of the page starts with an invisible link to skip to the
+beginning of the content, past the navigation sidebar and style
+buttons. The buttons are, in order: 
+\begin{itemize}
+  \item `toggle sidebar' to turn the navigation bar on or off;
+  \item `font settings' for font size, serif or sans serif font, and
+    light, sepia, or dark modes; 
+  \item `download' for links to download the PDF versions; and 
+  \item `information about the toolbar' for a popup that shows
+    keyboard shortcuts for navigation.
+\end{itemize}
+Those keyboard shortcuts are: left and right arrow for moving to the
+previous and the next page, and `s' to toggle the navigation sidebar.
+
 \paragraph{Symbols and formulas} All logical symbols and formulas in
 this book are converted to MathML and displayed using
 \href{https://www.mathjax.org/}{MathJax}. MathJax provides additional
@@ -59,10 +73,13 @@ Subscripts should be pronounced by screen readers, although
 if the subscript is a number, they may not be. They can be
 represented by an underline, e.g., $A_2$ as \verb|A_2|.
 
-The expressions `\blank{}' and `\ifeff' are used throughout the textbook.
-`Iff' is short for `if and only if'. The HTML versions of both are
-provided with ARIA labels to help screen readers pronounce them
-properly (i.e., as `blank' and `if-eff').
+The expressions `\blank{}' and `\ifeff' (`if' with two `f's) are used
+throughout the textbook. In the HTML version, `\blank{}' includes an
+invisible spelled-out word `blank' which screen readers should read
+out loud. The abbreviation `\ifeff' is short for `if and only if'. In
+the HTML version it is coded using an invisible zero-space word joiner
+character which should make screen readers pronounce `\ifeff' as
+`if-eff'.
 
 \paragraph{Proofs} The natural deduction proofs in
 \cref{ch.NDTFL,ch.NDFOL,ch.ML} use vertical lines to indicate where
@@ -116,5 +133,6 @@ subproof levels of lines 6 and 7 is the same, but lines 6 and 7 are in
 different subproofs. If you cannot see the subproof lines, you have to
 pay special attention to how the subproof level numbers change
 \emph{and} when a formula is an assumption. A screen reader should
-announce line 7 as ``7, close subproof, 2, open subproof, $X$,
-AS.''
+announce line 7 as ``7, close subproof, 2, open subproof, $X$, AS.''
+The abbreviations `\PR' (for `Premise') and `\AS' (for `Assumption')
+are coded in the HTML version using the `\verb|abbr|' tag.
