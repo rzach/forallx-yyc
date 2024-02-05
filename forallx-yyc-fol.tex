@@ -1444,7 +1444,7 @@ Let's make this idea precise.
 
 For example, consider the formula
 	$$(\forall x(\atom{E}{x} \eor \atom{D}{y}) \eif \exists z(\atom{E}{x} \eif \atom{L}{z,x}))$$
-The scope of the universal quantifier `$\forall x$' is `$\forall x (\atom{E}{x} \eor \atom{D}{y})$', so the first `$x$' is bound by the universal quantifier. However, the second and third occurrence of `$x$' are free. Equally, the `$y$' is free. The scope of the existential quantifier `$\exists z$' is `$(\atom{E}{x} \eif \atom{L}{z,x})$', so `$z$' is bound.
+The scope of the universal quantifier `$\forall x$' is `$\forall x (\atom{E}{x} \eor \atom{D}{y})$', so the first `$x$' is bound by the universal quantifier. However, the second and third occurrence of `$x$' are free. Equally, the `$y$' is free. The scope of the existential quantifier `$\exists z$' is `$\exists z(\atom{E}{x} \eif \atom{L}{z,x})$', so `$z$' is bound.
 
 Formulas that do not have free variables, i.e., every variable is
 bound, are called \define{sentences}. Only sentences can be true or false.
