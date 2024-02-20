@@ -713,14 +713,21 @@ In what follow, we will use the notion of entailment rather a lot in this book. 
 The symbol `$\entails$' is known as \emph{the double turnstile}, since it looks like a turnstile with two horizontal beams.
 
 Let's be clear. `$\entails$' is not a symbol of TFL. Rather, it is a symbol of our metalanguage, augmented English (recall the difference between object language and metalanguage from \cref{s:UseMention}). So the metalanguage sentence:
-	\[P, P \eif Q \entails Q\]
+	\[\metav{A}, \metav{A} \eif \metav{B} \entails \metav{B}\]
 is \emph{just} an abbreviation for this metalanguage sentence: 
-	\begin{quote}
-		\item The TFL sentences `$P$' and `$P \eif Q$' entail `$Q$'
-	\end{quote}
-Note that there is no limit on the number of TFL sentences that can be mentioned before the symbol `$\entails$'. Indeed, we can even consider the limiting case:
+	\begin{itemize}
+		\item The TFL sentences $\metav{A}$ and $\metav{A} \eif \metav{B}$ entail $\metav{B}$
+	\end{itemize}
+Note that there is no limit on the number of TFL sentences that can be mentioned before the symbol~`$\entails$'. Indeed, we can even consider the limiting case:
 	$$\entails \metav{C}$$
-This says that there is no valuation which makes all the sentences mentioned on the left side of `$\entails$' true whilst making $\metav{C}$ false. Since \emph{no} sentences are mentioned on the left side of `$\entails$' in this case, this just means that there is no valuation which makes $\metav{C}$ false. Otherwise put, it says that every valuation makes $\metav{C}$ true. Otherwise put, it says that $\metav{C}$ is a tautology. Equally, to say that $\metav{A}$ is a contradiction, we can write:
+This says that there is no valuation which makes all the sentences
+mentioned on the left side of `$\entails$' true whilst making all
+sentences on the right side (in this case, $\metav{C}$) false. Since \emph{no} sentences are mentioned on the left
+side of `$\entails$' in this case, this just means that there is no
+valuation which makes $\metav{C}$ false. Otherwise put, it says that
+every valuation makes $\metav{C}$ true. Otherwise put, it says that
+$\metav{C}$ is a tautology. Equally, to say that $\metav{A}$ is a
+contradiction, we can write:
 	$$\metav{A} \entails\phantom{\metav{C}}$$
 For this says that no valuation makes $\metav{A}$ true.
 
@@ -746,7 +753,11 @@ Observe: $\metav{A} \entails \metav{C}$ \ifeff{} no valuation of the sentence le
 Observe: $\metav{A} \eif \metav{C}$ is a tautology \ifeff{} no valuation of the sentence letters makes $\metav{A} \eif \metav{C}$ false. Since a conditional is true except when its antecedent is true and its consequent false, $\metav{A} \eif \metav{C}$ is a tautology \ifeff{} no valuation makes $\metav{A}$ true and $\metav{C}$ false.
 
 Combining these two observations, we see that $\metav{A} \eif \metav{C}$  is a tautology \ifeff{}  $\metav{A} \entails \metav{C}$. But there is a really, really important difference between `$\entails$' and `$\eif$':
-	\factoidbox{`$\eif$' is a sentential connective of TFL.\\ `$\entails$' is a symbol of augmented English.
+	\factoidbox{
+		\begin{itemize}
+			\item `$\eif$' is a sentential connective of TFL.
+			\item `$\entails$' is a symbol of augmented English.
+		\end{itemize}
 	}
 Indeed, when `$\eif$' is flanked with two TFL sentences, the result is a longer TFL sentence. By contrast, when we use `$\entails$', we form a metalinguistic sentence that \emph{mentions} the surrounding TFL sentences.
 

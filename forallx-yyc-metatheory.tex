@@ -13,7 +13,7 @@ Sometimes it is useful to consider sentences of a particularly simple form. For 
 Let's say that a sentence is in \define{disjunctive normal form} \emph{\ifeff} it meets all of the following conditions:
 	\begin{compactlist}
 		\item[(\textsc{dnf1})] No connectives occur in the sentence other than negations, conjunctions and disjunctions;
-		\item[(\textsc{dnf2})] Every occurrence of negation has minimal scope (i.e.\ any `$\enot$' is immediately followed by an atomic sentence);
+		\item[(\textsc{dnf2})] Every occurrence of negation has minimal scope (i.e., any `$\enot$' is immediately followed by an atomic sentence);
 		\item[(\textsc{dnf3})] No disjunction occurs within the scope of any conjunction.
 	\end{compactlist}
 \newglossaryentry{disjunctive normal form}{
@@ -78,7 +78,7 @@ As it happens, $\metav{S}$ is true on four lines of its truth table, namely line
 	\end{compactlist}
 We now combine all of these conjunctions using~$\eor$, like so:
 $$(A \eand B \eand C) \eor (A \eand \enot B \eand C) \eor (\enot A \eand \enot B \eand C) \eor (\enot A \eand \enot B \eand \enot C)$$\label{longDNF}
-This gives us a sentence in DNF which is true on exactly those lines where one of the disjuncts is true, i.e.\ it is true on (and only on) lines 1, 3, 7, and 8. So this sentence has exactly the same truth table as $\metav{S}$. So we have a sentence in DNF that is logically equivalent to $\metav{S}$, which is exactly what we wanted!
+This gives us a sentence in DNF which is true on exactly those lines where one of the disjuncts is true, i.e., it is true on (and only on) lines 1, 3, 7, and 8. So this sentence has exactly the same truth table as $\metav{S}$. So we have a sentence in DNF that is logically equivalent to $\metav{S}$, which is exactly what we wanted!
 
 Now, the strategy that we just adopted did not depend on the specifics of $\metav{S}$; it is perfectly general. Consequently, we can use it to obtain a simple proof of the DNF Theorem.
 
@@ -460,7 +460,7 @@ For each sentence, find an equivalent sentence in DNF and one in CNF by giving a
 In this chapter we relate TFL's semantics to its natural deduction \emph{proof system} (as defined in \cref{ch.NDTFL}). We will prove that the formal proof system is safe: you can only prove sentences from premises from which they actually follow.
 Intuitively, a formal proof system is sound \ifeff{} it does not allow you to prove any invalid arguments. This is obviously a highly desirable property. It tells us that our proof system will never lead us astray. Indeed, if our proof system were not sound, then we would not be able to trust our proofs. The aim of this chapter is to prove that our proof system is sound.
 
-Let's make the idea more precise. We'll abbreviate a list of sentences using the greek letter $\Gamma$ (`gamma'). A formal proof system is \define{sound} (relative to a given semantics) \emph{\ifeff}, whenever there is a formal proof of $\metav{C}$ from assumptions among $\Gamma$, then $\Gamma$ genuinely entails $\metav{C}$ (given that semantics). Otherwise put, to prove that TFL's proof system is sound, we need to prove the following
+Let's make the idea more precise. We'll abbreviate a list of sentences using the Greek letter $\Gamma$ (`gamma'). A formal proof system is \define{sound} (relative to a given semantics) \emph{\ifeff}, whenever there is a formal proof of $\metav{C}$ from assumptions among $\Gamma$, then $\Gamma$ genuinely entails $\metav{C}$ (given that semantics). Otherwise put, to prove that TFL's proof system is sound, we need to prove the following
 
 \begin{factoidboxe}\textbf{Soundness Theorem.} For any sentences $\Gamma$ and $\metav{C}$: if $\Gamma\proves\metav{C}$, then $\Gamma \entails\metav{C}$
 \end{factoidboxe}
@@ -477,30 +477,71 @@ To begin with, we must make the idea of `leading us astray' more precise. Say th
 		\close
 		\have{fg}{F \eif G}\ci{f-g}
 	\end{fitchproof}\noindent\noindent
-Line $1$ is shiny \ifeff{} $F \eif (G \eand H) \entails F \eif (G \eand H)$. You should be easily convinced that line $1$ is, indeed, shiny! Similarly, line $4$ is shiny \ifeff{} $F \eif (G \eand H), F \entails G$. Again, it is easy to check that line $4$ is shiny. As is every line in this TFL-proof. We want to show that this is no coincidence. That is, we want to prove:
+Line $1$ is shiny \ifeff{} $F \eif (G \eand H) \entails F \eif (G \eand H)$. You should be easily convinced that line $1$ is, indeed, shiny! Similarly, line $4$ is shiny \ifeff{} $F \eif (G \eand H), F \entails G$. Again, it is easy to check that line~$4$ is shiny. As is every line in this TFL-proof. We want to show that this is no coincidence. That is, we want to prove:
 	\begin{factoidboxe}\textbf{Shininess Lemma.}
 		Every line of every TFL-proof is shiny.
 	\end{factoidboxe}\noindent
 Then we will know that we have never gone astray, on any line of a proof. Indeed, given the Shininess Lemma, it will be easy to prove the Soundness Theorem:
 
-\emph{Proof.} Suppose $\Gamma \proves \metav{C}$. Then there is a TFL-proof, with $\metav{C}$ appearing on its last line, whose only undischarged assumptions are among $\Gamma$. The Shininess Lemma tells us that every line on every TFL-proof is shiny. So this last line is shiny, i.e.\ $\Gamma \entails \metav{C}$. QED
+\emph{Proof.} Suppose $\Gamma \proves \metav{C}$. Then there is a TFL-proof, with $\metav{C}$ appearing on its last line, whose only undischarged assumptions are among $\Gamma$. The Shininess Lemma tells us that every line on every TFL-proof is shiny. So this last line is shiny, i.e., $\Gamma \entails \metav{C}$. QED
 
 It remains to prove the Shininess Lemma.
 
-To do this, we observe that every line of any TFL-proof is obtained by applying some rule. So what we want to show is that no application of a rule of TFL's proof system will lead us astray. More precisely, say that a rule of inference is \define{rule-sound} \emph{\ifeff} for all TFL-proofs, if we obtain a line on a TFL-proof by applying that rule, and every earlier line in the TFL-proof is shiny, then our new line is also shiny. What we need to show is that \emph{every} rule in TFL's proof system is rule-sound.
+To do this, we observe that every line of any TFL-proof is either a
+premise or an assumption, or it is obtained by applying some rule.
+Premises are automatically shiny: if $\metav{A}$ is a premise, then it
+is among the sentences in~$\Gamma$, and $\Gamma \entails \metav{A}$
+trivially. Assumptions are also shiny, since the any assumption
+$\metav{A}$ depends on itself, and $\metav{A} \entails \metav{A}$. So
+what we want to show is that no application of a rule of TFL's proof
+system will lead us astray. More precisely, say that a rule of
+inference is \define{rule-sound} \emph{\ifeff} for all TFL-proofs, if
+we obtain a line on a TFL-proof by applying that rule, and every
+earlier line in the TFL-proof is shiny, then our new line is also
+shiny. What we need to show is that \emph{every} rule in TFL's proof
+system is rule-sound.
 
-We will do this in the next section. But having demonstrated the rule-soundness of every rule, the Shininess Lemma will follow immediately:
+We will do this below. But having demonstrated the rule-soundness of every rule, the Shininess Lemma will follow immediately:
 
-\emph{Proof.} Fix any line, line $n$, on any TFL-proof. The sentence written on line $n$ must be obtained using a formal inference rule which is rule-sound. This is to say that, if every earlier line is shiny, then line $n$ itself is shiny. Hence, by strong induction on the length of TFL-proofs, every line of every TFL-proof is shiny. QED
+\emph{Proof.} Start with line~$1$ of any TFL proof. It must be either
+a premise or an assumption, and those are all shiny, as we've seen
+above. Take the next line, $2$. If it is a premise or assumption, it
+is shiny. If not, it is obtained from line~$1$ using an inference
+which is rule-sound. Since line~$1$ is shiny, line~$2$ is also shiny.
+Take the next line, $3$. If it is a premise or assumption, it
+is shiny. If not, it is obtained from a previous line using an inference
+which is rule-sound, and we've established that all previous lines are
+shiny. Thus, line~$3$ is also shiny.
+And so on. In general, the sentence written on line $n$ must either be
+a premise or assumption (which is shiny) or be obtained using a formal
+inference rule which is rule-sound. Since every earlier line is shiny,
+line~$n$ itself is shiny. We can simply go through this
+reasoning, for any TFL proof, starting with line~$1$ and continuing to
+the last line, and get that every line of every TFL-proof is shiny.
+QED
 
-Note that this proof appeals to a principle of strong induction on the length of TFL-proofs. This is the first time we have seen that principle, and you should pause to confirm that it is, indeed, justified.
+It remains to show that every rule is rule-sound. This is not
+difficult, but it is time-consuming, since we need to check each rule
+individually, and TFL's proof system has plenty of rules! To speed up
+the process marginally, we will introduce a convenient abbreviation:
+`$\Delta_i$' (`delta') will abbreviate the assumptions (if any) on
+which line~$i$ depends in our TFL-proof (context will indicate which
+TFL-proof we have in mind). This includes all premises of our proof,
+and all assumptions of subproofs which are still open at line~$i$.
+Let's first record our observation about premises and assumptions from above.
 
-It remains to show that every rule is rule-sound. This is not difficult, but it is time-consuming, since we need to check each rule individually, and TFL's proof system has plenty of rules! To speed up the process marginally, we will introduce a convenient abbreviation: `$\Delta_i$' (`delta') will abbreviate the assumptions (if any) on which line $i$ depends in our TFL-proof (context will indicate which TFL-proof we have in mind).
-
-\begin{factoidboxe}Introducing an assumption is rule-sound.
+\begin{factoidboxe}
+	Premises and assumptions in TFL proofs are shiny.
 \end{factoidboxe}
 
-If $\metav{A}$ is introduced as an assumption on line $n$, then $\metav{A}$ is among $\Delta_n$, and so $\Delta_n \entails \metav{A}$.
+If $\metav{A}$ is a premise on line~$n$, then it is among $\Delta_n$
+as that includes all premises of the proof. If it is introduced as an
+assumption of a subproof on line~$n$, then everything in the subproof
+(including line~$n$, i.e., $\metav{A}$ itself) depends on~$\metav{A}$,
+and so $\metav{A}$ is among~$\Delta_n$. In either case, $\Delta_n
+\entails \metav{A}$.
+
+Now let's proceed to show that all the inference rules are rule-sound.
 
 \begin{factoidboxe}$\eand$I is rule-sound.
 \end{factoidboxe}
@@ -511,7 +552,7 @@ If $\metav{A}$ is introduced as an assumption on line $n$, then $\metav{A}$ is a
 	\have[j]{b}{\metav{B}}
 	\have[n]{c}{\metav{A}\eand\metav{B}} \ai{a, b}
 \end{fitchproof}\noindent
-To show that $\eand$I is rule-sound, we assume that every line before line $n$ is shiny; and we aim to show that line $n$ is shiny, i.e.\ that $\Delta_n \entails \metav{A} \eand \metav{B}$.
+To show that $\eand$I is rule-sound, we assume that every line before line $n$ is shiny; and we aim to show that line $n$ is shiny, i.e., that $\Delta_n \entails \metav{A} \eand \metav{B}$.
 
 So, let $v$ be any valuation that makes all of $\Delta_{n}$ true.
 
@@ -519,7 +560,7 @@ We first show that $v$ makes $\metav{A}$ true. To prove this, note that all of $
 
 We can similarly see that $v$ makes $\metav{B}$ true.
 
-So $v$ makes $\metav{A}$ true and $v$ makes $\metav{B}$ true. Consequently, $v$ makes $\metav{A}\eand\metav{B}$ true. So any valuation that makes all of the sentences among $\Delta_{n}$ true also makes $\metav{A} \eand \metav{B}$ true. That is: line $n$ is shiny. QED
+So $v$ makes $\metav{A}$ true and $v$ makes $\metav{B}$ true. Consequently, $v$ makes $\metav{A}\eand\metav{B}$ true. So any valuation that makes all sentences among $\Delta_{n}$ true also makes $\metav{A} \eand \metav{B}$ true. That is: line $n$ is shiny. QED
 
 
 All of the remaining lemmas establishing rule-soundness will have, essentially, the same structure as this one did.
@@ -621,7 +662,12 @@ QED
 
 And that's that! We have shown that every rule---basic or otherwise---is rule-sound, which is all that we required to establish the Shininess Lemma, and hence the Soundness Theorem.
 
-But it might help to round off this chapter if we repeat my informal explanation of what we have done. A formal proof is just a sequence---of arbitrary length---of applications of rules. We have shown that any application of any rule will not lead you astray. It follows (by induction)that no formal proof will lead you astray. That is: our proof system is sound.
+But it might help to round off this chapter if we repeat my informal
+explanation of what we have done. A formal proof is just a
+sequence---of arbitrary length---of applications of rules. We have
+shown that any application of any rule will not lead you astray. It
+follows that no formal proof will lead you astray.
+That is: our proof system is sound.
 
 \practiceproblems
 
