@@ -129,8 +129,8 @@ Suppose `$A$' is a one-place predicate; then `$\atom{A}{a}$' is false and `$\ato
 We defined a \define{valuation} in TFL as any assignment of truth and falsity to sentence letters. In FOL, we are going to define an \define{interpretation} as consisting of four things:
 	\begin{compactlist}
 		\item the specification of a domain;
-		\item for each sentence letter we care to consider, a truth value;
-		\item for each name that we care to consider, an assignment of exactly one object within the domain;
+		\item each sentence letter we care to consider is assigned a truth value;
+		\item each name that we care to consider is assigned exactly one object within the domain;
 		\item for each predicate that we care to consider (apart from
 		`$=$'), a specification of what things (in what order) the
 		predicate is to be true of.
@@ -340,19 +340,34 @@ substitution instance of this formula, and not `$\atom{F}{e} \eif
 is bound by `$\forall x$'. (You may want to review \cref{s:FreeVars}
 in this connection.)
 
-Our interpretation will include a specification of which names correspond to which objects in the domain. Take any object in the domain, say, $d$, and a name $\metav{c}$ which is not already assigned by the interpretation. If our interpretation is $\mathbf{I}$, then we can consider the interpretation $\mathbf{I}[d/\metav{c}]$ which is just like $\mathbf{I}$ except it \emph{also} assigns the name $\metav{c}$ to the object~$d$. Then we can say that $d$ \define{satisfies} the formula $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in the interpretation~$\mathbf{I}$ if, and only if, $\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in $\mathbf{I}[d/\metav{c}]$. (If $d$ satisfies $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ we also say that $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ is \emph{true of}~$d$.) 
+Our interpretation will include a specification of which names
+correspond to which objects in the domain. Take any object in the
+domain, say, $d$, and a name $\metav{c}$ which is not already assigned
+by the interpretation. If our interpretation is $\mathbf{I}$, then we
+can consider the interpretation $\mathbf{I}[d/\metav{c}]$ which is
+just like $\mathbf{I}$ except it \emph{also} assigns the object~$d$ to
+the name $\metav{c}$. Then we can say that $d$ \define{satisfies} the
+formula $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in the
+interpretation~$\mathbf{I}$ if, and only if,
+$\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in
+$\mathbf{I}[d/\metav{c}]$. (We assume that the name $\metav{c}$ does
+not already occur in $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$.)
+If $d$ satisfies $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ we
+also say that $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ is
+\emph{true of}~$d$.
 
 \factoidbox{
 	\begin{factoiditems}
-		\item The interpretation $\mathbf{I}[d/\metav{c}]$ is just like the
-		interpretation $\mathbf{I}$ except it also assigns the name
-		$\metav{c}$ to the object~$d$.
+		\item The interpretation $\mathbf{I}[d/\metav{c}]$ is just like
+		the interpretation $\mathbf{I}$ except it also assigns the
+		object~$d$ to the name $\metav{c}$.
 
 		\item An object $d$ \define{satisfies}
 		$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in
 		interpretation~$\mathbf{I}$ \textbf{\ifeff}
 		$\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in
-		$\mathbf{I}[d/\metav{c}]$.
+		$\mathbf{I}[d/\metav{c}]$ (where the name $\metav{c}$ does not
+		already occur in $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$).
 	\end{factoiditems}
 }
 
@@ -371,15 +386,17 @@ $\forall \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$
 will be true in $\mathbf{I}$ \ifeff, for any object~$d$ in the domain,
 $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ is true in
 $\mathbf{I}[d/\metav{c}]$, i.e., no matter what object (in the domain)
-we name with $\metav{c}$. In other words, $\forall \metav{x}
-\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$ is true \ifeff{} every
-object in the domain satisfies $\metav{A}(\ldots \metav{x} \ldots
-\metav{x} \ldots)$. Similarly, the sentence $\exists
-\metav{x}\metav{A}$ will be true \ifeff{} there is \emph{some} object that
-satisifes $\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$, i.e.,
+we name by the new name~$\metav{c}$. In other words, $\forall
+\metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$ is true
+\ifeff{} every object in the domain satisfies $\metav{A}(\ldots
+\metav{x} \ldots \metav{x} \ldots)$. Similarly, the sentence $\exists
+\metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$ will be
+true \ifeff{} there is \emph{some} object that satisifes
+$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$, i.e.,
 $\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$ is true in
-$\mathbf{I}[d/\metav{c}]$ for some object~$d$.
-	\factoidbox{
+$\mathbf{I}[d/\metav{c}]$ for some object~$d$ and a new
+name~$\metav{c}$.
+\factoidbox{
 		\begin{factoiditems}
 		\item $\forall \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff}
 		every object in the domain satisfies $\metav{A}(\ldots
