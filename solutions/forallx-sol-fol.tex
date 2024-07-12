@@ -163,8 +163,6 @@ $\enot \atom{A}{h} \eand \enot \atom{A}{a}, \forall x(\atom{K}{x} \eif (\atom{A}
 \item[\text{domain}] people
 \item[\atom{S}{x}] \gap{x} expects the Spanish Inquisition
 \item[\atom{T}{x}] \gap{x} knows the troubles I've seen
-\item[h] Holmes
-\item[a] Watson
 \end{ekey}
 $\forall x\enot \atom{S}{x}, \forall x \enot \atom{T}{x} \therefore \forall x (\atom{S}{x} \eif \atom{T}{x})$}
 \item All babies are illogical. Nobody who is illogical can manage a crocodile. Berthold is a baby. Therefore, Berthold is unable to manage a crocodile.
@@ -242,7 +240,7 @@ Comment: the FOL sentence just written does not require that anyone likes samura
 \item There is a dog that is larger than Shane.
 \item[] \myanswer{$\exists x (\atom{D}{x} \eand \atom{L}{x,h})$}
 \item If there is a dog larger than Daisy, then there is a dog larger than Shane.
-\item[] \myanswer{$\exists x (\atom{D}{x} \eand \atom{L}{x}\emph{d}) \eif \exists x(\atom{D}{x} \eand \atom{L}{x,h})$}
+\item[] \myanswer{$\exists x (\atom{D}{x} \eand \atom{L}{x,d}) \eif \exists x(\atom{D}{x} \eand \atom{L}{x,h})$}
 \item No animal that likes samurai movies is larger than Shane.
 \item[] \myanswer{$\forall x (\atom{S}{x} \eif \enot \atom{L}{x,h})$}
 \item No dog is larger than Daisy.
@@ -251,7 +249,7 @@ Comment: the FOL sentence just written does not require that anyone likes samura
 \item[] \myanswer{$\forall x (\enot \atom{S}{x} \eif \atom{L}{x,r})$\\
 Comment: this is very poor, though! For `dislikes' does not mean the same as `does not like'.}
 \item There is an animal that is between Rave and Shane in size.
-\item[] \myanswer{$\exists x((\atom{L}{b,x} \eand \atom{L}{x,h}) \eor (\atom{L}{h,x} \eand \atom{L}{x,r}))$}
+\item[] \myanswer{$\exists x((\atom{L}{r,x} \eand \atom{L}{x,h}) \eor (\atom{L}{h,x} \eand \atom{L}{x,r}))$}
 \item There is no dog that is between Rave and Shane in size.
 \item[] \myanswer{$\forall x \bigl(\atom{D}{x} \eif \enot\bigl[(\atom{L}{b,x} \eand \atom{L}{x,h}) \eor (\atom{L}{h,x} \eand \atom{L}{x,r})\bigr]\bigr)$}
 \item No dog is larger than itself.

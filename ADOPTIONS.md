@@ -23,6 +23,7 @@ text in logic courses:
 - University of Cincinnati
 - University of Illinois, Urbana-Champaign
 - University of Indiana
+- University of Maryland, College Park
 - University of Michigan
 - University of Notre Dame
 - University of Toronto
