@@ -1021,7 +1021,7 @@ We have already seen that transitivity can be symbolized in FOL. The
 others can, too:
 \begin{itemize}
 	\item $R$ is reflexive: $\forall x\,\atom{R}{x,x}$
-	\item $R$ is symmetric: \[\forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,z})\]
+	\item $R$ is symmetric: \[\forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,x})\]
 	\item $R$ is anti-symmetric: \[\lnot\exists x\exists y((\atom{R}{x,y}
 	\eand \atom{R}{y,x}) \eand \enot x=y)\] or, equivalently, \[\forall x\forall y((\atom{R}{x,y}
 	\eand \atom{R}{y,x}) \eif x=y)\]
@@ -1060,7 +1060,7 @@ Show that a relation can be both symmetric and anti-symmetric by
 giving an interpretation that makes both of the following sentences
 true:
 \begin{align*}
-	& \forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,z})\\
+	& \forall x\forall y(\atom{R}{x,y} \eif \atom{R}{y,x})\\
 	& \forall x\forall y((\atom{R}{x,y} \eand \atom{R}{y,x}) \eif x=y)
 \end{align*}
 
