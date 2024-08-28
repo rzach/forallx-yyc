@@ -316,11 +316,22 @@ This is of course harder to prove than for the primitive connectives. For instan
 
 \section{Substitutability of equivalents}
 
-Recall from \cref{sec:equivalent} that $\metav{P}$ and $\metav{Q}$ are equivalent (in TFL) iff, for every valuation, their truth values agree.  We have seen many examples of this and used both truth tables and natural dedcution proofs to establish such equivalences.  In \cref{c:NormalForms} we've even proved that ever sentence of TFL is equivalent to one in conjunctive and one in disjunctive normal form.  If $\metav{P}$ and $\metav{Q}$ are equivalent, they always have the same truth value, either one entails the other, and from either one you can prove the other.
+Recall from \cref{sec:equivalent} that $\metav{P}$ and $\metav{Q}$ are equivalent (in TFL) iff, for every valuation, their truth values agree.  We have seen many examples of this and used both truth tables and natural deduction proofs to establish such equivalences.  In \cref{c:NormalForms} we've even proved that every sentence of TFL is equivalent to one in conjunctive and one in disjunctive normal form.  If $\metav{P}$ and~$\metav{Q}$ are equivalent, they always have the same truth value, either one entails the other, and from either one you can prove the other.
 
 Equivalent sentences are not the same, of course: the sentences $\enot\enot A$ and~$A$ may always have the same truth value, but the first starts with the `$\enot$' symbol while the second doesn't.  But you may wonder if it's always true that we can replace one of a pair of equivalent sentences by the other, and the results will be equivalent, too.  For instance, consider $\enot\enot A \eif B$ and $A \eif B$.  The second results from the first by replacing `$\enot\enot A$' by~`$A$'.  And these two sentences are also equivalent.
 
-This is a general fact, and it is not hard to see why it is true.  In any valuation, we compute the truth value of a sentence ``from the inside out.'' So when it comes to determining the truth value of `$\enot\enot A \eif B$', we first compute the truth value of `$\enot\enot A$', and the truth value of the overall sentence then just depends on that truth value (true or false, as the case may be) and the rest of the sentence (the truth value of~`$B$' and the truth table for~`$\eif$'). But since `$\enot\enot A$' are equivalent, they always have the same truth value in a given valuation---hence, replacing `$\enot\enot A$' by~`$A$' cannot change the truth value of the overall sentence.  The same of course is true for any other sentence equivalent to `$\enot\enot A$', say, `$A \eand (A \eor A)$'.
+This is a general fact, and it is not hard to see why it is true.  In
+any valuation, we compute the truth value of a sentence ``from the
+inside out.'' So when it comes to determining the truth value of
+`$\enot\enot A \eif B$', we first compute the truth value of
+`$\enot\enot A$', and the truth value of the overall sentence then
+just depends on that truth value (true or false, as the case may be)
+and the rest of the sentence (the truth value of~`$B$' and the truth
+table for~`$\eif$'). But since `$\enot\enot A$' and~`$A$' are equivalent,
+they always have the same truth value in a given valuation---hence,
+replacing `$\enot\enot A$' by~`$A$' cannot change the truth value of
+the overall sentence.  The same of course is true for any other
+sentence equivalent to `$\enot\enot A$', say, `$A \eand (A \eor A)$'.
 
 To state the result in general, let's use the notation $\metav{R}(\metav{P})$ to mean a sentence which contains the sentence $\metav{P}$ as a part. Then by $\metav{R}(\metav{Q})$ we mean the result of replacing the occurrence of $\metav{P}$ by the sentence~$\metav{Q}$.  For instance, if $\metav{P}$ is the sentence letter~`$A$', $\metav{Q}$ is the sentence~`$\enot\enot A$', and $\metav{R}(\metav{P})$ is `$A \eif B$', then $\metav{R}(\metav{Q})$ is `$\enot\enot A \eif B$'.
 
