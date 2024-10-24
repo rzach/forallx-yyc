@@ -164,9 +164,6 @@ can represent it just by drawing an arrow between two objects, and
 stipulate that `$\atom{R}{x,y}$' is to hold of $x$ and $y$ \ifeff{} there is an arrow running from $x$ to $y$ in our diagram. As an
 example, we might offer:
 \begin{center}
-\begin{arialabel}{The numbers 1, 2, 3, and 4 are connected
-	by arrows. There are arrows from 1 to 2 and 3, from 2 to 3, from 3 to
-	4, and from 4 to 1.}
 \begin{tikzpicture}
 \node (atom1) at (0,2) {$1$};
 \node (atom2) at (2,2) {$2$};
@@ -178,7 +175,9 @@ example, we might offer:
 \draw[->, thick] (atom4)--(atom1);
 \draw[->, thick] (atom1) -- (atom3);
 \end{tikzpicture}
-\end{arialabel}
+\bmlDescription{The numbers 1, 2, 3, and 4 are connected
+by arrows. There are arrows from 1 to 2 and 3, from 2 to 3, from 3 to
+4, and from 4 to 1.}
 \end{center}
 This diagram could be used to describe an interpretation whose domain is the first four positive whole numbers, and which interprets `$\atom{R}{x,y}$' as being true of and only of:
 	\begin{center}

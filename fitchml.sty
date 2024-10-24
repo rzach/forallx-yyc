@@ -43,7 +43,7 @@
 \</thead>}
 \def\nd@pline#1{\<th class="fml-pline">\ensuremath{\nd@num{#1}}\</th>}
 \def\nd@scope{%
-  \<td class="fml-subproof">\<div>%
+  \<td class="fml-subproof">\<div>\<span>%
   \iffmlClose
     close subproof,
     \global\fmlClosefalse
@@ -53,12 +53,12 @@
     \global\fmlOpenfalse
   \fi
   \arabic{nd@scope}%
-  \</div>\</td>}
+  \</span>\</div>\</td>}
 % cant get this to work
 \def\nd@just#1{%
   \<td class="fml-just">%
-  \<div class="fml-just">%
-  #1\</div>\</td>}
+  \<div class="fml-just">\<span>%
+  #1\</span>\</div>\</td>}
 
 \def\PR{\by{\<abbr title="Premise">PR\</abbr>}{}}
 \def\AS{\by{\<abbr title="Assumption">AS\</abbr>}{}}
@@ -99,10 +99,10 @@
 % \def\nd@g#1{\nd@f{\makebox[\nd@indent][c]{$#1$}}}
 \def\nd@g#1{} % Guards not supported!
 % \def\nd@f#1{\raisebox{0pt}[0pt][0pt]{$#1$}}
-\def\nd@f#1{\<div class="fml-fmla">\ensuremath{#1}\</div>} % \raisebox{0pt}[0pt][0pt]{$#1$}}
+\def\nd@f#1{\<div class="fml-fmla">\<span>\ensuremath{#1}\</span>\</div>} % \raisebox{0pt}[0pt][0pt]{$#1$}}
 % \def\nd@u#1{\makebox[0pt][l]{\settowidth{\nd@dim}{\nd@f{#1}}%
 %     \addtolength{\nd@dim}{2\nd@hsep}\hspace{-\nd@hsep}\rule[-\nd@depthdim]{\nd@dim}{\nd@thickness}}\nd@f{#1}}
-\def\nd@u#1{\<div class="fml-as">\ensuremath{#1}\</div>}
+\def\nd@u#1{\<div class="fml-as">\<span>\ensuremath{#1}\</span>\</div>}
 
 % \def\nd@by#1#2{\ifx\nd@x#2\nd@x\gdef\nd@byt{\mbox{#1}}\else\gdef\nd@byt{\mbox{#1, \ndref{#2}}}\fi}
 \def\nd@by#1#2{\ifx\nd@x#2\nd@x\gdef\nd@byt{#1}\else\gdef\nd@byt{#1 \ndref{#2}}\fi}

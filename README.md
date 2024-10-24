@@ -126,6 +126,20 @@ to get the connectives to be ∼, &, ⊃, ≡ instead of ¬, ∧, →, ↔, and
 atomic formulas _Lab_ instead of _L(a,b)_, copy
 `forallxyyc-local-sample.sty` to that file.
 
+## Convert to HTML
+
+To convert the book to HTML:
+
+- Install [LaTeXML](https://math.nist.gov/~BMiller/LaTeXML/).
+- Install [BookML](https://vlmantova.github.io/bookml/) and its
+  dependencies. If your source files live in, say, `~/forallx-yyc` you
+  should have a subdirectory `~/forallx-yyc/bookml`.
+- run `make -f Bookml.mk` from inside `~/forallx-yyc`.
+
+If this works, your HTML files can be found in
+`~/forallx-yyc/auxdir/html/forallxyyc-html/` and the SCORM package in
+`~/forallx-yyc/SCORM.forallxyyc-html.zip`.
+
 ## Credits and License
 
 _forall x: Calgary_ is based on [_forall x:

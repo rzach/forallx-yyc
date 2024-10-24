@@ -149,14 +149,13 @@ Suppose that Lara has drawn some shapes on a piece of paper, and coloured some o
 As it happens, Lara has drawn the following:
 
 \begin{center}
-\begin{arialabel}{There are three shapes: the first shape is a grey circle labelled A, some empty space, the second shape is a white circle labelled C, and the fourth a white square labelled D.}
 \begin{tikzpicture}
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, diamond, phantom_shape] (cat2)  { } ;
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C} ;
 	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
-\end{arialabel}
+\bmlDescription{There are three shapes: the first shape is a grey circle labelled A, some empty space, the second shape is a white circle labelled C, and the fourth a white square labelled D.}
 \end{center}
 
 \noindent In this case, our claim is surely true.  Shapes C and D are not grey, and so can hardly present \emph{counterexamples} to our claim. Shape A \emph{is} grey, but fortunately it is also circular. So our claim has no counterexamples. It must be true. That means that each of the following \emph{instances} of our claim must be true too:
@@ -174,17 +173,16 @@ As it happens, Lara has drawn the following:
 However, if Lara had drawn a fourth shape, thus:
 
 \begin{center}
-\begin{arialabel}{There are four shapes: the first shape is
-	a grey circle labelled A, the second a grey square labelled B, the
-	third a white circle labelled C, and the fourth a white square
-	labelled D.}
 \begin{tikzpicture}
 	\node[circle, grey_shape] (cat1) {A};
 	\node[right=10pt of cat1, grey_shape] (cat2)  {B};
 	\node[right=10pt of cat2, circle, white_shape] (cat3)  {C};
 	\node[right=10pt of cat3, white_shape] (cat4)  {D};
 \end{tikzpicture}
-\end{arialabel}
+\bmlDescription{There are four shapes: the first shape is
+a grey circle labelled A, the second a grey square labelled B, the
+third a white circle labelled C, and the fourth a white square
+labelled D.}
 \end{center}
 
 \noindent then our claim would have been false. So this claim must also be false:

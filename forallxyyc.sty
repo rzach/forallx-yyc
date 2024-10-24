@@ -112,7 +112,7 @@
 
 % create a blank that SRs read out as "blank"
 \iflatexml
-\newcommand*{\blank}{\underline{blank}\bmlPlusClass{fxblank}}
+\newcommand*{\blank}{\underline{blank~}\bmlPlusClass{fxblank}}
 \else
 \newcommand*{\blank}{\underline{\hspace*{2.5em}}}
 \fi
@@ -314,9 +314,9 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows,positioning,shapes} 
 
-\tikzset{phantom_shape/.style={thick, fill=black!0, minimum width=30pt, minimum height=30pt}, % TB: renders the shape invisible
+\tikzset{phantom_shape/.style={thick, fill=none, minimum width=30pt, minimum height=30pt}, % TB: renders the shape invisible
 		grey_shape/.style={thick, fill=black!20, draw, minimum width=30pt, minimum height=30pt}, % TB: renders a light grey shape with a black outline
-		white_shape/.style={thick, fill=black!0, draw, minimum width=30pt, minimum height=30pt} % TB: renders a white shape with a black outline
+		white_shape/.style={thick, fill=none, draw, minimum width=30pt, minimum height=30pt} % TB: renders a white shape with a black outline
 		}
 
 %    ****************************************
@@ -372,7 +372,7 @@
 % aria-label environment to provide accessible descriptions for inline
 % SVG diagrams
 \iflatexml
-  \newenvironment{arialabel}[1]{\<div aria-label="#1">\<div aria-hidden="true" class="ltx\_centering">}{\</div>\</div>}
+  \newenvironment{arialabel}[1]{\<span class="test">\<div aria-hidden="true" class="ltx\_centering">}{\</div>\</span>}
 \else
   \newenvironment{arialabel}[1]{}{}
 \fi
