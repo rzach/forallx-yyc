@@ -9,9 +9,10 @@ text in logic courses:
 - Indiana University
 - Kansas State University
 - McGill University
+- New York University
+- Northwestern University
 - Rutgers University
 - Old Dominion University
-- Northwestern University
 - Universität Regensburg
 - University of Alberta
 - University of British Columbia
@@ -23,6 +24,7 @@ text in logic courses:
 - University of Cincinnati
 - University of Illinois, Urbana-Champaign
 - University of Indiana
+- University of Manitoba
 - University of Maryland, College Park
 - University of Michigan
 - University of Notre Dame
