@@ -200,12 +200,29 @@ Suppose the answer to the second question is ``yes'', and consider another argum
 	\end{earg}
 If we're allowing only conceivable scenarios, this is also a valid argument. If you imagine Priya being an ophthalmologist, you thereby imagine Priya being an eye doctor. That's just what ``ophthalmologist'' and ``eye doctor'' mean.  A scenario where Priya is an ophthalmologist but not an eye doctor is ruled out by the conceptual connection between these words.
 
-Depending on what kinds of cases we consider as potential counterexamples, then, we arrive at different notions of consequence and validity. We might call an argument \define{nomologically valid} if there are no counterexamples that don't violate the laws of nature, and an argument \define{conceptually valid} if there are no counterexamples that don't violate conceptual connections between words.
-For both of these notions of validity, aspects of the world (e.g., what the laws of nature are) and aspects of the meaning of the sentences in the argument (e.g., that ``ophthalmologist'' just means a kind of eye doctor) figure into whether an argument is valid.
+Depending on what kinds of cases we consider as potential
+counterexamples we arrive at different notions of consequence and
+validity. Validity is characterized by the absence of counterexamples.
+But what counts as a counterexample may be different for different
+notions. E.g., for \define{nomological validity}, counterexamples that
+violate the laws of nature are excluded. So, we might call an argument
+\define{nomologically valid} if there are no counterexamples that
+don't violate the laws of nature, and an argument \define{conceptually
+valid} if there are no counterexamples that don't violate conceptual
+connections between words. For both of these notions of validity,
+aspects of the world (e.g., what the laws of nature are) and aspects
+of the meaning of the sentences in the argument (e.g., that
+``ophthalmologist'' just means a kind of eye doctor) figure into
+whether an argument counts as valid.
 
 \section{Formal validity}\label{s:FormalValidity}
 
-One distinguishing feature of \emph{logical} consequence, however, is that it should not depend on the content of the premises and conclusion, but only on their logical form. In other words, as logicians we want to develop a theory that can make finer-grained distinctions still. For instance, both
+One distinguishing feature of \emph{logical} consequence, however, is
+that it should not depend on the content of the premises and
+conclusion, but only on their logical form. In other words, as
+logicians we want to develop a theory that captures yet another way in
+which arguments can be valid. For instance,
+both
 \begin{earg}
 	\item[] Priya is either an ophthalmologist or a dentist.
 	\item[] Priya isn't a dentist.
@@ -254,11 +271,43 @@ Priya is an ophthalmologist but not an eye doctor.  That case is not a
 conceivable situation: it is ruled out by the meanings of
 ``ophthalmologist'' and ``eye doctor.''
 
-When we consider cases of various kinds in order to evaluate the validity of an argument, we will make a few assumptions. The first assumption is that every case makes every sentence true or not true---at least, every sentence in the argument under consideration. That means first of all that any imagined scenario which leaves it undetermined if a sentence in our argument is true will not be considered as a potential counterexample. For instance, a scenario where Priya is a dentist but not an ophthalmologist will count as a case to be considered in the first few arguments in this section, but not as a case to be considered in the last two: it doesn't tell us if Mei is a mathematician, a botanist, or an acrobat. If a case doesn't make a sentence true, we say it makes it \define{false}. We'll thus assume that cases make sentences true or false but never both.\footnote{Even if these assumptions seem common-sensical to you, they are controversial among philosophers of logic. First of all, there are logicians who want to consider cases where sentences are neither true nor false, but have some kind of intermediate level of truth. More controversially, some philosophers think we should allow for the possibility of sentences to be both true and false at the same time. There are systems of logic in which sentences can be neither true nor false, or both, but we will not discuss them in this book.}
+When we consider cases of various kinds in order to evaluate the
+validity of an argument, we will make a one important assumption. We
+assume that every case makes every sentence under consideration true
+or not true. That means first of all that any imagined scenario which
+leaves it undetermined if a sentence in our argument is true will not
+be considered as a potential counterexample. For instance, a scenario
+where Priya is a dentist but not an ophthalmologist will count as a
+case to be considered in the first few arguments in this section, but
+not as a case to be considered in the last two: it doesn't tell us if
+Mei is a mathematician, a botanist, or an acrobat. If a case doesn't
+make a sentence true, we say it makes it \define{false}. We'll thus
+assume that cases make sentences true or false but never
+both.\footnote{The assumption that sentences are true or false and not
+both is called ``bivalence.'' Even if this assumption seems
+common-sensical to you, it is controversial among philosophers of
+logic. First of all, there are logicians who want to consider cases
+where sentences are neither true nor false, but have some kind of
+intermediate level of truth. More controversially, some philosophers
+think we should allow for the possibility of sentences to be both true
+and false at the same time. There are systems of logic in which
+sentences can be neither true nor false, or both, but we will not
+discuss them in this book.}
 
 \section{Sound arguments}
 
-Before we go on and execute this strategy, a few clarifications. Arguments in our sense, as conclusions which (supposedly) follow from premises, are of course used all the time in everyday and scientific discourse. When they are, arguments are given to support or even prove their conclusions. Now, if an argument is valid, it will support its conclusion, but \emph{only if} its premises are all true. Validity rules out the possibility that the premises are true and the conclusion is not true at the same time. It does not, by itself, rule out the possibility that the conclusion is not true, period.  In other words, it is perfectly possibly for a valid argument to have a conclusion that isn't true!
+Before we go on and execute this strategy, a few clarifications. We
+have defined arguments as collections of sentences in which one (the
+conclusion) is supposed to follow from the others (the premises).
+Arguments in this sense are used all the time in everyday and
+scientific discourse. When they are, arguments are given to support or
+even prove their conclusions. Now, if an argument is valid, it will
+support its conclusion, but \emph{only if} its premises are all true.
+Validity rules out the possibility that the premises are true and the
+conclusion is not true at the same time. It does not, by itself, rule
+out the possibility that the conclusion is not true, period. In other
+words, it is perfectly possibly for a valid argument to have a
+conclusion that isn't true!
 
 Consider this example:
 	\begin{earg}
@@ -276,7 +325,7 @@ Conversely, having true premises and a true conclusion is not enough to make an 
 	\end{earg}
 The premises and conclusion of this argument are, as a matter of fact, all true, but the argument is invalid. If Paris were to declare independence from the rest of France, then the conclusion would no longer be true, even though both of the premises would remain true. Thus, there is a case where the premises of this argument are true without the conclusion being true. So the argument is invalid.
 
-The important thing to remember is that validity is not about the actual truth or falsity of the sentences in the argument. It is about whether it is \emph{possible} for all the premises to be true and the conclusion to be not true at the same time (in some hypothetical case). What is in fact the case has no special role to play; and what the facts are does not determine whether an argument is valid or not.\footnote{Well, there is one case where it does: if the premises are in fact true and the conclusion is in fact not true, then we live in a counterexample; so the argument is invalid.} Nothing about the way things are can by itself determine if an argument is valid. It is often said that logic doesn't care about feelings. Actually, it doesn't care about facts, either.
+The important thing to remember is that validity is not about the \emph{actual} truth or falsity of the sentences in the argument. It is about whether it is \emph{possible} for all the premises to be true and the conclusion to be not true at the same time (in some hypothetical case). What is \emph{in fact} the case has no special role to play; and what the facts are does not determine whether an argument is valid or not.\footnote{Well, there is one case where it does: if the premises are in fact true and the conclusion is in fact not true, then we live in a counterexample; so the argument is invalid.} Nothing about the way things are can by itself determine if an argument is valid. It is often said that logic doesn't care about feelings. Actually, it doesn't care about facts, either.
 
 When we use an argument to prove that its conclusion \emph{is true}, then, we need two things. First, we need the argument to be valid; i.e., we need the conclusion to follow from the premises. But we also need the premises to be true. We will say that an argument is \define{sound} if and only if it is both valid and all of its premises are true.
 
@@ -359,7 +408,17 @@ In each case: if so, give an example; if not, explain why not.
 
 \chapter{Other logical notions}\label{s:BasicNotions}
 
-In \cref{s:Valid}, we introduced the ideas of consequence and of valid argument.  This is one of the most important ideas in logic. In this section, we will introduce some similarly important ideas. They all rely, as did validity, on the idea that sentences are true (or not) in cases. For the rest of this section, we'll take cases in the sense of conceivable scenario, i.e., in the sense in which we used them to define conceptual validity. The points we made about different kinds of validity can be made about our new notions along similar lines: if we use a different idea of what counts as a ``case'' we will get different notions.  And as logicians we will, eventually, consider a more permissive definition of case than we do here.  
+In \cref{s:Valid}, we introduced the idea of consequence, i.e., of
+validity of arguments. This is one of the most important ideas in
+logic. In this section, we will introduce some similarly important
+ideas. They all rely, as did validity, on the idea that sentences are
+true (or not) in cases. For the rest of this section, we'll take cases
+in the sense of conceivable scenario, i.e., in the sense in which we
+used them to define conceptual validity. The points we made about
+different kinds of validity can be made about our new notions along
+similar lines: if we use a different idea of what counts as a ``case''
+we will get different notions.  And as logicians we will, eventually,
+consider a more permissive definition of case than we do here.
 
 %\section{Truth values}
 %As we said in \cref{s:Arguments}, arguments consist of premises and a conclusion. Note that many kinds of English sentence cannot be used to express premises or conclusions of arguments. For example:

@@ -50,7 +50,12 @@ This valid argument has a structure which we might represent thus:
 	\end{earg}
 These examples illustrate an important idea, which we might describe as \emph{validity in virtue of form}. The validity of the arguments just considered has nothing very much to do with the meanings of English expressions like `Jenny is miserable', `Dipan is an avid reader of Tolstoy', or `Jim acted in lots of plays'. If it has to do with meanings at all, it is with the meanings of phrases like `and', `or', `not,' and `if \ldots, then \ldots'.
 
-In \crefrange{ch.TFL}{ch.NDTFL}, we are going to develop a formal language which allows us to symbolize many arguments in such a way as to show that they are valid in virtue of their form. That language will be \emph{truth-functional logic}, or TFL.
+In \crefrange{ch.TFL}{ch.NDTFL}, we are going to develop a formal
+language which allows us to symbolize many arguments in such a way as
+to show that they are valid in virtue of their form. This will be the
+language of \emph{truth-functional logic}, or
+TFL.\footnote{Truth-functional logic is also often called (classical)
+``propositional'' or ``sentential'' logic.}
 
 \section{Validity for special reasons}
 
@@ -96,9 +101,17 @@ The important moral can be stated as follows. \emph{At best, TFL will help us to
 
 \section{Atomic sentences}
 
-We started isolating the form of an argument, in \cref{s:ValidityInVirtueOfForm}, by replacing  \emph{subsentences} of sentences with individual letters. Thus in the first example of this section, `it is raining outside' is a subsentence of `If it is raining outside, then Jenny is miserable', and we replaced this subsentence with `$A$'.
+We started isolating the form of an argument, in \cref{s:ValidityInVirtueOfForm}, by replacing \emph{subsentences} of sentences with individual letters. Thus in the first example of this section, `it is raining outside' is a subsentence of `If it is raining outside, then Jenny is miserable', and we replaced this subsentence with `$A$'.
 
-Our artificial language, TFL, pursues this idea absolutely ruthlessly. We start with some \emph{sentence letters}. These will be the basic building blocks out of which more complex sentences are built. We will use single uppercase letters as sentence letters of TFL. There are only twenty-six letters of the alphabet, but there is no limit to the number of sentence letters that we might want to consider. By adding subscripts to letters, we obtain new sentence letters. So, here are five different sentence letters of TFL:
+The artificial language of TFL pursues this idea absolutely
+ruthlessly. We start with some \emph{sentence letters}. These will be
+the basic building blocks out of which more complex sentences are
+built (they are the ``atomic'' sentences of TFL). We will use single
+uppercase letters as sentence letters of TFL. There are only
+twenty-six letters of the alphabet, but there is no limit to the
+number of sentence letters that we might want to consider. By adding
+subscripts to letters, we obtain new sentence letters. So, here are
+five different sentence letters of TFL:
 	$$A, P, P_1, P_2, A_{234}$$
 We will use sentence letters to represent, or \emph{symbolize}, certain English sentences. To do this, we provide a \define{symbolization key}, such as the following:
 	\begin{ekey}
@@ -242,7 +255,7 @@ Some more examples will bring out this point:
 
 \Cref*{and5} says one thing about two different subjects. It says of both Barbara and Adam that they are athletic, even though in English we use the word `athletic' only once. The sentence can be paraphrased as `Barbara is athletic, and Adam is athletic'. We can symbolize this in TFL as `$(B\eand A)$', using the same symbolization key that we have been using.
 
-\Cref{and6} is slightly more complicated. The word `although' sets up a contrast between the first part of the sentence and the second part. Nevertheless, the sentence tells us both that Barbara is energetic and that she is not athletic. In order to make each of the conjuncts a sentence letter, we need to replace `she' with `Barbara'. So we can paraphrase \cref*{and6} as, `\emph{Both} Barbara is energetic, \emph{and} Barbara is not athletic'. The second conjunct contains a negation, so we paraphrase further: `\emph{Both} Barbara is energetic \emph{and} \emph{it is not the case that} Barbara is athletic'. Now we can symbolize this with the TFL sentence `$(E\eand\enot B)$'. Note that we have lost all sorts of nuance in this symbolization. There is a distinct difference in tone between \cref*{and6} and `Both Barbara is energetic and it is not the case that Barbara is athletic'. TFL does not (and cannot) preserve these nuances.
+\Cref{and6} is slightly more complicated. The word `although' sets up a contrast between the first part of the sentence and the second part. Nevertheless, the sentence tells us both that Barbara is energetic and that she is not athletic. In order to make each of the conjuncts a sentence letter, we need to replace `she' with `Barbara'. So we can rewrite \cref*{and6} as, `\emph{Both} Barbara is energetic, \emph{and} Barbara is not athletic'. The second conjunct contains a negation, so we paraphrase further: `\emph{Both} Barbara is energetic \emph{and} \emph{it is not the case that} Barbara is athletic'. Now we can symbolize this with the TFL sentence `$(E\eand\enot B)$'. Note that we have lost all sorts of nuance in this symbolization. There is a distinct difference in tone between \cref*{and6} and `Both Barbara is energetic and it is not the case that Barbara is athletic'. TFL does not (and cannot) preserve these nuances.
 
 \Cref{and7} raises similar issues. The word `but' suggests a contrast
 or difference, but this is not something that TFL can deal with. All
@@ -336,8 +349,8 @@ At other times, the word `or' allows for the possibility that both disjuncts mig
 
 It will also help to see how negation interacts with disjunction. Consider: 
 	\begin{enumerate}
-		\item\label{or3} Either you will not have soup, or you will not have salad.
-		\item\label{or4} You will have neither soup nor salad.
+		\item\label{or3} Either you will not get soup, or you will not get salad.
+		\item\label{or4} You will get neither soup nor salad.
 		\item\label{or.xor} You get either soup or salad, but not both.
 	\end{enumerate}
 Using the same symbolization key as before, \cref*{or3} can be paraphrased in this way: `\emph{Either} it is not the case that you get soup, \emph{or} it is not the case that you get salad'. To symbolize this in TFL, we need both disjunction and negation. `It is not the case that you get soup' is symbolized by `$\enot S_1$'. `It is not the case that you get salad' is symbolized by `$\enot S_2$'. So \cref*{or3} itself is symbolized by `$(\enot S_1 \eor \enot S_2)$'.
@@ -454,7 +467,9 @@ All three are correct symbolizations. Indeed, in \cref{s:SemanticConcepts} we wi
 % TODO: it might be useful to reference exercise 11.F.3 explicitly
 % here, since the point is not discussed in the main text
 	\factoidbox{
-		If a sentence can be paraphrased as `Unless $A$, $B$,' then it can be symbolized as `$(\metav{A}\eor\metav{B})$'.
+		If a sentence can be paraphrased as `Unless $A$, $B$,' then it can
+		be symbolized as `$(\enot\metav{A}\eif\metav{B})$'
+		or `$(\metav{A}\eor\metav{B})$'.
 	}
 Again, though, there is a little complication. `Unless' can be symbolized as a conditional; but as we said above, people often use the conditional (on its own) when they mean to use the biconditional. Equally, `unless' can be symbolized as a disjunction; but there are two kinds of disjunction (exclusive and inclusive). So it will not surprise you to discover that ordinary speakers of English often use `unless' to mean something more like the biconditional, or like exclusive disjunction. Suppose someone says: `I will go running unless it rains'. They probably mean something like `I will go running \ifeff{} it does not rain' (i.e., the biconditional), or  `either I will go running or it will rain, but not both' (i.e., exclusive disjunction). Again: be aware of this when interpreting what other people have said, but be precise in your writing.
 
@@ -603,7 +618,7 @@ The sentence `either apples are red, or berries are blue' is a sentence of Engli
 We have seen that there are three kinds of symbols in TFL:
 \begin{center}
 \begin{tabular}{l l}
-Atomic sentences & $A,B,C,\ldots,Z$\\
+Atomic sentences & $A,B,C,\ldots,Z,\ldots$\\
 with subscripts, as needed & $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$\\
 \\
 Connectives & $\enot,\eand,\eor,\eif,\eiff$\\
@@ -611,7 +626,11 @@ Connectives & $\enot,\eand,\eor,\eif,\eiff$\\
 Brackets &( , )\\
 \end{tabular}
 \end{center}
-Define an \define{expression of TFL} as any string of symbols of TFL. So: write down any sequence of symbols of TFL, in any order, and you have an expression of TFL.
+Define an \define{expression of TFL} as any string of symbols of TFL.
+So: write down any sequence of symbols of TFL, in any order, and you
+have an expression of TFL.\footnote{In \cref{sec:contradiction}, we
+will introduce the symbol~`$\ered$', which will also count as an
+atomic sentence.}
 
 \section{Sentences}\label{s:Sentences}
 Given what we just said, `$(A \eand B)$' is an expression of TFL, and so is `$\lnot)(\eor()\eand(\enot\enot())((B$'. But the former is a \emph{sentence}, and the latter is \emph{gibberish}. We want some rules to tell us which TFL expressions are sentences.
@@ -635,6 +654,8 @@ We can say similar things for each of the other connectives. For instance, if \m
 \newglossaryentry{sentence of TFL}
 {
 name=sentence (of TFL),
+text = sentence of TFL,
+plural = sentences of TFL,
 description={A string of symbols in TFL that can be built up according to the inductive rules given \ifHTMLtarget in \cref{s:Sentences}\else on p.~\pageref{TFLsentences}\fi}
 }
 
@@ -761,7 +782,7 @@ The interpretation according to which Casement's behavior was not treasonous is 
 \[A \lor (G \lor H)\]
 The interpretation which got him executed, on the other hand, can be symbolized by:
 \[(A \lor B) \lor (G \lor H)\]
-Remember that in the case we're dealing with Casement, was adherent to the King's enemies abroad ($B$ is true), but not in the realm, and he did not give the King's enemies aid or comfort in or outside the realm ($A$, $G$, and~$H$ are false).
+Remember that in the case we're dealing with, Casement was adherent to the King's enemies abroad ($B$~is true), but not in the realm, and he did not give the King's enemies aid or comfort in or outside the realm ($A$, $G$, and~$H$ are false).
 
 One common source of structural ambiguity in English arises from its lack of parentheses. For instance, if I say `I like movies that are not long and boring', you will most likely think that what I dislike are movies that are long and boring. A less likely, but possible, interpretation is that I like movies that are both (a) not long and (b) boring. The first reading is more likely because who likes boring movies? But what about `I like dishes that are not sweet and flavorful'? Here, the more likely interpretation is that I like savory, flavorful dishes.  (Of course, I could have said that better, e.g., `I like dishes that are not sweet, yet flavorful'.) Similar ambiguities result from the interaction of `and' with `or'. For instance, suppose I ask you to send me a picture of a small and dangerous or stealthy animal.  Would a leopard count? It's stealthy, but not small. So it depends whether I'm looking for small animals that are dangerous or stealthy (leopard doesn't count), or whether I'm after either a small, dangerous animal or a stealthy animal (of any size).
 
@@ -805,22 +826,27 @@ In this Part, we have talked a lot \emph{about} sentences. So we should pause to
 \section{Quotation conventions}
 Consider these two sentences:
 	\begin{itemize}
-		\item Justin Trudeau is the Prime Minister.
-		\item The expression `Justin Trudeau' is composed of two uppercase letters and eleven lowercase letters
+		\item Aristotle is the founding father of logic.
+		\item The expression `Aristotle' is composed of one uppercase letter and eight lowercase letters.
 	\end{itemize}
-When we want to talk about the Prime Minister, we \emph{use} his name. When we want to talk about the Prime Minister's name, we \emph{mention} that name, which we do by putting it in quotation marks.
+When we want to talk about the founding father of logic, we \emph{use}
+his name. When we want to talk about the name of the founding father
+of logic, we \emph{mention} that name, which we do by putting it in
+quotation marks.
 
 There is a general point here. When we want to talk about things in the world, we just \emph{use} words. When we want to talk about words, we typically have to \emph{mention} those words. We need to indicate that we are mentioning them, rather than using them. To do this, some convention is needed. We can put them in quotation marks, or display them centrally in the page (say). So this sentence:
 	\begin{itemize}
-		\item `Justin Trudeau' is the Prime Minister.
+		\item `Aristotle' was an ancient Greek philosopher.
 	\end{itemize}
-says that some \emph{expression} is the Prime Minister. That's false. The \emph{man} is the Prime Minister; his \emph{name} isn't. Conversely, this sentence:
+says that some \emph{expression} was an ancient Greek philosopher.
+That's false. The \emph{man} was a Greek philosopher; his \emph{name} wasn't. Conversely,
+this sentence:
 	\begin{itemize}
-		\item Justin Trudeau is composed of two uppercase letters and eleven lowercase letters.
+		\item Aristotle is composed of one uppercase letter and eight lowercase letters.
 	\end{itemize}
-also says something false: Justin Trudeau is a man, made of flesh rather than letters. One final example:
+also says something false: Aristotle is a man (or was when he was alive), made of flesh rather than letters. One final example:
 	\begin{itemize}
-		\item ``\,`Justin Trudeau'\,'' is the name of `Justin Trudeau'.
+		\item ``\,`Aristotle'\,'' is the name of `Aristotle'.
 	\end{itemize} 
 On the left-hand-side, here, we have the name of a name. On the right hand side, we have a name. Perhaps this kind of sentence only occurs in logic textbooks, but it is true nonetheless.
 

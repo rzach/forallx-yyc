@@ -577,7 +577,7 @@ Provide proofs to show each of the following:
 \setkeys{fitch}{arrayenv=tabular}
 
 \problempart
-Show that each of the following pairs of sentences are provably equivalent: %TB: a bit of a hack here, to try to get the multicols thing working nicer.
+Show that each of the following pairs of sentences are interderivable: %TB: a bit of a hack here, to try to get the multicols thing working nicer.
 
 \begin{compactlist}
 \item $R \eiff E$, $E \eiff R$
@@ -789,16 +789,16 @@ If you know that $\metav{A}\proves\metav{B}$, what can you say about $(\metav{A}
 
 \
 
-\problempart In this chapter, we claimed that it is just as hard to show that two sentences are not provably equivalent, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem \ifeff{} \metav{A} and \metav{B} were provably equivalent.)
+\problempart In this chapter, we claimed that it is just as hard to show that two sentences are not interderivable, as it is to show that a sentence is not a theorem. Why did we claim this? (\emph{Hint}: think of a sentence that would be a theorem \ifeff{} \metav{A} and \metav{B} were interderivable.)
 \\\myanswer{Consider the sentence $\metav{A} \eiff \metav{B}$. Suppose we can show that this is a theorem. So we can prove it, with no assumptions, in $m$ lines, say. Then if we assume $\metav{A}$ and copy and paste the proof of $\metav{A} \eiff \metav{B}$ (changing the line numbering), we will have a deduction of this shape:
 \begin{fitchproof}
 \hypo{a}{\metav{A}}
 \have[m][1]{m}{\metav{A} \eiff \metav{B}}
 \have{b}{\metav{B}}\be{m, a}
 \end{fitchproof}
-This will show that $\metav{A} \proves \metav{B}$. In exactly the same way, we can show that $\metav{B} \proves \metav{A}$. So if we can show that $\metav{A} \eiff \metav{B}$ is a theorem, we can show that $\metav{A}$ and $\metav{B}$ are provably equivalent.}
+This will show that $\metav{A} \proves \metav{B}$. In exactly the same way, we can show that $\metav{B} \proves \metav{A}$. So if we can show that $\metav{A} \eiff \metav{B}$ is a theorem, we can show that $\metav{A}$ and $\metav{B}$ are interderivable.}
 
-\myanswer{Conversely, suppose we can show that $\metav{A}$ and $\metav{B}$ are provably equivalent. Then we can prove $\metav{B}$ from the assumption of $\metav{A}$ in $m$ lines, say, and prove $\metav{A}$ from the assumption of $\metav{B}$ in $n$ lines, say. Copying and pasting these proofs together (changing the line numbering where appropriate), we obtain:
+\myanswer{Conversely, suppose we can show that $\metav{A}$ and $\metav{B}$ are interderivable. Then we can prove $\metav{B}$ from the assumption of $\metav{A}$ in $m$ lines, say, and prove $\metav{A}$ from the assumption of $\metav{B}$ in $n$ lines, say. Copying and pasting these proofs together (changing the line numbering where appropriate), we obtain:
 \begin{fitchproof}
 \open
 	\hypo{a}{\metav{A}}
@@ -812,7 +812,7 @@ This will show that $\metav{A} \proves \metav{B}$. In exactly the same way, we c
 \end{fitchproof}
 This shows that $\metav{A} \eiff \metav{B}$ is a theorem.}
 
-\myanswer{There was nothing special about $\metav{A}$ and $\metav{B}$ in this. So what this shows is that the problem of showing that two sentences are provably equivalent is, essentially, the same problem as showing that a certain kind of sentence (a biconditional) is a theorem.}
+\myanswer{There was nothing special about $\metav{A}$ and $\metav{B}$ in this. So what this shows is that the problem of showing that two sentences are interderivable is, essentially, the same problem as showing that a certain kind of sentence (a biconditional) is a theorem.}
 
 
 \chapter{Derived rules}\setcounter{ProbPart}{0}

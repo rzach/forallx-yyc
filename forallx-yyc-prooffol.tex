@@ -68,7 +68,8 @@ can emphasize this by writing `$\metav{A}(\ldots \metav{c} \ldots
 \emph{some or all} of the instances of the name \metav{c} with the
 variable~\metav{x} (provided~$\metav{c}$, wherever it is
 replaced, does not occur in the scope of a quantifier
-binding~$\metav{x}$). Armed with this, our introduction rule is:
+binding~$\metav{x}$). Armed with this, our introduction rule
+$\exists$I is:
 \factoidbox{
 \begin{fitchproof}
 	\have[m]{a}{\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)}
@@ -529,7 +530,7 @@ likes.
 
 
 \problempart
-Show that each pair of sentences is provably equivalent.
+Show that each pair of sentences is interderivable.
 \begin{compactlist}
 \item $\forall x (\atom{A}{x}\eif \enot \atom{B}{x})$, $\enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot\atom{A}{x}\eif \atom{B}{d})$, $\forall x\,\atom{A}{x} \eor \atom{B}{d}$
@@ -539,7 +540,7 @@ Show that each pair of sentences is provably equivalent.
 \solutions
 \problempart
 \label{pr.FOLequivornot}
-For each of the following pairs of sentences: If they are provably equivalent, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
+For each of the following pairs of sentences: If they are interderivable, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
 \begin{compactlist}
 \item $\forall x\,\atom{P}{x} \eif \atom{Q}{c}, \forall x (\atom{P}{x} \eif \atom{Q}{c})$
 \item $\forall x\,\forall y\, \forall z\,\atom{B}{x,y,z}, \forall x\,\atom{B}{x,x,x}$
@@ -769,14 +770,14 @@ Show in each case that the sentences are inconsistent:
 \end{compactlist}
 
 \problempart
-Show that each pair of sentences is provably equivalent:
+Show that each pair of sentences is interderivable:
 \begin{compactlist}
 \item $\forall x (\atom{A}{x}\eif \enot \atom{B}{x}), \enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot\atom{A}{x}\eif \atom{B}{d}), \forall x\,\atom{A}{x} \eor \atom{B}{d}$
 \end{compactlist}
 
 \problempart
-In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is provably equivalent:
+In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is interderivable:
 \begin{compactlist}
 \item $\forall x(\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$
 \item $\exists x(\atom{F}{x} \eor \atom{G}{a}), \exists x\,\atom{F}{x} \eor \atom{G}{a}$
@@ -852,16 +853,16 @@ is true.
 \item $m=n \eor n=o, \atom{A}{n} \proves \atom{A}{m} \eor \atom{A}{o}$
 \item $\forall x\ x=m, \atom{R}{m,a} \proves \exists x\,\atom{R}{x,x}$
 \item $\forall x\,\forall y(\atom{R}{x,y} \eif x=y)\proves \atom{R}{a,b} \eif \atom{R}{b,a}$
-\item $\enot \exists x\enot x = m \proves \forall x\,\forall y (\atom{P}{x} \eif \atom{P}{y})$
-\item $\exists x\,\atom{J}{x}, \exists x\, \enot\atom{J}{x}\proves \exists x\, \exists y\, \enot x = y$
+\item $\enot \exists x\enot\, {x = m} \proves \forall x\,\forall y (\atom{P}{x} \eif \atom{P}{y})$
+\item $\exists x\,\atom{J}{x}, \exists x\, \enot\atom{J}{x}\proves \exists x\, \exists y\, \enot\, {x = y}$
 \item $\forall x(x=n \eiff \atom{M}{x}), \forall x(\atom{O}{x} \eor \enot \atom{M}{x})\proves \atom{O}{n}$
 \item $\exists x\,\atom{D}{x}, \forall x(x=p \eiff \atom{D}{x})\proves \atom{D}{p}$
 \item $\exists x\bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x=y)) \eand \atom{B}{x}\bigr], \atom{K}{d} \proves \atom{B}{d}$
-\item $\proves \atom{P}{a} \eif \forall x(\atom{P}{x} \eor \enot x = a)$
+\item $\proves \atom{P}{a} \eif \forall x(\atom{P}{x} \eor \enot\, {x = a})$
 \end{compactlist}
 
 \problempart
-Show that the following are provably equivalent:
+Show that the following are interderivable:
 \begin{itemize}
 \item $\exists x \bigl([\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)] \eand x = n\bigr)$
 \item $\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)$
@@ -875,7 +876,7 @@ In \cref{sec.identity}, we claimed that the following are logically equivalent s
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
 \item $\exists x\, \forall y (\atom{F}{y} \eiff x = y)$
 \end{itemize}
-Show that they are all provably equivalent. (\emph{Hint}: to show that three claims are provably equivalent, it suffices to show that the first proves the second, the second proves the third and the third proves the first; think about why.)
+Show that they are all interderivable. (\emph{Hint}: to show that three claims are interderivable, it suffices to show that the first proves the second, the second proves the third and the third proves the first; think about why.)
 
 
 \
@@ -889,7 +890,7 @@ Symbolize the following argument
 	\end{earg}
 And offer a proof of it.
 %\begin{itemize}
-%\item  $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr], \exists x \bigl[\atom{G}{x} \eand \forall y (\atom{G}{y} \eif x = y)\bigr], \forall x (\enot\atom{F}{x} \eor \enot \atom{G}{x}) \proves \exists x\, \exists y \bigl[\enot x = y \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = y \eor x = z))\bigr]$
+%\item  $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr], \exists x \bigl[\atom{G}{x} \eand \forall y (\atom{G}{y} \eif x = y)\bigr], \forall x (\enot\atom{F}{x} \eor \enot \atom{G}{x}) \proves \exists x\, \exists y \bigl[\enot\, {x = y} \eand \forall z ((\atom{F}{z} \eor \atom{G}{z}) \eif (x = y \eor x = z))\bigr]$
 %\end{itemize}
 
 
@@ -962,7 +963,7 @@ This shows that, whilst provability and entailment are \emph{different} notions,
 		\item An argument is \emph{valid} \ifeff{} \emph{the conclusion can be proved from the premises}.
 		\item A sentence is a \emph{validity} \ifeff{} it is a \emph{theorem}.
 		\item Two sentences are \emph{equivalent} \ifeff{} they are
-		\emph{provably equivalent}.
+		\emph{interderivable}.
 		\item Sentences are \emph{jointly satisfiable} \ifeff{} they are
 		\emph{jointly consistent}.
 	\end{factoiditems}}
@@ -986,7 +987,7 @@ Is \metav{A} a \textbf{validity}?
 & give an interpretation in which \metav{A} is false\\
 \\
 Is \metav{A} a \textbf{contradiction}? &
-give a proof which shows $\proves\enot\metav{A}$ & 
+give a proof which shows $\metav{A} \proves \ered$ & 
 give an interpretation in which \metav{A} is true\\
 \\
 %Is \metav{A} contingent? & 

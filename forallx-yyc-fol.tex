@@ -24,7 +24,12 @@ But the truth-table test will now indicate that this is \emph{invalid}. What has
 
 The problem is not that we have made a mistake while symbolizing the argument. This is the best symbolization we can give \emph{in TFL}. The problem lies with TFL itself. `All logicians wear funny hats' is about both logicians and hat-wearing. By not retaining this structure in our symbolization, we lose the connection between Willard's being a logician and Willard's wearing a hat.
 
-The basic units of TFL are sentence letters, and TFL cannot decompose these. To symbolize arguments like the preceding one, we will have to develop a new logical language which will allow us to \emph{split the atom}. We will call this language \emph{first-order logic}, or~\emph{FOL}.
+The basic units of TFL are sentence letters, and TFL cannot decompose
+these. To symbolize arguments like the preceding one, we will have to
+develop a new logical language which will allow us to \emph{split the
+atom}. We will call this the language of \emph{first-order logic},
+or~\emph{FOL}.\footnote{First-order logic is also often called (classical)
+``predicate'' or ``quantificational'' logic.}
 
 The details of FOL will be explained throughout this chapter, but here is the basic idea for splitting the atom.
 
@@ -38,13 +43,26 @@ That is the general idea, but FOL is significantly more subtle than TFL, so we w
 
 
 \section{Names}
-In English, a \emph{singular term} is a word or phrase that refers to a \emph{specific} person, place, or thing. The word `dog' is not a singular term, because there are a great many dogs. The phrase `Bertie' is a singular term, because it refers to a specific terrier. Likewise, the phrase `Philip's dog Bertie' is a singular term, because it refers to a specific little terrier.
+In English, a \emph{singular term} is a word or phrase that is meant
+to refer to a \emph{specific} person, place, or thing. The word `dog'
+is not a singular term, because there are a great many dogs. The
+name `Bertie' is a singular term, because it refers to a specific
+terrier. Likewise, the phrase `Philip's dog' is a singular
+term, because it also refers to a specific little terrier.
 
 \emph{Proper names} are a particularly important kind of singular term. These are expressions that pick out individuals without describing them. The name `Emerson' is a proper name, and the name alone does not tell you anything about Emerson. Of course, some names are traditionally given to boys and others are traditionally given to girls. If `Hilary' is used as a singular term, you might guess that it refers to a woman. You might, though, be guessing wrongly. Indeed, the name does not necessarily mean that the person referred to is even a person: Hilary might be a giraffe, for all you could tell just from the name.
 
 In FOL, our \define{names} are lower-case letters `$a$' through to `$r$'. We can add subscripts if we want to use some letter more than once. So here are some singular terms in FOL:
-	$$a,b,c,\ldots, r, a_1, f_{32}, j_{390}, m_{12}$$
-These should be thought of along the lines of proper names in English, but with one difference. `Tim Button' is a proper name, but there are several people with this name. We live with this kind of ambiguity in English, allowing context to individuate the fact that `Tim Button' refers to an author of this book, and not some other Tim. In FOL, we do not tolerate any such ambiguity. Each name must pick out \emph{exactly} one thing. (However, two different names may pick out the same thing.)
+	$$a,b,c,\ldots, r, a_1, f_{32}, j_{390}, m_{12}$$ These should be
+thought of along the lines of proper names in English, but with one
+difference. `Tim Button' is a proper name, but there are several
+people with this name. We live with this kind of ambiguity in English,
+allowing context to individuate the fact that `Tim Button' refers to
+an author of this book, and not some other Tim. In FOL, we do not
+tolerate any such ambiguity. Each name must pick out \emph{exactly}
+one thing. However, just like in English, in FOL different names
+may pick out the same thing, and there can be things that don't have
+names picking them out.
 
 \newglossaryentry{name}{
   name = name,
@@ -60,7 +78,7 @@ As with TFL, we can provide symbolization keys. These indicate, temporarily, wha
 
 
 \section{Predicates}
-The simplest predicates are properties of individuals. They are things you can say about an object. Here are some examples of English predicates:
+The simplest predicates express properties of individuals. They are things you can say about an object. Here are some examples of English predicates:
 	\begin{itemize}
 		\item \blank\ is a dog
 		\item \blank\ is a member of Monty Python
@@ -624,7 +642,7 @@ We have used the same symbol, `\blank', to indicate a gap formed by deleting a t
 	\item\label{terms3b} Imre loves Karl.
 	\item\label{terms3a} Karl loves Karl.
 \end{enumerate}
-The point is that we need to keep track of the gaps in predicates, so that we can keep track of how we are filling them in. To keep track of the gaps, we assign them variables. Suppose we want to symbolize the preceding sentences. Then I might start with the following representation key: 
+The point is that we need to keep track of the gaps in predicates, so that we can keep track of how we are filling them in. To keep track of the gaps, we assign them variables. Suppose we want to symbolize the preceding sentences. Then I might start with the following symbolization key: 
 	\begin{ekey}
 		\item[\text{domain}] people
 		\item[i] Imre
@@ -1088,7 +1106,10 @@ The symbol `$=$' will be a two-place predicate. Since it will have a special mea
 	\begin{ekey}
 		\item[x=y] \gap{x} is identical to \gap{y}
 	\end{ekey}
-This does not mean \emph{merely} that the objects in question are indistinguishable, or that all of the same things are true of them. Rather, it means that the objects in question are \emph{the very same} object.
+This does not mean \emph{merely} that the terms to the left and right
+of `$=$' refer to objects that are indistinguishable, or that all of
+the same things are true of them. Rather, it means that the terms to
+the left and right of `$=$' refer to \emph{one and the same object}.
 
 To put this to use, suppose we want to symbolize this sentence:
 \begin{enumerate}
@@ -1100,9 +1121,9 @@ Let us add to our symbolization key:
 	\end{ekey}
 Now \cref*{else2} can be symbolized as `$p=c$'. This tells us that the names `$p$' and `$c$' both name the same thing.
 
-We can also now deal with \cref{else1b,else1c}. Both of these sentences can be  paraphrased as `Everyone who is not Pavel is owed money by Pavel'. Paraphrasing some more, we get: `For all~$x$, if $x$ is not Pavel, then $x$ is owed money by Pavel'. Now that we are armed with our new identity symbol, we can symbolize this as `$\forall x (\enot x = p \eif \atom{O}{p,x})$'.
+We can also now deal with \cref{else1b,else1c}. Both of these sentences can be  paraphrased as `Everyone who is not Pavel is owed money by Pavel'. Paraphrasing some more, we get: `For all~$x$, if $x$ is not Pavel, then $x$ is owed money by Pavel'. Now that we are armed with our new identity symbol, we can symbolize this as `$\forall x (\enot\, {x = p} \eif \atom{O}{p,x})$'.
 
-This last sentence contains the formula `$\enot x = p$'. That might look a bit strange, because the symbol that comes immediately after the `$\enot$' is a variable, rather than a predicate, but this is not a problem. We are simply negating the entire formula `$x = p$'.
+This last sentence contains the formula `$\enot\, {x = p}$'. That might look a bit strange, because the symbol that comes immediately after the `$\enot$' is a variable, rather than a predicate, but this is not a problem. We are simply negating the entire formula~`$x = p$'.
 
 \section{`Only' and `except'}
 
@@ -1117,8 +1138,8 @@ Let `$h$' name Hikaru. Plausibly, \cref*{only1} is true if, and only if, both of
 \end{enumerate}
 \Cref*{else3} can be symbolized by any one of:
 \begin{align*}
-	& \enot\exists x(\enot x = p \eand \atom{O}{x,h}),\\
-	& \forall x(\enot x = p \eif \enot\atom{O}{x,h}),\\
+	& \enot\exists x(\enot\, {x = p} \eand \atom{O}{x,h}),\\
+	& \forall x(\enot\, {x = p} \eif \enot\atom{O}{x,h}),\\
 	& \forall x(\atom{O}{x,h} \eif x = p).
 \end{align*}
 Thus, we can symbolize \cref*{only1} as the conjunction of one of the above with the symbolization of~\cref*{only2}, `$\atom{O}{p,h}$', or more compactly using `$\eiff$' as `$\forall x(\atom{O}{x,h} \eiff x = p)$'.
@@ -1126,9 +1147,9 @@ Thus, we can symbolize \cref*{only1} as the conjunction of one of the above with
 \begin{enumerate}
 	\item\label{except} Everyone except Pavel owes money to Hikaru.
 	\end{enumerate}
-\Cref*{except} can be treated similarly, although now of course Pavel does \emph{not} owe Hikaru money. We can paraphrase it as `Everyone who is not Pavel owes Hikaru money, and Pavel does not'. Consequently, it can be symbolized as `$\forall x(\enot x = p \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h}$', or more concisely, `$\forall x(\enot x = p \eiff \atom{O}{x,h})$'. Other locutions akin to `except' such as `but' or `besides' (as used in `no one but Pavel' or `someone besides Hikaru') can be treated in similar ways.
+\Cref*{except} can be treated similarly, although now of course Pavel does \emph{not} owe Hikaru money. We can paraphrase it as `Everyone who is not Pavel owes Hikaru money, and Pavel does not'. Consequently, it can be symbolized as `$\forall x(\enot\, {x = p} \eif \atom{O}{x,h}) \eand \enot \atom{O}{p,h}$', or more concisely, `$\forall x(\enot\, {x = p} \eiff \atom{O}{x,h})$'. Other locutions akin to `except' such as `but' or `besides' (as used in `no one but Pavel' or `someone besides Hikaru') can be treated in similar ways.
 
-The above treatment of so-called ``exceptives'' is not uncontentious. Some linguists think that \cref*{except} does not entail that Pavel doesn't owe Hikaru money, and so the symbolization should just be `$\forall x(\enot x = p \eif \atom{O}{x,h})$'.  There are also uses of `except' that clearly do not have that entailment, especially in mathematical writing.  For instance, you may read in a calculus textbook that ``the function~$f$ is defined everywhere except possibly at~$a$''.  That means only that for every point~$x$ other than~$a$, $f$~is defined at~$x$. It is not required that $f$ is undefined at~$a$; it's left open whether $f$ is or is not defined at~$a$.
+The above treatment of so-called ``exceptives'' is not uncontentious. Some linguists think that \cref*{except} does not entail that Pavel doesn't owe Hikaru money, and so the symbolization should just be `$\forall x(\enot\, {x = p} \eif \atom{O}{x,h})$'.  There are also uses of `except' that clearly do not have that entailment, especially in mathematical writing.  For instance, you may read in a calculus textbook that ``the function~$f$ is defined everywhere except possibly at~$a$''.  That means only that for every point~$x$ other than~$a$, $f$~is defined at~$x$. It is not required that $f$ is undefined at~$a$; it's left open whether $f$ is or is not defined at~$a$.
 
 \section{There are at least\ldots}
 We can also use identity to say how many things there are of a particular kind. For example, consider these sentences:
@@ -1152,13 +1173,13 @@ were only one apple. In order to make sure that we are dealing with
 \emph{different} apples, we need the identity predicate.
 \Cref*{atleast2} needs to say that the two apples that exist are not
 identical, so it can be symbolized by `$\exists x \exists
-y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y)$'.
+y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y})$'.
 
 \Cref*{atleast3} requires talking about three different apples. Now we need three existential quantifiers, and we need to make sure that each will pick out something different: 
 \[
-	\exists x \exists y\exists z[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eand ((\enot x = y \eand \enot y = z) \eand \enot x = z)].
+	\exists x \exists y\exists z[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eand ((\enot\, {x = y} \eand \enot\, {y = z}) \eand \enot\, {x = z})].
 \]
-Note that it is \emph{not} enough to use `$\lnot x = y \land \lnot y = z$' to symbolize `$x$, $y$, and~$z$ are all different.' For that would be true if $x$ and $y$ were different, but $x = z$. In general, to say that $x_1$, \dots, $x_n$ are all different, we must have a conjunction of $\lnot x_i = x_j$ for every different pair $i$ and~$j$.
+Note that it is \emph{not} enough to use `$\enot\, {x = y} \eand \enot\, {y = z}$' to symbolize `$x$, $y$, and~$z$ are all different.' For that would be true if $x$ and $y$ were different, but $x = z$. In general, to say that $x_1$, \dots, $x_n$ are all different, we must have a conjunction of $\enot\, {x_i = x_j}$ for every different pair $i$ and~$j$.
 
 \section{There are at most\ldots}
 Now consider these sentences:
@@ -1170,7 +1191,7 @@ Now consider these sentences:
 are at least \emph{two} apples'. This is just the negation of
 \cref{atleast2}: 
 \[
-	\enot \exists x \exists y[(\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y]
+	\enot \exists x \exists y[(\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y}]
 \]
 But \cref*{atmost1} can also be approached in another way. It means
 that if you pick out an object and it's an apple, and then you pick
@@ -1186,7 +1207,7 @@ Similarly, \cref*{atmost2} can be approached in two equivalent ways.
 It can be paraphrased as, `It is not the case that there are
 \emph{three} or more distinct apples', so we can offer:
 \[
-	\enot \exists x \exists y\exists z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eand ((\enot x = y \eand \enot x = z) \eand \enot y = z)\bigr]
+	\enot \exists x \exists y\exists z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eand ((\enot\, {x = y} \eand \enot\, {x = z}) \eand \enot\, {y = z})\bigr]
 \]
 Alternatively we can read it as saying that if you pick out an apple,
 and an apple, and an apple, then you will have picked out (at least)
@@ -1220,18 +1241,18 @@ Similarly, \cref*{exactly2} may be paraphrased as, `There are \emph{at
 least} two apples, and there are \emph{at most} two apples'. Thus we
 could offer
 \ifHTMLtarget
-\[\exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y) \eand 
+\[\exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y}) \eand 
 \forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y})
 \eand \atom{A}{z}) \eif ((x=y \eor x=z) \eor y=z)\bigr]
 \]
 \else
 \begin{multline*}
-  \exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y) \eand {}\\
+  \exists x \exists y((\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y}) \eand {}\\
   \forall x\forall y\forall z\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \atom{A}{z}) \eif ((x=y \eor x=z) \eor y=z)\bigr]
 \end{multline*}
 \fi
 More efficiently, though, we can paraphrase it as `There are at least two different apples, and every apple is one of those two apples'. Then we offer:
-$$\exists x\exists y\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \enot x = y) \eand \forall z(\atom{A}{z} \eif ( x= z \eor y = z))\bigr]$$
+$$\exists x\exists y\bigl[((\atom{A}{x} \eand \atom{A}{y}) \eand \enot\, {x = y}) \eand \forall z(\atom{A}{z} \eif ( x= z \eor y = z))\bigr]$$
 Finally, consider these sentences:
 \begin{enumerate}
 \item\label{exactly2things} There are exactly two things.
@@ -1239,8 +1260,8 @@ Finally, consider these sentences:
 \end{enumerate}
 It might be tempting to add a predicate to our symbolization key, to symbolize the English predicate `\blank\ is a thing' or `\blank\ is an object', but this is unnecessary. Words like `thing' and `object' do not sort wheat from chaff: they apply trivially to everything, which is to say, they apply trivially to every thing. So we can symbolize either sentence with either of the following:
 \begin{align*}
-	& \exists x \exists y\,\enot x = y \eand  \enot \exists x \exists y \exists z ((\enot x = y \eand \enot y = z) \eand \enot x = z) \\
-	& \exists x \exists y \bigl[\enot x = y \eand \forall z(x=z \eor y = z)\bigr]
+	& \exists x \exists y\,\enot\, {x = y} \eand  \enot \exists x \exists y \exists z ((\enot\, {x = y} \eand \enot\, {y = z}) \eand \enot\, {x = z}) \\
+	& \exists x \exists y \bigl[\enot\, {x = y} \eand \forall z(x=z \eor y = z)\bigr]
 \end{align*}
 
 \practiceproblems
@@ -1283,7 +1304,7 @@ Explain why:
 	\begin{compactlist}
 		\item `$\exists x \forall y(\atom{A}{y} \eiff x= y)$' is a good
 		symbolization of `there is exactly one apple'.
-		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall
+		\item `$\exists x \exists y \bigl[\enot\, {x = y} \eand \forall
 		z(\atom{A}{z} \eiff (x= z \eor y = z))\bigr]$' is a good
 		symbolization of `there are exactly two apples'.
 	\end{compactlist}
@@ -1299,6 +1320,8 @@ There are six kinds of symbols in FOL:
 \item \textbf{Predicates:} $A$, $B$, $C$, \dots, $Z$, or 
 with subscripts, as needed: $A_1$, $B_1$, $Z_1$, $A_2$, $A_{25}$,
 $J_{375}$, \dots
+
+The identity symbol `$=$' counts as a special predicate.
 \item \textbf{Names:} $a$, $b$, $c$, \dots, $r$, or
 with subscripts, as needed: $a_1$, $b_{224}$, $h_7$, $m_{32}$, \dots
 \item \textbf{Variables:} $s$, $t$, $u$, $v$, $w$, $x$, $y$, $z$, or
@@ -1328,7 +1351,9 @@ Next we need to define atomic formulas.
 		\item Nothing else is an atomic formula.
 		\end{compactlist}
 	}
-Note that we consider sentence letters also formulas of FOL, so every sentence of TFL is also a formula of FOL.
+Note that we consider sentence letters also formulas of FOL, so every
+sentence of TFL is also a formula of FOL. In \cref{ch.NDFOL}, we will
+again also allow the contradiction~`$\ered$' as an atomic formula.
 
 \newglossaryentry{term}{
   name = term,
@@ -1464,6 +1489,7 @@ bound, are called \define{sentences}. Only sentences can be true or false.
 \newglossaryentry{sentence of FOL}{
 	name = sentence (of FOL),
 	text = sentence of FOL,
+	plural = sentences of FOL,
 	description = {A \gls{formula} of FOL which has no \glspl{free variable}}
 }
 
@@ -1644,6 +1670,8 @@ Using the following symbolization key:
 \Cref*{outernegation} might be paraphrased by `It is not the case that: the present King of France and Alex are dating'. It will then be symbolized by `$\enot \exists x\bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif  x = y)) \eand \atom{D}{a,x} \bigr]$'. We might call this \emph{outer} negation, since the negation governs the entire sentence. Note that the sentence is true if there is no present King of France.
 
 \Cref*{innernegation} can be symbolized by `$\exists x \bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x = y)) \eand \enot \atom{D}{a,x}\bigr]$'. We might call this \emph{inner} negation, since the negation occurs within the scope of the definite description. Note that its truth requires that there is a present King of France, albeit one who is not dating Alex.
+\Cref*{innernegation} entails \cref*{outernegation} (as do their
+symbolizations), but not vice versa.
 
 \section{Possessives, `both', `neither'}
 
@@ -1670,28 +1698,28 @@ neither of them is~$G$. In FOL, the symbolizations would read,
 respectively,
 \ifHTMLtarget
 \begin{align*}
-	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand 
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot\, {x=y} \eand 
 	\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \atom{G}{x} \eand \atom{G}{y}\bigr]\\
-	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand 
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot\, {x=y} \eand 
 	\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \enot \atom{G}{x} \eand \enot \atom{G}{y}\bigr]
 \end{align*}
 \else
 \begin{align*}
-	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand {}\\
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot\, {x=y} \eand {}\\
 	& \qquad \forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \atom{G}{x} \eand \atom{G}{y}\bigr]\\
-	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot x=y \eand  {}\\
+	& \exists x\exists y\bigl[\atom{F}{x} \eand \atom{F}{y} \eand \enot\, {x=y} \eand  {}\\
 	& \qquad\forall z(\atom{F}{z} \eif (x = z \lor y = z)) \eand \enot \atom{G}{x} \eand \enot \atom{G}{y}\bigr]
 \end{align*}
 \fi
 Compare these symbolizations with the symbolizations of `exactly two $F$s are $G$s' from \cref{sec:exactlyn}, i.e., of `there are exactly two things that are both $F$ and~$G$':
 \ifHTMLtarget
 	\[ 
-		\exists x\exists y\bigl[(\atom{F}{x} \eand \atom{G}{x}) \eand (\atom{F}{y} \eand \atom{G}{y}) \eand \enot x=y \eand 
+		\exists x\exists y\bigl[(\atom{F}{x} \eand \atom{G}{x}) \eand (\atom{F}{y} \eand \atom{G}{y}) \eand \enot\, {x=y} \eand 
 		\forall z((\atom{F}{z} \eand \atom{G}{z}) \eif (x = z \lor y = z))\bigr]
 	\]
 \else
 \begin{align*}
-	& \exists x\exists y\bigl[(\atom{F}{x} \eand \atom{G}{x}) \eand (\atom{F}{y} \eand \atom{G}{y}) \eand \enot x=y \eand {}\\
+	& \exists x\exists y\bigl[(\atom{F}{x} \eand \atom{G}{x}) \eand (\atom{F}{y} \eand \atom{G}{y}) \eand \enot\, {x=y} \eand {}\\
 	& \qquad\forall z((\atom{F}{z} \eand \atom{G}{z}) \eif (x = z \lor y = z))\bigr]
 \end{align*}
 \fi

@@ -6,7 +6,7 @@
 
 \chapter{Extensionality}\label{s:Interpretations}
 
-Recall that TFL is a truth-functional language. Its connectives are all truth-functional, and \emph{all} that we can do with TFL is key sentences to particular truth values. We can do this \emph{directly}. For example, we might stipulate that the TFL sentence `$P$' is to be true. Alternatively, we can do this \emph{indirectly}, offering a symbolization key, e.g.:
+Recall that TFL is a truth-functional logic. Its connectives are all truth-functional, and \emph{all} that we can do with TFL is key sentences to particular truth values. We can do this \emph{directly}. For example, we might stipulate that the TFL sentence `$P$' is to be true. Alternatively, we can do this \emph{indirectly}, offering a symbolization key, e.g.:
 	\begin{ekey}
 		\item[P] Big Ben is in London.
 	\end{ekey}
@@ -39,24 +39,25 @@ This is an indirect way of stipulating which things a predicate is true of.
 
 Alternatively, we can stipulate predicate extensions directly. For example, we can stipulate that `$\atom{C}{x}$' is to be true of Richard Zach, and Richard Zach alone. As it happens, this direct stipulation would have the same effect as the indirect stipulation, since Richard, and Richard alone, teaches Logic~III in Calgary. Note, however, that the English predicates `\blank\ is Richard Zach' and `\blank\ teaches Logic III in Calgary' have very different meanings!
 
-The point is that FOL has no resources for dealing with nuances of meaning. When we interpret FOL, all we are considering is what the predicates are true of, regardless of whether we specify these things directly or indirectly. The things a predicate is true of are known as the \define{extension} of that predicate. We say that FOL is an \define{extensional language} because FOL does not represent differences of meaning between predicates that have the same extension.    
+The point is that FOL has no resources for dealing with nuances of meaning. When we interpret FOL, all we are considering is what the predicates are true of, regardless of whether we specify these things directly or indirectly. The things a predicate is true of are known as the \define{extension} of that predicate. We say that FOL is an \define{extensional language} because FOL does not represent differences of meaning between predicates that have the same extension.
 
-This is why we speak of \emph{symbolizing} English sentences in FOL. It is doubtful that we are \emph{translating} English into FOL, for translation should preserve meaning.
+This is why we speak of \emph{symbolizing} English sentences in FOL.
+If translation has to preserve meaning, it is clear that we are not \emph{translating} English into FOL.
 
 \section{Extensions}\label{sec:extensions}
 We can stipulate directly what predicates are to be true of. And our stipulations can be as arbitrary as we like. For example, we could stipulate that `$\atom{H}{x}$' should be true of, and only of, the following objects:
 	\begin{itemize}
-		\item Justin Trudeau
+		\item Aristotle
 		\item the number $\pi$
 		\item every top-F key on every piano ever made
 	\end{itemize}
 Armed with this interpretation of `$\atom{H}{x}$', suppose we now add to our symbolization key:
 	\begin{ekey}
-		\item[j] Justin Trudeau
-		\item[a] Angela Merkel
+		\item[a] Aristotle
+		\item[h] Hypatia
 		\item[p] the number $\pi$
 	\end{ekey}
-Then `$\atom{H}{j}$' and `$\atom{H}{p}$' will both be true, on this interpretation, but `$\atom{H}{a}$' will be false, since Angela Merkel was not among the stipulated objects.
+Then `$\atom{H}{j}$' and `$\atom{H}{p}$' will both be true, on this interpretation, but `$\atom{H}{a}$' will be false, since Hypatia was not among the stipulated objects.
 
 This process of explicit stipulation is sometimes described as stipulating the \emph{extension} of a predicate. Note that, in the stipulation we just gave, the objects we listed have nothing particularly in common. This doesn't matter. Logic doesn't care about what we humans (at a particular moment) think `naturally goes together'; to logic, all objects are on an equal footing.
 
@@ -112,7 +113,7 @@ If two names refer to the same object, then swapping one name for another will n
 		\atom{R}{c,a} &\eiff \atom{R}{c,b}\\
 		\forall x\, \atom{R}{x,a} &\eiff \forall x\, \atom{R}{x,b}
 	\end{align*}
-Some philosophers have believed the reverse of this claim. That is, they have believed that when exactly the same sentences (not containing `$=$') are true of $a$ and $b$, then $a$ and $b$ are the very same object. This is a highly controversial philosophical claim---sometimes called the \emph{identity of indiscernibles}---and our logic will not subscribe to it; we allow that exactly the same things might be true of two \emph{distinct} objects.  
+Some philosophers have believed the reverse of this claim. That is, they have believed that when exactly the same sentences (not containing `$=$') are true of x and~y, then x and y are the very same object. This is a highly controversial philosophical claim---sometimes called the \emph{identity of indiscernibles}---and our logic will not subscribe to it; we allow that exactly the same things might be true of two \emph{distinct} objects.
 
 To bring this out, consider the following interpretation:
 	\begin{ekey}
@@ -126,23 +127,31 @@ To bring this out, consider the following interpretation:
 Suppose `$A$' is a one-place predicate; then `$\atom{A}{a}$' is false and `$\atom{A}{b}$' is false, so `$\atom{A}{a} \eiff \atom{A}{b}$' is true. Similarly, if `$R$' is a two-place predicate, then `$\atom{R}{a,a}$' is false and `$\atom{R}{a,b}$' is false, so that `$\atom{R}{a,a} \eiff \atom{R}{a,b}$' is true. And so it goes: every atomic sentence not involving `$=$' is false, so every biconditional linking such sentences is true. For all that, Tim Button and P.~D.\ Magnus are two distinct people, not one and the same!
 
 \section{Interpretations}
-We defined a \define{valuation} in TFL as any assignment of truth and falsity to sentence letters. In FOL, we are going to define an \define{interpretation} as consisting of four things:
+We defined a \define{valuation} in TFL as any assignment of truth and
+falsity to sentence letters. In FOL, we are going to define an
+\define{interpretation} as consisting of four
+things:\footnote{Interpretations are also often called ``models'' or ``structures.''}
 	\begin{compactlist}
-		\item the specification of a domain;
+		\item the specification of a non-empty domain;
 		\item each sentence letter we care to consider is assigned a truth value;
-		\item each name that we care to consider is assigned exactly one object within the domain;
+		\item each name that we care to consider is assigned exactly one
+		object within the domain (its \define{referent});
 		\item for each predicate that we care to consider (apart from
 		`$=$'), a specification of what things (in what order) the
-		predicate is to be true of.
+		predicate is to be true of (its \define{extension}).
 	\end{compactlist}
+For one-place predicates, extensions are collections of objects from
+the domain of which the predicate is true, for two-place predicates
+they are ordered pairs of objects, etc.
+
 We don't need to specify anything for~`$=$', since it has a
 \emph{fixed} meaning, namely that of identity. Everything is identical
 to itself, and only to itself. 
 
 The symbolization keys that we considered in \cref{ch.FOL} consequently give us one very convenient way to present an interpretation. We will continue to use them in this chapter. Following the discussion of \cref{sec:extensions}, we now also allow extensions specified by enumerations on the right side, e.g.,
 \begin{ekey}
-	\item[\text{domain}] heads of state, numbers
-	\item[\atom{H}{x}] Justin Trudeau, Angela Merkel, $\pi$
+	\item[\text{domain}] philosophers, numbers
+	\item[\atom{H}{x}] Aristotle, Hypatia, $\pi$
 \end{ekey}
 is a perfectly good way of specifying an interpretation, as is
 \begin{ekey}
@@ -161,7 +170,7 @@ However, it is sometimes also convenient to present an interpretation
 \emph{diagrammatically}. To illustrate (literally): suppose we want to
 consider just a single two-place predicate, `$\atom{R}{x,y}$'. Then we
 can represent it just by drawing an arrow between two objects, and
-stipulate that `$\atom{R}{x,y}$' is to hold of $x$ and $y$ \ifeff{} there is an arrow running from $x$ to $y$ in our diagram. As an
+stipulate that `$\atom{R}{x,y}$' is to hold of x and y \ifeff{} there is an arrow running from x to y in our diagram. As an
 example, we might offer:
 \begin{center}
 \begin{tikzpicture}
@@ -303,7 +312,14 @@ Unfortunately, this is not right either. To see this, observe that our go-to int
 
 So here is a third thought. (And this thought is not na\"{i}ve, but correct.) Although it is not the case that we have named \emph{everyone}, each person \emph{could} have been given a name. So we should focus on this possibility of extending an interpretation by adding a new name. We will offer a few examples of how this might work, centering on our go-to interpretation, and we will then present the formal definition.
 
-In our go-to interpretation, `$\exists x\, \atom{R}{b,x}$' should be true. After all, in the domain, there is certainly someone who was born after Beyonc\'e. Lady Gaga is one of those people. Indeed, if we were to extend our go-to interpretation---temporarily, mind---by adding the name `$c$' to refer to Lady Gaga, then `$\atom{R}{b,c}$' would be true on this extended interpretation. This, surely, should suffice to make `$\exists x\, \atom{R}{b,x}$' true on the original go-to interpretation.
+In our go-to interpretation, `$\exists x\, \atom{R}{b,x}$' should be
+true. After all, in the domain, there is certainly someone who was
+born after Beyonc\'e. Lady Gaga is one of those people. Indeed, if we
+were to extend our go-to interpretation---temporarily, mind---by
+adding the new name~`$c$' to refer to Lady Gaga, then
+`$\atom{R}{b,c}$' would be true on this extended interpretation. This,
+surely, should suffice to make `$\exists x\, \atom{R}{b,x}$' true on
+the original go-to interpretation.
 
 In our go-to interpretation, `$\exists x (\atom{P}{x} \eand \atom{R}{x,a})$' should also be true. After all, in the domain, there is certainly someone who was both a philosopher and born before Aristotle. Socrates is one such person. Indeed, if we were to extend our go-to interpretation by letting a new name, `$c$', denote Socrates, then `$\atom{P}{c} \eand \atom{R}{c,a}$' would be true on this extended interpretation. Again, this should surely suffice to make `$\exists x (\atom{P}{x} \eand \atom{R}{x,a})$' true on the original go-to interpretation.
 
@@ -313,12 +329,20 @@ If you have understood these three examples, that's what matters. It provides th
 
 Strictly speaking, though, we still need to \emph{give} that definition. The result, sadly, is a bit ugly, and requires a few new definitions. Brace yourself!
 
-Suppose that \metav{A} is a formula, which usually contains at least
-one free occurrence of the variable \metav{x}, and possibly more than one. We will write this thus:
-$$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$$
-Suppose also that \metav{c} is a name. Then we will write:
+Suppose that \metav{A} is a formula. We will write
+$$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$$ to indicate
+that \metav{A} contains some number of free occurrences of the
+variable~\metav{x} (it is usually one or more, but we don't exclude
+the case that \metav{x} does not occur free at all.) Suppose also that
+\metav{c} is a name. Then we will write:
 $$\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$$
-for the formula we obtain by replacing \emph{every} free occurrence of $\metav{x}$ in \metav{A} with~$\metav{c}$. The resulting formula is called a \define{substitution instance} of $\forall \metav{x}\metav{A}$ and $\exists\metav{x}\metav{A}$.  Also, $\metav{c}$ is called the \define{instantiating name}. So:
+for the formula we obtain by replacing \emph{every} free occurrence of
+$\metav{x}$ in \metav{A} with~$\metav{c}$. The resulting formula is
+called a \define{substitution instance} of $\forall
+\metav{x}\metav{A}$ and $\exists\metav{x}\metav{A}$. Also, $\metav{c}$
+is called the \define{instantiating name}. (If \metav{A} happens to
+contain no free occurrence of~\metav{x}, then the substitution
+instance is identical to~\metav{A}. So, for instance,
 	$$\exists x (\atom{R}{e,x} \eiff \atom{F}{x})$$
 is a substitution instance of 
 	$$\forall y \exists x (\atom{R}{y,x} \eiff \atom{F}{x})$$
@@ -341,33 +365,44 @@ in this connection.)
 
 Our interpretation will include a specification of which names
 correspond to which objects in the domain. Take any object in the
-domain, say, $d$, and a name $\metav{c}$ which is not already assigned
+domain, say, d, and a name $\metav{c}$ which is not already assigned
 by the interpretation. If our interpretation is $\mathbf{I}$, then we
-can consider the interpretation $\mathbf{I}[d/\metav{c}]$ which is
-just like $\mathbf{I}$ except it \emph{also} assigns the object~$d$ to
-the name $\metav{c}$. Then we can say that $d$ \define{satisfies} the
-formula $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in the
+can consider the interpretation $\mathbf{I}[\text{d}/\metav{c}]$
+which is just like $\mathbf{I}$ except it \emph{also} assigns the
+object~d to the name $\metav{c}$. Then we can say that d
+\define{satisfies} the formula
+$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in the
 interpretation~$\mathbf{I}$ if, and only if,
 $\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in
-$\mathbf{I}[d/\metav{c}]$. (We assume that the name $\metav{c}$ does
-not already occur in $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$.)
-If $d$ satisfies $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ we
-also say that $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ is
-\emph{true of}~$d$.
+$\mathbf{I}[\text{d}/\metav{c}]$. (We assume that the name
+$\metav{c}$ does not already occur in
+$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$.) If d satisfies
+$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ we also say that
+$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ is \emph{true of}~d.
 
 \factoidbox{
 	\begin{factoiditems}
-		\item The interpretation $\mathbf{I}[d/\metav{c}]$ is just like
+		\item The interpretation $\mathbf{I}[\text{d}/\metav{c}]$ is just like
 		the interpretation $\mathbf{I}$ except it also assigns the
-		object~$d$ to the name $\metav{c}$.
+		object~d to the name $\metav{c}$.
 
-		\item An object $d$ \define{satisfies}
+		\item An object d \define{satisfies}
 		$\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$ in
 		interpretation~$\mathbf{I}$ \textbf{\ifeff}
 		$\metav{A}(\dots\metav{c}\dots\metav{c}\dots)$ is true in
-		$\mathbf{I}[d/\metav{c}]$ (where the name $\metav{c}$ does not
+		$\mathbf{I}[\text{d}/\metav{c}]$ (where the name $\metav{c}$ does not
 		already occur in $\metav{A}(\dots\metav{x}\dots\metav{x}\dots)$).
 	\end{factoiditems}
+}
+
+\newglossaryentry{satisfaction}
+{
+  name=satisfaction of a formula,
+  description={The relation between an object d in the \gls{domain} of an
+    \gls{interpretation}~$\mathbf{I}$ and a
+    \gls{formula}~$\metav{A}(\metav{x})$ which holds \ifeff{}
+    $\metav{A}(\metav{c})$ is true in the modified interpretation
+    $\mathbf{I}[\text{d}/\metav{c}]$ in which $\metav{c}$ names~d}
 }
 
 So, for instance, Socrates satisfies the formula~$\atom{P}{x}$ since $\atom{P}{c}$ is true in the interpretation $\mathbf{I}[\text{Socrates}/c]$, i.e., the interpretation:
@@ -382,20 +417,19 @@ So, for instance, Socrates satisfies the formula~$\atom{P}{x}$ since $\atom{P}{c
 
 Armed with this notation, the rough idea is as follows. The sentence
 $\forall \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$
-will be true in $\mathbf{I}$ \ifeff, for any object~$d$ in the domain,
+will be true in $\mathbf{I}$ \ifeff, for any object~d in the domain,
 $\metav{A}(\ldots \metav{c} \ldots \metav{c}\ldots)$ is true in
-$\mathbf{I}[d/\metav{c}]$, i.e., no matter what object (in the domain)
-we name by the new name~$\metav{c}$. In other words, $\forall
-\metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$ is true
-\ifeff{} every object in the domain satisfies $\metav{A}(\ldots
-\metav{x} \ldots \metav{x} \ldots)$. Similarly, the sentence $\exists
-\metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$ will be
-true \ifeff{} there is \emph{some} object that satisifes
-$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$, i.e.,
-$\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$ is true in
-$\mathbf{I}[d/\metav{c}]$ for some object~$d$ and a new
-name~$\metav{c}$.
-\factoidbox{
+$\mathbf{I}[\text{d}/\metav{c}]$, i.e., no matter what object (in
+the domain) we name by the new name~$\metav{c}$. In other words,
+$\forall \metav{x} \metav{A}(\ldots \metav{x} \ldots \metav{x}
+\ldots)$ is true \ifeff{} every object in the domain satisfies
+$\metav{A}(\ldots \metav{x} \ldots \metav{x} \ldots)$. Similarly, the
+sentence $\exists \metav{x}\metav{A}(\ldots \metav{x} \ldots \metav{x}
+\ldots)$ will be true in $\mathbf{I}$ \ifeff{} there is \emph{some}
+object that satisifes $\metav{A}(\ldots \metav{x} \ldots \metav{x}
+\ldots)$, i.e., $\metav{A}(\ldots \metav{c} \ldots \metav{c} \ldots)$
+is true in $\mathbf{I}[\text{d}/\metav{c}]$ for some object~d and a
+new name~$\metav{c}$. \factoidbox{
 		\begin{factoiditems}
 		\item $\forall \metav{x}\metav{A}(\ldots \metav{x}\ldots\metav{x}\ldots)$ is true in an interpretation \textbf{\ifeff}
 		every object in the domain satisfies $\metav{A}(\ldots
@@ -506,9 +540,11 @@ Determine whether each of the following sentences is true or false in that inter
 
 Defining truth in FOL was quite fiddly. But now that we are done, we can define various other central logical notions. These definitions will look very similar to those for TFL, from \cref{s:SemanticConcepts}. However, remember that they concern \emph{interpretations}, rather than valuations.
 
-We will use the symbol `$\entails$' for FOL much as we did for TFL. So:
-	$$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \entails\metav{C}$$
-means that there is no interpretation in which all of $\metav{A}_1$, $\metav{A}_2$, \dots, $\metav{A}_n$ are true and in which \metav{C} is false. Derivatively,
+We will use the symbol `$\entails$' for FOL much as we did for TFL. So
+the sentences $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$
+\define{entail} the sentence $\metav{C}$,
+	$$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \entails\metav{C},$$
+\ifeff{} there is no interpretation in which all of $\metav{A}_1$, $\metav{A}_2$, \dots, $\metav{A}_n$ are true and in which \metav{C} is false. Derivatively,
 	$$\entails\metav{A}$$
 means that \metav{A} is true in every interpretation.
 
@@ -567,7 +603,8 @@ description={A property held by pairs of \glspl{sentence of FOL} if and only if 
 {
   name=satisfiability (in FOL),
   text=jointly satisfiable,
-description={A property held by \glspl{sentence of FOL} if and only if some \gls{interpretation} makes all the sentences true}
+  description={A property held by \glspl{sentence of FOL} if and only
+  if some \gls{interpretation} makes all the sentences true together}
 }
 	\end{factoiditems}
 }
@@ -793,7 +830,7 @@ We'll close this section, though, with a caution about the relationship between 
 	\item[] Every fox is cute.
 	\item[\texttherefore] All vixens are cute.
 \end{earg}
-This is valid: necessarily every vixen is a fox, so it is impossible for the premise to be true and the conclusion false. Now, we might sensibly symbolize the argument as follows:
+This is conceptually valid: necessarily every vixen is a fox, so it is impossible for the premise to be true and the conclusion false. Now, we might sensibly symbolize the argument as follows:
 $$\forall x(\atom{F}{x} \eif \atom{C}{x}) \therefore \forall x(\atom{V}{x} \eif  \atom{C}{x})$$
 However, it is easy to find counter-models which show that $\forall x(\atom{F}{x} \eif \atom{C}{x}) \nentails \forall x(\atom{V}{x} \eif  \atom{C}{x})$. (\emph{Exercise}: find one.) So, it would be \emph{wrong} to infer that the English argument is \emph{invalid}, just because there is a counter-model to the relevant \emph{FOL{}-entailment}.
 

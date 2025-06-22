@@ -450,7 +450,7 @@ $\exists x \forall y(\forall z(\atom{L}{x,z} \eif \atom{L}{y,z}) \eif \atom{L}{x
 \end{fitchproof}}
 
 \problempart
-Show that each pair of sentences is provably equivalent.
+Show that each pair of sentences is interderivable.
 \begin{compactlist}
 \item $\forall x (\atom{A}{x}\eif \enot \atom{B}{x})$, $\enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
 \item $\forall x (\enot \atom{A}{x}\eif \atom{B}{d})$, $\forall x\,\atom{A}{x} \eor \atom{B}{d}$
@@ -461,13 +461,13 @@ Show that each pair of sentences is provably equivalent.
 \solutions
 \problempart
 \label{pr.FOLequivornot}
-For each of the following pairs of sentences: If they are provably equivalent, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
+For each of the following pairs of sentences: If they are interderivable, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
 \begin{compactlist}
 \item $\forall x\,\atom{P}{x} \eif \atom{Q}{c}, \forall x (\atom{P}{x} \eif \atom{Q}{c})$ \hfill \myanswer{Not logically equivalent}
 \\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$c$' name $1$. Let `$\atom{P}{x}$' be true of and only of $1$. Let `$\atom{Q}{x}$' be true of, and only of, $2$.}
 \item $\forall x\forall y \forall z \atom{B}{x,y,z}, \forall x\,\atom{B}{x,x,x}$\hfill \myanswer{Not logically equivalent}
 \\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$\atom{B}{x,y,z}$' be true of, and only of, \ntuple{1,1,1} and \ntuple{2,2,2}.}
-\item $\forall x\forall y\,\atom{D}{x,y}, \forall y\forall x\,\atom{D}{x,y}$ \hfill \myanswer{Provably equivalent\begin{multicols}{2}
+\item $\forall x\forall y\,\atom{D}{x,y}, \forall y\forall x\,\atom{D}{x,y}$ \hfill \myanswer{interderivable\begin{multicols}{2}
 \begin{fitchproof}[arrayenv=tabular]
 \hypo{AAd}{\forall x \forall y\,\atom{D}{x,y}}
 \have{Ad}{\forall y\,\atom{D}{a,y}}\Ae{AAd}
@@ -644,7 +644,7 @@ Show in each case that the sentences are inconsistent:
 \end{compactlist}
 
 \problempart
-Show that each pair of sentences is provably equivalent: %TB: Again, have to do some manual numbering to make the multicols have enough space.
+Show that each pair of sentences is interderivable: %TB: Again, have to do some manual numbering to make the multicols have enough space.
 
 \begin{compactlist}
 \item $\forall x (\atom{A}{x} \eif \enot \atom{B}{x}), \enot\exists x(\atom{A}{x} \eand \atom{B}{x})$
@@ -721,7 +721,7 @@ Show that each pair of sentences is provably equivalent: %TB: Again, have to do 
 
 
 \problempart
-In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is provably equivalent:
+In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `across' various logical operators. Show that each pair of sentences is interderivable:
 \begin{compactlist}
 \item $\forall x (\atom{F}{x} \eand \atom{G}{a}), \forall x\,\atom{F}{x} \eand \atom{G}{a}$ 
 \myanswer{
@@ -1083,7 +1083,7 @@ is true.
 \end{compactlist}
 
 \problempart
-Show that the following are provably equivalent:
+Show that the following are interderivable:
 \begin{itemize}
 \item $\exists x \bigl([\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)] \eand x = n\bigr)$
 \item $\atom{F}{n} \eand \forall y (\atom{F}{y} \eif n= y)$
@@ -1123,7 +1123,7 @@ In \cref{sec.identity}, we claimed that the following are logically equivalent s
 \item $\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]$
 \item $\exists x \forall y (\atom{F}{y} \eiff x = y)$
 \end{itemize}
-Show that they are all provably equivalent. (\emph{Hint}: to show that three claims are provably equivalent, it suffices to show that the first proves the second, the second proves the third and the third proves the first; think about why.)\\
+Show that they are all interderivable. (\emph{Hint}: to show that three claims are interderivable, it suffices to show that the first proves the second, the second proves the third and the third proves the first; think about why.)\\
 \myanswer{It suffices to show that the first proves the second, the second proves the third and the third proves the first, for we can then show that any of them prove any others, just by chaining the proofs together (numbering lines, where necessary. Armed with this, we start on the first proof:
 \begin{fitchproof}
 \hypo{prem}{\exists x\,\atom{F}{x} \eand \forall x \forall y \bigl[(\atom{F}{x} \eand \atom{F}{y}) \eif x = y\bigr]}

@@ -54,7 +54,17 @@ F & F & F
 \end{center}
 Like conjunction, disjunction is commutative.
 
-\paragraph{Conditional} We're just going to come clean and admit it: Conditionals are a mess in TFL. Exactly how much of a mess they are is \emph{philosophically} contentious. We'll discuss a few of the subtleties in \cref{s:IndicativeSubjunctive,s:ParadoxesOfMaterialConditional}. For now, we are going to stipulate the following: $\metav{A}\eif\metav{B}$ is false if and only if \metav{A} is true and \metav{B} is false. We can summarize this with a characteristic truth table for the conditional.
+\paragraph{Conditional} We're just going to come clean and admit it:
+Conditionals are a mess. Exactly how much of a
+mess they are is \emph{philosophically} contentious. We'll discuss a
+few of the subtleties in
+\cref{s:IndicativeSubjunctive,s:ParadoxesOfMaterialConditional}. For
+now, we are going to stipulate the following: $\metav{A}\eif\metav{B}$
+is false if and only if \metav{A} is true and \metav{B} is false.
+The connective with these stipulated truth conditions is called the
+\define{material conditional}. We
+can summarize this with a characteristic truth table for the
+conditional.
 \begin{center}
 \begin{tabular}{c c|c}
 \metav{A} & \metav{B} & $\metav{A}\eif\metav{B}$\\
@@ -78,7 +88,9 @@ F & T & F\\
 F & F & T
 \end{tabular}
 \end{center}
-Unsurprisingly, the biconditional is commutative.
+The connective with this truth table is also often called the
+\define{material biconditional}. Unsurprisingly, the biconditional is
+commutative.
 
 \chapter{Truth-functional connectives}
 \label{s:TruthFunctionality}
@@ -147,7 +159,6 @@ Suppose that Lara has drawn some shapes on a piece of paper, and coloured some o
 		If any shape is grey, then that shape is also circular.
 	\end{quote}
 As it happens, Lara has drawn the following:
-
 \begin{center}
 \begin{tikzpicture}
 	\node[circle, grey_shape] (cat1) {A};
@@ -157,8 +168,7 @@ As it happens, Lara has drawn the following:
 \end{tikzpicture}
 \bmlDescription{There are three shapes: the first shape is a grey circle labelled A, some empty space, the second shape is a white circle labelled C, and the fourth a white square labelled D.}
 \end{center}
-
-\noindent In this case, our claim is surely true.  Shapes C and D are not grey, and so can hardly present \emph{counterexamples} to our claim. Shape A \emph{is} grey, but fortunately it is also circular. So our claim has no counterexamples. It must be true. That means that each of the following \emph{instances} of our claim must be true too:
+In this case, our claim is surely true.  Shapes C and D are not grey, and so can hardly present \emph{counterexamples} to our claim. Shape A \emph{is} grey, but fortunately it is also circular. So our claim has no counterexamples. It must be true. That means that each of the following \emph{instances} of our claim must be true too:
 	\begin{itemize}
 		\item If A is grey, then it is circular
 
@@ -171,7 +181,6 @@ As it happens, Lara has drawn the following:
 		\qquad (false antecedent, false consequent)
 	\end{itemize}
 However, if Lara had drawn a fourth shape, thus:
-
 \begin{center}
 \begin{tikzpicture}
 	\node[circle, grey_shape] (cat1) {A};
@@ -184,8 +193,7 @@ a grey circle labelled A, the second a grey square labelled B, the
 third a white circle labelled C, and the fourth a white square
 labelled D.}
 \end{center}
-
-\noindent then our claim would have been false. So this claim must also be false:
+then our claim would have been false. So this claim must also be false:
 	\begin{itemize}
 		\item If B is grey, then it is circular
 
@@ -200,7 +208,7 @@ What this argument shows is that `$\eif$' is the \emph{best} candidate for a tru
 	\end{enumerate}
 \Cref*{brownwins1} is true; \cref*{brownwins2} is false, but both have false antecedents and false consequents. (Hillary did not win; she did not become the first woman president of the US; and she did not fill with helium and float away.) So the truth value of the whole sentence is not uniquely determined by the truth value of the parts.
 
-The crucial point is that \cref*{brownwins1,brownwins2} employ \emph{subjunctive} conditionals, rather than \emph{indicative} conditionals. They ask us to imagine something contrary to fact---after all, Hillary Clinton lost the 2016 election---and then ask us to evaluate what \emph{would} have happened in that case. Such considerations simply cannot be tackled using `$\eif$'.
+The crucial point is that \cref*{brownwins1,brownwins2} employ \emph{subjunctive} conditionals, rather than \emph{indicative} conditionals. They ask us to imagine something contrary to fact---after all, Hillary Clinton lost the 2016 election---and then ask us to evaluate what \emph{would} have happened in that case. Such considerations simply cannot be tackled using~`$\eif$'.
 
 We will say more about the difficulties with conditionals in \cref{s:ParadoxesOfMaterialConditional}. For now, we will content ourselves with the observation that `$\eif$' is the only candidate for a truth-functional conditional for TFL, but that many English conditionals cannot be represented adequately using `$\eif$'. TFL is an intrinsically limited language.
 
@@ -349,7 +357,12 @@ But we should not simply write:
 	\begin{align*}
 		A \eor B \eor C
 	\end{align*}
-In fact, it is a specific fact about the characteristic truth table of $\eor$ and $\eand$ that guarantees that any two conjunctions (or disjunctions) of the same sentences are truth functionally equivalent, however you place the brackets. \emph{This is only true of conjunctions and disjunctions}, however. The following two sentences have \emph{different} truth tables:
+In fact, it is a specific fact about the characteristic truth table of
+$\eor$ and $\eand$ that guarantees that any two conjunctions (or
+disjunctions) of the same sentences are truth functionally equivalent,
+however you place the brackets. \emph{This is only true of
+conjunctions, disjunctions, and biconditionals}, however. The following two sentences
+have \emph{different} truth tables:
 	\begin{align*}
 		((A \eif B) \eif C)\\
 		(A \eif (B \eif C))
@@ -642,7 +655,10 @@ In \cref{s:BasicNotions}, we said that sentences are jointly possible \ifeff{} i
 {
   name=satisfiability (in TFL),
   text=jointly satisfiable,
-description={A property held by sentences if and only if the \gls{complete truth table} for those sentences contains one line on which all the sentences are true, i.e., if some \gls{valuation} makes all the sentences true}
+  description={A property held by \glspl{sentence of TFL} if and only if the
+  \gls{complete truth table} for all those sentences together contains one line
+  on which all the sentences are true, i.e., if some \gls{valuation}
+  makes all the sentences true}
 }
 
 Derivatively, sentences are \define{jointly unsatisfiable} \ifeff{} no valuation makes them all true. Again, it is easy to test for joint satisfiability using truth tables.
@@ -673,35 +689,35 @@ $J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
 \end{center}
 The only row on which both`$\enot L \eif (J \eor L)$' and `$\enot L$' are true is the second row, and that is a row on which `$J$' is also true. So `$\enot L \eif (J \eor L)$' and `$\enot L$' entail `$J$'.
 
-We now make an important observation:
-	\factoidbox{
-	If $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ entail
-	$\metav{C}$ in TFL, then $\metav{A}_1, \metav{A}_2, \ldots,
-	\metav{A}_n \therefore \metav{C}$ is valid.
-	}
-Here's why. Suppose $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$
-entail $\metav{C}$ in TFL. Can it happen that the argument
-$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$
-is invalid? Then there would be a \emph{case} which makes all of
-$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and $\metav{C}$
-false, relative to some symbolization key. This case would generate a
-valuation of the sentence letters occurring in $\metav{A}_1,
-\metav{A}_2, \ldots, \metav{A}_n$, and $\metav{C}$: take the truth
-value of any sentence letter to be just the truth value of the
-corresponding sentence in the case in question. This valuation would
-also make $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and
-$\metav{C}$ false, since truth values are determined from the truth
-values of sentence letters by the truth tables of the connectives, and
-the truth values of the sentence letters are the same in the valuation
-as they are in the (imagined) case. But this is impossible, since
-we've assumed that $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$
-entail $\metav{C}$ in TFL, and so there is no valuation which makes
-all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and also
-makes $\metav{C}$ false. So it can't happen that the argument
-$\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$
-is invalid; consequently, it must be valid.
+% We now make an important observation:
+% 	\factoidbox{
+% 	If $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ entail
+% 	$\metav{C}$ in TFL, then $\metav{A}_1, \metav{A}_2, \ldots,
+% 	\metav{A}_n \therefore \metav{C}$ is valid.
+% 	}
+% Here's why. Suppose $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$
+% entail $\metav{C}$ in TFL. Can it happen that the argument
+% $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$
+% is invalid? Then there would be a \emph{case} which makes all of
+% $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and $\metav{C}$
+% false, relative to some symbolization key. This case would generate a
+% valuation of the sentence letters occurring in $\metav{A}_1,
+% \metav{A}_2, \ldots, \metav{A}_n$, and $\metav{C}$: take the truth
+% value of any sentence letter to be just the truth value of the
+% corresponding sentence in the case in question. This valuation would
+% also make $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and
+% $\metav{C}$ false, since truth values are determined from the truth
+% values of sentence letters by the truth tables of the connectives, and
+% the truth values of the sentence letters are the same in the valuation
+% as they are in the (imagined) case. But this is impossible, since
+% we've assumed that $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$
+% entail $\metav{C}$ in TFL, and so there is no valuation which makes
+% all of $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n$ true and also
+% makes $\metav{C}$ false. So it can't happen that the argument
+% $\metav{A}_1, \metav{A}_2, \ldots, \metav{A}_n \therefore \metav{C}$
+% is invalid; consequently, it must be valid.
 
-In short, we have a way to test for the validity of English arguments. First, we symbolize them in TFL; then we test for entailment in TFL using truth tables.
+% In short, we have a way to test for the validity of English arguments. First, we symbolize them in TFL; then we test for entailment in TFL using truth tables.
 
 
 
@@ -725,9 +741,9 @@ side of `$\entails$' in this case, this just means that there is no
 valuation which makes $\metav{C}$ false. Otherwise put, it says that
 every valuation makes $\metav{C}$ true. Otherwise put, it says that
 $\metav{C}$ is a tautology. Equally, to say that $\metav{A}$ is a
-contradiction, we can write:
+contradiction, we could write:
 	$$\metav{A} \entails\phantom{\metav{C}}$$
-For this says that no valuation makes $\metav{A}$ true.
+to mean that no valuation makes $\metav{A}$ true.
 
 Sometimes, we will want to deny that there is a tautological entailment, and say something of this shape: 
 \begin{center}
@@ -989,11 +1005,11 @@ of baldness'!
 
 Third, consider the following sentence:
 	\begin{enumerate}
-	\item\label{n:GodParadox}	It's not the case that, if God exists, She answers malevolent prayers.
+	\item\label{n:GodParadox} It's not the case that, if God exists, She answers malevolent prayers.
 	\end{enumerate}
 Symbolizing this in TFL, we would offer something like `$\enot (G \eif M)$'. Now, `$\enot (G \eif M)$' entails `$G$' (again, check this with a truth table). So if we symbolize \cref*{n:GodParadox} in TFL, it seems to entail that God exists. But that's strange: surely even an atheist can accept \cref*{n:GodParadox}, without contradicting herself!
 
-One lesson of this is that the symbolization of \cref*{n:GodParadox} as `$\enot(G \eif M)$' shows that \cref*{n:GodParadox} does not express what we intend. Perhaps we should rephrase it as
+One lesson of this is that the symbolization of \cref*{n:GodParadox} as `$\enot(G \eif M)$' does not express what we intend. Perhaps we should rephrase \cref*{n:GodParadox} as
 	\begin{enumerate}
 	\item\label{n:GodParadox2} If God exists, She does not answer malevolent prayers.
 	\end{enumerate}
@@ -1023,7 +1039,7 @@ should be allowed to take truth values other than T and~F. But this is
 by no means universally accepted.
 
 \Cref{n:GodParadox} also showed that symbolization is often tricky,
-and that the straightforward symbolization of and English sentence
+and that the straightforward symbolization of an English sentence
 sometimes does not capture its intended truth conditions. But even our
 improvement, \cref{n:GodParadox2}, and its symbolization `$G \eif
 \enot M$' turned out to not be good enough. The phenomenon we
@@ -1103,10 +1119,10 @@ So `$((P \eif Q) \eif P) \eif P$' is a tautology. In fact, it is an instance of 
 
 \section{Testing for validity and entailment}
 In \cref{s:SemanticConcepts}, we saw how to use truth tables to test for validity. In that test, we look for \emph{bad} lines: lines where the premises are all true and the conclusion is false. Now:
-\begin{compactlist}
-	\item[\textbullet] If the conclusion is true on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)
-	\item[\textbullet] If any premise is false on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)
-\end{compactlist}
+\begin{itemize}
+	\item If the conclusion is true on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)
+	\item If any premise is false on a line, then that line is not bad. (And we don't need to evaluate anything \emph{else} on that line to confirm this.)
+\end{itemize}
 With this in mind, we can speed up our tests for validity quite considerably.
 
 Let's consider how we might test the following:
@@ -1282,7 +1298,7 @@ To show that some sentences are jointly unsatisfiable, we must show that there i
 \paragraph{Validity and entailment}
 To show that an argument is valid, we must show that there is no valuation which makes all of the premises true and the conclusion false. So this  requires a complete truth table.  (Likewise for entailment.)
 
-To show that argument is \emph{invalid}, we must show that there is a valuation which makes all of the premises true and the conclusion false. So this requires only a one-line partial truth table on which all of the premises are true and the conclusion is false. (Likewise for a failure of entailment.)
+To show that an argument is \emph{invalid}, we must show that there is a valuation which makes all of the premises true and the conclusion false. So this requires only a one-line partial truth table on which all of the premises are true and the conclusion is false. (Likewise for a failure of entailment.)
 
 This table summarizes what is required:
 

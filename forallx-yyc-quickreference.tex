@@ -37,7 +37,7 @@ Both $P$ and $Q$ & $(P \eand Q)$\\
 If $P$ then $Q$ & $(P \eif Q)$\\
 $P$ only if $Q$ & $(P \eif Q)$\\
 $P$ if and only if $Q$ & $(P \eiff Q)$\\
-$P$ unless $Q$ & $(P \eor Q)$\\
+$P$ unless $Q$ & $(\enot Q \eif P)$ or $(P \eor Q)$\\
 \\
 \multicolumn{2}{c}{\label{SymbolizingPredicates}\textsc{Predicates}}\\ \\
 All $F$s are $G$s & $\forall x(\atom{F}{x} \eif \atom{G}{x})$\\
@@ -52,9 +52,9 @@ Only $F$s are $G$s & $\forall x(\atom{G}{x} \eif \atom{F}{x})$\\
 \multicolumn{2}{c}{\textsc{Identity}}\\ \\
 Only $c$ is $G$ & $\forall x(\atom{G}{x} \eiff x=c)$\\
 Everything other &\\ than $c$ 
-is $G$ & $\forall x(\enot x = c \eif \atom{G}{x} )$\\
+is $G$ & $\forall x(\enot\, {x = c} \eif \atom{G}{x} )$\\
 Everything \\except $c$ 
- is $G$ & $\forall x(\enot x = c \eiff \atom{G}{x} )$\\
+ is $G$ & $\forall x(\enot\, {x = c} \eiff \atom{G}{x} )$\\
 %$j$ is more $R$ than anyone else. & $\forall x(x\neq j \eif Rjx)$\\
 The $F$ is $G$ & $\exists x(\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x=y) \eand \atom{G}{x} )$\\
 It is not the case \\ that
@@ -464,8 +464,23 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 \end{multicols}
 %\end{minipage}
 
+\section{Rules for the use of subproofs and citations}
+
+To cite an individual line when applying a rule:
+\begin{compactlist}
+\item the line must come before the line where the rule is applied, but 
+\item not occur within a subproof that has been closed before the line where the rule is applied.
+\end{compactlist}
+To cite a subproof when applying a rule:
+\begin{compactlist} 
+\item the cited subproof must come entirely before the application of the rule where it is cited,
+\item the cited subproof must not lie within some other closed subproof which is closed at the line it is cited, and 
+\item the last line of the cited subproof must not occur inside a nested subproof.
+\end{compactlist}
+
 \section{Rules for chains of equivalences}
 
+\ifHTMLtarget
 \begin{align*}
 \lnot\lnot \metav{P} & \Leftrightarrow \metav{P} && \text{(DN)}\\[2ex]
 (\metav{P} \eif \metav{Q}) & \Leftrightarrow (\lnot \metav{P} \lor \metav{Q})
@@ -492,3 +507,34 @@ One way to say `there are exactly $n$ $F$s' is to conjoin two of the symbolizati
 (\metav{P} \lor (\metav{Q} \lor \lnot\metav{Q})) & \Leftrightarrow (\metav{Q} \lor \lnot\metav{Q}) \\
 (\metav{P} \land (\metav{Q} \land \lnot\metav{Q})) & \Leftrightarrow (\metav{Q} \land \lnot\metav{Q})
 \end{align*}
+\else
+
+\begin{align*}
+\lnot\lnot \metav{P} & \Leftrightarrow \metav{P} && \text{(DN)}\\[2ex]
+(\metav{P} \eif \metav{Q}) & \Leftrightarrow (\lnot \metav{P} \lor \metav{Q})
+&& \text{(Cond)}\\
+\lnot(\metav{P} \eif \metav{Q}) & \Leftrightarrow (\metav{P} \land \lnot\metav{Q}) \\[2ex]
+(\metav{P} \eiff \metav{Q}) & \Leftrightarrow ((\metav{P} \eif \metav{Q}) \land  (\metav{Q} \eif \metav{P}))
+&& \text{(Bicond)}\\[2ex]
+\lnot(\metav{P} \land \metav{Q}) & \Leftrightarrow (\lnot\metav{P} \lor \lnot\metav{Q})
+&& \text{(DeM)}\\
+\lnot(\metav{P} \lor \metav{Q}) & \Leftrightarrow (\lnot\metav{P} \land \lnot\metav{Q}) \\[2ex]
+(\metav{P} \lor \metav{Q}) & \Leftrightarrow (\metav{Q} \lor \metav{P}) & &\text{(Comm)}\\
+(\metav{P} \land \metav{Q}) & \Leftrightarrow (\metav{Q} \land \metav{P})\\[2ex]
+(\metav{P} \land (\metav{Q} \lor \metav{R})) & \Leftrightarrow ((\metav{P} \land \metav{Q}) \lor (\metav{P} \land \metav{R}))
+&& \text{(Dist)}\\
+(\metav{P} \lor (\metav{Q} \land \metav{R})) & \Leftrightarrow ((\metav{P} \lor \metav{Q}) \land (\metav{P} \lor \metav{R}))\\
+(\metav{P} \lor (\metav{Q} \lor \metav{R})) & \Leftrightarrow ((\metav{P} \lor \metav{Q}) \lor \metav{R}) & &\text{(Assoc)}\\
+(\metav{P} \land (\metav{Q} \land \metav{R})) & \Leftrightarrow ((\metav{P} \land \metav{Q}) \land \metav{R})\\[2ex]
+(\metav{P} \lor \metav{P}) & \Leftrightarrow \metav{P} && \text{(Id)}\\
+(\metav{P} \land \metav{P}) & \Leftrightarrow \metav{P}\\[2ex]
+(\metav{P} \land (\metav{P} \lor \metav{Q})) & \Leftrightarrow \metav{P}&& \text{(Abs)}\\
+(\metav{P} \lor (\metav{P} \land \metav{Q})) & \Leftrightarrow \metav{P}\\[2ex]
+(\metav{P} \land (\metav{Q} \lor \lnot\metav{Q})) & \Leftrightarrow \metav{P}  && \text{(Simp)}\\
+(\metav{P} \lor (\metav{Q} \land \lnot\metav{Q})) & \Leftrightarrow \metav{P}
+\end{align*}
+\begin{align*}
+(\metav{P} \lor (\metav{Q} \lor \lnot\metav{Q})) & \Leftrightarrow (\metav{Q} \lor \lnot\metav{Q}) \\
+(\metav{P} \land (\metav{Q} \land \lnot\metav{Q})) & \Leftrightarrow (\metav{Q} \land \lnot\metav{Q})
+\end{align*}
+\fi

@@ -1,5 +1,13 @@
 # Summary of changes
 
+## Changes in Fall 2025 edition
+
+- Terminology for _provably equivalent_ replaced by _interderivable_
+- More careful discussion of relation between semantic and proof
+  theoretic notions
+- Added rules for subproofs to the quick reference appendix
+- Many typos and minor errors fixed
+
 ## Changes in Fall 2023 edition
 
 - Fully accessible HTML version and SCORM packages using BookML
