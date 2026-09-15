@@ -11,6 +11,9 @@
   {\noindent\par\noindent\begin{nd}}
   {\end{nd}\par\noindent\ignorespacesafterend}
 
+% redefine \nd@nomath to avoid converting every line number to MathML
+\def\nd@nomath#1{\mbox{#1}}
+
 % A counter to keep track of subproof levels
 \newcounter{nd@scope}
 % toggles used to insert "open subproof" and "close subproof" 
