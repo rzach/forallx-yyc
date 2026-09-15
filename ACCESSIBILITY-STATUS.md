@@ -150,6 +150,10 @@ re-validation of the HTML for accessibility).
   after chapters without indent. The chapter styles are also slightly
   off from what they are with "real" memoir (different spacing,
   mostly).
+- Parts are the top heading level used but chapters are tagged as `H1` and
+  parts aren't made into `SECTION`s. That may be a problem with what I did
+  in `memoir-tagging` or it may be a problem with how the LaTeX
+  tagging code translates heading levels into `H1`, `H2` etc.
 - a [bug in
   `latex-lab-enumitem`](https://github.com/latex3/tagging-project/issues/1595)
   prevents `ekey`s from working properly. What I'm doing now
