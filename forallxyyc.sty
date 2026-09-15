@@ -199,7 +199,8 @@
 
 % enumerate -- used for numbered examples; counter resets every
 % chapter
-\setlist[enumerate]{resume,noitemsep,labelwidth=4em,label=\arabic*.}
+\def\enumeratelabel#1{#1.}
+\setlist[enumerate]{resume,noitemsep,labelwidth=4em,label=\arabic*,format=\enumeratelabel}
 \@addtoreset{enumi}{chapter}
 
 %    ****************************************
