@@ -1,24 +1,43 @@
 %!TEX root = forallxyyc.tex
 
 \ifHTMLtarget\else
-% Bastard Title
+% Bastard Title, but not in HTML version
 
 \pagestyle{empty}
 
 \vspace*{80pt}
 
-\begin{raggedleft}
-\fontsize{30pt}{24pt}\sffamily
-\selectfont
-  \textbf{forall 
-  {\fontsize{37pt}{24pt}\selectfont\rmfamily\textit{x}}: 
-  Calgary}
+% tagging as title
+% see https://github.com/latex3/latex2e/blob/develop/required/latex-lab/latex-lab-title.dtx
 
-\medskip\fontsize{18pt}{20pt}\selectfont
+% use the tagging socket for the title if it's loaded
+\IfSocketExistsTF{tagsupport/title}{%
+  \begin{flushright}[tagging-suppress-paras=true,
+        tagging-recipe=standalone,
+        tag-name=\UseStructureName{title/block}]
+  \UseTaggingSocket{title}{}{%
+    \fontsize{30pt}{24pt}\sffamily\selectfont
+    \textbf{forall
+    {\fontsize{37pt}{24pt}\selectfont\rmfamily\textit{x}}:
+    Calgary}
 
-\textbf{An Introduction to\\ Formal Logic}
+    \medskip\fontsize{18pt}{20pt}\selectfont
+    \textbf{An Introduction to\\ Formal Logic}}
+  \end{flushright}
+}{%
+  \begin{flushright}
+    \fontsize{30pt}{24pt}\sffamily\selectfont
+    \textbf{forall
+    {\fontsize{37pt}{24pt}\selectfont\rmfamily\textit{x}}:
+    Calgary}
+
+    \medskip\fontsize{18pt}{20pt}\selectfont
+    \textbf{An Introduction to\\ Formal Logic}
+  \end{flushright}
+}
 
 \vfill
+\begin{flushright}
 \fontsize{12pt}{16pt}\selectfont \textit{By } \textbf{P.~D. Magnus}\\
 \textbf{Tim Button}\\
 \textbf{Robert Trueman}\\
@@ -29,10 +48,9 @@
 
 \vfill
 \textbf{\forallxversion}\par
-\end{raggedleft}
+\end{flushright}
 
 \newpage
-
 \noindent\small%
 \fi
 This book is based on
@@ -88,12 +106,12 @@ The preparation of this textbook was made possible by a grant from the \href{htt
 \bigskip
 \noindent
 \href{https://taylorinstitute.ucalgary.ca/}{%
-%  \iflatexml
+  \iflatexml
     \includegraphics[alt={Logo of the Taylor Institute for Teaching and Learning}]
       {assets/ti-color}
-  % \else
-  %   \includegraphics[width=8cm]{assets/ti-color}
-  % \fi
+  \else
+    \includegraphics[width=8cm,alt={Logo of the Taylor Institute for Teaching and Learning}]{assets/ti-color}
+  \fi
   }
 
 \ifHTMLtarget
