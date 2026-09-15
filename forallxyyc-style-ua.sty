@@ -1,0 +1,131 @@
+%!TEX root = forallxyyc.tex
+
+% forallxyyc-style provides layout and style setup for forall x: YYC books
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{forallxyyc-style-ua}
+
+\ifdefined\bmlDescription\else
+  \newenvironment{bmlimage}{}{}
+  \newcommand{\bmlDescription}[1]{}
+\fi
+
+\RequirePackage{hyperref,ifthen,graphicx,xcolor}
+
+\usepackage[numbered]{bookmark} %TB: added for speedy navigation
+\usepackage[nonumberlist,toc,style=index]{glossaries}
+\makeglossaries
+%\usepackage{tabu}
+\usepackage[defaultlines=2,all]{nowidow}
+
+%RZ: typefaces 
+
+\ifdefined\directlua
+\usepackage{lua-unicode-math} % required for MathML output
+\usepackage{lum-bonum}
+
+\usepackage{helvet}
+\usepackage[osf]{Baskervaldx} % oldstyle figures
+\RequirePackage{amssymb} % ensure this is loaded before newtxmath
+%\usepackage[bigdelims,baskervaldx]{newtxmath} 
+\RequirePackage{latexsym}
+
+\DeclareFontFamily{U}{BOONDOX-calo}{}
+\DeclareFontShape{U}{BOONDOX-calo}{m}{n}{<-> s*[1] BOONDOX-r-calo}{}
+\DeclareFontShape{U}{BOONDOX-calo}{b}{n}{<-> s*[1] BOONDOX-b-calo}{}
+\AtBeginDocument{%
+  \let\mathcal\relax
+  \DeclareMathAlphabet{\mathcal}{U}{BOONDOX-calo}{m}{n}%
+  \SetMathAlphabet{\mathcal}{bold}{U}{BOONDOX-calo}{b}{n}%
+}
+\else
+\usepackage{helvet}
+\usepackage[osf]{Baskervaldx} % oldstyle figures
+\RequirePackage{amssymb} % ensure this is loaded before newtxmath
+\usepackage[bigdelims,baskervaldx]{newtxmath} 
+\usepackage[cal=boondoxo]{mathalfa}
+\fi
+
+\usepackage{newunicodechar}
+\newunicodechar{▻}{\ensuremath{\triangleright}}
+
+%RZ: Make sure we have a copyright symbol
+
+\def\copyright{\textcircled{C}}
+
+%RZ: Include git revision info
+
+\usepackage{gitinfo2}
+
+% RZ: TOC widths
+
+\setlength{\cftpartnumwidth}{3em}
+\setlength{\cftchapternumwidth}{2.2em}
+\setlength{\cftsectionnumwidth}{3.3em}
+\setlength{\cftbeforechapterskip}{0pt} %TB: to leave no gap between sections (which LaTeX regards as chapters) in the TOC
+\renewcommand{\cftchapterfont}{\textrm}
+\renewcommand{\cftchapterpagefont}{\textrm}
+
+% Chapter style
+
+\newlength{\barlength}
+\setlength{\barlength}{400pt}
+\makechapterstyle{leadbeater}{%
+  \setlength{\afterchapskip}{40pt}
+  \setlength{\beforechapskip}{50pt}
+    \setlength{\midchapskip}{0pt}
+  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 0pt}
+  \renewcommand*{\chapnamefont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
+  \renewcommand*{\chapnumfont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
+  \renewcommand*{\chaptitlefont}{\normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}}
+  \renewcommand*{\printchaptername}{%
+    \chapnamefont\MakeUppercase{\@chapapp}}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \chaptitlefont ##1\\[-\baselineskip]%
+    \hspace*{-20pt}%
+    \smash{\color{leadbeater}\rule{7pt}{\barlength}}}
+}
+
+\renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
+\renewcommand*{\partnumfont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
+\renewcommand*{\parttitlefont}{\normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}}
+\renewcommand*{\printpartname}{%
+  \partnamefont PART}
+
+\newcommand{\trailingperiod}[1]{#1.}
+%\setparaheadstyle{\normalsize\bfseries\trailingperiod}
+\copypagestyle{leadbeater}{headings}
+
+\chapterstyle{leadbeater}
+
+\makeoddhead{leadbeater}{\small\sffamily\color{leadbeater}\rightmark}{}
+    {\color{leadbeater}\sffamily\bfseries\thepage}
+
+\makeevenhead{leadbeater}{\color{leadbeater}\sffamily\bfseries\thepage}{}
+    {\small\sffamily\color{leadbeater}\leftmark}
+
+\usepackage[font={small,it}]{caption}
+
+% restart numbering of example sentences for every chapter
+% \renewcommand{\memendofchapterhook}{\restartlist{enumerate}}{}
+
+% \factoidbox{...} produces a highlighted paragraph of text
+
+\usepackage{tcolorbox}
+\newenvironment{factoidboxe}{%
+  \begin{tcolorbox}[%width=.9\textwidth,
+      %      leftright skip=.05\textwidth,
+      sharp corners=downhill,
+      beforeafter skip=.7em,
+      colframe={leadbeater},colback={vltleadbeater}]}{
+\end{tcolorbox}}
+\newcommand{\factoidbox}[1]{\begin{factoidboxe}#1\end{factoidboxe}}
+
+% TB: information originally in the main body; but it is style information, so I have included it here.
+\hypersetup{pdfinfo={Title={forall x: Calgary}, Author={P.D. Magnus, Tim Button, J. Rob Loftis, Rob Trueman, Aaron Thomas-Bolduc, Richard Zach}, Subject={An open access introductory textbook in formal logic}, Keywords={truth-functional logic, propositional logic, predicate logic, first-order logic, natural deduction, Fitch}}, %
+  % bookmarks={true}, %
+  bookmarksopen = true,
+	colorlinks={true}, %
+	allcolors={dkleadbeater},
+	pdfdisplaydoctitle={true}}
+\urlstyle{same}

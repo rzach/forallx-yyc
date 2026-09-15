@@ -1,0 +1,131 @@
+% forallxyyc-ua Driver file to produce version of forall x:YYC for
+% screen reading This version for compilation with lualatex-dev to
+% produce PDF/UA-2b compliant PDF
+
+\ifdefined\directlua
+% If running LuaLaTeX, produce an associated MathML file (forallxyyc-ua-luamml-mathml.html)
+\DocumentMetadata
+  {
+    lang=en-US,
+    pdfversion=2.0,
+    pdfstandard=ua-2,
+    tagging=on,
+    tagging-setup={math/setup=mathml-AF}
+  }
+\else
+% if running pdfLaTeX, use generated forallxyyc-ua-mathml.html for MathML
+\DocumentMetadata
+  {
+    lang=en-US,
+    pdfversion=2.0,
+    pdfstandard=ua-2,
+    tagging=on,
+    tagging-setup={math/mathml/luamml/load=false}
+  }
+\fi
+
+\documentclass[openany,oneside,11pt]{memoir-tagging}
+
+% set stock & paper size with narrow margins
+
+\setstocksize{8in}{5in}
+
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+% Text width hard coded to 300pt
+
+% set the size of the type block to golden ratio calculated width
+
+\settypeblocksize{*}{300pt}{1.62}
+
+% set spine and and edge margin
+
+\setlrmargins{*}{*}{1}
+\setulmargins{.6in}{*}{*}
+\setheaderspaces{*}{*}{1}
+
+\checkandfixthelayout
+
+% set colors
+
+\RequirePackage{xcolor}
+\definecolor{lyallpink}{RGB}{222,31,149}
+\colorlet{leadbeater}{lyallpink}
+\colorlet{dkleadbeater}{lyallpink!80!black}
+\colorlet{ltleadbeater}{lyallpink!50}
+\colorlet{vltleadbeater}{lyallpink!3}
+
+% load forall x style and macro definitions
+
+\usepackage{forallxyyc-style-ua}
+\usepackage{forallxyyc}
+
+% textpos for putting the cover on the first page
+
+\usepackage[absolute,overlay]{textpos}
+
+\begin{document}
+
+\midsloppy
+
+% Cover Page
+
+\thispagestyle{empty}
+\setcounter{page}{0}
+
+% \begin{textblock*}{\stockwidth}(0in,3.5in)
+%   \noindent\includegraphics[alt=Cover art]{assets/forallx-coverart-screen.pdf}
+% \end{textblock*}
+
+% make front cover
+\begin{textblock*}{0in}(0in,0in)
+\noindent\includegraphics[alt=Book cover]{forallxyyc-cover-screen.pdf}
+  % \noindent\hfill
+  % \begin{minipage}[b][\stockheight][s]{.9\stockwidth}
+  %   \begin{flushright}
+  %     \vspace*{1.7cm}
+  %     \hfill
+  %     \sffamily\fontsize{66pt}{0pt}\selectfont
+  %     \color{lyallpink}
+  %     \textbf{forall}%
+  %     \fontsize{80pt}{0pt}\selectfont\rmfamily\textit{\textbf{x}\/}
+                    
+  %     \vskip.5cm
+          
+  %     \sffamily\fontsize{24pt}{0pt}\selectfont
+  %     \color{black}
+  %     \textbf{\uppercase{Calgary}}
+
+  %     \vspace*{1cm}
+  %     \color{black}
+  %     \sffamily
+  %     \fontsize{20pt}{22pt}\selectfont
+  %     \textbf{An Introduction to\\ Formal Logic}
+
+  %     \vfill
+  %     \fontsize{11pt}{14pt}\selectfont
+  %     \color{white}
+  %     \textbf{P.~D. Magnus}\\
+  %     \textbf{Tim Button}\\
+  %     \textbf{Robert Trueman}\\
+  %     \textbf{Richard Zach}\\
+  %     \textit{with contributions by}\\
+  %     \textbf{J.~Robert Loftis}\\
+  %     \textbf{Aaron Thomas-Bolduc}\par
+  %     \vspace{1cm}
+  %     \textbf{\forallxversion}\par
+  %     \vspace{1cm}
+  %   \end{flushright}
+  % \end{minipage}
+  % \hspace*{1cm}
+\end{textblock*}
+
+~\newpage
+\color{black}
+\setlength{\barlength}{0pt} % no bar next to chapter headings in ebook
+
+%\newif\ifHTMLtarget\HTMLtargetfalse\def\forallxversion{X}
+\input{forallx-yyc-content}
+
+\end{document}
