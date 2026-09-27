@@ -2,8 +2,8 @@
 % screen reading This version for compilation with lualatex-dev to
 % produce PDF/UA-2b compliant PDF
 
-\ifdefined\directlua
-% If running LuaLaTeX, produce an associated MathML file (forallxyyc-ua-luamml-mathml.html)
+%\ifdefined\directlua
+\IfFileExists{forallxyyc-ua-mathml.html}{% If running LuaLaTeX, produce an associated MathML file (forallxyyc-ua-luamml-mathml.html)
 \DocumentMetadata
   {
     lang=en-US,
@@ -12,7 +12,8 @@
     tagging=on,
     tagging-setup={math/setup=mathml-AF}
   }
-\else
+%\else
+}{
 % if running pdfLaTeX, use generated forallxyyc-ua-mathml.html for MathML
 \DocumentMetadata
   {
@@ -22,30 +23,45 @@
     tagging=on,
     tagging-setup={math/mathml/luamml/load=false}
   }
-\fi
+%\fi
+}
 
-\documentclass[openany,oneside,11pt]{memoir-tagging}
+%\documentclass[openany,oneside,11pt]{memoir-tagging}
+\documentclass[11pt,oneside]{book}
 
-% set stock & paper size with narrow margins
+% % set stock & paper size with narrow margins
 
-\setstocksize{8in}{5in}
+% \setstocksize{8in}{5in}
 
-\settrimmedsize{\stockheight}{\stockwidth}{*}
-\settrims{0pt}{0pt}
+% \settrimmedsize{\stockheight}{\stockwidth}{*}
+% \settrims{0pt}{0pt}
 
-% Text width hard coded to 300pt
+% % Text width hard coded to 300pt
 
-% set the size of the type block to golden ratio calculated width
+% % set the size of the type block to golden ratio calculated width
 
-\settypeblocksize{*}{300pt}{1.62}
+% \settypeblocksize{*}{300pt}{1.62}
 
-% set spine and and edge margin
+% % set spine and and edge margin
 
-\setlrmargins{*}{*}{1}
-\setulmargins{.6in}{*}{*}
-\setheaderspaces{*}{*}{1}
+% \setlrmargins{*}{*}{1}
+% \setulmargins{.6in}{*}{*}
+% \setheaderspaces{*}{*}{1}
 
-\checkandfixthelayout
+% \checkandfixthelayout
+
+\RequirePackage{geometry}
+
+\geometry{
+  paperwidth = 5in,
+  paperheight = 8in,
+  textwidth = 300pt,
+  textheight = 486pt,
+  hcentering = true,
+  top = .6in,
+  headheight = 13.6pt,
+  headsep = 14.8851pt
+}
 
 % set colors
 
@@ -65,9 +81,12 @@
 
 \usepackage[absolute,overlay]{textpos}
 
+% load tabularx (previously loaded by memoir)
+\usepackage{tabularx}
+
 \begin{document}
 
-\midsloppy
+%\midsloppy
 
 % Cover Page
 

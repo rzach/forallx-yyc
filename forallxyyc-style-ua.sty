@@ -20,34 +20,42 @@
 
 %RZ: typefaces 
 
-\ifdefined\directlua
-\usepackage{lua-unicode-math} % required for MathML output
-\usepackage{lum-bonum}
-
-\usepackage{helvet}
-\usepackage[osf]{Baskervaldx} % oldstyle figures
-\RequirePackage{amssymb} % ensure this is loaded before newtxmath
-%\usepackage[bigdelims,baskervaldx]{newtxmath} 
-\RequirePackage{latexsym}
-
-\DeclareFontFamily{U}{BOONDOX-calo}{}
-\DeclareFontShape{U}{BOONDOX-calo}{m}{n}{<-> s*[1] BOONDOX-r-calo}{}
-\DeclareFontShape{U}{BOONDOX-calo}{b}{n}{<-> s*[1] BOONDOX-b-calo}{}
-\AtBeginDocument{%
-  \let\mathcal\relax
-  \DeclareMathAlphabet{\mathcal}{U}{BOONDOX-calo}{m}{n}%
-  \SetMathAlphabet{\mathcal}{bold}{U}{BOONDOX-calo}{b}{n}%
-}
-\else
+%\ifdefined\directlua
+\IfFileExists{forallxyyc-ua-mathml.html}{
 \usepackage{helvet}
 \usepackage[osf]{Baskervaldx} % oldstyle figures
 \RequirePackage{amssymb} % ensure this is loaded before newtxmath
 \usepackage[bigdelims,baskervaldx]{newtxmath} 
 \usepackage[cal=boondoxo]{mathalfa}
-\fi
+}{
+% load lua-unicode-math to make sure the derived HTML as well as the
+% MathML, when generated, has the right unicode characters. Do this
+% after all the fonts are loaded or else you get errors.
+\usepackage{lua-unicode-math}
+}
+% \usepackage{lum-bonum}
 
+% \usepackage{helvet}
+% \usepackage[osf]{Baskervaldx} % oldstyle figures
+% \RequirePackage{amssymb} % ensure this is loaded before newtxmath
+% %\usepackage[bigdelims,baskervaldx]{newtxmath} 
+% \RequirePackage{latexsym}
+
+% \DeclareFontFamily{U}{BOONDOX-calo}{}
+% \DeclareFontShape{U}{BOONDOX-calo}{m}{n}{<-> s*[1] BOONDOX-r-calo}{}
+% \DeclareFontShape{U}{BOONDOX-calo}{b}{n}{<-> s*[1] BOONDOX-b-calo}{}
+% \AtBeginDocument{%
+%   \let\mathcal\relax
+%   \DeclareMathAlphabet{\mathcal}{U}{BOONDOX-calo}{m}{n}%
+%   \SetMathAlphabet{\mathcal}{bold}{U}{BOONDOX-calo}{b}{n}%
+% }
+
+
+
+% Trick luamml into not making every triangle used as a list bullet
+% into a formula
 \usepackage{newunicodechar}
-\newunicodechar{▻}{\ensuremath{\triangleright}}
+\newunicodechar{▻}{\MathCollectFalse\ensuremath{\triangleright}\MathCollectTrue}
 
 %RZ: Make sure we have a copyright symbol
 
@@ -59,50 +67,94 @@
 
 % RZ: TOC widths
 
+\usepackage{tocloft}
+
+% changes from memoir: chapter -> chap, section -> sec
 \setlength{\cftpartnumwidth}{3em}
-\setlength{\cftchapternumwidth}{2.2em}
-\setlength{\cftsectionnumwidth}{3.3em}
-\setlength{\cftbeforechapterskip}{0pt} %TB: to leave no gap between sections (which LaTeX regards as chapters) in the TOC
-\renewcommand{\cftchapterfont}{\textrm}
-\renewcommand{\cftchapterpagefont}{\textrm}
+\setlength{\cftchapnumwidth}{2.2em}
+\setlength{\cftsecnumwidth}{3.3em}
+\setlength{\cftbeforechapskip}{0pt}
+\setlength{\cftchapindent}{0pt}
+% \textrm -> \normalfont
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
 
 % Chapter style
 
 \newlength{\barlength}
 \setlength{\barlength}{400pt}
-\makechapterstyle{leadbeater}{%
-  \setlength{\afterchapskip}{40pt}
-  \setlength{\beforechapskip}{50pt}
-    \setlength{\midchapskip}{0pt}
-  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 0pt}
-  \renewcommand*{\chapnamefont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
-  \renewcommand*{\chapnumfont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
-  \renewcommand*{\chaptitlefont}{\normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}}
-  \renewcommand*{\printchaptername}{%
-    \chapnamefont\MakeUppercase{\@chapapp}}
-  \renewcommand*{\printchaptertitle}[1]{%
-    \chaptitlefont ##1\\[-\baselineskip]%
-    \hspace*{-20pt}%
-    \smash{\color{leadbeater}\rule{7pt}{\barlength}}}
+% \makechapterstyle{leadbeater}{%
+%   \setlength{\afterchapskip}{40pt}
+%   \setlength{\beforechapskip}{50pt}
+%     \setlength{\midchapskip}{0pt}
+%   \renewcommand*{\afterchapternum}{\par\nobreak\vskip 0pt}
+%   \renewcommand*{\chapnamefont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
+%   \renewcommand*{\chapnumfont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
+%   \renewcommand*{\chaptitlefont}{\normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}}
+%   \renewcommand*{\printchaptername}{%
+%     \chapnamefont\MakeUppercase{\@chapapp}}
+%   \renewcommand*{\printchaptertitle}[1]{%
+%     \chaptitlefont ##1\\[-\baselineskip]%
+%     \hspace*{-20pt}%
+%     \smash{\color{leadbeater}\rule{7pt}{\barlength}}}
+% }
+
+% code to replace memoir's definitions of \part and \chapter
+% uses heading templates from latex-lab-sec-template.dtx; see
+% https://ctan.org/tex-archive/macros/latex-dev/required/latex-lab/latex-lab-sec-template.pdf
+
+\EditInstance{heading}{chapter}
+{
+  after-penalty-vspace = 30pt
+, after-vspace = 35pt
+, prefix-decls = \fontsize{14pt}{0pt}\selectfont\sffamily\bfseries
+, prefix-format = \MakeUppercase{#1}
+%, heading-decls = \raggedright \parindent 0pt
+, number-decls = \fontsize{14pt}{0pt}\selectfont\sffamily\bfseries
+, title-decls = \normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}
+, title-format = %\hspace*{-10pt}\smash{\rule{7pt}{10ex}}\hspace*{3pt}
+#1
 }
 
-\renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
-\renewcommand*{\partnumfont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
-\renewcommand*{\parttitlefont}{\normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}}
-\renewcommand*{\printpartname}{%
-  \partnamefont PART}
+% \renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
+% \renewcommand*{\partnumfont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
+% \renewcommand*{\parttitlefont}{\normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}}
+% \renewcommand*{\printpartname}{%
+%   \partnamefont PART}
 
-\newcommand{\trailingperiod}[1]{#1.}
-%\setparaheadstyle{\normalsize\bfseries\trailingperiod}
-\copypagestyle{leadbeater}{headings}
+\EditInstance{heading}{part}
+{
+  after-penalty-vspace = 50pt
+%, after-vspace = 40pt
+, prefix-decls = \fontsize{24pt}{0pt}\selectfont\sffamily\bfseries
+, prefix-format = \MakeUppercase{#1}
+%, heading-decls = \raggedright \parindent 0pt
+, number-decls = \fontsize{24pt}{0pt}\selectfont\sffamily\bfseries
+, title-decls = \normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}
+, title-format = %\hspace*{-10pt}\smash{\rule{7pt}{10ex}}\hspace*{3pt}
+#1
+}
 
-\chapterstyle{leadbeater}
+% \newcommand{\trailingperiod}[1]{#1.}
+% %\setparaheadstyle{\normalsize\bfseries\trailingperiod}
+% \copypagestyle{leadbeater}{headings}
 
-\makeoddhead{leadbeater}{\small\sffamily\color{leadbeater}\rightmark}{}
-    {\color{leadbeater}\sffamily\bfseries\thepage}
+% \chapterstyle{leadbeater}
 
-\makeevenhead{leadbeater}{\color{leadbeater}\sffamily\bfseries\thepage}{}
-    {\small\sffamily\color{leadbeater}\leftmark}
+% \makeoddhead{leadbeater}{\small\sffamily\color{leadbeater}\rightmark}{}
+%     {\color{leadbeater}\sffamily\bfseries\thepage}
+
+% \makeevenhead{leadbeater}{\color{leadbeater}\sffamily\bfseries\thepage}{}
+%     {\small\sffamily\color{leadbeater}\leftmark}
+
+\usepackage{fancyhdr}
+\fancypagestyle{leadbeater}[fancydefault]{%
+  \fancyhead{}\fancyfoot{}\renewcommand{\headrulewidth}{0pt}
+  % \fancyhead[RO]{\small\sffamily\color{leadbeater}\rightmark}
+  % \fancyhead[LO]{\color{leadbeater}\sffamily\bfseries\thepage}
+  \fancyhead[RE,RO]{\color{leadbeater}\sffamily\bfseries\thepage}
+  \fancyhead[LE,LO]{\small\sffamily\color{leadbeater}\leftmark}
+}
 
 \usepackage[font={small,it}]{caption}
 

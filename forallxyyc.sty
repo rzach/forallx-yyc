@@ -39,15 +39,16 @@
 
 %    ****************************************
 %    *            LOGICAL SYMBOLS           *
-%    ****************************************
+%                 ****************************************
 %
-% There are, of course, many different symbols used for the truth-functional
-% connectives. In order to make the book adaptable, the symbols are defined
-% here in the style sheet and these commands are used throughout the book.
-% To change conjunction from the ampersand to the carat, for instance,
-% change the definition of \eand from ~\&~ to \wedge. To change negation from
-% the hoe to the swung dash, change \enot from \neg to {\sim}. Other examples
-% are given below.
+% There are, of course, many different symbols used for the
+% truth-functional connectives. In order to make the book adaptable,
+% the symbols are defined here in the style sheet and these commands
+% are used throughout the book. To change conjunction from the
+% ampersand to the carat, for instance, change the definition of \eand
+% from \& to \wedge. To change negation from the hoe to the swung
+% dash, change \enot from \neg to {\sim}. Other examples are given
+% below.
 %
 \let\oldtherefore\therefore
 \def\therefore{\ensuremath{\oldtherefore}}
@@ -93,10 +94,13 @@
   \@for\@arg:=#1\do{%
     \@argsep\@arg}%
 }
-
 \def\@argsepinit{\let\@argsep\argsep}
-
 \newcommand{\argsep}{}
+
+% \atom{A}{x,y} produces $A(x,y)$
+% (if you want $Axy$ redefine as #1\args{#2})
+% \lxFcn is LaTeXML's command for inserting "applied to" in the
+% generated MathML
 
 \newcommand{\atom}[2]{\ensuremath{\lxFcn{#1}(#2)}}
 
@@ -109,13 +113,16 @@
 \newcommand*{\script}[1]{\ensuremath{\mathcal{#1}}}
 \newcommand*{\metav}[1]{\ensuremath{\mathcal{#1}}}
 
-% create a blank that SRs read out as "blank"
 \iflatexml
+% for HTML output, create a blank that SRs read out as "blank"
 \newcommand*{\blank}{\underline{blank~}\bmlPlusClass{fxblank}}
 \else
+% for PDF output, make an underlined blank
 \newcommand*{\blank}{\underline{\hspace*{2.5em}}}
 \fi
-\newcommand*{\gap}[1]{\blank$_{#1}$} % TB: used for keys, to avoid use/mention confusion
+
+% a blank with subscript for keys
+\newcommand*{\gap}[1]{\blank$_{#1}$}
 
 % make SRs read out "iff" as "if-f" by putting in invisible U+2060
 % https://en.wikipedia.org/wiki/Word_joiner
@@ -129,14 +136,15 @@
 \newcommand*{\model}[1]{\ensuremath{\mathbb{#1}}}
 \newcommand*{\extension}[1]{\ensuremath{\mbox{extension}(#1)}}
 \newcommand*{\referent}[1]{\ensuremath{\mbox{referent}(#1)}}
-  % I personally dislike the default LaTeX angle brackets. I think that
-  % they are too narrow. If you want to use them, though, you can
-  % replace < and > in the commands below with \langle and \rangle
 \newcommand*{\openntuple}{\langle}
 \newcommand*{\closentuple}{\rangle}
-\newcommand*{\ntuple}[1]{\ensuremath{\mathopen{\openntuple}}#1\ensuremath{\mathclose{\closentuple}}} 
-% definitions
-\newcommand*{\define}[1]{\textsc{\lowercase{\color{dkleadbeater}#1}}}
+\newcommand*{\ntuple}[1]{\ensuremath{\mathopen{\openntuple}}#1\ensuremath{\mathclose{\closentuple}}}
+
+% \define highlights defined terms
+\newcommand*{\define}[1]{%
+      \UseTaggingSocket{inline/begin}{tag=\UseStructureName{text/emph}}%
+      \textsc{\lowercase{\color{dkleadbeater}#1}}%
+      \UseTaggingSocket{inline/end}}
 
 %    ****************************************
 %    *          LIST  ENVIRONMENTS          *
@@ -241,31 +249,10 @@
 %    *                PROOFS                *
 %    ****************************************
 
-\usepackage[arrayenv=tabular]{fitch}
-
-% I keep mixing up the \ce and \ae commands, so I define a less ambiguous
-% alternate set of commands
-
-\newcommand*{\notI}{\ni}
-\newcommand*{\notE}{\ne}
-\newcommand*{\iffI}{\bi}
-\newcommand*{\iffE}{\be}
-\newcommand*{\ifI}{\ci}
-\newcommand*{\ifE}{\ce}
-\newcommand*{\andI}{\ai}
-\newcommand*{\andE}{\ae}
-\newcommand*{\orI}{\oi}
-\newcommand*{\orE}{\oe}
-\newcommand*{\forallI}{\Ai}
-\newcommand*{\forallE}{\Ae}
-\newcommand*{\existsI}{\Ei}
-\newcommand*{\existsE}{\Ee}
+\usepackage{fitch}
 
 \newcommand*{\PR}{\by{PR}{}}
 \newcommand*{\AS}{\by{AS}{}}
-
-% a command for indicating the goal in a proof or subproof
-\newcommand*{\want}[1]{\by{want \ensuremath{#1}}{}}
 
 \def\ndrules{
   \def\bi{\by{{\eiff}I}}%
@@ -360,14 +347,6 @@
 	\setcounter{countSeq}{0}
 }
 
-% This is used to enumerate things that have a given property.
-% For example: \nextSeq\nextSeq\noSeq\lastSeq are valid.
-% produces   : 1, 2, and 4 are valid.
-\newcounter{countSeq}
-\newcommand*{\nextSeq}{\stepcounter{countSeq}\arabic{countSeq}, }
-\newcommand*{\noSeq}{\stepcounter{countSeq}}
-\newcommand*{\lastSeq}{and \stepcounter{countSeq}\arabic{countSeq} }
-
 %    ****************************************
 %    *         TABLE OF CONTENTS, ETC.      *
 %    ****************************************
@@ -379,7 +358,8 @@
 
 \setlength{\columnsep}{2em} % Sets 2em space between columns when calling multicol 
 
-\newcommand\myanswer[1]{\textcolor{dkleadbeater}{#1}} % TB: puts model answers in blue
+% \myanswer to format answers in the solutions manual
+\newcommand\myanswer[1]{\textcolor{dkleadbeater}{#1}}
 
 % aria-label environment to provide accessible descriptions for inline
 % SVG diagrams. No longer used/needed as BookML and tikzpicture now
@@ -390,4 +370,7 @@
   \newenvironment{arialabel}[1]{}{}
 \fi
 
+% load forallxyyc-local.sty if it exists; put any simple adjustments
+% you want in there instead of changing the input (e.g., redefining
+% symbols, useing \args for \atom)
 \IfFileExists{forallxyyc-local.sty}{\usepackage{forallxyyc-local}}{}
