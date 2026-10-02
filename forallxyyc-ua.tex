@@ -2,8 +2,8 @@
 % screen reading This version for compilation with lualatex-dev to
 % produce PDF/UA-2b compliant PDF
 
-%\ifdefined\directlua
-\IfFileExists{forallxyyc-ua-mathml.html}{% If running LuaLaTeX, produce an associated MathML file (forallxyyc-ua-luamml-mathml.html)
+% %\ifdefined\directlua
+% \IfFileExists{forallxyyc-ua-mathml.html}{% If running LuaLaTeX, produce an associated MathML file (forallxyyc-ua-luamml-mathml.html)
 \DocumentMetadata
   {
     lang=en-US,
@@ -12,23 +12,56 @@
     tagging=on,
     tagging-setup={math/setup=mathml-AF}
   }
-%\else
-}{
-% if running pdfLaTeX, use generated forallxyyc-ua-mathml.html for MathML
-\DocumentMetadata
-  {
-    lang=en-US,
-    pdfversion=2.0,
-    pdfstandard=ua-2,
-    tagging=on,
-    tagging-setup={math/mathml/luamml/load=false}
-  }
-%\fi
-}
+% %\else
+% }{
+% % if running pdfLaTeX, use generated forallxyyc-ua-mathml.html for MathML
+% \DocumentMetadata
+%   {
+%     lang=en-US,
+%     pdfversion=2.0,
+%     pdfstandard=ua-2,
+%     tagging=on,
+%     tagging-setup={math/mathml/luamml/load=false}
+%   }
+% %\fi
+% }
 
 %\documentclass[openany,oneside,11pt]{memoir-tagging}
 \documentclass[11pt,oneside]{book}
 
+% Use fontspec and unicode-math for font selection. This enables
+% unicode on all letters and symbols
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+% Set text fonts to BaskervaldX and Nimbus Sans (OpenType Helvetica
+% clone in TeXLive) for sans-serif
+\setmainfont{Baskervaldx}
+\setsansfont{NimbusSans}
+
+% Set math font (using https://ctan.org/pkg/unicode-math) to STIX Math
+% 2. This provides all the symbols in that font (2430), no need for
+% amssymb etc. (probably) See the full list of symbols (and
+% alternative fonts):
+% ctan.org/tex-archive/macros/unicodetex/latex/unicode-math/unimath-symbols.pdf
+\setmathfont{STIXTwoMath-Regular.otf}
+
+% Select Baskervald (i.e., text font) for $A$, etc.
+\setmathfont{Baskervaldx-Reg.otf}[range=up/{latin,Latin,num}]
+\setmathfont{Baskervaldx-Ita.otf}[range=it/{latin,Latin,num}]
+\setmathfont{Baskervaldx-Bol.otf}[range=bb/{latin,Latin,num}]
+\setmathfont{Baskervaldx-BolIta.otf}[range=bbit/{latin,Latin,num}]
+\setmathfont{STIXTwoMath-Regular.otf}[range={cal, bfcal}, StylisticSet=1]
+
+\AtBeginDocument{%
+\RenewCommandCopy{\Box}{\mdlgwhtsquare}
+\RenewCommandCopy{\Diamond}{\mdlgwhtdiamond}
+\NewCommandCopy{\unitherefore}{\therefore}
+\renewcommand{\therefore}{\mathrel{\unitherefore}}
+\renewcommand{\dots}{\unicodeellipsis}
+% define \texttherefore to avoid turning it into MathML
+\renewcommand{\texttherefore}{\MathCollectFalse$\therefore$\MathCollectTrue}%
+}
 % % set stock & paper size with narrow margins
 
 % \setstocksize{8in}{5in}
@@ -86,7 +119,8 @@
 
 \begin{document}
 
-%\midsloppy
+
+\midsloppy
 
 % Cover Page
 

@@ -20,21 +20,30 @@
 
 %RZ: typefaces 
 
-%\ifdefined\directlua
-\IfFileExists{forallxyyc-ua-mathml.html}{
-\usepackage{helvet}
-\usepackage[osf]{Baskervaldx} % oldstyle figures
-\RequirePackage{amssymb} % ensure this is loaded before newtxmath
-\usepackage[bigdelims,baskervaldx]{newtxmath} 
-\usepackage[cal=boondoxo]{mathalfa}
-}{
-% load lua-unicode-math to make sure the derived HTML as well as the
-% MathML, when generated, has the right unicode characters. Do this
-% after all the fonts are loaded or else you get errors.
-\usepackage{lua-unicode-math}
-}
-% \usepackage{lum-bonum}
+% %\ifdefined\directlua
+% \IfFileExists{forallxyyc-ua-mathml.html}{
+% \usepackage{helvet}
+% \usepackage[osf]{Baskervaldx} % oldstyle figures
+% \RequirePackage{amssymb} % ensure this is loaded before newtxmath
+% \usepackage[bigdelims,baskervaldx]{newtxmath} 
+% \usepackage[cal=boondoxo]{mathalfa}
+% }{
+% % load lua-unicode-math to make sure the derived HTML as well as the
+% % MathML, when generated, has the right unicode characters. Do this
+% % after all the fonts are loaded or else you get errors.
+% \usepackage{lua-unicode-math}
+% }
+% % \usepackage{lum-bonum}
 
+%\usepackage{fontspec}
+%\usepackage{unicode-math}
+%\setmainfont{Baskervaldx}
+%\setmathfont{TeX Gyre Pagella Math}
+%\setmathfont{STIXTwoMath-Regular.otf}
+% \setmathfont[range={up}]{Baskervaldx-Reg.otf}
+% \setmathfont[range={it}]{Baskervaldx-Ita.otf}
+% \setmathfont[range={bfup}]{Baskervaldx-Bol.otf}
+% \setmathfont[range={bfit}]{Baskervaldx-BolIta.otf}
 % \usepackage{helvet}
 % \usepackage[osf]{Baskervaldx} % oldstyle figures
 % \RequirePackage{amssymb} % ensure this is loaded before newtxmath
@@ -55,7 +64,7 @@
 % Trick luamml into not making every triangle used as a list bullet
 % into a formula
 \usepackage{newunicodechar}
-\newunicodechar{▻}{\MathCollectFalse\ensuremath{\triangleright}\MathCollectTrue}
+\newunicodechar{▻}{\MathCollectFalse\ensuremath{\smalltriangleright}\MathCollectTrue}
 
 %RZ: Make sure we have a copyright symbol
 
@@ -64,6 +73,15 @@
 %RZ: Include git revision info
 
 \usepackage{gitinfo2}
+
+% Steal \midsloppy from memoir
+
+\newcommand*{\midsloppy}{%
+  \tolerance 5000%
+  \hbadness 4000%
+  \emergencystretch 1.5em%
+  \hfuzz .1\p@
+  \vfuzz\hfuzz}
 
 % RZ: TOC widths
 
@@ -103,17 +121,24 @@
 % uses heading templates from latex-lab-sec-template.dtx; see
 % https://ctan.org/tex-archive/macros/latex-dev/required/latex-lab/latex-lab-sec-template.pdf
 
+% This code inserts spaces differently than memoir, so finding the
+% right values was a bit of trial and error
+
 \EditInstance{heading}{chapter}
 {
-  after-penalty-vspace = 30pt
-, after-vspace = 35pt
+  after-penalty-vspace = 36pt
+, after-vspace = 33pt
 , prefix-decls = \fontsize{14pt}{0pt}\selectfont\sffamily\bfseries
 , prefix-format = \MakeUppercase{#1}
-%, heading-decls = \raggedright \parindent 0pt
 , number-decls = \fontsize{14pt}{0pt}\selectfont\sffamily\bfseries
 , title-decls = \normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}
-, title-format = %\hspace*{-10pt}\smash{\rule{7pt}{10ex}}\hspace*{3pt}
+, title-format = %\hspace*{-10pt}\smash{\rule{7pt}{\barlength}}\hspace*{3pt}
 #1
+}
+
+\EditInstance{headformat}{chapter}
+{
+, separator-b = \par\nobreak\vspace{14pt}
 }
 
 % \renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
@@ -124,15 +149,12 @@
 
 \EditInstance{heading}{part}
 {
-  after-penalty-vspace = 50pt
+%  after-penalty-vspace = 30pt
 %, after-vspace = 40pt
 , prefix-decls = \fontsize{24pt}{0pt}\selectfont\sffamily\bfseries
 , prefix-format = \MakeUppercase{#1}
-%, heading-decls = \raggedright \parindent 0pt
 , number-decls = \fontsize{24pt}{0pt}\selectfont\sffamily\bfseries
 , title-decls = \normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}
-, title-format = %\hspace*{-10pt}\smash{\rule{7pt}{10ex}}\hspace*{3pt}
-#1
 }
 
 % \newcommand{\trailingperiod}[1]{#1.}
@@ -152,8 +174,8 @@
   \fancyhead{}\fancyfoot{}\renewcommand{\headrulewidth}{0pt}
   % \fancyhead[RO]{\small\sffamily\color{leadbeater}\rightmark}
   % \fancyhead[LO]{\color{leadbeater}\sffamily\bfseries\thepage}
-  \fancyhead[RE,RO]{\color{leadbeater}\sffamily\bfseries\thepage}
-  \fancyhead[LE,LO]{\small\sffamily\color{leadbeater}\leftmark}
+  \fancyhead[R]{\color{leadbeater}\sffamily\bfseries\thepage}
+  \fancyhead[L]{\small\sffamily\color{leadbeater}\leftmark}
 }
 
 \usepackage[font={small,it}]{caption}

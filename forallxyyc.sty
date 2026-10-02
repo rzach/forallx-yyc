@@ -6,7 +6,9 @@
 \def\forallxversion{Fall 2025}
 \def\forallxshortversion{F25}
 
-\RequirePackage{amssymb,amsmath,pifont,rotating}
+\@ifpackageloaded{unicode-math}{}{\RequirePackage{amssymb}}
+\RequirePackage{amsmath}
+\usepackage{rotating}
 \usepackage[german,english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{latexml}
@@ -50,12 +52,14 @@
 % dash, change \enot from \neg to {\sim}. Other examples are given
 % below.
 %
-\let\oldtherefore\therefore
-\def\therefore{\ensuremath{\oldtherefore}}
+% \let\oldtherefore\therefore
+% \def\therefore{\ensuremath{\oldtherefore}}
 \iflatexml
 \def\texttherefore{∴}
 \else
-\let\texttherefore\therefore
+\IfDocumentMetadataF{%
+  \renewcommand{\texttherefore}{\ensuremath{\therefore}}
+}
 \fi
 % disjunction
 \def\eor{\ensuremath{\vee}}
@@ -178,7 +182,7 @@
   % for when compiling with lualatex and tagpdf (not using enumitem
   % but new latex2e list code)
   \setlist[itemize]{label=▻,noitemsep}
-  \setlist[factoiditems]{label=▻}
+  \setlist[factoiditems]{label=▻,leftmargin=10pt,labelwidth=10pt}
   \setlist[factoidnumber]{align=left,leftmargin=15pt,labelwidth=15pt,label=\arabic*.,itemindent=0pt,labelsep=0pt}
 }{%
   % for compiling with pdflatex and no tagging code
@@ -200,10 +204,13 @@
 % \newcommand{\ekeylabel}[1]{{\makebox[8ex][r]{\ensuremath{ #1}:}}}
 % \newenvironment{ekey}{\begin{list}{}{\renewcommand{\makelabel}{\ekeylabel}
 % \itemsep=0pt \parsep=0pt}}{\end{list}}
-\newlist{ekeylist}{description}{1}
-\setlist[ekeylist]{noitemsep,labelwidth=4em,align=right,font=\normalfont}
+% \newlist{ekeylist}{description}{1}
+% \setlist[ekeylist]{noitemsep,labelwidth=4em,align=right,font=\ekeylabel}
+% \def\ekeylabel#1{\hfil\normalfont\ensuremath{#1}:}
+% \newenvironment{ekey}{\begin{ekeylist}\renewcommand{\makelabel}{\ekeylabel}}{\end{ekeylist}}
+\newlist{ekey}{description}{1}
 \def\ekeylabel#1{\hfil\normalfont\ensuremath{#1}:}
-\newenvironment{ekey}{\begin{ekeylist}\renewcommand{\makelabel}{\ekeylabel}}{\end{ekeylist}}
+\setlist[ekey]{noitemsep,labelwidth=4em,align=right,font=\ekeylabel}
 
 % enumerate -- used for numbered examples; counter resets every
 % chapter
