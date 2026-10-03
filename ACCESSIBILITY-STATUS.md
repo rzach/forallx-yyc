@@ -5,7 +5,7 @@
 ## Tagged PDF
 
 I'm in the process to change
-[_forallx:Calgary_](https://forallx.openlogicproject.org/) so that it
+[_forall x:Calgary_](https://forallx.openlogicproject.org/) so that it
 can be compiled with the LaTeX code currently being developed that
 outputs accessible PDFs, i.e., PDFs that comply with the [PDF/UA-2
 standard](https://pdfa.org/iso-14289-2-pdfua-2/). These PDFs are
@@ -72,17 +72,17 @@ with tagging (or at least not "aware" of tagging).
 - First of all, _forallx:YYC_ relies on the `memoir` class, which is
   [incompatible with
   tagging](https://github.com/latex3/tagging-project/issues/910). I
-  made some changes in `memoir.sty`: `forallxyyc-ua` loads
-  [`memoir-tagging`](https://github.com/rzach/memoir-tagging) instead.
+  made some changes in `memoir.sty`: 
+  [`memoir-tagging`](https://github.com/rzach/memoir-tagging).
   This provides a version of `memoir` that is minimally compatible
   with tagging ("minimally" means it basically just fixes how `memoir`
   handles headings and table of contents). This could be avoided (and
   things would be easier) if we used the `book` class instead, but
   then we can't use any of `memoir`'s convenient features to set the
-  page layout or style headings. In the end I think I will go that
-  route, i.e., use `book` and compatible packages (`geometry` for page
-  layout, `fancyhdr` for page styles, directly editing the heading
-  templates for parts and chapters).
+  page layout or style headings. 
+- In the end I did go that route: use `book` and compatible packages
+  (`geometry` for page layout, `fancyhdr` for page styles, and
+  directly editing the heading templates for parts and chapters).
 - The code in `forallxyyc.sty` and `forallxyyc-style.sty` also has to
   be adjusted.
   - The various lists are configured using the `enumitem` package,
@@ -93,17 +93,18 @@ with tagging (or at least not "aware" of tagging).
     emulates](https://ctan.org/tex-archive/macros/latex/required/latex-lab/latex-lab-enumitem.pdf)
     things like `\newlist` and `\setlist`. A few changes were
     necessary to make sure only those `enumitem` options are used that
-    the tagging code recognizes. A bug in LaTeX that prevents
-    `\newlist` from working correctly with `description` [has been
-    fixed](https://github.com/latex3/latex2e/commit/a50f8b98945d2feb43e6aeb02381d1c780352c02)
-    but the fix isn't rolled out yet. 
+    the tagging code recognizes. I had to wait until a bug in LaTeX
+    that prevents `\newlist` from working correctly with `description`
+    [has been
+    fixed](https://github.com/latex3/latex2e/commit/a50f8b98945d2feb43e6aeb02381d1c780352c02).
+    But at least with the latest LaTeX development code this is working.
   - Tagging (or at least the part that produces MathML code used to
-    tag math formulas) requires `lua-unicode-math` and that in turn
-    requires that a compatible math font is loaded. That rules out
-    `newtxmath`, which provides a math font that goes with the
-    BaskervaldX text font. So the tagged version (at least when it is
-    run with `lualatex` and `luamml` to produce MathML) has to load
-    different fonts. 
+    tag math formulas) requires `unicode-math` or `lua-unicode-math`
+    and that in turn requires that a compatible math font is loaded.
+    That rules out `newtxmath`, which provides a math font that goes
+    with the BaskervaldX text font. So the tagged version (at least
+    when it is run with `lualatex` and `luamml` to produce MathML) has
+    to load different fonts. 
 - `fitch.sty` was slightly incompatible with tagging: a `fitchproof`
     environment used a `list` environment to provide a bit of space
     above and below a proof. This resulted in all Fitch proofs being
@@ -154,12 +155,12 @@ re-validation of the HTML for accessibility).
 
 ### Things I'm still working on
 
-- MathML can only be generated with `lua-unicode-math` loaded, and
-  that's incompatible with lots of fonts. Once it is generated,
-  however, it should be possible to compile with with the right fonts
-  (and so produce the same PDF for screen reading and printing), and
-  tag formulas with the previously generated MathML. So the workflow
-  would be
+- MathML can only be generated with `unicode-math` or
+  `lua-unicode-math` loaded, and that's incompatible with lots of
+  fonts. Once it is generated, however, it should be possible to
+  compile with with the right fonts (and so produce the same PDF for
+  screen reading and printing), and tag formulas with the previously
+  generated MathML. So the workflow would be
   - compile with `lualatex` and `lua-unicode-math` loaded, but no
     special fonts, to get MathML
   - copy the generated `forallxyyc-ua-luamml-mathml.html` to
@@ -173,9 +174,9 @@ re-validation of the HTML for accessibility).
     structure.
 - Although I made some progress with the above approach, in the end it
   turned out to be too hard/relied on goodwill and work of too many
-  font maintainers to get the final PDF have all symbols correctly map
+  font maintainers to get the final PDF to have all symbols correctly map
   to unicode characters. So I decided to take the plunge and switch to
-  OpenType fonts. I turns out it's possible and not actually too hard
+  OpenType fonts. I turns out it's possible and actually not too hard
   with [`fontspec`]{https://ctan.org/pkg/fontspec}.
   - Loading BaskervaldX and Helvetica for the text is not a big deal.
     Instead of loading the `baskervaldx` and `helvetica` packages, you
@@ -183,17 +184,19 @@ re-validation of the HTML for accessibility).
     ```
     \usepackage{fontspec}
     \setmainfont{Baskervaldx}
-    \setsansfont{Helvetica}
+    \setsansfont{NimbusSans}
     ```
   - Math fonts were trickier to figure out. You don't load them with
     packages like `amssymb` or `newtxmath`, but using
-    [`unicode-math`](https://ctan.org/pkg/unicode-math). (If you're
-    using LuaLaTeX, you can and probably should use
-    [`lua-unicode-math`](https://ctan.org/pkg/lua-unicode-math).) There are a lot fewer OTF math fonts, but
-    there are some that are comprehensive, i.e., basically contain
-    every symbol that has a unicode equivalent (and possibly more).
-    You pick one that has all the symbols you need and that goes with
-    your text font. There is one immense [list of
+    [`unicode-math`](https://ctan.org/pkg/unicode-math). (There's also
+    a newer
+    [`lua-unicode-math`](https://ctan.org/pkg/lua-unicode-math)
+    package, but it's a little less stable and has fewer features.)
+    There are a lot fewer OTF math fonts, but there are some that are
+    comprehensive, i.e., basically contain every symbol that has a
+    unicode equivalent (and possibly more). You pick one that has all
+    the symbols you need and that goes with your text font. There is
+    one immense [list of
     symbols](https://mirrors.ctan.org/macros/unicodetex/latex/unicode-math/unimath-symbols.pdf)
     available in those. If you don't select another math font, you
     just get standard Computer Modern, which is too light for most
@@ -204,12 +207,12 @@ re-validation of the HTML for accessibility).
     ```
   - To get the math letters to match the text font you say
     ```
-    \setmathfont[range=it/{latin,Latin}]{Baskervaldx-Ita.otf}
-    \setmathfont[range=up/{latin,Latin}]{Baskervaldx-Reg.otf}
-    \setmathfont[range=bf/{latin,Latin}]{Baskervaldx-Bold.otf}
+    \setmathfont[range=it/{num,latin,Latin}]{Baskervaldx-Ita.otf}
+    \setmathfont[range=up/{num,latin,Latin}]{Baskervaldx-Reg.otf}
+    \setmathfont[range=bf/{num,latin,Latin}]{Baskervaldx-Bold.otf}
     ```
     This means: take `\mathit` Latin uppercase and lowercase letters
-    from BaskervaldX Italic Regular. (The "Latin" is necesssary or
+    from BaskervaldX Italic Regular. (The "Latin" is necessary or
     else it'll also try to take Greek letters and Baskervald doesn't
     have those.)
   - Finally you'll probably have to either change commands from
@@ -223,11 +226,6 @@ re-validation of the HTML for accessibility).
       \RenewCommandCopy{\Diamond}{\mdlgwhtdiamond}
       \renewcommand{\texttherefore}{\ensuremath{\therefore}}}
     ```
-- ~~Need to figure out how to make `memoir-tagging` start paragraphs
-  after chapters without indent
-  (https://github.com/latex3/tagging-project/issues/1617). The chapter
-  styles are also slightly off from what they are with "real" memoir
-  (different spacing, mostly).~~ (https://github.com/latex3/tagging-project/issues/1617)
 - Parts are the top heading level used but chapters are tagged as `H1`
   and parts aren't made into `SECTION`s. This is apparently the
   intended way it is supposed to work
@@ -241,12 +239,13 @@ re-validation of the HTML for accessibility).
 - `\tikzpictures` produces weird images in the derived HTML. This may
   be an issue if you use liquid mode in some PDF viewers; for screen
   readers it doesn't matter.
-- a [bug in
+- ~~a [bug in
   `latex-lab-enumitem`](https://github.com/latex3/tagging-project/issues/1595)
   prevents `ekey`s from working properly. What I'm doing now
   (redefining `\makelabel`) isn't supported by `latex-lab-enumitem`.
   (Workaround: add math to `\item[...]` instead of doing it in the label
-  format.)
+  format.) This is fixed in
+  development.~~
 - ~~Another [bug](https://github.com/latex3/tagging-project/issues/1557)
   makes `\item[]` behave the same as `\item` (instead of forcing the
   label to be empty). So some displayed sentences coded with
@@ -327,6 +326,10 @@ re-validation of the HTML for accessibility).
     - https://dev.verapdf-rest.duallab.com/
     - https://pac.pdf-accessibility.org/en (Windows only, may not
       support PDF/UA-2 yet)
+    - https://check.axes4.com/en (The scanner behind PAC, no need for
+      a download)
+    - https://thelatexlab.com/pdf-ua-checker/ a PDF/UA-2 checker, not
+      sure how reliable
   - Universities will use commercial testing suites such as
     [Ally](https://help.anthology.com/ally-lms/?lang=en) and [Pope
     Tech](https://www.pope.tech/). UCalgary doesn't subscribe to any,
