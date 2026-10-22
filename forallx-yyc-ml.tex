@@ -127,7 +127,7 @@ We said above that a strict subproof allows us to reason about arbitrary alterna
 	\have{4}{\metav{A}}\by{incorrect use of \ebox E}{1}
 \close\close
 \end{fitchproof}
-The incorrect use of \ebox E on line~$4$ violates the condition, because although line~$1$ lies outside the strict subproof in which line~$4$ falls, the strict subproof containing line~$4$ lies inside the strict subproof beginning on line~$2$ which does not contain line~$1$.
+The incorrect use of \ebox E on line~4 violates the condition, because although line~1 lies outside the strict subproof in which line~4 falls, the strict subproof containing line~4 lies inside the strict subproof beginning on line~2 which does not contain line~1.
 
 Let's begin with an example.
 \begin{fitchproof}
@@ -404,7 +404,7 @@ The big idea behind the semantics for ML is this. In ML, sentences are not just 
 
 That's the big idea, but we need to refine it and make it more precise. To do this, we need to introduce the idea of an \emph{interpretation} of ML. The first thing you need to include in an interpretation is a collection of \emph{possible worlds}. Now, at this point you might well want to ask: What exactly is a possible world? The intuitive idea is that a possible world is another way that this world could have been. But what exactly does that mean? This is an excellent philosophical question, and we will look at it in a lot of detail later. But we do not need to worry too much about it right now. As far as the formal logic goes, possible worlds can be anything you like. All that matters is that you supply each interpretation with a non-empty collection of things labelled \define{possible worlds}.
 
-Once you have chosen your collection of possible worlds, you need to find some way of determining which sentences of ML are true at which possible worlds. To do that, we need to introduce the notion of a \emph{valuation function}. Those of you who have studied some maths will already be familiar with the general idea of a function. But for those of you who haven't, a function is a mathematical entity which maps arguments to values. That might sound a little bit abstract, but some familiar examples will help. Take the function $x+1$. This is a function which takes in a number as argument, and then spits out the next number as value. So if you feed in the number $1$ as an argument, the function $x+1$ will spit out the number $2$ as a value; if you feed in $2$, it will spit out $3$; if you feed in $3$, it will spit out $4$ \dots  Or here is another example: the function $x+y$. This time, you have to feed two arguments into this function if you want it to return a value: if you feed in $2$ and $3$ as your arguments, it spits out $5$; if you feed in $1003$ and $2005$, it spits out $3008$; and so on.
+Once you have chosen your collection of possible worlds, you need to find some way of determining which sentences of ML are true at which possible worlds. To do that, we need to introduce the notion of a \emph{valuation function}. Those of you who have studied some maths will already be familiar with the general idea of a function. But for those of you who haven't, a function is a mathematical entity which maps arguments to values. That might sound a little bit abstract, but some familiar examples will help. Take the function $x+1$. This is a function which takes in a number as argument, and then spits out the next number as value. So if you feed in the number 1 as an argument, the function $x+1$ will spit out the number 2 as a value; if you feed in 2, it will spit out 3; if you feed in 3, it will spit out 4 \dots  Or here is another example: the function $x+y$. This time, you have to feed two arguments into this function if you want it to return a value: if you feed in 2 and 3 as your arguments, it spits out 5; if you feed in 1003 and 2005, it spits out 3008; and so on.
 
 A valuation function for ML takes in a sentence and a world as its arguments, and then returns a truth-value as its value. So if $\nu$ is a valuation function and $w$ is a possible world, $\nu_w(\metav{A})$ is whatever truth-value $\nu$ maps $\metav{A}$ and $w$ to: if $\nu_w(\metav{A})=F$, then $\metav{A}$ is false at world $w$ on valuation $\nu$; if $\nu_w(\metav{A})=T$, then $\metav{A}$ is true at world $w$ on valuation $\nu$.
 
@@ -459,9 +459,9 @@ A\eand\enot B,\qquad B\eif A,\qquad \ediamond A,\qquad \ebox\enot B
 \]
 If you don't like thinking diagrammatically, then you can also present an interpretation like this:
 \begin{ekey}
-	\item[W]$1,2$
-	\item[R]$\langle 1,1\rangle, \langle 2,1\rangle$
-	\item[\nu]$\nu_{1}(A)=T, \nu_{1}(B)=F, \nu_{2}(A)=F, \nu_{2}(B)=T$
+	\item[W] 1, 2
+	\item[R] \ntuple{1,1}, \ntuple{2,1}
+	\item[\nu] $\nu_{1}(A)=T$, $\nu_{1}(B)=F$, $\nu_{2}(A)=F$, $\nu_{2}(B)=T$
 \end{ekey}
 You will get the chance to cook up some interpretations of your own shortly, when we start looking at \emph{counter-interpretations}.
 
@@ -471,10 +471,10 @@ You will get the chance to cook up some interpretations of your own shortly, whe
 We can now extend all of the semantic concepts of TFL to cover ML:
 \factoidbox{
 	\begin{factoiditems}
-		\item $\metav{A}_1,\metav{A}_2, \dots
+		\item $\metav{A}_1, \metav{A}_2, \dots
 		\metav{A}_n\therefore\metav{C}$ is \define{modally valid} \ifeff{}
 		there is no world in any interpretation at which
-		$\metav{A}_1,\metav{A}_2, \dots \metav{A}_n$ are all true and
+		$\metav{A}_1$, $\metav{A}_2$, \dots, $\metav{A}_n$ are all true and
 		$\metav{C}$ is false.
 
 		\item $\metav{A}$ is a \define{modal truth} \ifeff{} $\metav{A}$
@@ -508,7 +508,7 @@ to 2. Node 1 is labelled not-A and node 2 is labelled A.}]
 \bmlDescription{The numbers 1 and 2 are connected by an arrow from 1
 to 2. Node 1 is labelled not-A and node 2 is labelled A.}
 \end{center}
-It is easy to see that this will work as a counter-interpretation for our claim. First, $\enot A$ is true at world $1$. And second, $\enot\ediamond A$ is false at $1$: $A$ is true at $2$, and $2$ is accessible from $1$. So there is some world in this interpretation where $\enot A$ is true and $\enot\ediamond A$ is false, so it is not the case that $\enot A\entails_\mlK\enot\ediamond A$.
+It is easy to see that this will work as a counter-interpretation for our claim. First, $\enot A$ is true at world 1. And second, $\enot\ediamond A$ is false at 1: $A$ is true at 2, and 2 is accessible from 1. So there is some world in this interpretation where $\enot A$ is true and $\enot\ediamond A$ is false, so it is not the case that $\enot A\entails_\mlK\enot\ediamond A$.
 
 Why did we choose the subscript \mlK? Well, it turns out that there is an important relationship between system \mlK{} and the definition of validity we have just given. In particular, we have the following two results:
 \begin{compactlist}

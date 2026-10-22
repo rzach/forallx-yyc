@@ -111,7 +111,7 @@ If you already have shown something in the course of a proof, the \emph{reiterat
 	\ellipsesline
 	\have[10]{a2}{A \eand B} \by{R}{a1}
 \end{fitchproof}
-This indicates that we have written `$A \eand B$' on line~$4$. Now, at some later line---line~$10$, for example---we have decided that we want to repeat this. So we write it down again. We also add a citation which justifies what we have written. In this case, we write `R', to indicate that we are using the reiteration rule, and we write `$4$', to indicate that we have applied it to line $4$.
+This indicates that we have written `$A \eand B$' on line~4. Now, at some later line---line~10, for example---we have decided that we want to repeat this. So we write it down again. We also add a citation which justifies what we have written. In this case, we write `R', to indicate that we are using the reiteration rule, and we write `4', to indicate that we have applied it to line 4.
 
 Here is a general expression of the rule:
 \factoidbox{
@@ -130,7 +130,7 @@ want to talk about any sentence of TFL (see \cref{s:UseMention}).
 Second, and similarly, `$m$' is not a symbol that will appear on a
 proof. Rather, it is a symbol in the metalanguage, which we use when
 we want to talk about any line number of a proof. In an actual proof,
-the lines are numbered `$1$', `$2$', `$3$', and so forth. But when we
+the lines are numbered `1', `2', `3', and so forth. But when we
 define the rule, we use variables like `$m$' to underscore the point
 that the rule may be applied at any point.
 
@@ -143,7 +143,7 @@ Our natural deduction system will capture this thought straightforwardly. In the
 		\item[L] Ludwig is libertarian
 	\end{ekey}
 Perhaps we are working through a proof, and we have obtained `$R$' on
-line~$8$ and `$L$' on line~$15$. Then on any subsequent line we can
+line~8 and `$L$' on line~15. Then on any subsequent line we can
 obtain `$R \eand L$' thus:
 \begin{fitchproof}
 	\have[8]{a}{R}
@@ -151,9 +151,9 @@ obtain `$R \eand L$' thus:
 	\have[\ ]{c}{R \eand L} \ai{a, b}
 \end{fitchproof}
 Note that every line of our proof must either be an assumption, or
-must be justified by some rule. We cite `$\eand$I $8$, $15$' here to
+must be justified by some rule. We cite `$\eand$I 8, 15' here to
 indicate that the line is obtained by the rule of conjunction
-introduction ($\eand$I) applied to lines $8$ and~$15$. We could
+introduction ($\eand$I) applied to lines 8 and~15. We could
 equally well obtain:
 \begin{fitchproof}
 	\have[8]{a}{R}
@@ -292,9 +292,9 @@ The next thing we did is to make an \emph{additional} assumption (`Ludwig is lib
 		\open
 			\hypo{l}{L}\AS
 	\end{fitchproof}
-Note that we are \emph{not} claiming, on line~$2$, to have proved
-`$L$' from line~$1$, so we do not write in any justification for the
-additional assumption on line~$2$. We do, however, need to mark that
+Note that we are \emph{not} claiming, on line~2, to have proved
+`$L$' from line~1, so we do not write in any justification for the
+additional assumption on line~2. We do, however, need to mark that
 it is an additional assumption. We do this by drawing a line under it
 (to indicate that it is an assumption) and by indenting it with a
 further vertical line (to indicate that it is additional).
@@ -393,7 +393,7 @@ When we are working within the subproof, we can refer to the additional assumpti
 \item the line must come before the line where the rule is applied, but 
 \item not occur within a subproof that has been closed before the line where the rule is applied.
 \end{compactlist}}
-This stipulation rules out the disastrous attempted proof above. The application of rule $\eif$E on line~$5$ requires that we cite two individual lines from earlier in the proof. One of these lines (namely, line~$3$) occurs within a subproof (lines $2$--$3$). By line $5$, where we have to cite line $3$, the subproof has been closed. This is illegitimate: we are not allowed to cite line $3$ on line $5$.
+This stipulation rules out the disastrous attempted proof above. The application of rule $\eif$E on line~5 requires that we cite two individual lines from earlier in the proof. One of these lines (namely, line~3) occurs within a subproof (lines 2--3). By line 5, where we have to cite line 3, the subproof has been closed. This is illegitimate: we are not allowed to cite line 3 on line 5.
 
 Closing a subproof is called \define{discharging} the assumptions of
 that subproof. So we can put the point this way: \emph{you cannot
@@ -415,10 +415,10 @@ Once we have started thinking about what we can show by making additional assump
 \close
 \have{bcab}{B \eif (C \eif (A \eand B))}\ci{b-cab}
 \end{fitchproof}
-Notice that the citation on line~$4$ refers back to the initial
-assumption (on line~$1$) and an assumption of a subproof (on
-line~$2$). This is perfectly in order, since neither assumption has
-been discharged at the time (i.e., by line~$4$).
+Notice that the citation on line~4 refers back to the initial
+assumption (on line~1) and an assumption of a subproof (on
+line~2). This is perfectly in order, since neither assumption has
+been discharged at the time (i.e., by line~4).
 
 Again, though, we need to keep careful track of what we are assuming at any given moment. Suppose we tried to continue the proof as follows:
 \begin{fitchproof}
@@ -444,7 +444,7 @@ be able to infer that, if Cath is smart (symbolized by `$C$') then
 \emph{both} Anne is smart and Queen Boudica stood 20~feet tall! But
 this is just what such a proof would suggest, if it were permissible.
 
-The essential problem is that the subproof that began with the assumption~`$C$' depended crucially on the fact that we had assumed `$B$' on line~$2$. By line~$6$, we have \emph{discharged} the assumption~`$B$': we have stopped asking ourselves what we could show, if we also assumed `$B$'. So it is simply cheating, to try to help ourselves (on line~$7$) to the subproof that began with the assumption~`$C$'. Thus we stipulate, much as before, that a subproof can only be cited on a line if it does not occur within some other subproof which is already closed at that line. The attempted disastrous proof violates this stipulation. The subproof of lines $3$--$4$ occurs within a subproof that ends on line~$5$. So it cannot be invoked on line~$7$.
+The essential problem is that the subproof that began with the assumption~`$C$' depended crucially on the fact that we had assumed `$B$' on line~2. By line~6, we have \emph{discharged} the assumption~`$B$': we have stopped asking ourselves what we could show, if we also assumed `$B$'. So it is simply cheating, to try to help ourselves (on line~7) to the subproof that began with the assumption~`$C$'. Thus we stipulate, much as before, that a subproof can only be cited on a line if it does not occur within some other subproof which is already closed at that line. The attempted disastrous proof violates this stipulation. The subproof of lines 3--4 occurs within a subproof that ends on line~5. So it cannot be invoked on line~7.
 
 Here is one further case we have to exclude:
 \begin{fitchproof}
@@ -464,7 +464,7 @@ Here is one further case we have to exclude:
 \have [\ ]{x}{} \by{to invoke $\eif$I}{b-c2}
 \fi
 \end{fitchproof}
-Here we are trying to cite a subproof that begins on line~$2$ and ends on line~$5$---but the sentence on line~$5$ depends not only on the assumption on line~$2$, but also on one another assumption (line~$3$) which we have not discharged at the end of the subproof. The subproof started on line~$3$ is still open at line~$5$. But $\eif$I requires that the last line of the subproof \emph{only} relies on the assumption of the subproof being cited, i.e., the subproof beginning on line~$2$ (and anything before it), and not on assumptions of any subproofs within it. In particular, the last line of the subproof cited must not itself lie within a nested subproof.
+Here we are trying to cite a subproof that begins on line~2 and ends on line~5---but the sentence on line~5 depends not only on the assumption on line~2, but also on one another assumption (line~3) which we have not discharged at the end of the subproof. The subproof started on line~3 is still open at line~5. But $\eif$I requires that the last line of the subproof \emph{only} relies on the assumption of the subproof being cited, i.e., the subproof beginning on line~2 (and anything before it), and not on assumptions of any subproofs within it. In particular, the last line of the subproof cited must not itself lie within a nested subproof.
 
 \factoidbox{To cite a subproof when applying a rule:
 \begin{compactlist} 
@@ -492,15 +492,15 @@ One last point to emphasize how rules can be applied: where a rule requires you 
 \close
 \have[7]{bcab}{B \eif C}\ci{b-c3}
 \end{fitchproof}
-Here, we have tried to justify $C$ on line~$6$ by the reiteration
-rule, but we have cited the subproof on lines $3$--$5$ with it. That
-subproof is closed and can in principle be cited on line~$6$. (For
+Here, we have tried to justify $C$ on line~6 by the reiteration
+rule, but we have cited the subproof on lines 3--5 with it. That
+subproof is closed and can in principle be cited on line~6. (For
 instance, we could use it to justify $C \eif C$ by $\eif$I.) But the
 reiteration rule~R requires you to cite an individual line, so citing
 the entire subproof is inadmissible (even if that subproof contains
 the sentence~$C$ we want to reiterate). Citing the individual lines
-containing~$C$ ($3$ or $5$) on line~$6$ is of course also inadmissible,
-since these lie in a subproof closed before line~$6$.
+containing~$C$ (3 or 5) on line~6 is of course also inadmissible,
+since these lie in a subproof closed before line~6.
 
 
 It is always permissible to open a subproof with any assumption. However, there is some strategy involved in picking a useful assumption. Starting a subproof with an arbitrary, wacky assumption would just waste lines of the proof. In order to obtain a conditional by {\eif}I, for instance, you must assume the antecedent of the conditional in a subproof.
@@ -943,7 +943,7 @@ Suppose we want to show that the argument $(A \eand B) \eor (A \eand C) \therefo
 \ellipsesline
   \have[n]{2}{A \eand (B \eor C)}
 \end{fitchproof}
-We now have two options: either work backward from the conclusion, or work forward from the premise. We'll pick the second strategy: we use the disjunction on line~$1$, and set up the subproofs we need for $\eor$E. The disjunction on line~$1$ has two disjuncts, $A \eand B$ and $A \eand C$. The goal sentence you want to prove is $A \eand (B \eor C)$. So in this case you have to set up two subproofs, one with assumption $A \eand B$ and last line $A \eand (B \eor C)$, the other with assumption $A \eand C$ and last line $A \eand (B \eor C)$. The justification for the conclusion on line~$n$ will be $\eor$E, citing the disjunction on line~$1$ and the two subproofs. So your proof now looks like this:
+We now have two options: either work backward from the conclusion, or work forward from the premise. We'll pick the second strategy: we use the disjunction on line~1, and set up the subproofs we need for $\eor$E. The disjunction on line~1 has two disjuncts, $A \eand B$ and $A \eand C$. The goal sentence you want to prove is $A \eand (B \eor C)$. So in this case you have to set up two subproofs, one with assumption $A \eand B$ and last line $A \eand (B \eor C)$, the other with assumption $A \eand C$ and last line $A \eand (B \eor C)$. The justification for the conclusion on line~$n$ will be $\eor$E, citing the disjunction on line~1 and the two subproofs. So your proof now looks like this:
 \begin{fitchproof}
 	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
@@ -976,7 +976,7 @@ You now have two separate tasks, namely to fill in each of the two subproofs. In
 	\close
 	\have{12}{A \eand (B \eor C)}\oe{1,2-6,(7)-11}
 \end{fitchproof}
-We immediately see that we can get line $i$ from line~$2$ by $\eand$E. So line~$i$ is actually line~$3$, and can be justified with $\eand$E from line~$2$. The other subgoal $B \eor C$ is a disjunction. We'll apply the strategy for working backward from a disjunctions to line $n-1$. We have a choice of which disjunct to pick as a subgoal, $B$ or~$C$. Picking $C$ wouldn't work and we'd end up having to backtrack. And you can already see that if you pick $B$ as a subgoal, you could get that by working forward again from the conjunction $A \eand B$ on line~$2$. So we can complete the first subproof as follows:
+We immediately see that we can get line $i$ from line~2 by $\eand$E. So line~$i$ is actually line~3, and can be justified with $\eand$E from line~2. The other subgoal $B \eor C$ is a disjunction. We'll apply the strategy for working backward from a disjunctions to line $n-1$. We have a choice of which disjunct to pick as a subgoal, $B$ or~$C$. Picking $C$ wouldn't work and we'd end up having to backtrack. And you can already see that if you pick $B$ as a subgoal, you could get that by working forward again from the conjunction $A \eand B$ on line~2. So we can complete the first subproof as follows:
 \begin{fitchproof}
 	\hypo{1}{(A \eand B) \eor (A \eand C)}\PR
 	\open
@@ -993,7 +993,7 @@ We immediately see that we can get line $i$ from line~$2$ by $\eand$E. So line~$
 	\close
 	\have{12}{A \eand (B \eor C)}\oe{1,2-6,7-11}
 \end{fitchproof}
-Like line~$3$, we get line $4$ from $2$ by $\eand$E. Line~$5$ is justified by $\eor$I from line~$4$, since we were working backward from a disjunction there.
+Like line~3, we get line 4 from 2 by $\eand$E. Line~5 is justified by $\eor$I from line~4, since we were working backward from a disjunction there.
 
 That's it for the first subproof. The second subproof is almost exactly the same. We'll leave it as an exercise.
 
@@ -1077,13 +1077,13 @@ Now our goal is to prove~$\ered$. We said above, when discussing how
 to work forward from a negated sentence, that the $\enot$E rule allows
 you to prove~$\ered$, which is our goal in the innermost subproof. So
 we look for a negated sentence which we can work forward from: that
-would be $\enot B$ on line~$2$. That means we have to derive $B$
+would be $\enot B$ on line~2. That means we have to derive $B$
 inside the subproof, since $\enot$E requires not just $\enot B$ (which
 we have already), but also~$B$. And $B$, in turn, we get by working
 forward from $A \eif B$, since $\eif$E will allow us to justify the
 consequent of that conditional, $B$, by $\eif$E. The rule $\eif$E also
 requires the antecedent~$A$ of the conditional, but that is also
-already available (on line~$3$). So we finish with:
+already available (on line~3). So we finish with:
 \begin{fitchproof}
 	\open
 	\hypo{1}{A \eif B}\AS
@@ -1102,7 +1102,7 @@ already available (on line~$3$). So we finish with:
 
 \section{Working forward from $\ered$}\label{sec:backred}
 
-When applying the strategies, you will sometimes find yourself in a situation where you can justify~$\ered$. Using the explosion rule, this would allow you to justify \emph{anything}. So $\ered$ works like a wildcard in proofs. For instance, suppose you want to give a proof of the argument $A \eor B, \enot A \therefore B$. You set up your proof, writing the premises $A \eor B$ and $\enot A$ at the top on lines $1$ and $2$, and the conclusion~$B$ at the bottom of the page. $B$ has no main connective, so you can't work backward from it. Instead, you must work forward from $A \eor B$: That requires two subproofs, like so:
+When applying the strategies, you will sometimes find yourself in a situation where you can justify~$\ered$. Using the explosion rule, this would allow you to justify \emph{anything}. So $\ered$ works like a wildcard in proofs. For instance, suppose you want to give a proof of the argument $A \eor B, \enot A \therefore B$. You set up your proof, writing the premises $A \eor B$ and $\enot A$ at the top on lines 1 and 2, and the conclusion~$B$ at the bottom of the page. $B$ has no main connective, so you can't work backward from it. Instead, you must work forward from $A \eor B$: That requires two subproofs, like so:
 \begin{fitchproof}
 	\hypo{1}{A \eor B}\PR
 	\hypo{7}{\enot A}\PR
@@ -1118,7 +1118,7 @@ When applying the strategies, you will sometimes find yourself in a situation wh
 	\close
 	\have{6}{B}\oe{1,2-3,(4)-5} 
 \end{fitchproof} 
-Notice that you have $\enot A$ on line~$2$ and $A$ as the assumption of your first subproof. That gives you $\ered$ using $\enot$E, and from $\ered$ you get the conclusion~$B$ of the first subproof using~X. Recall that you can repeat a sentence you already have by using the reiteration rule~R. So our proof would be:
+Notice that you have $\enot A$ on line~2 and $A$ as the assumption of your first subproof. That gives you $\ered$ using $\enot$E, and from $\ered$ you get the conclusion~$B$ of the first subproof using~X. Recall that you can repeat a sentence you already have by using the reiteration rule~R. So our proof would be:
 \begin{fitchproof}
 	\hypo{1}{A \eor B}\PR
 	\hypo{7}{\enot A}\PR
@@ -1173,7 +1173,7 @@ excluded middle} (LEM), since it encapsulates the idea that \metav{A} may be tru
 	\close
 	\have{9}{A \eor \enot A}\ip{2-8}
 \end{fitchproof}
-Now we do have something to work forward from: the assumption $\enot(A \eor \enot A)$. To use it, we justify $\ered$ by $\enot$E, citing the assumption on line~$1$, and also the corresponding unnegated sentence $A \eor \enot A$, yet to be proved.
+Now we do have something to work forward from: the assumption $\enot(A \eor \enot A)$. To use it, we justify $\ered$ by $\enot$E, citing the assumption on line~1, and also the corresponding unnegated sentence $A \eor \enot A$, yet to be proved.
 \begin{fitchproof}
 	\open
 	\hypo{2}{\enot (A \eor \enot A)}\AS
@@ -1198,7 +1198,7 @@ At the outset, working backward to prove $A \eor\enot A$ by $\eor$I did not work
 	\close
 	\have{9}{A \eor \enot A}\ip{2-8}
 \end{fitchproof}
-Inside this new subproof, we again need to justify $\ered$. The best way to do this is to work forward from a negated sentence; $\enot(A \eor \enot A)$ on line~$1$ is the only negated sentence we can use. The corresponding unnegated sentence, $A \eor \enot A$, however, directly follows from $A$ (which we have on line~$2$) by $\eor$I. Our complete proof is:
+Inside this new subproof, we again need to justify $\ered$. The best way to do this is to work forward from a negated sentence; $\enot(A \eor \enot A)$ on line~1 is the only negated sentence we can use. The corresponding unnegated sentence, $A \eor \enot A$, however, directly follows from $A$ (which we have on line~2) by $\eor$I. Our complete proof is:
 \begin{fitchproof}
 	\open
 	\hypo{2}{\enot (A \eor \enot A)}\AS

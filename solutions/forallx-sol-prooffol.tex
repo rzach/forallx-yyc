@@ -468,9 +468,9 @@ Show that each pair of sentences is interderivable.
 For each of the following pairs of sentences: If they are interderivable, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
 \begin{compactlist}
 \item $\forall x\,\atom{P}{x} \eif \atom{Q}{c}, \forall x (\atom{P}{x} \eif \atom{Q}{c})$ \hfill \myanswer{Not logically equivalent}
-\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$c$' name $1$. Let `$\atom{P}{x}$' be true of and only of $1$. Let `$\atom{Q}{x}$' be true of, and only of, $2$.}
+\\\myanswer{Counter-interpretation: let the domain be the numbers 1 and 2. Let `$c$' name 1. Let `$\atom{P}{x}$' be true of and only of 1. Let `$\atom{Q}{x}$' be true of, and only of, 2.}
 \item $\forall x\forall y \forall z \atom{B}{x,y,z}, \forall x\,\atom{B}{x,x,x}$\hfill \myanswer{Not logically equivalent}
-\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$\atom{B}{x,y,z}$' be true of, and only of, \ntuple{1,1,1} and \ntuple{2,2,2}.}
+\\\myanswer{Counter-interpretation: let the domain be the numbers 1 and 2. Let `$\atom{B}{x,y,z}$' be true of, and only of, \ntuple{1,1,1} and \ntuple{2,2,2}.}
 \item $\forall x\forall y\,\atom{D}{x,y}, \forall y\forall x\,\atom{D}{x,y}$ \hfill \myanswer{interderivable\begin{multicols}{2}
 \begin{fitchproof}[arrayenv=tabular]
 \hypo{AAd}{\forall x \forall y\,\atom{D}{x,y}}
@@ -488,7 +488,7 @@ For each of the following pairs of sentences: If they are interderivable, give p
 \end{fitchproof}
 \end{multicols}}
 \item $\exists x\forall y\,\atom{D}{x,y}, \forall y\exists x\,\atom{D}{x,y}$ \hfill \myanswer{Not logically equivalent}
-\\\myanswer{Counter-interpretation: let the domain be the numbers $1$ and $2$. Let `$Dxy$' hold of and only of \ntuple{1,2} and \ntuple{2,1}. This is depicted thus:
+\\\myanswer{Counter-interpretation: let the domain be the numbers 1 and 2. Let `$Dxy$' hold of and only of \ntuple{1,2} and \ntuple{2,1}. This is depicted thus:
 \begin{center}
 \begin{tikzpicture}
 \node (atom4) at (0,0) {1};
@@ -529,9 +529,9 @@ For each of the following arguments: If it is valid in FOL, give a proof. If it 
 \have{AEr}{\forall x \exists y\,\atom{R}{x,y}}\Ai{Er1}
 \end{fitchproof}}
 \item $\forall x\exists y\,\atom{R}{x,y} \therefore  \exists y\forall x\,\atom{R}{x,y}$ \hfill \myanswer{Not valid
-\\Counter interpretation: let the domain be the numbers $1$ and $2$. Let `$Rxy$' be true of $1$ and $2$, and of $2$ and $1$ (but not $1$ and itself or $2$ and itself).}
+\\Counter interpretation: let the domain be the numbers 1 and 2. Let `$Rxy$' be true of 1 and 2, and of 2 and 1 (but not 1 and itself or 2 and itself).}
 \item $\exists x(\atom{P}{x} \eand \enot \atom{Q}{x}) \therefore \forall x(\atom{P}{x} \eif \enot \atom{Q}{x})$ \hfill \myanswer{Not valid
-\\Counter interpretation: let the domain be the numbers $1$ and $2$. Let `$Px$' be true of everything in the domain. Let `$Qx$' be true of, and only of, $2$.}
+\\Counter interpretation: let the domain be the numbers 1 and 2. Let `$Px$' be true of everything in the domain. Let `$Qx$' be true of, and only of, 2.}
 \item $\forall x(\atom{S}{x} \eif \atom{T}{a}), \atom{S}{d} \therefore \atom{T}{a}$ \hfill \myanswer{Valid
 \begin{fitchproof}
 \hypo{Ast}{\forall x (\atom{S}{x} \eif \atom{T}{a})}
@@ -554,7 +554,7 @@ For each of the following arguments: If it is valid in FOL, give a proof. If it 
 \have{Aac}{\forall x (\atom{A}{x} \eif \atom{C}{x})}\Ai{ac}
 \end{fitchproof}}
 \item $\exists x(\atom{D}{x} \eor \atom{E}{x}), \forall x(\atom{D}{x} \eif \atom{F}{x}) \therefore \exists x(\atom{D}{x} \eand \atom{F}{x})$ \hfill \myanswer{Invalid\\
-Counter-interpretation: let the domain be the number $1$ . Let `$Dx$' hold of nothing. Let both `$Ex$' and `$Fx$' hold of everything.}
+Counter-interpretation: let the domain be the number 1 . Let `$Dx$' hold of nothing. Let both `$Ex$' and `$Fx$' hold of everything.}
 \item $\forall x\forall y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore \atom{R}{j,j}$ \hfill \myanswer{Valid
 \begin{fitchproof}
 \hypo{AArr}{\forall x \forall y (\atom{R}{x,y} \eor \atom{R}{y,x})}
@@ -572,7 +572,7 @@ Counter-interpretation: let the domain be the number $1$ . Let `$Dx$' hold of no
 \end{fitchproof}}
 
 \item $\exists x\exists y(\atom{R}{x,y} \eor \atom{R}{y,x}) \therefore \atom{R}{j,j}$ \hfill \myanswer{Invalid\\
-Counter-interpretation: consider the following diagram, allowing `$j$' to name $2$.
+Counter-interpretation: consider the following diagram, allowing `$j$' to name 2.
 \begin{center}
 \begin{tikzpicture}
 \node (atom4) at (0,0) {1};
@@ -585,7 +585,7 @@ Counter-interpretation: consider the following diagram, allowing `$j$' to name $
 number 2 is not connected by any arrows.}
 \end{center}}
 \item $\forall x\,\atom{P}{x} \eif \forall x\,\atom{Q}{x}, \exists x \enot \atom{P}{x} \therefore \exists x \enot \atom{Q}{x}$ \hfill \myanswer{Invalid\\
-Counter-interpretation: let the domain be the number $1$. Let `$\atom{P}{x}$' be true of nothing. Let `$\atom{Q}{x}$' be true of everything.}
+Counter-interpretation: let the domain be the number 1. Let `$\atom{P}{x}$' be true of nothing. Let `$\atom{Q}{x}$' be true of everything.}
 
 \item $\exists x\,\atom{M}{x} \eif \exists x\,\atom{N}{x}$, $\enot \exists x\,\atom{N}{x}\therefore  \forall x \enot \atom{M}{x}$\hfill \myanswer{Valid\\
 \begin{fitchproof}

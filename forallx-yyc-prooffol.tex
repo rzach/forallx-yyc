@@ -15,12 +15,12 @@ From the claim that everything is~$F$, you can infer that any particular thing i
 	\hypo{a}{\forall x\,\atom{R}{x,x,d}}\PR
 	\have{c}{\atom{R}{a,a,d}} \Ae{a}
 \end{fitchproof}
-We obtained line~$2$ by dropping the universal quantifier and replacing every instance of `$x$' with `$a$'. Equally, the following should be allowed:
+We obtained line~2 by dropping the universal quantifier and replacing every instance of `$x$' with `$a$'. Equally, the following should be allowed:
 \begin{fitchproof}
 	\hypo{a}{\forall x\,\atom{R}{x,x,d}}\PR
 	\have{c}{\atom{R}{d,d,d}} \Ae{a}
 \end{fitchproof}
-We obtained line~$2$ here by dropping the universal quantifier and replacing every instance of `$x$' with~`$d$'. We could have done the same with any other name we wanted.
+We obtained line~2 here by dropping the universal quantifier and replacing every instance of `$x$' with~`$d$'. We could have done the same with any other name we wanted.
 
 This motivates the universal elimination rule ($\forall$E):
 
@@ -40,7 +40,7 @@ We should emphasize that (as with every elimination rule) you can only apply the
 	\hypo{a}{\forall x\,\atom{B}{x} \eif \atom{B}{k}}\PR
 	\have{c}{\atom{B}{b} \eif \atom{B}{k}}\by{naughy attempt to invoke $\forall$E}{a}
 \end{fitchproof}
-This is illegitimate, since `$\forall x$' is not the main logical operator in line~$1$. (If you need a reminder as to why this sort of inference should be banned, reread \cref{s:MoreMonadic}.)
+This is illegitimate, since `$\forall x$' is not the main logical operator in line~1. (If you need a reminder as to why this sort of inference should be banned, reread \cref{s:MoreMonadic}.)
 
 \section{Existential introduction}\label{s:existsIntro}
 
@@ -181,7 +181,7 @@ Now, suppose we tried to offer a proof that vindicates this argument:
 	\have{a}{\atom{L}{k,k}} \Ae{x}
 	\have{y}{\forall x\, \atom{L}{x,x}} \by{naughty attempt to invoke $\forall$I}{a}
 \end{fitchproof}
-This is not allowed, because `$k$' occurred already in a premise, namely, on line~$1$. The crucial point is that, if we have made any assumptions about the object we are working with, then we are not reasoning generally enough to license $\forall$I.
+This is not allowed, because `$k$' occurred already in a premise, namely, on line~1. The crucial point is that, if we have made any assumptions about the object we are working with, then we are not reasoning generally enough to license $\forall$I.
 
 Although the name may not occur in any \emph{undischarged} assumption, it may occur in a \emph{discharged} assumption. That is, it may occur in a subproof that we have already closed. For example, this is just fine:
 \begin{fitchproof}
@@ -210,7 +210,7 @@ But now suppose we tried to vindicate this terrible argument with the following:
 \end{fitchproof}
 Fortunately, our rules do not allow us to do this: the attempted proof
 is banned, since it doesn't replace \emph{every} occurrence of `$d$'
-in line $2$ with an~`$x$'.
+in line 2 with an~`$x$'.
 
 \section{Existential elimination}\label{s:existsElim}
 
@@ -232,7 +232,7 @@ We might try to capture this reasoning pattern in a proof as follows:
 	\close
 	\have{et2}{\exists x\, \atom{G}{x}}\Ee{es,s-et1}
 \end{fitchproof}\noindent
-Breaking this down: we started by writing down our assumptions. At line~$3$, we made an additional assumption: `$\atom{F}{b}$'. This was just a substitution instance of `$\exists x\,\atom{F}{x}$'. On this assumption, we established `$\exists x\,\atom{G}{x}$'. Note that we had made no \emph{special} assumptions about the object named by `$b$'; we had \emph{only} assumed that it satisfies `$\atom{F}{x}$'. So nothing depends upon which object it is. And line~$1$ told us that \emph{something} satisfies `$\atom{F}{x}$', so our reasoning pattern was perfectly general. We can discharge the specific assumption `$\atom{F}{b}$', and simply infer `$\exists x\,\atom{G}{x}$' on its own.
+Breaking this down: we started by writing down our assumptions. At line~3, we made an additional assumption: `$\atom{F}{b}$'. This was just a substitution instance of `$\exists x\,\atom{F}{x}$'. On this assumption, we established `$\exists x\,\atom{G}{x}$'. Note that we had made no \emph{special} assumptions about the object named by `$b$'; we had \emph{only} assumed that it satisfies `$\atom{F}{x}$'. So nothing depends upon which object it is. And line~1 told us that \emph{something} satisfies `$\atom{F}{x}$', so our reasoning pattern was perfectly general. We can discharge the specific assumption `$\atom{F}{b}$', and simply infer `$\exists x\,\atom{G}{x}$' on its own.
 
 Putting this together, we obtain the existential elimination rule ($\exists$E):
 \factoidbox{
@@ -271,7 +271,7 @@ Now, suppose we tried to offer a proof that vindicates this argument:
 	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con}
 \fi
 \end{fitchproof}
-The last line of the proof is not allowed. The name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$' on line~$3$, namely `$b$', occurs in line~$4$. This would be no better:
+The last line of the proof is not allowed. The name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$' on line~3, namely `$b$', occurs in line~4. This would be no better:
 \begin{fitchproof}
 	\hypo{f}{\atom{L}{b}}\PR
 	\hypo{nf}{\exists x\, \enot \atom{L}{x}}\PR
@@ -288,7 +288,7 @@ The last line of the proof is not allowed. The name that we used in our substitu
 	\have[\ ]{x}{}\by{to invoke $\exists$E }{nf, na-con1}
 \fi
 \end{fitchproof}
-The last line is still not allowed. For the name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$', namely `$b$', occurs in an undischarged assumption, namely line~$1$.
+The last line is still not allowed. For the name that we used in our substitution instance for `$\exists x\, \enot \atom{L}{x}$', namely `$b$', occurs in an undischarged assumption, namely line~1.
 
 Finally, consider this `proof':
 \begin{fitchproof}
@@ -305,7 +305,7 @@ Finally, consider this `proof':
 \fi
 \end{fitchproof}
 Here the name `$a$' violates the second condition of the $\exists$E
-rule: it occurs in `$\exists x\, \atom{L}{a, x}$' on line~$1$. And we
+rule: it occurs in `$\exists x\, \atom{L}{a, x}$' on line~1. And we
 have to prevent this from being a proof, since it is invalid: `Someone
 likes themselves' does not follow from `Alex likes someone'.
 
@@ -332,13 +332,13 @@ instance, this would be incorrect:
 	\have[\ ]{x}{}\by{to invoke $\forall$E}{a}
 \fi
 \end{fitchproof}
-On line $2$, we have formed the substitution instance incorrectly: we
+On line 2, we have formed the substitution instance incorrectly: we
 replaced the `$x$' in both `$\atom{F}{x}$' and in `$\atom{G}{x}$'
 by~`$a$', but only the first one is a free occurrence---the other one
 is bound by~`$\exists x$'. Not only would this violate a restriction
 on substitution, it would allow us to `prove' an invalid argument.
 Since `$\exists x\,\atom{G}{a}$' is a case of vacuous quantification,
-it is equivalent to just `$\atom{G}{a}$'. Furthermore, line~$1$ is
+it is equivalent to just `$\atom{G}{a}$'. Furthermore, line~1 is
 equivalent to `$\forall x(\atom{F}{x} \land \exists y\,\atom{G}{y})$'.
 It should be easy to see that this does not entail `$\atom{F}{a} \land
 \atom{G}{a}$'. You're unlikely to encounter such a case (unless you
@@ -627,7 +627,7 @@ The strategies for connectives of TFL still apply, and you should apply them in 
 	\close
 	\have[n]{7}{\exists x\,\atom{A}{x} \eif B}\ci{2-(6)}
 \end{fitchproof}
-Our next step should be to work forward from $\exists x\,\atom{A}{x}$ on line~$2$. For that, we have to pick a name not already in our proof. Since no names appear, we can pick any name, say~`$d$'
+Our next step should be to work forward from $\exists x\,\atom{A}{x}$ on line~2. For that, we have to pick a name not already in our proof. Since no names appear, we can pick any name, say~`$d$'
 \begin{fitchproof}
 	\hypo{1}{\forall x(\atom{A}{x} \eif B)}\PR
 	\open
@@ -680,7 +680,7 @@ And working backward from $\atom{A}{d} \eif B$ means we should set up a subproof
 	\have[n][-1]{6}{\atom{A}{d} \eif B}\ci{2-(5)}
 	\have[n]{7}{\forall x(\atom{A}{x} \eif B)}\Ai{6}
 \end{fitchproof}
-Now we can work forward from the premise on line~$1$. That's a conditional, and its consequent happens to be the sentence~$B$ we are trying to justify. So we should look for a proof of its antecedent, $\exists x\,\atom{A}{x}$. Of course, that is now readily available, by $\exists$I from line~$2$, and we're done:
+Now we can work forward from the premise on line~1. That's a conditional, and its consequent happens to be the sentence~$B$ we are trying to justify. So we should look for a proof of its antecedent, $\exists x\,\atom{A}{x}$. Of course, that is now readily available, by $\exists$I from line~2, and we're done:
 \begin{fitchproof}
 	\hypo{1}{\exists x\,\atom{A}{x} \eif B}\PR
 	\open
@@ -826,7 +826,7 @@ To see the rules in action, we will prove some quick results. First, we will pro
 	\have{ayya}{\forall y (a = y \eif y = a)}\Ai{abba}
 	\have{xyyx}{\forall x\, \forall y (x = y \eif y = x)}\Ai{ayya}
 \end{fitchproof}
-We obtain line~$3$ by replacing one instance of `$a$' in line~$2$ with an instance of~`$b$'; this is justified given `$a= b$'.
+We obtain line~3 by replacing one instance of `$a$' in line~2 with an instance of~`$b$'; this is justified given `$a= b$'.
 
 Second, we will prove that identity is \emph{transitive}:
 \begin{fitchproof}
@@ -841,7 +841,7 @@ Second, we will prove that identity is \emph{transitive}:
 	\have{cony}{\forall y\,\forall z((a = y \eand y = z) \eif a = z)}\Ai{conz}
 	\have{conx}{\forall x\,\forall y \forall z((x = y \eand y = z) \eif x = z)}\Ai{cony}
 \end{fitchproof}
-We obtain line~$4$ by replacing `$b$' in line~$3$ with `$a$'; this is justified given `$a= b$'.
+We obtain line~4 by replacing `$b$' in line~3 with `$a$'; this is justified given `$a= b$'.
 
 \practiceproblems
 \problempart

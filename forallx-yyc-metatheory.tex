@@ -488,7 +488,7 @@ To begin with, we must make the idea of `leading us astray' more precise. Say th
 		\close
 		\have{fg}{F \eif G}\ci{f-g}
 	\end{fitchproof}\noindent\noindent
-Line $1$ is shiny \ifeff{} $F \eif (G \eand H) \entails F \eif (G \eand H)$. You should be easily convinced that line $1$ is, indeed, shiny! Similarly, line $4$ is shiny \ifeff{} $F \eif (G \eand H), F \entails G$. Again, it is easy to check that line~$4$ is shiny. As is every line in this TFL-proof. We want to show that this is no coincidence. That is, we want to prove:
+Line 1 is shiny \ifeff{} $F \eif (G \eand H) \entails F \eif (G \eand H)$. You should be easily convinced that line 1 is, indeed, shiny! Similarly, line 4 is shiny \ifeff{} $F \eif (G \eand H), F \entails G$. Again, it is easy to check that line~4 is shiny. As is every line in this TFL-proof. We want to show that this is no coincidence. That is, we want to prove:
 	\begin{factoidboxe}\textbf{Shininess Lemma.}
 		Every line of every TFL-proof is shiny.
 	\end{factoidboxe}\noindent
@@ -514,20 +514,20 @@ system is rule-sound.
 
 We will do this below. But having demonstrated the rule-soundness of every rule, the Shininess Lemma will follow immediately:
 
-\emph{Proof.} Start with line~$1$ of any TFL proof. It must be either
+\emph{Proof.} Start with line~1 of any TFL proof. It must be either
 a premise or an assumption, and those are all shiny, as we've seen
-above. Take the next line, $2$. If it is a premise or assumption, it
-is shiny. If not, it is obtained from line~$1$ using an inference
-which is rule-sound. Since line~$1$ is shiny, line~$2$ is also shiny.
-Take the next line, $3$. If it is a premise or assumption, it
+above. Take the next line, 2. If it is a premise or assumption, it
+is shiny. If not, it is obtained from line~1 using an inference
+which is rule-sound. Since line~1 is shiny, line~2 is also shiny.
+Take the next line, 3. If it is a premise or assumption, it
 is shiny. If not, it is obtained from a previous line using an inference
 which is rule-sound, and we've established that all previous lines are
-shiny. Thus, line~$3$ is also shiny.
+shiny. Thus, line~3 is also shiny.
 And so on. In general, the sentence written on line $n$ must either be
 a premise or assumption (which is shiny) or be obtained using a formal
 inference rule which is rule-sound. Since every earlier line is shiny,
 line~$n$ itself is shiny. We can simply go through this
-reasoning, for any TFL proof, starting with line~$1$ and continuing to
+reasoning, for any TFL proof, starting with line~1 and continuing to
 the last line, and get that every line of every TFL-proof is shiny.
 QED
 
