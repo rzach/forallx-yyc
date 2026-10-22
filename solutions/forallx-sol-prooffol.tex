@@ -247,9 +247,9 @@ Aristotle and his successors identified other syllogistic forms which depended u
 	\have{faga}{\atom{F}{a} \eif \atom{G}{a}}\Ae{fg}
 	\have{nfa}{\enot \atom{F}{a}}\mt{faga, nga}
 	\have{hanfa}{\atom{H}{a} \eand \enot \atom{F}{a}}\ai{ha, nfa}
-	\have{hnf}{\exists x (\atom{H}{x} \eand \atom{F}{x})}\Ei{hanfa}
+	\have{hnf}{\exists x (\atom{H}{x} \eand \enot \atom{F}{x})}\Ei{hanfa}
 \close
-\have{con}{\exists x (\atom{H}{x} \eand \atom{F}{x})}\Ee{imp, ha-hnf}
+\have{con}{\exists x (\atom{H}{x} \eand \enot \atom{F}{x})}\Ee{imp, ha-hnf}
 \end{fitchproof}}
 	
 	\item \textbf{Fesapo.} Something is G. No F is G. All G are H. So: Some H is not F.
@@ -307,7 +307,7 @@ is true.
 	\have{con2}{\atom{F}{a} \eand \atom{F}{a}}\ai{con,con}
 	\have{con3}{\forall y\,(\atom{F}{y} \eand \atom{F}{y})}\Ai{con2}
 \close
-\have{con4}{\forall x\,\atom{F}{x} \eif \forall y(\atom{F}{x} \eand \atom{F}{x})}\ci{Af-con3}
+\have{con4}{\forall x\,\atom{F}{x} \eif \forall y(\atom{F}{y} \eand \atom{F}{y})}\ci{Af-con3}
 \end{fitchproof}}
 
 \item $\forall x(Ax\eif \atom{B}{x}), \exists x\,\atom{A}{x} \proves \exists x\,\atom{B}{x}$
@@ -404,7 +404,7 @@ is true.
 \hypo{Anmlj}{\forall x (\enot \atom{M}{x} \eor \atom{L}{j,x})}
 \hypo{Ablj}{\forall x (\atom{B}{x} \eif \atom{L}{j,x})}
 \hypo{Amb}{\forall x (\atom{M}{x} \eor \atom{B}{x})}
-\have{nmlj}{\enot \atom{M}{a} \eor \atom{L}{j,x}}\Ae{Anmlj}
+\have{nmlj}{\enot \atom{M}{a} \eor \atom{L}{j,a}}\Ae{Anmlj}
 \have{blj}{\atom{B}{a} \eif \atom{L}{j,a}}\Ae{Ablj}
 \have{mb}{\atom{M}{a} \eor \atom{B}{a}}\Ae{Amb}
 \open
@@ -704,7 +704,7 @@ Show that each pair of sentences is interderivable: %TB: Again, have to do some 
 	\hypo{nb}{\enot \atom{B}{d}}
 	\have{nna}{\enot \enot \atom{A}{a}}\mt{nab, nb}
 	\have{a}{\atom{A}{a}}\dne{nna}
-	\have{Aa}{\forall x\,\atom{A}{x}}\Ae{a}
+	\have{Aa}{\forall x\,\atom{A}{x}}\Ai{a}
 	\have{Aab1}{\forall x\,\atom{A}{x} \eor \atom{B}{d}}\oi{Aa}
 \close
 \have{Aab2}{\forall x\,\atom{A}{x} \eor \atom{B}{d}}\tnd{b-Aab, nb-Aab1}
@@ -722,7 +722,7 @@ Show that each pair of sentences is interderivable: %TB: Again, have to do some 
 	\have{b}{\atom{B}{d}}\ds{Aab, nAa}
 \close
 \have{nab}{\enot \atom{A}{a} \eif \atom{B}{d}}\ci{na-b}
-\have{Anab}{\forall x (\atom{A}{x} \eif \atom{B}{d})}\Ai{nab}
+\have{Anab}{\forall x (\enot\atom{A}{x} \eif \atom{B}{d})}\Ai{nab}
 \end{fitchproof}
 }
 \end{compactlist}
@@ -858,7 +858,7 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 \hypo{gEf}{\atom{G}{a} \eif \exists x\,\atom{F}{x}}
 \open
 	\hypo{g}{\atom{G}{a}}
-	\have{Ef}{\exists x\,\atom{F}{x}}
+	\have{Ef}{\exists x\,\atom{F}{x}}\ce{gEf, g}
 	\open
 		\hypo{f}{\atom{F}{b}}
 		\open
@@ -959,7 +959,7 @@ is true.
 \close
 \open
 	\hypo{nio}{n=o}
-	\have{ao}{\atom{A}{o}}\ie{nio, ao}
+	\have{ao}{\atom{A}{o}}\ie{nio, an}
 	\have{amao1}{\atom{A}{m} \eor \atom{A}{o}}\oi{ao}
 \close
 \have{amao2}{\atom{A}{m} \eor \atom{A}{o}}\oe{mnino, min-amao, nio-amao1}
@@ -995,7 +995,7 @@ is true.
 \have{bim}{b = m}\dne{nnbim}
 \open
 	\hypo{pa}{\atom{P}{a}}
-	\have{pm}{\atom{P}{m}}\ie{nnaim, pa}
+	\have{pm}{\atom{P}{m}}\ie{aim, pa}
 	\have{pb}{\atom{P}{b}}\ie{nnbim, pm}
 \close
 \have{papb}{\atom{P}{a} \eif \atom{P}{b}}\ci{pa-pb}
