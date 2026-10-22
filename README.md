@@ -22,8 +22,14 @@ Instructors wishing to adopt it should consider the open-source
 [Carnap](https://carnap.io/) system, which supports the notation and
 proof systems of _forall x: Calgary_. Check out the [sample
 exercises](https://carnap.io/shared/rzach@ucalgary.ca/forall%20x:%20Calgary.md)
-for the book on carnap.io. (There is also an outdated and unsupported
-proof editor/checker for the proof system used available at
+for the book on carnap.io. 
+
+A stand-alone proof checker and generator is available at
+[ndprover.org](https://ndprover.org/). It supports proofs in modal
+logic and can provide hints. It is developed by [Daniyal
+Akif](https://github.com/daniyal1249). (There is also an outdated and
+unsupported proof editor/checker for the TFL and FOL proof system
+still available at
 [proofs.openlogicproject.org](https://proofs.openlogicproject.org/).)
 
 The book has been translated into German ([forall _x_:
@@ -41,6 +47,10 @@ especially issues that affect screen readers, please report it by
 [filing an issue](https://github.com/rzach/forallx-yyc/issues) or send
 an email to [Richard Zach](mailto:rzach@ucalgary.ca). Note that
 solutions are included in the HTML version after the appendices.
+
+A separate, unaffiliated HTML version with interactive exercises due
+to [Hexuan Huang](https://github.com/rickyhuanghx) can be found at
+[forallxworkbook.com](https://forallxworkbook.com/).
 
 ## Download
 
