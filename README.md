@@ -18,6 +18,15 @@ printing, and a special version for dyslexics), HTML (with additional
 features](https://forallx.openlogicproject.org/html/A4.html)), and in
 LaTeX source code.
 
+- [forall x: Calgary](#forall-x-calgary)
+  - [Description](#description)
+  - [Read online](#read-online)
+  - [Download](#download)
+  - [Buy a Printed Copy](#buy-a-printed-copy)
+  - [Make PDFs Yourself](#make-pdfs-yourself)
+  - [Convert to HTML](#convert-to-html)
+  - [Credits and License](#credits-and-license)
+
 Instructors wishing to adopt it should consider the open-source
 [Carnap](https://carnap.io/) system, which supports the notation and
 proof systems of _forall x: Calgary_. Check out the [sample
@@ -48,8 +57,9 @@ especially issues that affect screen readers, please report it by
 an email to [Richard Zach](mailto:rzach@ucalgary.ca). Note that
 solutions are included in the HTML version after the appendices.
 
-A separate, unaffiliated HTML version with interactive exercises due
-to [Hexuan Huang](https://github.com/rickyhuanghx) can be found at
+A separate, unaffiliated HTML version with interactive exercises and
+solutions, suitable especially for self-study and due to [Hexuan
+Huang](https://github.com/rickyhuanghx), can be found at
 [forallxworkbook.com](https://forallxworkbook.com/).
 
 ## Download
@@ -76,6 +86,8 @@ available here:
 You can use this file to easily provide the entire text inside your
 LMS (Canvas, Moodle, D2L/Brightspace).
 
+An [experimental PDF/UA](https://forallx.openlogicproject.org/forallxyyc-ua.pdf) version is under development.
+
 **Note that these files change whenever the source files change.** So
 if you use the text in a course, it is best to download the PDFs or
 the SCORM package and make them available to students directly rather
@@ -101,7 +113,7 @@ PDFs of the **Fall 2020** edition are archived here:
 
 ## Buy a Printed Copy
 
-If you'd like to purchase a nice paperback copy of the Fall 2023
+If you'd like to purchase a nice paperback copy of the Fall 2025
 edition, you can do so on Amazon
 ([US](https://www.amazon.com/dp/B0CH2B1ZFG) |
 [CA](https://www.amazon.ca/dp/B0CH2B1ZFG) |
@@ -109,7 +121,7 @@ edition, you can do so on Amazon
 [DE](https://www.amazon.de/dp/B0CH2B1ZFG) |
 [AU](https://www.amazon.com.au/dp/B0CH2B1ZFG)), or use search in your
 local Amazon store. Be sure to get the latest version that's available
-in print (Fall 2023). The version on Amazon usually is not as current
+in print (Fall 2025). The version on Amazon usually is not as current
 as the PDF. Changes are recorded in the
 [Changelog](https://github.com/rzach/forallx-yyc/blob/master/CHANGELOG.md).
 
