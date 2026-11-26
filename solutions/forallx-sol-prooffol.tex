@@ -223,7 +223,7 @@ Aristotle and his successors identified other syllogistic forms which depended u
 	\have{hanfa}{\atom{H}{a} \eand \enot \atom{F}{a}}\ai{ha, nfa}
 	\have{hnf}{\exists x (\atom{H}{x} \eand \enot \atom{F}{x})}\Ei{hanfa}
 \close
-\have{con}{\exists x (\atom{H}{x} \eand \atom{F}{x})}\Ee{imp, ga-hnf}
+\have{con}{\exists x (\atom{H}{x} \eand \enot \atom{F}{x})}\Ee{imp, ga-hnf}
 \end{fitchproof}}
 	\item \textbf{Darapti.} Something is G. All G are F. All G are H. So: Some H is F.
 	\\\myanswer{$\exists x\,\atom{G}{x}, \forall x (\atom{G}{x} \eif \atom{F}{x}), \forall x(\atom{G}{x} \eif \atom{H}{x}) \therefore \exists x (\atom{H}{x} \eand \atom{F}{x})$\\
@@ -877,7 +877,7 @@ In \cref{s:MoreMonadic}, we considered what happens when we move quantifiers `ac
 		\have{red}{\ered}\ri{g2, ng}
 		\have{f2}{\atom{F}{b}}\re{red}
 	\close
-	\have{gf1}{\atom{G}{a} \eif \atom{F}{b}}\ce{g2-f2}
+	\have{gf1}{\atom{G}{a} \eif \atom{F}{b}}\ci{g2-f2}
 	\have{Egf2}{\exists x (\atom{G}{a} \eif \atom{F}{x})}\Ei{gf1}
 \close
 \have{con}{\exists x (\atom{G}{a} \eif \atom{F}{x})}\tnd{g-Egf1, ng-Egf2}
@@ -996,7 +996,7 @@ is true.
 \open
 	\hypo{pa}{\atom{P}{a}}
 	\have{pm}{\atom{P}{m}}\ie{aim, pa}
-	\have{pb}{\atom{P}{b}}\ie{nnbim, pm}
+	\have{pb}{\atom{P}{b}}\ie{bim, pm}
 \close
 \have{papb}{\atom{P}{a} \eif \atom{P}{b}}\ci{pa-pb}
 \have{Apapy}{\forall y (\atom{P}{a} \eif \atom{P}{y})}\Ai{papb}
@@ -1056,7 +1056,7 @@ is true.
 
 \item $\exists x\bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x=y)) \eand \atom{B}{x}\bigr], \atom{K}{d} \proves \atom{B}{d}$
 \myanswer{\begin{fitchproof}
-\hypo{EkAkb}{\exists x\bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x=y) \eand \atom{B}{x}\bigr]}
+\hypo{EkAkb}{\exists x\bigl[(\atom{K}{x} \eand \forall y(\atom{K}{y} \eif x=y)) \eand \atom{B}{x}\bigr]}
 \hypo{kd}{\atom{K}{d}}
 \open
 	\hypo{kAkb}{(\atom{K}{a} \eand \forall y(\atom{K}{y} \eif a=y)) \eand \atom{B}{a}}
@@ -1149,7 +1149,7 @@ Show that they are all interderivable. (\emph{Hint}: to show that three claims a
 	\close
 	\have{fbaib}{\atom{F}{b} \eif a =b}\ci{fb-aib}
 	\have{Afb}{\forall y(\atom{F}{y} \eif a =y)}\Ai{fbaib}	
-	\have{cona}{\atom{F}{a} \eand \forall y(\atom{F}{y} \eif a = y))}\ai{fa, Afb}
+	\have{cona}{\atom{F}{a} \eand \forall y(\atom{F}{y} \eif a = y)}\ai{fa, Afb}
 	\have{con1}{\exists x \bigl[\atom{F}{x} \eand \forall y(\atom{F}{y} \eif x = y)\bigr]}\Ei{cona}
 \close
 \have{con}{\exists x \bigl[\atom{F}{x} \eand \forall y (\atom{F}{y} \eif x = y)\bigr]}\Ee{prem1, fa-con1}
@@ -1313,14 +1313,14 @@ And here is a proof that does not use any derived rules:
 	\hypo{nAa}{\enot \forall x\,\atom{A}{x}} 
 	\open
         \hypo{H1}{\exists x \enot \atom{A}{x}}
-        \have{H1C}{\exists x \enot \atom{A}{x} \eand \exists x \enot \atom{A}{x}}\ai{H1}
+        \have{H1C}{\exists x \enot \atom{A}{x} \eand \exists x \enot \atom{A}{x}}\ai{H1, H1}
         \have{conc1}{\exists x \enot \atom{A}{x}}\ae{H1C}
 	\close
         \open
         \hypo{H2}{\enot \exists x \enot \atom{A}{x}}
           \open
           \hypo{H3}{\atom{A}{b}}
-          \have{H3C}{\atom{A}{b} \eand \atom{A}{b}}\ai{H3}
+          \have{H3C}{\atom{A}{b} \eand \atom{A}{b}}\ai{H3, H3}
           \have{H3R}{\atom{A}{b}}\ae{H3C}
           \close
           \open
